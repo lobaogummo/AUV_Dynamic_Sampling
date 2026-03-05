@@ -1,0 +1,62 @@
+# -------------------------
+# Python / caches
+# -------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+venv/
+.venv/
+env/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ignora tudo em data
+data/**
+
+# mas permite a pasta data e HResNew
+!data/
+!data/HResNew/
+
+# dentro de HResNew, ignora tudo por defeito
+data/HResNew/**
+
+# e mantém só os ficheiros que queres subir
+!data/HResNew/CMEMSnaza_20241029_HResNew.nc
+!data/HResNew/CMEMSnaza_20241030_HResNew.nc
+
+# manter README se quiseres
+!data/README.md
+
+# Segurança extra (caso algum dado pesado fique fora de data/)
+*.nc
+*.h5
+*.hdf5
+*.mat
+*.npy
+*.npz
+*.parquet
+*.feather
+*.zarr/
+*.gslib
+*.out
+*.zip
+*.7z
+*.rar
+
+# ML models
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.joblib
+*.pkl
+

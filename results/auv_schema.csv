@@ -1,0 +1,57 @@
+path,var_name,kind,dtype,dims,units,long_name,standard_name,detected_role
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,TIME,coord,float64,TIME,None,Time,time ,timestamp
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,LATITUDE,coord,float32,TIME,degrees_north,Latitude of each location,latitude,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,LONGITUDE,coord,float32,TIME,degrees_east,Longitude of each location,longitude,lon
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,DEPH,data_var,float64,TIME,m,Depth,depth,depth
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,ROLL,data_var,float64,TIME,degrees,Roll,platform_roll,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,PTCH,data_var,float64,TIME,degrees,Pitch,platform_pitch,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,HDNG,data_var,float64,TIME,degrees,Heading,platform_orientation,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,APSA,data_var,float64,TIME,m s-1,Speed over ground,platform_speed_wrt_ground,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,APDA,data_var,float64,TIME,degrees_T,Course over ground,platform_course,lat
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,TEMP,data_var,float64,TIME,degrees_C,Sea temperature,sea_water_temperature,temperature
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,CNDC,data_var,float64,TIME,S m-1,Electrical conductivity,sea_water_electrical_conductivity,other
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,SVEL,data_var,float64,TIME,m s-1,Sound velocity in sea water,speed_of_sound_in_sea_water,other
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,PSAL,data_var,float64,TIME,0.001,Practical salinity of the water body ,sea_water_practical_salinity,salinity
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,CPWC,data_var,float64,TIME,ug l-1,Chlorophyll,mass_concentration_of_chlorophyll_in_sea_water,other
+data/AUVdata/lauv-xplore-2_2024_10_29.nc,TSED,data_var,float64,TIME,NTU,Turbidity,sea_water_turbidity,other
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,TIME,coord,float64,TIME,None,Time,time ,timestamp
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,LATITUDE,coord,float32,TIME,degrees_north,Latitude of each location,latitude,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,LONGITUDE,coord,float32,TIME,degrees_east,Longitude of each location,longitude,lon
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,DEPH,data_var,float64,TIME,m,Depth,depth,depth
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,ROLL,data_var,float64,TIME,degrees,Roll,platform_roll,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,PTCH,data_var,float64,TIME,degrees,Pitch,platform_pitch,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,HDNG,data_var,float64,TIME,degrees,Heading,platform_orientation,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,APSA,data_var,float64,TIME,m s-1,Speed over ground,platform_speed_wrt_ground,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,APDA,data_var,float64,TIME,degrees_T,Course over ground,platform_course,lat
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,TEMP,data_var,float64,TIME,degrees_C,Sea temperature,sea_water_temperature,temperature
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,CNDC,data_var,float64,TIME,S m-1,Electrical conductivity,sea_water_electrical_conductivity,other
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,SVEL,data_var,float64,TIME,m s-1,Sound velocity in sea water,speed_of_sound_in_sea_water,other
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,PSAL,data_var,float64,TIME,0.001,Practical salinity of the water body ,sea_water_practical_salinity,salinity
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,CPWC,data_var,float64,TIME,ug l-1,Chlorophyll,mass_concentration_of_chlorophyll_in_sea_water,other
+data/AUVdata/lauv-xplore-2_2024_10_31.nc,TSED,data_var,float64,TIME,NTU,Turbidity,sea_water_turbidity,other
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,TIME,coord,float64,TIME,None,Time,time ,timestamp
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,LATITUDE,coord,float32,TIME,degrees_north,Latitude of each location,latitude,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,LONGITUDE,coord,float32,TIME,degrees_east,Longitude of each location,longitude,lon
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,DEPH,data_var,float64,TIME,m,Depth,depth,depth
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,ROLL,data_var,float64,TIME,degrees,Roll,platform_roll,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,PTCH,data_var,float64,TIME,degrees,Pitch,platform_pitch,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,HDNG,data_var,float64,TIME,degrees,Heading,platform_orientation,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,APSA,data_var,float64,TIME,m s-1,Speed over ground,platform_speed_wrt_ground,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,APDA,data_var,float64,TIME,degrees_T,Course over ground,platform_course,lat
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,TEMP,data_var,float64,TIME,degrees_C,Sea temperature,sea_water_temperature,temperature
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,CNDC,data_var,float64,TIME,S m-1,Electrical conductivity,sea_water_electrical_conductivity,other
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,SVEL,data_var,float64,TIME,m s-1,Sound velocity in sea water,speed_of_sound_in_sea_water,other
+data/AUVdata/lauv-xplore-3_2024_10_30.nc,PSAL,data_var,float64,TIME,0.001,Practical salinity of the water body ,sea_water_practical_salinity,salinity
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,TIME,coord,float64,TIME,None,Time,time ,timestamp
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,LATITUDE,coord,float32,TIME,degrees_north,Latitude of each location,latitude,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,LONGITUDE,coord,float32,TIME,degrees_east,Longitude of each location,longitude,lon
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,DEPH,data_var,float64,TIME,m,Depth,depth,depth
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,ROLL,data_var,float64,TIME,degrees,Roll,platform_roll,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,PTCH,data_var,float64,TIME,degrees,Pitch,platform_pitch,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,HDNG,data_var,float64,TIME,degrees,Heading,platform_orientation,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,APSA,data_var,float64,TIME,m s-1,Speed over ground,platform_speed_wrt_ground,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,APDA,data_var,float64,TIME,degrees_T,Course over ground,platform_course,lat
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,TEMP,data_var,float64,TIME,degrees_C,Sea temperature,sea_water_temperature,temperature
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,CNDC,data_var,float64,TIME,S m-1,Electrical conductivity,sea_water_electrical_conductivity,other
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,SVEL,data_var,float64,TIME,m s-1,Sound velocity in sea water,speed_of_sound_in_sea_water,other
+data/AUVdata/lauv-xplore-5_2024_10_29.nc,PSAL,data_var,float64,TIME,0.001,Practical salinity of the water body ,sea_water_practical_salinity,salinity

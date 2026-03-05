@@ -1,0 +1,27 @@
+{
+  "time_surface": {
+    "vmin": 17.340597622683177,
+    "vmax": 20.03456939693154,
+    "q_low": 0.02,
+    "q_high": 0.98
+  },
+  "dept_mean_time": {
+    "vmin": 16.855480380849293,
+    "vmax": 19.45379066848751,
+    "q_low": 0.02,
+    "q_high": 0.98
+  },
+  "time_dept": {
+    "vmin": 16.631676371180877,
+    "vmax": 19.99244302107309,
+    "q_low": 0.02,
+    "q_high": 0.98
+  },
+  "meta": {
+    "surface_index": 0,
+    "surface_depth_m": 0.49402499198913574,
+    "n_time": 14,
+    "n_dept": 17,
+    "source_file": "data/HResNew/CMEMSnaza_20241029_HResNew.nc"
+  }
+}

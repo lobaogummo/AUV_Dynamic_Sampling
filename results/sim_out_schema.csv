@@ -1,0 +1,6 @@
+path,format_type,ascii_ratio,contains_null_byte,header_ok,title,n_columns,columns_json,notes
+data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/sim_1.out,ascii_gslib_like,1.0,False,True,temp_Simulation_1,1,"[""temp""]",
+data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/sim_10.out,ascii_gslib_like,1.0,False,True,temp_Simulation_10,1,"[""temp""]",
+data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/sim_100.out,ascii_gslib_like,1.0,False,True,temp_Simulation_100,1,"[""temp""]",
+data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/sim_11.out,ascii_gslib_like,1.0,False,True,temp_Simulation_11,1,"[""temp""]",
+data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/sim_12.out,ascii_gslib_like,1.0,False,True,temp_Simulation_12,1,"[""temp""]",
