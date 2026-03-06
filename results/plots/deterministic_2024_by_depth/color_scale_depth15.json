@@ -1,0 +1,13 @@
+{
+  "depth": 15,
+  "vmin": 14.386996842243827,
+  "vmax": 18.244044376148896,
+  "nx": 112,
+  "ny": 64,
+  "z_max": 300,
+  "source_file": "data/2024/tempIBHRes2024_15.gslib",
+  "percentiles": {
+    "low": 2,
+    "high": 98
+  }
+}
