@@ -1,0 +1,9 @@
+{
+  "mu_global": 16.67153549194336,
+  "sigma_global": 1.3472994565963745,
+  "n_images": 300,
+  "ny": 64,
+  "nx": 112,
+  "valid_pixels_per_image_mean": 6925.0,
+  "valid_pixels_total": 2077500
+}

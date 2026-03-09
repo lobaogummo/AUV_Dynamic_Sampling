@@ -1,0 +1,13 @@
+{
+  "source_file": "data/2024/tempIBHRes2024_1.gslib",
+  "shape": [
+    300,
+    64,
+    112
+  ],
+  "dtype": "float32",
+  "mask_fraction_valid": 0.9660993303571429,
+  "mask_fraction_invalid": 0.033900669642857095,
+  "z_min": 1,
+  "z_max": 300
+}
