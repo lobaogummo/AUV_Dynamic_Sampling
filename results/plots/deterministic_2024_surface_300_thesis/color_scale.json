@@ -1,0 +1,22 @@
+{
+  "vmin": 14.597144,
+  "vmax": 19.40040604,
+  "nx": 112,
+  "ny": 64,
+  "z_min": 1,
+  "z_max": 300,
+  "source_file": "data/2024/tempIBHRes2024_1.gslib",
+  "coord_source": {
+    "method": "linear_resample_from_hres_bbox",
+    "source_csv": "results/netcdf_files_summary.csv",
+    "source_row_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+    "hres_lon_min": -9.55555534362793,
+    "hres_lon_max": -8.916666984558105,
+    "hres_lat_min": 39.38888931274414,
+    "hres_lat_max": 39.86111068725586,
+    "hres_lon_count": 240,
+    "hres_lat_count": 180,
+    "target_nx": 112,
+    "target_ny": 64
+  }
+}
