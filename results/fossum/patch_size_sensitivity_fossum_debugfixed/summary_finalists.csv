@@ -1,4 +1,0 @@
-patch_w,patch_h,executed_runs,mean_icv_mean,mean_icv_std,std_icv_mean,std_icv_std,min_class_size_mean,min_class_size_min,max_class_size_mean,runtime_mean_seconds,runtime_std_seconds,execution_status
-32,20,5,3664.479690551758,0.0,3488.230141730356,0.0,35.0,35,99.0,278.7311228400009,0.8603293298030613,baseline_from_original_runs__debugfixed_rerun_not_executed
-48,32,5,3647.1157302856454,0.0,5044.095513425827,0.0,16.0,16,106.0,221.36064746000193,16.255511828241705,baseline_from_original_runs__debugfixed_rerun_not_executed
-64,36,5,3989.7650146484375,0.0,4989.64841441733,0.0,33.0,33,108.0,193.08973176,6.546832958239908,baseline_from_original_runs__debugfixed_rerun_not_executed
