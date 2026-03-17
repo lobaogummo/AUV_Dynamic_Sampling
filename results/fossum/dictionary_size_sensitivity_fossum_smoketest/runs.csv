@@ -1,0 +1,2 @@
+dictionary_size,patch_w,patch_h,seed,patches_per_image,total_patches,patch_vector_length,number_of_classes,class_sizes,icv_class_01,icv_class_02,icv_class_03,icv_class_04,mean_icv,std_icv,min_class_size,mean_class_size,max_class_size,runtime_seconds,notes
+4,72,40,11,1025,307500,2880,4,"[81, 66, 72, 81]",25871.05859375,4755.7158203125,11079.1328125,1434.2490234375,10785.0390625,9373.693102833835,66,75.0,81,105.739582899987,ok

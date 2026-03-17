@@ -1,0 +1,2 @@
+dictionary_size,executed_runs,patch_w,patch_h,patches_per_image,total_patches,patch_vector_length,mean_icv_mean,mean_icv_std,std_icv_mean,std_icv_std,min_class_size_mean,min_class_size_min,mean_class_size_mean,max_class_size_mean,runtime_mean_seconds,runtime_std_seconds,requested_runs,reduced_seed_count
+4,1,72,40,1025,307500,2880,10785.0390625,,9373.693102833835,,66.0,66,75.0,81.0,105.739582899987,,1,False

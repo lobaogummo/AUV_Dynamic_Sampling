@@ -1,0 +1,2 @@
+patch_w,patch_h,executed_runs,patches_per_image,total_patches,patch_vector_length,mean_icv_mean,mean_icv_std,std_icv_mean,std_icv_std,min_class_size_mean,min_class_size_min,mean_class_size_mean,max_class_size_mean,runtime_mean_seconds,runtime_std_seconds,requested_runs,reduced_seed_count
+72,40,2,1025,307500,2880,8771.985168457031,2846.8881187435377,8327.124361742437,1480.0717076071912,42.5,19,75.0,96.0,119.84899824999957,0.40181986308127005,2,False
