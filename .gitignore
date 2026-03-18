@@ -25,6 +25,7 @@ data/**
 # mas permite a pasta data e HResNew
 !data/
 !data/HResNew/
+!data/2024/
 
 # dentro de HResNew, ignora tudo por defeito
 data/HResNew/**
@@ -41,12 +42,12 @@ data/HResNew/**
 *.h5
 *.hdf5
 *.mat
-*.npy
+#*.npy
 *.npz
 *.parquet
 *.feather
 *.zarr/
-*.gslib
+#*.gslib
 *.out
 *.zip
 *.7z
