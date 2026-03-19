@@ -1,0 +1,5 @@
+patch_w,patch_h,executed_runs,dictionary_size,include_valid_mask,mask_encoding,feature_mode,patches_per_image,total_patches,patch_vector_length,feature_vector_length,mean_icv_mean,mean_icv_std,std_icv_mean,std_icv_std,min_class_size_mean,min_class_size_min,mean_class_size_mean,max_class_size_mean,runtime_mean_seconds,runtime_std_seconds,requested_runs,reduced_seed_count
+24,16,2,4,True,concat,raw,4361,1308300,768,17444,1454.044692993164,0.0,803.632215657442,0.0,32.0,32,75.0,125.0,364.3476947500021,3.2658311466208905,2,False
+40,24,2,4,True,concat,raw,2993,897900,1920,11972,1422.3065795898438,0.0,531.6167485655036,0.0,26.0,26,75.0,135.0,307.41075114998966,0.3389746165280903,2,False
+56,32,2,4,True,concat,raw,1881,564300,3584,7524,1932.6437072753906,0.0,469.0749434256161,0.0,30.0,30,75.0,159.0,265.2299209000048,5.072583229878951,2,False
+72,40,2,4,True,concat,raw,1025,307500,5760,4100,1643.3320922851562,0.0,449.30738893411484,0.0,46.0,46,75.0,116.0,159.875643700012,2.2028544223330746,2,False

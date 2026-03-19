@@ -1,0 +1,53 @@
+{
+  "status": "ok",
+  "num_images": 6,
+  "patch_w": 24,
+  "patch_h": 16,
+  "dictionary_size": 4,
+  "seed": 11,
+  "include_valid_mask": true,
+  "mask_encoding": "concat",
+  "feature_mode": "raw",
+  "patch_vector_length": 768,
+  "patches_per_image": 4361,
+  "feature_vector_length": 17444,
+  "first_batch_metas": [
+    {
+      "image_idx": 0,
+      "patch_start": 0,
+      "patch_end": 1024
+    },
+    {
+      "image_idx": 0,
+      "patch_start": 1024,
+      "patch_end": 2048
+    },
+    {
+      "image_idx": 0,
+      "patch_start": 2048,
+      "patch_end": 3072
+    },
+    {
+      "image_idx": 0,
+      "patch_start": 3072,
+      "patch_end": 4096
+    },
+    {
+      "image_idx": 0,
+      "patch_start": 4096,
+      "patch_end": 4361
+    },
+    {
+      "image_idx": 1,
+      "patch_start": 0,
+      "patch_end": 1024
+    }
+  ],
+  "checks": [
+    "patch_vector_contains_valid_mask_channel",
+    "patch_order_is_left_to_right_then_top_to_bottom",
+    "training_batches_follow_deterministic_image_and_patch_order",
+    "image_feature_uses_full_sparse_code_sequence",
+    "repeat_run_same_seed_produces_same_features_on_smoke_subset"
+  ]
+}

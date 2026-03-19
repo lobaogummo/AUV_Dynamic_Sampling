@@ -1,0 +1,2 @@
+patch_w,patch_h,seed,dictionary_size,include_valid_mask,mask_encoding,feature_mode,patches_per_image,total_patches,patch_vector_length,feature_vector_length,number_of_classes,class_sizes,icv_class_01,icv_class_02,icv_class_03,icv_class_04,mean_icv,std_icv,min_class_size,mean_class_size,max_class_size,runtime_seconds,notes
+40,24,11,4,True,concat,raw,2993,897900,1920,11972,4,"[135, 84, 55, 26]",1599.36669921875,2080.430419921875,606.45458984375,1402.974609375,1422.3065795898438,531.6167485655036,26,75.0,135,363.023025100003,ok
