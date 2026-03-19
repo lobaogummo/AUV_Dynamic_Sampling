@@ -20,6 +20,7 @@ from fossum_faithful_initial_utils import (
     iterate_ordered_patch_batches,
     load_numeric_inputs,
     parse_patch_sizes,
+    seeded_deterministic_image_order,
     train_dictionary_ordered_stream,
 )
 
@@ -48,7 +49,13 @@ def _assert(condition: bool, message: str) -> None:
         raise AssertionError(message)
 
 
-def _collect_first_batch_metas(X: np.ndarray, patch_h: int, patch_w: int, cfg: FaithfulInitialConfig) -> List[Tuple[int, int, int]]:
+def _collect_first_batch_metas(
+    X: np.ndarray,
+    patch_h: int,
+    patch_w: int,
+    cfg: FaithfulInitialConfig,
+    image_order: np.ndarray | None = None,
+) -> List[Tuple[int, int, int]]:
     metas: List[Tuple[int, int, int]] = []
     for meta, _batch in iterate_ordered_patch_batches(
         X=X,
@@ -57,6 +64,7 @@ def _collect_first_batch_metas(X: np.ndarray, patch_h: int, patch_w: int, cfg: F
         batch_size=cfg.dict_batch_size,
         include_valid_mask=cfg.include_valid_mask,
         mask_encoding=cfg.mask_encoding,
+        image_order=image_order,
     ):
         metas.append((meta.image_idx, meta.patch_start, meta.patch_end))
         if len(metas) >= 6:
@@ -134,15 +142,27 @@ def main() -> None:
             "Patch order should continue to next row after row end.",
         )
 
-    first_metas = _collect_first_batch_metas(X_norm_small, patch_h=patch_h, patch_w=patch_w, cfg=cfg)
+    image_order = seeded_deterministic_image_order(n_images=X_norm_small.shape[0], seed=int(args.seed))
+    first_metas = _collect_first_batch_metas(
+        X_norm_small,
+        patch_h=patch_h,
+        patch_w=patch_w,
+        cfg=cfg,
+        image_order=image_order,
+    )
     _assert(len(first_metas) > 0, "No training batches produced.")
-    _assert(first_metas[0][0] == 0 and first_metas[0][1] == 0, "First batch must start on image 0 / patch 0.")
+    _assert(first_metas[0][0] == int(image_order[0]) and first_metas[0][1] == 0, "First batch image/order mismatch.")
+    seen_image_order: List[int] = []
     for i in range(1, len(first_metas)):
         prev = first_metas[i - 1]
         cur = first_metas[i]
-        _assert(cur[0] >= prev[0], "Image order must be non-decreasing.")
-        if cur[0] == prev[0]:
+        if cur[0] != prev[0]:
+            seen_image_order.append(prev[0])
+        else:
             _assert(cur[1] == prev[2], "Patch order within image must be contiguous and unshuffled.")
+    seen_image_order.append(first_metas[-1][0])
+    expected_prefix = image_order[: len(seen_image_order)].tolist()
+    _assert(seen_image_order == expected_prefix, "Image traversal order does not match deterministic seed order.")
 
     model_a = train_dictionary_ordered_stream(
         X=X_norm_small,
@@ -203,7 +223,8 @@ def main() -> None:
         "checks": [
             "patch_vector_contains_valid_mask_channel",
             "patch_order_is_left_to_right_then_top_to_bottom",
-            "training_batches_follow_deterministic_image_and_patch_order",
+            "training_batches_follow_seeded_deterministic_image_order",
+            "training_batches_preserve_patch_order_without_shuffle",
             "image_feature_uses_full_sparse_code_sequence",
             "repeat_run_same_seed_produces_same_features_on_smoke_subset",
         ],

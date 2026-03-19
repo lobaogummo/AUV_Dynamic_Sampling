@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,17 +16,22 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
 from sklearn.cluster import AgglomerativeClustering
 
 from fossum_faithful_initial_utils import (
+    IN_PNG_DIR,
     IN_MASK,
     IN_X_NORM,
     IN_X_SST,
     ROOT,
     FaithfulInitialConfig,
+    build_png_map,
     compute_icv_sst_space,
+    deterministic_spread_order,
     encode_images_with_full_sparse_features,
     ensure_inputs,
+    image_icv_proxy,
     load_numeric_inputs,
     make_md_table,
     parse_positive_int_values,
@@ -35,10 +41,11 @@ from fossum_faithful_initial_utils import (
 
 DEFAULT_OUT_BASE = ROOT / "results" / "fossum" / "faithful_initial_dictionary_size_sensitivity"
 DEFAULT_DOC = ROOT / "docs" / "DICTIONARY_SIZE_SENSITIVITY_FOSSUM_FAITHFUL_INITIAL.md"
-DEFAULT_XDS_VALUES = [2, 4, 6, 8, 10, 12]
-DEFAULT_SEEDS = [11, 23]
+DEFAULT_XDS_VALUES = list(range(2, 13))
+DEFAULT_SEEDS = [11, 23, 37, 53, 71]
 DEFAULT_PATCH_W = 72
 DEFAULT_PATCH_H = 40
+MAX_CONTACT_IMAGES_PER_CLASS = 50
 
 
 @dataclass
@@ -232,6 +239,94 @@ def build_ranking(summary_df: pd.DataFrame) -> pd.DataFrame:
     return ranked.sort_values("balanced_score").reset_index(drop=True)
 
 
+def make_contact_sheet_from_pngs(
+    png_paths: List[Path],
+    labels: List[str],
+    out_path: Path,
+    title: str,
+    cols: int = 10,
+    thumb_size: tuple[int, int] = (180, 120),
+) -> None:
+    n = len(png_paths)
+    rows = int(math.ceil(n / cols)) if n > 0 else 1
+    pad = 8
+    title_h = 28
+    label_h = 14
+    cell_w = thumb_size[0]
+    cell_h = thumb_size[1] + label_h
+    w = pad + cols * (cell_w + pad)
+    h = title_h + pad + rows * (cell_h + pad) + pad
+
+    canvas = Image.new("RGB", (w, h), (255, 255, 255))
+    draw = ImageDraw.Draw(canvas)
+    font = ImageFont.load_default()
+    tw = draw.textlength(title, font=font)
+    draw.text(((w - tw) / 2, 6), title, fill=(0, 0, 0), font=font)
+
+    for i, (png_path, label) in enumerate(zip(png_paths, labels)):
+        r = i // cols
+        c = i % cols
+        x = pad + c * (cell_w + pad)
+        y = title_h + pad + r * (cell_h + pad)
+        with Image.open(png_path) as im:
+            rgb = im.convert("RGB").resize(thumb_size, Image.Resampling.BILINEAR)
+        canvas.paste(rgb, (x, y))
+        draw.rectangle([x, y, x + thumb_size[0], y + thumb_size[1]], outline=(120, 120, 120), width=1)
+        draw.text((x, y + thumb_size[1] + 1), label, fill=(0, 0, 0), font=font)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(out_path, format="PNG")
+
+
+def save_member_contact_sheets_from_png_source(
+    out_base: Path,
+    png_map: dict[int, Path],
+    class_indices: List[np.ndarray],
+    dictionary_size: int,
+    patch_w: int,
+    patch_h: int,
+    seed: int,
+    image_proxy: np.ndarray,
+) -> None:
+    out_dir = out_base / f"class_members_xds{dictionary_size:02d}_seed{seed:02d}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    for ci, idx in enumerate(class_indices, start=1):
+        ordered = deterministic_spread_order(indices=idx, proxy_values=image_proxy)[:MAX_CONTACT_IMAGES_PER_CLASS]
+        rows = []
+        panel_pngs: List[Path] = []
+        panel_labels: List[str] = []
+        for img_idx in ordered:
+            z = int(img_idx) + 1
+            png_path = png_map.get(z)
+            if png_path is None:
+                continue
+            panel_pngs.append(png_path)
+            panel_labels.append(f"z={z:03d}")
+            rows.append(
+                {
+                    "image_idx_0_based": int(img_idx),
+                    "image_z_1_based": z,
+                    "image_icv_proxy": float(image_proxy[int(img_idx)]),
+                    "png_path": str(png_path.relative_to(ROOT)).replace("\\", "/"),
+                }
+            )
+
+        pd.DataFrame(rows).to_csv(out_dir / f"class_{ci:02d}_members_list.csv", index=False)
+        title = (
+            f"Class {ci:02d} members (n={len(idx)}, shown={len(panel_pngs)}) "
+            f"[xds={dictionary_size}, patch={patch_w}x{patch_h}] seed={seed}, spread=deterministic"
+        )
+        make_contact_sheet_from_pngs(
+            png_paths=panel_pngs,
+            labels=panel_labels,
+            out_path=out_dir / f"class_{ci:02d}_members_panel.png",
+            title=title,
+            cols=10,
+            thumb_size=(180, 120),
+        )
+
+
 def write_report(
     doc_path: Path,
     out_base: Path,
@@ -256,8 +351,9 @@ def write_report(
         f"- patch vector uses `[patch_temp_filled, patch_valid_mask]` (mask_encoding={cfg.mask_encoding})",
         f"- include_valid_mask={cfg.include_valid_mask}",
         "- patch extraction order is deterministic (left-to-right, top-to-bottom)",
-        "- no patch-order shuffle and no image-order shuffle during dictionary training",
-        "- MiniBatchDictionaryLearning uses `shuffle=False`; variability comes from `random_state=seed`",
+        "- patch order is never shuffled; patch traversal stays left-to-right then top-to-bottom",
+        "- image order is deterministic per-seed (non-random permutation) to create controlled ICV spread",
+        "- MiniBatchDictionaryLearning uses `shuffle=False`",
         "- feature per image is the full sparse-code sequence (no mean/std reduction)",
         f"- feature_mode={cfg.feature_mode}",
         "",
@@ -270,6 +366,7 @@ def write_report(
         f"- clustering/sparse coding: `{IN_X_NORM.relative_to(ROOT).as_posix()}`",
         f"- ICV: `{IN_X_SST.relative_to(ROOT).as_posix()}`",
         f"- mask: `{IN_MASK.relative_to(ROOT).as_posix()}`",
+        f"- class member PNG source: `{IN_PNG_DIR.relative_to(ROOT).as_posix()}`",
         "",
         "## Configuration",
         f"- fixed patch size: ({patch_w},{patch_h})",
@@ -330,14 +427,18 @@ def write_report(
         f"- summary: `{(out_base / 'summary.csv').relative_to(ROOT).as_posix()}`",
         f"- ranking: `{(out_base / 'ranking.csv').relative_to(ROOT).as_posix()}`",
         f"- plots: `{(out_base / 'plots').relative_to(ROOT).as_posix()}`",
+        f"- class members: `{(out_base / 'class_members_xdsXX_seedSS').relative_to(ROOT).as_posix()}`",
     ]
     doc_path.write_text("\n".join(md), encoding="utf-8")
 
 
 def run_single(
+    out_base: Path,
     X_norm: np.ndarray,
     X_sst: np.ndarray,
     mask: np.ndarray,
+    png_map: dict[int, Path],
+    image_proxy: np.ndarray,
     patch_w: int,
     patch_h: int,
     dictionary_size: int,
@@ -393,7 +494,17 @@ def run_single(
         cfg=cfg,
     )
     labels = AgglomerativeClustering(n_clusters=cfg.n_classes, linkage="ward").fit_predict(features)
-    icv_per_class, class_sizes, _class_indices = compute_icv_sst_space(X_sst=X_sst, labels=labels, mask=mask)
+    icv_per_class, class_sizes, class_indices = compute_icv_sst_space(X_sst=X_sst, labels=labels, mask=mask)
+    save_member_contact_sheets_from_png_source(
+        out_base=out_base,
+        png_map=png_map,
+        class_indices=class_indices,
+        dictionary_size=dictionary_size,
+        patch_w=patch_w,
+        patch_h=patch_h,
+        seed=seed,
+        image_proxy=image_proxy,
+    )
     padded_icv = icv_per_class + [float("nan")] * max(0, cfg.n_classes - len(icv_per_class))
     dt = time.perf_counter() - t0
     return RunResult(
@@ -446,8 +557,10 @@ def main() -> None:
         feature_mode=str(args.feature_mode),
     )
 
-    ensure_inputs(require_png_dir=False)
+    ensure_inputs(require_png_dir=True)
     X_sst, X_norm, mask, _stats, _vlim = load_numeric_inputs()
+    png_map = build_png_map()
+    image_proxy = image_icv_proxy(X_sst=X_sst, mask=mask)
     _n_images, ny, nx = X_norm.shape
     if not valid_patch_size(ny, nx, patch_h=patch_h, patch_w=patch_w):
         raise ValueError(f"Invalid patch size ({patch_w},{patch_h}) for grid ({nx},{ny}).")
@@ -481,8 +594,7 @@ def main() -> None:
         f"include_valid_mask={cfg.include_valid_mask}, mask_encoding={cfg.mask_encoding}, feature_mode={cfg.feature_mode}"
     )
     log(
-        "Methodological lock: deterministic patch extraction + no shuffle in image/patch order; "
-        "seed only controls dictionary randomness."
+        "Methodological lock: deterministic patch order + deterministic (non-random) image order by seed."
     )
     log(f"Fixed patch size={patch_w}x{patch_h}")
     log(f"Dictionary sizes={xds_values}")
@@ -506,9 +618,12 @@ def main() -> None:
                 continue
             log(f"  run start xds={xds} seed={seed}")
             result = run_single(
+                out_base=out_base,
                 X_norm=X_norm,
                 X_sst=X_sst,
                 mask=mask,
+                png_map=png_map,
+                image_proxy=image_proxy,
                 patch_w=patch_w,
                 patch_h=patch_h,
                 dictionary_size=int(xds),

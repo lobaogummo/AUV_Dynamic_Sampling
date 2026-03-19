@@ -1,0 +1,2 @@
+patch_w,patch_h,executed_runs,dictionary_size,include_valid_mask,mask_encoding,feature_mode,patches_per_image,total_patches,patch_vector_length,feature_vector_length,mean_icv_mean,mean_icv_std,std_icv_mean,std_icv_std,min_class_size_mean,min_class_size_min,mean_class_size_mean,max_class_size_mean,runtime_mean_seconds,runtime_std_seconds,requested_runs,reduced_seed_count
+72,40,1,4,True,concat,raw,1025,307500,5760,4100,1493.8983154296875,,758.4253938877174,,52.0,52,75.0,120.0,190.4093455000002,,1,False

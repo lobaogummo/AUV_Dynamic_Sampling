@@ -6,6 +6,7 @@ This module is intentionally separated from the historical baseline scripts.
 from __future__ import annotations
 
 import json
+import math
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -182,6 +183,57 @@ def build_image_feature_from_full_sparse_codes(codes: np.ndarray, feature_mode: 
     return selected.astype(np.float32, copy=False).reshape(-1)
 
 
+def seeded_deterministic_image_order(n_images: int, seed: int) -> np.ndarray:
+    """Build a deterministic image order permutation from seed without randomness."""
+    if n_images <= 0:
+        return np.zeros((0,), dtype=np.int32)
+    if n_images == 1:
+        return np.array([0], dtype=np.int32)
+
+    start = int(abs(seed)) % n_images
+    step = (2 * (int(abs(seed)) % max(1, n_images - 1))) + 1
+    step = step % n_images
+    if step == 0:
+        step = 1
+    while math.gcd(step, n_images) != 1:
+        step = (step + 2) % n_images
+        if step == 0:
+            step = 1
+
+    order = (start + step * np.arange(n_images, dtype=np.int64)) % n_images
+    return order.astype(np.int32, copy=False)
+
+
+def image_icv_proxy(X_sst: np.ndarray, mask: np.ndarray) -> np.ndarray:
+    """Per-image variance proxy in SST/original space over common valid mask."""
+    class_pixels = X_sst[:, mask]
+    return np.var(class_pixels, axis=1, ddof=0).astype(np.float64, copy=False)
+
+
+def deterministic_spread_order(indices: np.ndarray, proxy_values: np.ndarray) -> np.ndarray:
+    """Order indices by alternating low/high proxy values to maximize visual spread."""
+    if indices.size <= 1:
+        return indices.astype(np.int32, copy=False)
+
+    idx = np.asarray(indices, dtype=np.int64)
+    sorted_pos = np.argsort(proxy_values[idx], kind="stable")
+    sorted_idx = idx[sorted_pos]
+
+    out = np.empty(sorted_idx.size, dtype=np.int64)
+    left = 0
+    right = sorted_idx.size - 1
+    k = 0
+    while left <= right:
+        out[k] = sorted_idx[left]
+        k += 1
+        left += 1
+        if left <= right:
+            out[k] = sorted_idx[right]
+            k += 1
+            right -= 1
+    return out.astype(np.int32, copy=False)
+
+
 def iterate_ordered_patch_batches(
     X: np.ndarray,
     patch_h: int,
@@ -189,10 +241,23 @@ def iterate_ordered_patch_batches(
     batch_size: int,
     include_valid_mask: bool = True,
     mask_encoding: str = "concat",
+    image_order: np.ndarray | None = None,
 ) -> Iterator[Tuple[OrderedBatchMeta, np.ndarray]]:
-    for image_idx in range(X.shape[0]):
+    if image_order is None:
+        image_order = np.arange(X.shape[0], dtype=np.int32)
+    else:
+        image_order = np.asarray(image_order, dtype=np.int32)
+        if image_order.shape != (X.shape[0],):
+            raise ValueError(f"image_order must have shape ({X.shape[0]},), got {image_order.shape}")
+        if np.unique(image_order).size != X.shape[0]:
+            raise ValueError("image_order must be a permutation without duplicates.")
+        if int(np.min(image_order)) < 0 or int(np.max(image_order)) >= X.shape[0]:
+            raise ValueError("image_order contains out-of-range indices.")
+
+    for image_idx in image_order:
+        image_idx_int = int(image_idx)
         patch_vectors = build_patch_vectors(
-            image_2d=X[image_idx],
+            image_2d=X[image_idx_int],
             patch_h=patch_h,
             patch_w=patch_w,
             include_valid_mask=include_valid_mask,
@@ -200,7 +265,7 @@ def iterate_ordered_patch_batches(
         )
         for start in range(0, patch_vectors.shape[0], batch_size):
             stop = min(start + batch_size, patch_vectors.shape[0])
-            yield OrderedBatchMeta(image_idx=image_idx, patch_start=start, patch_end=stop), patch_vectors[start:stop]
+            yield OrderedBatchMeta(image_idx=image_idx_int, patch_start=start, patch_end=stop), patch_vectors[start:stop]
 
 
 def train_dictionary_ordered_stream(
@@ -221,6 +286,7 @@ def train_dictionary_ordered_stream(
         transform_n_nonzero_coefs=min(cfg.transform_nnz, dictionary_size),
     )
 
+    image_order = seeded_deterministic_image_order(n_images=X.shape[0], seed=seed)
     for _meta, batch in iterate_ordered_patch_batches(
         X=X,
         patch_h=patch_h,
@@ -228,6 +294,7 @@ def train_dictionary_ordered_stream(
         batch_size=cfg.dict_batch_size,
         include_valid_mask=cfg.include_valid_mask,
         mask_encoding=cfg.mask_encoding,
+        image_order=image_order,
     ):
         model.partial_fit(batch)
     return model
