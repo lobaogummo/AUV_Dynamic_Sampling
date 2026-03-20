@@ -1,9 +1,0 @@
-{
-  "vmin": 14.597144,
-  "vmax": 19.40040604,
-  "nx": 112,
-  "ny": 64,
-  "z_min": 1,
-  "z_max": 300,
-  "source_file": "data/2024/tempIBHRes2024_1.gslib"
-}
