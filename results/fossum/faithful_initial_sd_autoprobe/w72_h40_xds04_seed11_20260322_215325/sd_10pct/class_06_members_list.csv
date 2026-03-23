@@ -1,0 +1,5 @@
+image_idx_0_based,image_z_1_based,image_icv_proxy,png_path
+234,235,0.5746533870697021,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z235.png
+188,189,0.7611057162284851,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z189.png
+233,234,0.6532271504402161,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z234.png
+232,233,0.6986410617828369,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z233.png

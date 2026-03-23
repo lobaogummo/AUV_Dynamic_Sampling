@@ -1,0 +1,27 @@
+{
+  "n_images": 300,
+  "min_merge_distance": 0.5940766883727998,
+  "max_merge_distance": 1041.835330391642,
+  "fractions": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "sd_values": [
+    104.1835330391642,
+    208.3670660783284,
+    312.5505991174926,
+    416.7341321566568,
+    520.917665195821
+  ],
+  "patch_w": 72,
+  "patch_h": 40,
+  "dictionary_size": 4,
+  "seed": 11,
+  "feature_mode": "raw",
+  "include_valid_mask": true,
+  "mask_encoding": "concat",
+  "standard_scaler_applied": true
+}
