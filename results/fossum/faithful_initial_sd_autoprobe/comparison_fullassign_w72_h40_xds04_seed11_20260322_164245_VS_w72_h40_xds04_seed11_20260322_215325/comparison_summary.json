@@ -1,0 +1,60 @@
+{
+  "run_no_scaler": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\faithful_initial_sd_autoprobe\\w72_h40_xds04_seed11_20260322_164245",
+  "run_with_scaler": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\faithful_initial_sd_autoprobe\\w72_h40_xds04_seed11_20260322_215325",
+  "output_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\faithful_initial_sd_autoprobe\\comparison_fullassign_w72_h40_xds04_seed11_20260322_164245_VS_w72_h40_xds04_seed11_20260322_215325",
+  "n_images": 300,
+  "recomputed_max_merge_distance_no_scaler": 30015.388556495545,
+  "recomputed_max_merge_distance_with_scaler": 1043.7000803644153,
+  "pair_summaries": [
+    {
+      "label": "n5",
+      "n_classes": 5,
+      "no_scaler_sd_fraction": 0.2,
+      "no_scaler_separation_distance": 5992.252207186412,
+      "no_scaler_recomputed_threshold": 6003.077711299109,
+      "no_scaler_used_maxclust_fallback": false,
+      "with_scaler_sd_fraction": 0.3,
+      "with_scaler_separation_distance": 312.5505991174926,
+      "with_scaler_recomputed_threshold": 313.11002410932457,
+      "with_scaler_used_maxclust_fallback": false,
+      "changed_count": 31,
+      "total_count": 300,
+      "changed_pct": 0.10333333333333333,
+      "mean_jaccard": 0.7868118359340606,
+      "min_jaccard": 0.5555555555555556,
+      "mean_prototype_mean_abs_diff": 0.08823062628507614,
+      "max_prototype_max_abs_diff": 0.2766110301017761,
+      "mean_spread_mean_abs_diff": 0.05484173856675625,
+      "max_spread_max_abs_diff": 0.20567987859249115
+    },
+    {
+      "label": "n4",
+      "n_classes": 4,
+      "no_scaler_sd_fraction": 0.3,
+      "no_scaler_separation_distance": 8988.378310779617,
+      "no_scaler_recomputed_threshold": 9004.616566948664,
+      "no_scaler_used_maxclust_fallback": false,
+      "with_scaler_sd_fraction": 0.4,
+      "with_scaler_separation_distance": 416.7341321566568,
+      "with_scaler_recomputed_threshold": 417.48003214576613,
+      "with_scaler_used_maxclust_fallback": true,
+      "changed_count": 84,
+      "total_count": 300,
+      "changed_pct": 0.28,
+      "mean_jaccard": 0.5296952957947256,
+      "min_jaccard": 0.0,
+      "mean_prototype_mean_abs_diff": 0.5462963683530688,
+      "max_prototype_max_abs_diff": 2.633213520050049,
+      "mean_spread_mean_abs_diff": 0.13406890677288175,
+      "max_spread_max_abs_diff": 0.35725313425064087
+    }
+  ],
+  "dendrogram_summary": {
+    "n_merges_compared": 299,
+    "pearson_norm": 0.9853181216178769,
+    "spearman_norm": 1.0,
+    "mean_abs_diff_norm": 0.01107250658393961,
+    "no_scaler_max_merge_distance": 29961.26103593206,
+    "with_scaler_max_merge_distance": 1041.835330391642
+  }
+}

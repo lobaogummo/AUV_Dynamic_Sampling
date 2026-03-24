@@ -1,0 +1,5 @@
+class_no_scaler,class_with_scaler,overlap_count,n_no_scaler,n_with_scaler,overlap_pct_of_no,overlap_pct_of_with,jaccard
+1,2,0,50,20,0.0,0.0,0.0
+2,1,26,50,50,0.52,0.52,0.35135135135135137
+3,4,45,50,50,0.9,0.9,0.8181818181818182
+4,3,27,50,37,0.54,0.7297297297297297,0.45
