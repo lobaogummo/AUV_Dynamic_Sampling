@@ -1,0 +1,31 @@
+{
+  "n_images": 300,
+  "min_merge_distance": 0.8335777006234132,
+  "max_merge_distance": 995.9905384892793,
+  "fractions": [
+    0.2,
+    0.22,
+    0.24,
+    0.26,
+    0.28,
+    0.3
+  ],
+  "sd_values": [
+    199.19810769785587,
+    219.11791846764143,
+    239.03772923742702,
+    258.95754000721263,
+    278.87735077699824,
+    298.7971615467838
+  ],
+  "patch_w": 72,
+  "patch_h": 40,
+  "dictionary_size": 4,
+  "seed": 37,
+  "feature_mode": "raw",
+  "include_valid_mask": true,
+  "mask_encoding": "concat",
+  "standard_scaler_applied": true,
+  "ranking_target_classes": 5,
+  "default_working_sd_fraction": 0.3
+}

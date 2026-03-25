@@ -4,6 +4,8 @@ This script is intentionally isolated from historical baseline scripts and from
 the existing faithful patch/dictionary sweeps. It runs a fixed configuration:
   - patch size: 72x40
   - dictionary size: 4
+  - StandardScaler before Ward linkage: ON by default
+  - provisional working SD fraction: 0.30 (current 5-class choice)
 Then it builds a Ward dendrogram, derives SD cuts from fractions of the
 observed maximum merge distance, and evaluates each SD cut.
 """
@@ -42,12 +44,16 @@ from fossum_faithful_initial_utils import (
 )
 
 DEFAULT_OUT_BASE = ROOT / "results" / "fossum" / "faithful_initial_sd_autoprobe"
-DEFAULT_FRACTIONS = [0.10, 0.20, 0.30, 0.40, 0.50]
+DEFAULT_WORKING_SD_FRACTION = 0.30
+DEFAULT_FRACTIONS = [DEFAULT_WORKING_SD_FRACTION]
 DEFAULT_FIXED_PATCH_W = 72
 DEFAULT_FIXED_PATCH_H = 40
 DEFAULT_FIXED_DICTIONARY_SIZE = 4
 DEFAULT_SEED = 11
+DEFAULT_APPLY_STANDARD_SCALER = True
+DEFAULT_RANKING_TARGET_CLASSES = 5
 MAX_CONTACT_IMAGES_PER_CLASS = 50
+MAX_DISTANCE_PANEL_IMAGES = 30
 
 
 @dataclass
@@ -92,11 +98,21 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--feature-mode", choices=["raw", "abs"], default="raw")
     p.add_argument("--mask-encoding", choices=["concat"], default="concat")
     p.add_argument("--no-valid-mask", action="store_true")
-    p.add_argument(
+    scaler_group = p.add_mutually_exclusive_group()
+    scaler_group.add_argument(
         "--apply-standard-scaler",
+        dest="apply_standard_scaler",
         action="store_true",
-        help="Apply StandardScaler before Ward linkage. Off by default to stay faithful to current implementation.",
+        help="Apply StandardScaler before Ward linkage (default).",
     )
+    scaler_group.add_argument(
+        "--no-standard-scaler",
+        dest="apply_standard_scaler",
+        action="store_false",
+        help="Disable StandardScaler before Ward linkage.",
+    )
+    p.set_defaults(apply_standard_scaler=DEFAULT_APPLY_STANDARD_SCALER)
+    p.add_argument("--ranking-target-classes", type=int, default=DEFAULT_RANKING_TARGET_CLASSES)
     p.add_argument("--no-pca", action="store_true", help="Skip PCA 2D visual per SD.")
     return p.parse_args()
 
@@ -212,6 +228,25 @@ def class_mean_image(class_stack: np.ndarray, mask: np.ndarray) -> np.ndarray:
     return mean_img
 
 
+def class_std_image(class_stack: np.ndarray, mask: np.ndarray) -> np.ndarray:
+    std_img = np.std(np.nan_to_num(class_stack, nan=0.0), axis=0).astype(np.float32, copy=False)
+    std_img[~mask] = np.nan
+    return std_img
+
+
+def compute_member_distances_to_prototype(
+    class_stack: np.ndarray,
+    prototype: np.ndarray,
+    mask: np.ndarray,
+) -> np.ndarray:
+    valid = mask.reshape(-1)
+    members_flat = class_stack.reshape(class_stack.shape[0], -1)[:, valid]
+    proto_flat = prototype.reshape(-1)[valid]
+    diffs = members_flat - proto_flat[np.newaxis, :]
+    # RMSE on normalized domain (same domain used to build prototypes).
+    return np.sqrt(np.nanmean(diffs * diffs, axis=1)).astype(np.float64, copy=False)
+
+
 def make_contact_sheet_from_pngs(
     png_paths: List[Path],
     labels: List[str],
@@ -299,7 +334,7 @@ def save_prototypes(
     separation_distance: float,
     vmin: float,
     vmax: float,
-) -> None:
+) -> List[np.ndarray]:
     out_dir.mkdir(parents=True, exist_ok=True)
     cmap = plt.get_cmap("coolwarm").copy()
     cmap.set_bad(color="white")
@@ -330,6 +365,105 @@ def save_prototypes(
     fig.subplots_adjust(left=0.04, right=0.97, bottom=0.08, top=0.86, wspace=0.20)
     fig.savefig(out_dir / "prototypes_panel.png", dpi=160)
     plt.close(fig)
+    return protos
+
+
+def save_class_homogeneity_artifacts(
+    out_dir: Path,
+    X_norm: np.ndarray,
+    mask: np.ndarray,
+    class_indices: List[np.ndarray],
+    class_prototypes: Sequence[np.ndarray],
+    png_map: dict[int, Path],
+    separation_distance: float,
+) -> None:
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    std_maps: List[np.ndarray] = []
+    std_values: List[np.ndarray] = []
+    for idx in class_indices:
+        std_map = class_std_image(X_norm[idx], mask=mask)
+        std_maps.append(std_map)
+        vals = std_map[mask]
+        if vals.size > 0:
+            std_values.append(vals.astype(np.float64, copy=False))
+
+    if std_values:
+        std_vmax = float(np.percentile(np.concatenate(std_values), 98.0))
+    else:
+        std_vmax = 1.0
+    if not np.isfinite(std_vmax) or std_vmax <= 0.0:
+        std_vmax = 1.0
+
+    std_cmap = plt.get_cmap("magma").copy()
+    std_cmap.set_bad(color="white")
+
+    for ci, (idx, proto, std_map) in enumerate(zip(class_indices, class_prototypes, std_maps), start=1):
+        class_stack = X_norm[idx]
+        distances = compute_member_distances_to_prototype(class_stack=class_stack, prototype=proto, mask=mask)
+        order_asc = np.argsort(distances)
+
+        fig, ax = plt.subplots(figsize=(7.2, 4.2))
+        im = ax.imshow(std_map, origin="lower", cmap=std_cmap, vmin=0.0, vmax=std_vmax, aspect="auto")
+        ax.set_title(f"Pixelwise std class {ci:02d} (n={len(idx)}) | SD={separation_distance:.6f}")
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        cbar = fig.colorbar(im, ax=ax)
+        cbar.set_label("Std on normalized temperature (-)")
+        fig.tight_layout()
+        fig.savefig(out_dir / f"class_{ci:02d}_pixel_std_map.png", dpi=150)
+        plt.close(fig)
+
+        rows = []
+        for rank_pos, local_pos in enumerate(order_asc, start=1):
+            img_idx = int(idx[int(local_pos)])
+            z = img_idx + 1
+            png_path = png_map.get(z)
+            rows.append(
+                {
+                    "distance_rank_asc": int(rank_pos),
+                    "image_idx_0_based": img_idx,
+                    "image_z_1_based": z,
+                    "distance_to_prototype_rmse_norm": float(distances[int(local_pos)]),
+                    "png_path": str(png_path.relative_to(ROOT)).replace("\\", "/") if png_path is not None else "",
+                }
+            )
+        pd.DataFrame(rows).to_csv(out_dir / f"class_{ci:02d}_distance_to_prototype.csv", index=False)
+
+        def build_panel_inputs(local_positions: np.ndarray) -> Tuple[List[Path], List[str]]:
+            panel_pngs: List[Path] = []
+            panel_labels: List[str] = []
+            for local_pos in local_positions:
+                img_idx = int(idx[int(local_pos)])
+                z = img_idx + 1
+                png_path = png_map.get(z)
+                if png_path is None:
+                    continue
+                panel_pngs.append(png_path)
+                panel_labels.append(f"z={z:03d} d={float(distances[int(local_pos)]):.4f}")
+            return panel_pngs, panel_labels
+
+        closest_local = order_asc[:MAX_DISTANCE_PANEL_IMAGES]
+        farthest_local = order_asc[::-1][:MAX_DISTANCE_PANEL_IMAGES]
+        closest_pngs, closest_labels = build_panel_inputs(closest_local)
+        farthest_pngs, farthest_labels = build_panel_inputs(farthest_local)
+
+        make_contact_sheet_from_pngs(
+            png_paths=closest_pngs,
+            labels=closest_labels,
+            out_path=out_dir / f"class_{ci:02d}_closest_to_prototype_panel.png",
+            title=f"SD={separation_distance:.6f} class {ci:02d} closest to prototype",
+            cols=8,
+            thumb_size=(180, 120),
+        )
+        make_contact_sheet_from_pngs(
+            png_paths=farthest_pngs,
+            labels=farthest_labels,
+            out_path=out_dir / f"class_{ci:02d}_farthest_from_prototype_panel.png",
+            title=f"SD={separation_distance:.6f} class {ci:02d} farthest from prototype",
+            cols=8,
+            thumb_size=(180, 120),
+        )
 
 
 def plot_dendrogram_with_cut(
@@ -424,14 +558,15 @@ def classify_behavior(
     return "plausivel", "; ".join(reasons) if reasons else "sem sinais fortes de fragmentacao/mistura"
 
 
-def rank_sd_candidates(runs_df: pd.DataFrame) -> pd.DataFrame:
+def rank_sd_candidates(runs_df: pd.DataFrame, target_classes: int = DEFAULT_RANKING_TARGET_CLASSES) -> pd.DataFrame:
+    if int(target_classes) <= 0:
+        raise ValueError("target_classes must be > 0")
     d = runs_df.copy()
-    target_classes = 4
-    d["classes_distance_from_4"] = (d["number_of_classes"] - target_classes).abs()
+    d["classes_distance_from_target"] = (d["number_of_classes"] - int(target_classes)).abs()
     d["rank_mean_icv"] = d["mean_icv"].rank(method="min", ascending=True)
     d["rank_singletons"] = d["singleton_count"].rank(method="min", ascending=True)
     d["rank_min_class"] = d["min_class_size"].rank(method="min", ascending=False)
-    d["rank_classes_balance"] = d["classes_distance_from_4"].rank(method="min", ascending=True)
+    d["rank_classes_balance"] = d["classes_distance_from_target"].rank(method="min", ascending=True)
     d["balanced_score"] = (
         0.35 * d["rank_mean_icv"]
         + 0.25 * d["rank_singletons"]
@@ -475,6 +610,7 @@ def build_markdown_report(
     patch_w: int,
     patch_h: int,
     dictionary_size: int,
+    ranking_target_classes: int,
     standard_scaler_applied: bool,
     max_merge_distance: float,
 ) -> None:
@@ -506,6 +642,8 @@ def build_markdown_report(
         f"- mask_encoding={cfg.mask_encoding}",
         f"- feature_mode={cfg.feature_mode}",
         f"- StandardScaler applied before Ward: {standard_scaler_applied}",
+        f"- ranking target classes: {ranking_target_classes}",
+        f"- default provisional SD fraction in this script: {DEFAULT_WORKING_SD_FRACTION:.2f}",
         "",
         "## Dendrogram-driven SD generation",
         f"- max merge distance observed: {max_merge_distance:.6f}",
@@ -515,7 +653,11 @@ def build_markdown_report(
         "## Summary table",
         dataframe_to_md_table(runs_df[cols], cols),
         "",
-        "## Ranking (balanced score, not only mean ICV)",
+        "## Ranking (balanced score, with target-class proximity)",
+        (
+            "- score = 0.35*rank(mean_icv) + 0.25*rank(singleton_count) + "
+            "0.20*rank(min_class_size, descending) + 0.20*rank(|n_classes-target|)"
+        ),
         dataframe_to_md_table(
             top[
                 [
@@ -546,7 +688,10 @@ def build_markdown_report(
         f"- runs: `{(out_base / 'runs.csv').relative_to(ROOT).as_posix()}`",
         f"- ranking: `{(out_base / 'ranking.csv').relative_to(ROOT).as_posix()}`",
         f"- dendrogram diagnostics: `{(out_base / 'dendrogram').relative_to(ROOT).as_posix()}`",
-        "- per-SD folders: `sd_XXpct/` (members lists/panels, prototypes, dendrogram cut, PCA).",
+        (
+            "- per-SD folders: `sd_XXpct/` (members lists/panels, prototypes, "
+            "pixel-std maps, prototype-distance CSVs, closest/farthest panels, dendrogram cut, PCA)."
+        ),
     ]
     report_path.write_text("\n".join(md), encoding="utf-8")
 
@@ -559,6 +704,7 @@ def main() -> None:
     patch_h = int(args.patch_h)
     dictionary_size = int(args.dictionary_size)
     seed = int(args.seed)
+    ranking_target_classes = int(args.ranking_target_classes)
 
     if patch_w != DEFAULT_FIXED_PATCH_W or patch_h != DEFAULT_FIXED_PATCH_H:
         raise ValueError(
@@ -572,9 +718,11 @@ def main() -> None:
         )
     if args.transform_nnz <= 0:
         raise ValueError("--transform-nnz must be > 0")
+    if ranking_target_classes <= 0:
+        raise ValueError("--ranking-target-classes must be > 0")
 
     cfg = FaithfulInitialConfig(
-        n_classes=4,
+        n_classes=ranking_target_classes,
         dict_batch_size=int(args.dict_batch_size),
         transform_nnz=int(args.transform_nnz),
         include_valid_mask=not bool(args.no_valid_mask),
@@ -592,7 +740,8 @@ def main() -> None:
         raise ValueError(f"Invalid patch size ({patch_w},{patch_h}) for grid ({nx},{ny}).")
 
     out_root = args.out_base.resolve()
-    run_name = f"w{patch_w:02d}_h{patch_h:02d}_xds{dictionary_size:02d}_seed{seed:02d}_{args.run_tag}"
+    scaler_tag = "scalerON" if bool(args.apply_standard_scaler) else "scalerOFF"
+    run_name = f"w{patch_w:02d}_h{patch_h:02d}_xds{dictionary_size:02d}_seed{seed:02d}_{scaler_tag}_{args.run_tag}"
     out_base = out_root / run_name
     out_base.mkdir(parents=True, exist_ok=True)
     out_dendro = out_base / "dendrogram"
@@ -607,7 +756,8 @@ def main() -> None:
     log(
         "Config lock: "
         f"patch={patch_w}x{patch_h}, xds={dictionary_size}, seed={seed}, "
-        f"apply_standard_scaler={bool(args.apply_standard_scaler)}"
+        f"apply_standard_scaler={bool(args.apply_standard_scaler)}, "
+        f"ranking_target_classes={ranking_target_classes}"
     )
 
     t0 = time.perf_counter()
@@ -668,6 +818,8 @@ def main() -> None:
                 "include_valid_mask": cfg.include_valid_mask,
                 "mask_encoding": cfg.mask_encoding,
                 "standard_scaler_applied": bool(args.apply_standard_scaler),
+                "ranking_target_classes": ranking_target_classes,
+                "default_working_sd_fraction": float(DEFAULT_WORKING_SD_FRACTION),
             },
             indent=2,
         ),
@@ -706,7 +858,7 @@ def main() -> None:
             image_proxy=image_proxy,
             separation_distance=sd_value,
         )
-        save_prototypes(
+        class_prototypes = save_prototypes(
             out_dir=sd_dir,
             X_norm=X_norm,
             mask=mask,
@@ -714,6 +866,15 @@ def main() -> None:
             separation_distance=sd_value,
             vmin=float(vlim[0]),
             vmax=float(vlim[1]),
+        )
+        save_class_homogeneity_artifacts(
+            out_dir=sd_dir,
+            X_norm=X_norm,
+            mask=mask,
+            class_indices=class_indices,
+            class_prototypes=class_prototypes,
+            png_map=png_map,
+            separation_distance=sd_value,
         )
         plot_dendrogram_with_cut(
             linkage_matrix=linkage_matrix,
@@ -755,7 +916,7 @@ def main() -> None:
         )
 
     runs_df = save_runs_csv(runs, out_base / "runs.csv").sort_values("sd_fraction_of_max").reset_index(drop=True)
-    ranked_df = rank_sd_candidates(runs_df)
+    ranked_df = rank_sd_candidates(runs_df, target_classes=ranking_target_classes)
     ranked_df.to_csv(out_base / "ranking.csv", index=False)
 
     build_markdown_report(
@@ -769,13 +930,14 @@ def main() -> None:
         patch_w=patch_w,
         patch_h=patch_h,
         dictionary_size=dictionary_size,
+        ranking_target_classes=ranking_target_classes,
         standard_scaler_applied=bool(args.apply_standard_scaler),
         max_merge_distance=max_merge_distance,
     )
 
     elapsed = time.perf_counter() - t0
     top = ranked_df.head(min(3, len(ranked_df)))
-    log("Top SD candidates (balanced, not only ICV):")
+    log(f"Top SD candidates (balanced, target classes={ranking_target_classes}):")
     for i, row in top.iterrows():
         log(
             f"  #{i+1} frac={row['sd_fraction_of_max']:.2f} sd={row['separation_distance']:.6f} "
