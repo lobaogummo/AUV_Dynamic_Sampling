@@ -1,0 +1,3 @@
+distance_rank_asc,global_image_idx_0_based,global_image_z_1_based,distance_to_prototype_rmse_norm,png_path
+1,152,153,0.13724075257778168,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z153.png
+2,260,261,0.13724075257778168,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z261.png

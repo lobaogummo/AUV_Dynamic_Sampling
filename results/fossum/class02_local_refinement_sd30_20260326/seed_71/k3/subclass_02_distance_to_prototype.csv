@@ -1,0 +1,13 @@
+distance_rank_asc,global_image_idx_0_based,global_image_z_1_based,distance_to_prototype_rmse_norm,png_path
+1,171,172,0.11155399680137634,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z172.png
+2,166,167,0.1390034258365631,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z167.png
+3,164,165,0.14216050505638123,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z165.png
+4,144,145,0.1951432228088379,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z145.png
+5,167,168,0.2012133151292801,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z168.png
+6,175,176,0.20437735319137573,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z176.png
+7,238,239,0.20668165385723114,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z239.png
+8,176,177,0.22536860406398773,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z177.png
+9,236,237,0.24548767507076263,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z237.png
+10,174,175,0.2672528028488159,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z175.png
+11,231,232,0.29245397448539734,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z232.png
+12,230,231,0.4129891097545624,results/plots/pngs_normalized_surface_300_thesis/X_surface_norm_z231.png
