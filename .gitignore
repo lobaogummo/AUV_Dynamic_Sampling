@@ -19,26 +19,24 @@ Thumbs.db
 .idea/
 .vscode/
 
-# ignora tudo em data
+# ignore everything under data by default
 data/**
 
-# mas permite a pasta data e HResNew
+# but allow data root and selected subfolders
 !data/
 !data/HResNew/
 !data/2024/
 !data/new_correct_data_from_FILIPA/
 
-# dentro de HResNew, ignora tudo por defeito
-data/HResNew/**
+# allow all files/subfolders inside those subfolders
+!data/HResNew/**
+!data/2024/**
+!data/new_correct_data_from_FILIPA/**
 
-# e mantém só os ficheiros que queres subir
-!data/HResNew/CMEMSnaza_20241029_HResNew.nc
-!data/HResNew/CMEMSnaza_20241030_HResNew.nc
-
-# manter README se quiseres
+# keep README if needed
 !data/README.md
 
-# Segurança extra (caso algum dado pesado fique fora de data/)
+# Extra safety (heavy files outside data/)
 *.nc
 *.h5
 *.hdf5
@@ -62,3 +60,7 @@ data/HResNew/**
 *.joblib
 *.pkl
 
+# exceptions: keep everything versioned inside these data folders
+!data/HResNew/**
+!data/2024/**
+!data/new_correct_data_from_FILIPA/**
