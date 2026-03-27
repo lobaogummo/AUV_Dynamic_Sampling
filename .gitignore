@@ -26,6 +26,7 @@ data/**
 !data/
 !data/HResNew/
 !data/2024/
+!data/new_correct_data_from_FILIPA/
 
 # dentro de HResNew, ignora tudo por defeito
 data/HResNew/**
