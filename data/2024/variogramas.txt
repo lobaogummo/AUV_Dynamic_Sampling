@@ -1,0 +1,104 @@
+1
+Type	Spherical
+Sill	1
+Major range	1000
+Minor range	400
+Vertical range	100
+
+
+2Type	Spherical
+Sill	1
+Major range	1000
+Minor range	400
+Vertical range	100
+
+3Type	Spherical
+Sill	1
+Major range	1000
+Minor range	400
+Vertical range	100
+
+4Type	Spherical
+Sill	0.9999
+Major range	1000
+Minor range	400
+Vertical range	100
+
+5Type	Spherical
+Sill	1
+Major range	1000
+Minor range	350
+Vertical range	100
+
+6Type	Spherical
+Sill	1
+Major range	1000
+Minor range	300
+Vertical range	100
+
+7Type	Spherical
+Sill	1
+Major range	800
+Minor range	300
+Vertical range	100
+
+8Type	Spherical
+Sill	0.9999
+Major range	800
+Minor range	300
+Vertical range	90
+
+9Type	Spherical
+Sill	1
+Major range	550
+Minor range	300
+Vertical range	90
+
+10Type	Spherical
+Sill	1
+Major range	500
+Minor range	200
+Vertical range	90
+
+11Type	Spherical
+Sill	1
+Major range	450
+Minor range	200
+Vertical range	80
+
+12Type	Spherical
+Sill	1
+Major range	400
+Minor range	180
+Vertical range	80
+
+
+13Type	Spherical
+Sill	1
+Major range	400
+Minor range	150
+Vertical range	80
+
+14Type	Spherical
+Sill	1
+Major range	400
+Minor range	150
+Vertical range	70
+
+15Type	Spherical
+Sill	1
+Major range	350
+Minor range	120
+Vertical range	70
+
+16Type	Spherical
+Sill	0.9999
+Major range	400
+Minor range	150
+Vertical range	60
+
+17Type	Spherical
+Sill	1
+Major range	400
+Minor range	150
+Vertical range	60
