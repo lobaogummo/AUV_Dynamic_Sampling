@@ -14,7 +14,7 @@ from typing import Dict, Iterator, List, Sequence, Tuple
 
 import numpy as np
 from numpy.lib.stride_tricks import sliding_window_view
-from sklearn.decomposition import MiniBatchDictionaryLearning
+from sklearn.decomposition import MiniBatchDictionaryLearning, sparse_encode
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,6 +42,39 @@ class OrderedBatchMeta:
     image_idx: int
     patch_start: int
     patch_end: int
+
+
+class SparseCodingModel:
+    """Lightweight fixed-dictionary sparse coding model with sklearn-compatible transform."""
+
+    def __init__(
+        self,
+        components: np.ndarray,
+        transform_algorithm: str = "omp",
+        transform_n_nonzero_coefs: int | None = 2,
+        alpha: float = 1.0,
+    ) -> None:
+        comps = np.asarray(components, dtype=np.float32)
+        if comps.ndim != 2:
+            raise ValueError(f"Dictionary components must be 2D, got {comps.shape}.")
+        self.components_ = comps
+        self.transform_algorithm = str(transform_algorithm)
+        self.transform_n_nonzero_coefs = None if transform_n_nonzero_coefs is None else int(transform_n_nonzero_coefs)
+        self.alpha = float(alpha)
+
+    def transform(self, X: np.ndarray) -> np.ndarray:
+        kwargs = {
+            "X": np.asarray(X, dtype=np.float32),
+            "dictionary": self.components_,
+            "algorithm": self.transform_algorithm,
+        }
+        if self.transform_algorithm == "omp":
+            kwargs["n_nonzero_coefs"] = (
+                None if self.transform_n_nonzero_coefs is None else min(int(self.transform_n_nonzero_coefs), self.components_.shape[0])
+            )
+        else:
+            kwargs["alpha"] = self.alpha
+        return sparse_encode(**kwargs)
 
 
 def ensure_inputs(require_png_dir: bool = False) -> None:
@@ -300,9 +333,64 @@ def train_dictionary_ordered_stream(
     return model
 
 
+def save_dictionary_artifact(
+    out_path: Path,
+    components: np.ndarray,
+    metadata: dict,
+) -> None:
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    comps = np.asarray(components, dtype=np.float32)
+    if comps.ndim != 2:
+        raise ValueError(f"Dictionary components must be 2D, got {comps.shape}.")
+    payload_meta = dict(metadata)
+    payload_meta["components_shape"] = [int(v) for v in comps.shape]
+    np.savez_compressed(
+        out_path,
+        components=comps,
+        metadata_json=np.array(json.dumps(payload_meta, sort_keys=True)),
+    )
+
+
+def load_dictionary_artifact(dictionary_path: Path) -> Tuple[np.ndarray, dict]:
+    dictionary_path = Path(dictionary_path)
+    if not dictionary_path.exists():
+        raise FileNotFoundError(f"Missing dictionary artifact: {dictionary_path}")
+    with np.load(dictionary_path, allow_pickle=False) as data:
+        if "components" not in data:
+            raise RuntimeError(f"Dictionary artifact missing 'components': {dictionary_path}")
+        components = np.asarray(data["components"], dtype=np.float32)
+        raw_meta = data["metadata_json"] if "metadata_json" in data else np.array("{}")
+    meta_text = str(raw_meta.item()) if np.asarray(raw_meta).shape == () else str(raw_meta)
+    metadata = json.loads(meta_text) if meta_text else {}
+    if components.ndim != 2:
+        raise RuntimeError(f"Invalid dictionary component shape in {dictionary_path}: {components.shape}")
+    return components, metadata
+
+
+def load_fixed_dictionary_model(
+    dictionary_path: Path,
+    cfg: FaithfulInitialConfig,
+    expected_dictionary_size: int | None = None,
+) -> Tuple[SparseCodingModel, dict]:
+    components, metadata = load_dictionary_artifact(dictionary_path)
+    n_components = int(components.shape[0])
+    if expected_dictionary_size is not None and n_components != int(expected_dictionary_size):
+        raise RuntimeError(
+            f"Dictionary size mismatch in {dictionary_path}: artifact={n_components}, expected={expected_dictionary_size}"
+        )
+    model = SparseCodingModel(
+        components=components,
+        transform_algorithm=cfg.transform_algo,
+        transform_n_nonzero_coefs=min(cfg.transform_nnz, n_components),
+        alpha=cfg.dict_alpha,
+    )
+    return model, metadata
+
+
 def encode_images_with_full_sparse_features(
     X: np.ndarray,
-    model: MiniBatchDictionaryLearning,
+    model: MiniBatchDictionaryLearning | SparseCodingModel,
     patch_h: int,
     patch_w: int,
     dictionary_size: int,

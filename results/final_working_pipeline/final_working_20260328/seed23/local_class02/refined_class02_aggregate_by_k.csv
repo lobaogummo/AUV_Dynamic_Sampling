@@ -1,0 +1,2 @@
+local_k,n_seeds,mean_global_class02_size,mean_local_weighted_mean_distance,mean_baseline_class02_mean_distance,mean_delta_local_minus_baseline,mean_min_pairwise_subclass_prototype_rmse_norm,mean_silhouette_score
+2,1,131.0,0.2396181677361481,0.2975817075894989,-0.057963539853350815,0.47037577629089355,0.3039232381888898

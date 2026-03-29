@@ -1,0 +1,24 @@
+{
+  "n_images": 300,
+  "min_merge_distance": 0.3730228230549343,
+  "max_merge_distance": 898.5350953142447,
+  "fractions": [
+    0.3
+  ],
+  "sd_values": [
+    269.5605285942734
+  ],
+  "patch_w": 72,
+  "patch_h": 40,
+  "dictionary_size": 4,
+  "seed": 97,
+  "feature_mode": "raw",
+  "include_valid_mask": true,
+  "mask_encoding": "concat",
+  "standard_scaler_applied": true,
+  "ranking_target_classes": 5,
+  "default_working_sd_fraction": 0.3,
+  "dictionary_mode": "trained",
+  "dictionary_path": null,
+  "dictionary_metadata": {}
+}

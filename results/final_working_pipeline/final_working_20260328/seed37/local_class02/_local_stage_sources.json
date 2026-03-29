@@ -1,0 +1,9 @@
+{
+  "local_stage_script": "scripts/06_class02_local_refinement_sd30.py",
+  "summary_csv_used": "results/final_working_pipeline/final_working_20260328/seed37/global/_summary_for_local_refinement.csv",
+  "final_local_dir": "results/final_working_pipeline/final_working_20260328/seed37/local_class02",
+  "local_k_values": [
+    2
+  ],
+  "local_target_class_id": 2
+}

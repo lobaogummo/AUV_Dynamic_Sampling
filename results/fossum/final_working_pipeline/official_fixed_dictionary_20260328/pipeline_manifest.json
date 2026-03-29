@@ -1,0 +1,311 @@
+{
+  "pipeline": "faithful_frozen_working_config_end_to_end",
+  "generated_at": "2026-03-28T19:12:14",
+  "run_tag": "official_fixed_dictionary_20260328",
+  "output_root": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328",
+  "inputs": {
+    "global_script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\04a_separation_distance_probe_fossum_faithful_initial.py",
+    "local_script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\06_class02_local_refinement_sd30.py",
+    "X_sst": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300.npy",
+    "X_norm": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300_norm.npy",
+    "mask": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
+    "png_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\pngs_normalized_surface_300_thesis"
+  },
+  "scripts_used": {
+    "global_stage": "scripts/04a_separation_distance_probe_fossum_faithful_initial.py",
+    "local_stage": "scripts/06_class02_local_refinement_sd30.py",
+    "runner": "scripts/07_run_faithful_pipeline_end_to_end.py"
+  },
+  "frozen_config": {
+    "patch_size": [
+      72,
+      40
+    ],
+    "dictionary_size": 4,
+    "standard_scaler": true,
+    "official_global_sd_fraction": 0.3,
+    "official_global_target_classes": 5,
+    "local_refinement_target_class_id": 2,
+    "default_local_split_k": 2,
+    "label": "patch72x40_dict4_scalerON_sd30_class02split2"
+  },
+  "runtime_config": {
+    "seeds_requested": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "fractions": [
+      0.3
+    ],
+    "ranking_target_classes": 5,
+    "run_local_refinement": true,
+    "local_k_values": [
+      2
+    ],
+    "no_pca": false,
+    "use_fixed_dictionary": true,
+    "dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
+    "overwrite": false
+  },
+  "seed_outcomes": [
+    {
+      "seed": 11,
+      "seed_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed11",
+      "global_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed11/global",
+        "error": null,
+        "checks": {
+          "runs.csv": true,
+          "ranking.csv": true,
+          "REPORT.md": true,
+          "dendrogram_cut.png": true,
+          "pca2d_classes.png": true,
+          "prototypes_panel.png": true,
+          "prototype_class_XX.png": true,
+          "class_XX_members_list.csv": true,
+          "class_XX_members_panel.png": true,
+          "class_XX_pixel_std_map.png": true,
+          "class_XX_distance_to_prototype.csv": true,
+          "class_XX_closest_to_prototype_panel.png": true,
+          "class_XX_farthest_from_prototype_panel.png": true,
+          "dendrogram_probe/tree_info.json": true
+        },
+        "details": {
+          "summary_for_local": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed11/global/_summary_for_local_refinement.csv"
+        }
+      },
+      "local_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed11/local_class02",
+        "error": null,
+        "checks": {
+          "refined_class02_summary.csv": true,
+          "refined_class02_subclass_metrics.csv": true,
+          "refined_class02_aggregate_by_k.csv": true,
+          "COMPACT_REPORT.md": true,
+          "class02_local_dendrogram.png": true,
+          "k2/compact_report.md": true,
+          "k2/subclass_prototypes_panel.png": true,
+          "k2/subclass_prototype_XX.png": true,
+          "k2/subclass_XX_members_list.csv": true,
+          "k2/subclass_XX_members_panel.png": true,
+          "k2/subclass_XX_pixel_std_map.png": true,
+          "k2/subclass_XX_distance_to_prototype.csv": true,
+          "k2/subclass_XX_closest_to_prototype_panel.png": true,
+          "k2/subclass_XX_farthest_from_prototype_panel.png": true,
+          "k2/class02_local_pca2d_subclasses.png": true
+        },
+        "details": {}
+      }
+    },
+    {
+      "seed": 23,
+      "seed_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed23",
+      "global_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed23/global",
+        "error": null,
+        "checks": {
+          "runs.csv": true,
+          "ranking.csv": true,
+          "REPORT.md": true,
+          "dendrogram_cut.png": true,
+          "pca2d_classes.png": true,
+          "prototypes_panel.png": true,
+          "prototype_class_XX.png": true,
+          "class_XX_members_list.csv": true,
+          "class_XX_members_panel.png": true,
+          "class_XX_pixel_std_map.png": true,
+          "class_XX_distance_to_prototype.csv": true,
+          "class_XX_closest_to_prototype_panel.png": true,
+          "class_XX_farthest_from_prototype_panel.png": true,
+          "dendrogram_probe/tree_info.json": true
+        },
+        "details": {
+          "summary_for_local": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed23/global/_summary_for_local_refinement.csv"
+        }
+      },
+      "local_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed23/local_class02",
+        "error": null,
+        "checks": {
+          "refined_class02_summary.csv": true,
+          "refined_class02_subclass_metrics.csv": true,
+          "refined_class02_aggregate_by_k.csv": true,
+          "COMPACT_REPORT.md": true,
+          "class02_local_dendrogram.png": true,
+          "k2/compact_report.md": true,
+          "k2/subclass_prototypes_panel.png": true,
+          "k2/subclass_prototype_XX.png": true,
+          "k2/subclass_XX_members_list.csv": true,
+          "k2/subclass_XX_members_panel.png": true,
+          "k2/subclass_XX_pixel_std_map.png": true,
+          "k2/subclass_XX_distance_to_prototype.csv": true,
+          "k2/subclass_XX_closest_to_prototype_panel.png": true,
+          "k2/subclass_XX_farthest_from_prototype_panel.png": true,
+          "k2/class02_local_pca2d_subclasses.png": true
+        },
+        "details": {}
+      }
+    },
+    {
+      "seed": 37,
+      "seed_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed37",
+      "global_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed37/global",
+        "error": null,
+        "checks": {
+          "runs.csv": true,
+          "ranking.csv": true,
+          "REPORT.md": true,
+          "dendrogram_cut.png": true,
+          "pca2d_classes.png": true,
+          "prototypes_panel.png": true,
+          "prototype_class_XX.png": true,
+          "class_XX_members_list.csv": true,
+          "class_XX_members_panel.png": true,
+          "class_XX_pixel_std_map.png": true,
+          "class_XX_distance_to_prototype.csv": true,
+          "class_XX_closest_to_prototype_panel.png": true,
+          "class_XX_farthest_from_prototype_panel.png": true,
+          "dendrogram_probe/tree_info.json": true
+        },
+        "details": {
+          "summary_for_local": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed37/global/_summary_for_local_refinement.csv"
+        }
+      },
+      "local_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed37/local_class02",
+        "error": null,
+        "checks": {
+          "refined_class02_summary.csv": true,
+          "refined_class02_subclass_metrics.csv": true,
+          "refined_class02_aggregate_by_k.csv": true,
+          "COMPACT_REPORT.md": true,
+          "class02_local_dendrogram.png": true,
+          "k2/compact_report.md": true,
+          "k2/subclass_prototypes_panel.png": true,
+          "k2/subclass_prototype_XX.png": true,
+          "k2/subclass_XX_members_list.csv": true,
+          "k2/subclass_XX_members_panel.png": true,
+          "k2/subclass_XX_pixel_std_map.png": true,
+          "k2/subclass_XX_distance_to_prototype.csv": true,
+          "k2/subclass_XX_closest_to_prototype_panel.png": true,
+          "k2/subclass_XX_farthest_from_prototype_panel.png": true,
+          "k2/class02_local_pca2d_subclasses.png": true
+        },
+        "details": {}
+      }
+    },
+    {
+      "seed": 53,
+      "seed_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed53",
+      "global_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed53/global",
+        "error": null,
+        "checks": {
+          "runs.csv": true,
+          "ranking.csv": true,
+          "REPORT.md": true,
+          "dendrogram_cut.png": true,
+          "pca2d_classes.png": true,
+          "prototypes_panel.png": true,
+          "prototype_class_XX.png": true,
+          "class_XX_members_list.csv": true,
+          "class_XX_members_panel.png": true,
+          "class_XX_pixel_std_map.png": true,
+          "class_XX_distance_to_prototype.csv": true,
+          "class_XX_closest_to_prototype_panel.png": true,
+          "class_XX_farthest_from_prototype_panel.png": true,
+          "dendrogram_probe/tree_info.json": true
+        },
+        "details": {
+          "summary_for_local": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed53/global/_summary_for_local_refinement.csv"
+        }
+      },
+      "local_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed53/local_class02",
+        "error": null,
+        "checks": {
+          "refined_class02_summary.csv": true,
+          "refined_class02_subclass_metrics.csv": true,
+          "refined_class02_aggregate_by_k.csv": true,
+          "COMPACT_REPORT.md": true,
+          "class02_local_dendrogram.png": true,
+          "k2/compact_report.md": true,
+          "k2/subclass_prototypes_panel.png": true,
+          "k2/subclass_prototype_XX.png": true,
+          "k2/subclass_XX_members_list.csv": true,
+          "k2/subclass_XX_members_panel.png": true,
+          "k2/subclass_XX_pixel_std_map.png": true,
+          "k2/subclass_XX_distance_to_prototype.csv": true,
+          "k2/subclass_XX_closest_to_prototype_panel.png": true,
+          "k2/subclass_XX_farthest_from_prototype_panel.png": true,
+          "k2/class02_local_pca2d_subclasses.png": true
+        },
+        "details": {}
+      }
+    },
+    {
+      "seed": 71,
+      "seed_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71",
+      "global_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71/global",
+        "error": null,
+        "checks": {
+          "runs.csv": true,
+          "ranking.csv": true,
+          "REPORT.md": true,
+          "dendrogram_cut.png": true,
+          "pca2d_classes.png": true,
+          "prototypes_panel.png": true,
+          "prototype_class_XX.png": true,
+          "class_XX_members_list.csv": true,
+          "class_XX_members_panel.png": true,
+          "class_XX_pixel_std_map.png": true,
+          "class_XX_distance_to_prototype.csv": true,
+          "class_XX_closest_to_prototype_panel.png": true,
+          "class_XX_farthest_from_prototype_panel.png": true,
+          "dendrogram_probe/tree_info.json": true
+        },
+        "details": {
+          "summary_for_local": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71/global/_summary_for_local_refinement.csv"
+        }
+      },
+      "local_stage": {
+        "status": "success",
+        "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71/local_class02",
+        "error": null,
+        "checks": {
+          "refined_class02_summary.csv": true,
+          "refined_class02_subclass_metrics.csv": true,
+          "refined_class02_aggregate_by_k.csv": true,
+          "COMPACT_REPORT.md": true,
+          "class02_local_dendrogram.png": true,
+          "k2/compact_report.md": true,
+          "k2/subclass_prototypes_panel.png": true,
+          "k2/subclass_prototype_XX.png": true,
+          "k2/subclass_XX_members_list.csv": true,
+          "k2/subclass_XX_members_panel.png": true,
+          "k2/subclass_XX_pixel_std_map.png": true,
+          "k2/subclass_XX_distance_to_prototype.csv": true,
+          "k2/subclass_XX_closest_to_prototype_panel.png": true,
+          "k2/subclass_XX_farthest_from_prototype_panel.png": true,
+          "k2/class02_local_pca2d_subclasses.png": true
+        },
+        "details": {}
+      }
+    }
+  ],
+  "overall_success": true
+}

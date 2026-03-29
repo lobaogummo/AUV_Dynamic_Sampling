@@ -39,6 +39,8 @@ from fossum_faithful_initial_utils import (
     deterministic_spread_order,
     encode_images_with_full_sparse_features,
     image_icv_proxy,
+    load_fixed_dictionary_model,
+    save_dictionary_artifact,
     train_dictionary_ordered_stream,
     valid_patch_size,
 )
@@ -114,6 +116,23 @@ def parse_args() -> argparse.Namespace:
     p.set_defaults(apply_standard_scaler=DEFAULT_APPLY_STANDARD_SCALER)
     p.add_argument("--ranking-target-classes", type=int, default=DEFAULT_RANKING_TARGET_CLASSES)
     p.add_argument("--no-pca", action="store_true", help="Skip PCA 2D visual per SD.")
+    p.add_argument(
+        "--use-fixed-dictionary",
+        action="store_true",
+        help="Load a pre-saved dictionary artifact instead of training a new dictionary for this run.",
+    )
+    p.add_argument(
+        "--dictionary-path",
+        type=Path,
+        default=None,
+        help="Path to dictionary artifact (.npz) used when --use-fixed-dictionary is enabled.",
+    )
+    p.add_argument(
+        "--save-dictionary-path",
+        type=Path,
+        default=None,
+        help="Optional output path to save the trained dictionary artifact (.npz). Ignored in fixed mode.",
+    )
     return p.parse_args()
 
 
@@ -613,6 +632,8 @@ def build_markdown_report(
     ranking_target_classes: int,
     standard_scaler_applied: bool,
     max_merge_distance: float,
+    dictionary_mode: str,
+    dictionary_path: str | None,
 ) -> None:
     top = ranked_df.head(min(3, len(ranked_df)))
     cols = [
@@ -644,6 +665,8 @@ def build_markdown_report(
         f"- StandardScaler applied before Ward: {standard_scaler_applied}",
         f"- ranking target classes: {ranking_target_classes}",
         f"- default provisional SD fraction in this script: {DEFAULT_WORKING_SD_FRACTION:.2f}",
+        f"- dictionary mode: {dictionary_mode}",
+        f"- dictionary artifact path: {dictionary_path if dictionary_path is not None else 'trained in this run'}",
         "",
         "## Dendrogram-driven SD generation",
         f"- max merge distance observed: {max_merge_distance:.6f}",
@@ -720,6 +743,12 @@ def main() -> None:
         raise ValueError("--transform-nnz must be > 0")
     if ranking_target_classes <= 0:
         raise ValueError("--ranking-target-classes must be > 0")
+    use_fixed_dictionary = bool(args.use_fixed_dictionary)
+    if args.dictionary_path is not None and not use_fixed_dictionary:
+        # Backward-compatible convenience: passing dictionary-path implies fixed mode.
+        use_fixed_dictionary = True
+    if use_fixed_dictionary and args.dictionary_path is None:
+        raise ValueError("--dictionary-path is required when --use-fixed-dictionary is enabled.")
 
     cfg = FaithfulInitialConfig(
         n_classes=ranking_target_classes,
@@ -761,14 +790,36 @@ def main() -> None:
     )
 
     t0 = time.perf_counter()
-    model = train_dictionary_ordered_stream(
-        X=X_norm,
-        patch_h=patch_h,
-        patch_w=patch_w,
-        seed=seed,
-        dictionary_size=dictionary_size,
-        cfg=cfg,
-    )
+    dictionary_mode = "fixed" if use_fixed_dictionary else "trained"
+    dictionary_path_for_report: str | None = None
+    dictionary_metadata: dict = {}
+    if use_fixed_dictionary and args.save_dictionary_path is not None:
+        log("--save-dictionary-path ignored in fixed-dictionary mode.")
+    if use_fixed_dictionary:
+        dictionary_path = Path(args.dictionary_path).resolve()
+        model, dictionary_metadata = load_fixed_dictionary_model(
+            dictionary_path=dictionary_path,
+            cfg=cfg,
+            expected_dictionary_size=dictionary_size,
+        )
+        dictionary_path_for_report = str(dictionary_path)
+        meta_patch_w = dictionary_metadata.get("patch_w")
+        meta_patch_h = dictionary_metadata.get("patch_h")
+        if meta_patch_w is not None and int(meta_patch_w) != patch_w:
+            raise RuntimeError(f"Dictionary patch_w mismatch: artifact={meta_patch_w}, requested={patch_w}")
+        if meta_patch_h is not None and int(meta_patch_h) != patch_h:
+            raise RuntimeError(f"Dictionary patch_h mismatch: artifact={meta_patch_h}, requested={patch_h}")
+        log(f"Loaded fixed dictionary from: {dictionary_path}")
+    else:
+        model = train_dictionary_ordered_stream(
+            X=X_norm,
+            patch_h=patch_h,
+            patch_w=patch_w,
+            seed=seed,
+            dictionary_size=dictionary_size,
+            cfg=cfg,
+        )
+        log("Trained dictionary in this run.")
     features, patches_per_image, patch_vector_length, feature_vector_length = encode_images_with_full_sparse_features(
         X=X_norm,
         model=model,
@@ -781,6 +832,33 @@ def main() -> None:
         f"Feature extraction done: features={features.shape}, patches_per_image={patches_per_image}, "
         f"patch_vector_length={patch_vector_length}, feature_vector_length={feature_vector_length}"
     )
+    if not use_fixed_dictionary and args.save_dictionary_path is not None:
+        save_path = Path(args.save_dictionary_path).resolve()
+        save_dictionary_artifact(
+            out_path=save_path,
+            components=np.asarray(model.components_, dtype=np.float32),
+            metadata={
+                "schema_version": 1,
+                "producer_script": "04a_separation_distance_probe_fossum_faithful_initial.py",
+                "seed": int(seed),
+                "patch_w": int(patch_w),
+                "patch_h": int(patch_h),
+                "dictionary_size": int(dictionary_size),
+                "dict_alpha": float(cfg.dict_alpha),
+                "dict_batch_size": int(cfg.dict_batch_size),
+                "transform_algo": str(cfg.transform_algo),
+                "transform_nnz": int(cfg.transform_nnz),
+                "feature_mode": str(cfg.feature_mode),
+                "include_valid_mask": bool(cfg.include_valid_mask),
+                "mask_encoding": str(cfg.mask_encoding),
+                "patches_per_image": int(patches_per_image),
+                "patch_vector_length": int(patch_vector_length),
+                "feature_vector_length": int(feature_vector_length),
+                "apply_standard_scaler": bool(args.apply_standard_scaler),
+                "source_paths": {k: str(v) for k, v in in_paths.items()},
+            },
+        )
+        log(f"Saved trained dictionary artifact to: {save_path}")
 
     features_for_tree = features.astype(np.float64, copy=False)
     if args.apply_standard_scaler:
@@ -820,6 +898,9 @@ def main() -> None:
                 "standard_scaler_applied": bool(args.apply_standard_scaler),
                 "ranking_target_classes": ranking_target_classes,
                 "default_working_sd_fraction": float(DEFAULT_WORKING_SD_FRACTION),
+                "dictionary_mode": dictionary_mode,
+                "dictionary_path": dictionary_path_for_report,
+                "dictionary_metadata": dictionary_metadata,
             },
             indent=2,
         ),
@@ -933,6 +1014,8 @@ def main() -> None:
         ranking_target_classes=ranking_target_classes,
         standard_scaler_applied=bool(args.apply_standard_scaler),
         max_merge_distance=max_merge_distance,
+        dictionary_mode=dictionary_mode,
+        dictionary_path=dictionary_path_for_report,
     )
 
     elapsed = time.perf_counter() - t0

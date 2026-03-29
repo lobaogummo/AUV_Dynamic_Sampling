@@ -1,0 +1,9 @@
+{
+  "local_stage_script": "scripts/06_class02_local_refinement_sd30.py",
+  "summary_csv_used": "results/fossum/final_working_pipeline/e2e_seed11_20260328/seed11/global/_summary_for_local_refinement.csv",
+  "final_local_dir": "results/fossum/final_working_pipeline/e2e_seed11_20260328/seed11/local_class02",
+  "local_k_values": [
+    2
+  ],
+  "local_target_class_id": 2
+}

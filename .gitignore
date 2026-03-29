@@ -25,7 +25,7 @@ data/**
 # but allow data root and selected subfolders
 !data/
 !data/HResNew/
-!data/2024/
+
 !data/new_correct_data_from_FILIPA/
 
 # allow all files/subfolders inside those subfolders

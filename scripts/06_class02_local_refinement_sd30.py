@@ -26,6 +26,7 @@ from fossum_faithful_initial_utils import (
     deterministic_spread_order,
     encode_images_with_full_sparse_features,
     image_icv_proxy,
+    load_fixed_dictionary_model,
     train_dictionary_ordered_stream,
 )
 
@@ -62,6 +63,17 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--dict-batch-size", type=int, default=4096)
     p.add_argument("--transform-nnz", type=int, default=2)
     p.add_argument("--no-pca", action="store_true")
+    p.add_argument(
+        "--use-fixed-dictionary",
+        action="store_true",
+        help="Load a pre-saved dictionary artifact instead of training a new dictionary per seed.",
+    )
+    p.add_argument(
+        "--dictionary-path",
+        type=Path,
+        default=None,
+        help="Path to dictionary artifact (.npz) used when --use-fixed-dictionary is enabled.",
+    )
     return p.parse_args()
 
 
@@ -535,6 +547,40 @@ def main() -> None:
         mask_encoding="concat",
         feature_mode="raw",
     )
+    use_fixed_dictionary = bool(args.use_fixed_dictionary)
+    if args.dictionary_path is not None and not use_fixed_dictionary:
+        # Backward-compatible convenience: passing dictionary-path implies fixed mode.
+        use_fixed_dictionary = True
+    if use_fixed_dictionary and args.dictionary_path is None:
+        raise ValueError("--dictionary-path is required when --use-fixed-dictionary is enabled.")
+
+    fixed_features_scaled: np.ndarray | None = None
+    dictionary_mode = "fixed" if use_fixed_dictionary else "trained"
+    dictionary_path_for_report = str(Path(args.dictionary_path).resolve()) if use_fixed_dictionary else ""
+    if use_fixed_dictionary:
+        dictionary_path = Path(args.dictionary_path).resolve()
+        fixed_model, dictionary_metadata = load_fixed_dictionary_model(
+            dictionary_path=dictionary_path,
+            cfg=cfg,
+            expected_dictionary_size=DICTIONARY_SIZE,
+        )
+        meta_patch_w = dictionary_metadata.get("patch_w")
+        meta_patch_h = dictionary_metadata.get("patch_h")
+        if meta_patch_w is not None and int(meta_patch_w) != PATCH_W:
+            raise RuntimeError(f"Dictionary patch_w mismatch: artifact={meta_patch_w}, expected={PATCH_W}")
+        if meta_patch_h is not None and int(meta_patch_h) != PATCH_H:
+            raise RuntimeError(f"Dictionary patch_h mismatch: artifact={meta_patch_h}, expected={PATCH_H}")
+        log(f"Using fixed dictionary from: {dictionary_path}")
+        features, _ppi, _pvl, _fvl = encode_images_with_full_sparse_features(
+            X=X_norm,
+            model=fixed_model,
+            patch_h=PATCH_H,
+            patch_w=PATCH_W,
+            dictionary_size=DICTIONARY_SIZE,
+            cfg=cfg,
+        )
+        fixed_features_scaled = StandardScaler().fit_transform(features.astype(np.float64, copy=False))
+        log("Encoded full dataset once using fixed dictionary (reused for all requested seeds).")
 
     run_rows: List[dict] = []
     subclass_rows: List[pd.DataFrame] = []
@@ -548,24 +594,29 @@ def main() -> None:
         baseline_dist_csv = sr.sd_dir / "class_02_distance_to_prototype.csv"
         baseline_dist_df = pd.read_csv(baseline_dist_csv) if baseline_dist_csv.exists() else pd.DataFrame()
 
-        log(f"Seed {sr.seed}: training dictionary/features (global representation) to refine class_02 only...")
-        model = train_dictionary_ordered_stream(
-            X=X_norm,
-            patch_h=PATCH_H,
-            patch_w=PATCH_W,
-            seed=sr.seed,
-            dictionary_size=DICTIONARY_SIZE,
-            cfg=cfg,
-        )
-        features, _ppi, _pvl, _fvl = encode_images_with_full_sparse_features(
-            X=X_norm,
-            model=model,
-            patch_h=PATCH_H,
-            patch_w=PATCH_W,
-            dictionary_size=DICTIONARY_SIZE,
-            cfg=cfg,
-        )
-        features_scaled = StandardScaler().fit_transform(features.astype(np.float64, copy=False))
+        if use_fixed_dictionary:
+            assert fixed_features_scaled is not None
+            log(f"Seed {sr.seed}: reusing fixed-dictionary features for class_02 local refinement...")
+            features_scaled = fixed_features_scaled
+        else:
+            log(f"Seed {sr.seed}: training dictionary/features (global representation) to refine class_02 only...")
+            model = train_dictionary_ordered_stream(
+                X=X_norm,
+                patch_h=PATCH_H,
+                patch_w=PATCH_W,
+                seed=sr.seed,
+                dictionary_size=DICTIONARY_SIZE,
+                cfg=cfg,
+            )
+            features, _ppi, _pvl, _fvl = encode_images_with_full_sparse_features(
+                X=X_norm,
+                model=model,
+                patch_h=PATCH_H,
+                patch_w=PATCH_W,
+                dictionary_size=DICTIONARY_SIZE,
+                cfg=cfg,
+            )
+            features_scaled = StandardScaler().fit_transform(features.astype(np.float64, copy=False))
         local_features = features_scaled[class02_idx_global]
         X_norm_local = X_norm[class02_idx_global]
 
@@ -649,6 +700,8 @@ def main() -> None:
                     "global_number_of_classes_at_sd30": sr.number_of_classes,
                     "global_class_id": WORKING_CLASS_ID,
                     "global_class_size": n_class02,
+                    "dictionary_mode": dictionary_mode,
+                    "dictionary_path": dictionary_path_for_report,
                     "local_k": int(k),
                     "local_n_subclasses": int(len(subclass_indices_local)),
                     "subclass_sizes": json.dumps([int(v) for v in size_values.tolist()]),
@@ -674,6 +727,8 @@ def main() -> None:
                 f"- global run dir: `{sr.run_dir}`",
                 f"- global SD dir: `{sr.sd_dir.relative_to(ROOT).as_posix()}`",
                 f"- global class_02 size: {n_class02}",
+                f"- dictionary mode: {dictionary_mode}",
+                (f"- dictionary path: `{dictionary_path_for_report}`" if dictionary_path_for_report else "- dictionary path: n/a"),
                 f"- subclass sizes: {size_values.tolist()}",
                 f"- baseline class_02 mean/q90/max distance: {baseline_mean:.6f} / {baseline_q90:.6f} / {baseline_max:.6f}",
                 f"- local weighted mean distance: {weighted_mean:.6f}",
@@ -738,6 +793,8 @@ def main() -> None:
         f"- source summary: `{args.summary_csv.resolve()}`",
         f"- seeds analyzed: {[int(s) for s in args.seeds]}",
         f"- k values tested: {k_values}",
+        f"- dictionary mode: {dictionary_mode}",
+        (f"- dictionary path: `{dictionary_path_for_report}`" if dictionary_path_for_report else "- dictionary path: n/a"),
         f"- output root: `{out_root}`",
         "",
         "Main files:",

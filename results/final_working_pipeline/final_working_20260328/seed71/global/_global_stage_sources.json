@@ -1,0 +1,7 @@
+{
+  "global_stage_script": "scripts/04a_separation_distance_probe_fossum_faithful_initial.py",
+  "raw_run_dir": "results/final_working_pipeline/final_working_20260328/_tmp/seed71/global_stage_out/w72_h40_xds04_seed71_scalerON_official_sd30_seed71",
+  "official_sd_dir_in_raw_run": "results/final_working_pipeline/final_working_20260328/_tmp/seed71/global_stage_out/w72_h40_xds04_seed71_scalerON_official_sd30_seed71/sd_30pct",
+  "final_global_dir": "results/final_working_pipeline/final_working_20260328/seed71/global",
+  "official_sd_fraction": 0.3
+}

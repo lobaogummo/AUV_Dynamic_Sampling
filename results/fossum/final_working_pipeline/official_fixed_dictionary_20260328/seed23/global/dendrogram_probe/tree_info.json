@@ -1,0 +1,52 @@
+{
+  "n_images": 300,
+  "min_merge_distance": 0.5940766883727998,
+  "max_merge_distance": 1041.835330391642,
+  "fractions": [
+    0.3
+  ],
+  "sd_values": [
+    312.5505991174926
+  ],
+  "patch_w": 72,
+  "patch_h": 40,
+  "dictionary_size": 4,
+  "seed": 23,
+  "feature_mode": "raw",
+  "include_valid_mask": true,
+  "mask_encoding": "concat",
+  "standard_scaler_applied": true,
+  "ranking_target_classes": 5,
+  "default_working_sd_fraction": 0.3,
+  "dictionary_mode": "fixed",
+  "dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
+  "dictionary_metadata": {
+    "apply_standard_scaler": true,
+    "components_shape": [
+      4,
+      5760
+    ],
+    "dict_alpha": 1.0,
+    "dict_batch_size": 4096,
+    "dictionary_size": 4,
+    "feature_mode": "raw",
+    "feature_vector_length": 4100,
+    "include_valid_mask": true,
+    "mask_encoding": "concat",
+    "patch_h": 40,
+    "patch_vector_length": 5760,
+    "patch_w": 72,
+    "patches_per_image": 1025,
+    "producer_script": "04a_separation_distance_probe_fossum_faithful_initial.py",
+    "schema_version": 1,
+    "seed": 11,
+    "source_paths": {
+      "X_norm": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300_norm.npy",
+      "X_sst": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300.npy",
+      "mask": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
+      "png_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\pngs_normalized_surface_300_thesis"
+    },
+    "transform_algo": "omp",
+    "transform_nnz": 2
+  }
+}

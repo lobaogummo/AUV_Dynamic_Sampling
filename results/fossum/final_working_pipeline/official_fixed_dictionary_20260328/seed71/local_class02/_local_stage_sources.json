@@ -1,0 +1,11 @@
+{
+  "local_stage_script": "scripts/06_class02_local_refinement_sd30.py",
+  "summary_csv_used": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71/global/_summary_for_local_refinement.csv",
+  "final_local_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed71/local_class02",
+  "local_k_values": [
+    2
+  ],
+  "local_target_class_id": 2,
+  "dictionary_mode": "fixed",
+  "dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz"
+}

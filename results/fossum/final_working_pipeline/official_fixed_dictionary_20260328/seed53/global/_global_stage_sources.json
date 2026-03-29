@@ -1,0 +1,9 @@
+{
+  "global_stage_script": "scripts/04a_separation_distance_probe_fossum_faithful_initial.py",
+  "raw_run_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/_tmp/seed53/global_stage_out/w72_h40_xds04_seed53_scalerON_official_sd30_seed53",
+  "official_sd_dir_in_raw_run": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/_tmp/seed53/global_stage_out/w72_h40_xds04_seed53_scalerON_official_sd30_seed53/sd_30pct",
+  "final_global_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/seed53/global",
+  "official_sd_fraction": 0.3,
+  "dictionary_mode": "fixed",
+  "dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz"
+}
