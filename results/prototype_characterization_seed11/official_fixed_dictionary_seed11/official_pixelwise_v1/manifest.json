@@ -1,0 +1,253 @@
+{
+  "generated_at_utc": "2026-04-03T12:53:37.277708+00:00",
+  "seed_id": 11,
+  "local_k": 2,
+  "state_config_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\configs\\thesis_official_state.json",
+  "source": {
+    "official_pipeline_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328",
+    "compact_model_npz": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\compact_model\\v0_base\\compact_model_final.npz",
+    "compact_model_manifest": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\compact_model\\v0_base\\compact_model_manifest.json",
+    "dataset_X_norm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300_norm.npy",
+    "dataset_mask_common": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy"
+  },
+  "counts": {
+    "n_prototypes": 7,
+    "n_global_prototypes": 5,
+    "n_local_prototypes": 2,
+    "n_pixels_total": 48475
+  },
+  "outputs": {
+    "output_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1",
+    "prototype_summary_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\prototype_summary.csv",
+    "pixel_descriptors_all_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\pixel_descriptors_all.csv",
+    "region_descriptors_all_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\region_descriptors_all.csv"
+  },
+  "prototype_records": [
+    {
+      "scope": "global",
+      "prototype_key": "class_01",
+      "prototype_name": "prototype_class_01",
+      "metadata": {
+        "class_id": 1,
+        "source": "compact_model"
+      },
+      "threshold": -1.251245379447937,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_01\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "global",
+      "prototype_key": "class_02",
+      "prototype_name": "prototype_class_02",
+      "metadata": {
+        "class_id": 2,
+        "source": "compact_model"
+      },
+      "threshold": -0.41301867365837097,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_02\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "global",
+      "prototype_key": "class_03",
+      "prototype_name": "prototype_class_03",
+      "metadata": {
+        "class_id": 3,
+        "source": "compact_model"
+      },
+      "threshold": 0.4666007161140442,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_03\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "global",
+      "prototype_key": "class_04",
+      "prototype_name": "prototype_class_04",
+      "metadata": {
+        "class_id": 4,
+        "source": "compact_model"
+      },
+      "threshold": 0.5092202425003052,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_04\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "global",
+      "prototype_key": "class_05",
+      "prototype_name": "prototype_class_05",
+      "metadata": {
+        "class_id": 5,
+        "source": "compact_model"
+      },
+      "threshold": 1.2857416868209839,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\global\\class_05\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "local_class02",
+      "prototype_key": "k2::subclass_01",
+      "prototype_name": "subclass_prototype_01",
+      "metadata": {
+        "local_k": 2,
+        "subclass_id": 1,
+        "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\local_class02\\k2\\subclass_01_distance_to_prototype.csv",
+        "n_members": 105
+      },
+      "threshold": -0.4932413101196289,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_01\\figures\\boundary_map.png"
+      }
+    },
+    {
+      "scope": "local_class02",
+      "prototype_key": "k2::subclass_02",
+      "prototype_name": "subclass_prototype_02",
+      "metadata": {
+        "local_k": 2,
+        "subclass_id": 2,
+        "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\local_class02\\k2\\subclass_02_distance_to_prototype.csv",
+        "n_members": 17
+      },
+      "threshold": 0.07871702313423157,
+      "threshold_method": "otsu",
+      "pixel_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\pixel_descriptors.csv",
+      "region_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\region_descriptors.csv",
+      "rasters": {
+        "temp_mean": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\temp_mean.npy",
+        "temp_std": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\temp_std.npy",
+        "region_label_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\region_label_id.npy",
+        "boundary_mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\boundary_mask.npy",
+        "boundary_score": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\boundary_score.npy",
+        "gradient_magnitude": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\gradient_magnitude.npy",
+        "gradient_direction": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\gradient_direction.npy",
+        "distance_to_boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\distance_to_boundary.npy",
+        "region_id": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\region_id.npy",
+        "mask_valid": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\rasters\\mask_valid.npy"
+      },
+      "figures": {
+        "segment_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\figures\\segment_map.png",
+        "gradient_magnitude_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\figures\\gradient_magnitude_map.png",
+        "boundary_score_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\figures\\boundary_score_map.png",
+        "boundary_map": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\prototype_characterization_seed11\\official_fixed_dictionary_seed11\\official_pixelwise_v1\\local_class02\\k2_subclass_02\\figures\\boundary_map.png"
+      }
+    }
+  ],
+  "notes": [
+    "Downstream-only characterization stage built on official frozen prototypes.",
+    "No clustering or class membership changes are performed here.",
+    "Pixel-wise descriptors include lat/lon, temp_mean, temp_std, region_label, and boundary_score."
+  ]
+}

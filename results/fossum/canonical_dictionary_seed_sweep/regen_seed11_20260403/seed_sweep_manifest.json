@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-04-03T13:51:05",
+  "run_root": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403",
+  "seeds_tested": [
+    11
+  ],
+  "fractions": [
+    0.3
+  ],
+  "data_range_for_ssim": 4.69903039932251,
+  "data_min": -2.0229663848876953,
+  "data_max": 2.6760640144348145,
+  "selected_seed": 11,
+  "summary_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_summary.csv",
+  "ranked_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_ranked.csv",
+  "per_class_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_per_class_metrics.csv",
+  "report_md": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/CANONICAL_DICTIONARY_REPORT.md",
+  "canonical_dictionary_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
+  "canonical_manifest_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary\\canonical_dictionary_manifest.json"
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T17:51:55",
+  "generated_at": "2026-04-03T13:51:39",
   "model_version": "v0_base",
   "model_type": "compact_model_base",
   "canonical_seed": 11,
@@ -34,14 +34,14 @@
     "normalized",
     "original"
   ],
-  "canonical_dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
-  "canonical_dictionary_manifest_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary_manifest.json",
-  "source_run_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global",
-  "source_pipeline_manifest_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\pipeline_manifest.json",
+  "canonical_dictionary_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
+  "canonical_dictionary_manifest_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary\\canonical_dictionary_manifest.json",
+  "source_run_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global",
+  "source_pipeline_manifest_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\pipeline_manifest.json",
   "source_selection": {
     "selection_mode": "auto_from_pipeline_manifests",
-    "source_run_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global",
-    "pipeline_manifest_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\pipeline_manifest.json",
+    "source_run_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global",
+    "pipeline_manifest_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\pipeline_manifest.json",
     "run_tag": "official_fixed_dictionary_20260328",
     "generated_at": "2026-03-28T19:12:14",
     "use_fixed_dictionary": true,
@@ -83,10 +83,10 @@
     "output_dir": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/_tmp/seed11/global_stage_out/w72_h40_xds04_seed11_scalerON_official_sd30_seed11/sd_30pct"
   },
   "source_dataset_artifacts": {
-    "X_sst": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300.npy",
-    "X_norm": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300_norm.npy",
-    "mask_common": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
-    "global_stats": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\global_stats.json"
+    "X_sst": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300.npy",
+    "X_norm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300_norm.npy",
+    "mask_common": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy",
+    "global_stats": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\global_stats.json"
   },
   "normalization_metadata": {
     "mu_global": 16.671541213989258,
@@ -96,7 +96,7 @@
     "stats_nx": 112
   },
   "masking_notes": {
-    "mask_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
+    "mask_source": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy",
     "mask_policy": "Common valid mask applied to all domains. Pixels outside mask are stored as NaN in prototypes/std maps.",
     "valid_pixel_count": 6925,
     "total_pixel_count": 7168
@@ -153,8 +153,8 @@
     "source_runner": "scripts/07_run_faithful_pipeline_end_to_end.py"
   },
   "compact_model_files": {
-    "npz_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\compact_model\\v0_base\\compact_model_final.npz",
-    "manifest_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\compact_model\\v0_base\\compact_model_manifest.json"
+    "npz_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\compact_model\\v0_base\\compact_model_final.npz",
+    "manifest_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\compact_model\\v0_base\\compact_model_manifest.json"
   },
   "canonical_dictionary_context": {
     "patch_w": 72,

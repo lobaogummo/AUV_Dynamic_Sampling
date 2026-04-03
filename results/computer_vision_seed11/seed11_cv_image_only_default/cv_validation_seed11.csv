@@ -1,0 +1,8 @@
+scope,name,arr_shape,mask_shape,shape_match,mask_true_fraction
+global,prototype_class_01,"(64, 112)","(64, 112)",True,0.9660993303571429
+global,prototype_class_02,"(64, 112)","(64, 112)",True,0.9660993303571429
+global,prototype_class_03,"(64, 112)","(64, 112)",True,0.9660993303571429
+global,prototype_class_04,"(64, 112)","(64, 112)",True,0.9660993303571429
+global,prototype_class_05,"(64, 112)","(64, 112)",True,0.9660993303571429
+local_class02,k2::subclass_prototype_01,"(64, 112)","(64, 112)",True,0.9660993303571429
+local_class02,k2::subclass_prototype_02,"(64, 112)","(64, 112)",True,0.9660993303571429

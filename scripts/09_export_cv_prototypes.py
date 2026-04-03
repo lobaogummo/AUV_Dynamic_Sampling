@@ -24,6 +24,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_OFFICIAL_STATE_CONFIG = ROOT / "configs" / "thesis_official_state.json"
 
 SEED_DIR_RX = re.compile(r"^seed(\d+)$")
 K_DIR_RX = re.compile(r"^k(\d+)$")
@@ -61,6 +62,15 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="Output root for exports. Default: <pipeline-root>/computer_vision_exports",
+    )
+    p.add_argument(
+        "--official-state-config",
+        type=Path,
+        default=DEFAULT_OFFICIAL_STATE_CONFIG,
+        help=(
+            "Optional central official-state JSON. "
+            "If --pipeline-root/--out-root are omitted, official paths are read from here."
+        ),
     )
     p.add_argument(
         "--seeds",
@@ -112,6 +122,27 @@ def parse_args() -> argparse.Namespace:
         help="DPI used when rendering fixed-size PNGs.",
     )
     return p.parse_args()
+
+
+def _resolve_repo_or_abs(path_value: str | Path | None) -> Path | None:
+    if path_value is None:
+        return None
+    p = Path(path_value).expanduser()
+    if not p.is_absolute():
+        p = ROOT / p
+    return p.resolve()
+
+
+def load_official_state(path: Path | None) -> dict:
+    if path is None:
+        return {}
+    cfg_path = path.expanduser().resolve()
+    if not cfg_path.exists():
+        return {}
+    payload = json.loads(cfg_path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"Official state config must be a JSON object: {cfg_path}")
+    return payload
 
 
 def _first_existing_file(candidates: Sequence[Path]) -> Path | None:
@@ -309,9 +340,10 @@ def discover_pipeline_root(explicit: Path | None) -> Path:
         )
 
     def score(path: Path) -> Tuple[int, int, float]:
-        parent_is_primary = int(path.parent.resolve() == (ROOT / "results" / "final_working_pipeline").resolve())
+        # Prefer explicit official_fixed_dictionary roots first.
         official_tag = int("official_fixed_dictionary" in path.name.lower())
-        return (parent_is_primary, official_tag, path.stat().st_mtime)
+        parent_is_primary = int(path.parent.resolve() == (ROOT / "results" / "fossum" / "final_working_pipeline").resolve())
+        return (official_tag, parent_is_primary, path.stat().st_mtime)
 
     candidate_roots.sort(key=score, reverse=True)
     return candidate_roots[0]
@@ -379,10 +411,35 @@ def main() -> None:
     if int(args.png_dpi) <= 0:
         raise ValueError("--png-dpi must be > 0")
 
-    pipeline_root = discover_pipeline_root(args.pipeline_root)
+    official_state = load_official_state(args.official_state_config)
+    official_pipeline_root_cfg = (
+        official_state.get("official_pipeline", {}).get("results_root")
+        if isinstance(official_state.get("official_pipeline", {}), dict)
+        else None
+    )
+    explicit_pipeline_root = args.pipeline_root
+    if explicit_pipeline_root is None and official_pipeline_root_cfg:
+        resolved_cfg_root = _resolve_repo_or_abs(str(official_pipeline_root_cfg))
+        if resolved_cfg_root is not None and resolved_cfg_root.exists() and resolved_cfg_root.is_dir():
+            explicit_pipeline_root = resolved_cfg_root
+
+    pipeline_root = discover_pipeline_root(explicit_pipeline_root)
     seed_runs = collect_seed_runs(pipeline_root)
     seed_runs = filter_seed_runs(seed_runs=seed_runs, requested_seeds=args.seeds)
-    out_root = (args.out_root.resolve() if args.out_root is not None else (pipeline_root / "computer_vision_exports").resolve())
+    if args.out_root is not None:
+        out_root = args.out_root.resolve()
+    else:
+        official_cv_export_cfg = (
+            official_state.get("official_artifacts", {}).get("cv_export_root")
+            if isinstance(official_state.get("official_artifacts", {}), dict)
+            else None
+        )
+        resolved_cv_export_root = _resolve_repo_or_abs(str(official_cv_export_cfg)) if official_cv_export_cfg else None
+        out_root = (
+            resolved_cv_export_root
+            if resolved_cv_export_root is not None
+            else (pipeline_root / "computer_vision_exports").resolve()
+        )
 
     input_paths = resolve_numeric_input_paths()
     X_norm, mask, (vmin, vmax) = load_numeric_inputs(paths=input_paths, vlim_percentile=float(args.vlim_percentile))

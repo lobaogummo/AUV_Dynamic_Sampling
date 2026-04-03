@@ -1,0 +1,2 @@
+scope,prototype_key,prototype_name,prototype_regime_label,region_id,region_label,n_pixels,temp_mean_avg,temp_std_avg,gradient_magnitude_avg,boundary_score_avg,distance_to_boundary_avg,lat_min,lat_max,lon_min,lon_max
+global,class_05,prototype_class_05,single_gradient,1,single_gradient,6925,1.3770465850830078,0.4170326590538025,1.594077467918396,0.16968382894992828,,39.38888931274414,39.86111068725586,-9.55555534362793,-8.916666984558105

@@ -1,0 +1,90 @@
+{
+  "generated_at_utc": "2026-04-02T21:26:41.076811+00:00",
+  "seed_id": 11,
+  "config_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\configs\\cv_seed11_config.json",
+  "source": {
+    "project_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS",
+    "cv_export_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\final_working_pipeline\\final_working_20260328\\computer_vision_exports_seed11",
+    "seed_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\final_working_pipeline\\final_working_20260328\\computer_vision_exports_seed11\\seed11",
+    "global_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\final_working_pipeline\\final_working_20260328\\computer_vision_exports_seed11\\seed11\\global",
+    "local_class02_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\final_working_pipeline\\final_working_20260328\\computer_vision_exports_seed11\\seed11\\local_class02",
+    "manifest_cv_exports_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\final_working_pipeline\\final_working_20260328\\computer_vision_exports_seed11\\manifest_cv_exports.json"
+  },
+  "analysis": {
+    "simple_sigma": 1.0,
+    "simple_rules": {
+      "homogeneous_std_max": 0.18,
+      "homogeneous_p90_grad_max": 0.12,
+      "homogeneous_front_area_max": 0.12,
+      "multi_min_region_ratio_min": 0.18,
+      "multi_inter_region_diff_min": 0.45,
+      "multi_coherence_min": 0.65,
+      "multi_front_area_ratio_min": 0.15,
+      "multi_p90_grad_min": 0.16
+    },
+    "image_only_grad_sigma": 1.0,
+    "image_only_rules": {
+      "homogeneous_std_low_max": 12.0,
+      "homogeneous_min_region_tiny_max": 0.12,
+      "homogeneous_inter_diff_low_max": 18.0,
+      "homogeneous_std_mid_max": 28.0,
+      "homogeneous_min_region_mid_max": 0.34,
+      "homogeneous_inter_diff_mid_min": 35.0,
+      "homogeneous_inter_diff_mid_max": 60.0,
+      "homogeneous_p90_grad_mid_max": 0.66,
+      "multi_min_region_ratio_min": 0.18,
+      "multi_inter_region_diff_min": 60.0,
+      "multi_coherence_min": 0.65,
+      "multi_p90_grad_min": 0.68
+    },
+    "optional_hsl": {
+      "status": "disabled"
+    },
+    "mask_convention": {
+      "expected_mask_true_is_valid": true,
+      "inferred_mask_true_is_valid": true,
+      "convention_score": 1.0,
+      "flipped_masks": false,
+      "global_count": 5,
+      "local_count": 2
+    }
+  },
+  "counts": {
+    "simple_global_labels": {
+      "single_gradient": 4,
+      "homogeneous": 1
+    },
+    "simple_local_labels": {
+      "single_gradient": 2
+    },
+    "image_global_labels": {
+      "homogeneous": 2,
+      "single_gradient": 2,
+      "multi_regime": 1
+    },
+    "image_local_labels": {
+      "single_gradient": 1,
+      "multi_regime": 1
+    }
+  },
+  "outputs": {
+    "output_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on",
+    "csv": {
+      "global_features": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_global_seed11.csv",
+      "local_features": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_local_class02_seed11.csv",
+      "validation": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_validation_seed11.csv",
+      "simple_global": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_global_seed11_simple.csv",
+      "simple_local": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_local_class02_seed11_simple.csv",
+      "image_global": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_global_seed11_image_only.csv",
+      "image_local": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\cv_features_local_class02_seed11_image_only.csv"
+    },
+    "figures": {},
+    "report_md": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\run_report.md",
+    "manifest_json": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\computer_vision_seed11\\seed11_cv_image_only_default_simple_on\\manifest.json"
+  },
+  "notes": [
+    "Downstream-only CV step. No clustering or prototype regeneration is performed here.",
+    "Reads official exported prototype assets (*.npy, *_mask.npy, *_clean.png).",
+    "Outputs are written to a new run directory and protected against accidental overwrite by default."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "official_state_version": "2026-04-03",
+  "official_dataset": {
+    "label": "fossum_2024_surface_300days_v1",
+    "source_file": "data/2024/tempIBHRes2024_1.gslib",
+    "n_images": 300,
+    "shape": [300, 64, 112],
+    "notes": [
+      "Current official thesis dataset is the 300-day version already used by the frozen regime pipeline.",
+      "Extension to 365 days (missing 65 days) is intentionally pending and out of scope for this closure step."
+    ]
+  },
+  "official_pipeline": {
+    "label": "faithful_frozen_working_config_end_to_end",
+    "run_tag": "official_fixed_dictionary_20260328",
+    "results_root": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328",
+    "seed_id": 11,
+    "frozen_config": {
+      "patch_size": [72, 40],
+      "dictionary_size": 4,
+      "standard_scaler": true,
+      "official_global_sd_fraction": 0.3,
+      "official_global_target_classes": 5,
+      "local_refinement_target_class_id": 2,
+      "local_default_k": 2
+    }
+  },
+  "official_artifacts": {
+    "canonical_dictionary_npz": "results/fossum/canonical_dictionary/canonical_dictionary.npz",
+    "canonical_dictionary_manifest": "results/fossum/canonical_dictionary/canonical_dictionary_manifest.json",
+    "compact_model_npz": "results/fossum/compact_model/v0_base/compact_model_final.npz",
+    "compact_model_manifest": "results/fossum/compact_model/v0_base/compact_model_manifest.json",
+    "cv_export_root": "results/fossum/final_working_pipeline/official_fixed_dictionary_20260328/computer_vision_exports_seed11",
+    "cv_downstream_root": "results/computer_vision_seed11/official_fixed_dictionary_seed11",
+    "prototype_characterization_root": "results/prototype_characterization_seed11/official_fixed_dictionary_seed11"
+  },
+  "official_scripts": {
+    "global_stage": "scripts/04a_separation_distance_probe_fossum_faithful_initial.py",
+    "local_stage": "scripts/06_class02_local_refinement_sd30.py",
+    "pipeline_runner": "scripts/07_run_faithful_pipeline_end_to_end.py",
+    "canonical_dictionary_selection": "scripts/08_select_canonical_dictionary.py",
+    "compact_model_builder": "scripts/08_build_compact_model.py",
+    "cv_export": "scripts/09_export_cv_prototypes.py",
+    "cv_analysis": "scripts/10_seed11_cv_analysis.py",
+    "prototype_characterization": "scripts/11_prototype_characterization.py"
+  }
+}

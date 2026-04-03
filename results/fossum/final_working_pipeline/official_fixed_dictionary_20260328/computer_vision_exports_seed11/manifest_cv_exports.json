@@ -1,0 +1,307 @@
+{
+  "generated_at_utc": "2026-04-03T12:52:13.665660+00:00",
+  "source_pipeline_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328",
+  "source_scripts": [
+    "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\scripts\\04a_separation_distance_probe_fossum_faithful_initial.py",
+    "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\scripts\\06_class02_local_refinement_sd30.py"
+  ],
+  "source_numeric_inputs": {
+    "X_norm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300_norm.npy",
+    "mask_common": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy"
+  },
+  "mask_convention": {
+    "true": "ocean/valid",
+    "false": "land/invalid",
+    "dtype": "bool"
+  },
+  "array_domain": "normalized SST (X_surface_300_norm)",
+  "visualization": {
+    "vmin": -2.02543306350708,
+    "vmax": 2.02543306350708,
+    "vlim_percentile_abs": 98.0,
+    "colormap": "coolwarm",
+    "mask_render": "transparent",
+    "origin": "lower",
+    "autoscaling_per_image": false,
+    "png_width": 1080,
+    "png_height": 630,
+    "png_dpi": 150
+  },
+  "output_root": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11",
+  "output_structure": "computer_vision_exports/seedXX/{global|local_class02/kY}/",
+  "notes": [
+    "Prototypes rebuilt numerically from source arrays and full-membership distance CSV files.",
+    "No manual crop or reuse of pre-rendered prototype PNGs was used."
+  ],
+  "counts": {
+    "seeds_processed": 1,
+    "global_prototypes_exported": 5,
+    "local_class02_prototypes_exported": 2,
+    "total_exports": 7
+  },
+  "exports": [
+    {
+      "base_name": "prototype_class_01",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_01_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_01.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_01_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "global",
+      "class_id": 1,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global\\class_01_distance_to_prototype.csv",
+      "n_members": 58
+    },
+    {
+      "base_name": "prototype_class_02",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_02_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_02.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_02_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "global",
+      "class_id": 2,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global\\class_02_distance_to_prototype.csv",
+      "n_members": 122
+    },
+    {
+      "base_name": "prototype_class_03",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_03_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_03.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_03_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "global",
+      "class_id": 3,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global\\class_03_distance_to_prototype.csv",
+      "n_members": 20
+    },
+    {
+      "base_name": "prototype_class_04",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_04_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_04.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_04_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "global",
+      "class_id": 4,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global\\class_04_distance_to_prototype.csv",
+      "n_members": 37
+    },
+    {
+      "base_name": "prototype_class_05",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_05_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_05.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\global\\prototype_class_05_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "global",
+      "class_id": 5,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\global\\class_05_distance_to_prototype.csv",
+      "n_members": 63
+    },
+    {
+      "base_name": "subclass_prototype_01",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_01_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_01.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_01_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "local_class02",
+      "k": 2,
+      "subclass_id": 1,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\local_class02\\k2\\subclass_01_distance_to_prototype.csv",
+      "n_members": 105
+    },
+    {
+      "base_name": "subclass_prototype_02",
+      "png_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_02_clean.png",
+      "array_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_02.npy",
+      "mask_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\computer_vision_exports_seed11\\seed11\\local_class02\\k2\\subclass_prototype_02_mask.npy",
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ],
+      "seed": 11,
+      "scope": "local_class02",
+      "k": 2,
+      "subclass_id": 2,
+      "source_distance_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\final_working_pipeline\\official_fixed_dictionary_20260328\\seed11\\local_class02\\k2\\subclass_02_distance_to_prototype.csv",
+      "n_members": 17
+    }
+  ],
+  "validation": [
+    {
+      "base_name": "prototype_class_01",
+      "seed": 11,
+      "scope": "global",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "prototype_class_02",
+      "seed": 11,
+      "scope": "global",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "prototype_class_03",
+      "seed": 11,
+      "scope": "global",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "prototype_class_04",
+      "seed": 11,
+      "scope": "global",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "prototype_class_05",
+      "seed": 11,
+      "scope": "global",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "subclass_prototype_01",
+      "seed": 11,
+      "scope": "local_class02",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    },
+    {
+      "base_name": "subclass_prototype_02",
+      "seed": 11,
+      "scope": "local_class02",
+      "png_exists": true,
+      "array_exists": true,
+      "mask_exists": true,
+      "all_three_exist": true,
+      "shape_match": true,
+      "array_shape": [
+        64,
+        112
+      ],
+      "mask_shape": [
+        64,
+        112
+      ]
+    }
+  ]
+}

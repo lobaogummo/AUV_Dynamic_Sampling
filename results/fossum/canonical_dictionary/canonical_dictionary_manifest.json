@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-03-28T16:50:15",
+  "generated_at": "2026-04-03T13:51:05",
   "canonical_seed": 11,
-  "canonical_dictionary_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
-  "source_dictionary_artifact_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum\\canonical_dictionary_seed_sweep\\canonical_full_20260328\\seed_dictionaries\\seed011_dictionary.npz",
+  "canonical_dictionary_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary\\canonical_dictionary.npz",
+  "source_dictionary_artifact_path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum\\canonical_dictionary_seed_sweep\\regen_seed11_20260403\\seed_dictionaries\\seed011_dictionary.npz",
   "selection_basis": {
     "target_classes": 5,
     "singleton_required": 0,
@@ -15,10 +15,10 @@
     "number_of_classes": 5,
     "singleton_count": 0,
     "min_class_size": 20,
-    "mean_icv": 1570.6628540039062,
-    "weighted_mean_MPD": 35.277387155282774,
-    "weighted_mean_pairwise_SSIM": 0.437127995734056,
-    "composite_score": 1.5
+    "mean_icv": 1601.5348876953126,
+    "weighted_mean_MPD": 35.65416871072002,
+    "weighted_mean_pairwise_SSIM": 0.42074408147670306,
+    "composite_score": 0.9999999999999999
   },
   "fixed_pipeline_config": {
     "patch_w": 72,
@@ -35,10 +35,10 @@
     "patches_per_image": 1025
   },
   "source_dataset_artifacts": {
-    "X_sst": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300.npy",
-    "X_norm": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300_norm.npy",
-    "mask": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
-    "png_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\pngs_normalized_surface_300_thesis"
+    "X_sst": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300.npy",
+    "X_norm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300_norm.npy",
+    "mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy",
+    "png_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\pngs_normalized_surface_300_thesis"
   },
   "source_dictionary_metadata": {
     "apply_standard_scaler": true,
@@ -61,18 +61,18 @@
     "schema_version": 1,
     "seed": 11,
     "source_paths": {
-      "X_norm": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300_norm.npy",
-      "X_sst": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\X_surface_300.npy",
-      "mask": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\mask_common.npy",
-      "png_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\plots\\pngs_normalized_surface_300_thesis"
+      "X_norm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300_norm.npy",
+      "X_sst": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\X_surface_300.npy",
+      "mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\mask_common.npy",
+      "png_dir": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\plots\\pngs_normalized_surface_300_thesis"
     },
     "transform_algo": "omp",
     "transform_nnz": 2
   },
   "seed_sweep_outputs": {
-    "run_root": "results/fossum/canonical_dictionary_seed_sweep/canonical_full_20260328",
-    "summary_csv": "results/fossum/canonical_dictionary_seed_sweep/canonical_full_20260328/canonical_dictionary_seed_sweep_summary.csv",
-    "ranked_csv": "results/fossum/canonical_dictionary_seed_sweep/canonical_full_20260328/canonical_dictionary_seed_sweep_ranked.csv",
-    "per_class_csv": "results/fossum/canonical_dictionary_seed_sweep/canonical_full_20260328/canonical_dictionary_seed_sweep_per_class_metrics.csv"
+    "run_root": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403",
+    "summary_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_summary.csv",
+    "ranked_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_ranked.csv",
+    "per_class_csv": "results/fossum/canonical_dictionary_seed_sweep/regen_seed11_20260403/canonical_dictionary_seed_sweep_per_class_metrics.csv"
   }
 }
