@@ -1,0 +1,8 @@
+scope,prototype_key,prototype_regime_label,baseline__transition_top_decile_coverage,enriched__transition_top_decile_coverage,delta__transition_top_decile_coverage,baseline__high_gradient_decile_coverage,enriched__high_gradient_decile_coverage,delta__high_gradient_decile_coverage,baseline__region_coverage_ratio,enriched__region_coverage_ratio,delta__region_coverage_ratio,baseline__region_balance_min_share,enriched__region_balance_min_share,delta__region_balance_min_share,baseline__informative_union_p75_coverage,enriched__informative_union_p75_coverage,delta__informative_union_p75_coverage,baseline__spatial_spread_norm,enriched__spatial_spread_norm,delta__spatial_spread_norm
+global,class_01,homogeneous,1.0,1.0,0.0,0.0,0.65,0.65,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0513272103048947,0.4390918341204433,0.3877646238155486
+global,class_02,single_gradient,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0514113788039511,0.0702769910953957,0.0188656122914446
+global,class_03,multi_regime,0.0,0.0,0.0,0.0,1.0,1.0,0.5,0.5,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0315331529553992,0.063596738093694,0.0320635851382948
+global,class_04,homogeneous,1.0,1.0,0.0,0.75,1.0,0.25,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0773998360323374,0.0468249582310564,-0.030574877801280993
+global,class_05,single_gradient,0.1,1.0,0.9,0.1,1.0,0.9,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0541703695332002,0.0765388202250977,0.022368450691897496
+local_class02,k2::subclass_01,single_gradient,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0302041134853464,0.0712703271589978,0.041066213673651396
+local_class02,k2::subclass_02,multi_regime,0.0,0.3,0.3,0.0,0.05,0.05,0.5,1.0,0.5,1.0,0.05,-0.95,1.0,1.0,0.0,0.0473013216334528,0.1674101208150442,0.1201087991815914

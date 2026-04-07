@@ -1,0 +1,7 @@
+prototype_regime_label,method,n_prototypes,transition_top_decile_coverage,high_gradient_decile_coverage,region_coverage_ratio,region_balance_min_share,informative_union_p75_coverage,spatial_spread_norm
+homogeneous,baseline_temp_std,2,1.0,0.375,1.0,1.0,1.0,0.06436352316861604
+homogeneous,enriched_std_boundary_gradient_regioncontrast,2,1.0,0.825,1.0,1.0,1.0,0.24295839617574985
+multi_regime,baseline_temp_std,2,0.0,0.0,0.5,1.0,1.0,0.039417237294426
+multi_regime,enriched_std_boundary_gradient_regioncontrast,2,0.15,0.525,0.75,0.525,1.0,0.11550342945436909
+single_gradient,baseline_temp_std,3,0.03333333333333333,0.03333333333333333,1.0,1.0,1.0,0.045261953940832565
+single_gradient,enriched_std_boundary_gradient_regioncontrast,3,1.0,1.0,1.0,1.0,1.0,0.07269537949316374

@@ -1,0 +1,13 @@
+source,role,field,steps,why
+data/2024/tempIBHRes2024_1.gslib,baseline local set,temp,"13,14,15",Reference set already used in thesis pipeline.
+data/CMEMS/2024IB,baseline regional set,temp,"13,14,15",Regional comparator (coarser/wider domain).
+data/Test_C4/Images/scene_1.gslib,HRes-like scene,Real + StDev,13,Contains temperature-like and uncertainty-like fields on 180x240 scene grid.
+data/Test_C4/Images/scene_2.gslib,HRes-like scene,Real + StDev,14,Second representative step.
+data/Test_C4/Images/scene_3.gslib,HRes-like scene,Real + StDev,15,Third representative step.
+data/Test_C4/Nazare_30-10-2024_1/scene_1.gslib,post-assimilation scene,Real + StDev,13,Check coherence with Test_C4 scene outputs.
+data/Test_C4/Nazare_30-10-2024_1/scene_2.gslib,post-assimilation scene,Real + StDev,14,Check coherence with Test_C4 scene outputs.
+data/Test_C4/Nazare_30-10-2024_1/scene_3.gslib,post-assimilation scene,Real + StDev,15,Check coherence with Test_C4 scene outputs.
+data/Test_C4/Priori_Nazare_30-10-2024_1/Median.gslib,prior field,Median,"layers 13,14,15",Prior median at comparable layers.
+data/Test_C4/Priori_Nazare_30-10-2024_1/StDev.gslib,prior uncertainty,StDev,"layers 13,14,15",Prior uncertainty at comparable layers.
+data/Test_C4/Nazare_30-10-2024_1/Median.gslib,post-assimilation field,Median,"layers 1,2,3 mapped to 13,14,15",Compact post-assimilation median product.
+data/Test_C4/Nazare_30-10-2024_1/StDev.gslib,post-assimilation uncertainty,StDev,"layers 1,2,3 mapped to 13,14,15",Compact post-assimilation uncertainty product.

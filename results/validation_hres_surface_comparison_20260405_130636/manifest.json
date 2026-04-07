@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-04-05T13:06:55",
+  "output_root": "FILIPA_DADOS/results/validation_hres_surface_comparison_20260405_130636",
+  "selected_hres_source": {
+    "files": [
+      "FILIPA_DADOS/data/Test_C4/Images/scene_1.gslib",
+      "FILIPA_DADOS/data/Test_C4/Images/scene_2.gslib",
+      "FILIPA_DADOS/data/Test_C4/Images/scene_3.gslib"
+    ],
+    "field_used": "Real",
+    "reason": "Accessible local HRes-refined snapshots in TEST_C4 with 180x240 shape (43200 cells), matching HRes metadata dimensions."
+  },
+  "comparison_steps": [
+    13,
+    14,
+    15
+  ],
+  "generated_counts": {
+    "tempIBHRes_images": 3,
+    "2024IB_images": 3,
+    "hres_images": 3,
+    "panels": 3
+  },
+  "color_scale": {
+    "vmin": 15.527125358581543,
+    "vmax": 17.890161514282227,
+    "method": "shared percentile 2-98 on selected steps"
+  },
+  "notes": [
+    "No overwrite of existing outputs.",
+    "No modifications to pipeline scripts.",
+    "HRes scene maps came from TEST_C4 GSLIB scene files (z constants 13,14,15).",
+    "Latitude/longitude extents for HRes-based plots taken from results/netcdf_files_summary.csv."
+  ]
+}

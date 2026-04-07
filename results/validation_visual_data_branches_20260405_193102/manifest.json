@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-04-05T19:31:28",
+  "output_root": "results/validation_visual_data_branches_20260405_193102",
+  "steps": [
+    13,
+    14,
+    15
+  ],
+  "groups": [
+    "thermal",
+    "uncertainty"
+  ],
+  "counts": {
+    "images_total": 30,
+    "thermal_images": 18,
+    "uncertainty_images": 12,
+    "panels_total": 6
+  },
+  "scale": {
+    "thermal_vmin": 15.657905578613281,
+    "thermal_vmax": 18.01350212097168,
+    "uncertainty_vmin": 0.0,
+    "uncertainty_vmax": 0.37812501192092896
+  },
+  "notes": [
+    "No overwrite of previous outputs.",
+    "No change to clustering, descriptors, or adaptive sampling code.",
+    "Nazare Median/StDev 3-layer mapping to compare steps 13-15 is documented in manifest rows."
+  ]
+}

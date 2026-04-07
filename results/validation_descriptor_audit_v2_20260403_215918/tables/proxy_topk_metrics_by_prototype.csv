@@ -1,0 +1,15 @@
+scope,prototype_key,prototype_regime_label,method,selected_k,transition_top_decile_coverage,high_gradient_decile_coverage,region_coverage_ratio,region_balance_min_share,informative_union_p75_coverage,spatial_spread_norm
+global,class_01,homogeneous,baseline_temp_std,20,1.0,0.0,1.0,1.0,1.0,0.05132721030489479
+global,class_01,homogeneous,enriched_std_boundary_gradient_regioncontrast,20,1.0,0.65,1.0,1.0,1.0,0.43909183412044334
+global,class_02,single_gradient,baseline_temp_std,20,0.0,0.0,1.0,1.0,1.0,0.05141137880395119
+global,class_02,single_gradient,enriched_std_boundary_gradient_regioncontrast,20,1.0,1.0,1.0,1.0,1.0,0.07027699109539576
+global,class_03,multi_regime,baseline_temp_std,20,0.0,0.0,0.5,1.0,1.0,0.03153315295539922
+global,class_03,multi_regime,enriched_std_boundary_gradient_regioncontrast,20,0.0,1.0,0.5,1.0,1.0,0.06359673809369405
+global,class_04,homogeneous,baseline_temp_std,20,1.0,0.75,1.0,1.0,1.0,0.07739983603233744
+global,class_04,homogeneous,enriched_std_boundary_gradient_regioncontrast,20,1.0,1.0,1.0,1.0,1.0,0.046824958231056424
+global,class_05,single_gradient,baseline_temp_std,20,0.1,0.1,1.0,1.0,1.0,0.054170369533200216
+global,class_05,single_gradient,enriched_std_boundary_gradient_regioncontrast,20,1.0,1.0,1.0,1.0,1.0,0.07653882022509771
+local_class02,k2::subclass_01,single_gradient,baseline_temp_std,20,0.0,0.0,1.0,1.0,1.0,0.030204113485346417
+local_class02,k2::subclass_01,single_gradient,enriched_std_boundary_gradient_regioncontrast,20,1.0,1.0,1.0,1.0,1.0,0.07127032715899781
+local_class02,k2::subclass_02,multi_regime,baseline_temp_std,20,0.0,0.0,0.5,1.0,1.0,0.04730132163345282
+local_class02,k2::subclass_02,multi_regime,enriched_std_boundary_gradient_regioncontrast,20,0.3,0.05,1.0,0.05,1.0,0.1674101208150442

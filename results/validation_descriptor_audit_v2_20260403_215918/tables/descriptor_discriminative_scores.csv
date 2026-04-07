@@ -1,0 +1,10 @@
+descriptor,fisher_score
+n_regions,714285714285.7145
+region_area_entropy,44759.72101725753
+min_region_area_fraction,1442.5268476149995
+max_region_area_fraction,925.619828647133
+boundary_score_avg,176.766503820012
+inter_region_temp_contrast,43.362289376189636
+gradient_magnitude_avg,12.960890916137387
+temp_std_avg,0.33696065489868887
+temp_mean_avg,0.24212361117150313

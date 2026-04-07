@@ -1,0 +1,8 @@
+scope,prototype_key,prototype_name,characterization_label,image_only_label,label_match
+global,class_01,prototype_class_01,homogeneous,homogeneous,True
+global,class_02,prototype_class_02,single_gradient,single_gradient,True
+global,class_03,prototype_class_03,multi_regime,multi_regime,True
+global,class_04,prototype_class_04,homogeneous,homogeneous,True
+global,class_05,prototype_class_05,single_gradient,single_gradient,True
+local_class02,k2::subclass_01,subclass_prototype_01,single_gradient,single_gradient,True
+local_class02,k2::subclass_02,subclass_prototype_02,multi_regime,multi_regime,True

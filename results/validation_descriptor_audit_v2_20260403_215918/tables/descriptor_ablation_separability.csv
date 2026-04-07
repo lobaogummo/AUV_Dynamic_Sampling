@@ -1,0 +1,5 @@
+setup,features,separability_score,silhouette,delta_sep_vs_full,delta_sil_vs_full
+full,temp_std_avg|boundary_score_avg|gradient_magnitude_avg|n_regions|inter_region_temp_contrast,3.5189337440682893,0.14544997177074812,0.0,0.0
+without_boundary_score_avg,temp_std_avg|gradient_magnitude_avg|n_regions|inter_region_temp_contrast,3.0330126764782186,-0.016352118846097736,-0.4859210675900707,-0.16180209061684586
+without_temp_std_avg,boundary_score_avg|gradient_magnitude_avg|n_regions|inter_region_temp_contrast,8.170367046578114,0.5223387227340206,4.651433302509825,0.37688875096327246
+without_gradient_magnitude_avg,temp_std_avg|boundary_score_avg|n_regions|inter_region_temp_contrast,3.404408188229956,0.16345005421741812,-0.11452555583833313,0.018000082446670007

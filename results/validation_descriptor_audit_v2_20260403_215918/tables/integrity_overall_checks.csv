@@ -1,0 +1,20 @@
+check,pass,detail
+required_columns_present,True,all present
+nan_check__lat,True,nan_count=0
+nan_check__lon,True,nan_count=0
+nan_check__temp_mean,True,nan_count=0
+nan_check__temp_std,True,nan_count=0
+nan_check__region_label,True,nan_count=0
+nan_check__boundary_score,True,nan_count=0
+nan_check__gradient_magnitude,True,nan_count=0
+nan_check__region_id,True,nan_count=0
+distance_to_boundary_non_multi_all_nan,True,34625/34625 nan
+distance_to_boundary_multi_all_finite,True,13850/13850 finite
+semantic_region_coherence,True,global/class_01=True; global/class_02=True; global/class_03=True; global/class_04=True; global/class_05=True; local_class02/k2::subclass_01=True; local_class02/k2::subclass_02=True
+pixel_vs_region_n_pixels_match,True,all_match=True
+pixel_vs_region_means_match,True,all_diff<=1e-6=True
+aggregated_pixel_rowcount_match,True,concat=48475 all=48475
+aggregated_region_rowcount_match,True,concat=9 all=9
+aggregated_pixel_hash_match,True,True
+aggregated_region_hash_match,True,True
+raster_vs_pixel_all_fields_match,False,rows=56
