@@ -1,0 +1,71 @@
+flowchart TB
+    subgraph PREP["Preparacao de dados"]
+        S01["STG01 Build surface dataset"]
+        S02["STG02 Normalize + common mask"]
+        S03["STG03 Export normalized PNGs"]
+        S04["STG04 Initial visual exploration"]
+    end
+
+    subgraph EXP["Exploratorio (design space)"]
+        S05["STG05 Patch-size sensitivity"]
+        S06["STG06 Dictionary-size sensitivity"]
+        S07["STG07 SD probe + scaler comparison"]
+        S08["STG08 SD refined local probe"]
+    end
+
+    subgraph WORK["Working -> Final core"]
+        S09["STG09 SD30 working summary"]
+        S10["STG10 class_02 local refinement k-sweep"]
+        S11["STG11 Canonical dictionary selection"]
+        S12["STG12 E2E pre-official runs"]
+        S13["STG13 Official frozen pipeline"]
+        S14["STG14 Build compact model"]
+        S15["STG15 Export CV prototypes"]
+        S16["STG16 CV image-only downstream"]
+        S17["STG17 Pixel-wise characterization v2"]
+    end
+
+    subgraph DIAG["Diagnostico / validacao"]
+        S18["STG18 Validation and audits"]
+    end
+
+    S01 --> S02
+    S02 --> S03
+    S01 --> S04
+
+    S02 --> S05
+    S02 --> S06
+    S02 --> S07
+    S07 --> S08
+
+    S05 --> S09
+    S06 --> S09
+    S08 --> S09
+    S09 --> S10
+    S08 --> S11
+    S09 --> S12
+    S11 --> S12
+    S10 --> S13
+    S11 --> S13
+    S12 --> S13
+
+    S13 --> S14
+    S13 --> S15
+    S15 --> S16
+    S14 --> S17
+    S16 --> S17
+
+    S17 --> S18
+    S01 --> S18
+
+    classDef prep fill:#f2f2f2,stroke:#555,stroke-width:1.2px,color:#111;
+    classDef exploratory fill:#fff2cc,stroke:#9a6b00,stroke-width:1.5px,color:#2b2000;
+    classDef working fill:#e9f7ef,stroke:#2f7d32,stroke-width:1.5px,color:#102010;
+    classDef final fill:#d7f4d7,stroke:#1f5f24,stroke-width:2px,color:#0d1a0f;
+    classDef diagnostic fill:#e8f1ff,stroke:#2c5aa0,stroke-width:1.5px,color:#10233f;
+
+    class S01,S02,S03,S04 prep;
+    class S05,S06,S07,S08 exploratory;
+    class S09,S10,S11,S12 working;
+    class S13,S14,S15,S16,S17 final;
+    class S18 diagnostic;

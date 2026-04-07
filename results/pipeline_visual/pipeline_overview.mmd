@@ -1,0 +1,36 @@
+flowchart LR
+    A["Dados brutos<br/>tempIBHRes2024_1.gslib"]
+    B["Build dataset 300 dias<br/>X_surface_300.npy"]
+    C["Normalizacao global<br/>X_surface_300_norm + mask_common"]
+    D["Pipeline global oficial<br/>patch72x40 dict4 scalerON SD30"]
+    E["Refinamento local<br/>class_02 -> k=2"]
+    F["Export prototipos para CV<br/>PNG + NPY + MASK"]
+    G["CV downstream image-only<br/>seed11"]
+    H["Caracterizacao pixel-wise v2<br/>descritores semanticos"]
+    I["Resultados finais + auditorias"]
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I
+
+    X1["Patch-size sensitivity (02b)"]
+    X2["Dictionary-size sensitivity (03a)"]
+    X3["Scaler vs no-scaler (05/05b)"]
+    X4["Probe refinado SD multi-seed"]
+    X5["Selecao dicionario canonico (08_select)"]
+
+    C --> X1
+    C --> X2
+    C --> X3
+    X3 --> X4
+    X1 --> D
+    X2 --> D
+    X4 --> D
+    X4 --> X5
+    X5 --> D
+
+    classDef final fill:#d7f4d7,stroke:#2f7d32,stroke-width:2px,color:#102010;
+    classDef exploratory fill:#fff2cc,stroke:#9a6b00,stroke-width:1.5px,color:#2b2000;
+    classDef diagnostic fill:#e8f1ff,stroke:#2c5aa0,stroke-width:1.5px,color:#10233f;
+
+    class D,E,F,G,H final;
+    class X1,X2,X3,X4,X5 exploratory;
+    class I diagnostic;
