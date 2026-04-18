@@ -1,0 +1,2 @@
+x0,y0,w,h,x1,y1,mask_iou,pred_mean_best_corr,pred_min_best_corr,auv_mean_best_corr,auv_min_best_corr,combined_score,viability_overall_pass
+28,34,128,67,155,100,0.9998556165174703,0.9815014526003194,0.9629220141011211,0.9723163726646036,0.9459134700715265,0.987923810375894,True

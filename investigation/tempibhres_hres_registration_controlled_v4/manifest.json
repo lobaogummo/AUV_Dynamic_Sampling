@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-04-18T16:02:59",
+  "output_root": "investigation/tempibhres_hres_registration_controlled_v4",
+  "script": "scripts/14_tempibhres_hres_registration_controlled.py",
+  "inputs": {
+    "temp_stack": "results/plots/X_surface_300.npy",
+    "temp_norm_stack": "results/plots/X_surface_300_norm.npy",
+    "temp_mask": "results/plots/mask_common.npy",
+    "pred_family_pattern": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_*.nc",
+    "auv_family_pattern": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_AUVpredModel_*.nc",
+    "netcdf_summary_csv": "results/netcdf_files_summary.csv",
+    "hres_bbox_reference": {
+      "source_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+      "lon_min": -9.55555534362793,
+      "lon_max": -8.916666984558105,
+      "lat_min": 39.38888931274414,
+      "lat_max": 39.86111068725586
+    }
+  },
+  "method": {
+    "search_family": "axis_aligned_crop_plus_linear_resample",
+    "stage1_width_step": 8,
+    "stage1_height_step": 8,
+    "stage2_topk_refine": 8,
+    "temperature_topk_eval": 40,
+    "matching_rule": "best Pearson correlation across 300 tempIBHRes days per reference step",
+    "inferred_axis_mode_requested": "utm_abs_km"
+  },
+  "best_transformation": {
+    "x0_0based": 28,
+    "y0_0based": 34,
+    "w": 128,
+    "h": 67,
+    "x1_0based": 155,
+    "y1_0based": 100,
+    "x_range_1based": [
+      29,
+      156
+    ],
+    "y_range_1based": [
+      35,
+      101
+    ]
+  },
+  "best_metrics": {
+    "mask_iou": 0.9998556165174703,
+    "mask_dice": 0.9999278030467115,
+    "pred_mean_best_corr": 0.9815014526003194,
+    "pred_min_best_corr": 0.9629220141011211,
+    "auv_mean_best_corr": 0.9723163726646036,
+    "auv_min_best_corr": 0.9459134700715265,
+    "combined_score": 0.987923810375894
+  },
+  "viability": {
+    "overall_pass": true,
+    "mask_ok": true,
+    "pred_ok": true,
+    "auv_ok": true,
+    "min_ok": true,
+    "thresholds": {
+      "mask_iou": 0.9,
+      "pred_mean_corr": 0.8,
+      "auv_mean_corr": 0.8,
+      "min_corr": 0.7
+    }
+  },
+  "inferred_axes": {
+    "axis_mode_used": "utm_abs_km",
+    "lat_mid_deg": 39.565642554000775,
+    "lon_mid_deg": -9.310960262889143,
+    "km_per_deg_lat": 111.02627056018834,
+    "km_per_deg_lon": 85.93242097393852,
+    "utm_zone": 29.0,
+    "utm_hemisphere": "N",
+    "lon_min_inferred": -9.480706721668962,
+    "lon_max_inferred": -9.141213804109325,
+    "lat_min_inferred": 39.478584076439205,
+    "lat_max_inferred": 39.65270103156234,
+    "x_km_min_inferred": 458.70812265264726,
+    "x_km_max_inferred": 487.870002888995,
+    "y_km_min_inferred": 4369.93390206069,
+    "y_km_max_inferred": 4389.257784651033
+  },
+  "outputs": {
+    "tables_dir": "investigation/tempibhres_hres_registration_controlled_v4/tables",
+    "plots_dir": "investigation/tempibhres_hres_registration_controlled_v4/plots",
+    "report_md": "investigation/tempibhres_hres_registration_controlled_v4/TEMPIBHRES_HRES_REGISTRATION_REPORT.md",
+    "inferred_export": {
+      "deterministic_dir": "investigation/tempibhres_hres_registration_controlled_v4/figures_inferred_axes_km/deterministic_tempibhres",
+      "normalized_dir": "investigation/tempibhres_hres_registration_controlled_v4/figures_inferred_axes_km/normalized_tempibhres",
+      "deterministic_count": 300,
+      "normalized_count": 300,
+      "extent_km": [
+        458.70812265264726,
+        487.870002888995,
+        4369.93390206069,
+        4389.257784651033
+      ],
+      "x_label": "x",
+      "y_label": "y",
+      "axis_mode_used": "utm_abs_km"
+    }
+  },
+  "notes": {
+    "native_tempibhres_georef_claim": "not asserted",
+    "axes_labeling_policy": "inferred axes are explicitly labeled as inferred from HRes registration",
+    "core_pipeline_modified": false
+  }
+}

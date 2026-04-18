@@ -45,11 +45,15 @@ IN_MASK_CANDIDATES = [
     ROOT / "results" / "plots" / "mask_common.npy",
     ROOT / "results" / "fossum" / "mask_common.npy",
 ]
-IN_SCALE_TEMP = ROOT / "results" / "plots" / "deterministic_2024_surface_300_thesis" / "color_scale.json"
-IN_SCALE_NORM = ROOT / "results" / "plots" / "pngs_normalized_surface_300_thesis" / "color_scale_norm.json"
+IN_SCALE_TEMP_CANDIDATES = [
+    ROOT / "results" / "plots" / "deterministic_2024_surface_300_thesis" / "color_scale.json",
+    ROOT / "results" / "plots" / "deterministic_2024_surface_300_thesis_indexed_axes" / "color_scale.json",
+]
+IN_SCALE_NORM_CANDIDATES = [
+    ROOT / "results" / "plots" / "pngs_normalized_surface_300_thesis" / "color_scale_norm.json",
+    ROOT / "results" / "plots" / "pngs_normalized_surface_300_thesis_indexed_axes" / "color_scale_norm.json",
+]
 
-X_LABEL = "X (km, relative)"
-Y_LABEL = "Y (km, relative)"
 GEOREF_NOTE = (
     "Relative-km axes are display-derived from local HRes bounding-box mapping "
     "and are not independently verified native georeferencing of tempIBHRes."
@@ -61,6 +65,28 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--tag", type=str, default=datetime.now().strftime("%Y%m%d_%H%M%S"))
     p.add_argument("--z-start", type=int, default=1)
     p.add_argument("--z-end", type=int, default=300)
+    p.add_argument("--x-label", type=str, default="x", help="X axis label text.")
+    p.add_argument("--y-label", type=str, default="y", help="Y axis label text.")
+    p.add_argument("--unit-tag", type=str, default="km", help="Unit annotation shown near axes; use '' to disable.")
+    p.add_argument("--figure-tag", type=str, default="", help="Optional panel tag, e.g., 'a)'.")
+    p.add_argument("--x-offset-km", type=float, default=0.0, help="Additive offset applied to x-axis ticks.")
+    p.add_argument("--y-offset-km", type=float, default=0.0, help="Additive offset applied to y-axis ticks.")
+    p.add_argument("--x-start-col", type=int, default=1, help="1-based starting column for spatial crop.")
+    p.add_argument("--x-end-col", type=int, default=0, help="1-based ending column for spatial crop (0 = full width).")
+    p.add_argument("--y-start-row", type=int, default=1, help="1-based starting row for spatial crop.")
+    p.add_argument("--y-end-row", type=int, default=0, help="1-based ending row for spatial crop (0 = full height).")
+    p.add_argument(
+        "--title-prefix-det",
+        type=str,
+        default="Surface temperature - 2024 day",
+        help="Deterministic title prefix. Use '' to hide title.",
+    )
+    p.add_argument(
+        "--title-prefix-norm",
+        type=str,
+        default="Normalized surface temperature - 2024 day",
+        help="Normalized title prefix. Use '' to hide title.",
+    )
     return p.parse_args()
 
 
@@ -152,6 +178,17 @@ def build_relative_km_axes(nx: int, ny: int, bbox: Dict[str, float]) -> Tuple[np
     return x_km, y_km, meta
 
 
+def build_1based_crop_slice(start_1b: int, end_1b: int, limit: int, axis_name: str) -> Tuple[slice, int, int]:
+    start = max(1, int(start_1b))
+    end = int(limit) if int(end_1b) <= 0 else min(int(limit), int(end_1b))
+    if start > end:
+        raise RuntimeError(
+            f"Invalid crop for {axis_name}: start={start_1b}, end={end_1b}, "
+            f"resolved_start={start}, resolved_end={end}, limit={limit}"
+        )
+    return slice(start - 1, end), start, end
+
+
 def render_field(
     arr: np.ndarray,
     out_png: Path,
@@ -161,14 +198,23 @@ def render_field(
     vmax: float,
     extent: List[float],
     cmap_name: str,
+    x_label: str,
+    y_label: str,
+    unit_tag: str,
+    figure_tag: str,
 ) -> None:
     fig, ax = plt.subplots(figsize=(7.0, 4.2))
     cmap = plt.get_cmap(cmap_name).copy()
     cmap.set_bad(color="white")
     im = ax.imshow(arr, origin="lower", cmap=cmap, vmin=vmin, vmax=vmax, aspect="auto", extent=extent)
     ax.set_title(title)
-    ax.set_xlabel(X_LABEL)
-    ax.set_ylabel(Y_LABEL)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+    if unit_tag.strip():
+        ax.text(1.005, -0.04, unit_tag, transform=ax.transAxes, ha="left", va="top")
+        ax.text(-0.055, -0.01, unit_tag, transform=ax.transAxes, ha="right", va="top")
+    if figure_tag.strip():
+        ax.text(-0.18, 1.04, figure_tag, transform=ax.transAxes, fontsize=18, fontweight="bold")
     cbar = fig.colorbar(im, ax=ax)
     cbar.set_label(cbar_label)
     fig.tight_layout()
@@ -191,23 +237,32 @@ def export_set(
     z_start: int,
     z_end: int,
     value_prefix: str,
-) -> List[Dict[str, float]]:
-    rows: List[Dict[str, float]] = []
+    x_label: str,
+    y_label: str,
+    unit_tag: str,
+    figure_tag: str,
+) -> List[Dict[str, object]]:
+    rows: List[Dict[str, object]] = []
     for z in range(z_start, z_end + 1):
         arr = x_stack[z - 1].copy()
         if mask_common is not None:
             arr[~mask_common] = np.nan
 
         out_png = out_dir / f"{fname_prefix}{z:03d}.png"
+        title = f"{title_prefix} z={z:03d}" if title_prefix.strip() else ""
         render_field(
             arr=arr,
             out_png=out_png,
-            title=f"{title_prefix} z={z:03d}",
+            title=title,
             cbar_label=cbar_label,
             vmin=vmin,
             vmax=vmax,
             extent=extent,
             cmap_name=cmap_name,
+            x_label=x_label,
+            y_label=y_label,
+            unit_tag=unit_tag,
+            figure_tag=figure_tag,
         )
         finite = np.isfinite(arr)
         values = arr[finite]
@@ -223,15 +278,17 @@ def export_set(
                 f"std_{value_prefix}": float(np.std(values)),
                 f"min_{value_prefix}": float(np.min(values)),
                 f"max_{value_prefix}": float(np.max(values)),
-                "x_axis_label": X_LABEL,
-                "y_axis_label": Y_LABEL,
+                "x_axis_label": x_label,
+                "y_axis_label": y_label,
+                "unit_tag": unit_tag,
+                "figure_tag": figure_tag,
                 "georef_note": GEOREF_NOTE,
             }
         )
     return rows
 
 
-def write_csv(path: Path, rows: List[Dict[str, float]], fieldnames: List[str]) -> None:
+def write_csv(path: Path, rows: List[Dict[str, object]], fieldnames: List[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -246,6 +303,8 @@ def main() -> None:
     in_x = resolve_existing(IN_X_SURFACE_CANDIDATES)
     in_x_norm = resolve_existing(IN_X_NORM_CANDIDATES)
     in_mask = resolve_existing(IN_MASK_CANDIDATES)
+    in_scale_temp = resolve_existing(IN_SCALE_TEMP_CANDIDATES)
+    in_scale_norm = resolve_existing(IN_SCALE_NORM_CANDIDATES)
 
     x_surface = np.load(in_x).astype(np.float32, copy=False)
     x_norm = np.load(in_x_norm).astype(np.float32, copy=False)
@@ -260,17 +319,32 @@ def main() -> None:
     if z_start > z_end:
         raise RuntimeError(f"Invalid z range: {z_start}..{z_end}")
 
-    scale_temp = load_json(IN_SCALE_TEMP)
-    scale_norm = load_json(IN_SCALE_NORM)
+    scale_temp = load_json(in_scale_temp)
+    scale_norm = load_json(in_scale_norm)
     vmin_temp = float(scale_temp["vmin"])
     vmax_temp = float(scale_temp["vmax"])
     vmin_norm = float(scale_norm["vmin"])
     vmax_norm = float(scale_norm["vmax"])
 
     bbox = find_hres_bbox(NETCDF_SUMMARY)
+    full_ny, full_nx = int(x_surface.shape[1]), int(x_surface.shape[2])
+    full_x_km, full_y_km, km_meta = build_relative_km_axes(nx=full_nx, ny=full_ny, bbox=bbox)
+    x_slice, x_start, x_end = build_1based_crop_slice(args.x_start_col, args.x_end_col, full_nx, "x")
+    y_slice, y_start, y_end = build_1based_crop_slice(args.y_start_row, args.y_end_row, full_ny, "y")
+
+    x_surface = x_surface[:, y_slice, x_slice]
+    x_norm = x_norm[:, y_slice, x_slice]
+    mask_common = mask_common[y_slice, x_slice]
+
     ny, nx = int(x_surface.shape[1]), int(x_surface.shape[2])
-    x_km, y_km, km_meta = build_relative_km_axes(nx=nx, ny=ny, bbox=bbox)
+    x_km = full_x_km[x_slice] + float(args.x_offset_km)
+    y_km = full_y_km[y_slice] + float(args.y_offset_km)
     extent = [float(x_km.min()), float(x_km.max()), float(y_km.min()), float(y_km.max())]
+
+    x_label = args.x_label
+    y_label = args.y_label
+    unit_tag = args.unit_tag
+    figure_tag = args.figure_tag
 
     out_det = out_root / "deterministic_2024_surface_300_thesis_relative_km_display_assumed"
     out_norm = out_root / "pngs_normalized_surface_300_thesis_relative_km_display_assumed"
@@ -280,7 +354,7 @@ def main() -> None:
         mask_common=None,
         out_dir=out_det,
         fname_prefix="TEMP_surface_2024_z",
-        title_prefix="Surface temperature - 2024 day",
+        title_prefix=args.title_prefix_det,
         cbar_label="Temperature (degC)",
         cmap_name="viridis",
         vmin=vmin_temp,
@@ -289,13 +363,17 @@ def main() -> None:
         z_start=z_start,
         z_end=z_end,
         value_prefix="temp",
+        x_label=x_label,
+        y_label=y_label,
+        unit_tag=unit_tag,
+        figure_tag=figure_tag,
     )
     norm_rows = export_set(
         x_stack=x_norm,
         mask_common=mask_common,
         out_dir=out_norm,
         fname_prefix="X_surface_norm_z",
-        title_prefix="Normalized surface temperature - 2024 day",
+        title_prefix=args.title_prefix_norm,
         cbar_label="Normalized temperature (-)",
         cmap_name="coolwarm",
         vmin=vmin_norm,
@@ -304,6 +382,10 @@ def main() -> None:
         z_start=z_start,
         z_end=z_end,
         value_prefix="norm",
+        x_label=x_label,
+        y_label=y_label,
+        unit_tag=unit_tag,
+        figure_tag=figure_tag,
     )
 
     write_csv(
@@ -322,6 +404,8 @@ def main() -> None:
             "max_temp",
             "x_axis_label",
             "y_axis_label",
+            "unit_tag",
+            "figure_tag",
             "georef_note",
         ],
     )
@@ -341,6 +425,8 @@ def main() -> None:
             "max_norm",
             "x_axis_label",
             "y_axis_label",
+            "unit_tag",
+            "figure_tag",
             "georef_note",
         ],
     )
@@ -352,16 +438,30 @@ def main() -> None:
             "x_surface": to_rel(in_x),
             "x_surface_norm": to_rel(in_x_norm),
             "mask_common": to_rel(in_mask),
-            "deterministic_scale": to_rel(IN_SCALE_TEMP),
-            "normalized_scale": to_rel(IN_SCALE_NORM),
+            "deterministic_scale": to_rel(in_scale_temp),
+            "normalized_scale": to_rel(in_scale_norm),
             "netcdf_summary": to_rel(NETCDF_SUMMARY),
         },
         "axis_mode": {
-            "x_axis_label": X_LABEL,
-            "y_axis_label": Y_LABEL,
+            "x_axis_label": x_label,
+            "y_axis_label": y_label,
+            "unit_tag": unit_tag,
+            "figure_tag": figure_tag,
             "mode": "relative_km_display_assumed_from_hres_bbox",
             "independent_validation_status": "not_independently_validated",
             "note": GEOREF_NOTE,
+        },
+        "crop": {
+            "x_start_col_1based": int(x_start),
+            "x_end_col_1based": int(x_end),
+            "y_start_row_1based": int(y_start),
+            "y_end_row_1based": int(y_end),
+            "full_shape_ny_nx": [int(full_ny), int(full_nx)],
+            "cropped_shape_ny_nx": [int(ny), int(nx)],
+        },
+        "axis_offsets_km": {
+            "x_offset_km": float(args.x_offset_km),
+            "y_offset_km": float(args.y_offset_km),
         },
         "hres_bbox_source": bbox,
         "relative_km_geometry": km_meta,
@@ -383,13 +483,16 @@ def main() -> None:
         "- This output therefore uses a display-derived assumption from HRes bbox mapping.",
         "",
         "## Axes Used",
-        f"- X: `{X_LABEL}`",
-        f"- Y: `{Y_LABEL}`",
+        f"- X: `{x_label}`",
+        f"- Y: `{y_label}`",
+        f"- Unit tag: `{unit_tag}`",
+        f"- Figure tag: `{figure_tag}`",
         "",
         "## Method",
         "- Source bbox from `results/netcdf_files_summary.csv` (HRes row).",
         "- Converted deg-per-cell to km-per-cell at midpoint latitude.",
-        "- Built relative axes from origin `(0,0)`.",
+        "- Built relative axes from origin `(0,0)` plus optional axis offsets.",
+        f"- Cropped grid: x={x_start}..{x_end}, y={y_start}..{y_end} (1-based).",
         "",
         "## Key Parameters",
         f"- dx_km_per_cell: `{km_meta['dx_km_per_cell']:.6f}`",
