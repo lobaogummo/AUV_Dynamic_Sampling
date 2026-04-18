@@ -64,3 +64,14 @@ data/**
 !data/HResNew/**
 !data/2024/**
 !data/new_correct_data_from_FILIPA/**
+
+# include project folders at repo root
+!investigation/**
+!OptimalPlanning_Lucrezia/**
+!papers/**
+
+# keep Python caches ignored inside the included root folders
+investigation/**/__pycache__/
+investigation/**/*.py[cod]
+OptimalPlanning_Lucrezia/**/__pycache__/
+OptimalPlanning_Lucrezia/**/*.py[cod]

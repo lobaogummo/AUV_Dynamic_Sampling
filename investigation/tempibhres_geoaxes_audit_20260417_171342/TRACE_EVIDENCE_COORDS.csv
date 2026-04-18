@@ -1,0 +1,21 @@
+﻿id,artifact,line_or_row,fact,implication,confidence
+E01,FILIPA_DADOS/data/2024/tempIBHRes2024_1.gslib,head(1-6),Header shows x/y/z/temp not LAT/LON,No native lat/lon fields in audited gslib header,high
+E02,FILIPA_DADOS/scripts/Old_Code/export_surface_2024_300_images.py,149-152,Grid expected x=1..112 y=1..64,Coordinates treated as index grid,high
+E03,FILIPA_DADOS/scripts/Old_Code/export_surface_2024_300_images.py,311,Calls load_physical_lon_lat(ROOT,NX,NY),Axes injected by helper not by gslib,high
+E04,FILIPA_DADOS/scripts/Old_Code/export_surface_2024_300_images.py,206-219,imshow uses extent from lon/lat plus Longitude/Latitude labels,Plot displayed in geographic axes,high
+E05,FILIPA_DADOS/scripts/Old_Code/physical_coords.py,35-41,Docstring says use HRes bbox from metadata,External bbox mapping is intentional,high
+E06,FILIPA_DADOS/scripts/Old_Code/physical_coords.py,42-43,Reads results/netcdf_files_summary.csv and picks HRes row,HRes metadata is coordinate source,high
+E07,FILIPA_DADOS/scripts/Old_Code/physical_coords.py,59-60,lon/lat built with np.linspace to target nx/ny,Linear remap to target grid,high
+E08,FILIPA_DADOS/scripts/Old_Code/physical_coords.py,63,Metadata method is linear_resample_from_hres_bbox,Display mapping is explicit in code,high
+E09,FILIPA_DADOS/results/plots/deterministic_2024_surface_300_thesis/color_scale.json,9-20,coord_source stores HRes row and method,Output metadata confirms mapping,high
+E10,FILIPA_DADOS/results/plots/pngs_normalized_surface_300_thesis/color_scale_norm.json,6-17,Same coord_source method in normalized outputs,Normalized PNGs share same mapping,high
+E11,FILIPA_DADOS/docs/THESIS_FIGURE_CONVENTIONS.md,10-15,Doc states source csv row and linear mapping to 112x64,Methodology documentation aligns with code,high
+E12,FILIPA_DADOS/docs/GRID_AND_COORDS.md,59,Doc states GSLIB uses index coordinates,Supports non-native lat/lon interpretation,high
+E13,FILIPA_DADOS/results/validation_visual_data_branches_20260405_193102/tables/image_manifest.csv,row2,row2 marks tempIBHRes coord_type=latlon with HRes bbox,tempIBHRes rendered in mapped lat/lon there,high
+E14,FILIPA_DADOS/results/validation_visual_data_branches_20260405_193102/tables/image_manifest.csv,row4,row4 marks TestC4_scene_real coord_type=metric,Scene product uses metric coordinates in this package,high
+E15,FILIPA_DADOS/results/validation_visual_data_branches_20260405_193102/tables/image_manifest.csv,row6,row6 marks Priori_Median coord_type=index,Some compared products are index-only,high
+E16,FILIPA_DADOS/results/validation_hres_surface_comparison_20260405_130636/manifest.json,33,Note says HRes plot extents taken from netcdf_files_summary,HRes scenes likely remapped for lat/lon display in that package,medium
+E17,FILIPA_DADOS/results/pipeline_visual/pipeline_stages.csv,19,STG18 says scripts not found,Subplot generation logic for validation packages not fully reproducible,high
+E18,FILIPA_DADOS/results/pipeline_visual/gaps_and_uncertainties.md,29-30,Validation packages listed as uncertain script provenance,Traceability gap remains,high
+E19,FILIPA_DADOS/scripts/Old_Code/01b_export_normalized_surface_pngs.py,96-117,Normalized export uses load_physical_lon_lat and extent with lat/lon labels,Normalized thesis images are mapped display,high
+E20,FILIPA_DADOS/scripts/Old_Code/export_2024_images_by_day_and_depth.py,258,Depth export uses plt.imsave without geographic extent,These outputs are index-like rasters,high

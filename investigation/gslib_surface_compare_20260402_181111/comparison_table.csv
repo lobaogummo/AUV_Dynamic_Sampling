@@ -1,0 +1,11 @@
+metric,tempIBHRes2024_1.gslib,2024IB
+title,tempOcean,seasurftemp
+"shape (z, y, x)",300x64x112,300x78x120
+x range,1..112,1..120
+y range,1..64,1..78
+z range,1..300,1..300
+row_count,2150400,2808000
+missing_fraction,0.033900669642857144,0.1561965811965812
+common_mask_valid_fraction,0.9660993303571429,0.8438034188034188
+global_mean_temp,16.67153549194336,17.452089309692383
+global_std_temp,1.347299575805664,2.0118637084960938

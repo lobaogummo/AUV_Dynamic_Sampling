@@ -1,0 +1,23 @@
+input_name,required_by_planner,actual_file_path,format,shape_or_dims,status,notes
+file_name_cli,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc,NetCDF4,"TIME=14,DEPT=17,LAT=180,LON=240",found_exact,Entrada principal passada via argv para OptimalPlanning.py
+temperr_2d,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc::STD,NetCDF variable,float map 180x240,needs_derivation,Planner espera nome temperr e usa diretamente este campo para premio e selecao de POI
+lat_1d,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc::lat,NetCDF coordinate,float vector length 180,found_probable,Alias lat existe no dataset embora coordenada original seja LAT
+lon_1d,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc::lon,NetCDF coordinate,float vector length 240,found_probable,Alias lon existe no dataset embora coordenada original seja LON
+tbath_2d,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc::BATHY,NetCDF variable,float map 180x240,needs_derivation,Planner espera tbath com convencao compativel com regra de MINIMUM_DEPTH
+landt_2d,yes,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/30-10-2024_AUVpredModel_1.nc::derived_mask,Derived binary map,bool/int map 180x240,needs_derivation,Variavel landt nao existe diretamente no nc e deve ser derivada de NaN/finitude ou mask.out
+AUV_NUMBER,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,int scalar,found_exact,Valor atual 2
+SPEED,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,float scalar m_per_s,found_exact,Valor atual 1 m/s
+MISSION_DURATIONS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,list length 2 hours,found_exact,"Deve manter consistencia com AUV_NUMBER"
+STARTING_POINTS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,list of lat_lon pairs,found_exact,Usado para depots de inicio
+ENDING_POINTS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,list of lat_lon pairs,found_exact,Usado para depots de fim
+MINIMUM_DEPTH,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,float scalar meters,found_exact,Aplicado como mascara batimetrica
+OPERATION_BBOX,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constants,two lat_lon pairs,found_exact,OPERATION_LL_CORNER e OPERATION_UR_CORNER
+OBSTACLE_BOXES,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constants,list of lat_lon box corners,found_exact,OBJECTS_LL_CORNER e OBJECTS_UR_CORNER
+POI_SELECTION_PARAMS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constants,"N_LEVELS,D_MIN_CONTOUR,D_MIN_VORONOI",found_exact,Controla geracao de pontos clientes
+SOLVER_PARAMS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constants,"STOP_RUN_TIME,STOP_NO_ITER,SEED,N_DEPOT",found_exact,Controla as duas corridas do PyVRP
+HOPS_GRID_RESOLUTION,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,float scalar meters,found_exact,Usado na conversao para max distance em celulas
+MODEL_HOPS,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,bool scalar,found_exact,Baseline atual depende de MODEL_HOPS=True
+WP_WAITING_TIME,yes,OptimalPlanning_Lucrezia/Config_file.py,Python constant,float scalar minutes,found_exact,Usado na segunda fase para ajustar tempo efetivo
+CLEAN_ROUTE,no,OptimalPlanning_Lucrezia/Config_file.py,Python constant,bool scalar,found_exact,Pos-processamento opcional de waypoints
+distance_from_land_cache_npy,no,OptimalPlanning_Lucrezia/temperr_op_distanceFromLandMask5KM.npy,NumPy .npy,2D map,found_exact,Existe no repositorio mas fluxo atual esta comentado em OptimalPlanning.py
+scene_support_gslib,no,FILIPA_DADOS/data/Test_C4/Nazare_30-10-2024_1/scene_1.gslib,GSLIB,43200 rows z=13,found_exact,Ficheiro util para validacao do cenario mas nao e consumido diretamente pelo planner

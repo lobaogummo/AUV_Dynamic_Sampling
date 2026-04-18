@@ -1,0 +1,159 @@
+{
+  "sources": {
+    "2024IB": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\new_data_pipeline\\data_raw\\2024IB",
+    "tempIBHRes2024_1.gslib": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\data\\2024\\tempIBHRes2024_1.gslib"
+  },
+  "info_2024IB": {
+    "path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\new_data_pipeline\\data_raw\\2024IB",
+    "title": "seasurftemp",
+    "nvars": 4,
+    "varnames": [
+      "x",
+      "y",
+      "z",
+      "temp"
+    ],
+    "grid": {
+      "x_min": 1,
+      "x_max": 120,
+      "nx": 120,
+      "y_min": 1,
+      "y_max": 78,
+      "ny": 78,
+      "z_min": 1,
+      "z_max": 300,
+      "nz": 300
+    },
+    "row_count": 2808000,
+    "expected_rows": 2808000,
+    "grid_complete_cartesian": true,
+    "sentinel_value": -999.25,
+    "sentinel_count_raw": 438600,
+    "sentinel_count_residual_after_conversion": 0,
+    "temp_raw_range": {
+      "min": -999.25,
+      "max": 22.174001
+    },
+    "global_stats": {
+      "min": 12.986000061035156,
+      "max": 22.174001693725586,
+      "mean": 17.452089309692383,
+      "std": 2.0118637084960938
+    },
+    "missing": {
+      "nan_count": 438600,
+      "total_count": 2808000,
+      "missing_fraction": 0.1561965811965812,
+      "valid_fraction": 0.8438034188034188
+    },
+    "common_mask": {
+      "shape": [
+        78,
+        120
+      ],
+      "valid_count": 7898,
+      "total_count": 9360,
+      "valid_fraction": 0.8438034188034188
+    },
+    "daily": {
+      "valid_count_min": 7898,
+      "valid_count_max": 7898,
+      "valid_count_mean": 7898.0,
+      "mean_min": 14.720520973205566,
+      "mean_max": 20.78875732421875,
+      "std_min": 0.23813338577747345,
+      "std_max": 2.0339908599853516
+    }
+  },
+  "info_tempIBHRes2024_1": {
+    "path": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\data\\2024\\tempIBHRes2024_1.gslib",
+    "title": "tempOcean",
+    "nvars": 4,
+    "varnames": [
+      "x",
+      "y",
+      "z",
+      "temp"
+    ],
+    "grid": {
+      "x_min": 1,
+      "x_max": 112,
+      "nx": 112,
+      "y_min": 1,
+      "y_max": 64,
+      "ny": 64,
+      "z_min": 1,
+      "z_max": 300,
+      "nz": 300
+    },
+    "row_count": 2150400,
+    "expected_rows": 2150400,
+    "grid_complete_cartesian": true,
+    "sentinel_value": -999.25,
+    "sentinel_count_raw": 0,
+    "sentinel_count_residual_after_conversion": 0,
+    "temp_raw_range": {
+      "min": 13.946,
+      "max": 20.277
+    },
+    "global_stats": {
+      "min": 13.946000099182129,
+      "max": 20.277000427246094,
+      "mean": 16.67153549194336,
+      "std": 1.347299575805664
+    },
+    "missing": {
+      "nan_count": 72900,
+      "total_count": 2150400,
+      "missing_fraction": 0.033900669642857144,
+      "valid_fraction": 0.9660993303571429
+    },
+    "common_mask": {
+      "shape": [
+        64,
+        112
+      ],
+      "valid_count": 6925,
+      "total_count": 7168,
+      "valid_fraction": 0.9660993303571429
+    },
+    "daily": {
+      "valid_count_min": 6925,
+      "valid_count_max": 6925,
+      "valid_count_mean": 6925.0,
+      "mean_min": 14.50120735168457,
+      "mean_max": 19.65587043762207,
+      "std_min": 0.04749240353703499,
+      "std_max": 1.062209129333496
+    }
+  },
+  "temporal_relation": {
+    "corr_daily_mean": 0.8956225159147265,
+    "corr_daily_std": 0.5593777746640728,
+    "spatial_corr_mean": 0.3598125502392232,
+    "spatial_corr_median": 0.4052895738487447,
+    "spatial_rmse_mean": 1.0765687405069668,
+    "spatial_bias_mean": 0.6937237573236538,
+    "mean_overlap_pixels_oldgrid": 6098.0
+  },
+  "remap_method": {
+    "description": "2024IB remapped to tempIBHRes grid using bilinear interpolation in normalized index coordinates (not physical lon/lat).",
+    "source_shape": [
+      300,
+      78,
+      120
+    ],
+    "target_shape": [
+      300,
+      64,
+      112
+    ],
+    "mask_new_to_old_threshold": 0.99
+  },
+  "normalization": {
+    "old_mu": 16.67153549194336,
+    "old_sigma": 1.3472994565963745,
+    "new_mu": 17.452091217041016,
+    "new_sigma": 2.0118637084960938
+  }
+}
