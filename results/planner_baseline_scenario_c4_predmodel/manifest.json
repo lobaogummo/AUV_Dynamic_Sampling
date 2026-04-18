@@ -1,0 +1,48 @@
+{
+  "scenario_name": "TEST_C4_NAZARE_30-10-2024_INST1_BASELINE",
+  "created_utc": "2026-04-17T15:49:51.070917+00:00",
+  "source_files": {
+    "predmodel": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\data\\Test_C4\\Priori_Nazare_30-10-2024_1\\30-10-2024_predModel_1.nc",
+    "mask_out_reference": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\data\\Test_C4\\Nazare_30-10-2024_1\\mask.out"
+  },
+  "output_files": {
+    "interface_nc": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\planner_baseline_scenario_c4_predmodel\\inputs\\30-10-2024_predModel_1_planner_interface.nc",
+    "validation_report": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\planner_baseline_scenario_c4_predmodel\\outputs\\validation\\run_report.md",
+    "validation_summary_csv": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\planner_baseline_scenario_c4_predmodel\\outputs\\validation\\interface_summary.csv",
+    "validation_checks_json": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\planner_baseline_scenario_c4_predmodel\\outputs\\validation\\checks.json"
+  },
+  "interface_rules": {
+    "temperr": {
+      "source": "STD",
+      "day_index": 1
+    },
+    "tbath": {
+      "source": "BATHY",
+      "transform": "tbath = -BATHY"
+    },
+    "landt": {
+      "rule": "landt = 1 where finite(temperr) and finite(tbath), else 0"
+    },
+    "grid_policy": "keep native C4 grid 180x240; no external regridding"
+  },
+  "planner_operational_crop": {
+    "operation_ll_corner": [
+      39.50934,
+      -9.4352
+    ],
+    "operation_ur_corner": [
+      39.75313,
+      -9.03402
+    ],
+    "indices": {
+      "lat_start": 46,
+      "lat_stop": 138,
+      "lon_start": 46,
+      "lon_stop": 195
+    },
+    "expected_shape": [
+      92,
+      149
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-04-17T21:15:57",
+  "output_root": "results/plots/tempibhres_indexed_axes_fix_20260417_185500",
+  "input_arrays": {
+    "x_surface": "results/plots/X_surface_300.npy",
+    "x_surface_norm": "results/plots/X_surface_300_norm.npy",
+    "mask_common": "results/plots/mask_common.npy"
+  },
+  "source_scales": {
+    "deterministic_color_scale": "results/plots/deterministic_2024_surface_300_thesis/color_scale.json",
+    "normalized_color_scale": "results/plots/pngs_normalized_surface_300_thesis/color_scale_norm.json"
+  },
+  "axis_convention": {
+    "x_axis_label": "X index",
+    "y_axis_label": "Y index",
+    "georef_mode": "indexed_grid_from_gslib_xy",
+    "georef_note": "Figures derived from tempIBHRes2024_* are shown in indexed grid coordinates (X index, Y index), since independently verified native georeferencing of this reduced product is not established in the current repository state."
+  },
+  "counts": {
+    "deterministic_pngs": 300,
+    "normalized_pngs": 300,
+    "validation_tempibhres_pngs": 6,
+    "panel_caption_overrides": 6
+  }
+}

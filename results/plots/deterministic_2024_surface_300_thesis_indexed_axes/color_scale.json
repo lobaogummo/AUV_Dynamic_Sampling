@@ -1,0 +1,22 @@
+{
+  "vmin": 14.597144,
+  "vmax": 19.40040604,
+  "nx": 112,
+  "ny": 64,
+  "z_min": 1,
+  "z_max": 300,
+  "source_file": "data/2024/tempIBHRes2024_1.gslib",
+  "coord_source": {
+    "method": "indexed_from_gslib_xy",
+    "x_column": "x",
+    "y_column": "y",
+    "x_min": 1,
+    "x_max": 112,
+    "y_min": 1,
+    "y_max": 64
+  },
+  "x_axis_label": "X index",
+  "y_axis_label": "Y index",
+  "georef_mode": "indexed_grid_from_gslib_xy",
+  "georef_note": "Figures derived from tempIBHRes2024_* are shown in indexed grid coordinates (X index, Y index); independently verified native georeferencing of this reduced product is not established in the current repository state."
+}
