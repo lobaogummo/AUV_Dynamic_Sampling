@@ -1,0 +1,145 @@
+{
+  "audit_timestamp_utc": "2026-04-19T14:25:54.341040+00:00",
+  "audited_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+  "audited_file_sha256": "6cffa66b30c46c1f1fb5b1534ba9b4a2d0bbef82a86577ec67d45a8033193895",
+  "secondary_copy_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\Priori_Nazare_30-10-2024_1\\30-10-2024_predModel_1.nc",
+  "secondary_copy_exists": true,
+  "secondary_copy_sha256": "6cffa66b30c46c1f1fb5b1534ba9b4a2d0bbef82a86577ec67d45a8033193895",
+  "secondary_copy_identical_to_primary": true,
+  "dataset_sizes": {
+    "TIME": 14,
+    "DEPT": 17,
+    "LAT": 180,
+    "LON": 240,
+    "lat": 180,
+    "lon": 240,
+    "depth": 17,
+    "day": 2
+  },
+  "dataset_coords": [
+    "LAT",
+    "LON",
+    "DEPT"
+  ],
+  "dataset_data_vars": [
+    "TEMP",
+    "BATHY",
+    "STD",
+    "TEMPpred"
+  ],
+  "std_structure": {
+    "dims": [
+      "day",
+      "LAT",
+      "LON"
+    ],
+    "shape": [
+      2,
+      180,
+      240
+    ],
+    "ndim": 3,
+    "day_slice_count": 2,
+    "day_valid_indices": [
+      0,
+      1
+    ],
+    "std_attrs": {}
+  },
+  "metadata_evidence": {
+    "global_attrs": {},
+    "time_like_dims": [
+      "TIME",
+      "day"
+    ],
+    "time_like_vars": [],
+    "has_explicit_day_variable": false,
+    "variable_attrs": {
+      "TEMP": {},
+      "LAT": {},
+      "LON": {},
+      "BATHY": {},
+      "DEPT": {},
+      "STD": {},
+      "TEMPpred": {}
+    }
+  },
+  "stats": {
+    "day0": {
+      "total_cells": 43200,
+      "finite_cells": 30128,
+      "finite_fraction": 0.6974074074074074,
+      "zero_cells_all": 30127,
+      "zero_fraction_all": 0.6973842592592593,
+      "zero_cells_finite": 30127,
+      "zero_fraction_finite": 0.9999668082846522,
+      "min": 0.0,
+      "max": 0.000716,
+      "mean": 2.3765268189060008e-08,
+      "std": 4.124968755687111e-06,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "day1": {
+      "total_cells": 43200,
+      "finite_cells": 30128,
+      "finite_fraction": 0.6974074074074074,
+      "zero_cells_all": 0,
+      "zero_fraction_all": 0.0,
+      "zero_cells_finite": 0,
+      "zero_fraction_finite": 0.0,
+      "min": 0.004632,
+      "max": 0.117726,
+      "mean": 0.04858696003717473,
+      "std": 0.016968309604132353,
+      "p01": 0.01034127,
+      "p05": 0.017536300000000005,
+      "p50": 0.049321,
+      "p95": 0.07562609999999997,
+      "p99": 0.08694840999999999
+    },
+    "day1_minus_day0": {
+      "total_cells": 43200,
+      "finite_cells": 30128,
+      "finite_fraction": 0.6974074074074074,
+      "zero_cells_all": 0,
+      "zero_fraction_all": 0.0,
+      "zero_cells_finite": 0,
+      "zero_fraction_finite": 0.0,
+      "min": 0.004632,
+      "max": 0.117726,
+      "mean": 0.048586936271906536,
+      "std": 0.016968367412397548,
+      "p01": 0.01034127,
+      "p05": 0.017536300000000005,
+      "p50": 0.049321,
+      "p95": 0.07562609999999997,
+      "p99": 0.08694840999999999
+    },
+    "overlap_corr_day0_day1": -0.01389270572134619,
+    "overlap_rmse_day1_vs_day0": 0.051464705079621524,
+    "overlap_mae_day1_vs_day0": 0.048586936271906536,
+    "hist_info": {
+      "hist_min": 0.0,
+      "hist_max": 0.117726,
+      "hist_bins": 90
+    },
+    "day0_nearly_zero_flag": true,
+    "day1_structured_flag": true,
+    "finite_union_fraction": 0.6974074074074074
+  },
+  "decision": "UNCERTAIN: day=1 plausible but not proven",
+  "defensibility_sentence": "A escolha de STD[day=1] e auditavelmente defensavel para o input surface-only do planner como opcao operacional pragmatica, mas sem prova semantica completa no metadata do NetCDF.",
+  "outputs": {
+    "std_day0_map": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day0_map.png",
+    "std_day1_map": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day1_map.png",
+    "std_day_difference_map": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day_difference_map.png",
+    "std_day_hist_comparison": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day_hist_comparison.png",
+    "stats_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day_audit_stats.csv",
+    "report_md": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day_audit_report.md",
+    "summary_md": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\std_day_audit\\std_day_audit_summary.md"
+  }
+}

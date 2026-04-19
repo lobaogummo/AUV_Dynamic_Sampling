@@ -1,0 +1,783 @@
+
+
+===== PAGE 1 =====
+Closing the Data Loop: Real-World AUVs Adaptive
+Sampling for Improved Ocean Model Predictions
+Lucrezia Bernacchi 1, Ana Filipa Duarte 2, Renato Mendes 1,3,4, Leonardo Azevedo 2, Jo ˜ao Borges de Sousa 1,3
+1 Laborat´orio de Sistemas e Tecnologia Subaqu ´atica (LSTS), Faculdade de Engenharia da Universidade do Porto, Portugal
+2 Centro de Recursos Naturais e Ambiente (CERENA), Instituto Superior T ´ecnico, Universidade de Lisboa, Lisboa, Portugal
+3 Laborat´orio Associado de Energia, Transportes e Aeron ´autica (LAETA), Porto, Portugal
+4 +ATLANTIC CoLAB, Lisboa, Portugal
+Abstract—Ocean models’ forecasting capabilities heavily de-
+pend on the quality of assimilated data. Autonomous Underwater
+Vehicles (AUVs) are increasingly used to collect data more quickly
+and cost-effectively, but their endurance limitations make efﬁcient
+trajectory planning essential to maximize data informativeness.
+This work presents a cost-effective, multi-vehicle path planning
+algorithm for adaptive ocean sampling, based on the Prize-
+Collecting Vehicle Routing Problem (PCVRP) and designed to
+close the loop between model prediction and assimilation by
+guiding data collection in data-sensitive regions. The algorithm
+ensures compliance with key practical constraints typical of real-
+world missions, including different endurance capabilities of the
+vehicles, varying deployment and recovery locations, and obstacle
+avoidance within the operational area. The approach follows
+a daily cycle: the ocean model generates a one-day forecast,
+producing a spatial uncertainty map that serves as input to the
+planning algorithm; the algorithm determines the near-optimal
+sampling allocations for the vehicles, aiming to maximize the
+collected information and minimize the travelled distance; ﬁnally,
+the collected data are assimilated to improve the next forecast.
+The methodology has been tested and validated on a ﬂeet of
+AUVs in Nazar ´e, Portugal, within the context of the FRESNEL
+ﬁeld campaign conducted in October 2024. Experimental results
+demonstrate the effectiveness of the proposed methodology in
+real-world contexts and the beneﬁts of the adaptive sampling
+strategy in enhancing model capabilities.
+Index Terms—Adaptive sampling, autonomous underwater
+vehicle (AUV), ocean modeling, vehicle routing problem (VRP).
+I. I NTRODUCTION
+Ocean models are essential tools for predicting the future
+state of the oceans, which is critical for climate forecasting,
+pollution monitoring, and resource management. However,
+the inherent imperfections of these models make the data
+assimilation process vital for compensating for model errors
+and improving their forecast capabilities. This is achieved
+by integrating real-world observational data with the physical
+model, resulting in a more accurate representation of the sys-
+tem’s state [1]. Diverse technologies are used to collect these
+data. Satellite data, while highly advantageous for providing
+data of vast areas, are subject to low spatial resolution and
+depend on atmospheric conditions. On the other hand, in situ
+measurements, such as those obtained using ships or buoys,
+provide more accurate datasets for ocean models. Still, they
+face limitations in terms of operational cost and the area they
+can cover, thus limiting the data to point-based measurements
+in speciﬁc locations. Recent developments in technology
+and automation have made Autonomous Underwater Vehicles
+(AUVs) an efﬁcient tool for data collection. These vehicles,
+equipped with different sensors and the ability to move, can
+improve both the spatial and temporal resolution of a wide
+range of oceanographic data [2]. However, the endurance lim-
+itations of these vehicles make intelligent trajectory planning
+crucial for focusing on areas of greater relevance for ongoing
+analysis. Moreover, the high variability of ocean dynamics and
+the inﬂux of assimilated data necessitate continually reﬁning
+sampling strategies to adapt to changing conditions. This opens
+the door to adaptive sampling strategies, where the goal is to
+predict the types and locations of observations expected to be
+most useful based on given objectives and the constraints of
+the available assets [3]. The objectives, targets, and platforms
+involved in adaptive sampling strategies vary widely, leading
+to several approaches tailored to speciﬁc applications in the
+context of AUVs [4]. These include, among others, seabed
+coverage for mine countermeasures [5], sampling for water
+mass classiﬁcation [6], tracking coastal upwelling and river
+plume fronts [7], [8] and ocean phenomena [9], [10]. In [11],
+a Gaussian Process-based adaptive sampling method for a
+single AUV is introduced to explore an environment while
+prioritizing the most informative regions, deﬁned by different
+potential applications. In [12], a recursive-greedy algorithm is
+employed to sample the operational area while considering
+vehicle endurance constraints and high-trafﬁc zones. Both
+studies focus on single-vehicle scenarios, and a prior deﬁnition
+of waypoints, in number or location, is used for trajectory plan-
+ning. A multi-vehicle approach is explored in [13], presenting
+an adaptive sampling strategy for multiple AUVs that utilizes
+virtual bodies and artiﬁcial potentials. This method focuses on
+cooperative control, with multiple vehicles maintaining forma-
+tion while sampling the ocean, as tested during the OASN II
+project [14]. A promising adaptive sampling technique driven
+by an ocean model is proposed in [15], intending to minimize
+the error standard deviation of a 2D ocean ﬁeld to improve
+ocean predictions using Mixed Integer Linear Programming
+(MILP). Given the initial deployment positions and the desired
+2025 Symposium on Maritime Informatics and Robotics (MARIS) | 979-8-3315-1310-8/25/$31.00 ©2025 IEEE | DOI: 10.1109/MARIS64137.2025.11139688
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 2 =====
+trajectory lengths for the vehicles, the method provides an
+optimal solution that accounts for multiple operational con-
+straints. While the reported computation times for simulations
+are promising, the solution time increases exponentially with
+the desired trajectory length, making the approach sensitive
+to the problem’s scale. Despite these advancements, many
+proposed approaches struggle to address the complexities of
+real-world deployments, where operational areas vary in size
+and characteristics. This variability often results in computa-
+tional challenges and the introduction of essential operational
+constraints, limiting the effectiveness of existing methods. To
+address these gaps, this work proposes an operational approach
+for adaptive sampling designed for real-world applications
+to close the loop between forecasting and data assimilation
+to enhance the predictive capabilities of ocean models. Our
+approach introduces a cost-effective algorithm for computing
+near-optimal AUV trajectories, accommodating varying ﬂeet
+sizes while addressing key practical constraints typical of real-
+world missions. These constraints include different endurance
+limitations for each vehicle, distinct deployment and recovery
+locations, known obstacles within the operational area, and
+the time required by the AUVs to ensure communication and
+navigation ﬁxes during the missions.
+The paper is organized as follows: Section II details the
+problem under investigation. Section III introduces the key
+steps of the proposed approach. Section IV describes the
+experimental activities conducted in both simulation and real-
+world scenarios and the obtained results. Finally, Section V
+summarizes the ﬁndings and explores potential future devel-
+opments.
+II. P ROBLEM STATEMENT
+In this work, we focus on enhancing the capabilities
+of numerical ocean models by leveraging AUVs to collect
+oceanographic data. The goal is to implement an adaptive
+sampling strategy that maximizes the informativeness of the
+data collected by AUVs, enhancing the accuracy of the model’s
+predictions through data assimilation. This will ultimately
+lead to better-informed AUV missions, closing the data loop
+illustrated in Fig. 1, and consisting of three fundamental steps
+iteratively executed on a daily basis:
+1) Model output: A daily one-step forecast ˆθ(k + 1,x,y )
+of an oceanic variable θ and its associated uncertainty σˆθ(k +
+1,x,y ) is computed by the model, where k is the current
+day and x and y correspond to longitude and latitude values.
+The outputs of this model are presented as discrete spatial
+maps,Mˆθ(x,y ) andMσ ˆθ (x,y ), covering the geographical
+area under study, and consisting of gridded representations
+where each grid cell corresponds to a speciﬁc geographic
+location (x,y ), with values indicating the respective output
+under consideration.
+2) Adaptive sampling algorithm: Given as input the spatial
+map corresponding to the uncertainty associated with the one-
+day predictionMσ ˆθ (x,y ) and a ﬂeet of N vehicles equipped
+with sensors capable of point-wise sampling the environmental
+quantity θ, the objective is to determine the set of vehicle
+trajectories for the following day, as a series of waypoints,
+that maximize the accumulated uncertainty along the paths
+while adhering to the operational constraints of the vehicles.
+3) Data assimilation: At the end of the day, the measure-
+ments collected along the vehicle trajectories are assimilated
+into the model and a new forecast 1) is generated.
+Fig. 1. Data loop closure: (1) model output generation - Mσ ˆθ (x,y )
+uncertainty map associated with the one-day forecast of an oceanic variable
+θ; (2) adaptive sampling - optimization of vehicle trajectories to maximize
+uncertainty collection; and (3) data assimilation - integration of vehicle
+measurements into the model.
+Concerning the adaptive sampling algorithm, the problem
+can be generalized and formally stated as follows:
+T = max
+N∑
+i=1
+Li∑
+j=0
+MI (xij,yij) (1)
+Given a discrete spatial mapMI (x,y ) containing information
+I related to a variable, the objective is to generate a set of
+trajectoriesT = {T1,...,T N}, where N is the number of
+vehicles, aimed at maximizing the total informationI collected
+along the paths of length Li.
+In this formulation, (xij,yij) represents the coordinates of
+the j−th point along the trajectory of the i−th vehicle.
+In contrast, MI (x,y ) can be interpreted in different ways
+according to the speciﬁc objectives of the problem. However,
+in our case, it corresponds to the spatial map containing
+the uncertainty values associated with the one-day forecast,
+Mσ ˆθ (x,y ).
+In order to make the problem relevant from an application per-
+spective, it is subject to the following operational constraints:
+• Each trajectory has a maximum length Lmaxi, deter-
+mined by the mission’s endurance capacity of each vehi-
+cle:
+Li≤Lmaxi =vi×Tmaxi(vi) ∀i (2)
+Wherevi represents the desired vehicle’s velocity for the
+mission and Tmaxi represents the maximum operational
+time achievable at that velocity.
+• The starting and ending locations of the trajectories differ
+for each vehicle, providing ﬂexibility in the choice of
+deployment and recovery locations:
+(xi0,yi0)̸= (xiLi,yiLi) ∀i (3)
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 3 =====
+The introduction of this constraint also allows for plan-
+ning trajectories over multiple days, with the vehicle’s
+position at the time of the next planning session serving
+as the starting point.
+• The trajectories must avoid static obstacles within the
+operational area to prevent collisions with potentially
+hazardous elements such as rocks, shallow water, nets,
+or unknown objects:
+[(xij,yij), (xi(j+1),yi(j+1))] /∈O ∀i,∀j (4)
+WhereO is the region within the operational area oc-
+cupied by obstacles, which is assumed to be known a
+priori.
+• The vehicles can spend an optional time, twp, at each
+waypoint along the trajectory for communication and
+navigation correction purposes.
+III. A DAPTIVE SAMPLING PLANNER
+Fig. 2. Workﬂow of the adaptive sampling algorithm developed by the
+authors: The input map MI (x,y ) undergoes obstacle mapping and ﬁltering;
+The map is transformed into a weighted graph, where grid cells serve as
+nodes representing potential waypoints, with assigned rewards; The PCVRP
+is solved to generate near-optimal trajectories.
+To solve the described problem, we propose a method based
+on graph optimization. The challenge of ﬁnding the N trajec-
+tories that maximize the collected information in MI (x,y )
+while adhering to the operational constraints is decomposed
+into three main steps, shown in Fig. 2, and summarized below:
+• A pre-processing step is applied to the input map for
+ﬁltering and obstacle mapping.
+• By adopting a points-of-interest selection procedure, the
+spatial map MI (x,y ) is transformed into a weighted
+graph, where grid cells serve as nodes representing po-
+tential waypoints for the vehicle trajectories. The node
+weights deﬁne the reward of visiting a speciﬁc node,
+while the edge weights represent the cost of traveling
+between nodes.
+• We solve the Prize Collecting Vehicle Routing Problem
+(PCVRP) [16] to determine how to connect the selected
+nodes to generate the desired trajectories, maximizing
+the reward and minimizing the travelled distance while
+adhering to the operational constraints.
+In the following paragraphs, the three steps are explained in
+detail.
+A. Pre-processing
+The safety of vehicles is a priority when executing a
+mission. Since the operational area is rarely free of obstacles,
+their identiﬁcation is crucial for safe navigation and mission
+success. These obstacles can vary in geometry and nature and
+can be subject to temporal variations:
+• Morphological obstacles include natural elements such as
+landmasses, intertidal zones and submerged or emergent
+rocks.
+• Anthropogenic obstacles may include ﬁshing nets, which
+can easily entangle vehicles, and high-trafﬁc maritime
+zones where the risk of collisions is considerably high.
+The ﬁrst step of the algorithm involves identifying these obsta-
+cles by utilizing satellite imagery, bathymetric data, maritime
+trafﬁc ﬂow analysis, and information gathered from local
+sources. Upon identiﬁcation, the obstacles are masked on the
+map provided as input to the algorithm by assigning a null
+value to any grid cell that intersects with the obstacle, even
+partially, enabling a complete and safe representation of the
+locations of the obstacles and the free space for navigation.
+Although the mentioned obstacles can be subject to temporal
+variability, this was not considered in our approach.
+The pre-processing step also includes ﬁltering the input map.
+A Gaussian ﬁlter is applied to smooth the map while preserv-
+ing its main features. The standard deviation along the x and
+y axes is kept as a tunable parameter of the ﬁlter, deﬁned
+according to the speciﬁc characteristics of the input map.
+B. Graph Generation
+The second step of the algorithm involves the generation
+of the weighted graph G(V,E,W v,We) from the input map
+MI (x,y ), where V is the set of nodes, E is the set of edges,
+andWv andWe represent the weights of the nodes and edges,
+respectively. The ﬁrst goal of this phase is to identify key
+points within the map corresponding to potential waypoints,
+which will serve as nodes of the graph on which optimal
+planning will subsequently be performed. What criteria should
+be used to select the nodes? The ﬁrst intuition might be to
+consider every central point of each grid cell. However, this
+would result in an excessively large graph, increasing the
+computational time required to ﬁnd a solution and potentially
+making the problem unsolvable for large areas. Another pos-
+sible approach could be to select only a certain number of
+the most informative points on the map, thus constraining the
+planning to the most uncertain areas. However, this method
+could select zones far from the desired vehicle deployment
+locations, resulting in signiﬁcant energy consumption to reach
+those areas.
+Therefore, it is important to select the nodes in a way that
+ensures good area coverage while keeping their number limited
+to ensure the scalability of the proposed method for different
+operational areas. The proposed solution combines contour
+lines and V oronoi diagrams for selecting the graph nodes, as
+shown in Fig. 3.
+Contour lines - By applying contour lines to the spatial
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 4 =====
+Fig. 3. Nodes selection: Contour lines and set of initial nodes V1 (black) -
+V oronoi diagram applied to V1 and V oronoi vertices V2 (blue).
+map, it is possible to identify the spatial distribution of
+the uncertainty ﬁeld. These patterns serve as the basis for
+generating the initial set of graph nodes V1. Once the contour
+lines are deﬁned, each point along the curves is approximated
+to the center of the nearest grid cell. Graph nodes are then
+selected from these points, ensuring a minimum distance
+dmin is maintained between adjacent nodes. This approach
+allows us to keep the number of nodes manageable while
+accurately representing the contour lines. Therefore, each point
+pi belonging to the set of contour lines C is included in the
+node set V1, if it satisﬁes the following condition:
+d(pi,pk)≥dmin ∀pk∈V1, ∀pi∈C (5)
+Voronoi diagrams - Contour lines can take on highly varied
+shapes. V oronoi diagrams are employed subsequently to ensure
+better coverage and guarantee the presence of nodes even
+within the areas enclosed by the level curves. Starting with
+a set of generator points, the V oronoi diagram is a partition of
+the plane into cells, where each cell contains all the points
+closer to a speciﬁc generator than any other. The vertices
+of the V oronoi diagram, on the other hand, are the points
+where the edges of at least three V oronoi cells meet. In other
+words, a V oronoi vertex is a point equidistant from three
+or more generators. For this reason, these vertices are ideal
+candidates for enhancing coverage within the areas inside the
+level curves. Considering the set of nodes V1 as generator
+nodes, the V oronoi diagrams are computed, and a new set of
+nodes V2 is deﬁned from the vertices of the diagram. Also in
+this case, the condition expressed in equation (5) is applied and
+only the vertices that maintain a minimum distance dmin from
+the already selected graph nodes and the generated vertices
+will be added to the new set V2.
+The result of this phase is a graph in which the nodes (V1∪V2)
+serve as candidate waypoints for trajectory planning. The
+deﬁnition of the weights for the nodes and edges is closely
+related to the trajectory optimization and will be detailed in
+the following subsection.
+C. Prize-Collecting Vehicle Routing Problem
+This step aims to determine how to connect the selected
+nodes to form the N trajectories that maximize the collected
+information while respecting the operational constraints. This
+problem belongs to the broader family of Vehicle Routing
+Problems (VRP) [21], a popular class of combinatorial op-
+timization problems, generalization of the Traveling Salesman
+Problem (TSP) to the multi-vehicle case. The VRP’s objective
+is to determine the optimal set of routes to be performed by
+a ﬂeet of vehicles to serve a given set of customers. The
+route set is optimal if it meets all customer requirements
+and operational constraints while minimizing the total travel
+cost. This cost can be measured in economic terms, distance
+traveled, or other factors, depending on the speciﬁc context
+of the application. In particular, the problem addressed in
+this work is formulated with the Prize Collecting Vehicle
+Routing Problem (PCVRP) variant [16]. In this variant, it is not
+mandatory to visit all customers, and each customer has a prize
+that is collected when the customer is visited. The goal is to
+balance the competing goals of minimizing travel costs while
+maximizing the collected prizes and satisfying the operational
+constraints. To formulate our problem as a PCVRP we deﬁne
+the customers as the identiﬁed graph nodes, the travel costs
+as the cumulative distance between the nodes of the routes,
+and the rewards for visiting each customer, based on nodes’
+respective uncertainty values deﬁned by the input map. The
+problem is, therefore, formulated as follows:
+Given R, the set of non-empty routes and V , the set of
+nodes, each route r∈R is deﬁned as a sequence of nodes
+Vr∈V with a speciﬁc starting and ending point. The objective
+function to be minimized is given by:
+J = min(
+∑
+r∈R
+dr +
+∑
+i∈V
+pi−
+∑
+r∈R
+∑
+i∈Vr
+pi) (6)
+Where the ﬁrst term is related to the total distance of each
+route dr, while the second and third terms together represent
+the uncollected prizes of unvisited nodes, with pi the prize
+associated with each node. The operational requirement (2)
+on the maximum distance Lmaxi traveled by each vehicle is
+introduced by adding a penalty term to the cost function:
+λ· max(0,dr−Lmaxi ) (7)
+In this way, if a route’s distance exceeds the limit, its cost
+increases signiﬁcantly by the penalty coefﬁcient λ, discour-
+aging such solutions. The process of assigning distance costs
+and prizes is translated into weighting the edges and nodes of
+the graph, as explained below.
+Weights assignment - Edge weights are used to deﬁne
+the cost of the path between two nodes. Assuming we are
+operating in areas of sufﬁciently small size such that the
+curvature of the Earth can be neglected without signiﬁcant
+errors, the distance between nodes is calculated using the
+Euclidean distance. However, to meet the operational require-
+ment (4) outlined in the problem deﬁnition, which aims to
+ensure obstacle-free trajectories, this distance is set to inﬁnity
+if the line connecting two nodes intersects an obstacle. This
+approach drastically increases the cost function (6), effectively
+guiding the optimization towards obstacle-free trajectories.
+The weights of the edges are assigned as follows:
+We(eij) = dij ∀i,j ∈G (V ) (8)
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 5 =====
+where dij =
+{√
+(xi−xj)2 + (yi−yj)2 if IJ /∈O,
+∞ if IJ∈O
+(9)
+Node weight represents the reward pi obtained by visiting a
+speciﬁc node and is evaluated to determine which nodes are
+worth visiting and which should be avoided. Therefore, given
+the goal of maximizing information, the reward associated
+with a node at coordinates (xk,yk) is assigned proportionally
+to the uncertainty value of that node, I(xk,yk), as identiﬁed
+by the spatial map in input:
+Wv(vk)∝I(xk,yk) ∀k∈G (V ) (10)
+Finally, the constraint regarding the time twp that the vehicles
+need to spend at each waypoint is considered by solving
+the optimization problem twice. Since the total time Twp
+each vehicle will spend at the waypoints during the mission
+depends on the number of waypoints on the route, the ﬁrst
+time, the problem is solved just to estimate this number. The
+second time, the ﬁnal optimization is obtained considering the
+maximum operational time Tmax in (2), subtracted by the
+estimated total time spent at the waypoints, Twp.
+Solver - VRP problems are known to have NP-hard com-
+plexity, meaning that ﬁnding an optimal solution for large
+instances becomes infeasible due to the exponential growth
+of the computation time needed to solve them. Numerous
+heuristics and metaheuristics methods have been developed
+to obtain sub-optimal solutions. In this work, we use the
+VRP solver PyVRP [20], which provides a high-performance
+implementation of the Hybrid Genetic Search (HGS) algorithm
+presented in [17].
+IV. E XPERIMENTS
+In this section, we present the experimental activities carried
+out. First, a simulation testing phase was conducted using
+data from an ocean model to evaluate the algorithm’s fea-
+sibility under varying conditions, including mission duration,
+ﬂeet size, obstacles, and deployment and recovery positions.
+Subsequently, the approach was tested and validated in a
+real-world context during the FRESNEL (Field expeRiments
+for modEling, aSsimilatioN, and adaptive sampLing) ﬁeld
+campaign, where the full loop closure, presented in Section
+II, was implemented daily.
+A. Simulation
+The scenario used to test the algorithm is based on the
+Harvard Ocean Prediction System (HOPS) model [18] for the
+Set´ubal Bay, south of Lisbon, Portugal. That scenario used a
+similar model implementation that was then applied for the
+FRESNEL ﬁeld campaign [19].
+This model implementation presents a grid spatial resolution
+of 700m. The temperature forecast error ﬁeld, normalized
+by the variable’s variance within the domain, serves as the
+spatial map, MI (x,y ), for testing the algorithm. From this
+map, several sub-areas were selected to assess the algorithm’s
+performance in operational regions with varying morphologi-
+cal characteristics and different error patterns. Some examples
+of these tests are presented below. For each simulation, the
+standard deviation values σx =σy = 1 were used for ﬁltering
+the input map, while the dmin value was selected from an
+operational perspective to have a minimum distance between
+waypoints equal to 1km for simulation a) and b) and 2km
+for simulation c). Land masses, along with ﬁctitious objects,
+were mapped as obstacles. The mission parameters provided
+TABLE I
+INPUT ALGORITHM - D ESIRED MISSION PARAMETERS
+Fleet size Speed [m/s] Duration [h]
+a) 2 AUVs 1 16 - 10
+b) 3 AUVs 1 15 - 21 - 9
+c) 1 AUV 1.2 12
+as input to the algorithm, selectable based on each mission’s
+speciﬁc needs and requirements, are reported in Table I. The
+resulting trajectories, generated by the algorithm, and their
+speciﬁcations are presented in Fig. 4. The simulations were
+conducted considering different deployment and recovery loca-
+tions for each vehicle. These were not reported in the table but
+in the images below, with stars indicating the starting points.
+The x and y axes indicate grid cell indices, with a resolution
+of 700m per cell, while the value of each cell represents the
+temperature forecast error ﬁeld eT . As shown in Fig. 4, the
+generated trajectories head towards areas with greater error,
+aiming to maximize the collected values while adhering to the
+desired mission durations. Indeed, the results show a deviation
+of approximately 10 minutes from the target duration across all
+missions. To effectively compare the desired duration with that
+of the generated trajectories, the time spent at each waypoint,
+twp, was set to zero in these simulations. In simulations a) and
+b), trajectories avoiding the mapped morphological obstacles
+can be observed. To further evaluate the algorithm’s ability
+to generate obstacle-free trajectories, ﬁctitious obstacles were
+introduced in the center of the operational area, as shown in
+simulationc). These obstacles are handled as described in (9),
+and the results conﬁrm the effectiveness of the algorithm in
+generating obstacle-free trajectories.
+The hardware exploited to produce the results is an Intel®
+Core™ i7-1065G7 CPU @ 1.30GHz with 16GB of RAM.
+Table II presents the number of nodes and the computational
+costs of the algorithm for each simulation, with the PyVRP
+Solver conﬁgured to stop after 20 iterations without improve-
+ment in the best solution, as this value provides a good balance
+between solution quality and computation time for the speciﬁc
+case study. However, different values can be used to achieve
+shorter computation times.
+TABLE II
+SIMULATION COMPUTATIONAL TIMES
+a b c
+Nodes 219 235 132
+Time [s] 81 125 22
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 6 =====
+Fig. 4. Adaptive sampling algorithm results: a) 2 AUVs – 1 [m/s] speed – 15[h] 53[min], 9[h] 48[min] mission durations – 17.84 [°C] total reward; b) 3
+AUVs – 1 [m/s] speed – 20[h] 53[min], 14[h] 51[min], 8[h] 52[min] mission durations – 28.92 [°C] total reward; c) 1 AUV – 1.2 [m/s] speed – 11[h] 53[min]
+mission duration – 20.06 [°C] total reward.
+B. FRESNEL ﬁeld campaign
+The proposed approach was tested and validated in a real-
+world context during the FRESNEL ﬁeld campaign. The goal
+of the campaign was to close the observe-assimilate-predict-
+sample loop by demonstrating the applicability of adaptively
+controlled marine robots in sampling the water column, driven
+by ocean models with increasing predictive skill. The experi-
+mental campaign took place in the Nazar ´e area (Portugal), in
+October 2024 and for two weeks, it involved the deployment of
+multiple assets to collect oceanographic data, including AUVs,
+an oceanographic vessel, and gliders.
+Asset - The asset deployed for the adaptive sampling
+strategy presented in this work consisted of a ﬂeet of 3
+Light Autonomous Underwater Vehicles (LAUVs), Fig. 5,
+supported by the open-source LSTS software toolchain devel-
+oped by the Laborat´orio de Sistemas e Tecnologia Subaqu´atica
+(LSTS) [22]. The toolchain comprises three key components:
+DUNE, the onboard vehicle software responsible for naviga-
+tion, control, and communications; NEPTUS, the command
+and control software used for mission execution and analysis;
+and RIPPLES, the web infrastructure designed to enhance
+situational awareness, facilitate communication, and provide
+a shared operational overview for all participants in the ﬁeld
+campaign. Finally, IMC [23], the communication protocol used
+for exchanging information between vehicles and sensors.
+The vehicles were equipped with CTD (Conductivity, Tem-
+perature, and Depth) sensors to sample the water column
+throughout the mission, while the communication sensor suite
+included an Iridium modem for satellite communication, as
+well as WiFi, GSM, and acoustic modems.
+Fig. 5. FRESNEL ﬁeld campaign: LAUVs-Xplore during deployment oper-
+ations and mission execution.
+Models - The planner was tested using two different models
+for the assimilation and prediction of ocean variables. A
+numerical model (NM) based on the HOPS model implemen-
+tation in the Nazar´e Canyon area of inﬂuence [19], was conﬁg-
+ured to cover the area from 8.9 °W to 10 °W and from 39.2 °N
+to 39.9 °N, with a horizontal grid cell resolution of 300m in
+both latitude and longitude and a vertical discretization based
+on 30 double-sigma vertical levels.
+Additionally, a statistical model (SM) [25], which leveraged
+14 days prior information, Copernicus Marine Environment
+Monitoring Service (CMEMS) products [27], and Direct Se-
+quential Simulation [26], was used to spatially predict ocean
+variables for the following day. The model covered an area
+from 11.75 °W to 8.43 °W and from 39 °N to 41.16 °N with
+a horizontal cell resolution of 7km in latitude and 9km in
+longitude, while a vertical discretization based on 17 levels at
+constant depth.
+Operational Setup - A sub-area of the model grids, cen-
+tered on the Nazar ´e Canyon and shown in blue in Fig. 6,
+was selected for LAUVs operations. Following an analysis
+of maritime trafﬁc density using AIS data from October, the
+orange area, covering approximately 67.4km2, was identiﬁed
+as a low trafﬁc zone and therefore designated as the opera-
+tional area for adaptive sampling missions for safety reasons.
+Meanwhile, the purple area, closer to the coast, was used for
+deployment and recovery procedures. In accordance with the
+Fig. 6. Snapshot from Ripples showing AIS data density for the month of
+October in the study area (blue) along with the operational area for adaptive
+sampling (orange) and the deployment and recovery area (purple).
+3D characteristics of the models and in order to collect data
+throughout the water column, the movement of the AUVs
+along the algorithm-generated trajectories was deﬁned as a
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 7 =====
+’yo-yo’, varying its depth between the surface and a safe depth
+while reaching each mission waypoint.
+The procedure followed to execute the missions is presented
+in Fig. 7. Once a new one-step forecast became available,
+the adaptive planning algorithm was executed to generate the
+missions for the next day; the plans were transferred to Ripples
+and transmitted via satellite to the vehicles; CTD proﬁles
+were collected during the missions and, upon the vehicles’
+recovery, the data were assimilated into the models, enabling
+the generation of a new forecast.
+Fig. 7. Operational workﬂow for mission execution.
+Adaptive Sampling Planner - The spatial maps MI (x,y )
+selected as input for the planner consisted of the temperature
+forecast error ﬁeld (from HOPS) and the temperature forecast
+standard deviation ﬁeld (from SM). To account for the 3D
+characteristics of the models, the 2D map used as input to
+the algorithm was derived by computing, for each cell of the
+plane, the average error/uncertainty value across the depth
+levels actually covered during the vehicle’s mission. Since
+the planning was constrained to the operational area described
+above, and no other obstacles were present, the ability of the
+algorithm to account for obstacles was exploited by deﬁning
+an artiﬁcial barrier within which the planning was conﬁned.
+A value of σx = σy = 1 was used for the Gaussian ﬁlter
+applied to the NM map, while a value of σx = σy = 3 was
+applied to the SM map after performing an interpolation to
+achieve the same cell resolution as the NM. For all missions,
+a minimum waypoint distance ofdmin = 1km was selected to
+ensure sufﬁcient space for the vehicle to perform yo-yo motion
+between waypoints and a time twp = 1 min was requested to
+be spent at each waypoint for communication and navigation
+ﬁx purposes. The remaining algorithm input parameters used
+to generate missions according to the desired speciﬁcations
+are reported in Table III for each day.
+TABLE III
+INPUT ALGORITHM - D ESIRED MISSION PARAMETERS
+Mission Date Fleet size Speed [m/s] Duration [h]
+24/10/2024 1 AUV 1 5
+29/10/2024 2 AUVs 1 6 - 6
+30/10/2024 2 AUVs 1 10 - 10
+31/10/2024 1 AUV 0.9 16
+In Fig. 8, the corresponding trajectories generated by the
+algorithm and their speciﬁcations are shown. Both the x and
+y axes indicate grid cell indices, with a resolution of 300 m
+per cell, while the value of each cell represents either the
+temperature forecast error ﬁeld eT or the temperature forecast
+standard deviation ﬁeld σT on the day of the mission. The al-
+gorithm successfully generated missions that met the required
+timeframes, with the reported durations also including the
+total time spent at each waypoint of the routes. To minimize
+computational time, the estimation of the number of waypoints
+was conducted by setting a ﬁxed solver stop time of 60 s,
+while the second optimization followed the same stop criteria
+as in the simulation case. On the 24th and 29th, where the
+mission duration was more limited, the algorithm’s ability to
+generate trajectories driven by the uncertainty values becomes
+particularly evident.
+An example of the temperature values collected during the
+mission on the 24th by the onboard CTD sensor is shown
+in Fig. 9, where the characteristic yo-yo motion performed by
+the vehicle throughout the mission can also be observed. These
+data represented the input for the assimilation process. Analy-
+ses were conducted to assess the beneﬁts of AUV temperature
+data assimilation in enhancing the model’s forecasting ability.
+Speciﬁcally, we examined the one-step predictions made by
+the SM model regarding the temperature values for the 30th
+at various depth levels, both with and without the assimilation
+of data collected during the LAUV mission on the 29th.
+By comparing these two predictions with the actual values
+collected by the LAUV on the 30th, an RMSE of 0.6752
+resulted for the case without assimilation, while the case
+with assimilation yielded an RMSE of 0.4012, highlighting
+the effectiveness of this approach in improving the model’s
+forecasting capability.
+V. C ONCLUSION AND FUTURE WORKS
+This work introduces a multi-vehicle path planning algo-
+rithm for adaptive ocean sampling based on PCVRP, aimed
+at maximizing the informativeness of the data collected by
+AUVs, with the goal of enhancing the accuracy of ocean model
+predictions through the data assimilation process, ultimately
+closing the loop between assimilation and prediction. The pro-
+posed approach was tested in both simulations and real-world
+deployments. The results demonstrate the algorithm’s ability to
+generate sub-optimal trajectories that maximize the collected
+uncertainty values along the paths in a cost-effective manner
+for different operational scenarios. It has proven effective
+for ﬂeets of varying sizes, accommodating different desired
+deployment and recovery positions while ensuring compliance
+with each vehicle’s endurance speciﬁcations. Additionally,
+the algorithm is applicable in operational areas that contain
+obstacles, ensuring the generation of collision-free trajectories.
+Although the study included real-world deployments, logistical
+constraints and inherent risks limited the number of tests
+conducted and the number of consecutive assimilation days.
+Future developments will focus on extending this approach to
+account for the three-dimensional nature of ocean models, gen-
+erating trajectories in three-dimensional space. Furthermore,
+given the algorithm’s promising computational efﬁciency, it
+will be adapted for online use on the vehicles, enabling
+near real-time data exchange between the vehicle and the
+model. Re-planning trajectories throughout the mission as
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 
+
+===== PAGE 8 =====
+Fig. 8. Adaptive sampling algorithm results: 24/10) 1 AUV – 1 [m/s] speed – 4[h] 53[min] mission duration – 17 [km] planar traveled distance; 29/10) 2
+AUVs – 1 [m/s] speed – 5[h] 42[min], 5[h] 53[min] mission durations – 19.95 [km], 20.40 [km] planar traveled distances; 30/10) 2 AUVs – 1 [m/s] speed –
+9[h] 24[min], 9[h] 32[min] mission durations – 32.48[km], 33.23 [km] planar traveled distances; 31/10) 1 AUV – 0.9 [m/s] speed – 15[h] 45[min] mission
+duration – 49.21 [km] planar traveled distance.
+Fig. 9. LAUV Xplore trajectory (left) and temperature data collected during
+the mission (right).
+new predictions become available will allow for taking into
+account ocean variability during the sampling activities. In this
+context, the dynamic nature of the real environment will also
+be addressed, including the incorporation of dynamic obstacles
+to ensure vehicle safety throughout the mission.
+VI. A CKNOWLEDGMENTS
+This work was supported by FRESNEL project, funded
+by the Ofﬁce of Naval Research (ONR) under ONR award
+number N00014-22-1-2796, as well as SMART (diStributed
+AI systeM for mArine plastic debRis moniToring) project,
+funded by the Portuguese Space Agency in the framework
+program for research and innovation. The work was also
+supported by JUNO—Robotic Exploration of Atlantic Waters
+project—Refª 2021/0008—from FLAD and by the DiverSea
+project, supported by the European Commission under grant
+agreement 101082004.
+REFERENCES
+[1] Anderson DL, Sheinbaum J, Haines K., ”Data assimilation in ocean
+models,” Reports on Progress in Physics, 1996 Oct.
+[2] Wynn RB, et al. ”Autonomous Underwater Vehicles (AUVs): Their
+past, present and future contributions to the advancement of marine
+geoscience,” Marine geology, 2014 Jun.
+[3] Lermusiaux PF. ”Adaptive modeling, adaptive data assimilation and
+adaptive sampling,” Physica D, 230(1-2):172-96, 2007 Jun.
+[4] Hwang J, Bose N, Fan S. ”AUV adaptive sampling methods: A review,”
+Applied Sciences,9(15):3145, 2019 Aug.
+[5] Paull L, Saeedi S, Seto M, Li H. ”Sensor-driven online coverage plan-
+ning for autonomous underwater vehicles,” IEEE/ASME Transactions
+on Mechatronics, 18(6):1827-38, 2012 Sep.
+[6] Ge Y , Eidsvik J, Mo-Bjørkelund T, ”3-D adaptive AUV sampling for
+classiﬁcation of water masses,” IEEE Journal of Oceanic Engineering,
+48(3):626-39, 2023 Apr.
+[7] Zhang Y , Godin MA, Bellingham JG, Ryan JP, ”Using an autonomous
+underwater vehicle to track a coastal upwelling front,” IEEE Journal of
+Oceanic Engineering, 37(3):338-47, 2012 Jun.
+[8] Teixeira D, de Sousa JB, Mendes R, Fonseca J,”3D Tracking of a River
+Plume Front with an AUV ,” OCEANS 2021: San Diego–Porto, 2021.
+[9] Costa, Maria Joao, et al., ”Field report: Exploring fronts with multiple
+robots,” IEEE/OES Autonomous Underwater Vehicle Workshop, 2018.
+[10] Pinto, Jose, et al,”Coordinated robotic exploration of dynamic open
+ocean phenomena,” Field Robotics, 2, 843-871, 2022.
+[11] Stankiewicz P, Tan YT, Kobilarov M, ”Adaptive sampling with an
+autonomous underwater vehicle in static marine environments,” Journal
+of Field Robotics,38(4):572-97, 2021 Jun.
+[12] Binney J, Krause A, Sukhatme GS, ”Informative path planning for
+an autonomous underwater vehicle,” IEEE International Conference on
+Robotics and Automation, pp. 4791-4796, 2010 May.
+[13] Fiorelli E, Leonard NE, Bhatta P, Paley DA, Bachmayer R, Fratantoni
+DM,”Multi-AUV control and adaptive sampling in Monterey Bay,”IEEE
+journal of oceanic engineering,31(4):935-48, 2006 Oct.
+[14] Monterey Bay Aquarium Research Institute (MBARI), “Autonomous
+Ocean Sampling Network II (AOSN II)” Collaborative Project, 2003.
+[15] Yilmaz NK, Evangelinos C, Lermusiaux PF, Patrikalakis NM, ”Path
+planning of autonomous underwater vehicles for adaptive sampling
+using mixed integer linear programming,” IEEE Journal of Oceanic
+Engineering,33(4):522-37,2008 Oct.
+[16] Toth P, Vigo D, ”Vehicle routing: problems, methods, and applications,”
+Society for industrial and applied mathematics; 2014 Nov.
+[17] Vidal T, Crainic TG, Gendreau M, Prins C,”A hybrid genetic algorithm
+with adaptive diversity management for a large class of vehicle routing
+problems with time-windows,” Computers and operations research,
+40(1):475–489, 2013.
+[18] A.R. Robinson,”Physical Processes, Field estimation and Interdisci-
+plinary Ocean Modeling,” Earth-Science Reviews, 40, 3-54, 1996.
+[19] Vitorino J, Larangeiro S, Silva F, Pinto J, Almeida S, ”An operational
+system for the forecasting of oceanographic conditions in the Nazare
+Canyon area (W Portugal),” OCEANS’10 IEEE SYDNEY ,pp. 1-5, 2010.
+[20] Wouda, N.A., L. Lan, and W. Kool, ”PyVRP: a high-performance VRP
+solver package,” INFORMS Journal on Computing, pp. 943-955, 2024.
+[21] Toth, P.; Vigo, D., eds.,”The Vehicle Routing Problem,” 2002.
+[22] J. Pinto, P. S. Dias, R. Martins, J. Fortuna, E. Marques, and J. Sousa,
+“The LSTS toolchain for networked vehicle systems,” OCEANS 2013
+MTS/IEEE Bergen, pp.1-9, 2013 June.
+[23] R. Martins, P. S. Dias, E. R. Marques, J. Pinto, J. B. Sousa, and F. L.
+Pereira, “Imc: A communication protocol for networked vehicles and
+sensors,” Oceans 2009-Europe, pp. 1–6, IEEE, 2009.
+[24] Hwang, Jimin, Neil Bose, and Shuangshuang Fan., ”AUV Adaptive
+Sampling Methods: A Review,” Applied Sciences 9, no. 15: 3145, 2019.
+[25] A. F. Duarte, L. Bernacchi, R. Mendes, J. Sousa, L. Azevedo, ”Uncer-
+tainty maps as a tool for efﬁcient AUV data collection,” submitted.
+[26] A. Soares, “Direct sequential simulation and cosimulation,” Mathemat-
+ical Geology, vol. 33, pp. 911–926, 2001.
+[27] E.U. Copernicus Marine Service Information (CMEMS), “Atlantic-
+Iberian Biscay Irish Ocean Physics Analysis and Forecast,” Marine Data
+Store (MDS), Accessed: Oct. 14-25, 2024.
+Authorized licensed use limited to: b-on: UNIVERSIDADE DO PORTO. Downloaded on April 04,2026 at 11:46:31 UTC from IEEE Xplore.  Restrictions apply. 

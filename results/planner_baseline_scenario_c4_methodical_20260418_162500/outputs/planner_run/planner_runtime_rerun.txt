@@ -1,0 +1,2 @@
+﻿exit_code=1
+elapsed_seconds=581.3408947

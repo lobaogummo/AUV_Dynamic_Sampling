@@ -1,0 +1,7 @@
+parameter,current_value,paperfaithful_value,paper_reference,paper_support,classification,notes
+N_LEVELS,9,9,not explicitly specified,NOT SPECIFIED,OPTIONAL BUT JUSTIFIED,Controls contour discretization density.
+D_MIN_CONTOUR,1.0,1.0,"dmin = 1 km in campaign / sim a,b",EXPLICIT,REQUIRED TO MATCH PAPER,Matches paper scale of waypoint minimum distance.
+D_MIN_VORONOI,1.0,1.0,same dmin condition for V2,EXPLICIT,REQUIRED TO MATCH PAPER,Single dmin in paper; equal values preserve that intent.
+Gaussian smoothing,False,True,Pre-processing includes Gaussian filter,EXPLICIT,REQUIRED TO MATCH PAPER,Applied before POI graph generation in paper-faithful variant.
+"Gaussian sigma (x,y)",not applied,"1.0,1.0",sigma_x=sigma_y=1 used in campaign NM,EXPLICIT,REQUIRED TO MATCH PAPER,"Chosen as 1,1 for faithful alignment."
+Voronoi mode,legacy_two_pass_threshold,paper_single_pass,single Voronoi V2 construction with dmin,EXPLICIT,REQUIRED TO MATCH PAPER,Paper-faithful uses single pass without extra uncertainty thresholds.

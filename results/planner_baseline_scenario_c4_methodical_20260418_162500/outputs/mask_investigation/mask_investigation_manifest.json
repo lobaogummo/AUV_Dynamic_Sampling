@@ -1,0 +1,36 @@
+{
+  "investigation_name": "planner_mask_plot_forensic_c4_20260418",
+  "created_utc": "2026-04-18T19:45:00Z",
+  "scenario_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500",
+  "inputs": {
+    "source_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+    "interface_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\31-10-2024_predModel_1_planner_interface.nc",
+    "mask_out": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\Nazare_31-10-2024_1\\mask.out",
+    "config": "C:\\Users\\pedro\\Documents\\Filipa_dados\\OptimalPlanning_Lucrezia\\Config_file.py"
+  },
+  "scripts": {
+    "diagnostics": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\mask_investigation.py",
+    "post_comparison": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\mask_fix_postcompare.py"
+  },
+  "code_changes": {
+    "core_planner": "C:\\Users\\pedro\\Documents\\Filipa_dados\\OptimalPlanning_Lucrezia\\OptimalPlanning.py",
+    "snapshot_planner": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\planner_snapshot\\OptimalPlanning.py"
+  },
+  "planner_runs": {
+    "before_plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T171719Z_wt.png",
+    "after_plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T183627Z_wt.png",
+    "after_log": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\planner_stdout_maskfix.log",
+    "after_runtime": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\planner_runtime_maskfix.txt",
+    "routes_before": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\routes_file.txt",
+    "routes_after": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\routes_file_maskfix.txt"
+  },
+  "deliverables": {
+    "report": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\mask_investigation_report.md",
+    "executive_summary": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\executive_summary.md",
+    "mask_metrics_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\mask_diagnostics_summary.csv",
+    "mask_metrics_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\mask_diagnostics_summary.json",
+    "before_after_metrics_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\before_after_summary.json",
+    "before_after_metrics_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\before_after_summary.csv",
+    "diagnostic_plots_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\mask_investigation\\plots"
+  }
+}

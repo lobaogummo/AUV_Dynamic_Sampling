@@ -1,0 +1,51 @@
+{
+  "temperr_semantics": {
+    "semantics_classification": "PLAUSIBLE EQUIVALENT",
+    "semantics_note": "STD is already 2D; no explicit depth aggregation possible.",
+    "source_std_shape": [
+      180,
+      240
+    ],
+    "paper_interface": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\inputs\\31-10-2024_predModel_1_planner_interface_paperfaithful.nc"
+  },
+  "poi_counts": {
+    "raw_single_pass": 434,
+    "smoothed_single_pass": 420,
+    "current_voronoi_on_smoothed": 418,
+    "paperfaithful_voronoi_on_smoothed": 420
+  },
+  "planner_current": {
+    "candidate_clients": 433,
+    "best_cost_final": 338773,
+    "n_routes_final": 2,
+    "visited_clients_final": 43,
+    "tag": "current",
+    "exit_code": 0,
+    "elapsed_seconds": 628.9462801,
+    "log_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\current_run\\planner_stdout_current.log",
+    "plot_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\current_run\\planner_plot_current.png"
+  },
+  "planner_paperfaithful": {
+    "candidate_clients": 420,
+    "best_cost_final": 289098,
+    "n_routes_final": 2,
+    "visited_clients_final": 43,
+    "tag": "paperfaithful",
+    "exit_code": 0,
+    "elapsed_seconds": 452.9584960000002,
+    "log_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_run\\planner_stdout_paperfaithful.log",
+    "plot_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_run\\planner_plot_paperfaithful.png"
+  },
+  "routes": {
+    "current_n_routes": 2,
+    "paperfaithful_n_routes": 2,
+    "current_waypoints_per_route": [
+      16,
+      24
+    ],
+    "paperfaithful_waypoints_per_route": [
+      16,
+      28
+    ]
+  }
+}

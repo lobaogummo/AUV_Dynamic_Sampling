@@ -1,0 +1,58 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds_total": 1008.8797674999987,
+  "candidate_clients": 420,
+  "solver_blocks": [
+    {
+      "n_routes": 2,
+      "n_clients": 42,
+      "objective": 2004157,
+      "distance": 228,
+      "duration": 228,
+      "iterations": 5859,
+      "solver_runtime_s": 60.01
+    },
+    {
+      "n_routes": 2,
+      "n_clients": 46,
+      "objective": 1987866,
+      "distance": 215,
+      "duration": 215,
+      "iterations": 68222,
+      "solver_runtime_s": 644.61
+    }
+  ],
+  "final_solver_block": {
+    "n_routes": 2,
+    "n_clients": 46,
+    "objective": 1987866,
+    "distance": 215,
+    "duration": 215,
+    "iterations": 68222,
+    "solver_runtime_s": 644.61
+  },
+  "route_specs_final": [
+    {
+      "length_km": 18.379,
+      "travel_h": 5,
+      "travel_m": 6,
+      "mission_h": 5,
+      "mission_m": 18,
+      "minimum_depth_m": 113.4509
+    },
+    {
+      "length_km": 40.918,
+      "travel_h": 11,
+      "travel_m": 21,
+      "mission_h": 11,
+      "mission_m": 50,
+      "minimum_depth_m": 154.17363
+    }
+  ],
+  "route_waypoint_counts_including_start_end": [
+    14,
+    31
+  ],
+  "total_wp_temperr": 3.1784592,
+  "total_all_temperr": 25.851713
+}

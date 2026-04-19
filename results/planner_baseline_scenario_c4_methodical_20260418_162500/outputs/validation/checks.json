@@ -1,0 +1,61 @@
+{
+  "checks": {
+    "required_vars_present": true,
+    "present_vars": [
+      "landt",
+      "lat",
+      "lon",
+      "tbath",
+      "temperr"
+    ],
+    "shape_temperr": [
+      180,
+      240
+    ],
+    "shape_tbath": [
+      180,
+      240
+    ],
+    "shape_landt": [
+      180,
+      240
+    ],
+    "shape_lat": [
+      180
+    ],
+    "shape_lon": [
+      240
+    ],
+    "lat_monotonic_increasing": true,
+    "lon_monotonic_increasing": true,
+    "landt_binary_values": [
+      0,
+      1
+    ],
+    "landt_sea_fraction": 0.6974074074074074,
+    "landt_land_fraction": 0.3025925925925926,
+    "temperr_finite_fraction": 0.6974074074074074,
+    "tbath_finite_fraction": 0.6974074074074074,
+    "landt_matches_temperr_finite": true,
+    "landt_matches_tbath_finite": true,
+    "mask_out_zero_matches_landt_sea": 1.0,
+    "mask_out_neg1_matches_landt_sea": 0.0
+  },
+  "mask_out_diagnostics": {
+    "rows": 129600,
+    "unique_values": [
+      -1.0,
+      0.0
+    ],
+    "reshape_ok": true,
+    "n_layers": 3,
+    "agreement": null,
+    "layers_equal": true,
+    "layer0_unique_values": [
+      -1.0,
+      0.0
+    ],
+    "layer0_zero_fraction": 0.6974074074074074,
+    "layer0_neg1_fraction": 0.3025925925925926
+  }
+}

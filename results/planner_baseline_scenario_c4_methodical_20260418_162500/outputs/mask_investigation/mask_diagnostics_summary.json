@@ -1,0 +1,152 @@
+{
+  "inputs": {
+    "source_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+    "interface_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\31-10-2024_predModel_1_planner_interface.nc",
+    "mask_out": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\Nazare_31-10-2024_1\\mask.out",
+    "config_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\OptimalPlanning_Lucrezia\\Config_file.py"
+  },
+  "crop": {
+    "lat_start": 46,
+    "lat_stop": 138,
+    "lon_start": 46,
+    "lon_stop": 195,
+    "shape": [
+      92,
+      149
+    ]
+  },
+  "mask_out": {
+    "n_layers": 3,
+    "layers_equal": true,
+    "layer0_unique_values": [
+      -1.0,
+      0.0
+    ],
+    "layer0_zero_fraction": 0.6974074074074074,
+    "layer0_neg1_fraction": 0.3025925925925926,
+    "agreement_current_with_zero_is_sea": 1.0,
+    "agreement_current_with_neg1_is_sea": 0.0,
+    "best_convention": "zero_is_sea"
+  },
+  "h1_bathy_sign_test": {
+    "rule": "depth invalid when tbath > -MINIMUM_DEPTH",
+    "minimum_depth": 40.0,
+    "additional_invalid_cells_tbath_neg": 858,
+    "additional_invalid_cells_tbath_pos": 11863,
+    "valid_after_depth_tbath_neg": 11005,
+    "valid_after_depth_tbath_pos": 0
+  },
+  "component_counts": {
+    "op_total_cells": {
+      "metric": "op_total_cells",
+      "count_cells": 13708,
+      "total_cells": 13708,
+      "fraction": 1.0,
+      "percent": 100.0
+    },
+    "landt_current_valid_cells": {
+      "metric": "landt_current_valid_cells",
+      "count_cells": 11863,
+      "total_cells": 13708,
+      "fraction": 0.8654070615698862,
+      "percent": 86.54070615698862
+    },
+    "landt_current_invalid_cells": {
+      "metric": "landt_current_invalid_cells",
+      "count_cells": 1845,
+      "total_cells": 13708,
+      "fraction": 0.1345929384301138,
+      "percent": 13.45929384301138
+    },
+    "additional_invalid_by_depth_tbath_neg": {
+      "metric": "additional_invalid_by_depth_tbath_neg",
+      "count_cells": 858,
+      "total_cells": 13708,
+      "fraction": 0.06259118762766268,
+      "percent": 6.259118762766268
+    },
+    "valid_after_depth_tbath_neg": {
+      "metric": "valid_after_depth_tbath_neg",
+      "count_cells": 11005,
+      "total_cells": 13708,
+      "fraction": 0.8028158739422235,
+      "percent": 80.28158739422236
+    },
+    "additional_invalid_by_obstacles": {
+      "metric": "additional_invalid_by_obstacles",
+      "count_cells": 255,
+      "total_cells": 13708,
+      "fraction": 0.01860227604318646,
+      "percent": 1.860227604318646
+    },
+    "final_valid_tbath_neg": {
+      "metric": "final_valid_tbath_neg",
+      "count_cells": 10750,
+      "total_cells": 13708,
+      "fraction": 0.7842135978990371,
+      "percent": 78.4213597899037
+    },
+    "final_invalid_tbath_neg": {
+      "metric": "final_invalid_tbath_neg",
+      "count_cells": 2958,
+      "total_cells": 13708,
+      "fraction": 0.21578640210096295,
+      "percent": 21.578640210096292
+    },
+    "additional_invalid_by_depth_tbath_pos": {
+      "metric": "additional_invalid_by_depth_tbath_pos",
+      "count_cells": 11863,
+      "total_cells": 13708,
+      "fraction": 0.8654070615698862,
+      "percent": 86.54070615698862
+    },
+    "valid_after_depth_tbath_pos": {
+      "metric": "valid_after_depth_tbath_pos",
+      "count_cells": 0,
+      "total_cells": 13708,
+      "fraction": 0.0,
+      "percent": 0.0
+    },
+    "landt_disagreement_vs_maskout_zero": {
+      "metric": "landt_disagreement_vs_maskout_zero",
+      "count_cells": 0,
+      "total_cells": 13708,
+      "fraction": 0.0,
+      "percent": 0.0
+    },
+    "landt_disagreement_vs_maskout_neg1": {
+      "metric": "landt_disagreement_vs_maskout_neg1",
+      "count_cells": 13708,
+      "total_cells": 13708,
+      "fraction": 1.0,
+      "percent": 100.0
+    },
+    "landt_disagreement_vs_maskout_best": {
+      "metric": "landt_disagreement_vs_maskout_best",
+      "count_cells": 0,
+      "total_cells": 13708,
+      "fraction": 0.0,
+      "percent": 0.0
+    }
+  },
+  "obstacle_boxes_index_space": [
+    {
+      "lat_start": 56,
+      "lat_stop": 57,
+      "lon_start": 79,
+      "lon_stop": 105
+    },
+    {
+      "lat_start": 5,
+      "lat_stop": 14,
+      "lon_start": 60,
+      "lon_stop": 77
+    },
+    {
+      "lat_start": 7,
+      "lat_stop": 16,
+      "lon_start": 69,
+      "lon_stop": 80
+    }
+  ]
+}

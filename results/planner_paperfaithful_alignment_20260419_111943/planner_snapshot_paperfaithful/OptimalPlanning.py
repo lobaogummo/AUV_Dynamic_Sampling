@@ -23,7 +23,7 @@ from pyvrp import CostEvaluator, Route, Solution, VehicleType, PenaltyManager
 
 
 def _plot_base_map(arr, title, cmap_name="viridis"):
-    # Visual-only helper: keep invalid cells visible as white instead of low-value black.
+    # Visual-only helper: invalid cells stay visually separate (white) from low values.
     arr_plot = np.asarray(arr, dtype=np.float64).copy()
     arr_plot[~np.isfinite(arr_plot)] = np.nan
     cmap = plt.get_cmap(cmap_name).copy()
@@ -36,6 +36,27 @@ def _plot_base_map(arr, title, cmap_name="viridis"):
     fig.tight_layout()
     return fig, ax
 
+
+def _gaussian_filter_preserve_mask(arr, sigma_xy):
+    """Gaussian smoothing that preserves invalid cells as -inf."""
+    arr_np = np.asarray(arr, dtype=np.float64)
+    finite_mask = np.isfinite(arr_np)
+    data = np.where(finite_mask, arr_np, 0.0)
+    weights = finite_mask.astype(np.float64)
+
+    smooth_data = scipy.ndimage.gaussian_filter(data, sigma=sigma_xy, mode="reflect")
+    smooth_weights = scipy.ndimage.gaussian_filter(weights, sigma=sigma_xy, mode="reflect")
+
+    with np.errstate(divide="ignore", invalid="ignore"):
+        smooth = np.divide(
+            smooth_data,
+            smooth_weights,
+            out=np.full_like(smooth_data, np.nan),
+            where=smooth_weights > 1e-12,
+        )
+
+    smooth[~finite_mask] = -np.inf
+    return smooth
 
 #################################################    PRE PROCESSING MODEL 2   #################################################
 if MODEL_HOPS == False:
@@ -218,6 +239,13 @@ for idx in range(len(OBJECTS_LL_CORNER)):
             if (i in latitude_obj and j in longitude_obj):
                 temperr2d_op[i,j] = -np.inf
 
+# Optional paper-faithful smoothing in pre-processing (before graph generation).
+temperr2d_poi = temperr2d_op.copy()
+if APPLY_GAUSSIAN_FILTER:
+    sigma_xy = [GAUSSIAN_SIGMA_X, GAUSSIAN_SIGMA_Y]
+    temperr2d_poi = _gaussian_filter_preserve_mask(temperr2d_poi, sigma_xy=sigma_xy)
+    temperr2d_poi[~np.isfinite(temperr2d_op)] = -np.inf
+
 #PLOTS: for analysis before proceeding with the optimization
 #area with temperr profile 
 fig, ax = _plot_base_map(temperr2d_masked, 'Temperature error - HOPS Area - land mask', cmap_name='viridis')
@@ -226,7 +254,7 @@ plt.close(fig)
 
 
 #Operation area with all masks
-fig, ax = _plot_base_map(temperr2d_op, 'Temperature error - Operational Area - all masks', cmap_name='viridis')
+fig, ax = _plot_base_map(temperr2d_poi, 'Temperature error - Operational Area - all masks', cmap_name='viridis')
 plt.show()
 plt.close(fig)
 
@@ -236,12 +264,12 @@ plt.close(fig)
 print("*** Point Selection ***")
 
 #Get contours level
-max_level = temperr2d_op.max()
-min_level = np.nanmin(temperr2d_op[temperr2d_op != -np.inf])
+max_level = temperr2d_poi.max()
+min_level = np.nanmin(temperr2d_poi[temperr2d_poi != -np.inf])
 gap = max_level - min_level
 step_level = gap / N_LEVELS
 
-contour_points_lat, contour_points_lon, contour_points_level, levels = get_contour_levels(temperr2d_op, max_level, min_level, step_level)
+contour_points_lat, contour_points_lon, contour_points_level, levels = get_contour_levels(temperr2d_poi, max_level, min_level, step_level)
 
 contour_points = []
 for i in range(len(contour_points_lat)):
@@ -252,15 +280,26 @@ for i in range(len(contour_points_lat)):
 uncertain_points, uncertain_points_coord, uncertain_point_level_cl = find_POI_on_contour_levels(D_MIN_CONTOUR, contour_points_lat, contour_points_lon, contour_points_level, latitude_op, longitude_op)
 
 #Get interior points using Voronoi
-UNC_TRESHOLD_1 = min_level + (gap/N_LEVELS) #Not voronoi inside last contour level
-UNC_TRESHOLD_2 = min_level + (gap/2)  
-
-uncertain_points, uncertain_points_coord = additional_POI_inside_contour_levels(D_MIN_VORONOI, UNC_TRESHOLD_1, temperr2d_op, uncertain_points, uncertain_points_coord, latitude_op, longitude_op)
-uncertain_points, uncertain_points_coord = additional_POI_inside_contour_levels(D_MIN_VORONOI, UNC_TRESHOLD_2, temperr2d_op, uncertain_points, uncertain_points_coord, latitude_op, longitude_op)
+if VORONOI_MODE == "paper_single_pass":
+    # Paper-faithful variant: one Voronoi pass; keep validity + dmin constraints only.
+    uncertain_points, uncertain_points_coord = additional_POI_inside_contour_levels(
+        D_MIN_VORONOI, -np.inf, temperr2d_poi, uncertain_points, uncertain_points_coord, latitude_op, longitude_op
+    )
+elif VORONOI_MODE == "legacy_two_pass_threshold":
+    UNC_TRESHOLD_1 = min_level + (gap/N_LEVELS) #Not voronoi inside last contour level
+    UNC_TRESHOLD_2 = min_level + (gap/2)
+    uncertain_points, uncertain_points_coord = additional_POI_inside_contour_levels(
+        D_MIN_VORONOI, UNC_TRESHOLD_1, temperr2d_poi, uncertain_points, uncertain_points_coord, latitude_op, longitude_op
+    )
+    uncertain_points, uncertain_points_coord = additional_POI_inside_contour_levels(
+        D_MIN_VORONOI, UNC_TRESHOLD_2, temperr2d_poi, uncertain_points, uncertain_points_coord, latitude_op, longitude_op
+    )
+else:
+    raise ValueError(f"Unsupported VORONOI_MODE={VORONOI_MODE}")
 
 
 #PLOT: Operation area with all masks and uncertain points
-fig, ax = _plot_base_map(temperr2d_op, 'Point Selection', cmap_name='viridis')
+fig, ax = _plot_base_map(temperr2d_poi, 'Point Selection', cmap_name='viridis')
 uncertain_points_for_scatter = [(y, x)  for x, y in uncertain_points]
 ax.scatter(*zip(*uncertain_points_for_scatter), s=5, c='black', marker='o')
 plt.show()
@@ -287,10 +326,10 @@ for node in vrp_nodes:
     vrp_nodes_coord.append(point_lat_lon)  
 
 #Get nodes prizes (prize obtained for visiting the client)
-node_prices = get_nodes_prize(temperr2d_op, vrp_nodes, N_DEPOT)
+node_prices = get_nodes_prize(temperr2d_poi, vrp_nodes, N_DEPOT)
 
 #Get nodes distances (penalised distance where obstacles are present)
-node_distances = get_nodes_distance(temperr2d_op, vrp_nodes)
+node_distances = get_nodes_distance(temperr2d_poi, vrp_nodes)
 
 ################################################
 # VRP Solver first time: estimate number of visited clients 
@@ -309,19 +348,19 @@ vehicles_max_distance = get_max_distances(mission_duration_s)
 
 #Create instance
 if(AUV_NUMBER == 1):
-    instance = instance.replace(vehicle_types=[VehicleType(1, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance[0])])
+    instance = instance.replace(vehicle_types=[VehicleType(1, capacity=[0], start_depot=0, end_depot= 1, max_distance=vehicles_max_distance[0])])
 
 elif(AUV_NUMBER == 2):
     instance = instance.replace(vehicle_types=[
-                VehicleType(1, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance[0]),
-                VehicleType(1, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance[1]),
+                VehicleType(1, capacity=[0], start_depot=0, end_depot= 2, max_distance=vehicles_max_distance[0]),
+                VehicleType(1, capacity=[0], start_depot=1, end_depot= 3, max_distance=vehicles_max_distance[1]),
                 ])
     
 elif(AUV_NUMBER == 3):
     instance = instance.replace(vehicle_types=[
-                VehicleType(1, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance[0]),
-                VehicleType(1, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance[1]),
-                VehicleType(1, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance[2]),
+                VehicleType(1, capacity=[0], start_depot=0, end_depot= 3, max_distance=vehicles_max_distance[0]),
+                VehicleType(1, capacity=[0], start_depot=1, end_depot= 4, max_distance=vehicles_max_distance[1]),
+                VehicleType(1, capacity=[0], start_depot=2, end_depot= 5, max_distance=vehicles_max_distance[2]),
                 ])
 
 #Create the VRP model
@@ -340,7 +379,7 @@ vrp_routes_minimum_depth = get_routes_minimum_depth(tbath_op, vrp_routes_all_gri
 
 routes_length = get_routes_length(vrp_routes_points_coord)
 
-total_prize = get_routes_prize(temperr2d_op, vrp_routes_all_grid_points)
+total_prize = get_routes_prize(temperr2d_poi, vrp_routes_all_grid_points)
 
 vrp_routes_points_coord_and_depth = add_depth_info(tbath_op, vrp_routes_points, vrp_routes_points_coord)    
 
@@ -357,19 +396,19 @@ vehicles_max_distance_wt = get_max_distances(effective_travel_duration)
 
 #Create new instance for VRP problem replacing the old one with updated max distances
 if(AUV_NUMBER == 1):
-    instance_wt = instance.replace(vehicle_types= [VehicleType(1, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance_wt[0])])
+    instance_wt = instance.replace(vehicle_types= [VehicleType(1, capacity=[0], start_depot=0, end_depot= 1, max_distance=vehicles_max_distance_wt[0])])
 
 elif(AUV_NUMBER == 2):  
     instance_wt = instance.replace(vehicle_types=[  
-                VehicleType(1, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance_wt[0]),
-                VehicleType(1, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance_wt[1]),
+                VehicleType(1, capacity=[0], start_depot=0, end_depot= 2, max_distance=vehicles_max_distance_wt[0]),
+                VehicleType(1, capacity=[0], start_depot=1, end_depot= 3, max_distance=vehicles_max_distance_wt[1]),
                 ])
     
 elif(AUV_NUMBER == 3):  
     instance_wt = instance.replace(vehicle_types=[  
-                VehicleType(1, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance_wt[0]),
-                VehicleType(1, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance_wt[1]),
-                VehicleType(1, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance_wt[2]),
+                VehicleType(1, capacity=[0], start_depot=0, end_depot= 3, max_distance=vehicles_max_distance_wt[0]),
+                VehicleType(1, capacity=[0], start_depot=1, end_depot= 4, max_distance=vehicles_max_distance_wt[1]),
+                VehicleType(1, capacity=[0], start_depot=2, end_depot= 5, max_distance=vehicles_max_distance_wt[2]),
                 ])           
 
 #Create the VRP model
@@ -389,9 +428,9 @@ vrp_routes_all_grid_points_wt = get_all_routes_grid_points(vrp_routes_points_wt)
 
 vrp_routes_minimum_depth_wt = get_routes_minimum_depth(tbath_op, vrp_routes_all_grid_points_wt) 
 
-total_wp_prize_wt = get_routes_prize(temperr2d_op, vrp_routes_points_wt)     
+total_wp_prize_wt = get_routes_prize(temperr2d_poi, vrp_routes_points_wt)     
 
-total_prize_wt = get_routes_prize(temperr2d_op,vrp_routes_all_grid_points_wt)   
+total_prize_wt = get_routes_prize(temperr2d_poi,vrp_routes_all_grid_points_wt)   
 
 routes_length_wt = get_routes_length(vrp_routes_points_coord_wt)    
 
@@ -407,7 +446,7 @@ print(total_prize_wt)
 ###############################################  SAVE FINAL ROUTES  ##############################################################
 if CLEAN_ROUTE:
     #clean the route
-    vrp_routes_points_wt_clean, vrp_routes_points_coord_wt_clean = delete_redundant_wp(temperr2d_op, vrp_routes_points_wt, vrp_routes_points_coord_wt)
+    vrp_routes_points_wt_clean, vrp_routes_points_coord_wt_clean = delete_redundant_wp(temperr2d_poi, vrp_routes_points_wt, vrp_routes_points_coord_wt)
 else:
     vrp_routes_points_wt_clean, vrp_routes_points_coord_wt_clean = vrp_routes_points_wt, vrp_routes_points_coord_wt
 
@@ -426,7 +465,7 @@ create_routes_file_wt('routes_file.txt', vrp_routes_points_coord_and_depth_wt_cl
 
 
 #Operation area with all masks, uncertain points and vrp solution  (final sol)
-fig, ax = _plot_base_map(temperr2d_op, 'PC-VRP Solution', cmap_name='viridis')
+fig, ax = _plot_base_map(temperr2d_poi, 'PC-VRP Solution', cmap_name='viridis')
 uncertain_points_for_scatter = [(y, x)  for x, y in uncertain_points]
 ax.scatter(*zip(*uncertain_points_for_scatter), s=5, c='grey', marker='o', label = "Total VRP points: "+str(len(uncertain_points))+"\n___________")  #RICORDA LO SCATTER VUOLE PRIMA Y poi X
 for i in range(len(vrp_routes_points_wt_clean)):

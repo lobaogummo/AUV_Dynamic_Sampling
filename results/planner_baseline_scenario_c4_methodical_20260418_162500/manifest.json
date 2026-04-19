@@ -1,0 +1,149 @@
+{
+  "scenario_name": "TEST_C4_HighRes_31-10-2024_INST1_predModel_BASELINE",
+  "created_utc": "2026-04-18T16:48:14.607269+00:00",
+  "source_files": {
+    "predmodel": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+    "mask_out_reference": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\Nazare_31-10-2024_1\\mask.out"
+  },
+  "output_files": {
+    "interface_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\31-10-2024_predModel_1_planner_interface.nc",
+    "validation_report": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\validation\\run_report.md",
+    "validation_summary_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\validation\\interface_summary.csv",
+    "validation_checks_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\validation\\checks.json"
+  },
+  "interface_rules": {
+    "temperr": {
+      "source": "STD",
+      "source_slice": "STD[lat,lon] direct"
+    },
+    "tbath": {
+      "source": "BATHY",
+      "transform": "tbath = -BATHY"
+    },
+    "landt": {
+      "rule": "landt = 1 where finite(temperr) and finite(tbath), else 0"
+    },
+    "grid_policy": "keep native C4 grid 180x240; no external regridding"
+  },
+  "planner_operational_crop": {
+    "operation_ll_corner": [
+      39.50934,
+      -9.4352
+    ],
+    "operation_ur_corner": [
+      39.75313,
+      -9.03402
+    ],
+    "indices": {
+      "lat_start": 46,
+      "lat_stop": 138,
+      "lon_start": 46,
+      "lon_stop": 195
+    },
+    "expected_shape": [
+      92,
+      149
+    ]
+  },
+  "preplanner_sanity": {
+    "path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\validation\\preplanner_sanity.json",
+    "summary": {
+      "crop_not_empty": true,
+      "final_map_not_empty": true,
+      "all_depots_not_on_land": true,
+      "all_depots_finite_after_masks": true,
+      "lat_monotonic": true,
+      "lon_monotonic": true
+    },
+    "finite_cells": {
+      "total_cells": 13708,
+      "after_land_mask": 11863,
+      "after_depth_mask": 11005,
+      "after_obstacle_mask": 10750
+    }
+  },
+  "planner_run": {
+    "runtime_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\planner_runtime_final.txt",
+    "log_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\planner_stdout_final.log",
+    "run_metrics_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\run_metrics.json",
+    "routes_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\routes_file.txt",
+    "routes_node_estimation_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\routes_file_node_estimation.txt",
+    "vrp_instance_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\VRP_instance_problem.vrp",
+    "plot_png": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T171719Z_wt.png",
+    "final_metrics": {
+      "exit_code": 0,
+      "elapsed_seconds_total": 587.7679085,
+      "solver_blocks": [
+        {
+          "n_routes": 2,
+          "n_clients": 37,
+          "objective": 343012,
+          "distance": 228,
+          "duration": 228,
+          "iterations": 7759,
+          "solver_runtime_s": 60.0
+        },
+        {
+          "n_routes": 2,
+          "n_clients": 43,
+          "objective": 338773,
+          "distance": 218,
+          "duration": 218,
+          "iterations": 29385,
+          "solver_runtime_s": 228.42
+        }
+      ],
+      "final_solver_block": {
+        "n_routes": 2,
+        "n_clients": 43,
+        "objective": 338773,
+        "distance": 218,
+        "duration": 218,
+        "iterations": 29385,
+        "solver_runtime_s": 228.42
+      },
+      "route_specs_final": [
+        {
+          "length_km": 18.961,
+          "travel_h": 5,
+          "travel_m": 16,
+          "mission_h": 5,
+          "mission_m": 30,
+          "minimum_depth_m": 129.34654
+        },
+        {
+          "length_km": 40.683,
+          "travel_h": 11,
+          "travel_m": 18,
+          "mission_h": 11,
+          "mission_m": 40,
+          "minimum_depth_m": 151.48868
+        }
+      ],
+      "route_waypoint_counts_including_start_end": [
+        16,
+        24
+      ],
+      "total_wp_temperr": 4.756237,
+      "total_all_temperr": 40.82792
+    }
+  },
+  "execution_environment": {
+    "python_version": "3.12",
+    "dependencies": {
+      "pyvrp": "0.10.1",
+      "geopy": "2.4.1",
+      "xarray": "2026.2.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.4.4"
+    }
+  },
+  "snapshot_execution": {
+    "planner_snapshot_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\planner_snapshot",
+    "core_repo_planner_modified": false,
+    "snapshot_compatibility_changes": [
+      "VehicleType capacity argument for current PyVRP API compatibility",
+      "Windows-safe timestamp string for plot filename"
+    ]
+  }
+}

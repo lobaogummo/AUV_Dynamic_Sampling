@@ -1,0 +1,125 @@
+{
+  "operation_crop": {
+    "lat_start": 46,
+    "lat_stop": 138,
+    "lon_start": 46,
+    "lon_stop": 195,
+    "shape": [
+      92,
+      149
+    ]
+  },
+  "finite_cells": {
+    "total_cells": 13708,
+    "after_land_mask": 11863,
+    "after_depth_mask": 11005,
+    "after_obstacle_mask": 10750
+  },
+  "final_temperr_stats": {
+    "min": 0.01673400029540062,
+    "max": 0.15888699889183044,
+    "mean": 0.07588878352143044
+  },
+  "depots_check": [
+    {
+      "idx": 0,
+      "role": "start",
+      "latlon_requested": [
+        39.57331662,
+        -9.29314
+      ],
+      "grid_idx_op": [
+        24,
+        52
+      ],
+      "grid_latlon": [
+        39.573556569701466,
+        -9.293584213097224
+      ],
+      "on_land_mask": false,
+      "finite_after_all_masks": true
+    },
+    {
+      "idx": 1,
+      "role": "start",
+      "latlon_requested": [
+        39.57644,
+        -9.29321
+      ],
+      "grid_idx_op": [
+        25,
+        52
+      ],
+      "grid_latlon": [
+        39.57619440089391,
+        -9.293584213097224
+      ],
+      "on_land_mask": false,
+      "finite_after_all_masks": true
+    },
+    {
+      "idx": 2,
+      "role": "end",
+      "latlon_requested": [
+        39.57331662,
+        -9.29314
+      ],
+      "grid_idx_op": [
+        24,
+        52
+      ],
+      "grid_latlon": [
+        39.573556569701466,
+        -9.293584213097224
+      ],
+      "on_land_mask": false,
+      "finite_after_all_masks": true
+    },
+    {
+      "idx": 3,
+      "role": "end",
+      "latlon_requested": [
+        39.57644,
+        -9.29321
+      ],
+      "grid_idx_op": [
+        25,
+        52
+      ],
+      "grid_latlon": [
+        39.57619440089391,
+        -9.293584213097224
+      ],
+      "on_land_mask": false,
+      "finite_after_all_masks": true
+    }
+  ],
+  "obstacle_boxes_idx": [
+    {
+      "lat_start": 56,
+      "lat_stop": 57,
+      "lon_start": 79,
+      "lon_stop": 105
+    },
+    {
+      "lat_start": 5,
+      "lat_stop": 14,
+      "lon_start": 60,
+      "lon_stop": 77
+    },
+    {
+      "lat_start": 7,
+      "lat_stop": 16,
+      "lon_start": 69,
+      "lon_stop": 80
+    }
+  ],
+  "assessments": {
+    "crop_not_empty": true,
+    "final_map_not_empty": true,
+    "all_depots_not_on_land": true,
+    "all_depots_finite_after_masks": true,
+    "lat_monotonic": true,
+    "lon_monotonic": true
+  }
+}

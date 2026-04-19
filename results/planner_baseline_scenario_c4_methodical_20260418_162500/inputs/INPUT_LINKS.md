@@ -1,0 +1,26 @@
+# INPUT_LINKS
+
+- `data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/31-10-2024_predModel_1.nc`
+  - exists: `True`
+  - size_bytes: `83337850`
+  - sha256: `5eea257248fd8ab56ddb7927afe03625ecd5de1a148718b9d5df3f573cc1d179`
+- `data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/mask.out`
+  - exists: `True`
+  - size_bytes: `1335245`
+  - sha256: `86e70b83384eedcf92f8ab0e70da6ae70b1194f4724e828957fcb8e52e3f63d3`
+- `data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/scene_1.gslib`
+  - exists: `True`
+  - size_bytes: `3798465`
+  - sha256: `fed77c02df84fcc442e80524c64c069e2aafaed30af88655ed69d75ec44d5b2d`
+- `data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/scene_2.gslib`
+  - exists: `True`
+  - size_bytes: `3798465`
+  - sha256: `07f0e2882dbd390dff5b8c202987f8c181078080fafd9fcc337bf8774d9e3e94`
+- `data/TEST_C4/HighRes/Daily_dpt_20241030_NewTest_1/Nazare_31-10-2024_1/scene_3.gslib`
+  - exists: `True`
+  - size_bytes: `3798465`
+  - sha256: `dc18118823afa391db4afb3aef74ae931a1a0484ec2071e9b4b1c90cf1c1eb78`
+- `results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/31-10-2024_predModel_1_planner_interface.nc`
+  - exists: `True`
+  - size_bytes: `401465`
+  - sha256: `34c42f24894cb8b79dd58d842b19d7fc03f60e19efd3acfaeef8c2728f341880`

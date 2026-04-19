@@ -1,0 +1,5 @@
+metric,baseline,rerun,delta_rerun_minus_baseline
+candidate_clients,433,420,-13
+visited_points_final,43,46,3
+final_objective,338773,1987866,1649093
+n_routes_final,2,2,0

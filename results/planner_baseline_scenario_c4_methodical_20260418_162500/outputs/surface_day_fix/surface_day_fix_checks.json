@@ -1,0 +1,109 @@
+{
+  "status": "FOUND AND FIXED",
+  "selection_note": "Using `30-10-2024_predModel_1.nc` with one 2D day slice of STD (selected day index=1).",
+  "current_source": {
+    "path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+    "exists": true,
+    "required_present": {
+      "STD": true,
+      "LAT": true,
+      "LON": true,
+      "BATHY": true
+    },
+    "has_all_required": true,
+    "dims": {
+      "STD": {
+        "LAT": 180,
+        "LON": 240
+      },
+      "LAT": {
+        "lat": 180
+      },
+      "LON": {
+        "lon": 240
+      },
+      "BATHY": {
+        "LAT": 180,
+        "LON": 240
+      }
+    },
+    "std_ndim": 2,
+    "std_dims": [
+      "LAT",
+      "LON"
+    ]
+  },
+  "preferred_day_source": {
+    "path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+    "exists": true,
+    "required_present": {
+      "STD": true,
+      "LAT": true,
+      "LON": true,
+      "BATHY": true
+    },
+    "has_all_required": true,
+    "dims": {
+      "STD": {
+        "day": 2,
+        "LAT": 180,
+        "LON": 240
+      },
+      "LAT": {
+        "lat": 180
+      },
+      "LON": {
+        "lon": 240
+      },
+      "BATHY": {
+        "LAT": 180,
+        "LON": 240
+      }
+    },
+    "std_ndim": 3,
+    "std_dims": [
+      "day",
+      "LAT",
+      "LON"
+    ]
+  },
+  "current_surface_extraction": {
+    "source_slice": "STD[LAT,LON] direct",
+    "day_index_used": null
+  },
+  "selected_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+  "selected_surface_extraction": {
+    "source_slice": "STD[day=1,LAT,LON]",
+    "day_index_used": 1,
+    "day_stats": [
+      {
+        "day_index": 0,
+        "finite_fraction": 0.6974074074074074,
+        "min": 0.0,
+        "max": 0.0007159999804571271,
+        "mean": 2.3765267540398537e-08,
+        "std": 4.1249686430980874e-06
+      },
+      {
+        "day_index": 1,
+        "finite_fraction": 0.6974074074074074,
+        "min": 0.004631999880075455,
+        "max": 0.11772599816322327,
+        "mean": 0.048586960038030126,
+        "std": 0.016968309609434212
+      }
+    ]
+  },
+  "interface_output": {
+    "interface_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\30-10-2024_surface_dayfix_planner_interface.nc",
+    "latlon_shape": [
+      180,
+      240
+    ],
+    "expected_crop_shape": [
+      92,
+      149
+    ],
+    "source_slice_note": "STD[day=1,LAT,LON]"
+  }
+}

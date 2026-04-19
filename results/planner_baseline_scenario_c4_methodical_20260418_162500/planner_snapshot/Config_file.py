@@ -1,0 +1,45 @@
+#################################################   CONFIG FILE OPTIMAL PLANNING -  FRESNEL  #############################################
+
+#MISSION PARAMETERS
+AUV_NUMBER = 2                                                                  #[ad] AUVs number
+SPEED = 1                                                                       #[m/s] Speed (on surface) 
+MISSION_DURATIONS = [6, 13]                                                     #[h] Desired mission duration: auv1, auv2, auv3, ...
+WP_WAITING_TIME = 1                                                             #[minutes] Waiting time at every waypoints
+START_END_POINT_DISPLACEMENT = 200                                              #[m] Displacement for visual purpose in start/end point differentiation
+STARTING_POINTS = [[39.57331662, -9.29314], [39.57644, -9.29321]]               #Starting mission coords: auv1. auv2, auv3, ... 
+ENDING_POINTS = [[39.57331662, -9.29314],[39.57644, -9.29321]]                  #Final mission coords: auv1. auv2, auv3, ... 
+
+#MASK PARAMETERS
+MINIMUM_DEPTH = 40                                                             #[m] Mask points with less than MINIMUM_DEPTH m depth 
+
+DISTANCE_FROM_LAND = 5                                                         #[km] Mask points with less than DISTANCE_FROM_LAND km from land
+
+OPERATION_LL_CORNER = [39.50934, -9.43520]                                     #NAZARE Operational Area LowLeft and UpperRight corner
+OPERATION_UR_CORNER = [39.75313, -9.03402]
+
+obj_traffic1 = [[39.52373330, -9.27074432],[39.54570705,-9.22937393]]          #Obstacles within the operational area (e.g., fishing nets, high-traffic zones, unknown bathymetry, etc)
+obj_traffic2 = [[39.52982071, -9.24585342],[39.55179585, -9.21881676]]
+obj_line = [[39.65833176, -9.21997547], [39.65998, -9.15316]]
+OBJECTS_LL_CORNER = [obj_line[0], obj_traffic1[0], obj_traffic2[0]]    
+OBJECTS_UR_CORNER = [obj_line[1], obj_traffic1[1], obj_traffic2[1]]
+
+
+#POI (Points Of Interest) SELECTION PARAMETERS
+N_LEVELS = 9                                #Number of desired contour levels
+D_MIN_CONTOUR = 1                           #[km] Minimum distance between points on the contour levels
+D_MIN_VORONOI = 1                           #[km] Minimum distance between points inside the contour levels
+
+#VRP (Vehicle Routing Problem) SOLVER PARAMETERS
+STOP_RUN_TIME = 60                          #[s] Solver stop criterion: the algorithm stop after these seconds (used to solve the first instance (client estimation))
+STOP_NO_ITER = 30                           #[s] Solver stop criterion: the algorithm stop after these iteration without improvement (used to solve the second istance (final solution))
+N_DEPOT = AUV_NUMBER * 2                    #Start and end depot for each AUV   (Do not change!)
+SEED = 0                                    #Seed to generate the first random solution (initial population of the solver)
+
+#HOPS SPEC
+MODEL_HOPS = True
+HOPS_GRID_RESOLUTION = 300                  #[m] Resolution of HOPS model grid
+
+#If you want to minimize the number of wp to be sent to the vechile, it will remove from the solution the redundant wps: the ones inline
+CLEAN_ROUTE = True
+
+

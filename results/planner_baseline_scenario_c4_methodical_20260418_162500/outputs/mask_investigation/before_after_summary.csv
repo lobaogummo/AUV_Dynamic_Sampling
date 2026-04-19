@@ -1,0 +1,8 @@
+metric,value
+mask_disagreement_cells,0
+mask_total_cells,13708
+mask_disagreement_fraction,0.0
+plot_black_fraction_before,0.051476230671833635
+plot_black_fraction_after,0.008741360096367537
+before_plot,C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\planner_run\20260418T171719Z_wt.png
+after_plot,C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\planner_run\20260418T183627Z_wt.png

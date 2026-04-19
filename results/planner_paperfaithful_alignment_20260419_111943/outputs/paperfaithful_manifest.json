@@ -1,0 +1,22 @@
+{
+  "run_root": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943",
+  "source_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+  "interfaces": {
+    "current": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\inputs\\31-10-2024_predModel_1_planner_interface_current.nc",
+    "paperfaithful": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\inputs\\31-10-2024_predModel_1_planner_interface_paperfaithful.nc"
+  },
+  "snapshots": {
+    "current": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\planner_snapshot_current",
+    "paperfaithful": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\planner_snapshot_paperfaithful"
+  },
+  "outputs": {
+    "diagnostics_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\diagnostics",
+    "summary_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_before_after_summary.json",
+    "summary_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_before_after_summary.csv",
+    "voronoi_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_voronoi_comparison.csv",
+    "parameters_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_parameters_comparison.csv",
+    "semantics_report": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_temperr_semantics_report.md",
+    "alignment_report": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_alignment_report.md",
+    "executive_summary": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_paperfaithful_alignment_20260419_111943\\outputs\\paperfaithful_executive_summary.md"
+  }
+}

@@ -1,0 +1,14 @@
+metric,count_cells,total_cells,fraction,percent
+op_total_cells,13708,13708,1.0,100.0
+landt_current_valid_cells,11863,13708,0.8654070615698862,86.54070615698862
+landt_current_invalid_cells,1845,13708,0.1345929384301138,13.45929384301138
+additional_invalid_by_depth_tbath_neg,858,13708,0.06259118762766268,6.259118762766268
+valid_after_depth_tbath_neg,11005,13708,0.8028158739422235,80.28158739422236
+additional_invalid_by_obstacles,255,13708,0.01860227604318646,1.860227604318646
+final_valid_tbath_neg,10750,13708,0.7842135978990371,78.4213597899037
+final_invalid_tbath_neg,2958,13708,0.21578640210096295,21.578640210096292
+additional_invalid_by_depth_tbath_pos,11863,13708,0.8654070615698862,86.54070615698862
+valid_after_depth_tbath_pos,0,13708,0.0,0.0
+landt_disagreement_vs_maskout_zero,0,13708,0.0,0.0
+landt_disagreement_vs_maskout_neg1,13708,13708,1.0,100.0
+landt_disagreement_vs_maskout_best,0,13708,0.0,0.0

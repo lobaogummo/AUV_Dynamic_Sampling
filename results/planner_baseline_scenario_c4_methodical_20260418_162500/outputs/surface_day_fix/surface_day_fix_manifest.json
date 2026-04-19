@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-04-19T14:09:03.282196+00:00",
+  "status": "FOUND AND FIXED",
+  "selection_note": "Using `30-10-2024_predModel_1.nc` with one 2D day slice of STD (selected day index=1).",
+  "paths": {
+    "current_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_C4\\HighRes\\Daily_dpt_20241030_NewTest_1\\31-10-2024_predModel_1.nc",
+    "required_prior_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+    "selected_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+    "comparison_figure": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\surface_day_fix\\surface_day_comparison.png",
+    "interface_output": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\30-10-2024_surface_dayfix_planner_interface.nc",
+    "report": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\surface_day_fix\\surface_day_fix_report.md",
+    "summary": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\surface_day_fix\\surface_day_fix_summary.md",
+    "checks_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\surface_day_fix\\surface_day_fix_checks.json"
+  }
+}

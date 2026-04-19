@@ -1,0 +1,19 @@
+{
+  "baseline_label": "previous_31-10_input",
+  "rerun_label": "surface_day1_30-10_prior_input",
+  "baseline_candidate_clients": 433,
+  "rerun_candidate_clients": 420,
+  "baseline_visited_points_final": 43,
+  "rerun_visited_points_final": 46,
+  "baseline_final_objective": 338773,
+  "rerun_final_objective": 1987866,
+  "baseline_n_routes_final": 2,
+  "rerun_n_routes_final": 2,
+  "baseline_plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T171719Z_wt.png",
+  "rerun_plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\final_rerun_surface_day1_20260419_144145\\planner_run\\planner_plot_surface_day1_final.png",
+  "visual_note": "Rerun plot is visually cleaner (single colorbar, no overlay artifacts) and uses 420 candidate points; route geometry shifts with one compact blue route near central-west and one longer orange route covering broader western/central area.",
+  "delta_objective": 1649093,
+  "delta_visited_points": 3,
+  "delta_n_routes": 0,
+  "delta_candidate_clients": -13
+}

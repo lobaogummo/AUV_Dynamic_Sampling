@@ -1,0 +1,11 @@
+metric,value
+poi_raw_single_pass,434
+poi_smoothed_single_pass,420
+poi_current_voronoi_smoothed,418
+poi_paperfaithful_voronoi_smoothed,420
+current_candidate_clients,433
+current_visited_clients_final,43
+paper_candidate_clients,420
+paper_visited_clients_final,43
+current_best_cost_final,338773
+paper_best_cost_final,289098

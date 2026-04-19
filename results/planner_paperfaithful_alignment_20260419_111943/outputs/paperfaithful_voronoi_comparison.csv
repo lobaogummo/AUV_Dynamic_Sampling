@@ -1,0 +1,3 @@
+variant,mode,n_levels,d_min_contour_km,d_min_voronoi_km,n_pois,thresholds
+current_voronoi,legacy_two_pass_threshold,9,1.0,1.0,418,"[0.03404923077021301, 0.07427471165770957]"
+paperfaithful_voronoi,paper_single_pass,9,1.0,1.0,420,[-Infinity]
