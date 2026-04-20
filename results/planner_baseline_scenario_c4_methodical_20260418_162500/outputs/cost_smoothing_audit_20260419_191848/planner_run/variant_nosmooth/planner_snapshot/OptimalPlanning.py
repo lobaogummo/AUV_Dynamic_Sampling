@@ -8,6 +8,8 @@ import scipy.spatial.distance
 import scipy.spatial 
 import geopy.distance   #pip install geopy
 import datetime
+import json
+import math
 import sys
 import scipy.ndimage
 from scipy.interpolate import griddata
@@ -35,6 +37,18 @@ def _plot_base_map(arr, title, cmap_name="viridis"):
     ax.set_title(title)
     fig.tight_layout()
     return fig, ax
+
+def _stats_from_values(_values):
+    _arr = np.asarray(_values, dtype=np.float64)
+    if _arr.size == 0:
+        return {"count": 0, "min": None, "max": None, "mean": None, "std": None}
+    return {
+        "count": int(_arr.size),
+        "min": float(np.min(_arr)),
+        "max": float(np.max(_arr)),
+        "mean": float(np.mean(_arr)),
+        "std": float(np.std(_arr)),
+    }
 
 #################################################    PRE PROCESSING MODEL 2   #################################################
 if MODEL_HOPS == False:
@@ -428,23 +442,12 @@ create_routes_file_wt('routes_file.txt', vrp_routes_points_coord_and_depth_wt_cl
 fig, ax = _plot_base_map(temperr2d_op, 'PC-VRP Solution', cmap_name='viridis')
 uncertain_points_for_scatter = [(y, x)  for x, y in uncertain_points]
 ax.scatter(*zip(*uncertain_points_for_scatter), s=5, c='grey', marker='o', label = "Total VRP points: "+str(len(uncertain_points))+"\n___________")  #RICORDA LO SCATTER VUOLE PRIMA Y poi X
-route_colors = plt.cm.tab10(np.linspace(0, 1, max(len(vrp_routes_points_wt_clean), 1)))
 for i in range(len(vrp_routes_points_wt_clean)):
     single_vrp_route_scatter = [(y, x)  for x, y in vrp_routes_points_wt_clean[i]]
-    route_color = route_colors[i]
-    ax.plot(
-        *zip(*single_vrp_route_scatter),
-        color=route_color,
-        linewidth=1.9,
-        marker='o',
-        markersize=3.2,
-        markerfacecolor='white',
-        markeredgecolor=route_color,
-        markeredgewidth=0.8,
-        label = "Visited points: "+str(len(vrp_routes_points_wt[i])-2)+"\nWaypoints: "+str(len(vrp_routes_points_wt_clean[i])-2)+"\n___________",
-    )
-    ax.scatter(single_vrp_route_scatter[0][0], single_vrp_route_scatter[0][1], s=90, c=[route_color], marker='*', edgecolors='black', linewidths=0.5)    #first point
-    ax.scatter(single_vrp_route_scatter[1][0], single_vrp_route_scatter[1][1], s=34, c=[route_color], marker='o', edgecolors='black', linewidths=0.4)    #second point
+    ax.plot(*zip(*single_vrp_route_scatter), label = "Visited points: "+str(len(vrp_routes_points_wt[i])-2)+"\nWaypoints: "+str(len(vrp_routes_points_wt_clean[i])-2)+"\n___________")
+    ax.scatter(*zip(*single_vrp_route_scatter), s=5, c='black', marker='o')
+    ax.scatter(single_vrp_route_scatter[0][0], single_vrp_route_scatter[0][1], s=80, c='black', marker='*')    #first point
+    ax.scatter(single_vrp_route_scatter[1][0], single_vrp_route_scatter[1][1], s=30, c='purple', marker='o')    #second point
 ax.legend(bbox_to_anchor = (1.25, 0.6), loc='upper left')
 #save plot
 date_time = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -455,3 +458,51 @@ plt.close(fig)
 
 
 
+
+# AUDIT_DEBUG_PAYLOAD_START
+try:
+    _N_level_audit = 1000
+    _max_map = float(temperr2d_op.max())
+    _min_map = float(np.nanmin(temperr2d_op[temperr2d_op != -np.inf]))
+    _range_map = float(_max_map - _min_map)
+    _decimal_number = int(math.ceil(-math.log10(_range_map / _N_level_audit)))
+    _multiplicative_factor = int(pow(10, _decimal_number))
+    _visited_client_node_ids = []
+    for _route in vrp_result_wt.best.routes():
+        for _node in _route:
+            _visited_client_node_ids.append(int(_node))
+    _all_client_prices = [int(v) for v in node_prices[N_DEPOT:]]
+    _visited_client_prices = [int(node_prices[_idx]) for _idx in _visited_client_node_ids if _idx >= N_DEPOT and _idx < len(node_prices)]
+    _payload = {
+        "smoothing_applied": false,
+        "candidate_points": int(len(uncertain_points)),
+        "n_depot": int(N_DEPOT),
+        "n_total_nodes": int(len(vrp_nodes)),
+        "prize_scaling": {
+            "N_level": int(_N_level_audit),
+            "map_min": _min_map,
+            "map_max": _max_map,
+            "map_range": _range_map,
+            "decimal_number": int(_decimal_number),
+            "multiplicative_factor": int(_multiplicative_factor)
+        },
+        "all_client_price_stats": _stats_from_values(_all_client_prices),
+        "all_client_price_sum": float(np.sum(_all_client_prices)) if len(_all_client_prices) > 0 else 0.0,
+        "visited_client_node_ids": _visited_client_node_ids,
+        "visited_client_price_stats": _stats_from_values(_visited_client_prices),
+        "visited_client_price_sum": float(np.sum(_visited_client_prices)) if len(_visited_client_prices) > 0 else 0.0,
+        "final_solver": {
+            "n_routes": int(len(vrp_result_wt.best.routes())),
+            "n_clients": int(sum(len(list(r)) for r in vrp_result_wt.best.routes())),
+            "objective": int(vrp_result_wt.cost())
+        },
+        "route_waypoint_counts_clean": [int(len(r)-2) for r in vrp_routes_points_wt_clean],
+        "total_wp_temperr": float(total_wp_prize_wt),
+        "total_all_temperr": float(total_prize_wt),
+    }
+    with open('audit_prize_debug.json', 'w', encoding='utf-8') as _f:
+        json.dump(_payload, _f, indent=2)
+except Exception as _e:
+    with open('audit_prize_debug_error.txt', 'w', encoding='utf-8') as _f:
+        _f.write(str(_e))
+# AUDIT_DEBUG_PAYLOAD_END

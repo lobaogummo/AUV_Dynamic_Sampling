@@ -1,0 +1,5 @@
+metric,old_31_10,day1_nosmooth,day1_smoothed
+candidate_clients,433,420,419
+visited_clients_final,43,46,43
+objective_final,338773,1987866,1754656
+n_routes_final,2,2,2

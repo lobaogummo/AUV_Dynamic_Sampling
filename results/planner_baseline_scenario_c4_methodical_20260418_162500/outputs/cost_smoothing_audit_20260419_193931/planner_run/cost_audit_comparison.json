@@ -1,0 +1,72 @@
+{
+  "baseline_old_31_10": {
+    "candidate_clients": 433,
+    "visited_clients_final": 43,
+    "objective_final": 338773,
+    "n_routes_final": 2,
+    "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T171719Z_wt.png"
+  },
+  "day1_nosmooth": {
+    "candidate_clients": 420,
+    "visited_clients_final": 46,
+    "objective_final": 1987866,
+    "n_routes_final": 2,
+    "waypoints_per_route_including_start_end": [
+      14,
+      31
+    ],
+    "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_nosmooth.png",
+    "exit_code": 0
+  },
+  "day1_smoothed": {
+    "candidate_clients": 419,
+    "visited_clients_final": 43,
+    "objective_final": 1754656,
+    "n_routes_final": 2,
+    "waypoints_per_route_including_start_end": [
+      15,
+      28
+    ],
+    "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_smoothed.png",
+    "exit_code": 0
+  },
+  "deltas_smoothed_minus_nosmooth": {
+    "candidate_clients": -1,
+    "visited_clients_final": -3,
+    "objective_final": -233210,
+    "n_routes_final": 0
+  },
+  "objective_decomposition_proxy": {
+    "old": {
+      "run": "old_31-10_baseline",
+      "objective": 338773,
+      "distance": 218,
+      "objective_minus_distance": 338555,
+      "total_client_prize_sum": 383727.0,
+      "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 45172.0,
+      "visited_client_prize_sum_debug": null
+    },
+    "day1_nosmooth": {
+      "run": "day1_nosmooth",
+      "objective": 1987866,
+      "distance": 215,
+      "objective_minus_distance": 1987651,
+      "total_client_prize_sum": 2287898.0,
+      "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 300247.0,
+      "visited_client_prize_sum_debug": 300247.0
+    },
+    "day1_smoothed": {
+      "run": "day1_smoothed",
+      "objective": 1754656,
+      "distance": 219,
+      "objective_minus_distance": 1754437,
+      "total_client_prize_sum": 1985855.0,
+      "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 231418.0,
+      "visited_client_prize_sum_debug": 231418.0
+    }
+  },
+  "notes": [
+    "PyVRP reported objective is not fully decomposed by planner logs; proxy decomposition uses objective-distance and prize sums.",
+    "If objective approximately equals distance + dropped_prize, then collected_prize_proxy should align with visited_client_prize_sum_debug."
+  ]
+}

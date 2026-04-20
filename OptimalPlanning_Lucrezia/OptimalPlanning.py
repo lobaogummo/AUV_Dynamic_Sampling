@@ -429,12 +429,23 @@ create_routes_file_wt('routes_file.txt', vrp_routes_points_coord_and_depth_wt_cl
 fig, ax = _plot_base_map(temperr2d_op, 'PC-VRP Solution', cmap_name='viridis')
 uncertain_points_for_scatter = [(y, x)  for x, y in uncertain_points]
 ax.scatter(*zip(*uncertain_points_for_scatter), s=5, c='grey', marker='o', label = "Total VRP points: "+str(len(uncertain_points))+"\n___________")  #RICORDA LO SCATTER VUOLE PRIMA Y poi X
+route_colors = plt.cm.tab10(np.linspace(0, 1, max(len(vrp_routes_points_wt_clean), 1)))
 for i in range(len(vrp_routes_points_wt_clean)):
     single_vrp_route_scatter = [(y, x)  for x, y in vrp_routes_points_wt_clean[i]]
-    ax.plot(*zip(*single_vrp_route_scatter), label = "Visited points: "+str(len(vrp_routes_points_wt[i])-2)+"\nWaypoints: "+str(len(vrp_routes_points_wt_clean[i])-2)+"\n___________")
-    ax.scatter(*zip(*single_vrp_route_scatter), s=5, c='black', marker='o')
-    ax.scatter(single_vrp_route_scatter[0][0], single_vrp_route_scatter[0][1], s=80, c='black', marker='*')    #first point
-    ax.scatter(single_vrp_route_scatter[1][0], single_vrp_route_scatter[1][1], s=30, c='purple', marker='o')    #second point
+    route_color = route_colors[i]
+    ax.plot(
+        *zip(*single_vrp_route_scatter),
+        color=route_color,
+        linewidth=1.9,
+        marker='o',
+        markersize=3.2,
+        markerfacecolor='white',
+        markeredgecolor=route_color,
+        markeredgewidth=0.8,
+        label = "Visited points: "+str(len(vrp_routes_points_wt[i])-2)+"\nWaypoints: "+str(len(vrp_routes_points_wt_clean[i])-2)+"\n___________",
+    )
+    ax.scatter(single_vrp_route_scatter[0][0], single_vrp_route_scatter[0][1], s=90, c=[route_color], marker='*', edgecolors='black', linewidths=0.5)    #first point
+    ax.scatter(single_vrp_route_scatter[1][0], single_vrp_route_scatter[1][1], s=34, c=[route_color], marker='o', edgecolors='black', linewidths=0.4)    #second point
 ax.legend(bbox_to_anchor = (1.25, 0.6), loc='upper left')
 #save plot
 date_time = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")

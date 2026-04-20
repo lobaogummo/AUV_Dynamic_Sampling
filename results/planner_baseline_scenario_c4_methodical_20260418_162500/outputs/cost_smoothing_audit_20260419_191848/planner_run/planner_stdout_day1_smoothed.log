@@ -1,0 +1,139 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[21.6, 46.8]
+PyVRP v0.10.1
+
+Solving an instance with:
+    4 depots
+    419 clients
+    2 vehicles (2 vehicle types)
+
+                  |       Feasible        |      Infeasible
+    Iters    Time |   #      Avg     Best |   #      Avg     Best
+      500     10s |   0        -        - |  33   213394   205390
+H    1000     17s |  54  1865969  1823146 |  41  1628848  1486975
+H    1500     22s |  50  1835136  1788605 |  28  1549436  1400568
+H    2000     24s |  46  1821147  1778139 |  59  1548639  1400568
+H    2500     27s |  34  1807786  1773567 |  56  1528970  1400568
+H    3000     30s |  39  1804691  1773555 |  46  1511285  1400568
+H    3500     32s |  49  1813544  1771397 |  36  1468497  1400568
+H    4000     35s |  57  1814856  1770542 |  28  1464977  1397573
+H    4500     38s |  43  1799871  1765190 |  56  1639405  1580057
+H    5000     39s |  45  1791903  1764909 |  35  1736516  1703278
+H    5500     43s |  53  1801175  1754954 |  33  1384735  1242917
+     6000     46s |  46  1807008  1754954 |  35  1501449  1400477
+     6500     49s |  52  1808205  1754954 |  32  1457714  1396026
+     7000     52s |  36  1788882  1754954 |  65  1271517  1093115
+     7500     55s |  36  1784873  1754954 |  58  1522047  1410121
+     8000     58s |  42  1799592  1754954 |  54  1493863  1410121
+
+Search terminated in 60.00s after 8300 iterations.
+Best-found solution has cost 1754954.
+
+Solution results
+================
+    # routes: 2
+   # clients: 40
+   objective: 1754954
+    distance: 226
+    duration: 226
+# iterations: 8300
+    run-time: 60.00 seconds
+
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[20.82, 45.18]
+PyVRP v0.10.1
+
+Solving an instance with:
+    4 depots
+    419 clients
+    2 vehicles (2 vehicle types)
+
+                  |       Feasible        |      Infeasible
+    Iters    Time |   #      Avg     Best |   #      Avg     Best
+      500      9s |   0        -        - |  33 363636628480   218269
+H    1000     16s |  65  1860176  1816754 |  41  1652879  1429839
+H    1500     20s |  33  1813430  1774657 |  33  1072618   916313
+     2000     23s |  26  1803073  1774657 |  45   989611   837561
+     2500     27s |  56  1821010  1774657 |  41  1054532   783841
+     3000     31s |  34  1806912  1774657 |  28  1539270  1488656
+     3500     34s |  57  1818852  1774657 |  54  1433349  1300216
+H    4000     38s |  29  1789583  1771161 |  49   882078   637178
+H    4500     43s |  33  1792405  1769547 |  43   831000   685550
+     5000     48s |  57  1807378  1769547 |  38  1553977  1416580
+     5500     52s |  36  1801558  1769547 |  63  1586040  1457138
+H    6000     54s |  54  1804404  1765552 |  33  1062561   899394
+     6500     58s |  29  1787461  1765552 |  51   976374   756609
+H    7000     61s |  49  1806303  1764577 |  48  1403881  1263828
+H    7500     64s |  54  1811948  1764566 |  28  1347165  1263828
+     8000     66s |  56  1803877  1764566 |  41  1392677  1263108
+H    8500     69s |  47  1802728  1759187 |  64  1463242  1280347
+     9000     74s |  60  1811907  1759187 |  57  1505260  1329272
+     9500     78s |  54  1813848  1759187 |  46  1450256  1339996
+    10000     80s |  26  1775547  1759187 |  61  1502423  1339325
+    10500     84s |  30  1781290  1759187 |  42  1453867  1341858
+    11000     88s |  60  1801739  1759187 |  59  1039234   852930
+    11500     91s |  29  1790834  1759187 |  29  1437054  1389554
+    12000     95s |  29  1787861  1759187 |  54  1568992  1408012
+    12500     98s |  39  1797737  1759187 |  47  1375601  1202508
+H   13000    100s |  29  1782349  1754656 |  29  1232958  1201446
+    13500    104s |  61  1793930  1754656 |  50  1278502  1040911
+    14000    109s |  65  1805969  1754656 |  45  1455854  1271358
+    14500    114s |  58  1802510  1754656 |  30  1447623  1339498
+    15000    117s |  42  1800044  1754656 |  51  1478790  1353165
+    15500    121s |  42  1788579  1754656 |  37   824526   751886
+    16000    123s |  48  1798743  1754656 |  50  1528589  1411079
+    16500    127s |  54  1804465  1754656 |  26   848451   730083
+    17000    130s |  33  1793392  1754656 |  56  1384861  1213720
+    17500    135s |  63  1815079  1754656 |  42  1221956  1037520
+    18000    138s |  48  1811191  1754656 |  27  1423058  1295749
+    18500    142s |  32  1788087  1754656 |  44  1455725  1312235
+    19000    144s |  45  1813909  1754656 |  60  1474007  1304377
+    19500    148s |  48  1807987  1754656 |  40  1475384  1330594
+    20000    151s |  43  1799840  1754656 |  49  1011202   769866
+    20500    156s |  51  1801115  1754656 |  28   792940   702856
+    21000    160s |  44  1803981  1754656 |  57  1550293  1422148
+    21500    164s |  40  1794468  1754656 |  36  1297875  1178401
+    22000    168s |  42  1787549  1754656 |  60  1186347  1012998
+    22500    172s |  34  1787679  1754656 |  47  1340061  1210488
+    23000    176s |  26  1767226  1754656 |  27   924097   854997
+    23500    181s |  52  1797266  1754656 |  49   877066   647146
+    24000    186s |  38  1789503  1754656 |  36   946380   748935
+    24500    190s |  29  1777344  1754656 |  65   992444   794248
+    25000    195s |  27  1774207  1754656 |  37   943098   812284
+    25500    198s |  53  1801288  1754656 |  59  1321468  1158003
+    26000    202s |  48  1796765  1754656 |  63  1345051  1179235
+    26500    205s |  40  1786417  1754656 |  40   802008   704998
+    27000    209s |  60  1802578  1754656 |  52   881471   719708
+    27500    214s |  52  1801845  1754656 |  37  1096118   854989
+
+Search terminated in 214.30s after 27567 iterations.
+Best-found solution has cost 1754656.
+
+Solution results
+================
+    # routes: 2
+   # clients: 43
+   objective: 1754656
+    distance: 219
+    duration: 219
+# iterations: 27567
+    run-time: 214.30 seconds
+
+Total WP Routes Temperr [�C]:
+2.489931205644771
+Total All Routes Temperr [�C]:
+24.600555069937077
+
+C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\cost_smoothing_audit_20260419_191848\planner_run\variant_smoothed\planner_snapshot\OptimalPlanning.py:255: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\cost_smoothing_audit_20260419_191848\planner_run\variant_smoothed\planner_snapshot\OptimalPlanning.py:261: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\cost_smoothing_audit_20260419_191848\planner_run\variant_smoothed\planner_snapshot\OptimalPlanning.py:297: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\planner_baseline_scenario_c4_methodical_20260418_162500\outputs\cost_smoothing_audit_20260419_191848\planner_run\variant_smoothed\planner_snapshot\OptimalPlanning.py:474: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

@@ -1,0 +1,4 @@
+run,candidate_clients,visited_clients_final,objective_final,distance_final,map_min_for_prize,map_max_for_prize,map_range_for_prize,decimal_number,multiplicative_factor,all_client_price_min,all_client_price_max,all_client_price_mean,all_client_price_std,all_client_price_sum,visited_client_price_min,visited_client_price_max,visited_client_price_mean,visited_client_price_std,visited_client_price_sum,objective_minus_distance,collected_prize_proxy
+old_31-10_baseline,433,43,338773,218,,,,,,238.0,1588.0,886.2055427251732,295.6254055134345,383727.0,,,,,,338555,45172.0
+day1_nosmooth,420,46,1987866,215,,,,,,1390.0,9847.0,5447.3761904761905,1998.7451435730661,2287898.0,,,,,,1987651,300247.0
+day1_smoothed,419,43,1754656,219,,,,,,1690.0,7114.0,4739.510739856802,1399.6463299455336,1985855.0,,,,,,1754437,231418.0

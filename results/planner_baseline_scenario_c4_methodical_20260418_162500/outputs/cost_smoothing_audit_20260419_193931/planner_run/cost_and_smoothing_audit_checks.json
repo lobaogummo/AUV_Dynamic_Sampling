@@ -1,0 +1,244 @@
+{
+  "created_utc": "2026-04-19T19:59:06.976355+00:00",
+  "inputs": {
+    "old_interface": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\inputs\\31-10-2024_predModel_1_planner_interface.nc",
+    "day1_source_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+    "day1_interface": {
+      "path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\inputs\\30-10-2024_surface_day1_planner_interface.nc",
+      "source_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+      "slice": "STD[day=1,LAT,LON]",
+      "shape": [
+        180,
+        240
+      ],
+      "finite_fraction": 0.6974074074074074,
+      "min": 0.004631999880075455,
+      "max": 0.11772599816322327,
+      "mean": 0.04858695715665817,
+      "std": 0.01696830987930298
+    }
+  },
+  "variant_runs": {
+    "nosmooth": {
+      "exit_code": 0,
+      "elapsed_seconds": 815.2349701999992,
+      "log_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_stdout_day1_nosmooth.log",
+      "runtime_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_runtime_day1_nosmooth.txt",
+      "routes_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\routes_file_day1_nosmooth.txt",
+      "plot_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_nosmooth.png",
+      "vrp_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\VRP_instance_problem_day1_nosmooth.vrp",
+      "prize_debug_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\audit_prize_debug_day1_nosmooth.json"
+    },
+    "smoothed": {
+      "exit_code": 0,
+      "elapsed_seconds": 357.6358535000036,
+      "log_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_stdout_day1_smoothed.log",
+      "runtime_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_runtime_day1_smoothed.txt",
+      "routes_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\routes_file_day1_smoothed.txt",
+      "plot_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_smoothed.png",
+      "vrp_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\VRP_instance_problem_day1_smoothed.vrp",
+      "prize_debug_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\audit_prize_debug_day1_smoothed.json"
+    }
+  },
+  "map_stats": {
+    "old": {
+      "count_total": 13708,
+      "count_finite": 10750,
+      "finite_fraction": 0.7842135978990371,
+      "count_zero_all": 0,
+      "zero_fraction_all": 0.0,
+      "min": 0.01673400029540062,
+      "max": 0.15888699889183044,
+      "mean": 0.07588878352143044,
+      "std": 0.024119729493312297,
+      "p01": 0.0260531703568995,
+      "p05": 0.03607114981859923,
+      "p50": 0.07479749992489815,
+      "p95": 0.1152241002768278,
+      "p99": 0.12959085389971733
+    },
+    "day1": {
+      "count_total": 13708,
+      "count_finite": 10750,
+      "finite_fraction": 0.7842135978990371,
+      "count_zero_all": 0,
+      "zero_fraction_all": 0.0,
+      "min": 0.007737999781966209,
+      "max": 0.098471999168396,
+      "mean": 0.045016574717451664,
+      "std": 0.016646210752507325,
+      "p01": 0.011406600009649992,
+      "p05": 0.015163400024175645,
+      "p50": 0.046595001593232155,
+      "p95": 0.07065784931182861,
+      "p99": 0.0800453305244446
+    },
+    "day1_smoothed": {
+      "count_total": 13708,
+      "count_finite": 10750,
+      "finite_fraction": 0.7842135978990371,
+      "count_zero_all": 0,
+      "zero_fraction_all": 0.0,
+      "min": 0.010425234500322492,
+      "max": 0.07609570859280232,
+      "mean": 0.04501724314226198,
+      "std": 0.015219564405933677,
+      "p01": 0.012321274927304426,
+      "p05": 0.0159819223760511,
+      "p50": 0.048702420448712806,
+      "p95": 0.06516346276385034,
+      "p99": 0.06922479370966293
+    }
+  },
+  "hypotheses": {
+    "H1": {
+      "label": "H1",
+      "result": "supported",
+      "evidence": {
+        "old_total_client_prize_sum": 383727.0,
+        "day1_nosmooth_total_client_prize_sum": 2287898.0,
+        "day1_smoothed_total_client_prize_sum": 1985855.0,
+        "old_objective": 338773,
+        "day1_nosmooth_objective": 1987866,
+        "day1_smoothed_objective": 1754656
+      }
+    },
+    "H2": {
+      "label": "H2",
+      "result": "supported",
+      "evidence": {
+        "old_map_stats": {
+          "count_total": 13708,
+          "count_finite": 10750,
+          "finite_fraction": 0.7842135978990371,
+          "count_zero_all": 0,
+          "zero_fraction_all": 0.0,
+          "min": 0.01673400029540062,
+          "max": 0.15888699889183044,
+          "mean": 0.07588878352143044,
+          "std": 0.024119729493312297,
+          "p01": 0.0260531703568995,
+          "p05": 0.03607114981859923,
+          "p50": 0.07479749992489815,
+          "p95": 0.1152241002768278,
+          "p99": 0.12959085389971733
+        },
+        "day1_map_stats": {
+          "count_total": 13708,
+          "count_finite": 10750,
+          "finite_fraction": 0.7842135978990371,
+          "count_zero_all": 0,
+          "zero_fraction_all": 0.0,
+          "min": 0.007737999781966209,
+          "max": 0.098471999168396,
+          "mean": 0.045016574717451664,
+          "std": 0.016646210752507325,
+          "p01": 0.011406600009649992,
+          "p05": 0.015163400024175645,
+          "p50": 0.046595001593232155,
+          "p95": 0.07065784931182861,
+          "p99": 0.0800453305244446
+        }
+      }
+    },
+    "H3": {
+      "label": "H3",
+      "result": "supported",
+      "evidence": {
+        "objective_nosmooth": 1987866,
+        "objective_smoothed": 1754656,
+        "candidate_nosmooth": 420,
+        "candidate_smoothed": 419,
+        "visited_nosmooth": 46,
+        "visited_smoothed": 43
+      }
+    }
+  },
+  "comparison": {
+    "baseline_old_31_10": {
+      "candidate_clients": 433,
+      "visited_clients_final": 43,
+      "objective_final": 338773,
+      "n_routes_final": 2,
+      "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\planner_run\\20260418T171719Z_wt.png"
+    },
+    "day1_nosmooth": {
+      "candidate_clients": 420,
+      "visited_clients_final": 46,
+      "objective_final": 1987866,
+      "n_routes_final": 2,
+      "waypoints_per_route_including_start_end": [
+        14,
+        31
+      ],
+      "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_nosmooth.png",
+      "exit_code": 0
+    },
+    "day1_smoothed": {
+      "candidate_clients": 419,
+      "visited_clients_final": 43,
+      "objective_final": 1754656,
+      "n_routes_final": 2,
+      "waypoints_per_route_including_start_end": [
+        15,
+        28
+      ],
+      "plot": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\planner_plot_day1_smoothed.png",
+      "exit_code": 0
+    },
+    "deltas_smoothed_minus_nosmooth": {
+      "candidate_clients": -1,
+      "visited_clients_final": -3,
+      "objective_final": -233210,
+      "n_routes_final": 0
+    },
+    "objective_decomposition_proxy": {
+      "old": {
+        "run": "old_31-10_baseline",
+        "objective": 338773,
+        "distance": 218,
+        "objective_minus_distance": 338555,
+        "total_client_prize_sum": 383727.0,
+        "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 45172.0,
+        "visited_client_prize_sum_debug": null
+      },
+      "day1_nosmooth": {
+        "run": "day1_nosmooth",
+        "objective": 1987866,
+        "distance": 215,
+        "objective_minus_distance": 1987651,
+        "total_client_prize_sum": 2287898.0,
+        "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 300247.0,
+        "visited_client_prize_sum_debug": 300247.0
+      },
+      "day1_smoothed": {
+        "run": "day1_smoothed",
+        "objective": 1754656,
+        "distance": 219,
+        "objective_minus_distance": 1754437,
+        "total_client_prize_sum": 1985855.0,
+        "collected_prize_proxy_if_obj_eq_dist_plus_dropped": 231418.0,
+        "visited_client_prize_sum_debug": 231418.0
+      }
+    },
+    "notes": [
+      "PyVRP reported objective is not fully decomposed by planner logs; proxy decomposition uses objective-distance and prize sums.",
+      "If objective approximately equals distance + dropped_prize, then collected_prize_proxy should align with visited_client_prize_sum_debug."
+    ]
+  },
+  "final_classification": "PARTIAL: smoothing reduces the issue but does not fully explain it",
+  "final_sentence": "O aumento do custo e metodologicamente esperado em grande parte por mudanca de escala/distribuicao do problema e comparabilidade limitada entre runs; o Gaussian smoothing melhora parcialmente a comparabilidade e tende a regularizar o comportamento das rotas.",
+  "outputs": {
+    "cost_audit_map_old": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_map_old.png",
+    "cost_audit_map_day1": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_map_day1.png",
+    "cost_audit_map_difference": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_map_difference.png",
+    "cost_audit_hist_comparison": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_hist_comparison.png",
+    "cost_audit_prize_stats_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_prize_stats.csv",
+    "cost_audit_prize_stats_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_prize_stats.json",
+    "cost_audit_comparison_csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_comparison.csv",
+    "cost_audit_comparison_json": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_comparison.json",
+    "cost_audit_routes_overlay": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_audit_routes_overlay.png",
+    "report_md": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_and_smoothing_audit_report.md",
+    "summary_md": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\planner_baseline_scenario_c4_methodical_20260418_162500\\outputs\\cost_smoothing_audit_20260419_193931\\planner_run\\cost_and_smoothing_audit_summary.md"
+  }
+}
