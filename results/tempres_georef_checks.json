@@ -1,0 +1,172 @@
+{
+  "generated_at_utc": "2026-04-22T19:16:36.654830+00:00",
+  "inputs": {
+    "temp_gslib": "data/2024/tempIBHRes2024_1.gslib",
+    "planner_interface": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc",
+    "netcdf_summary": "results/netcdf_files_summary.csv",
+    "registration_manifest": "investigation/tempibhres_hres_registration_controlled_v4/manifest.json"
+  },
+  "temp_grid": {
+    "shape_xyz": [
+      112,
+      64,
+      300
+    ],
+    "columns": [
+      "x",
+      "y",
+      "z",
+      "temp"
+    ],
+    "bbox_index": {
+      "x_min": 1.0,
+      "x_max": 112.0,
+      "y_min": 1.0,
+      "y_max": 64.0,
+      "z_min": 1.0,
+      "z_max": 300.0
+    },
+    "native_georef_proven": false
+  },
+  "planner_grid": {
+    "shape": [
+      240,
+      180
+    ],
+    "bbox_lon_lat": [
+      -9.55555534362793,
+      -8.916666984558105,
+      39.38888931274414,
+      39.86111068725586
+    ],
+    "resolution_m": [
+      229.5162603136098,
+      292.90231989859615
+    ],
+    "orientation": [
+      "increasing",
+      "increasing"
+    ],
+    "op_bbox_lon_lat": [
+      -9.432589750409626,
+      -9.036959412706446,
+      39.51024239822473,
+      39.75031037570378
+    ]
+  },
+  "hres_reference_bbox": {
+    "source_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+    "lon_min": -9.55555534362793,
+    "lon_max": -8.916666984558105,
+    "lat_min": 39.38888931274414,
+    "lat_max": 39.86111068725586,
+    "lon_res_deg": 0.002673165069962735,
+    "lat_res_deg": 0.002638193482127349
+  },
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "candidate_id": "CAND_A_DISPLAY_BBOX_HRES",
+      "method": "linear_index_to_hres_bbox",
+      "frame": "lon_lat",
+      "x0": -9.55555534362793,
+      "x1": -8.916666984558105,
+      "y0": 39.38888931274414,
+      "y1": 39.86111068725586,
+      "dx_deg": 0.005755750982611029,
+      "dy_deg": 0.007495577373201885,
+      "dx_m": 494.18365959416883,
+      "dy_m": 832.2145279658525,
+      "nx": 112,
+      "ny": 64,
+      "source_artifacts": "physical_coords.py + netcdf_files_summary.csv + color_scale*.json",
+      "evidence_strength": "high",
+      "proof_status": "display_mapping_only",
+      "notes": "Used in thesis/validation displays; does not prove native tempRes georeference.",
+      "inside_planner_full": true,
+      "intersects_operational_roi": true,
+      "operational_iou_bbox": 0.31481339603319974,
+      "operational_coverage": 1.0,
+      "resolution_ratio_x_vs_planner": 2.1531531531531534,
+      "resolution_ratio_y_vs_planner": 2.8412698412698414
+    },
+    {
+      "candidate_id": "CAND_B_REGISTRATION_TO_HRES_SUBAREA",
+      "method": "registration_best_axis_aligned_crop_resample",
+      "frame": "lon_lat",
+      "x0": -9.480706721668962,
+      "x1": -9.141213804109325,
+      "y0": 39.478584076439205,
+      "y1": 39.65270103156234,
+      "dx_deg": 0.003058494752789523,
+      "dy_deg": 0.0027637611924306712,
+      "dx_m": 262.8238586432913,
+      "dy_m": 306.85009791455644,
+      "nx": 112,
+      "ny": 64,
+      "source_artifacts": "investigation/tempibhres_hres_registration_controlled_v4/manifest.json + top_candidates_temperature_eval.csv",
+      "evidence_strength": "high",
+      "proof_status": "registration_derived_not_native",
+      "mask_iou": 0.9998556165174703,
+      "pred_mean_corr": 0.9815014526003194,
+      "auv_mean_corr": 0.9723163726646036,
+      "x0_hres_idx": 28,
+      "x1_hres_idx": 155,
+      "y0_hres_idx": 34,
+      "y1_hres_idx": 100,
+      "notes": "Strong quantitative alignment to TEST_C4 families; still inferred mapping.",
+      "inside_planner_full": true,
+      "intersects_operational_roi": true,
+      "operational_iou_bbox": 0.36870480710292747,
+      "operational_coverage": 0.4370374467252555,
+      "resolution_ratio_x_vs_planner": 1.145120865441822,
+      "resolution_ratio_y_vs_planner": 1.047619213192948
+    },
+    {
+      "candidate_id": "CAND_C1_RELATIVE_KM_DISPLAY",
+      "method": "relative_km_display_assumed",
+      "frame": "local_km",
+      "x0": 462.0,
+      "x1": 516.8543862149527,
+      "y0": 4376.0,
+      "y1": 4428.429515261849,
+      "dx_km": 0.4941836595941688,
+      "dy_km": 0.8322145279658525,
+      "source_artifacts": "results/plots/tempibhres_relative_km_display_assumed_user_style_test_v3/manifest.json",
+      "evidence_strength": "high",
+      "proof_status": "display_axes_local_frame_only",
+      "notes": "Manifest states not independently validated native georeference.",
+      "inside_planner_full": "n/a",
+      "intersects_operational_roi": "n/a",
+      "operational_iou_bbox": "n/a",
+      "operational_coverage": "n/a",
+      "resolution_ratio_x_vs_planner": "n/a",
+      "resolution_ratio_y_vs_planner": "n/a"
+    },
+    {
+      "candidate_id": "CAND_C2_RELATIVE_KM_DISPLAY",
+      "method": "relative_km_display_assumed",
+      "frame": "local_km",
+      "x0": 462.0,
+      "x1": 516.8543862149527,
+      "y0": 4376.0,
+      "y1": 4428.429515261849,
+      "dx_km": 0.4941836595941688,
+      "dy_km": 0.8322145279658525,
+      "source_artifacts": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json",
+      "evidence_strength": "high",
+      "proof_status": "display_axes_local_frame_only",
+      "notes": "Manifest states not independently validated native georeference.",
+      "inside_planner_full": "n/a",
+      "intersects_operational_roi": "n/a",
+      "operational_iou_bbox": "n/a",
+      "operational_coverage": "n/a",
+      "resolution_ratio_x_vs_planner": "n/a",
+      "resolution_ratio_y_vs_planner": "n/a"
+    }
+  ],
+  "evidence_index_rows": 224,
+  "status": "TRANSFORMATION PLAUSIBLE BUT NOT PROVEN",
+  "final_sentence": "A tempRes pode ser alinhada de forma plausivel com a grelha do planner, mas nao de forma auditavelmente provada com a evidencia atualmente disponivel.",
+  "official_planning_grid": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc"
+}

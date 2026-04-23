@@ -166,19 +166,29 @@ def get_nodes_prize(map, points, N_DEPOT):
 
   prices_list = [0] * N_DEPOT       #note: depot nodes need zero price
   N_level = 1000                    #number of levels to divide the reward bar
-  max_ = map.max()
-  min_ = np.nanmin(map[map != -np.inf])
+  valid_map = map[np.isfinite(map) & (map != -np.inf)]
+  if valid_map.size == 0:
+    raise RuntimeError("No finite map values available to compute node prizes.")
+  max_ = np.max(valid_map)
+  min_ = np.min(valid_map)
   range_ = max_ - min_
-  decimal_number_ = math.ceil(-math.log10(range_ / N_level))  #decimal numbers to have the desired step=range/N_level 
+  if range_ <= 0:
+    decimal_number_ = 0
+  else:
+    decimal_number_ = max(0, math.ceil(-math.log10(range_ / N_level)))  #decimal numbers to have the desired step=range/N_level
   multiplicative_factor = pow(10, decimal_number_)
  
   for i in range(N_DEPOT, len(points)):
-    real_price = int(multiplicative_factor * map[points[i][0], points[i][1]])
+    point_val = map[points[i][0], points[i][1]]
+    if (np.isfinite(point_val) == False) or (point_val == -np.inf):
+      real_price = 0
+    else:
+      real_price = int(multiplicative_factor * point_val)
 
     prices_list.append(real_price)  
 
   #In order to avoid big number in case of low data (temperr) variability:
-  if(decimal_number_ > 5):
+  if(decimal_number_ > 5 and any(v != 0 for v in prices_list)):
     min_nonzero = min(v for v in prices_list if v != 0)
     max_val = max(prices_list)
     s1, s2 = str(min_nonzero), str(max_val)
@@ -637,7 +647,6 @@ def delete_redundant_wp(ob_map, routes_points, routes_coords):
     routes_less_points.append(single_route_less_points)
     routes_less_coords.append(single_route_less_coords)
   return routes_less_points, routes_less_coords
-
 
 
 

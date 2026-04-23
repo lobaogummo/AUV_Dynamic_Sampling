@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-04-22T20:30:58.174439+00:00",
+  "day_selection": {
+    "planner_day": "2024-10-30",
+    "planner_day_source": "filename:30-10-2024_predModel_1_planner_interface.nc",
+    "deterministic_selection": {
+      "selected_parent": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1",
+      "selected_dir": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/deterministic_2024_surface_300_thesis_relative_km_display_assumed",
+      "selected_png": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/deterministic_2024_surface_300_thesis_relative_km_display_assumed/TEMP_surface_2024_z300.png",
+      "selected_z": 300,
+      "convention": "DOY_TO_Z_CLIPPED_MAX",
+      "reason": "day-of-year=304 exceeds available z_max=300; clipped to z=300",
+      "available_z_range": [
+        1,
+        300
+      ]
+    },
+    "notes": [
+      "Deterministic files are named by z-index, not explicit YYYY-MM-DD.",
+      "Day mapping was required; DOY-based convention was applied and documented."
+    ],
+    "registration_day_hints": {
+      "pred": {
+        "top_matched_day": 202,
+        "unique_days": [
+          85,
+          136,
+          168,
+          200,
+          202
+        ]
+      },
+      "auv": {
+        "top_matched_day": 220,
+        "unique_days": [
+          7,
+          81,
+          135,
+          168,
+          220
+        ]
+      }
+    }
+  },
+  "inputs": {
+    "planner_interface": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc",
+    "config_file": "OptimalPlanning_Lucrezia/Config_file.py",
+    "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+    "relative_km_manifest": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json",
+    "temp_stack": "results/plots/X_surface_300.npy"
+  },
+  "rois": {
+    "planner_operational_roi": {
+      "x0": 46,
+      "x1": 194,
+      "y0": 46,
+      "y1": 137,
+      "shape": [
+        92,
+        149
+      ]
+    },
+    "candb_roi": {
+      "x0": 28,
+      "x1": 155,
+      "y0": 34,
+      "y1": 100,
+      "shape": [
+        67,
+        128
+      ]
+    },
+    "user_direct_km_roi": {
+      "x0": 0,
+      "x1": 133,
+      "y0": 0,
+      "y1": 71,
+      "shape": [
+        72,
+        134
+      ],
+      "local_km_bbox": [
+        462.0,
+        492.6393868948385,
+        4376.0,
+        4396.805363199146
+      ]
+    }
+  },
+  "overlap": {
+    "candb_vs_operational_iou": 0.3726746334852778,
+    "user_vs_operational_iou": 0.10860072147332447,
+    "candb_vs_user_iou": 0.2837418991265145,
+    "candb_vs_user_center_distance_cells": 40.21504693519579
+  },
+  "classification": "CAND_B PREFERRED",
+  "outputs": {
+    "report": "results/candb_vs_userdirect_report.md",
+    "summary": "results/candb_vs_userdirect_summary.md",
+    "metrics_csv": "results/candb_vs_userdirect_metrics.csv",
+    "bboxes_csv": "results/candb_vs_userdirect_bboxes.csv",
+    "checks_json": "results/candb_vs_userdirect_checks.json",
+    "figures": [
+      "results/planner_operational_roi_fullgrid.png",
+      "results/planner_operational_roi_crop.png",
+      "results/candb_roi_on_planner_fullgrid.png",
+      "results/candb_roi_crop.png",
+      "results/deterministic_same_day_full.png",
+      "results/deterministic_same_day_roi_crop.png",
+      "results/user_direct_km_roi_on_planner_fullgrid.png",
+      "results/user_direct_km_roi_crop.png",
+      "results/comparison_panel_roi_methods.png",
+      "results/comparison_overlay_planner_methods.png",
+      "results/comparison_crops_methods_vs_reference.png"
+    ]
+  }
+}

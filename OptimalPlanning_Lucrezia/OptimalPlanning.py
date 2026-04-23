@@ -236,8 +236,11 @@ plt.close(fig)
 print("*** Point Selection ***")
 
 #Get contours level
-max_level = temperr2d_op.max()
-min_level = np.nanmin(temperr2d_op[temperr2d_op != -np.inf])
+valid_temperr = temperr2d_op[np.isfinite(temperr2d_op) & (temperr2d_op != -np.inf)]
+if valid_temperr.size == 0:
+    raise RuntimeError("No finite temperr values left after masks; cannot build contour levels.")
+max_level = np.max(valid_temperr)
+min_level = np.min(valid_temperr)
 gap = max_level - min_level
 step_level = gap / N_LEVELS
 
@@ -304,24 +307,25 @@ create_vrp_problem_instance_file('VRP_instance_problem.vrp', vrp_nodes, node_dis
 
 #Read instance 
 instance = read("VRP_instance_problem.vrp", round_func="round") 
+base_vehicle_capacity = list(instance.vehicle_type(0).capacity)
 
 vehicles_max_distance = get_max_distances(mission_duration_s)
 
 #Create instance
 if(AUV_NUMBER == 1):
-    instance = instance.replace(vehicle_types=[VehicleType(1, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance[0])])
+    instance = instance.replace(vehicle_types=[VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance[0])])
 
 elif(AUV_NUMBER == 2):
     instance = instance.replace(vehicle_types=[
-                VehicleType(1, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance[0]),
-                VehicleType(1, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance[1]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance[0]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance[1]),
                 ])
     
 elif(AUV_NUMBER == 3):
     instance = instance.replace(vehicle_types=[
-                VehicleType(1, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance[0]),
-                VehicleType(1, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance[1]),
-                VehicleType(1, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance[2]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance[0]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance[1]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance[2]),
                 ])
 
 #Create the VRP model
@@ -357,19 +361,19 @@ vehicles_max_distance_wt = get_max_distances(effective_travel_duration)
 
 #Create new instance for VRP problem replacing the old one with updated max distances
 if(AUV_NUMBER == 1):
-    instance_wt = instance.replace(vehicle_types= [VehicleType(1, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance_wt[0])])
+    instance_wt = instance.replace(vehicle_types= [VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 1, max_distance=vehicles_max_distance_wt[0])])
 
 elif(AUV_NUMBER == 2):  
     instance_wt = instance.replace(vehicle_types=[  
-                VehicleType(1, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance_wt[0]),
-                VehicleType(1, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance_wt[1]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 2, max_distance=vehicles_max_distance_wt[0]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=1, end_depot= 3, max_distance=vehicles_max_distance_wt[1]),
                 ])
     
 elif(AUV_NUMBER == 3):  
     instance_wt = instance.replace(vehicle_types=[  
-                VehicleType(1, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance_wt[0]),
-                VehicleType(1, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance_wt[1]),
-                VehicleType(1, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance_wt[2]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=0, end_depot= 3, max_distance=vehicles_max_distance_wt[0]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=1, end_depot= 4, max_distance=vehicles_max_distance_wt[1]),
+                VehicleType(1, capacity=base_vehicle_capacity, start_depot=2, end_depot= 5, max_distance=vehicles_max_distance_wt[2]),
                 ])           
 
 #Create the VRP model
