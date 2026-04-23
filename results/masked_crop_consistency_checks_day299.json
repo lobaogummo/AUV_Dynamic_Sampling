@@ -1,0 +1,175 @@
+{
+  "generated_at_utc": "2026-04-23T21:44:54.165927+00:00",
+  "planning_date_used": "2024-10-30",
+  "tempres_day_requested": 299,
+  "tempres_indexing_convention_detected": "tempRes numeric stack uses 0-based indexing [0..299], while exported z files use 1-based labels [1..300].",
+  "tempres_source_used": "numeric_field_preferred",
+  "tempres_field_or_png_used": "results/plots/X_surface_300.npy[idx=298] => z299",
+  "tempres_png_reference_selected": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+  "final_day_mapping_decision": "Requested day 299 interpreted as 1-based day label -> z299; numeric field index=298.",
+  "mapping_decision_justification": "PNG and index.csv artifacts use z001..z300 labeling. Therefore day299 maps to z299 (not z300); array access is idx=z-1.",
+  "day_mapping_audit": {
+    "planning_date_used": "2024-10-30",
+    "tempres_day_requested": 299,
+    "tempres_indexing_convention_detected": "tempRes numeric stack uses 0-based indexing [0..299], while exported z files use 1-based labels [1..300].",
+    "stack_shape": [
+      300,
+      64,
+      112
+    ],
+    "stack_index_range": [
+      0,
+      299
+    ],
+    "png_dir": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes",
+    "png_z_range": [
+      1,
+      300
+    ],
+    "index_csv": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/index.csv",
+    "index_csv_rows": 300,
+    "index_csv_z_range": [
+      1,
+      300
+    ],
+    "candidate_if_day_is_1based": 299,
+    "candidate_if_day_is_0based": 300,
+    "selected_z": 299,
+    "selected_array_index": 298,
+    "tempres_png_reference_selected": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+    "final_day_mapping_decision": "Requested day 299 interpreted as 1-based day label -> z299; numeric field index=298.",
+    "mapping_decision_justification": "PNG and index.csv artifacts use z001..z300 labeling. Therefore day299 maps to z299 (not z300); array access is idx=z-1."
+  },
+  "inputs": {
+    "temp_stack": "results/plots/X_surface_300.npy",
+    "temp_scale_source": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/color_scale.json",
+    "planner_interface": "results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/30-10-2024_surface_dayfix_planner_interface.nc",
+    "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+    "userdirect_relative_manifest": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json"
+  },
+  "temperature_projection": {
+    "method": "xarray interp linear with nearest fallback",
+    "temp_shape": [
+      64,
+      112
+    ],
+    "planner_shape": [
+      180,
+      240
+    ],
+    "planner_bbox_lonlat": [
+      -9.55555534362793,
+      -8.916666984558105,
+      39.38888931274414,
+      39.86111068725586
+    ]
+  },
+  "method_rois_planner": {
+    "candb": {
+      "x0": 28,
+      "x1": 155,
+      "y0": 34,
+      "y1": 100,
+      "shape": [
+        67,
+        128
+      ]
+    },
+    "userdirect": {
+      "x0": 0,
+      "x1": 133,
+      "y0": 0,
+      "y1": 71,
+      "shape": [
+        72,
+        134
+      ],
+      "manifest_crop_1based": {
+        "x_start_1based": 1,
+        "x_end_1based": 63,
+        "y_start_1based": 1,
+        "y_end_1based": 26,
+        "manifest": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json"
+      }
+    }
+  },
+  "consistency_checks": [
+    {
+      "method": "CAND_B",
+      "planner_shape": [
+        67,
+        128
+      ],
+      "temperature_shape": [
+        67,
+        128
+      ],
+      "shapes_match": true,
+      "planner_valid_cells": 8296,
+      "temperature_valid_cells": 8296,
+      "valid_cells_match": true,
+      "planner_masked_cells": 280,
+      "temperature_masked_cells": 280,
+      "masked_cells_match": true,
+      "exact_mask_match": true
+    },
+    {
+      "method": "USER_DIRECT_KM",
+      "planner_shape": [
+        72,
+        134
+      ],
+      "temperature_shape": [
+        72,
+        134
+      ],
+      "shapes_match": true,
+      "planner_valid_cells": 8909,
+      "temperature_valid_cells": 8909,
+      "valid_cells_match": true,
+      "planner_masked_cells": 739,
+      "temperature_masked_cells": 739,
+      "masked_cells_match": true,
+      "exact_mask_match": true
+    }
+  ],
+  "run_status": "SUCCESS",
+  "outputs": [
+    "results/candb_planner_crop_day299.npy",
+    "results/candb_temperature_on_planner_mask_day299.npy",
+    "results/candb_mask_day299.npy",
+    "results/userdirect_planner_crop_day299.npy",
+    "results/userdirect_temperature_on_planner_mask_day299.npy",
+    "results/userdirect_mask_day299.npy",
+    "results/candb_planner_crop_day299.png",
+    "results/candb_temperature_on_planner_mask_day299.png",
+    "results/userdirect_planner_crop_day299.png",
+    "results/userdirect_temperature_on_planner_mask_day299.png",
+    "results/comparison_candb_1to1_day299.png",
+    "results/comparison_userdirect_1to1_day299.png",
+    "results/comparison_both_methods_1to1_day299.png",
+    "results/masked_crop_consistency_checks_day299.json",
+    "results/masked_crop_consistency_metrics_day299.csv",
+    "results/masked_temperature_alignment_report_day299.md",
+    "results/masked_temperature_alignment_summary_day299.md"
+  ],
+  "outputs_exist": {
+    "results/candb_planner_crop_day299.npy": true,
+    "results/candb_temperature_on_planner_mask_day299.npy": true,
+    "results/candb_mask_day299.npy": true,
+    "results/userdirect_planner_crop_day299.npy": true,
+    "results/userdirect_temperature_on_planner_mask_day299.npy": true,
+    "results/userdirect_mask_day299.npy": true,
+    "results/candb_planner_crop_day299.png": true,
+    "results/candb_temperature_on_planner_mask_day299.png": true,
+    "results/userdirect_planner_crop_day299.png": true,
+    "results/userdirect_temperature_on_planner_mask_day299.png": true,
+    "results/comparison_candb_1to1_day299.png": true,
+    "results/comparison_userdirect_1to1_day299.png": true,
+    "results/comparison_both_methods_1to1_day299.png": true,
+    "results/masked_crop_consistency_checks_day299.json": true,
+    "results/masked_crop_consistency_metrics_day299.csv": true,
+    "results/masked_temperature_alignment_report_day299.md": true,
+    "results/masked_temperature_alignment_summary_day299.md": true
+  }
+}

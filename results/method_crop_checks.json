@@ -1,0 +1,123 @@
+{
+  "generated_at_utc": "2026-04-23T18:04:18.444128+00:00",
+  "day_used": "2024-10-30",
+  "day_source": "summary:results/candb_vs_userdirect_summary.md",
+  "full_day_tempres_reference": {
+    "source_existing_png_set": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes",
+    "source_png": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z300.png",
+    "output_png": "results/temperature_full_day_tempres.png",
+    "selected_z": 300,
+    "mapping_convention": "DOY_TO_Z_CLIPPED_MAX",
+    "mapping_reason": "day-of-year=304 exceeds z_max=300; clipped to z=300.",
+    "used_existing_png_without_regenerating_field": true
+  },
+  "domains": {
+    "method_crop_domain_selected": "planner_compatible_hres",
+    "domain_selection_justification": "Planner-compatible HRes grid was chosen for method crops because it is operationally consistent with planner inputs and preserves direct link to planning descriptors/regimes.",
+    "temperature_domain": "tempres_indexed_grid",
+    "cross_domain_mapping": "Linear lon/lat normalization from planner-compatible full bbox to tempRes indexed grid (112x64 equivalent), preserving bbox corner order."
+  },
+  "inputs": {
+    "temp_stack": "results/plots/X_surface_300.npy",
+    "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+    "relative_km_manifest": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json",
+    "planner_interface": "results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/30-10-2024_surface_dayfix_planner_interface.nc",
+    "config_file": "OptimalPlanning_Lucrezia/Config_file.py",
+    "temp_scale_source": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/color_scale.json"
+  },
+  "rois": {
+    "candb_planner": {
+      "x0": 28,
+      "x1": 155,
+      "y0": 34,
+      "y1": 100,
+      "shape": [
+        67,
+        128
+      ]
+    },
+    "userdirect_planner": {
+      "x0": 0,
+      "x1": 133,
+      "y0": 0,
+      "y1": 71,
+      "shape": [
+        72,
+        134
+      ],
+      "relative_manifest_crop_1based": {
+        "x_start": 1,
+        "x_end": 63,
+        "y_start": 1,
+        "y_end": 26
+      }
+    },
+    "candb_tempres": {
+      "x0": 13,
+      "x1": 72,
+      "y0": 11,
+      "y1": 36,
+      "shape": [
+        26,
+        60
+      ]
+    },
+    "userdirect_tempres": {
+      "x0": 0,
+      "x1": 62,
+      "y0": 0,
+      "y1": 25,
+      "shape": [
+        26,
+        63
+      ]
+    }
+  },
+  "bbox_comparison": {
+    "planner_iou_candb_vs_userdirect": 0.2837418991265145,
+    "tempres_iou_candb_vs_userdirect": 0.30637254901960786,
+    "planner_center_distance_cells": 40.21504693519579,
+    "tempres_center_distance_cells": 15.913830462839549
+  },
+  "visual_standardization": {
+    "temperature_colormap": "viridis",
+    "temperature_vmin": 14.597144,
+    "temperature_vmax": 19.40040604,
+    "planner_colormap": "viridis",
+    "orientation": "origin=lower for array-rendered crops and panels"
+  },
+  "outputs": [
+    "results/temperature_full_day_tempres.png",
+    "results/candb_hres_crop.png",
+    "results/userdirect_hres_crop.png",
+    "results/candb_temperature_crop.png",
+    "results/userdirect_temperature_crop.png",
+    "results/candb_planner_crop.png",
+    "results/userdirect_planner_crop.png",
+    "results/comparison_panel_temperature_methods.png",
+    "results/comparison_panel_hres_methods.png",
+    "results/comparison_panel_all.png",
+    "results/method_crop_metrics.csv",
+    "results/method_crop_bboxes.csv",
+    "results/method_crop_checks.json",
+    "results/corrected_method_crop_report.md",
+    "results/corrected_method_crop_summary.md"
+  ],
+  "output_exists_check": {
+    "results/temperature_full_day_tempres.png": true,
+    "results/candb_hres_crop.png": true,
+    "results/userdirect_hres_crop.png": true,
+    "results/candb_temperature_crop.png": true,
+    "results/userdirect_temperature_crop.png": true,
+    "results/candb_planner_crop.png": true,
+    "results/userdirect_planner_crop.png": true,
+    "results/comparison_panel_temperature_methods.png": true,
+    "results/comparison_panel_hres_methods.png": true,
+    "results/comparison_panel_all.png": true,
+    "results/method_crop_metrics.csv": true,
+    "results/method_crop_bboxes.csv": true,
+    "results/method_crop_checks.json": true,
+    "results/corrected_method_crop_report.md": true,
+    "results/corrected_method_crop_summary.md": true
+  }
+}

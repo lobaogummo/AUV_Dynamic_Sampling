@@ -1,0 +1,239 @@
+{
+  "generated_at_utc": "2026-04-23T22:19:23.626824+00:00",
+  "question_under_investigation": "Is the CAND_B planner-aligned temperature field for z299 (planning date 2024-10-30) numerically/geometrically correct?",
+  "data_sources_located": {
+    "tempres_numeric_stack": "results/plots/X_surface_300.npy",
+    "tempres_index_csv": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/index.csv",
+    "tempres_png_z299_reference": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+    "tempres_png_z300_reference": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z300.png",
+    "tempres_color_scale": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/color_scale.json",
+    "planner_interface": "results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/30-10-2024_surface_dayfix_planner_interface.nc",
+    "candb_transform_csv": "results/tempres_georef_candidate_transforms.csv",
+    "previous_generator_script": "scripts/compare_method_temperature_exact_mask_day299.py",
+    "previous_checks_json": "results/masked_crop_consistency_checks_day299.json",
+    "previous_metrics_csv": "results/masked_crop_consistency_metrics_day299.csv",
+    "previous_outputs": {
+      "candb_planner_crop_npy": "results/candb_planner_crop_day299.npy",
+      "candb_mask_npy": "results/candb_mask_day299.npy",
+      "candb_temperature_mapped_npy": "results/candb_temperature_on_planner_mask_day299.npy"
+    }
+  },
+  "day_index_audit": {
+    "requested_z": 299,
+    "selected_array_index": 298,
+    "control_wrong_day_z": 300,
+    "control_wrong_day_index": 299,
+    "stack_shape": [
+      300,
+      64,
+      112
+    ],
+    "index_csv_has_z299": true,
+    "index_csv_has_z300": true,
+    "index_csv_row_z299_filepath": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+    "index_csv_row_z300_filepath": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z300.png",
+    "tempres_png_z299_exists": true,
+    "tempres_png_z300_exists": true,
+    "previous_run_declared_mapping": "Requested day 299 interpreted as 1-based day label -> z299; numeric field index=298.",
+    "off_by_one_detected": false
+  },
+  "native_grid_audit": {
+    "native_shape_z299": [
+      64,
+      112
+    ],
+    "native_indexing_interpretation": "[y, x] inferred from stack shape and index.csv x/y extents",
+    "native_stats_z299": {
+      "shape": [
+        64,
+        112
+      ],
+      "valid_cells": 6925,
+      "min": 17.909000396728516,
+      "max": 18.767433166503906,
+      "mean": 18.230046556383265,
+      "std": 0.22611194330330223
+    },
+    "native_stats_z300": {
+      "shape": [
+        64,
+        112
+      ],
+      "valid_cells": 6925,
+      "min": 17.61400032043457,
+      "max": 18.44859504699707,
+      "mean": 18.004258973159516,
+      "std": 0.21378826076575824
+    },
+    "tempres_png_z299_rendered_shape_hw": [
+      630,
+      1050
+    ],
+    "tempres_png_z299_mode": "RGBA"
+  },
+  "planner_grid_audit": {
+    "planner_full_shape": [
+      180,
+      240
+    ],
+    "planner_lat_size": 180,
+    "planner_lon_size": 240,
+    "planner_lat_monotonic_increasing": true,
+    "planner_lon_monotonic_increasing": true,
+    "candb_roi_global_indices": {
+      "x0": 28,
+      "x1": 155,
+      "y0": 34,
+      "y1": 100
+    },
+    "candb_roi_shape": [
+      67,
+      128
+    ],
+    "planner_crop_saved_shape": [
+      67,
+      128
+    ],
+    "planner_crop_saved_equals_recomputed": true,
+    "planner_crop_saved_stats": {
+      "shape": [
+        67,
+        128
+      ],
+      "valid_cells": 8296,
+      "min": 0.009310999885201454,
+      "max": 0.09050200134515762,
+      "mean": 0.046647055829195316,
+      "std": 0.0136550832100207
+    },
+    "planner_crop_is_simple_subwindow": true
+  },
+  "mapping_reconstruction": {
+    "chosen_interpolation_method": "linear_with_nearest_fallback_plus_mean_fill_for_nonfinite",
+    "mapping_meta": {
+      "method": "linear_with_nearest_fallback_plus_mean_fill_for_nonfinite",
+      "temp_shape": [
+        64,
+        112
+      ],
+      "planner_shape": [
+        180,
+        240
+      ],
+      "planner_bbox_lonlat": [
+        -9.55555534362793,
+        -8.916666984558105,
+        39.38888931274414,
+        39.86111068725586
+      ]
+    },
+    "intermediate_shapes": {
+      "native_day299": [
+        64,
+        112
+      ],
+      "regridded_full_planner_unmasked": [
+        180,
+        240
+      ],
+      "candb_crop_regridded_unmasked": [
+        67,
+        128
+      ],
+      "candb_crop_regridded_masked": [
+        67,
+        128
+      ]
+    },
+    "recomputed_equals_saved_temperature": true,
+    "recomputed_vs_saved_max_abs_diff": 0.0,
+    "difference_figure_max_abs_diff": 1e-12,
+    "difference_figure_max_abs_grad_diff": 1e-12
+  },
+  "mask_checks": {
+    "saved_planner_mask_shape": [
+      67,
+      128
+    ],
+    "recomputed_planner_mask_shape": [
+      67,
+      128
+    ],
+    "saved_mask_equals_recomputed_mask": true,
+    "saved_temp_mask_equals_planner_mask": true,
+    "saved_temp_shape_equals_planner_crop_shape": true,
+    "saved_temp_valid_cells": 8296,
+    "planner_mask_valid_cells": 8296
+  },
+  "orientation_checks": {
+    "baseline_rmse": 0.0,
+    "swap_xy_rmse": 0.3992131703825512,
+    "vflip_rmse": 0.13754665131952534,
+    "hflip_rmse": 0.20398827816253473,
+    "offby1_x_rmse": 0.0068767696500540805,
+    "day300_rmse": 0.2468591680299171
+  },
+  "hypothesis_evaluation": {
+    "H1_correct_day_and_mapping_regridding_expected": {
+      "supported": true,
+      "key_evidence": "baseline_recomputed_vs_saved rmse and max_abs are ~0, shapes and masks equal"
+    },
+    "H2_wrong_axis_order": {
+      "rejected": true,
+      "key_evidence": "swap_xy_source_vs_saved error is far above baseline"
+    },
+    "H3_vertical_flip": {
+      "rejected": true,
+      "key_evidence": "vflip_source_vs_saved error is far above baseline"
+    },
+    "H4_horizontal_flip": {
+      "rejected": true,
+      "key_evidence": "hflip_source_vs_saved error is far above baseline"
+    },
+    "H5_plotting_only_issue": {
+      "supported": true,
+      "key_evidence": "plotting-effects figure shows strong visual variation under plot-only parameter changes"
+    },
+    "H6_wrong_crop_indices_off_by_one": {
+      "rejected": true,
+      "key_evidence": "offby1 crop controls diverge from saved output"
+    },
+    "H7_wrong_day_used": {
+      "rejected": true,
+      "key_evidence": "day300 control diverges from saved output"
+    },
+    "H8_png_source_instead_of_numeric": {
+      "rejected": true,
+      "key_evidence": "generation script loads TEMP_STACK numerically, checks json marks numeric source, and saved array matches independent numeric recomputation"
+    },
+    "H9_mask_correct_but_field_misaligned": {
+      "rejected": true,
+      "key_evidence": "misaligned+correct-mask control diverges"
+    },
+    "H10_interpolation_smoothing_expected": {
+      "supported": true,
+      "key_evidence": "nearest-vs-linear comparisons show high correlation with small smoothness-related differences"
+    }
+  },
+  "final_verdict_flags": {
+    "source_day_verified": true,
+    "numerical_source_used": true,
+    "planner_mask_correctly_applied": true,
+    "grid_mapping_geometrically_consistent": true,
+    "major_bug_found": false,
+    "main_explanation_of_visible_differences": "Differences are expected from interpolation smoothness, planner mask layout, and plotting/aspect choices; no geometric/day-index misalignment bug was detected."
+  },
+  "artifacts_generated": [
+    "results/299/candb_day299_forensic_metrics.csv",
+    "results/299/candb_day299_forensic_checks.json",
+    "results/299/candb_day299_forensic_report.md",
+    "results/299/candb_day299_forensic_summary.md",
+    "results/299/original_day299_native_field.png",
+    "results/299/candb_planner_crop_reference.png",
+    "results/299/day299_native_vs_regridded_vs_masked.png",
+    "results/299/day299_difference_maps.png",
+    "results/299/day299_orientation_hypotheses.png",
+    "results/299/day299_contour_overlay.png",
+    "results/299/day299_plotting_effects.png"
+  ]
+}
