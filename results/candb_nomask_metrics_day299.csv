@@ -1,0 +1,2 @@
+day_used,source_numeric_field_used,full_regridded_shape,candb_crop_nomask_shape,candb_crop_masked_shape,same_roi_used,same_bbox_used,same_shape_nomask_vs_masked,masked_fraction,valid_cells_nomask,valid_cells_masked,difference_due_to_mask_only_explained,notes
+2024-10-30 / z=299,results/plots/X_surface_300.npy[idx=298],180x240,67x128,67x128,True,True,True,0.03264925373134331,8576,8296,True,CAND_B nomask and masked were generated from the same regridded planner field and identical ROI; masked differs only by setting non-valid planner-mask cells to NaN.
