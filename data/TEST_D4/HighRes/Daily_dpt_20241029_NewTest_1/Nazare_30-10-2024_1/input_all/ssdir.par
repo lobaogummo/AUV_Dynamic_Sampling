@@ -1,0 +1,176 @@
+#*************************************************************************************# 
+#                                                                                     # 
+#             PARALLEL DIRECT SEQUENCIAL SIMULATION PARAMETER FILE                    # 
+#                                                                                     # 
+#*************************************************************************************# 
+#-------------------------------------------------------------------------------------# 
+#         Remember, # - Comment; [GROUP] - parameter group; CAPS - parameter          # 
+#         Also, no space allowed in paths/filenames                                   # 
+#-------------------------------------------------------------------------------------# 
+#-------------------------------------------------------------------------------------# 
+# here we define the hardata parameters 
+#-------------------------------------------------------------------------------------# 
+
+[ZONES] 
+ZONESFILE = F:\ProjectoInesOcean\Lucrezia\NewTests\TEST_CeD_new\TEST_D4\HighRes\Daily_dpt_20241029_NewTest_1\Nazare_30-10-2024_1\input_all\mask.out         # File with zones 
+NZONES = 2    # Number of zones 
+
+[HARDDATA1] 
+DATAFILE  =F:\ProjectoInesOcean\Lucrezia\NewTests\TEST_CeD_new\TEST_D4\HighRes\Daily_dpt_20241029_NewTest_1\Nazare_30-10-2024_1\input_all\temp.gslib   # Hard Data file 
+COLUMNS   = 4                 # Number of columns in the data file (to eliminate) 
+XCOLUMN   = 1                 # Column number of X coordinate 
+YCOLUMN   = 2                 # Column number of Y coordinate 
+ZCOLUMN   = 3                 # Column number of Z coordinate 
+VARCOLUMN = 4                 # Column number for the variable 
+WTCOLUMN  = 0                 # Column number for the declustering weight 
+MINVAL   = 16.2745714187622          # Minimun threshold value 
+MAXVAL   = 20.2806094268502          # Maximum threshold value 
+USETRANS  = 1                 # Check if transformation file will be used 
+TRANSFILE = Cluster.trn       # Transformation file 
+[HARDDATA2] 
+DATAFILE  =F:\ProjectoInesOcean\Lucrezia\NewTests\TEST_CeD_new\TEST_D4\HighRes\Daily_dpt_20241029_NewTest_1\Nazare_30-10-2024_1\input_all\auxi.gslib   # Hard Data file 
+COLUMNS   = 4                 # Number of columns in the data file (to eliminate) 
+XCOLUMN   = 1                 # Column number of X coordinate 
+YCOLUMN   = 2                 # Column number of Y coordinate 
+ZCOLUMN   = 3                 # Column number of Z coordinate 
+VARCOLUMN = 4                 # Column number for the variable 
+WTCOLUMN  = 0                 # Column number for the declustering weight 
+MINVAL   = 16.2745714187622          # Minimun threshold value 
+MAXVAL   = 20.2806094268502          # Maximum threshold value 
+USETRANS  = 1                 # Check if transformation file will be used 
+TRANSFILE = Cluster.trn       # Transformation file 
+
+[HARDDATA] 
+ZMIN     = 16.2745714187622            # Minimum allowable data value  
+ZMAX     = 20.2806094268502            # Maximum allowable data value 
+LTAIL     = 1                   # Specify the back-transform implementation in the lower tail  
+LTPAR    = 16.2745714187622            # Parameter for the ltail=2 
+UTAIL     = 1                   # Specify the back-transform implementation in the upper tail  
+UTPAR    = 20.2806094268502            # Parameter for the utail=2 
+#-------------------------------------------------------------------------------------# 
+# here we define some parameters for the simulation 
+#-------------------------------------------------------------------------------------# 
+[SIMULATION] 
+OUTFILE   = F:\ProjectoInesOcean\Lucrezia\NewTests\TEST_CeD_new\TEST_D4\HighRes\Daily_dpt_20241029_NewTest_1\Nazare_30-10-2024_1\sim         # Filename of the resultant simulations 
+NSIMS     = 100   # Number of Simulations to generate 
+NTRY       = 20                   # Number of simulation for bias correction  
+AVGCORR   = 0       # Variance correction flag  
+VARCORR   = 0       # Average correction flag 
+#-------------------------------------------------------------------------------------# 
+# here we define the output grid (and secondary info grid) 
+#-------------------------------------------------------------------------------------# 
+[GRID] 
+# NX, NY and NZ are the number of blocks per direction  
+NX        = 240 
+NY        = 180 
+NZ        = 3 
+# ORIGX, ORIGY and ORIGZ are the start coordinate for each direction 
+ORIGX     = 1 
+ORIGY     = 1 
+ORIGZ     = 1 
+# SIZEX, SIZEY and SIZEZ is the size of blocks in each direction  
+SIZEX     = 1 
+SIZEY     = 1 
+SIZEZ     = 1 
+#-------------------------------------------------------------------------------------# 
+# here we define some general parameters 
+#-------------------------------------------------------------------------------------# 
+[GENERAL] 
+NULLVAL       = -999.25                                     # Definition of the null value 
+SEED         = 905792             # Seed for the pseudorandom number generator - if you want repeatable simulations 
+USEHEADERS    = 1                                             # Seed for the pseudorandom number generator - if you want repeatable simulations 
+FILETYPE     = GEOEAS                                  # accepts GEOEAS and SGEMS. default is sgems file type. used for output  
+#-------------------------------------------------------------------------------------# 
+# here we define the parameters for search 
+#-------------------------------------------------------------------------------------# 
+[SEARCH] 
+NDMIN   = 8                   # Minimum number of original data that should be used to simulate a node 
+NDMAX   = 32                  # Maximum number of original data that should be used to simulate a node 
+NODMAX  = 12                  # Maximum number of previouly simulated nodes to be used to simulate a new node 
+SSTRAT  = 1                   # Two-part search / data nodes flag  
+MULTS   = 0                   # Multiple grid simulation flag  
+NMULTS  = 1                   # Number of multiple grid refinements  
+NOCT    = 0                   # Number of original data to use per octant 
+RADIUS1 = 2000                # Search radii in the maximum horizontal direction 
+RADIUS2 = 800                # Search radii in the minimum horizontal direction 
+RADIUS3 = 200                # Search radii in the vertical direction 
+SANG1   = 0                   # Orientation angle parameter of direction I (degrees) 
+SANG2   = 0                   # Orientation angle parameter of direction II (degrees) 
+SANG3   = 0                   # Orientation angle parameter of direction III (degrees) 
+#-------------------------------------------------------------------------------------# 
+# here we define the kriging information, and secondary info when applicable 
+#-------------------------------------------------------------------------------------# 
+[KRIGING] 
+KTYPE        = 2                # Kriging type ;0=simple,1=ordinary,2=simple with locally varying mean, 
+# 3=external drif, 4=collo-cokrig global CC,5=local CC (KTYPE) 
+COLOCORR     = 0                # Global CC to ktype=4  
+SOFTFILE     = no file                                  # Filename of the soft data 
+LVMFILE      = F:\ProjectoInesOcean\Lucrezia\NewTests\TEST_CeD_new\TEST_D4\HighRes\Daily_dpt_20241029_NewTest_1\Nazare_30-10-2024_1\MeanDays.gslib                                 # FOR KTYPE=2 
+NVARIL        = 1                                             # Number of columns in the secundary data file 
+ICOLLVM       = 1                                             # Column number of secundary variable  
+CCFILE       = no file                               # Filename of correlation file for local correlations (ktype=5) 
+RESCALE      = 0                         # rescale secondary variable (for ktype>=4) 
+#-------------------------------------------------------------------------------------# 
+# here we define the variogram to use. if more than 1, use [VARIOGRAM2] 
+#-------------------------------------------------------------------------------------# 
+[VARIOGRAMZ1] 
+NSTRUCT  = 1                # Number of semivariograms structures (NST(1)) 
+NUGGET    =0.1                                               # Nugget constant (C0(1)) 
+[VARIOGRAMZ1S1] 
+TYPE =1                   # Struture type ;1=spherical,2=exponential,3=gaussian (IT(i)) 
+COV  =0.9               # C parameter "COV + NUGGET = 1.0" (CC(i)) 
+ANG1 =0                   # Geometric anisotropy angle I (ANG1(i)) 
+ANG2 =0                   # Geometric anisotropy angle II (ANG2(i)) 
+ANG3 =0                   # Geometric anisotropy angle III (ANG3(i)) 
+AA   =1000               # Maximum horizontal range (AA(i)) 
+AA1  =400               # Minimum horizontal range (AA1)  
+AA2  =100               # Vertical range (AA2) 
+[VARIOGRAMZ2] 
+NSTRUCT  = 1                # Number of semivariograms structures (NST(1)) 
+NUGGET    =0.1                                               # Nugget constant (C0(1)) 
+[VARIOGRAMZ2S1] 
+TYPE =1                   # Struture type ;1=spherical,2=exponential,3=gaussian (IT(i)) 
+COV  =0.9               # C parameter "COV + NUGGET = 1.0" (CC(i)) 
+ANG1 =0                   # Geometric anisotropy angle I (ANG1(i)) 
+ANG2 =0                   # Geometric anisotropy angle II (ANG2(i)) 
+ANG3 =0                   # Geometric anisotropy angle III (ANG3(i)) 
+AA   =1000               # Maximum horizontal range (AA(i)) 
+AA1  =400               # Minimum horizontal range (AA1)  
+AA2  =100               # Vertical range (AA2) 
+#-------------------------------------------------------------------------------------# 
+# here we define parameters for joint DSS  
+#-------------------------------------------------------------------------------------# 
+[BIHIST1] 
+USEBIHIST        = 0 #Use Bihist? 1-yes 0-no 
+BIHISTFILE       = no file   # bihistogram file 
+NCLASSES         = 10                           # number of classes to use 
+AUXILIARYFILE    = no file                   # auxiliary image 
+[BIHIST2] 
+USEBIHIST        = 0 #Use Bihist? 1-yes 0-no 
+BIHISTFILE       = no file   # bihistogram file 
+NCLASSES         = 10                           # number of classes to use 
+AUXILIARYFILE    = no file                   # auxiliary image 
+#-------------------------------------------------------------------------------------# 
+# here we define the debug parameters - probably you wont need this 
+#-------------------------------------------------------------------------------------# 
+[DEBUG]   
+DBGLEVEL  = 1                 # 1 to 3, use higher than 1 only if REALLY needed 
+DBGFILE   = debug.dbg         # File to write debug 
+#-------------------------------------------------------------------------------------# 
+# here we define parameters for COVARIANCE TABLE - reduce if memory is a problem  
+#-------------------------------------------------------------------------------------# 
+[COVTAB] 
+MAXCTX = 200 
+MAXCTY = 200 
+MAXCTZ = 200 
+#-------------------------------------------------------------------------------------# 
+# here we define parameters for BLOCK KRIGING - if you are not block kriging useblocks should be 0  
+#-------------------------------------------------------------------------------------# 
+[BLOCKS] 
+USEBLOCKS  = 0   # 1 use, 0 no 
+BLOCKSFILE = no file 
+MAXBLOCKS  = 100 
+[PSEUDOHARD] 
+USEPSEUDO  = 0  # 1 use, 0 no  pseudo hard data is point distributions that are simulated before all other nodes 
+PSEUDOFILE = no file           # file 
+PSEUDOCORR = 0               # correct simulated value with point 
