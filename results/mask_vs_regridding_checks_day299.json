@@ -1,0 +1,206 @@
+{
+  "generated_at_utc": "2026-04-25T21:53:34.194764+00:00",
+  "script": "scripts/investigate_mask_vs_regridding_day299.py",
+  "day_context": {
+    "planning_date_used": "2024-10-30",
+    "tempres_day_used": "z=299",
+    "tempres_array_index_used": 298
+  },
+  "inputs": {
+    "temp_stack": "results/plots/X_surface_300.npy",
+    "planner_interface": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc",
+    "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+    "userdirect_manifest": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json"
+  },
+  "interpolation_and_geometry": {
+    "mapping_method": "xarray linear with nearest fallback, mean fill for any remaining non-finite",
+    "assumed_source_bbox_from_planner": {
+      "lon_min": -9.55555534362793,
+      "lon_max": -8.916666984558105,
+      "lat_min": 39.38888931274414,
+      "lat_max": 39.86111068725586
+    },
+    "native_shape": [
+      64,
+      112
+    ],
+    "planner_shape": [
+      180,
+      240
+    ]
+  },
+  "roi_definitions": {
+    "candb": {
+      "x0": 28,
+      "x1": 155,
+      "y0": 34,
+      "y1": 100,
+      "shape": [
+        67,
+        128
+      ],
+      "lon_min": -9.480706721668962,
+      "lon_max": -9.141213804109325,
+      "lat_min": 39.478584076439205,
+      "lat_max": 39.65270103156234
+    },
+    "user_direct_km": {
+      "x0": 0,
+      "x1": 133,
+      "y0": 0,
+      "y1": 71,
+      "shape": [
+        72,
+        134
+      ],
+      "lon_min": -9.55555534362793,
+      "lon_max": -9.200023435648514,
+      "lat_min": 39.38888931274414,
+      "lat_max": 39.57619440089391,
+      "manifest_crop_details": {
+        "full_shape_ny_nx": [
+          64,
+          112
+        ],
+        "x_start_col_1based": 1,
+        "x_end_col_1based": 63,
+        "y_start_row_1based": 1,
+        "y_end_row_1based": 26,
+        "hres_bbox_source": {
+          "source_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+          "lon_min": -9.55555534362793,
+          "lon_max": -8.916666984558105,
+          "lat_min": 39.38888931274414,
+          "lat_max": 39.86111068725586
+        }
+      }
+    }
+  },
+  "difference_map_checks": {
+    "candb": {
+      "max_abs_fullcrop_vs_nomask": 0.0,
+      "max_abs_nomask_vs_masked": 18.64554164402081,
+      "max_abs_absdiff_nomask_vs_masked": 18.64554164402081,
+      "masked_cells": 280,
+      "total_cells": 8576
+    },
+    "userdirect": {
+      "max_abs_fullcrop_vs_nomask": 0.0,
+      "max_abs_nomask_vs_masked": 18.7665092647628,
+      "max_abs_absdiff_nomask_vs_masked": 18.7665092647628,
+      "masked_cells": 739,
+      "total_cells": 9648
+    }
+  },
+  "metrics_rows": [
+    {
+      "method": "CAND_B",
+      "native_shape": "64x112",
+      "full_regridded_shape": "180x240",
+      "crop_nomask_shape": "67x128",
+      "crop_masked_shape": "67x128",
+      "valid_cells_nomask": 8576,
+      "valid_cells_masked": 8296,
+      "masked_fraction": 0.03264925373134331,
+      "bbox_planner_idx": "x=28..155; y=34..100",
+      "area_cells": 8576,
+      "RMSE_fullregridcrop_vs_cropnomask": 0.0,
+      "MAE_fullregridcrop_vs_cropnomask": 0.0,
+      "Pearson_fullregridcrop_vs_cropnomask": 1.0,
+      "RMSE_cropnomask_validcells_vs_cropmasked_validcells": 0.0,
+      "MAE_cropnomask_validcells_vs_cropmasked_validcells": 0.0,
+      "Pearson_cropnomask_validcells_vs_cropmasked_validcells": 1.0,
+      "exact_mask_match_if_applicable": true,
+      "effect_of_regridding": "LOW",
+      "effect_of_crop": "HIGH",
+      "effect_of_mask": "LOW",
+      "crop_area_fraction_of_full_planner": 0.1985185185185185,
+      "crop_mean_shift_sigma_vs_full": 0.4221189396321248,
+      "regridding_proxy_rmse_native_vs_backprojected": 0.00027629899567411994,
+      "regridding_proxy_mae_native_vs_backprojected": 9.515982547306611e-05,
+      "regridding_proxy_pearson_native_vs_backprojected": 0.9999993418336504,
+      "regridding_proxy_nrmse": 0.0012219566628707346,
+      "explanation_candidate": "CAND_B keeps geometric registration; value change between nomask/masked is zero on valid cells, while visual gap arises mainly from regridding plus masked-cell removal."
+    },
+    {
+      "method": "USER_DIRECT_KM",
+      "native_shape": "64x112",
+      "full_regridded_shape": "180x240",
+      "crop_nomask_shape": "72x134",
+      "crop_masked_shape": "72x134",
+      "valid_cells_nomask": 9648,
+      "valid_cells_masked": 8909,
+      "masked_fraction": 0.07659618573797677,
+      "bbox_planner_idx": "x=0..133; y=0..71",
+      "area_cells": 9648,
+      "RMSE_fullregridcrop_vs_cropnomask": 0.0,
+      "MAE_fullregridcrop_vs_cropnomask": 0.0,
+      "Pearson_fullregridcrop_vs_cropnomask": 1.0,
+      "RMSE_cropnomask_validcells_vs_cropmasked_validcells": 0.0,
+      "MAE_cropnomask_validcells_vs_cropmasked_validcells": 0.0,
+      "Pearson_cropnomask_validcells_vs_cropmasked_validcells": 1.0,
+      "exact_mask_match_if_applicable": true,
+      "effect_of_regridding": "LOW",
+      "effect_of_crop": "HIGH",
+      "effect_of_mask": "MODERATE",
+      "crop_area_fraction_of_full_planner": 0.22333333333333333,
+      "crop_mean_shift_sigma_vs_full": 0.49103541328456246,
+      "regridding_proxy_rmse_native_vs_backprojected": 0.00027629899567411994,
+      "regridding_proxy_mae_native_vs_backprojected": 9.515982547306611e-05,
+      "regridding_proxy_pearson_native_vs_backprojected": 0.9999993418336504,
+      "regridding_proxy_nrmse": 0.0012219566628707346,
+      "explanation_candidate": "USER_DIRECT_KM preserves the same regridded source but shifts ROI selection; mask mostly removes cells and does not alter values on valid cells."
+    }
+  ],
+  "final_yes_no": {
+    "mask_is_main_cause": "NO",
+    "regridding_is_main_cause": "NO",
+    "crop_contributes_materially": "YES",
+    "geographic_consistency_preserved": "YES"
+  },
+  "qualitative_effect_levels": {
+    "regridding": "LOW",
+    "crop_candb": "HIGH",
+    "crop_userdirect": "HIGH",
+    "mask_candb": "LOW",
+    "mask_userdirect": "MODERATE"
+  },
+  "outputs": {
+    "arrays": [
+      "results/native_tempres_day299.npy",
+      "results/full_regridded_planner_nomask_day299.npy",
+      "results/candb_crop_nomask_day299.npy",
+      "results/candb_crop_masked_day299.npy",
+      "results/candb_mask_day299.npy",
+      "results/userdirect_crop_nomask_day299.npy",
+      "results/userdirect_crop_masked_day299.npy",
+      "results/userdirect_mask_day299.npy"
+    ],
+    "figures": [
+      "results/native_tempres_day299.png",
+      "results/full_regridded_planner_nomask_day299.png",
+      "results/candb_crop_nomask_day299.png",
+      "results/candb_crop_masked_day299.png",
+      "results/candb_mask_day299.png",
+      "results/userdirect_crop_nomask_day299.png",
+      "results/userdirect_crop_masked_day299.png",
+      "results/userdirect_mask_day299.png",
+      "results/comparison_pipeline_candb_day299.png",
+      "results/comparison_pipeline_userdirect_day299.png",
+      "results/comparison_mask_effect_day299.png",
+      "results/comparison_both_methods_day299.png",
+      "results/difference_maps_candb_day299.png",
+      "results/difference_maps_userdirect_day299.png",
+      "results/contour_overlay_candb_day299.png",
+      "results/contour_overlay_userdirect_day299.png"
+    ],
+    "tables": [
+      "results/mask_vs_regridding_metrics_day299.csv",
+      "results/mask_vs_regridding_checks_day299.json"
+    ],
+    "reports": [
+      "results/mask_vs_regridding_report_day299.md",
+      "results/mask_vs_regridding_summary_day299.md"
+    ]
+  }
+}

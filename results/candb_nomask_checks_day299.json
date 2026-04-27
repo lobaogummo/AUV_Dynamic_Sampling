@@ -1,0 +1,80 @@
+{
+  "generated_at_utc": "2026-04-26T08:50:52.610088+00:00",
+  "day_used": "2024-10-30 / z=299",
+  "source_numeric_field_used": "results/plots/X_surface_300.npy[idx=298]",
+  "planner_interface_used": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc",
+  "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+  "candb_source_row": {
+    "candidate_id": "CAND_B_REGISTRATION_TO_HRES_SUBAREA",
+    "x0_hres_idx": 28,
+    "x1_hres_idx": 155,
+    "y0_hres_idx": 34,
+    "y1_hres_idx": 100,
+    "x0_lon": -9.480706721668962,
+    "x1_lon": -9.141213804109325,
+    "y0_lat": 39.478584076439205,
+    "y1_lat": 39.65270103156234
+  },
+  "candb_roi_used": {
+    "x0_hres_idx": 28,
+    "x1_hres_idx": 155,
+    "y0_hres_idx": 34,
+    "y1_hres_idx": 100,
+    "x0_lon": -9.480706721668962,
+    "x1_lon": -9.141213804109325,
+    "y0_lat": 39.478584076439205,
+    "y1_lat": 39.65270103156234
+  },
+  "full_regridded_shape": [
+    180,
+    240
+  ],
+  "candb_crop_nomask_shape": [
+    67,
+    128
+  ],
+  "candb_crop_masked_shape": [
+    67,
+    128
+  ],
+  "same_roi_used": true,
+  "same_bbox_used": true,
+  "same_shape_nomask_vs_masked": true,
+  "masked_fraction": 0.03264925373134331,
+  "valid_cells_nomask": 8576,
+  "valid_cells_masked": 8296,
+  "difference_due_to_mask_only_explained": true,
+  "notes": "CAND_B nomask and masked were generated from the same regridded planner field and identical ROI; masked differs only by setting non-valid planner-mask cells to NaN.",
+  "validation_details": {
+    "nomask_equals_full_regridded_roi_crop": true,
+    "nomask_equals_masked_on_valid_cells": true,
+    "masked_has_nan_on_nonvalid_cells": true
+  },
+  "outputs": {
+    "arrays": [
+      "results/candb_crop_nomask_day299.npy",
+      "results/candb_crop_masked_day299.npy",
+      "results/candb_mask_day299.npy",
+      "results/full_regridded_planner_nomask_day299.npy"
+    ],
+    "figures": [
+      "results/candb_crop_nomask_day299.png",
+      "results/candb_crop_masked_day299.png",
+      "results/candb_mask_day299.png",
+      "results/full_regridded_planner_nomask_day299.png"
+    ],
+    "panels": [
+      "results/comparison_candb_nomask_vs_masked_day299.png",
+      "results/comparison_candb_pipeline_day299.png",
+      "results/comparison_candb_nomask_focus_day299.png"
+    ],
+    "checks": [
+      "results/candb_nomask_checks_day299.json",
+      "results/candb_nomask_metrics_day299.csv"
+    ],
+    "reports": [
+      "results/candb_nomask_report_day299.md",
+      "results/candb_nomask_summary_day299.md"
+    ]
+  }
+}
