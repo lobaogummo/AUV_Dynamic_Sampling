@@ -1,0 +1,99 @@
+{
+  "generated_at_utc": "2026-04-26T13:51:50.808577+00:00",
+  "day_used": "2024-10-30",
+  "planning_date_used": "2024-10-30",
+  "tempres_day_requested": 299,
+  "source_numeric_field_used": "results/plots/X_surface_300.npy[idx=298] => z299",
+  "tempres_png_reference": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+  "tempres_indexing_convention_detected": "numeric stack 0-based [0..299], PNG labels 1-based [1..300]",
+  "final_day_mapping_decision": "day299 -> z299 -> idx=298",
+  "mapping_decision_justification": "Repository convention: z labels are 1-based; numpy first axis is 0-based.",
+  "planner_interface_used": "results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/30-10-2024_surface_dayfix_planner_interface.nc",
+  "candb_source_csv": "results/tempres_georef_candidate_transforms.csv",
+  "interpolation_meta": {
+    "method": "xarray interp linear with nearest fallback",
+    "temp_shape": [
+      64,
+      112
+    ],
+    "planner_shape": [
+      180,
+      240
+    ],
+    "planner_bbox_lonlat": [
+      -9.55555534362793,
+      -8.916666984558105,
+      39.38888931274414,
+      39.86111068725586
+    ]
+  },
+  "candb_roi_bbox_indices": {
+    "x0": 28,
+    "x1": 155,
+    "y0": 34,
+    "y1": 100,
+    "width": 128,
+    "height": 67
+  },
+  "candb_roi_bbox_lonlat": {
+    "lon_min": -9.480706721668962,
+    "lon_max": -9.141213804109325,
+    "lat_min": 39.478584076439205,
+    "lat_max": 39.65270103156234
+  },
+  "previous_day299_roi_from_checks_json": {
+    "x0": 28,
+    "x1": 155,
+    "y0": 34,
+    "y1": 100,
+    "shape": [
+      67,
+      128
+    ]
+  },
+  "full_regridded_shape": [
+    180,
+    240
+  ],
+  "candb_crop_nomask_shape": [
+    67,
+    128
+  ],
+  "candb_crop_masked_shape": [
+    67,
+    128
+  ],
+  "same_roi_used": true,
+  "same_bbox_used": true,
+  "same_shape_nomask_vs_masked": true,
+  "masked_fraction": 0.03264925373134328,
+  "valid_cells_nomask": 8576,
+  "valid_cells_masked": 8296,
+  "masked_cells": 280,
+  "mask_shape": [
+    67,
+    128
+  ],
+  "nomask_has_all_cells_visible": true,
+  "masked_boolean_equals_finite_of_masked_crop": true,
+  "difference_due_to_mask_only_explained": true,
+  "masked_matches_previous_saved_day299": true,
+  "notes": "No-mask crop uses exact same CAND_B ROI/subgrid as masked crop; masked version is produced by applying planner-derived boolean mask only.",
+  "outputs": [
+    "results/299/candb_crop_nomask_day299.npy",
+    "results/299/candb_crop_masked_day299.npy",
+    "results/299/candb_mask_day299.npy",
+    "results/299/full_regridded_planner_nomask_day299.npy",
+    "results/299/candb_crop_nomask_day299.png",
+    "results/299/candb_crop_masked_day299.png",
+    "results/299/candb_mask_day299.png",
+    "results/299/full_regridded_planner_nomask_day299.png",
+    "results/299/comparison_candb_nomask_vs_masked_day299.png",
+    "results/299/comparison_candb_pipeline_day299.png",
+    "results/299/comparison_candb_nomask_focus_day299.png",
+    "results/299/candb_nomask_checks_day299.json",
+    "results/299/candb_nomask_metrics_day299.csv",
+    "results/299/candb_nomask_report_day299.md",
+    "results/299/candb_nomask_summary_day299.md"
+  ]
+}

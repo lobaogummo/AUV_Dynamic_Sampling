@@ -1,0 +1,60 @@
+{
+  "generated_at_utc": "2026-04-26T15:42:14.255060+00:00",
+  "source_variable": "temperature",
+  "target_variable": "temperature",
+  "same_day_confirmed": true,
+  "source_file_used": "results/plots/X_surface_300.npy[idx=298] => z299",
+  "target_file_used": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+  "target_variable_used": "TEMPpred",
+  "target_day_index_used": 1,
+  "planner_interface_used": "results/planner_baseline_scenario_c4_methodical_20260418_162500/inputs/30-10-2024_surface_dayfix_planner_interface.nc",
+  "planner_interface_source_file_attr": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\TEST_D4\\HighRes\\Daily_dpt_20241029_NewTest_1\\30-10-2024_predModel_1.nc",
+  "source_index_row_filepath": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/TEMP_surface_2024_z299.png",
+  "planning_date_used": "2024-10-30",
+  "tempres_day_requested": 299,
+  "target_source_date_token": "2024-10-30",
+  "full_shape": [
+    180,
+    240
+  ],
+  "roi_shape": [
+    67,
+    128
+  ],
+  "roi_bbox_indices": {
+    "x0": 28,
+    "x1": 155,
+    "y0": 34,
+    "y1": 100
+  },
+  "exact_transform_found": false,
+  "near_perfect_transform_found": false,
+  "best_method": "dense_optical_flow_tvl1",
+  "best_interpolation": "linear",
+  "best_domain": "roi/masked",
+  "best_rmse": 0.6994061746114569,
+  "best_pearson": 0.7765981146275605,
+  "optional_std_available_for_separate_analysis": true,
+  "notes": "Main search uses temperature\u2194temperature only. STD was detected and documented but not mixed into the main transform search.",
+  "outputs": [
+    "scripts/exhaustive_temperature_transform_search_day299.py",
+    "results/299/transform_search_temperature_leaderboard_day299.csv",
+    "results/299/transform_search_temperature_checks_day299.json",
+    "results/299/transform_search_temperature_best_method_day299.json",
+    "results/299/exhaustive_temperature_transform_report_day299.md",
+    "results/299/exhaustive_temperature_transform_summary_day299.md",
+    "results/299/best_temperature_transform_full_comparison_day299.png",
+    "results/299/best_temperature_transform_roi_comparison_day299.png",
+    "results/299/best_temperature_transform_masked_comparison_day299.png",
+    "results/299/top5_temperature_transform_candidates_day299.png",
+    "results/299/temperature_orientation_and_flip_tests_day299.png",
+    "results/299/temperature_contour_alignment_best_method_day299.png",
+    "results/299/temperature_residual_error_maps_best_method_day299.png",
+    "results/299/temperature_transformation_pipeline_best_method_day299.png",
+    "results/299/best_temperature_transformed_full.npy",
+    "results/299/best_temperature_transformed_roi_nomask.npy",
+    "results/299/best_temperature_transformed_roi_masked.npy",
+    "results/299/best_temperature_difference_full.npy",
+    "results/299/best_temperature_difference_roi.npy"
+  ]
+}
