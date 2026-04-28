@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-04-27T19:53:24.285415+00:00",
+  "projection": {
+    "name": "EPSG_32629_UTM29N_formula",
+    "units": "km",
+    "notes": "WGS84 / UTM zone 29N implemented by standard transverse Mercator formula; pyproj not required."
+  },
+  "method_name": "CAND_B_REGISTRATION_TO_HRES_SUBAREA__EPSG_32629_UTM29N_formula__hres_crop_centers__x_normal__y_normal",
+  "recommended_selection_reason": "Selected because it is the controlled CAND_B registration in UTM 29N with east/north-normal orientation; the fixed z=299 numeric leaderboard is retained separately and is not enough to justify an x-flipped georeference.",
+  "source_of_georef": "Controlled registration best candidate",
+  "source_details": "investigation/tempibhres_hres_registration_controlled_v4/tables/best_candidate_summary.csv",
+  "affine_transform": {
+    "x_km_at_col0": 458.603485746378,
+    "x_km_at_col_last": 487.8392653026646,
+    "y_km_at_row0": 4370.035041908689,
+    "y_km_at_row_last": 4389.359043590229,
+    "dx_km_mean_signed": 0.26338540140798755,
+    "dy_km_mean_signed": 0.30673018542126684,
+    "formula": "x_km[col] and y_km[row] are stored explicitly in output grids; affine is linear along each axis."
+  },
+  "xmin_xmax_ymin_ymax_km": [
+    458.603485746378,
+    487.8392653026646,
+    4370.035041908689,
+    4389.359043590229
+  ],
+  "dx_dy_km_abs": {
+    "dx": 0.26338540140798755,
+    "dy": 0.30673018542126684
+  },
+  "centers_or_edges": "hres_crop_resampled_centers",
+  "orientation": {
+    "x": "normal",
+    "y": "normal"
+  },
+  "lonlat_bbox": [
+    -9.482531091523732,
+    -9.141397509229135,
+    39.478915024326255,
+    39.653943160534105
+  ],
+  "confidence_level": "PLAUSIBLE BUT NOT PROVEN",
+  "leaderboard_rank": 42,
+  "primary_validation": {
+    "target": "D4_predModel_TEMPpred_day0",
+    "rmse_temperature": 0.7087736916915864,
+    "pearson_temperature": 0.01737845263232038,
+    "gradient_corr": 0.1861677954669989,
+    "contour_score": 0.3052416782686836
+  },
+  "best_numeric_match": {
+    "method_name": "CAND_B_REGISTRATION_TO_HRES_SUBAREA__local_azimuthal_equidistant_spherical__hres_crop_centers__x_flipped__y_normal",
+    "rank": 1,
+    "rmse_temperature": 0.6971276671936265,
+    "pearson_temperature": 0.34937346500001887,
+    "gradient_corr": 0.006502133622602109,
+    "contour_score": 0.44834111579854014,
+    "note": "This fixed-day numeric match is reported for comparison and is not automatically adopted as the georeference if it conflicts with orientation/registration evidence."
+  },
+  "outputs": {
+    "tempres_x_km_grid": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_x_km_grid.npy",
+    "tempres_y_km_grid": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_y_km_grid.npy",
+    "tempres_lon_grid": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_lon_grid.npy",
+    "tempres_lat_grid": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_lat_grid.npy",
+    "tempres_georeferenced_day299_nc": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_georeferenced_day299.nc"
+  }
+}

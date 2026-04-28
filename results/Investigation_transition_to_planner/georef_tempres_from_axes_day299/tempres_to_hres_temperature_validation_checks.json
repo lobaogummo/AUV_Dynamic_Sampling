@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-04-27T19:53:24.222711+00:00",
+  "primary_target": "D4_predModel_TEMPpred_day0",
+  "targets": [
+    "D4_predModel_TEMPpred_day0",
+    "HResNew_20241030_TEMP_time0_depth0",
+    "D4_predModel_TEMPpred_day1",
+    "D4_AUVpredModel_TEMPpred"
+  ],
+  "policy": "Temperature-vs-temperature only; STD is not used as validation target.",
+  "regions": [
+    "full_overlap",
+    "operational_roi",
+    "candb_roi",
+    "user_direct_roi"
+  ]
+}

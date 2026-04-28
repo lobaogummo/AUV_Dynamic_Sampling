@@ -1,0 +1,20 @@
+{
+  "EPSG_32629_UTM29N_formula": {
+    "x_monotonic_by_row": true,
+    "y_monotonic_by_col": true,
+    "units": "km",
+    "notes": "WGS84 / UTM zone 29N implemented by standard transverse Mercator formula; pyproj not required."
+  },
+  "local_azimuthal_equidistant_spherical": {
+    "x_monotonic_by_row": true,
+    "y_monotonic_by_col": true,
+    "units": "km",
+    "notes": "Spherical azimuthal/equidistant projection centered at lon0=-9.23611116, lat0=39.62500000."
+  },
+  "local_lonlat_linear_km_midlat": {
+    "x_monotonic_by_row": true,
+    "y_monotonic_by_col": true,
+    "units": "km",
+    "notes": "Local lon/lat to km approximation centered at lon0=-9.23611116, lat0=39.62500000."
+  }
+}
