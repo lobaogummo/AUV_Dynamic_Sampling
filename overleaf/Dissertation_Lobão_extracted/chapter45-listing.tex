@@ -1,0 +1,257 @@
+% =========================
+% CHAPTER 4 — METHODOLOGY + PRELIMINARY WORK + WORKPLAN
+% File: chapter45-listing.tex
+% =========================
+
+\chapter{Methodology, preliminary work and workplan}\label{chap:ch4}
+
+This chapter summarises the preparatory work completed to date and presents a concise, execution-oriented plan for the dissertation phase.
+The core practical motivation is that, in heterogeneous coastal environments, na\"ively assimilating measurements into a single global
+model may improve estimates locally while degrading predictions elsewhere, motivating \emph{regime-aware} inference and update logic
+\parencite{bernacchi2025closingloop,fossum2020compact,ge2023watermasses}.
+
+% ==========================================================
+\section{Preliminary work (summary)} \label{sec:prelim_work}
+
+\subsection{State of the art consolidation}
+A structured synthesis of the literature was conducted to map how closed-loop adaptive sampling systems connect sensing, inference,
+planning, multi-agent coordination, and model update. The main output is the taxonomy in Chapter~\ref{chap:ch3}, anchored in adaptive
+sampling surveys \parencite{hwang2019auvreview} and representative works on closed-loop forecast improvement
+\parencite{bernacchi2025closingloop}, compact representations for regime-like structure discovery \parencite{fossum2020compact},
+profile-driven water-mass classification \parencite{ge2023watermasses}, flow-aware planning \parencite{aguiar2018trajectoryopt},
+and multi-agent learning for plume monitoring \parencite{dalfabbro2025douroplume}. Classic work on coordinated sampling was used to
+ground operational constraints \parencite{das2012coordinated,curtin2009aosn}.
+
+\subsection{Problem framing and pipeline interface}
+Following the review meeting, ``closing the loop'' is treated as an \emph{interface problem}: the dissertation does not aim to develop
+a full operational data-assimilation system. Instead, the focus is on (i) inferring \emph{regimes} from in situ data, (ii) using regime
+beliefs to guide multi-agent decisions, and (iii) evaluating whether regime-conditioned updates reduce harmful cross-regime coupling
+\parencite{bernacchi2025closingloop,fossum2020compact,ge2023watermasses}.
+
+\subsection{Scenarios and evaluation ladder}
+Candidate scenarios were selected to support a validation ladder from controlled tests (enabling clean ablations and quantitative metrics)
+to heterogeneous coastal cases (fronts/plumes) stressing regime transitions and robustness. The Douro plume setting is a natural reference
+for multi-day dynamics and coordination constraints \parencite{dalfabbro2025douroplume}. Regime inference is centred on physically grounded
+T/S/depth structure \parencite{ge2023watermasses}, with compact models as an unsupervised alternative \parencite{fossum2020compact}.
+
+% ==========================================================
+\section{Methodology overview and experimental design} \label{sec:method_overview}
+
+\subsection{End-to-end loop (scope-aware)}
+The dissertation methodology is organised as a lightweight closed-loop that remains compatible with operational constraints and the project scope.
+At each coordination cycle, the system: (i) aggregates available measurements, (ii) infers a \emph{regime belief} over the domain (or over the
+vehicle trajectory), (iii) scores candidate sampling actions using information/uncertainty proxies, and (iv) produces either a coordinated
+allocation (when communication allows) or local decisions otherwise. The ``update'' component is intentionally implemented as a principled
+\emph{proxy} (e.g., a belief refinement or a posterior map update) rather than full data assimilation, enabling controlled comparisons while
+preserving the interface assumption emphasised in the review meeting \parencite{bernacchi2025closingloop,duarte2025geostatistical}.
+
+\subsection{Regime inference: baselines and alternatives}
+Regime inference is treated as a probabilistic classification or clustering problem over in situ observations.
+The baseline will be a \emph{GMM/PCM-like} approach over profile-derived features (T/S/depth, stratification proxies, gradients), chosen for
+its interpretability and low computational cost \parencite{ge2023watermasses}. Outputs are \emph{belief distributions} (rather than hard labels),
+supporting boundary awareness (high uncertainty near transitions) and providing a natural signal to trigger regime-aware behaviour.
+
+As an alternative representation, compact codes will be evaluated for unsupervised regime discovery and separability, inspired by dictionary learning
+and sparse coding \parencite{fossum2020compact}. Because the dissertation targets profile data rather than synoptic surface imagery, the methodology
+explicitly tests input designs (e.g., windowed profiles, derivative features, normalisation) and validates whether compact embeddings preserve physically
+meaningful regime structure under distribution shift.
+
+\subsection{Flow context: feasibility and boundary hypotheses from currents}
+When velocity information is available (from numerical forecasts or onboard estimates), the methodology incorporates currents in two ways:
+(i) \emph{feasibility and cost modelling} (time/energy-aware travel under time-varying flows) following flow-aware trajectory optimisation principles
+\parencite{aguiar2018trajectoryopt}; and (ii) \emph{contextual regime cues} where flow-derived structures provide additional hypotheses for boundaries
+(e.g., separation between coherent structures and strain-dominated regions). This complements T/S-driven regimes and supports tests of hybrid boundary
+logic, where CTD-driven belief is combined with flow-derived boundary likelihood to prioritise sampling near moving interfaces under sparse measurements.
+
+\subsection{Regime-aware sampling and update logic}
+Regime beliefs are used to influence decisions in three concrete, testable ways:
+\begin{enumerate}
+  \item \textbf{Boundary emphasis:} increase utility near locations with high regime uncertainty (ambiguous class membership), treating transitions as
+  first-class targets rather than incidental effects.
+  \item \textbf{Team allocation across regimes:} encourage multi-AUV coverage diversity by allocating effort across regimes to reduce blind spots and
+  minimise redundant sampling within a single regime under intermittent coordination \parencite{hwang2019auvreview,dalfabbro2025douroplume}.
+  \item \textbf{Update gating/weighting:} condition the update proxy on regime belief to reduce harmful cross-regime coupling (e.g., downweight observations
+  whose regime is inconsistent with the model component being updated, or maintain separate regime-conditioned local surrogates).
+\end{enumerate}
+These choices are designed to be evaluated via ablations (regime-agnostic vs regime-aware), without requiring a full DA pipeline while still testing the
+central hypothesis motivating the dissertation.
+
+% --------------------------
+\subsection{Evaluation protocol, metrics, and ablations} \label{sec:metrics_ablations}
+To ensure comparability, experiments will follow a pre-defined evaluation protocol that reports both \emph{within-regime} and \emph{cross-regime} behaviour.
+In particular, the methodology distinguishes: (i) how well regimes are inferred (separability/calibration), (ii) how efficiently the team samples (coverage/redundancy),
+and (iii) whether update proxies improve predictive consistency without inducing degradation elsewhere.
+
+\begin{table}[H]
+  \centering
+  \caption{Planned evaluation axes, core metrics, and primary ablations.}
+  \label{tab:eval_axes}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{0.22\linewidth} X >{\RaggedRight\arraybackslash}p{0.25\linewidth}}
+    \hline
+    \textbf{Axis} & \textbf{What is measured} & \textbf{Ablations (examples)} \\
+    \hline
+    Regime inference &
+    Separability and uncertainty behaviour (e.g., boundary regions show higher entropy); sensitivity to shift across scenarios &
+    GMM/PCM-like vs compact codes; feature sets; calibration on/off \\
+    \hline
+    Informative sampling &
+    Utility achieved per travel cost; boundary targeting vs interior redundancy; time-to-reach informative zones &
+    Regime-agnostic utility vs boundary-weighted utility; myopic vs horizon-limited scoring \\
+    \hline
+    Multi-agent coordination &
+    Redundancy/overlap under intermittent comms; robustness to dropouts; allocation stability across coordination windows &
+    Centralised PCVRP-like baseline vs decentralised allocation; dropout/latency stress tests \\
+    \hline
+    Update behaviour (proxy) &
+    Improvement within regime vs degradation elsewhere; consistency across regimes; sensitivity to mixed-regime trajectories &
+    Regime-agnostic update vs regime-gated/weighted update; single-model vs regime-conditioned local surrogates \\
+    \hline
+    Flow awareness &
+    Feasibility, arrival-time error, and cost under time-varying currents; impact on rendezvous/coordination windows &
+    Flow-agnostic cost vs flow-aware cost; forecast mismatch margins \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\noindent The evaluation design explicitly addresses the review meeting emphasis on \emph{comparisons with ablations}: for each scenario, the dissertation will report
+paired results for regime-agnostic and regime-aware variants under matched communication and flow assumptions, using consistent metrics and identical budgets.
+
+% ==========================================================
+\section{Workplan (Gantt) and risk management} \label{sec:workplan}
+
+In line with the review meeting, the dissertation plan is expressed as a small set of parallel threads, with details tracked through deliverables rather than long narrative text.
+Figure~\ref{fig:gantt_compact} summarises the workplan.
+
+% IMPORTANT:
+% Move \newcolumntype definitions to the preamble (ONLY ONCE), e.g.:
+% \usepackage{array,tabularx,ragged2e}
+% \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% \newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\begin{figure}[H]
+\centering
+
+\makebox[\textwidth][c]{%
+  \hspace*{-5cm}% <--- ajusta aqui: -0.3cm, -0.5cm, -0.7cm...
+  \resizebox{\textwidth}{!}{%
+    \begin{ganttchart}[
+        time slot unit=month,
+        time slot format=isodate-yearmonth,
+        vgrid,
+        hgrid,
+        x unit=1.05cm,
+        y unit chart=0.52cm,
+        bar height=0.45,
+        title height=0.75,
+        title label font=\scriptsize,
+        bar label font=\scriptsize,
+        bar label node/.append style={align=right, text width=6.0cm},
+        bar/.append style={fill=black!15, draw=black},
+        milestone/.append style={fill=black!35, draw=black},
+      ]{2026-02}{2026-06}
+      \gantttitlecalendar{year, month=shortname} \\
+
+      \ganttbar{Review state of the art}{2026-02}{2026-03} \\
+      \ganttbar{Domain research}{2026-02}{2026-03} \\
+      \ganttbar{ML on collected data}{2026-03}{2026-06} \\
+      \ganttbar{Comparison of methods}{2026-05}{2026-06} \\
+      \ganttbar{Writing}{2026-02}{2026-06} \\
+      \ganttbar{Risk analysis \& mitigation}{2026-02}{2026-06} \\
+      \ganttmilestone{Submission freeze}{2026-06} \\
+    \end{ganttchart}%
+  }%
+}
+
+\caption{Compact workplan (Gantt). Tasks are shown as parallel threads, with risk management running throughout.}
+\label{fig:gantt_compact}
+\end{figure}
+
+
+\subsection{Risk matrix (actionable)}
+Table~\ref{tab:risk_matrix} provides a compact risk matrix used to monitor the project throughout execution. Likelihood and impact are rated on a five-level qualitative scale
+(from \emph{Rare} to \emph{Almost certain}, and from \emph{Very Low} to \emph{Very High}). Each risk is tracked with mitigation actions and periodic review checkpoints.
+In particular, risks R1--R3 are treated as priority risks because they directly affect scientific validity (scenario realism and regime heterogeneity),
+model robustness under shift, and operational assumptions (communication constraints).
+
+
+\begin{table}[H]
+  \centering
+  \caption{Risk register (compact). Levels match Table~\ref{tab:risk_matrix}.}
+  \label{tab:risk_register}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabularx}{\linewidth}{C{0.07\linewidth} X C{0.12\linewidth} C{0.12\linewidth} L{0.30\linewidth}}
+    \hline
+    \textbf{ID} & \textbf{Risk} & \textbf{Lik.} & \textbf{Impact} & \textbf{Mitigation} \\
+    \hline
+    R1 & Low scenario realism / weak heterogeneity & Likely   & Very High & Freeze cases early; add controlled testbed. \\
+    R2 & Regime model fails under shift            & Likely   & High      & Probabilistic + calibration; keep GMM/PCM baseline. \\
+    R3 & Comms assumptions unrealistic             & Likely   & High      & Dropout/latency tests; hybrid coordination; track overlap. \\
+    R4 & Unclear comparisons (metrics/ablations)   & Possible & Medium    & Predefine metrics; in- vs out-of-regime reporting. \\
+    R5 & Update/loop closure exceeds scope         & Possible & Medium    & Use lightweight proxies; DA as external interface. \\
+    R6 & Schedule slippage (impl. overhead)        & Possible & Low       & Continuous writing; monthly checkpoints; scope freeze. \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \caption{Risk matrix (Likelihood vs Impact). Cells are colour-coded (green = low, red = critical) and contain risk IDs (see Table~\ref{tab:risk_register}).}
+  \label{tab:risk_matrix}
+  \scriptsize
+  \setlength{\tabcolsep}{6pt}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{l|C{2.0cm}C{2.0cm}C{2.0cm}C{2.0cm}C{2.0cm}}
+    \hline
+    \multicolumn{1}{c|}{} & \multicolumn{5}{c}{\textbf{Impact}} \\
+    \textbf{Likelihood} & \textbf{Very Low} & \textbf{Low} & \textbf{Medium} & \textbf{High} & \textbf{Very High} \\
+    \hline
+    \textbf{Almost certain} &
+    \cellcolor{orange!35} & \cellcolor{orange!45} & \cellcolor{red!35} &
+    \cellcolor{red!55} & \cellcolor{red!75} \\
+    \textbf{Likely} &
+    \cellcolor{yellow!35} & \cellcolor{orange!30} & \cellcolor{orange!45} &
+    \cellcolor{red!35}\textbf{R2, R3} & \cellcolor{red!55}\textbf{R1} \\
+    \textbf{Possible} &
+    \cellcolor{green!25} & \cellcolor{yellow!30}\textbf{R6} &
+    \cellcolor{orange!30}\textbf{R4, R5} & \cellcolor{orange!45} & \cellcolor{red!35} \\
+    \textbf{Unlikely} &
+    \cellcolor{green!20} & \cellcolor{green!25} & \cellcolor{yellow!30} &
+    \cellcolor{orange!30} & \cellcolor{orange!45} \\
+    \textbf{Rare} &
+    \cellcolor{green!20} & \cellcolor{green!20} & \cellcolor{green!25} &
+    \cellcolor{yellow!30} & \cellcolor{orange!30} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+% ==========================================================
+\section{Summary} \label{sec:ch45_summary}
+
+This chapter summarised the preparatory work and presented a scope-aware methodology and workplan aligned with the review meeting.
+The dissertation will prioritise ML-based regime inference from in situ data and will evaluate its impact on multi-agent sampling decisions
+and on regime-conditioned update behaviour in heterogeneous environments \parencite{fossum2020compact,ge2023watermasses,bernacchi2025closingloop}.
+A concise Gantt chart captures the main execution threads, while an actionable risk matrix and an evaluation/ablation plan are provided to
+support systematic comparisons under realistic communication and flow constraints.
+
+
+
+
+
+% =========================
+% FINAL CONSIDERATIONS / CONCLUSIONS
+% (place in your conclusions chapter/section file)
+% =========================
+
+\chapter{Final Considerations and Conclusions} \label{chap:conclusions}
+
+This report framed the dissertation topic of \emph{Dynamic Sampling with Multi-Agent AUVs Using Machine Learning} and reviewed the state of the art to support a research plan that is both scientifically grounded and operationally realistic. Overall, the literature converges on closed-loop adaptive sampling as the dominant paradigm, but it also shows that \emph{forecast improvement} is harder than pure mapping because it requires a consistent loop from uncertainty estimates to planning and back to model update. A central challenge in realistic coastal deployments is \emph{heterogeneity}: regime transitions (water masses, fronts, plume-influenced waters) can break naïve update assumptions, motivating regime-aware inference and regime-conditioned update strategies. The review also reinforces that uncertainty (or robust proxies) is critical to drive informative objectives and to reduce redundancy in multi-AUV missions under intermittent communications.
+
+Based on these findings, the dissertation will prioritise \emph{probabilistic regime inference} from T/S/depth measurements (GMM/PCM-like) complemented by one alternative representation (e.g., compact codes/sparse coding) to benchmark robustness and separability. Planning will rely on informative objectives linked to uncertainty/information proxies and will explicitly test regime-aware criteria that emphasise ambiguous boundaries. For multi-agent operation, the approach will combine a decentralised allocation mechanism suitable for sparse communications with a strong centralised VRP-like baseline when coordination opportunities exist. The update component will remain scope-aware by using lightweight, principled update proxies, enabling systematic comparisons between regime-agnostic and regime-conditioned updates in controlled and coastal stress-test scenarios.
+
+Key constraints and risks remain related to data representativeness and limited labels, distribution shift across seasons/locations, communication latency/dropouts, and onboard compute limits. These will be addressed through early scenario freezing, explicit robustness tests, communication stress testing, and continuous runtime/memory profiling. Immediate next steps are to lock the evaluation scenarios, implement end-to-end baselines with flow-aware costs, prototype and validate regime inference offline before integrating online belief updates, add a coordination baseline and quantify redundancy, and then run controlled experiments comparing regime-agnostic versus regime-conditioned update behaviour using pre-defined metrics and ablations.
+

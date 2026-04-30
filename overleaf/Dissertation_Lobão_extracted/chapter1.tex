@@ -1,0 +1,131 @@
+\chapter{Introduction} \label{chap:intro}
+
+Operational oceanography increasingly depends on timely \emph{nowcasts} and \emph{forecasts} to support coastal
+management, environmental monitoring, offshore operations, and incident response. In such settings, forecast skill is
+often limited not by the availability of numerical models per se, but by the scarcity of informative \emph{in situ}
+observations needed to reduce uncertainty through data assimilation and calibration \cite{dowd2014dataassimilation}.
+More broadly, practical ocean state estimation remains tightly coupled to the availability and placement of observations
+\cite{wunsch2007stateestimation}. Ship-based surveys provide high-quality measurements but are costly and episodic, while
+fixed platforms (e.g., buoys and moorings) provide persistence with limited spatial coverage. This motivates mobile
+sensing systems capable of collecting targeted observations where and when they matter most for prediction.
+
+Autonomous Underwater Vehicles (AUVs) are a compelling option for this role. Equipped with sensors such as
+Conductivity--Temperature--Depth (CTD) instruments and additional payloads, AUVs can sample at specific depths and along
+flexible trajectories, enabling high-resolution measurements that complement existing observing systems. The broader
+trend towards persistent, autonomous observing concepts further reinforces the motivation for networked and adaptive
+sampling approaches \cite{curtin2009aosn}. However, AUV operation is constrained by endurance, safety, and intermittent
+communications, particularly in coastal environments characterised by time-varying currents, complex bathymetry, and
+rapidly evolving ocean features. Deploying \emph{teams} of AUVs can increase spatial coverage and temporal persistence,
+but introduces additional challenges: decisions must be coordinated to avoid redundant sampling, satisfy fleet-wide
+constraints, and remain robust to uncertainty in both the environment and the vehicles' states.
+
+Machine Learning (ML) is increasingly relevant to address these challenges. First, ML and related statistical learning
+tools offer practical mechanisms to extract structure from sparse measurements in heterogeneous spatiotemporal fields,
+supporting inference of regimes and transitions \cite{cressie2011spatiotemporal}. Second, learning-based decision
+policies can support action selection under uncertainty by trading off expected information gain against operational
+costs and risks. Third, regime awareness is particularly important in adaptive sampling: when vehicles traverse regions
+governed by markedly different dynamics, naive pooling of observations into a single representation can distort
+inference and lead to suboptimal planning and updating decisions. This work adopts a closed-loop,
+forecast--plan--sample--update perspective, where forecasts guide informative planning, measurements refine the belief
+about the environment, and the system replans iteratively \cite{curtin2009aosn}. In practice, planning becomes a
+constrained routing and scheduling problem in time-varying coastal conditions, requiring time-synchronised multi-AUV
+coordination under intermittent communications and safety/energy constraints.
+
+
+
+\section{Context and motivation} \label{sec:context_motivation}
+
+A central goal in adaptive ocean sampling is to collect a limited number of measurements that maximally reduce uncertainty
+about an evolving ocean field (e.g., temperature or salinity) and, in operational settings, to improve the skill of
+forecast/nowcast products through iterative updating \cite{bernacchi2025closingloop}. A practical way to operationalise
+this objective is a closed-loop view: a forecasting system produces model fields and an associated error/uncertainty
+product, a planner selects informative sampling locations under mission constraints, vehicles collect \emph{in situ}
+observations, and the model is updated before replanning in the next cycle \cite{bernacchi2025closingloop}. Recent work
+shows that uncertainty maps can be built from real-world model products and turned into actionable objectives for efficient
+AUV data collection under realistic constraints \cite{duarte2025geostatistical}. Crucially, this loop must acknowledge
+that coastal oceans are strongly heterogeneous: measurements gathered in one dynamically distinct region (e.g., a stratified
+water mass) may transfer poorly to another (e.g., plume-influenced waters), and naive mixing across regimes can lead to
+inefficient sampling and even regime-dependent side effects in model improvement \cite{mendes2025oceanmodeldriven}.
+
+The move from single-vehicle to multi-vehicle missions brings both opportunities and new constraints. Multiple AUVs can
+increase spatial coverage, enable near-simultaneous sampling of spatial gradients, and support persistence at spatial and
+temporal scales that are difficult to achieve with a single platform. However, coordination is challenging in underwater
+settings due to intermittent, low-throughput communications and long latencies, which often require time-synchronised
+behaviours (e.g., rendezvous or surfacing windows). Consequently, robust multi-agent strategies must balance decentralised
+execution, fault tolerance, and redundancy management with fleet-wide constraints such as energy budgets, safety envelopes,
+and time-varying currents, while still delivering measurable gains in forecast-relevant utility \cite{bernacchi2025closingloop}.
+In this context, machine learning becomes a natural enabler: it offers tools to infer and track regimes from partial, noisy
+measurements so that planning and model updating can be conditioned on \emph{where} (in regime terms) the data were collected
+rather than treating all observations as interchangeable \cite{mendes2025oceanmodeldriven}.
+
+
+\section{Problem statement} \label{sec:problem_statement}
+
+Building on recent closed-loop adaptive sampling deployments, where data collected in dynamically distinct regions can have
+uneven effects on model improvement, this dissertation considers missions in strongly heterogeneous coastal environments
+with \emph{distinct regimes} \cite{mendes2025oceanmodeldriven}. Given a team of AUVs equipped with oceanographic sensors
+(e.g., CTD), operating in a time-varying ocean and provided with daily forecast products and an uncertainty/error field
+\cite{bernacchi2025closingloop}, the problem is to decide where, when, and how the vehicles should sample to maximise
+utility (uncertainty reduction and forecast improvement) under endurance, safety, obstacle/bathymetry, intermittent
+communications, and current-driven travel-time constraints \cite{aguiar2018trajectoryopt}.
+
+Crucially, the sampling policy should be \emph{regime-aware}: it must infer or track regimes from partial, noisy
+measurements—using machine-learning-based representations when appropriate—and use this information to coordinate the team
+and to incorporate observations without inadvertently degrading predictions elsewhere \cite{mendes2025oceanmodeldriven}.
+Overall, the task is a sequential, uncertain multi-agent routing-and-scheduling problem (VRP-like) embedded in a
+forecast--plan--sample--update loop \cite{bernacchi2025closingloop}.
+
+\section{Objectives} \label{sec:objectives}
+
+The dissertation work proposed under the theme \emph{Dynamic Sampling with Multi-Agent AUVs Using Machine Learning} is structured around the following objectives:
+
+\begin{itemize}
+  \item \textbf{O1 --- Machine-learning-based regime inference:} investigate and benchmark ML/statistical learning approaches to learn compact representations from ocean observations (e.g., CTD profiles and/or synoptic products) and infer regimes and regime transitions in heterogeneous coastal environments, prioritising methods feasible online/onboard.
+
+  \item \textbf{O2 --- Regime definition and evaluation for sampling:} identify which regime notions are most relevant to adaptive sampling (e.g., water masses in T--S--depth space, fronts, plume-influenced waters) and define evaluation protocols and metrics to assess regime separation and boundary uncertainty in a sampling context.
+
+  \item \textbf{O3 --- Regime-aware closed-loop robustness:} study how regime-aware planning and inference can prevent model degradation caused by mixing observations from highly distinct regions, and propose mechanisms to condition planning and/or model updates on regime information.
+
+  \item \textbf{O4 --- End-to-end pipeline and experimental plan:} design an end-to-end pipeline and experimental plan, including datasets/simulators, baselines, operational constraints, and validation scenarios for multi-AUV closed-loop adaptive sampling.
+\end{itemize}
+
+
+\section{Scope and assumptions} \label{sec:scope_assumptions}
+
+This work focuses on the \emph{decision layer} of closed-loop, multi-agent adaptive sampling in heterogeneous coastal environments: (i) ML-based inference of regimes and regime transitions from partial observations, (ii) planning and coordination of a team of AUVs under realistic constraints (time-varying currents, energy/safety limits, and intermittent communication), and (iii) evaluation of the resulting strategies in simulation and/or operationally realistic validation settings. The scope is therefore positioned at the interface between \emph{forecast products} (e.g., prior fields and uncertainty/error maps), \emph{learning from data}, and \emph{robotic routing/scheduling}.
+
+Consistent with recent ``closing-the-loop'' demonstrations in real deployments, the dissertation treats \emph{forecast–plan–sample–update} as the overarching paradigm \cite{bernacchi2025closingloop}. However, \emph{developing new data assimilation methods} is outside the scope: assimilation and forecasting are assumed to be provided by an external modelling stack (or by an existing operational workflow), and are used as a black-box update step for evaluation. In this sense, the dissertation aims to ``close the loop'' \emph{without opening every drawer}: the contribution is on producing and exploiting regime-aware information (from data) and on generating feasible, informative multi-AUV sampling plans that can plug into an existing update pipeline. This choice follows the practical view that operationally useful planning can be driven by forecast-derived uncertainty maps and masked operational domains \cite{duarte2025geostatistical}.
+
+To maintain a clear research focus, the following are considered outside the scope unless required by the chosen validation setting: mechanical design of AUV platforms; detailed low-level control and guidance beyond abstracted motion/energy models; advanced underwater networking and acoustic propagation modelling; full SLAM in unstructured environments; and the development of new sensor hardware. It is assumed that a baseline autonomy stack exists for waypoint execution, safety behaviours, and sensor operation, and that bathymetry/operational masks and a time-indexed forecast product (prior field plus an uncertainty/error proxy) are available at planning times. Finally, it is assumed that communications are intermittent and therefore coordination must occur at discrete windows, motivating planning approaches that remain robust to delayed updates and execution-time deviations.
+
+
+\section{Expected contributions} \label{sec:expected_contributions}
+
+The dissertation is expected to produce:
+
+\begin{itemize}
+  \item A \textbf{critical synthesis and taxonomy} of closed-loop adaptive sampling for multi-AUV operations, clarifying how uncertainty products, planning objectives, coordination assumptions, and heterogeneity/regime boundaries affect what can be done onboard and what actually improves prediction.
+  
+  \item A \textbf{regime-aware learning component} that infers distinct regimes (and regime transitions) from the collected data (e.g., T/S/depth structure), and uses this information to support sampling decisions in environments with markedly different dynamics.
+  
+  \item A \textbf{practical integration blueprint for LSTS-style operations}, showing how forecast/uncertainty maps and mission constraints can drive coordinated sampling \emph{without developing new assimilation methods}, i.e., plugging planning and regime inference into an existing forecast--update workflow.
+  
+  \item Evidence from \textbf{operationally realistic validation} (simulation and/or real data case studies) quantifying when regime awareness helps: comparison against representative baselines (e.g., static coverage and uncertainty-driven greedy sampling) using metrics that capture sampling utility (uncertainty reduction / classification confidence), redundancy, feasibility/cost, and proxy measures of forecast improvement.
+  
+  \item \textbf{Actionable guidance for future work} on regime-aware update/assimilation and longer-term autonomy, derived from observed failure modes (e.g., regime mixing causing local improvements but global degradation) and from sensitivity analyses to communication and flow uncertainty.
+\end{itemize}
+
+
+\section{Dissertation structure} \label{sec:struct}
+
+In addition to this introductory chapter, the report is organised as follows.
+Chapter~\ref{chap:ch2} presents the background and key concepts needed to understand adaptive sampling in the ocean, including uncertainty-driven decision-making and the notion of heterogeneous regimes in oceanographic variables.
+Chapter~\ref{chap:ch3} provides a critical review of the state of the art, comparing approaches to modelling/inference, regime detection and classification, planning under time-varying flows, and multi-agent coordination under intermittent communication.
+Chapter~\ref{chap:ch4} summarises the preliminary work completed to date and details the dissertation plan, including the evaluation ladder (controlled tests to coastal case studies), baselines, metrics/ablations, milestones, and risk management.
+Finally, Chapter~\ref{chap:conclusions} concludes the report and consolidates the intended positioning and expected contributions of the dissertation.
+
+
+% NOTE:
+% - Update chapter labels (chap:ch2, chap:ch3, chap:ch4, chap:concl) to match the labels used in your chapter2.tex, chapter3.tex, etc.
+% - Add citations (\parencite{...}) once your bibliography.bib contains the relevant entries.
+

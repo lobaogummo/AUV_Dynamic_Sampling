@@ -1,0 +1,252 @@
+% =========================
+% CHAPTER 2 — BACKGROUND & FUNDAMENTALS (CLEAN + WITH EXTRA (NEW) CITATIONS)
+% File: chapter2.tex
+% =========================
+
+\chapter{Background and Fundamentals} \label{chap:ch2}
+
+This chapter introduces the minimum set of oceanographic and robotic fundamentals required to
+frame the research problem addressed in this report. The emphasis is on concepts (not on specific
+solutions from the literature): (i) ocean features that naturally induce distinct sampling regimes,
+(ii) AUV operational constraints that shape feasibility, (iii) a high-level problem formulation for
+closed-loop adaptive sampling, (iv) common objective functions used to quantify sampling utility,
+and (v) essential machine-learning notions for regime inference. Detailed comparisons of published
+methods are deferred to Chapter~\ref{chap:ch3}. The discussion is aligned with the operational
+oceanography view of coupling observations, modelling, and forecasting skill \parencite{guo2025orcadl,balaji2022gcmobsolete}.
+
+\section{Ocean features relevant to sampling} \label{sec:ocean_features}
+
+Coastal and shelf seas exhibit strong spatial and temporal heterogeneity. For adaptive sampling,
+heterogeneity matters because it creates regions with different dynamics, predictability, and
+observational signatures, motivating the use of \emph{regimes} as an organising concept. This
+heterogeneity is also central in coastal ecological and biogeochemical contexts, where patchiness
+and gradients shape primary production and ecosystem processes \parencite{falkowski1998biogeochemical,martin2003patchiness}.
+Typical AUV sensor payloads used to observe such regimes are summarised in Table~\ref{tab:sensors_phenomena}.
+
+\subsection{Water masses and vertical structure (thermocline/halocline)}
+A common description of ocean structure uses \emph{water masses}: bodies of water with coherent
+physical properties. In practice, water masses are often distinguished by their temperature--salinity
+(T--S) characteristics and by vertical structure. A sharp vertical temperature gradient defines a
+\emph{thermocline}, while a sharp salinity gradient defines a \emph{halocline}. These layers can
+shift in depth and intensity, influencing mixing and transport.
+
+For sampling, vertical structure matters because (i) the same horizontal location may correspond to
+different regimes depending on depth, and (ii) strong stratification can reduce coupling across layers,
+changing how informative a profile is for updating a model.
+
+\subsection{Fronts and boundary structures}
+Ocean \emph{fronts} are narrow transition zones separating water masses with different properties,
+typically expressed as strong horizontal gradients in temperature and salinity. Fronts are key
+sampling targets because they can evolve rapidly and often represent informative boundaries whose
+mischaracterisation can propagate into downstream modelling and decision-making. Feature- and
+boundary-driven robotic sampling in coastal waters has been explicitly motivated in prior adaptive
+ocean sampling work \parencite{fossum2019phytoplankton}.
+
+\subsection{Current-driven structures as regime indicators}
+Beyond T/S signatures, ocean regimes may also be \emph{indicated} by the flow field. Currents organise transport and
+mixing into coherent structures (e.g., jets, eddies, and filaments) that shape gradients and tracer accumulation,
+thereby partitioning the domain into dynamical zones \parencite{weiss2007transportmixing,mcgillicuddy2016mechanisms,mahadevan2016submesoscale}.
+When velocity information is available (from forecasts or onboard estimates), this flow context provides additional
+intuition for regime boundaries and motivates flow-aware feasibility considerations in time-varying environments
+\parencite{aguiar2018trajectoryopt}. Specific diagnostics and their use in regime identification are reviewed in
+Chapter~\ref{chap:ch3}.
+
+
+
+
+
+
+\subsection{Plumes and river-influenced coastal dynamics}
+River plumes introduce buoyant, fresher water that interacts with tides, wind forcing, and shelf
+circulation, creating sharp salinity gradients and distinct optical/biogeochemical signatures.
+Plumes can shift direction and extent on hourly-to-daily time scales, providing a clear example of a
+heterogeneous environment where sampling across plume and ambient waters may encounter distinct regimes.
+Such plume- and bloom-influenced settings are also a canonical motivation for adaptive robotic sampling
+in coastal observing systems \parencite{fossum2019phytoplankton}.
+
+\subsection{Temporal variability, uncertainty, and why both matter}
+Temporal variability arises from tides, wind-driven circulation, diurnal heating/cooling, and episodic
+events. A practical implication is that sampling value is time-dependent: a location can be informative
+now but not later. Two concepts are useful:
+
+\begin{itemize}
+  \item \textbf{Uncertainty}: what the model does not know (e.g., forecast variance/spread), often addressed through
+  data assimilation and related update mechanisms \parencite{dowd2014dataassimilation}.
+  \item \textbf{Variability}: how fast the environment changes (e.g., moving boundaries), which in patchy coastal
+  systems can dominate where/when observations matter most \parencite{martin2003patchiness}.
+\end{itemize}
+
+Adaptive strategies that focus only on uncertainty may under-sample fast-changing boundaries,
+while strategies that ignore uncertainty may waste effort where the model is already confident.
+Chapter~\ref{chap:ch3} discusses how different works operationalise these ideas.
+
+\subsection{Why temperature, salinity, and depth are strong ``axes'' for regimes}
+Temperature and salinity jointly determine density and stratification, which shape circulation and mixing.
+Together with depth, they provide a physically meaningful coordinate system for regimes:
+(i) T/S profiles encode water-mass identity; (ii) depth indexes layered structure; and (iii) gradients
+in T/S highlight fronts and boundaries. These variables also align well with typical AUV sensing (CTD payloads).
+
+\section{AUV sampling and constraints} \label{sec:auv_constraints}
+
+Adaptive sampling must operate under real AUV constraints. These constraints shape both feasibility
+and robustness of planning policies. A general overview of constraints and their implications for
+adaptive sampling design is provided in survey work on AUV adaptive sampling methods
+\parencite{hwang2019auvreview}. At a systems level, the broader push toward autonomous ocean sampling
+networks further emphasises robustness, persistence, and operational integration \parencite{curtin2009aosn}.
+
+\subsection{Platform and mission constraints}
+\textbf{Energy and endurance:} Finite energy budgets constrain mission duration, range, and sampling intensity.
+Energy use depends on speed, manoeuvres, payload operation, and currents.
+
+\textbf{Time and scheduling:} Missions are often deadline-driven (e.g., data must be available before a model update),
+which couples routing and scheduling.
+
+\textbf{Communication limitations:} Underwater communication is intermittent and low throughput, so continuous coordination
+cannot be assumed; plans must tolerate delays and missed messages.
+
+\textbf{Safety and navigability:} Obstacles, bathymetry, restricted areas, and safety margins impose geofences and may make
+transitions infeasible.
+
+\textbf{Time-varying currents:} Currents affect ground-relative motion, travel time, and energy expenditure; in time-varying
+flows, the cost of moving between locations depends on departure time, motivating flow-aware planning
+\parencite{aguiar2018trajectoryopt}.
+
+\subsection{Multi-agent sampling: centralised vs distributed coordination}
+With multiple AUVs, coordination is required to avoid redundancy and satisfy fleet-wide constraints.
+Two broad paradigms are commonly used:
+
+\begin{itemize}
+  \item \textbf{Centralised}: a coordinator assigns tasks/routes using global information when connectivity permits.
+  \item \textbf{Distributed}: each AUV plans locally with limited coordination messages, improving robustness to sparse communications.
+\end{itemize}
+
+Hybrid schemes are common in practice (periodic coordination plus local replanning). From an operational perspective,
+organisational and architectural choices (e.g., who coordinates what, and when) are increasingly treated as first-class
+design decisions in marine autonomy \parencite{skaugset2025autonomousorg}.
+
+\section{High-level problem formulation} \label{sec:problem_formulation}
+
+This section introduces a lightweight formulation that captures the essence of closed-loop, regime-aware,
+multi-agent adaptive sampling without committing to a specific estimator or planner.
+
+\subsection{System state and environment}
+Consider a team of $N$ AUVs indexed by $i \in \{1,\dots,N\}$. At time $t$, the mission-level state of AUV $i$ is
+\begin{equation}
+  s_i(t) = \big(p_i(t),\, \theta_i(t),\, E_i(t),\, \tau_i(t)\big),
+\end{equation}
+where $p_i(t)$ is position (2D or 3D), $\theta_i(t)$ denotes pose-related variables, $E_i(t)$ is remaining energy,
+and $\tau_i(t)$ encodes time information (e.g., elapsed time or time-to-deadline).
+
+The ocean field of interest is modelled as a spatiotemporal process
+\begin{equation}
+  x(p,t),
+\end{equation}
+where $p$ denotes spatial location (including depth if needed) and $x$ may represent temperature, salinity,
+or derived quantities. A forecasting system typically provides a prior estimate $\hat{x}(p,t)$ and a representation
+of uncertainty (e.g., variance maps or ensemble spread) \parencite{guo2025orcadl}.
+
+\subsection{Measurements and uncertainty}
+When an AUV samples at location $p$ and time $t$, it obtains an observation
+\begin{equation}
+  y = x(p,t) + \varepsilon,
+\end{equation}
+where $\varepsilon$ represents measurement noise and modelling error. Observations can be point samples,
+vertical profiles, or short trajectory segments.
+
+In heterogeneous environments, the mapping from observations to model updates may depend on regime:
+conditioning inference and updates on regime information can help avoid undesired coupling across boundaries.
+How published works address this is reviewed in Chapter~\ref{chap:ch3}.
+
+\subsection{Mission-level objective}
+At a high level, the mission chooses actions $a_i(t)$ (e.g., waypoints, sampling depths, patterns) to maximise
+expected utility over a horizon:
+\begin{equation}
+  \max_{\{a_i\}} \; \mathbb{E}\Big[ U(\text{information gained}, \text{forecast improvement}) - C(\text{energy}, \text{time}, \text{risk}) \Big],
+\end{equation}
+subject to feasibility constraints (energy bounds, safety constraints, communication opportunities, and
+reachability influenced by currents). In practice, decision support is often framed explicitly in terms
+of a value/utility function that trades off scientific gain against operational cost \parencite{aguiar2020valuefunction}.
+
+\section{Fundamentals of adaptive sampling objectives} \label{sec:adaptive_objectives}
+
+Adaptive sampling differs largely in how it quantifies sampling value. Common objective families include:
+
+\subsection{Uncertainty reduction}
+If the field estimate admits a probabilistic representation, actions can be scored by expected reduction of posterior
+uncertainty (often approximated via variance maps):
+\begin{equation}
+  U_{\text{var}}(p) \approx \sigma^2_{\text{prior}}(p) - \mathbb{E}\big[\sigma^2_{\text{post}}(p)\big].
+\end{equation}
+The value of moving beyond static grid surveys toward uncertainty-aware designs has been emphasised in optimal
+synoptic survey analyses \parencite{frolov2014grid}.
+
+\subsection{Information gain (entropy / mutual information)}
+Information-theoretic objectives quantify expected entropy reduction. For random variables $X$ (field state) and
+$Y$ (future observation), mutual information
+\begin{equation}
+  I(X;Y) = H(X) - H(X \mid Y)
+\end{equation}
+captures expected uncertainty reduction while accounting for correlation, which helps avoid redundant sampling.
+
+\subsection{Forecast improvement (model-aware objectives)}
+When a forecasting model and an update mechanism exist, sampling utility can be defined by expected improvement
+in forecast skill (e.g., reduced prediction error on a future horizon), rather than by instantaneous uncertainty reduction.
+In biogeochemical and physical forecasting contexts, this objective is tightly linked to assimilation/update methodology
+\parencite{dowd2014dataassimilation}.
+
+\subsection{Event/regime-oriented objectives}
+For missions focused on detecting or tracking fronts, plumes, or regime boundaries, utility can be defined via
+classification confidence or boundary uncertainty, motivating coupling between regime inference and planning.
+This viewpoint is particularly natural in coastal ecological monitoring where targets are patchy, dynamic features
+\parencite{fossum2019phytoplankton}.
+
+\section{Machine-learning basics for regime detection} \label{sec:ml_regime_basics}
+
+This section states minimal ML concepts used later for the literature review.
+
+\subsection{Clustering, classification, and segmentation}
+\textbf{Clustering} groups observations into clusters without labels. \textbf{Classification} assigns observations to
+predefined classes (often probabilistically). \textbf{Segmentation} assigns labels over a spatial domain (e.g., a grid),
+revealing boundaries between regimes.
+
+\subsection{Online vs offline inference}
+\textbf{Offline} methods fit/train on a fixed dataset before deployment. \textbf{Online} methods update incrementally as
+new data arrive, enabling regime beliefs to evolve during execution and directly influence replanning.
+
+\subsection{Compact representations}
+Regime inference can benefit from compact representations of measurements:
+handcrafted features (e.g., thermocline depth), learned embeddings (e.g., encoder outputs), or sparse representations.
+Chapter~\ref{chap:ch3} discusses how the reviewed literature uses compact models for regime/scene structure.
+
+\subsection{Regime inference as a probabilistic belief}
+Many regime models output a belief over regimes rather than a hard label. Such beliefs are useful for planning:
+vehicles can focus sampling near uncertain boundaries, and updates can be conditioned on regime probabilities.
+Sequential decision-making under uncertainty is also commonly formalised through stochastic models that update
+as new observations arrive \parencite{berget2023dynamicstochastic}.
+
+\begin{table}[t]
+  \centering
+  \caption{Examples of common AUV-relevant sensors/variables and the ocean phenomena they help capture.}
+  \label{tab:sensors_phenomena}
+  \begin{tabular}{p{0.22\linewidth} p{0.30\linewidth} p{0.40\linewidth}}
+    \hline
+    \textbf{Sensor / variable} & \textbf{Typical output} & \textbf{Phenomena captured (examples)} \\
+    \hline
+    CTD & $T(z)$, $S(z)$, density/stratification & Water masses; thermocline/halocline; frontal gradients; plume freshwater signatures \\
+    Fluorometer & Chlorophyll-a fluorescence & Productivity/blooms; plume biogeochemical signatures \\
+    Turbidity / optical backscatter & Suspended particles & River plumes; sediment fronts; resuspension events \\
+    Oxygen optode & Dissolved oxygen & Ventilation/mixing; hypoxia; provenance indicators \\
+    ADCP / DVL current estimates & Current profiles / velocity & Currents and shear; flow constraints for trajectory planning \\
+    Nitrate / pH / CDOM (if available) & Biogeochemical tracers & Biogeochemical regime separation; plume influence \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\section{Summary} \label{sec:ch2_summary}
+
+This chapter provided the foundational concepts needed to interpret the state-of-the-art review.
+It introduced regime-relevant ocean features (water masses, stratification, fronts, plumes), key AUV
+constraints (energy, time, communications, safety, and time-varying currents), a high-level problem
+formulation for closed-loop adaptive sampling, common objective families, and minimal ML notions
+for regime inference. Chapter~\ref{chap:ch3} builds on this baseline to critically review how published
+work instantiates these building blocks and where gaps remain.
