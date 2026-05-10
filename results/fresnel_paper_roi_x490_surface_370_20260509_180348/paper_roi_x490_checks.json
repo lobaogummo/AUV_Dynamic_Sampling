@@ -1,0 +1,38 @@
+{
+  "input_files_found": {
+    "thetao": true,
+    "thetao_nc": true,
+    "lat": true,
+    "lon": true,
+    "bathy": true,
+    "mask": true,
+    "dates": true,
+    "metadata": true
+  },
+  "input_shape_correct": true,
+  "dates_count_correct": true,
+  "roi_indices_found": true,
+  "roi_not_empty": true,
+  "roi_shape": [
+    370,
+    72,
+    117
+  ],
+  "output_array_shape": [
+    370,
+    72,
+    117
+  ],
+  "n_png_generated": 370,
+  "n_clean_png_generated": 370,
+  "expected_png_count": 370,
+  "png_count_correct": true,
+  "clean_png_count_correct": true,
+  "mask_applied": true,
+  "orientation_preserved": true,
+  "x_axis_ends_near_490_km": true,
+  "previous_results_deleted_before_generation": true,
+  "no_input_files_modified": true,
+  "failed_days": [],
+  "final_verdict": "The corrected FRESNEL paper ROI with x_max near 490 km was applied to the 370 HRes surface temperature maps, the previous ROI outputs were deleted, and all ROI PNGs were exported with a consistent global color scale."
+}

@@ -1,0 +1,7 @@
+metric,value
+c01_intra_mean_feature_distance,45.97713517681836
+c04_intra_mean_feature_distance,81.03473135106232
+c01_c04_between_mean_feature_distance,133.39100882928753
+prototype_corr,0.5925810286728003
+prototype_rmse_norm,0.8695844411849976
+should_merge_rule,False

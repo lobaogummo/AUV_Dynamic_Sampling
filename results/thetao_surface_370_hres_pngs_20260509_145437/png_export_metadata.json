@@ -1,0 +1,37 @@
+{
+  "input_array_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.npy",
+  "input_shape": [
+    370,
+    180,
+    240
+  ],
+  "n_days": 370,
+  "date_start": "2023-10-28",
+  "date_end": "2024-10-31",
+  "output_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\thetao_surface_370_hres_pngs_20260509_145437",
+  "png_daily_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\thetao_surface_370_hres_pngs_20260509_145437\\png_daily",
+  "png_daily_clean_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\thetao_surface_370_hres_pngs_20260509_145437\\png_daily_clean",
+  "output_png_count": 370,
+  "output_clean_png_count": 370,
+  "dates_complete": true,
+  "shape_per_day_consistent": true,
+  "global_color_scale_used": true,
+  "color_scale_method": "robust global percentiles p1-p99; absolute min/max recorded in metadata",
+  "color_scale_vmin": 14.579598426818848,
+  "color_scale_vmax": 19.780498504638672,
+  "absolute_temp_min": 14.08486270904541,
+  "absolute_temp_max": 21.112001419067383,
+  "mask_applied": true,
+  "global_nan_pct_after_mask": 38.49537037037037,
+  "orientation_confirmed": true,
+  "any_failed_exports": false,
+  "failed_days": [],
+  "colormap": "coolwarm",
+  "panels": [
+    "first_12_days_panel.png",
+    "selected_monthly_panel.png",
+    "heterogeneous_days_panel.png",
+    "final_12_days_panel.png"
+  ],
+  "final_verdict": "The 370 daily HRes surface temperature PNG maps were successfully exported with a consistent global color scale."
+}

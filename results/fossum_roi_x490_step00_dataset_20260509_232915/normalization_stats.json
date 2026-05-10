@@ -1,0 +1,15 @@
+{
+  "mu_global": 16.899330139160156,
+  "sigma_global": 1.3486158847808838,
+  "n_images": 370,
+  "ny": 72,
+  "nx": 117,
+  "valid_pixels_per_image_mean": 8004.0,
+  "valid_pixels_total": 2961480,
+  "mask_fraction_valid": 0.9501424501424501,
+  "mask_fraction_invalid": 0.049857549857549865,
+  "normalized_png_scale_method": "legacy symmetric +/- percentile98(abs(X_norm[:, mask_common]))",
+  "normalized_png_vmin": -1.950387954711914,
+  "normalized_png_vmax": 1.950387954711914,
+  "source_input": "results/fresnel_paper_roi_x490_surface_370_20260509_180348/thetao_surface_370_hres_paper_roi_x490.npy"
+}

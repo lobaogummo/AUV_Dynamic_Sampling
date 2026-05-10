@@ -1,0 +1,119 @@
+{
+  "recommended_n_classes": 4,
+  "recommended_sd_fraction": 0.4,
+  "recommended_action": "Try 6-class interpretation/cut first, then run patch-size sensitivity to confirm C01 split stability.",
+  "top_cut_rows": [
+    {
+      "cut_name": "k4",
+      "n_classes": 4,
+      "class_sizes": "[157, 102, 26, 85]",
+      "min_class_size": 26,
+      "max_class_size": 157,
+      "mean_class_size": 92.5,
+      "size_cv": 0.5050222568484926,
+      "tiny_class_count_lt10": 0,
+      "mean_prototype_rmse": 1.1361730553133498,
+      "max_prototype_corr": 0.9903951625278271,
+      "temporal_runs": 43,
+      "mean_overlap_purity_vs_original": 0.961764705882353,
+      "interpretability_score": 3.7006498764790474,
+      "cut_type": "maxclust",
+      "cut_value": 4.0,
+      "separation_distance": NaN
+    },
+    {
+      "cut_name": "sd0.40",
+      "n_classes": 4,
+      "class_sizes": "[157, 102, 26, 85]",
+      "min_class_size": 26,
+      "max_class_size": 157,
+      "mean_class_size": 92.5,
+      "size_cv": 0.5050222568484926,
+      "tiny_class_count_lt10": 0,
+      "mean_prototype_rmse": 1.1361730553133498,
+      "max_prototype_corr": 0.9903951625278271,
+      "temporal_runs": 43,
+      "mean_overlap_purity_vs_original": 0.961764705882353,
+      "interpretability_score": 3.7006498764790474,
+      "cut_type": "sd_fraction",
+      "cut_value": 0.4,
+      "separation_distance": 563.1765527578011
+    },
+    {
+      "cut_name": "k5",
+      "n_classes": 5,
+      "class_sizes": "[157, 102, 26, 13, 72]",
+      "min_class_size": 13,
+      "max_class_size": 157,
+      "mean_class_size": 74.0,
+      "size_cv": 0.7074166213158635,
+      "tiny_class_count_lt10": 0,
+      "mean_prototype_rmse": 1.4336718891149243,
+      "max_prototype_corr": 0.9903951625278271,
+      "temporal_runs": 43,
+      "mean_overlap_purity_vs_original": 1.0,
+      "interpretability_score": 2.686810449477357,
+      "cut_type": "maxclust",
+      "cut_value": 5.0,
+      "separation_distance": NaN
+    },
+    {
+      "cut_name": "sd0.30",
+      "n_classes": 5,
+      "class_sizes": "[157, 102, 26, 13, 72]",
+      "min_class_size": 13,
+      "max_class_size": 157,
+      "mean_class_size": 74.0,
+      "size_cv": 0.7074166213158635,
+      "tiny_class_count_lt10": 0,
+      "mean_prototype_rmse": 1.4336718891149243,
+      "max_prototype_corr": 0.9903951625278271,
+      "temporal_runs": 43,
+      "mean_overlap_purity_vs_original": 1.0,
+      "interpretability_score": 2.686810449477357,
+      "cut_type": "sd_fraction",
+      "cut_value": 0.3,
+      "separation_distance": 422.3824145683508
+    },
+    {
+      "cut_name": "sd0.35",
+      "n_classes": 5,
+      "class_sizes": "[157, 102, 26, 13, 72]",
+      "min_class_size": 13,
+      "max_class_size": 157,
+      "mean_class_size": 74.0,
+      "size_cv": 0.7074166213158635,
+      "tiny_class_count_lt10": 0,
+      "mean_prototype_rmse": 1.4336718891149243,
+      "max_prototype_corr": 0.9903951625278271,
+      "temporal_runs": 43,
+      "mean_overlap_purity_vs_original": 1.0,
+      "interpretability_score": 2.686810449477357,
+      "cut_type": "sd_fraction",
+      "cut_value": 0.35,
+      "separation_distance": 492.7794836630759
+    }
+  ],
+  "c01_c04_similarity": {
+    "c01_intra_mean_feature_distance": 45.97713517681836,
+    "c04_intra_mean_feature_distance": 81.03473135106232,
+    "c01_c04_between_mean_feature_distance": 133.39100882928753,
+    "prototype_corr": 0.5925810286728003,
+    "prototype_rmse_norm": 0.8695844411849976,
+    "should_merge": false
+  },
+  "c01_subcluster": {
+    "sizes": [
+      {
+        "subcluster": "C01a",
+        "n_days": 38
+      },
+      {
+        "subcluster": "C01b",
+        "n_days": 119
+      }
+    ],
+    "mean_difference_norm": 0.6795346140861511,
+    "has_internal_substructure": true
+  }
+}

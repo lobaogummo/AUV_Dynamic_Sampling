@@ -1,0 +1,161 @@
+{
+  "output_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step01_old_config_baseline_20260509_235101",
+  "files": [
+    {
+      "path": "step01_old_baseline_logic_audit.md",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 2621
+    },
+    {
+      "path": "step01_old_config_assignments.csv",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 8724
+    },
+    {
+      "path": "step01_old_config_class_sizes.csv",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 154
+    },
+    {
+      "path": "step01_old_config_class_members_summary.csv",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 5745
+    },
+    {
+      "path": "step01_old_config_class_members_list.csv",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 8724
+    },
+    {
+      "path": "step01_old_config_features.npy",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 8986688
+    },
+    {
+      "path": "step01_old_config_scaled_features.npy",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 8986688
+    },
+    {
+      "path": "step01_old_config_dictionary.npy",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 92288
+    },
+    {
+      "path": "step01_old_config_sparse_codes.npy",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 8986688
+    },
+    {
+      "path": "step01_old_config_linkage.npy",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 11936
+    },
+    {
+      "path": "step01_old_config_dendrogram.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 56749
+    },
+    {
+      "path": "step01_old_config_class_timeline.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 88793
+    },
+    {
+      "path": "step01_old_config_class_calendar_view.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 151418
+    },
+    {
+      "path": "step01_old_config_class_prototypes_panel.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 112787
+    },
+    {
+      "path": "step01_old_config_class_mean_maps_panel.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 112300
+    },
+    {
+      "path": "step01_old_config_class_std_maps_panel.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 172847
+    },
+    {
+      "path": "step01_old_config_pca_or_embedding.png",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 91264
+    },
+    {
+      "path": "class_prototype_pngs/",
+      "exists": true,
+      "is_dir": true,
+      "size_bytes": 256465
+    },
+    {
+      "path": "class_mean_maps/",
+      "exists": true,
+      "is_dir": true,
+      "size_bytes": 256142
+    },
+    {
+      "path": "class_std_maps/",
+      "exists": true,
+      "is_dir": true,
+      "size_bytes": 276487
+    },
+    {
+      "path": "diagnostics/",
+      "exists": true,
+      "is_dir": true,
+      "size_bytes": 3088
+    },
+    {
+      "path": "step01_old_config_metadata.json",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 5008
+    },
+    {
+      "path": "step01_old_config_checks.json",
+      "exists": true,
+      "is_dir": false,
+      "size_bytes": 2553
+    },
+    {
+      "path": "step01_old_config_manifest.json",
+      "exists": false,
+      "is_dir": false,
+      "size_bytes": 0
+    },
+    {
+      "path": "step01_old_config_summary.md",
+      "exists": false,
+      "is_dir": false,
+      "size_bytes": 0
+    },
+    {
+      "path": "step01_old_config_report.md",
+      "exists": false,
+      "is_dir": false,
+      "size_bytes": 0
+    }
+  ]
+}

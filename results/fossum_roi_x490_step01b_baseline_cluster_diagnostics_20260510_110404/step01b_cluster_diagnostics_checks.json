@@ -1,0 +1,39 @@
+{
+  "input_step01_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step01_old_config_baseline_20260509_235101",
+  "original_n_classes": 5,
+  "original_class_sizes": {
+    "class_01": 157,
+    "class_02": 102,
+    "class_03": 26,
+    "class_04": 13,
+    "class_05": 72
+  },
+  "cuts_tested": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "sd_fractions_tested": [
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4
+  ],
+  "c01_c04_similarity": {
+    "c01_intra_mean_feature_distance": 45.97713517681836,
+    "c04_intra_mean_feature_distance": 81.03473135106232,
+    "c01_c04_between_mean_feature_distance": 133.39100882928753,
+    "prototype_corr": 0.5925810286728003,
+    "prototype_rmse_norm": 0.8695844411849976,
+    "should_merge": false
+  },
+  "c01_c04_should_merge": false,
+  "c01_has_internal_substructure": true,
+  "recommended_n_classes": 4,
+  "recommended_sd_fraction": 0.4,
+  "recommended_action": "Try 6-class interpretation/cut first, then run patch-size sensitivity to confirm C01 split stability.",
+  "final_verdict": "PASS - Step01 dendrogram cuts and C01/C04 diagnostics completed without recomputing dictionary/features."
+}

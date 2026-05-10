@@ -1,0 +1,75 @@
+{
+  "old_scripts_found": [
+    "scripts/Old_Code/01_build_fossum_surface_dataset.py",
+    "scripts/Old_Code/01b_export_normalized_surface_pngs.py",
+    "scripts/Old_Code/export_surface_2024_300_images.py",
+    "scripts/fossum_faithful_initial_utils.py"
+  ],
+  "old_dataset_build_script_identified": true,
+  "old_normalization_logic_identified": true,
+  "old_mask_logic_identified": true,
+  "logic_changes_made": [
+    "Input source changed from old GSLIB/tempRes-derived surface stack to the new ROI x490 HRes .npy stack.",
+    "Output names changed from 300/surface baseline names to 370/roi_x490 names.",
+    "Date handling added because the new stack carries real dates from 2023-10-28 to 2024-10-31."
+  ],
+  "unavoidable_adaptations": [
+    "Shape changed from (300, 64, 112) to (370, 72, 117).",
+    "Number of images changed from 300 to 370.",
+    "Coordinates are copied from the ROI x490 HRes product instead of old physical coordinate helpers."
+  ],
+  "input_new_dataset": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348",
+  "input_shape": [
+    370,
+    72,
+    117
+  ],
+  "expected_shape": [
+    370,
+    72,
+    117
+  ],
+  "shape_matches_expected": true,
+  "n_days": 370,
+  "date_start": "2023-10-28",
+  "date_end": "2024-10-31",
+  "mask_shape": [
+    72,
+    117
+  ],
+  "mask_valid_cells": 8004,
+  "mask_valid_fraction": 0.9501424501424501,
+  "nan_fraction": 0.04985754985754986,
+  "global_mean": 16.899330139160156,
+  "global_std": 1.3486158847808838,
+  "norm_mean_valid": -9.430989678094193e-08,
+  "norm_std_valid": 1.0,
+  "n_normalized_pngs": 370,
+  "n_normalized_clean_pngs": 370,
+  "n_day_metric_rows": 370,
+  "n_png_inventory_rows": 370,
+  "outputs_created": [
+    "step00_old_pipeline_logic_audit.md",
+    "X_surface_370_roi_x490.npy",
+    "X_surface_370_roi_x490_norm.npy",
+    "mask_common_roi_x490.npy",
+    "LAT_roi_x490.npy",
+    "LON_roi_x490.npy",
+    "X_km_roi_x490.npy",
+    "Y_km_roi_x490.npy",
+    "BATHY_roi_x490.npy",
+    "dates_370.csv",
+    "normalization_stats.json",
+    "dataset_metadata.json",
+    "fossum_step00_day_metrics.csv",
+    "normalized_pngs/",
+    "normalized_clean_pngs/",
+    "normalized_png_inventory.csv",
+    "normalized_first_12_days_panel.png",
+    "normalized_selected_monthly_panel.png",
+    "normalized_heterogeneous_days_panel.png",
+    "normalized_final_12_days_panel.png",
+    "X_surface_370_roi_x490_step00_dataset.nc"
+  ],
+  "final_verdict": "PASS - legacy Fossum step00 dataset-building logic was preserved with only path, shape and metadata adaptations."
+}

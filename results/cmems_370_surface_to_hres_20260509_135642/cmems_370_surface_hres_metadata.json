@@ -1,0 +1,107 @@
+{
+  "input_raw_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\ALL\\thetao_20260427.nc",
+  "target_grid_source_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20240930\\01-10-2024_predModel_1.nc",
+  "n_days": 370,
+  "date_start": "2023-10-28",
+  "date_end": "2024-10-31",
+  "selected_depth_index": 1,
+  "selected_depth_value_m": 0.4940253794193268,
+  "source_shape": [
+    370,
+    17,
+    78,
+    120
+  ],
+  "source_crop_indices_python_0based_inclusive": {
+    "lat_min": 13,
+    "lat_max": 30,
+    "lon_min": 79,
+    "lon_max": 102
+  },
+  "source_crop_shape_lat_lon": [
+    18,
+    24
+  ],
+  "target_shape": [
+    180,
+    240
+  ],
+  "output_shape": [
+    370,
+    180,
+    240
+  ],
+  "interpolation_method": "Linear RegularGridInterpolator on the same index grid as Filipa MATLAB interp2, crop from write14days.m, inc=10",
+  "validation_dates": [
+    "2024-10-10",
+    "2024-10-13",
+    "2024-10-31"
+  ],
+  "validation_records": [
+    {
+      "n_compare": 26570,
+      "rmse": 0.0,
+      "mae": 0.0,
+      "max_abs_error": 0.0,
+      "pearson": 1.0,
+      "date": "2024-10-10",
+      "raw_time_index": 348,
+      "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241010_HResNew.nc",
+      "shape_match": true,
+      "orientation_match": true
+    },
+    {
+      "n_compare": 26570,
+      "rmse": 0.0,
+      "mae": 0.0,
+      "max_abs_error": 0.0,
+      "pearson": 1.0,
+      "date": "2024-10-13",
+      "raw_time_index": 351,
+      "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241013_HResNew.nc",
+      "shape_match": true,
+      "orientation_match": true
+    },
+    {
+      "n_compare": 26570,
+      "rmse": 0.0,
+      "mae": 0.0,
+      "max_abs_error": 0.0,
+      "pearson": 1.0,
+      "date": "2024-10-31",
+      "raw_time_index": 369,
+      "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241031_HResNew.nc",
+      "shape_match": true,
+      "orientation_match": true
+    }
+  ],
+  "validation_rmse": {
+    "2024-10-10": 0.0,
+    "2024-10-13": 0.0,
+    "2024-10-31": 0.0
+  },
+  "validation_mae": {
+    "2024-10-10": 0.0,
+    "2024-10-13": 0.0,
+    "2024-10-31": 0.0
+  },
+  "validation_pearson": {
+    "2024-10-10": 1.0,
+    "2024-10-13": 1.0,
+    "2024-10-31": 1.0
+  },
+  "orientation_confirmed": true,
+  "all_days_processed": true,
+  "nan_problem_detected": false,
+  "nan_pct": 38.49537037037037,
+  "output_files": {
+    "thetao_surface_370_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.npy",
+    "LAT_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\LAT_hres.npy",
+    "LON_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\LON_hres.npy",
+    "BATHY_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\BATHY_hres.npy",
+    "MASK_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\MASK_hres.npy",
+    "dates_370.csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\dates_370.csv",
+    "thetao_surface_370_hres.nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.nc"
+  },
+  "final_verdict": "The 370-day CMEMS surface temperature dataset was interpolated to the canonical high-resolution grid and validated against the existing October HRes files."
+}

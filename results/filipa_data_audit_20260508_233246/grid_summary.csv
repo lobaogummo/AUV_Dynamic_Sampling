@@ -1,0 +1,2 @@
+canonical_source_file,grid_shape,LAT_shape,LON_shape,BATHY_shape,lon_min,lon_max,lat_min,lat_max,lat_orientation,lon_orientation,latlon_are_1d,resolution_lat_km,resolution_lon_km,resolution_mean_km
+C:\Users\pedro\Documents\Filipa_dados\data\dadosParaPedro_Fresnel\02.Simulations\HighRes\Daily_dpt_20240930\01-10-2024_predModel_1.nc,"[180, 240]",[180],[240],"[180, 240]",-9.554771423339844,-8.915862083435059,39.38798522949219,39.86022186279297,increasing,increasing,True,0.2936836984304165,0.22921486761465,0.26144928302253323
