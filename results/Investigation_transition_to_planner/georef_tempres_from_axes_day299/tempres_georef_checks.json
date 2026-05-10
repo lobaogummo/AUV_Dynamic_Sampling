@@ -1,0 +1,280 @@
+{
+  "created_at": "2026-04-27T19:53:24.286421+00:00",
+  "tempres": {
+    "gslib_original": "data/2024/tempIBHRes2024_1.gslib",
+    "gslib_header": {
+      "title": "tempOcean",
+      "nvars": 4,
+      "variables": [
+        "x",
+        "y",
+        "z",
+        "temp"
+      ]
+    },
+    "surface_stack": "results/plots/X_surface_300.npy",
+    "norm_stack": "results/plots/X_surface_300_norm.npy",
+    "mask_common": "results/plots/mask_common.npy",
+    "shape_nz_ny_nx": [
+      300,
+      64,
+      112
+    ],
+    "day_z": 299,
+    "day_idx_0based": 298,
+    "z_day_convention": "1-based z in filenames/reports; numpy index is z-1.",
+    "day299_stats": {
+      "shape": [
+        64,
+        112
+      ],
+      "valid_cells": 6925,
+      "min": 17.909000396728516,
+      "max": 18.767433166503906,
+      "mean": 18.230046556383265,
+      "std": 0.22611194330330223
+    }
+  },
+  "axis_manifests": {
+    "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1/manifest.json": {
+      "created_at": "2026-04-18T13:23:02",
+      "output_root": "results/plots/tempibhres_relative_km_display_assumed_filipa_xy_km_cropped_v1",
+      "inputs": {
+        "x_surface": "results/plots/X_surface_300.npy",
+        "x_surface_norm": "results/plots/X_surface_300_norm.npy",
+        "mask_common": "results/plots/mask_common.npy",
+        "deterministic_scale": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/color_scale.json",
+        "normalized_scale": "results/plots/pngs_normalized_surface_300_thesis_indexed_axes/color_scale_norm.json",
+        "netcdf_summary": "results/netcdf_files_summary.csv"
+      },
+      "axis_mode": {
+        "x_axis_label": "x",
+        "y_axis_label": "y",
+        "unit_tag": "km",
+        "figure_tag": "a)",
+        "mode": "relative_km_display_assumed_from_hres_bbox",
+        "independent_validation_status": "not_independently_validated",
+        "note": "Relative-km axes are display-derived from local HRes bounding-box mapping and are not independently verified native georeferencing of tempIBHRes."
+      },
+      "crop": {
+        "x_start_col_1based": 1,
+        "x_end_col_1based": 63,
+        "y_start_row_1based": 1,
+        "y_end_row_1based": 26,
+        "full_shape_ny_nx": [
+          64,
+          112
+        ],
+        "cropped_shape_ny_nx": [
+          26,
+          63
+        ]
+      },
+      "axis_offsets_km": {
+        "x_offset_km": 462.0,
+        "y_offset_km": 4376.0
+      },
+      "hres_bbox_source": {
+        "source_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+        "lon_min": -9.55555534362793,
+        "lon_max": -8.916666984558105,
+        "lat_min": 39.38888931274414,
+        "lat_max": 39.86111068725586
+      },
+      "relative_km_geometry": {
+        "lat_mid_deg": 39.625,
+        "km_per_deg_lat": 111.0274081008326,
+        "km_per_deg_lon": 85.8591104943856,
+        "delta_lon_deg_per_cell": 0.005755750982611029,
+        "delta_lat_deg_per_cell": 0.007495577373201885,
+        "dx_km_per_cell": 0.4941836595941688,
+        "dy_km_per_cell": 0.8322145279658525,
+        "x_km_min": 0.0,
+        "x_km_max": 54.85438621495274,
+        "y_km_min": 0.0,
+        "y_km_max": 52.42951526184871
+      },
+      "counts": {
+        "deterministic_pngs": 300,
+        "normalized_pngs": 300,
+        "z_start": 1,
+        "z_end": 300
+      }
+    },
+    "results/plots/tempibhres_relative_km_display_assumed_user_style_test_v3/manifest.json": {
+      "created_at": "2026-04-18T13:21:25",
+      "output_root": "results/plots/tempibhres_relative_km_display_assumed_user_style_test_v3",
+      "inputs": {
+        "x_surface": "results/plots/X_surface_300.npy",
+        "x_surface_norm": "results/plots/X_surface_300_norm.npy",
+        "mask_common": "results/plots/mask_common.npy",
+        "deterministic_scale": "results/plots/deterministic_2024_surface_300_thesis_indexed_axes/color_scale.json",
+        "normalized_scale": "results/plots/pngs_normalized_surface_300_thesis_indexed_axes/color_scale_norm.json",
+        "netcdf_summary": "results/netcdf_files_summary.csv"
+      },
+      "axis_mode": {
+        "x_axis_label": "x",
+        "y_axis_label": "y",
+        "unit_tag": "km",
+        "figure_tag": "a)",
+        "mode": "relative_km_display_assumed_from_hres_bbox",
+        "independent_validation_status": "not_independently_validated",
+        "note": "Relative-km axes are display-derived from local HRes bounding-box mapping and are not independently verified native georeferencing of tempIBHRes."
+      },
+      "crop": {
+        "x_start_col_1based": 1,
+        "x_end_col_1based": 63,
+        "y_start_row_1based": 1,
+        "y_end_row_1based": 26,
+        "full_shape_ny_nx": [
+          64,
+          112
+        ],
+        "cropped_shape_ny_nx": [
+          26,
+          63
+        ]
+      },
+      "axis_offsets_km": {
+        "x_offset_km": 462.0,
+        "y_offset_km": 4376.0
+      },
+      "hres_bbox_source": {
+        "source_path": "data/HResNew/CMEMSnaza_20241029_HResNew.nc",
+        "lon_min": -9.55555534362793,
+        "lon_max": -8.916666984558105,
+        "lat_min": 39.38888931274414,
+        "lat_max": 39.86111068725586
+      },
+      "relative_km_geometry": {
+        "lat_mid_deg": 39.625,
+        "km_per_deg_lat": 111.0274081008326,
+        "km_per_deg_lon": 85.8591104943856,
+        "delta_lon_deg_per_cell": 0.005755750982611029,
+        "delta_lat_deg_per_cell": 0.007495577373201885,
+        "dx_km_per_cell": 0.4941836595941688,
+        "dy_km_per_cell": 0.8322145279658525,
+        "x_km_min": 0.0,
+        "x_km_max": 54.85438621495274,
+        "y_km_min": 0.0,
+        "y_km_max": 52.42951526184871
+      },
+      "counts": {
+        "deterministic_pngs": 1,
+        "normalized_pngs": 1,
+        "z_start": 13,
+        "z_end": 13
+      }
+    }
+  },
+  "hres_planner_sources": {
+    "hres_path": "data/HResNew/CMEMSnaza_20241030_HResNew.nc",
+    "d4_pred": "data/TEST_D4/HighRes/Daily_dpt_20241029_NewTest_1/30-10-2024_predModel_1.nc",
+    "d4_auv": "data/TEST_D4/HighRes/Daily_dpt_20241029_NewTest_1/30-10-2024_AUVpredModel_1.nc",
+    "planner_interface": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc"
+  },
+  "target_inventory": {
+    "hresnew": {
+      "path": "data/HResNew/CMEMSnaza_20241030_HResNew.nc",
+      "dims": {
+        "TIME": 14,
+        "DEPT": 17,
+        "LAT": 180,
+        "LON": 240,
+        "lat": 180,
+        "lon": 240,
+        "depth": 17
+      },
+      "coords": [
+        "LAT",
+        "LON",
+        "DEPT"
+      ],
+      "data_vars": [
+        "TEMP",
+        "BATHY"
+      ]
+    },
+    "D4_predModel": {
+      "path": "data/TEST_D4/HighRes/Daily_dpt_20241029_NewTest_1/30-10-2024_predModel_1.nc",
+      "dims": {
+        "TIME": 14,
+        "DEPT": 17,
+        "LAT": 180,
+        "LON": 240,
+        "lat": 180,
+        "lon": 240,
+        "depth": 17,
+        "day": 2
+      },
+      "coords": [
+        "LAT",
+        "LON",
+        "DEPT"
+      ],
+      "data_vars": [
+        "TEMP",
+        "BATHY",
+        "STD",
+        "TEMPpred"
+      ]
+    },
+    "D4_AUVpredModel": {
+      "path": "data/TEST_D4/HighRes/Daily_dpt_20241029_NewTest_1/30-10-2024_AUVpredModel_1.nc",
+      "dims": {
+        "TIME": 14,
+        "DEPT": 17,
+        "LAT": 180,
+        "LON": 240,
+        "lat": 180,
+        "lon": 240,
+        "depth": 17
+      },
+      "coords": [
+        "LAT",
+        "LON",
+        "DEPT"
+      ],
+      "data_vars": [
+        "TEMP",
+        "BATHY",
+        "STD",
+        "TEMPpred"
+      ]
+    },
+    "planner_interface": {
+      "path": "results/planner_baseline_scenario_c4_predmodel/inputs/30-10-2024_predModel_1_planner_interface.nc",
+      "dims": {
+        "lat": 180,
+        "lon": 240
+      },
+      "coords": [
+        "lat",
+        "lon"
+      ],
+      "data_vars": [
+        "temperr",
+        "tbath",
+        "landt"
+      ],
+      "validation_policy": "Not used as primary temperature target; TEMP/TEMPpred targets are preferred."
+    }
+  },
+  "temperature_validation_policy": "TEMP/TEMPpred only; STD excluded from validation metrics.",
+  "projections_tested": [
+    "EPSG_32629_UTM29N_formula",
+    "local_azimuthal_equidistant_spherical",
+    "local_lonlat_linear_km_midlat"
+  ],
+  "candidate_count": 112,
+  "best_method": "CAND_B_REGISTRATION_TO_HRES_SUBAREA__EPSG_32629_UTM29N_formula__hres_crop_centers__x_normal__y_normal",
+  "best_numeric_match": "CAND_B_REGISTRATION_TO_HRES_SUBAREA__local_azimuthal_equidistant_spherical__hres_crop_centers__x_flipped__y_normal",
+  "recommended_selection_reason": "Selected because it is the controlled CAND_B registration in UTM 29N with east/north-normal orientation; the fixed z=299 numeric leaderboard is retained separately and is not enough to justify an x-flipped georeference.",
+  "confidence": "PLAUSIBLE BUT NOT PROVEN",
+  "required_outputs": {
+    "tempres_georef_transform": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_georef_transform.json",
+    "georef_transform_leaderboard": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/georef_transform_leaderboard.csv",
+    "tempres_georef_candidate_transforms": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_georef_candidate_transforms.csv",
+    "tempres_to_hres_temperature_validation_metrics": "results/Investigation_transition_to_planner/georef_tempres_from_axes_day299/tempres_to_hres_temperature_validation_metrics.csv"
+  }
+}
