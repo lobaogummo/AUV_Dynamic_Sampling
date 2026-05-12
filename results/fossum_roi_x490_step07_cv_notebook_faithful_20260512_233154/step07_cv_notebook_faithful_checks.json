@@ -1,0 +1,61 @@
+{
+  "notebook_source": "C:\\Users\\pedro\\Documents\\Filipa_dados\\notebooks\\seed11_computer_vision_colab.ipynb",
+  "methodology": "notebook_faithful",
+  "step00": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "step05": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+  "seed_id": 11,
+  "n_global_prototypes": 6,
+  "n_local_class02_prototypes": 0,
+  "local_class02_skipped_reason": "Step05 canonical ROI x490 has only global class prototypes; no local class_02 prototype stage exists.",
+  "prototype_shape": [
+    6,
+    72,
+    117
+  ],
+  "mask_shape": [
+    72,
+    117
+  ],
+  "mask_true_is_valid_inferred": true,
+  "mask_convention_score": 1.0,
+  "features_global_created": true,
+  "simple_global_created": true,
+  "image_only_global_created": true,
+  "simple_rules": {
+    "homogeneous_std_max": 0.18,
+    "homogeneous_p90_grad_max": 0.12,
+    "homogeneous_front_area_max": 0.12,
+    "multi_min_region_ratio_min": 0.18,
+    "multi_inter_region_diff_min": 0.45,
+    "multi_coherence_min": 0.65,
+    "multi_front_area_ratio_min": 0.15,
+    "multi_p90_grad_min": 0.16
+  },
+  "image_only_rules": {
+    "homogeneous_std_low_max": 12.0,
+    "homogeneous_min_region_tiny_max": 0.12,
+    "homogeneous_inter_diff_low_max": 18.0,
+    "homogeneous_std_mid_max": 28.0,
+    "homogeneous_min_region_mid_max": 0.34,
+    "homogeneous_inter_diff_mid_min": 35.0,
+    "homogeneous_inter_diff_mid_max": 60.0,
+    "homogeneous_p90_grad_mid_max": 0.66,
+    "multi_min_region_ratio_min": 0.18,
+    "multi_inter_region_diff_min": 60.0,
+    "multi_coherence_min": 0.65,
+    "multi_p90_grad_min": 0.68
+  },
+  "simple_regime_counts": {
+    "single_gradient": 3,
+    "homogeneous": 3
+  },
+  "image_only_regime_counts": {
+    "single_gradient": 3,
+    "homogeneous": 2,
+    "multi_regime": 1
+  },
+  "invented_descriptor_metrics_removed": true,
+  "std_used": false,
+  "temppred_october_classified": false,
+  "final_verdict": "NOTEBOOK_FAITHFUL_CV_PORT_COMPLETE"
+}

@@ -1,0 +1,1 @@
+prototype_name,sigma,threshold,std_temp,iqr_temp,range_temp,low_ratio,high_ratio,min_region_ratio,inter_region_diff,coherence_low,coherence_high,coherence_min,mean_grad,p90_grad,front_area_ratio,threshold_method,multiotsu_thresholds,seed,scope,regime_label,k,key

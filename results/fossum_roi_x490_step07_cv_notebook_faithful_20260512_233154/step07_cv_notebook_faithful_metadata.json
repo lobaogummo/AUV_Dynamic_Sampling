@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-05-12T23:31:58",
+  "script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\07_cv_analysis_canonical_fossum_roi_x490_notebook_faithful.py",
+  "output_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154",
+  "adaptations": [
+    "canonical Step05 prototypes were exported to notebook-style prototype_class_XX.npy, _mask.npy and _clean.png files",
+    "local class_02 branch is empty because the current canonical Step05 has no local class_02 prototype stage",
+    "all extra descriptor-ranking metrics from the earlier Step07-CV attempt were intentionally removed"
+  ]
+}
