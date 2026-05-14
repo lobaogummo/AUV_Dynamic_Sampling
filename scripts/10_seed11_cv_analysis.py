@@ -47,6 +47,7 @@ IMAGE_RULE_KEYS = [
     "homogeneous_p90_grad_mid_max",
     "multi_min_region_ratio_min",
     "multi_inter_region_diff_min",
+    "multi_color_crossing_inter_diff_min",
     "multi_coherence_min",
     "multi_p90_grad_min",
 ]

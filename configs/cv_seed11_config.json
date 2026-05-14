@@ -32,6 +32,7 @@
       "homogeneous_p90_grad_mid_max": 0.66,
       "multi_min_region_ratio_min": 0.18,
       "multi_inter_region_diff_min": 60.0,
+      "multi_color_crossing_inter_diff_min": 40.0,
       "multi_coherence_min": 0.65,
       "multi_p90_grad_min": 0.68
     }

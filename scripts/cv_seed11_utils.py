@@ -746,6 +746,8 @@ def score_global_metrics(score: np.ndarray, mask: np.ndarray) -> dict[str, float
             "iqr_temp": float("nan"),
             "range_temp": float("nan"),
             "score_mean": float("nan"),
+            "score_min": float("nan"),
+            "score_max": float("nan"),
         }
     p25, p75 = np.percentile(vals, [25, 75])
     return {
@@ -753,6 +755,8 @@ def score_global_metrics(score: np.ndarray, mask: np.ndarray) -> dict[str, float
         "iqr_temp": float(p75 - p25),
         "range_temp": float(np.nanmax(vals) - np.nanmin(vals)),
         "score_mean": float(np.nanmean(vals)),
+        "score_min": float(np.nanmin(vals)),
+        "score_max": float(np.nanmax(vals)),
     }
 
 
@@ -910,6 +914,8 @@ def extract_image_only_metrics(
         "iqr_temp": gm["iqr_temp"],
         "range_temp": gm["range_temp"],
         "score_mean": gm["score_mean"],
+        "score_min": gm["score_min"],
+        "score_max": gm["score_max"],
         "low_ratio": rm["low_ratio"],
         "high_ratio": rm["high_ratio"],
         "min_region_ratio": rm["min_region_ratio"],
@@ -941,6 +947,8 @@ def decide_regime_label_image_only(row: Mapping[str, Any], rules: Mapping[str, f
     inter_region_diff = float(row.get("inter_region_diff", np.nan))
     coherence_min = float(row.get("coherence_min", np.nan))
     p90_grad = float(row.get("p90_grad", np.nan))
+    score_min = float(row.get("score_min", np.nan))
+    score_max = float(row.get("score_max", np.nan))
 
     homogeneous_low_spread = (
         std_temp < float(rules["homogeneous_std_low_max"])
@@ -960,13 +968,20 @@ def decide_regime_label_image_only(row: Mapping[str, Any], rules: Mapping[str, f
     if homogeneous_low_spread or homogeneous_mid_profile:
         return "homogeneous"
 
-    multi_regime = (
+    strong_multi_regime = (
         min_region_ratio >= float(rules["multi_min_region_ratio_min"])
         and inter_region_diff >= float(rules["multi_inter_region_diff_min"])
         and coherence_min >= float(rules["multi_coherence_min"])
         and p90_grad >= float(rules["multi_p90_grad_min"])
     )
-    if multi_regime:
+    color_crossing_multi_regime = (
+        score_min < 0.0 < score_max
+        and min_region_ratio >= float(rules["multi_min_region_ratio_min"])
+        and inter_region_diff >= float(rules["multi_color_crossing_inter_diff_min"])
+        and coherence_min >= float(rules["multi_coherence_min"])
+        and p90_grad >= float(rules["multi_p90_grad_min"])
+    )
+    if strong_multi_regime or color_crossing_multi_regime:
         return "multi_regime"
     return "single_gradient"
 

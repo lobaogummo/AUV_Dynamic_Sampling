@@ -1,0 +1,72 @@
+{
+  "old_descriptor_logic_audit_done": true,
+  "old_scripts_notebooks_listed": true,
+  "reuse_adapt_discard_documented": true,
+  "n_prototypes": 6,
+  "all_descriptor_map_shapes": {
+    "gradient": [
+      6,
+      72,
+      117
+    ],
+    "boundary": [
+      6,
+      72,
+      117
+    ],
+    "heterogeneity": [
+      6,
+      72,
+      117
+    ],
+    "cold": [
+      6,
+      72,
+      117
+    ],
+    "warm": [
+      6,
+      72,
+      117
+    ],
+    "representative": [
+      6,
+      72,
+      117
+    ],
+    "interest": [
+      6,
+      72,
+      117
+    ]
+  },
+  "mask_is_step00_mask_common": true,
+  "mask_valid_cells": 8004,
+  "descriptors_only_canonical_prototypes": true,
+  "october_temppred_used": false,
+  "std_used": false,
+  "std_note": "Step05 class std maps used only for canonical class heterogeneity; Step06 STD not used.",
+  "maps_normalized_0_1_valid": {
+    "gradient": true,
+    "boundary": true,
+    "heterogeneity": true,
+    "cold": true,
+    "warm": true,
+    "representative": true,
+    "interest": true
+  },
+  "nonzero_maps": {
+    "gradient": true,
+    "boundary": true,
+    "heterogeneity": true,
+    "cold": true,
+    "warm": true,
+    "representative": true,
+    "interest": true
+  },
+  "step07_reports_used_if_exist": true,
+  "all_classes_complete": true,
+  "unstable_descriptors": [],
+  "step07_used": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645",
+  "step06_reference_only_exists": true
+}

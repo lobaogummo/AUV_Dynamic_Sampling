@@ -1,0 +1,1 @@
+prototype_name,clean_png_path,grad_sigma,threshold,threshold_method,std_temp,iqr_temp,range_temp,score_mean,score_min,score_max,low_ratio,high_ratio,min_region_ratio,inter_region_diff,coherence_low,coherence_high,coherence_min,mean_grad,p90_grad,front_area_ratio,seed,scope,regime_label,k,key

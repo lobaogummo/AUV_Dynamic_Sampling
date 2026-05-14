@@ -1,0 +1,7 @@
+descriptor,meaning,old_logic_relation
+gradient_mean/p90/p95/max,Gradient intensity over canonical prototype,old gradient_magnitude
+boundary_score,Mean normalized boundary/front score,old boundary_score adapted
+heterogeneity_score,Mean of local variance and entropy-derived roughness,new aggregation from old temp_std/entropy diagnostics
+cold/warm/neutral_fraction,Fractions from prototype segmentation,adapted Otsu/tertile segmentation
+representative_zone_map,Calm central prototype zones,adapted from old proxy top-k/representativity idea
+interest_map,Planner-ready priority map,new documented 0.4 boundary + 0.4 gradient + 0.2 heterogeneity

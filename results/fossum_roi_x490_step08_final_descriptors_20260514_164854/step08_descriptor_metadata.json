@@ -1,0 +1,336 @@
+{
+  "generated_at": "2026-05-14T16:49:05.789830",
+  "script": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\scripts\\08_build_final_descriptors_from_canonical_prototypes.py",
+  "inputs": {
+    "step00": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+    "step05": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+    "step06_reference_only": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\october_surface_temppred_std_roi_x490_20260511_155923",
+    "step07": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645"
+  },
+  "files": {
+    "canonical_prototypes": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755\\canonical_prototypes.npy",
+    "canonical_assignments": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755\\canonical_assignments.csv",
+    "canonical_class_sizes": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755\\canonical_class_sizes.csv",
+    "mask": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy",
+    "normalization_stats": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step00_dataset_20260509_232915\\normalization_stats.json"
+  },
+  "normalization_stats": {
+    "mu_global": 16.899330139160156,
+    "sigma_global": 1.3486158847808838,
+    "n_images": 370,
+    "ny": 72,
+    "nx": 117,
+    "valid_pixels_per_image_mean": 8004.0,
+    "valid_pixels_total": 2961480,
+    "mask_fraction_valid": 0.9501424501424501,
+    "mask_fraction_invalid": 0.049857549857549865,
+    "normalized_png_scale_method": "legacy symmetric +/- percentile98(abs(X_norm[:, mask_common]))",
+    "normalized_png_vmin": -1.950387954711914,
+    "normalized_png_vmax": 1.950387954711914,
+    "source_input": "results/fresnel_paper_roi_x490_surface_370_20260509_180348/thetao_surface_370_hres_paper_roi_x490.npy"
+  },
+  "step07_bundle": {
+    "image_only_global": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\cv_features_global_seed11_image_only.csv",
+    "simple_global": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\cv_features_global_seed11_simple.csv",
+    "class_metrics_summary": "",
+    "prototype_similarity": "",
+    "member_residuals": "",
+    "substructure": "",
+    "report": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_report.md",
+    "summary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_summary.md",
+    "checks": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_checks.json"
+  },
+  "thresholds_by_class": {
+    "1": {
+      "regime": "multi_regime",
+      "gradient_norm": {
+        "min": 0.0074570938013494015,
+        "max": 2.433368682861328,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.1079578772187233,
+        "max": 0.937625527381897,
+        "constant": 0.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 1.9073486328125e-06,
+        "max": 0.1882774382829666,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 1.8070988655090332,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.23033954203128815,
+        "max": 0.5095165967941284,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.03974752128124237,
+        "max": 0.8567759990692139,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": 0.34605878591537476,
+        "method": "otsu",
+        "gradient_p95": 0.07693197578191757,
+        "distance_p75": 35.510562896728516,
+        "mode": "old_multi_regime_065_gradient_035_proximity"
+      },
+      "segmentation": {
+        "thresholds": [
+          0.02375629171729088,
+          0.6881799697875977
+        ],
+        "method": "otsu_guided_tertiles:otsu"
+      }
+    },
+    "2": {
+      "regime": "single_gradient",
+      "gradient_norm": {
+        "min": 0.00468128826469183,
+        "max": 1.0611002445220947,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.03572783246636391,
+        "max": 0.3499999940395355,
+        "constant": 0.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 8.940696716308594e-07,
+        "max": 0.03531917929649353,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 0.8000651597976685,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.21018187701702118,
+        "max": 0.4015793204307556,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.06285972893238068,
+        "max": 0.9750269651412964,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": 0.04221779480576515,
+        "method": "gradient_p90_proxy",
+        "gradient_p95": 0.04585923254489899,
+        "distance_p75": NaN,
+        "mode": "old_single_gradient_capped_gradient_proxy"
+      },
+      "segmentation": {
+        "thresholds": [
+          0.7469302580195665,
+          0.9006865598028898
+        ],
+        "method": "tertiles"
+      }
+    },
+    "3": {
+      "regime": "homogeneous",
+      "gradient_norm": {
+        "min": 0.0001146889990195632,
+        "max": 1.1024338006973267,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.0,
+        "max": 0.0,
+        "constant": 1.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 0.0,
+        "max": 0.03680717945098877,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 0.8448153734207153,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.23905421793460846,
+        "max": 0.4513814151287079,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.0021559428423643112,
+        "max": 0.5885288715362549,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": NaN,
+        "method": "label_driven_zero",
+        "gradient_p95": 0.0606142021715641,
+        "distance_p75": NaN,
+        "mode": "old_homogeneous_zero_boundary"
+      },
+      "segmentation": {
+        "thresholds": [
+          1.5650196742367743,
+          1.6238609464430809
+        ],
+        "method": "tertiles"
+      }
+    },
+    "4": {
+      "regime": "homogeneous",
+      "gradient_norm": {
+        "min": 0.008033114485442638,
+        "max": 0.6587674617767334,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.0,
+        "max": 0.0,
+        "constant": 1.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 4.351139068603516e-06,
+        "max": 0.013674020767211914,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 0.4915717840194702,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.3109816014766693,
+        "max": 0.469704270362854,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.010169221088290215,
+        "max": 0.5443942546844482,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": NaN,
+        "method": "label_driven_zero",
+        "gradient_p95": 0.02261173538863659,
+        "distance_p75": NaN,
+        "mode": "old_homogeneous_zero_boundary"
+      },
+      "segmentation": {
+        "thresholds": [
+          -1.1492030242538451,
+          -1.0461665527427195
+        ],
+        "method": "tertiles"
+      }
+    },
+    "5": {
+      "regime": "single_gradient",
+      "gradient_norm": {
+        "min": 0.015254474245011806,
+        "max": 1.339246392250061,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.1136750727891922,
+        "max": 0.3499999940395355,
+        "constant": 0.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 1.1157244443893433e-05,
+        "max": 0.057083308696746826,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 0.992774248123169,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.08605846017599106,
+        "max": 0.24901513755321503,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.0493464358150959,
+        "max": 0.979027509689331,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": 0.04381217062473297,
+        "method": "gradient_p90_proxy",
+        "gradient_p95": 0.04696778208017349,
+        "distance_p75": NaN,
+        "mode": "old_single_gradient_capped_gradient_proxy"
+      },
+      "segmentation": {
+        "thresholds": [
+          -0.6642366747146845,
+          -0.4038485306808352
+        ],
+        "method": "tertiles"
+      }
+    },
+    "6": {
+      "regime": "multi_regime",
+      "gradient_norm": {
+        "min": 0.01095478143543005,
+        "max": 1.1792325973510742,
+        "constant": 0.0
+      },
+      "boundary_norm": {
+        "min": 0.22264304757118225,
+        "max": 1.0,
+        "constant": 0.0
+      },
+      "heterogeneity_local_var_norm": {
+        "min": 4.411675035953522e-06,
+        "max": 0.043816372752189636,
+        "constant": 0.0
+      },
+      "heterogeneity_roughness_norm": {
+        "min": 0.0,
+        "max": 0.8803908228874207,
+        "constant": 0.0
+      },
+      "heterogeneity_std_norm": {
+        "min": 0.22962461411952972,
+        "max": 0.3813821077346802,
+        "constant": 0.0
+      },
+      "interest_norm": {
+        "min": 0.06517916172742844,
+        "max": 0.8575547933578491,
+        "constant": 0.0
+      },
+      "boundary": {
+        "threshold": -0.26673829555511475,
+        "method": "otsu",
+        "gradient_p95": 0.039595574140548706,
+        "distance_p75": 36.400550842285156,
+        "mode": "old_multi_regime_065_gradient_035_proximity"
+      },
+      "segmentation": {
+        "thresholds": [
+          -0.43130719661712646,
+          -0.09999619424343109
+        ],
+        "method": "otsu_guided_tertiles:otsu"
+      }
+    }
+  },
+  "outputs": {
+    "gradient": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_gradient_map.npy",
+    "boundary": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_boundary_map.npy",
+    "heterogeneity": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_heterogeneity_map.npy",
+    "cold": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_cold_region_map.npy",
+    "warm": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_warm_region_map.npy",
+    "representative": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_representative_zone_map.npy",
+    "interest": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_interest_map.npy"
+  }
+}

@@ -1,0 +1,7 @@
+scope,name,arr_shape,mask_shape,shape_match,mask_true_fraction
+global,prototype_class_01,"(72, 117)","(72, 117)",True,0.9501424501424501
+global,prototype_class_02,"(72, 117)","(72, 117)",True,0.9501424501424501
+global,prototype_class_03,"(72, 117)","(72, 117)",True,0.9501424501424501
+global,prototype_class_04,"(72, 117)","(72, 117)",True,0.9501424501424501
+global,prototype_class_05,"(72, 117)","(72, 117)",True,0.9501424501424501
+global,prototype_class_06,"(72, 117)","(72, 117)",True,0.9501424501424501
