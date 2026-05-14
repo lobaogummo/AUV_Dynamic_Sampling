@@ -1,0 +1,103 @@
+{
+  "old_patch_script_found": true,
+  "old_patch_script_path": "scripts/02b_patch_size_sensitivity_fossum_faithful_initial.py",
+  "old_patch_sizes_detected": [
+    [
+      16,
+      16
+    ],
+    [
+      24,
+      16
+    ],
+    [
+      32,
+      20
+    ],
+    [
+      40,
+      24
+    ],
+    [
+      48,
+      32
+    ],
+    [
+      56,
+      32
+    ],
+    [
+      64,
+      36
+    ],
+    [
+      72,
+      40
+    ],
+    [
+      80,
+      44
+    ]
+  ],
+  "old_fixed_parameters_detected": {
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "dictionary_size": 4,
+    "n_classes": 4,
+    "dict_batch_size": 4096,
+    "transform_nnz": 2,
+    "include_valid_mask": true,
+    "mask_encoding": "concat",
+    "feature_mode": "raw",
+    "standard_scaler": "not used by legacy 02b",
+    "sd_fraction": "not used by legacy 02b"
+  },
+  "old_outputs_detected": [
+    "runs.csv",
+    "summary.csv",
+    "ranking.csv",
+    "plots/",
+    "class_members_wXX_hYY_seedSS/"
+  ],
+  "input_new_dataset": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "input_shape": [
+    370,
+    72,
+    117
+  ],
+  "n_days": 370,
+  "patches_tested": [
+    "16x16",
+    "24x16",
+    "32x20",
+    "40x24",
+    "48x32",
+    "56x32",
+    "64x36",
+    "72x40",
+    "80x44"
+  ],
+  "patches_skipped": [],
+  "reason_for_skipped_patches": [],
+  "logic_changes_made": [
+    "Redirected legacy module input paths to Step00 ROI x490 arrays.",
+    "Redirected legacy output base/doc path to the new Step02 result folder.",
+    "Created a compatibility PNG folder with legacy `X_surface_norm_zNNN.png` names from Step00 normalized clean PNGs.",
+    "Added ROI x490 summary/check/manifest/recommendation files around the legacy outputs."
+  ],
+  "unavoidable_adaptations": [
+    "Day count changed from 300 to 370.",
+    "Spatial shape changed to ROI x490 shape.",
+    "Metadata and output names reference ROI x490."
+  ],
+  "methodology_preserved": true,
+  "output_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step02_patch_sensitivity_20260510_112924",
+  "recommendation_generated": true,
+  "runtime_seconds": 3007.486930999992,
+  "final_verdict": "PASS - legacy patch-size sensitivity logic rerun on ROI x490 with path/shape/day-count/metadata adaptations only."
+}

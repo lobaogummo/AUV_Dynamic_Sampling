@@ -1,0 +1,32 @@
+group,relative_path,kind,exists,size_mb,git_tracked,git_ignored,ignore_rule,required_for_other_pc
+raw_filipa_root,data/dadosParaPedro_Fresnel/01.Data/ALL/thetao_20260427.nc,file,True,224.61,False,True,.gitignore:23:data/**	data/dadosParaPedro_Fresnel/01.Data/ALL/thetao_20260427.nc,yes
+raw_filipa_root,data/dadosParaPedro_Fresnel/02.Simulations/HighRes,dir,True,43597.42,False,True,.gitignore:23:data/**	data/dadosParaPedro_Fresnel/02.Simulations/HighRes,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/X_surface_370_roi_x490.npy,file,True,11.89,True,False,,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/X_surface_370_roi_x490_norm.npy,file,True,11.89,True,False,,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/mask_common_roi_x490.npy,file,True,0.01,True,False,,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/dates_370.csv,file,True,0.01,True,False,,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/normalization_stats.json,file,True,0.0,True,False,,yes
+step00,results/fossum_roi_x490_step00_dataset_20260509_232915/dataset_metadata.json,file,True,0.0,True,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_assignments.csv,file,True,0.01,False,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_prototypes.npy,file,True,0.19,False,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_feature_matrix.npy,file,True,21.58,False,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_scaled_feature_matrix.npy,file,True,21.58,False,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_dictionary.npz,file,True,0.02,False,True,.gitignore:45:*.npz	results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_dictionary.npz,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_sparse_codes.npz,file,True,10.22,False,True,.gitignore:45:*.npz	results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_sparse_codes.npz,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_checks.json,file,True,0.0,False,False,,yes
+step05,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_summary.md,file,True,0.0,False,False,,yes
+step06,results/october_surface_temppred_std_roi_x490_20260511_155923/TEMPpred_october_surface_roi_x490.npy,file,True,1.0,False,False,,yes
+step06,results/october_surface_temppred_std_roi_x490_20260511_155923/STD_october_surface_roi_x490.npy,file,True,1.0,False,False,,yes
+step06,results/october_surface_temppred_std_roi_x490_20260511_155923/dates_october.csv,file,True,0.0,False,False,,yes
+step06,results/october_surface_temppred_std_roi_x490_20260511_155923/october_surface_roi_x490_checks.json,file,True,0.0,False,False,,yes
+step06,results/october_surface_temppred_std_roi_x490_20260511_155923/october_surface_TEMPpred_STD_roi_x490.nc,file,True,1.32,False,True,.gitignore:40:*.nc	results/october_surface_temppred_std_roi_x490_20260511_155923/october_surface_TEMPpred_STD_roi_x490.nc,yes
+pipeline_status_audit,results/pipeline_status_audit_20260512_222930/pipeline_status_inventory.csv,file,False,0.0,False,False,,yes
+pipeline_status_audit,results/pipeline_status_audit_20260512_222930/pipeline_status_checks.json,file,False,0.0,False,False,,yes
+pipeline_status_audit,results/pipeline_status_audit_20260512_222930/pipeline_status_summary.md,file,False,0.0,False,False,,yes
+pipeline_status_audit,results/pipeline_status_audit_20260512_222930/pipeline_status_report.md,file,False,0.0,False,False,,yes
+pipeline_status_audit,results/pipeline_status_audit_20260512_222930/recommended_next_steps.md,file,False,0.0,False,False,,yes
+step07_cv_notebook_faithful,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154/cv_features_global_seed11.csv,file,True,0.0,True,False,,yes
+step07_cv_notebook_faithful,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154/cv_features_global_seed11_simple.csv,file,True,0.0,True,False,,yes
+step07_cv_notebook_faithful,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154/cv_features_global_seed11_image_only.csv,file,True,0.0,True,False,,yes
+step07_cv_notebook_faithful,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154/step07_cv_notebook_faithful_checks.json,file,True,0.0,True,False,,yes
+step07_cv_notebook_faithful,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154/step07_cv_notebook_faithful_summary.md,file,True,0.0,True,False,,yes

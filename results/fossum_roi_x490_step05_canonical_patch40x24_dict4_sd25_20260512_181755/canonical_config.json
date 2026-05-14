@@ -1,0 +1,18 @@
+{
+  "roi": "FRESNEL_PAPER_ROI_X490",
+  "seed": 11,
+  "patch_width": 40,
+  "patch_height": 24,
+  "dictionary_size": 4,
+  "standard_scaler": true,
+  "clustering": "Ward hierarchical clustering",
+  "sd_fraction": 0.25,
+  "expected_n_classes": 6,
+  "automatic_parameter_adjustment": false,
+  "legacy_logic_references": [
+    "scripts/fossum_faithful_initial_utils.py",
+    "scripts/02b_patch_size_sensitivity_fossum_faithful_initial.py",
+    "scripts/03a_dictionary_size_sensitivity_fossum_faithful_initial.py",
+    "scripts/04a_separation_distance_probe_fossum_faithful_initial.py"
+  ]
+}

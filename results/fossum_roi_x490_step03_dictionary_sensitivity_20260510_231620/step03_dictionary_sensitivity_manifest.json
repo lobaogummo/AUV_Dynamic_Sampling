@@ -1,0 +1,3325 @@
+{
+  "output_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620",
+  "files": [
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_class_sizes_comparison.png",
+      "size_bytes": 72420
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_metrics.csv",
+      "size_bytes": 2409
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_metric_ranking.png",
+      "size_bytes": 34397
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_nclasses_comparison.png",
+      "size_bytes": 34383
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_ranking.csv",
+      "size_bytes": 2812
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/dictionary_sensitivity_recommendation.json",
+      "size_bytes": 1262
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/DICTIONARY_SIZE_SENSITIVITY_FOSSUM_FAITHFUL_INITIAL_ROI_X490.md",
+      "size_bytes": 3886
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/ranking.csv",
+      "size_bytes": 2859
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/runs.csv",
+      "size_bytes": 12111
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/run_fossum_step03_dictionary_sensitivity_from_legacy.py",
+      "size_bytes": 18510
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/step03_dictionary_sensitivity_checks.json",
+      "size_bytes": 2787
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/step03_dictionary_sensitivity_manifest.json",
+      "size_bytes": 151723
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/step03_dictionary_sensitivity_report.md",
+      "size_bytes": 1903
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/step03_dictionary_sensitivity_summary.md",
+      "size_bytes": 1240
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/step03_old_dictionary_sensitivity_logic_audit.md",
+      "size_bytes": 2422
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/summary.csv",
+      "size_bytes": 2412
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_01_members_panel.png",
+      "size_bytes": 272214
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_02_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_02_members_panel.png",
+      "size_bytes": 358235
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_03_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_03_members_panel.png",
+      "size_bytes": 301706
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed11/class_04_members_panel.png",
+      "size_bytes": 185871
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_01_members_panel.png",
+      "size_bytes": 272289
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_02_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_02_members_panel.png",
+      "size_bytes": 358428
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_03_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_03_members_panel.png",
+      "size_bytes": 301733
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed23/class_04_members_panel.png",
+      "size_bytes": 185943
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_01_members_panel.png",
+      "size_bytes": 272375
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_02_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_02_members_panel.png",
+      "size_bytes": 358423
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_03_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_03_members_panel.png",
+      "size_bytes": 301804
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed37/class_04_members_panel.png",
+      "size_bytes": 186030
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_01_members_panel.png",
+      "size_bytes": 272291
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_02_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_02_members_panel.png",
+      "size_bytes": 358301
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_03_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_03_members_panel.png",
+      "size_bytes": 301734
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed53/class_04_members_panel.png",
+      "size_bytes": 185944
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_01_members_panel.png",
+      "size_bytes": 272343
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_02_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_02_members_panel.png",
+      "size_bytes": 358300
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_03_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_03_members_panel.png",
+      "size_bytes": 301841
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds02_seed71/class_04_members_panel.png",
+      "size_bytes": 185995
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_01_members_list.csv",
+      "size_bytes": 7676
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_01_members_panel.png",
+      "size_bytes": 251812
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_02_members_list.csv",
+      "size_bytes": 7632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_02_members_panel.png",
+      "size_bytes": 347686
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_03_members_list.csv",
+      "size_bytes": 7311
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_03_members_panel.png",
+      "size_bytes": 279799
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_04_members_list.csv",
+      "size_bytes": 7319
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed11/class_04_members_panel.png",
+      "size_bytes": 311066
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_01_members_panel.png",
+      "size_bytes": 351956
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_02_members_panel.png",
+      "size_bytes": 252622
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_03_members_list.csv",
+      "size_bytes": 7463
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_03_members_panel.png",
+      "size_bytes": 287374
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed23/class_04_members_panel.png",
+      "size_bytes": 185947
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_01_members_list.csv",
+      "size_bytes": 7620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_01_members_panel.png",
+      "size_bytes": 351771
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_02_members_list.csv",
+      "size_bytes": 7666
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_02_members_panel.png",
+      "size_bytes": 215946
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_03_members_list.csv",
+      "size_bytes": 7618
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_03_members_panel.png",
+      "size_bytes": 294341
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_04_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed37/class_04_members_panel.png",
+      "size_bytes": 238784
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_01_members_list.csv",
+      "size_bytes": 7676
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_01_members_panel.png",
+      "size_bytes": 250197
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_02_members_list.csv",
+      "size_bytes": 7632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_02_members_panel.png",
+      "size_bytes": 357608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_03_members_list.csv",
+      "size_bytes": 5649
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_03_members_panel.png",
+      "size_bytes": 203976
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_04_members_list.csv",
+      "size_bytes": 7620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed53/class_04_members_panel.png",
+      "size_bytes": 323297
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_01_members_panel.png",
+      "size_bytes": 348835
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_02_members_panel.png",
+      "size_bytes": 252691
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_03_members_list.csv",
+      "size_bytes": 7606
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_03_members_panel.png",
+      "size_bytes": 312203
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds03_seed71/class_04_members_panel.png",
+      "size_bytes": 187420
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_01_members_list.csv",
+      "size_bytes": 7659
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_01_members_panel.png",
+      "size_bytes": 261304
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_02_members_list.csv",
+      "size_bytes": 7630
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_02_members_panel.png",
+      "size_bytes": 357822
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_03_members_list.csv",
+      "size_bytes": 7656
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_03_members_panel.png",
+      "size_bytes": 227701
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_04_members_list.csv",
+      "size_bytes": 7311
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed11/class_04_members_panel.png",
+      "size_bytes": 279754
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_01_members_panel.png",
+      "size_bytes": 351898
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_02_members_panel.png",
+      "size_bytes": 252203
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_03_members_list.csv",
+      "size_bytes": 7463
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_03_members_panel.png",
+      "size_bytes": 287470
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed23/class_04_members_panel.png",
+      "size_bytes": 187774
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_01_members_list.csv",
+      "size_bytes": 7619
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_01_members_panel.png",
+      "size_bytes": 351133
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_02_members_list.csv",
+      "size_bytes": 7653
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_02_members_panel.png",
+      "size_bytes": 284071
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_03_members_list.csv",
+      "size_bytes": 7621
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_03_members_panel.png",
+      "size_bytes": 287137
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed37/class_04_members_panel.png",
+      "size_bytes": 187386
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_01_members_list.csv",
+      "size_bytes": 7650
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_01_members_panel.png",
+      "size_bytes": 287671
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_02_members_list.csv",
+      "size_bytes": 7614
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_02_members_panel.png",
+      "size_bytes": 301876
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_03_members_list.csv",
+      "size_bytes": 7630
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_03_members_panel.png",
+      "size_bytes": 352831
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_04_members_list.csv",
+      "size_bytes": 7706
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed53/class_04_members_panel.png",
+      "size_bytes": 190532
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_01_members_panel.png",
+      "size_bytes": 348818
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_02_members_panel.png",
+      "size_bytes": 252265
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_03_members_list.csv",
+      "size_bytes": 7606
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_03_members_panel.png",
+      "size_bytes": 312206
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds04_seed71/class_04_members_panel.png",
+      "size_bytes": 187859
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_01_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_01_members_panel.png",
+      "size_bytes": 234710
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_02_members_list.csv",
+      "size_bytes": 7614
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_02_members_panel.png",
+      "size_bytes": 305764
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_03_members_list.csv",
+      "size_bytes": 7605
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_03_members_panel.png",
+      "size_bytes": 361918
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_04_members_list.csv",
+      "size_bytes": 7658
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed11/class_04_members_panel.png",
+      "size_bytes": 267383
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_01_members_list.csv",
+      "size_bytes": 7677
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_01_members_panel.png",
+      "size_bytes": 250765
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_02_members_list.csv",
+      "size_bytes": 6269
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_02_members_panel.png",
+      "size_bytes": 323738
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_03_members_list.csv",
+      "size_bytes": 7618
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_03_members_panel.png",
+      "size_bytes": 321068
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_04_members_list.csv",
+      "size_bytes": 7622
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed23/class_04_members_panel.png",
+      "size_bytes": 287637
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_01_members_list.csv",
+      "size_bytes": 7629
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_01_members_panel.png",
+      "size_bytes": 357170
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_02_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_02_members_panel.png",
+      "size_bytes": 275533
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_03_members_list.csv",
+      "size_bytes": 7311
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_03_members_panel.png",
+      "size_bytes": 281198
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed37/class_04_members_panel.png",
+      "size_bytes": 187391
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_01_members_list.csv",
+      "size_bytes": 5196
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_01_members_panel.png",
+      "size_bytes": 207881
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_02_members_list.csv",
+      "size_bytes": 7656
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_02_members_panel.png",
+      "size_bytes": 281560
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_03_members_list.csv",
+      "size_bytes": 7617
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_03_members_panel.png",
+      "size_bytes": 343710
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_04_members_list.csv",
+      "size_bytes": 7684
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed53/class_04_members_panel.png",
+      "size_bytes": 222563
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_01_members_panel.png",
+      "size_bytes": 348809
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_02_members_panel.png",
+      "size_bytes": 252077
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_03_members_list.csv",
+      "size_bytes": 7605
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_03_members_panel.png",
+      "size_bytes": 313453
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_04_members_list.csv",
+      "size_bytes": 7706
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds05_seed71/class_04_members_panel.png",
+      "size_bytes": 190524
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_01_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_01_members_panel.png",
+      "size_bytes": 248853
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_02_members_list.csv",
+      "size_bytes": 7612
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_02_members_panel.png",
+      "size_bytes": 311415
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_03_members_list.csv",
+      "size_bytes": 7682
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_03_members_panel.png",
+      "size_bytes": 190608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_04_members_list.csv",
+      "size_bytes": 7608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed11/class_04_members_panel.png",
+      "size_bytes": 352380
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_01_members_list.csv",
+      "size_bytes": 7611
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_01_members_panel.png",
+      "size_bytes": 339174
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_02_members_list.csv",
+      "size_bytes": 7645
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_02_members_panel.png",
+      "size_bytes": 290119
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_03_members_list.csv",
+      "size_bytes": 7658
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_03_members_panel.png",
+      "size_bytes": 224808
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_04_members_list.csv",
+      "size_bytes": 1867
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed23/class_04_members_panel.png",
+      "size_bytes": 58160
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_01_members_list.csv",
+      "size_bytes": 7677
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_01_members_panel.png",
+      "size_bytes": 250090
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_02_members_list.csv",
+      "size_bytes": 7637
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_02_members_panel.png",
+      "size_bytes": 360586
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_03_members_list.csv",
+      "size_bytes": 7314
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_03_members_panel.png",
+      "size_bytes": 284115
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_04_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed37/class_04_members_panel.png",
+      "size_bytes": 321928
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_01_members_list.csv",
+      "size_bytes": 7608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_01_members_panel.png",
+      "size_bytes": 303958
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_02_members_list.csv",
+      "size_bytes": 7632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_02_members_panel.png",
+      "size_bytes": 347780
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_03_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_03_members_panel.png",
+      "size_bytes": 286167
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_04_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed53/class_04_members_panel.png",
+      "size_bytes": 186080
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_01_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_01_members_panel.png",
+      "size_bytes": 348985
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_02_members_panel.png",
+      "size_bytes": 252666
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_03_members_list.csv",
+      "size_bytes": 7606
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_03_members_panel.png",
+      "size_bytes": 312149
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_04_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds06_seed71/class_04_members_panel.png",
+      "size_bytes": 187450
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_01_members_list.csv",
+      "size_bytes": 7606
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_01_members_panel.png",
+      "size_bytes": 352298
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_02_members_list.csv",
+      "size_bytes": 7661
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_02_members_panel.png",
+      "size_bytes": 249742
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_03_members_list.csv",
+      "size_bytes": 7664
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_03_members_panel.png",
+      "size_bytes": 200943
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_04_members_list.csv",
+      "size_bytes": 7615
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed11/class_04_members_panel.png",
+      "size_bytes": 303702
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_01_members_list.csv",
+      "size_bytes": 7612
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_01_members_panel.png",
+      "size_bytes": 341390
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_02_members_list.csv",
+      "size_bytes": 7612
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_02_members_panel.png",
+      "size_bytes": 291305
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_03_members_list.csv",
+      "size_bytes": 7676
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_03_members_panel.png",
+      "size_bytes": 251958
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_04_members_list.csv",
+      "size_bytes": 2019
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed23/class_04_members_panel.png",
+      "size_bytes": 66572
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_01_members_list.csv",
+      "size_bytes": 7677
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_01_members_panel.png",
+      "size_bytes": 250850
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_02_members_list.csv",
+      "size_bytes": 7640
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_02_members_panel.png",
+      "size_bytes": 363143
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_03_members_list.csv",
+      "size_bytes": 7463
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_03_members_panel.png",
+      "size_bytes": 287568
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_04_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed37/class_04_members_panel.png",
+      "size_bytes": 321788
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_01_members_list.csv",
+      "size_bytes": 7608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_01_members_panel.png",
+      "size_bytes": 304032
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_02_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_02_members_panel.png",
+      "size_bytes": 186667
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_03_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_03_members_panel.png",
+      "size_bytes": 285082
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_04_members_list.csv",
+      "size_bytes": 7632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed53/class_04_members_panel.png",
+      "size_bytes": 347872
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_01_members_list.csv",
+      "size_bytes": 7629
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_01_members_panel.png",
+      "size_bytes": 351401
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_02_members_list.csv",
+      "size_bytes": 7707
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_02_members_panel.png",
+      "size_bytes": 187401
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_03_members_list.csv",
+      "size_bytes": 7612
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_03_members_panel.png",
+      "size_bytes": 298731
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_04_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds07_seed71/class_04_members_panel.png",
+      "size_bytes": 252681
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_01_members_list.csv",
+      "size_bytes": 7599
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_01_members_panel.png",
+      "size_bytes": 326679
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_02_members_list.csv",
+      "size_bytes": 7661
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_02_members_panel.png",
+      "size_bytes": 250268
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_03_members_list.csv",
+      "size_bytes": 7402
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_03_members_panel.png",
+      "size_bytes": 180360
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_04_members_list.csv",
+      "size_bytes": 7613
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed11/class_04_members_panel.png",
+      "size_bytes": 320710
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_01_members_list.csv",
+      "size_bytes": 7676
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_01_members_panel.png",
+      "size_bytes": 251127
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_02_members_list.csv",
+      "size_bytes": 7602
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_02_members_panel.png",
+      "size_bytes": 315666
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_03_members_list.csv",
+      "size_bytes": 7635
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_03_members_panel.png",
+      "size_bytes": 330626
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_04_members_list.csv",
+      "size_bytes": 7167
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed23/class_04_members_panel.png",
+      "size_bytes": 291691
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_01_members_list.csv",
+      "size_bytes": 7677
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_01_members_panel.png",
+      "size_bytes": 251030
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_02_members_list.csv",
+      "size_bytes": 7640
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_02_members_panel.png",
+      "size_bytes": 363295
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_03_members_list.csv",
+      "size_bytes": 7463
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_03_members_panel.png",
+      "size_bytes": 287697
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_04_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed37/class_04_members_panel.png",
+      "size_bytes": 321792
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_01_members_list.csv",
+      "size_bytes": 7610
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_01_members_panel.png",
+      "size_bytes": 348731
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_02_members_list.csv",
+      "size_bytes": 7612
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_02_members_panel.png",
+      "size_bytes": 308437
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_03_members_list.csv",
+      "size_bytes": 7659
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_03_members_panel.png",
+      "size_bytes": 229948
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_04_members_list.csv",
+      "size_bytes": 7641
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed53/class_04_members_panel.png",
+      "size_bytes": 268432
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_01_members_list.csv",
+      "size_bytes": 7677
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_01_members_panel.png",
+      "size_bytes": 251128
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_02_members_list.csv",
+      "size_bytes": 7620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_02_members_panel.png",
+      "size_bytes": 349664
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_03_members_list.csv",
+      "size_bytes": 1869
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_03_members_panel.png",
+      "size_bytes": 63190
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_04_members_list.csv",
+      "size_bytes": 7622
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds08_seed71/class_04_members_panel.png",
+      "size_bytes": 322666
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_01_members_list.csv",
+      "size_bytes": 7599
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_01_members_panel.png",
+      "size_bytes": 326674
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_02_members_list.csv",
+      "size_bytes": 7663
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_02_members_panel.png",
+      "size_bytes": 251956
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_03_members_list.csv",
+      "size_bytes": 6179
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_03_members_panel.png",
+      "size_bytes": 147238
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_04_members_list.csv",
+      "size_bytes": 7607
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed11/class_04_members_panel.png",
+      "size_bytes": 321014
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_01_members_list.csv",
+      "size_bytes": 7621
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_01_members_panel.png",
+      "size_bytes": 332806
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_02_members_list.csv",
+      "size_bytes": 7675
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_02_members_panel.png",
+      "size_bytes": 251300
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_03_members_list.csv",
+      "size_bytes": 7620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_03_members_panel.png",
+      "size_bytes": 287825
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_04_members_list.csv",
+      "size_bytes": 5512
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed23/class_04_members_panel.png",
+      "size_bytes": 279690
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_01_members_list.csv",
+      "size_bytes": 7623
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_01_members_panel.png",
+      "size_bytes": 355463
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_02_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_02_members_panel.png",
+      "size_bytes": 279443
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_03_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_03_members_panel.png",
+      "size_bytes": 235015
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_04_members_list.csv",
+      "size_bytes": 7617
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed37/class_04_members_panel.png",
+      "size_bytes": 291350
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_01_members_list.csv",
+      "size_bytes": 7650
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_01_members_panel.png",
+      "size_bytes": 297564
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_02_members_list.csv",
+      "size_bytes": 7626
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_02_members_panel.png",
+      "size_bytes": 349614
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_03_members_list.csv",
+      "size_bytes": 6405
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_03_members_panel.png",
+      "size_bytes": 233082
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_04_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed53/class_04_members_panel.png",
+      "size_bytes": 198738
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_01_members_list.csv",
+      "size_bytes": 7650
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_01_members_panel.png",
+      "size_bytes": 293847
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_02_members_list.csv",
+      "size_bytes": 7635
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_02_members_panel.png",
+      "size_bytes": 344749
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_03_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_03_members_panel.png",
+      "size_bytes": 223149
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_04_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds09_seed71/class_04_members_panel.png",
+      "size_bytes": 307508
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_01_members_list.csv",
+      "size_bytes": 7595
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_01_members_panel.png",
+      "size_bytes": 327140
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_02_members_list.csv",
+      "size_bytes": 7664
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_02_members_panel.png",
+      "size_bytes": 251859
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_03_members_list.csv",
+      "size_bytes": 6179
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_03_members_panel.png",
+      "size_bytes": 147113
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_04_members_list.csv",
+      "size_bytes": 7310
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed11/class_04_members_panel.png",
+      "size_bytes": 301787
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_01_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_01_members_panel.png",
+      "size_bytes": 285909
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_02_members_list.csv",
+      "size_bytes": 7629
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_02_members_panel.png",
+      "size_bytes": 350043
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_03_members_list.csv",
+      "size_bytes": 6858
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_03_members_panel.png",
+      "size_bytes": 261167
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_04_members_list.csv",
+      "size_bytes": 7694
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed23/class_04_members_panel.png",
+      "size_bytes": 190885
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_01_members_list.csv",
+      "size_bytes": 7623
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_01_members_panel.png",
+      "size_bytes": 355591
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_02_members_list.csv",
+      "size_bytes": 7659
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_02_members_panel.png",
+      "size_bytes": 243592
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_03_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_03_members_panel.png",
+      "size_bytes": 233821
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_04_members_list.csv",
+      "size_bytes": 7617
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed37/class_04_members_panel.png",
+      "size_bytes": 291325
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_01_members_list.csv",
+      "size_bytes": 7661
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_01_members_panel.png",
+      "size_bytes": 251560
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_02_members_list.csv",
+      "size_bytes": 7605
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_02_members_panel.png",
+      "size_bytes": 354459
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_03_members_list.csv",
+      "size_bytes": 7706
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_03_members_panel.png",
+      "size_bytes": 191565
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_04_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed53/class_04_members_panel.png",
+      "size_bytes": 307743
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_01_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_01_members_panel.png",
+      "size_bytes": 268444
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_02_members_list.csv",
+      "size_bytes": 7614
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_02_members_panel.png",
+      "size_bytes": 310121
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_03_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_03_members_panel.png",
+      "size_bytes": 231115
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_04_members_list.csv",
+      "size_bytes": 7624
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds10_seed71/class_04_members_panel.png",
+      "size_bytes": 369486
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_01_members_list.csv",
+      "size_bytes": 7657
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_01_members_panel.png",
+      "size_bytes": 271465
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_02_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_02_members_panel.png",
+      "size_bytes": 311951
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_03_members_list.csv",
+      "size_bytes": 7669
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_03_members_panel.png",
+      "size_bytes": 208137
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_04_members_list.csv",
+      "size_bytes": 7609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed11/class_04_members_panel.png",
+      "size_bytes": 353775
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_01_members_list.csv",
+      "size_bytes": 7620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_01_members_panel.png",
+      "size_bytes": 349650
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_02_members_list.csv",
+      "size_bytes": 7676
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_02_members_panel.png",
+      "size_bytes": 250154
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_03_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_03_members_panel.png",
+      "size_bytes": 309530
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_04_members_list.csv",
+      "size_bytes": 2337
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed23/class_04_members_panel.png",
+      "size_bytes": 108771
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_01_members_list.csv",
+      "size_bytes": 7653
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_01_members_panel.png",
+      "size_bytes": 291565
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_02_members_list.csv",
+      "size_bytes": 7626
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_02_members_panel.png",
+      "size_bytes": 341838
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_03_members_list.csv",
+      "size_bytes": 7664
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_03_members_panel.png",
+      "size_bytes": 200965
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_04_members_list.csv",
+      "size_bytes": 7614
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed37/class_04_members_panel.png",
+      "size_bytes": 302837
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_01_members_list.csv",
+      "size_bytes": 7624
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_01_members_panel.png",
+      "size_bytes": 348805
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_02_members_list.csv",
+      "size_bytes": 7665
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_02_members_panel.png",
+      "size_bytes": 252414
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_03_members_list.csv",
+      "size_bytes": 7464
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_03_members_panel.png",
+      "size_bytes": 296121
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_04_members_list.csv",
+      "size_bytes": 4955
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed53/class_04_members_panel.png",
+      "size_bytes": 120659
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_01_members_list.csv",
+      "size_bytes": 7649
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_01_members_panel.png",
+      "size_bytes": 298573
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_02_members_list.csv",
+      "size_bytes": 7629
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_02_members_panel.png",
+      "size_bytes": 348105
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_03_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_03_members_panel.png",
+      "size_bytes": 231104
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_04_members_list.csv",
+      "size_bytes": 7616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds11_seed71/class_04_members_panel.png",
+      "size_bytes": 299071
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_01_members_list.csv",
+      "size_bytes": 7595
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_01_members_panel.png",
+      "size_bytes": 329179
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_02_members_list.csv",
+      "size_bytes": 7696
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_02_members_panel.png",
+      "size_bytes": 191867
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_03_members_list.csv",
+      "size_bytes": 7655
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_03_members_panel.png",
+      "size_bytes": 284209
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_04_members_list.csv",
+      "size_bytes": 6092
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed11/class_04_members_panel.png",
+      "size_bytes": 211659
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_01_members_list.csv",
+      "size_bytes": 7602
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_01_members_panel.png",
+      "size_bytes": 333739
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_02_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_02_members_panel.png",
+      "size_bytes": 252205
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_03_members_list.csv",
+      "size_bytes": 7695
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_03_members_panel.png",
+      "size_bytes": 189937
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_04_members_list.csv",
+      "size_bytes": 7618
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed23/class_04_members_panel.png",
+      "size_bytes": 321142
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_01_members_list.csv",
+      "size_bytes": 7618
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_01_members_panel.png",
+      "size_bytes": 352531
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_02_members_list.csv",
+      "size_bytes": 7662
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_02_members_panel.png",
+      "size_bytes": 252742
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_03_members_list.csv",
+      "size_bytes": 7708
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_03_members_panel.png",
+      "size_bytes": 186040
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_04_members_list.csv",
+      "size_bytes": 7621
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed37/class_04_members_panel.png",
+      "size_bytes": 287208
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_01_members_list.csv",
+      "size_bytes": 7658
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_01_members_panel.png",
+      "size_bytes": 279040
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_02_members_list.csv",
+      "size_bytes": 7665
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_02_members_panel.png",
+      "size_bytes": 247887
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_03_members_list.csv",
+      "size_bytes": 7615
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_03_members_panel.png",
+      "size_bytes": 315330
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_04_members_list.csv",
+      "size_bytes": 7627
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed53/class_04_members_panel.png",
+      "size_bytes": 351287
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_01_members_list.csv",
+      "size_bytes": 7654
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_01_members_panel.png",
+      "size_bytes": 268480
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_02_members_list.csv",
+      "size_bytes": 7629
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_02_members_panel.png",
+      "size_bytes": 357075
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_03_members_list.csv",
+      "size_bytes": 7660
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_03_members_panel.png",
+      "size_bytes": 231122
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_04_members_list.csv",
+      "size_bytes": 7311
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/class_members_xds12_seed71/class_04_members_panel.png",
+      "size_bytes": 279872
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z001.png",
+      "size_bytes": 2730
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z002.png",
+      "size_bytes": 2864
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z003.png",
+      "size_bytes": 3563
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z004.png",
+      "size_bytes": 5201
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z005.png",
+      "size_bytes": 5076
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z006.png",
+      "size_bytes": 4998
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z007.png",
+      "size_bytes": 4844
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z008.png",
+      "size_bytes": 4971
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z009.png",
+      "size_bytes": 4747
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z010.png",
+      "size_bytes": 4995
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z011.png",
+      "size_bytes": 5946
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z012.png",
+      "size_bytes": 6056
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z013.png",
+      "size_bytes": 5734
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z014.png",
+      "size_bytes": 6093
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z015.png",
+      "size_bytes": 5927
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z016.png",
+      "size_bytes": 5485
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z017.png",
+      "size_bytes": 5134
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z018.png",
+      "size_bytes": 5142
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z019.png",
+      "size_bytes": 5682
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z020.png",
+      "size_bytes": 5437
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z021.png",
+      "size_bytes": 5555
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z022.png",
+      "size_bytes": 6221
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z023.png",
+      "size_bytes": 6977
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z024.png",
+      "size_bytes": 6930
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z025.png",
+      "size_bytes": 5565
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z026.png",
+      "size_bytes": 5335
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z027.png",
+      "size_bytes": 5797
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z028.png",
+      "size_bytes": 6922
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z029.png",
+      "size_bytes": 6940
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z030.png",
+      "size_bytes": 7212
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z031.png",
+      "size_bytes": 6889
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z032.png",
+      "size_bytes": 6766
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z033.png",
+      "size_bytes": 6065
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z034.png",
+      "size_bytes": 6116
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z035.png",
+      "size_bytes": 6689
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z036.png",
+      "size_bytes": 6574
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z037.png",
+      "size_bytes": 6538
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z038.png",
+      "size_bytes": 6126
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z039.png",
+      "size_bytes": 6927
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z040.png",
+      "size_bytes": 8978
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z041.png",
+      "size_bytes": 9487
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z042.png",
+      "size_bytes": 9133
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z043.png",
+      "size_bytes": 9531
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z044.png",
+      "size_bytes": 9546
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z045.png",
+      "size_bytes": 8335
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z046.png",
+      "size_bytes": 7349
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z047.png",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z048.png",
+      "size_bytes": 7947
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z049.png",
+      "size_bytes": 7759
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z050.png",
+      "size_bytes": 7845
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z051.png",
+      "size_bytes": 6651
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z052.png",
+      "size_bytes": 6518
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z053.png",
+      "size_bytes": 5892
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z054.png",
+      "size_bytes": 5725
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z055.png",
+      "size_bytes": 5602
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z056.png",
+      "size_bytes": 6879
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z057.png",
+      "size_bytes": 7583
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z058.png",
+      "size_bytes": 8587
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z059.png",
+      "size_bytes": 8419
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z060.png",
+      "size_bytes": 7031
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z061.png",
+      "size_bytes": 6551
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z062.png",
+      "size_bytes": 6863
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z063.png",
+      "size_bytes": 7297
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z064.png",
+      "size_bytes": 7558
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z065.png",
+      "size_bytes": 7151
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z066.png",
+      "size_bytes": 6768
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z067.png",
+      "size_bytes": 6280
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z068.png",
+      "size_bytes": 6306
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z069.png",
+      "size_bytes": 6655
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z070.png",
+      "size_bytes": 5519
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z071.png",
+      "size_bytes": 6551
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z072.png",
+      "size_bytes": 7020
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z073.png",
+      "size_bytes": 6557
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z074.png",
+      "size_bytes": 6151
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z075.png",
+      "size_bytes": 6516
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z076.png",
+      "size_bytes": 7061
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z077.png",
+      "size_bytes": 7689
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z078.png",
+      "size_bytes": 7112
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z079.png",
+      "size_bytes": 7519
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z080.png",
+      "size_bytes": 8028
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z081.png",
+      "size_bytes": 7386
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z082.png",
+      "size_bytes": 7079
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z083.png",
+      "size_bytes": 7159
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z084.png",
+      "size_bytes": 7171
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z085.png",
+      "size_bytes": 8003
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z086.png",
+      "size_bytes": 7679
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z087.png",
+      "size_bytes": 6421
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z088.png",
+      "size_bytes": 6250
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z089.png",
+      "size_bytes": 6274
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z090.png",
+      "size_bytes": 6671
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z091.png",
+      "size_bytes": 6884
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z092.png",
+      "size_bytes": 6392
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z093.png",
+      "size_bytes": 6318
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z094.png",
+      "size_bytes": 5731
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z095.png",
+      "size_bytes": 5538
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z096.png",
+      "size_bytes": 5810
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z097.png",
+      "size_bytes": 5152
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z098.png",
+      "size_bytes": 6632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z099.png",
+      "size_bytes": 7795
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z100.png",
+      "size_bytes": 8844
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z101.png",
+      "size_bytes": 9604
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z102.png",
+      "size_bytes": 7415
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z103.png",
+      "size_bytes": 5805
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z104.png",
+      "size_bytes": 5626
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z105.png",
+      "size_bytes": 6051
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z106.png",
+      "size_bytes": 6128
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z107.png",
+      "size_bytes": 5992
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z108.png",
+      "size_bytes": 6832
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z109.png",
+      "size_bytes": 6418
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z110.png",
+      "size_bytes": 6148
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z111.png",
+      "size_bytes": 5735
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z112.png",
+      "size_bytes": 6554
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z113.png",
+      "size_bytes": 7040
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z114.png",
+      "size_bytes": 6646
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z115.png",
+      "size_bytes": 5609
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z116.png",
+      "size_bytes": 5404
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z117.png",
+      "size_bytes": 5684
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z118.png",
+      "size_bytes": 5642
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z119.png",
+      "size_bytes": 5982
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z120.png",
+      "size_bytes": 6273
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z121.png",
+      "size_bytes": 6242
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z122.png",
+      "size_bytes": 5550
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z123.png",
+      "size_bytes": 4982
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z124.png",
+      "size_bytes": 5015
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z125.png",
+      "size_bytes": 5344
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z126.png",
+      "size_bytes": 5378
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z127.png",
+      "size_bytes": 5004
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z128.png",
+      "size_bytes": 5777
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z129.png",
+      "size_bytes": 6406
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z130.png",
+      "size_bytes": 5985
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z131.png",
+      "size_bytes": 5732
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z132.png",
+      "size_bytes": 5781
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z133.png",
+      "size_bytes": 5615
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z134.png",
+      "size_bytes": 5544
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z135.png",
+      "size_bytes": 5252
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z136.png",
+      "size_bytes": 5475
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z137.png",
+      "size_bytes": 6249
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z138.png",
+      "size_bytes": 5093
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z139.png",
+      "size_bytes": 4437
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z140.png",
+      "size_bytes": 4973
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z141.png",
+      "size_bytes": 4789
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z142.png",
+      "size_bytes": 4740
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z143.png",
+      "size_bytes": 5379
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z144.png",
+      "size_bytes": 5531
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z145.png",
+      "size_bytes": 6050
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z146.png",
+      "size_bytes": 5922
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z147.png",
+      "size_bytes": 5818
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z148.png",
+      "size_bytes": 6027
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z149.png",
+      "size_bytes": 6235
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z150.png",
+      "size_bytes": 6632
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z151.png",
+      "size_bytes": 5634
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z152.png",
+      "size_bytes": 5286
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z153.png",
+      "size_bytes": 5831
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z154.png",
+      "size_bytes": 5543
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z155.png",
+      "size_bytes": 5720
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z156.png",
+      "size_bytes": 6160
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z157.png",
+      "size_bytes": 6688
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z158.png",
+      "size_bytes": 7417
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z159.png",
+      "size_bytes": 6537
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z160.png",
+      "size_bytes": 5986
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z161.png",
+      "size_bytes": 6466
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z162.png",
+      "size_bytes": 6536
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z163.png",
+      "size_bytes": 6644
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z164.png",
+      "size_bytes": 5608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z165.png",
+      "size_bytes": 5755
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z166.png",
+      "size_bytes": 5802
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z167.png",
+      "size_bytes": 5195
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z168.png",
+      "size_bytes": 5579
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z169.png",
+      "size_bytes": 6440
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z170.png",
+      "size_bytes": 7104
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z171.png",
+      "size_bytes": 5918
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z172.png",
+      "size_bytes": 7280
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z173.png",
+      "size_bytes": 7639
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z174.png",
+      "size_bytes": 7879
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z175.png",
+      "size_bytes": 7422
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z176.png",
+      "size_bytes": 6771
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z177.png",
+      "size_bytes": 6371
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z178.png",
+      "size_bytes": 6315
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z179.png",
+      "size_bytes": 6957
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z180.png",
+      "size_bytes": 7286
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z181.png",
+      "size_bytes": 7835
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z182.png",
+      "size_bytes": 7940
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z183.png",
+      "size_bytes": 7610
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z184.png",
+      "size_bytes": 6649
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z185.png",
+      "size_bytes": 5800
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z186.png",
+      "size_bytes": 5830
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z187.png",
+      "size_bytes": 6060
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z188.png",
+      "size_bytes": 7314
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z189.png",
+      "size_bytes": 7322
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z190.png",
+      "size_bytes": 6172
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z191.png",
+      "size_bytes": 5195
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z192.png",
+      "size_bytes": 4616
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z193.png",
+      "size_bytes": 5930
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z194.png",
+      "size_bytes": 6484
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z195.png",
+      "size_bytes": 7379
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z196.png",
+      "size_bytes": 6957
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z197.png",
+      "size_bytes": 7078
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z198.png",
+      "size_bytes": 8581
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z199.png",
+      "size_bytes": 9779
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z200.png",
+      "size_bytes": 9279
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z201.png",
+      "size_bytes": 8599
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z202.png",
+      "size_bytes": 8751
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z203.png",
+      "size_bytes": 8208
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z204.png",
+      "size_bytes": 7683
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z205.png",
+      "size_bytes": 8282
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z206.png",
+      "size_bytes": 8780
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z207.png",
+      "size_bytes": 8341
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z208.png",
+      "size_bytes": 8348
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z209.png",
+      "size_bytes": 9326
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z210.png",
+      "size_bytes": 9370
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z211.png",
+      "size_bytes": 7709
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z212.png",
+      "size_bytes": 7519
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z213.png",
+      "size_bytes": 9332
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z214.png",
+      "size_bytes": 10222
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z215.png",
+      "size_bytes": 9106
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z216.png",
+      "size_bytes": 9534
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z217.png",
+      "size_bytes": 8081
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z218.png",
+      "size_bytes": 6793
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z219.png",
+      "size_bytes": 7732
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z220.png",
+      "size_bytes": 6294
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z221.png",
+      "size_bytes": 5729
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z222.png",
+      "size_bytes": 6058
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z223.png",
+      "size_bytes": 7172
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z224.png",
+      "size_bytes": 7977
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z225.png",
+      "size_bytes": 8555
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z226.png",
+      "size_bytes": 7319
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z227.png",
+      "size_bytes": 7080
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z228.png",
+      "size_bytes": 6558
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z229.png",
+      "size_bytes": 8619
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z230.png",
+      "size_bytes": 9427
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z231.png",
+      "size_bytes": 9207
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z232.png",
+      "size_bytes": 8608
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z233.png",
+      "size_bytes": 7869
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z234.png",
+      "size_bytes": 7340
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z235.png",
+      "size_bytes": 6740
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z236.png",
+      "size_bytes": 7102
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z237.png",
+      "size_bytes": 7265
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z238.png",
+      "size_bytes": 9795
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z239.png",
+      "size_bytes": 10783
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z240.png",
+      "size_bytes": 10339
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z241.png",
+      "size_bytes": 9429
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z242.png",
+      "size_bytes": 9763
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z243.png",
+      "size_bytes": 9619
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z244.png",
+      "size_bytes": 8475
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z245.png",
+      "size_bytes": 7890
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z246.png",
+      "size_bytes": 7103
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z247.png",
+      "size_bytes": 7737
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z248.png",
+      "size_bytes": 7046
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z249.png",
+      "size_bytes": 7979
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z250.png",
+      "size_bytes": 10342
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z251.png",
+      "size_bytes": 10620
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z252.png",
+      "size_bytes": 10426
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z253.png",
+      "size_bytes": 12407
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z254.png",
+      "size_bytes": 13053
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z255.png",
+      "size_bytes": 12206
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z256.png",
+      "size_bytes": 10341
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z257.png",
+      "size_bytes": 8537
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z258.png",
+      "size_bytes": 9115
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z259.png",
+      "size_bytes": 9384
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z260.png",
+      "size_bytes": 10900
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z261.png",
+      "size_bytes": 10115
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z262.png",
+      "size_bytes": 8034
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z263.png",
+      "size_bytes": 7475
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z264.png",
+      "size_bytes": 8783
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z265.png",
+      "size_bytes": 10449
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z266.png",
+      "size_bytes": 11127
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z267.png",
+      "size_bytes": 9432
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z268.png",
+      "size_bytes": 9487
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z269.png",
+      "size_bytes": 11007
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z270.png",
+      "size_bytes": 11911
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z271.png",
+      "size_bytes": 10126
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z272.png",
+      "size_bytes": 9203
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z273.png",
+      "size_bytes": 10380
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z274.png",
+      "size_bytes": 10550
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z275.png",
+      "size_bytes": 9896
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z276.png",
+      "size_bytes": 8957
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z277.png",
+      "size_bytes": 7911
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z278.png",
+      "size_bytes": 4396
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z279.png",
+      "size_bytes": 6943
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z280.png",
+      "size_bytes": 9395
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z281.png",
+      "size_bytes": 10782
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z282.png",
+      "size_bytes": 12309
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z283.png",
+      "size_bytes": 12542
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z284.png",
+      "size_bytes": 12847
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z285.png",
+      "size_bytes": 11259
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z286.png",
+      "size_bytes": 10954
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z287.png",
+      "size_bytes": 10727
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z288.png",
+      "size_bytes": 11173
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z289.png",
+      "size_bytes": 10311
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z290.png",
+      "size_bytes": 9130
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z291.png",
+      "size_bytes": 8945
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z292.png",
+      "size_bytes": 10836
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z293.png",
+      "size_bytes": 10937
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z294.png",
+      "size_bytes": 11972
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z295.png",
+      "size_bytes": 13566
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z296.png",
+      "size_bytes": 13992
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z297.png",
+      "size_bytes": 13107
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z298.png",
+      "size_bytes": 12548
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z299.png",
+      "size_bytes": 11801
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z300.png",
+      "size_bytes": 11883
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z301.png",
+      "size_bytes": 11604
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z302.png",
+      "size_bytes": 11536
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z303.png",
+      "size_bytes": 10712
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z304.png",
+      "size_bytes": 11095
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z305.png",
+      "size_bytes": 10619
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z306.png",
+      "size_bytes": 10334
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z307.png",
+      "size_bytes": 10455
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z308.png",
+      "size_bytes": 9982
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z309.png",
+      "size_bytes": 8970
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z310.png",
+      "size_bytes": 8808
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z311.png",
+      "size_bytes": 8142
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z312.png",
+      "size_bytes": 7541
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z313.png",
+      "size_bytes": 8160
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z314.png",
+      "size_bytes": 9237
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z315.png",
+      "size_bytes": 10380
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z316.png",
+      "size_bytes": 10448
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z317.png",
+      "size_bytes": 10170
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z318.png",
+      "size_bytes": 9628
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z319.png",
+      "size_bytes": 10754
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z320.png",
+      "size_bytes": 10188
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z321.png",
+      "size_bytes": 10010
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z322.png",
+      "size_bytes": 10515
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z323.png",
+      "size_bytes": 10743
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z324.png",
+      "size_bytes": 11148
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z325.png",
+      "size_bytes": 10554
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z326.png",
+      "size_bytes": 9458
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z327.png",
+      "size_bytes": 8926
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z328.png",
+      "size_bytes": 7732
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z329.png",
+      "size_bytes": 7119
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z330.png",
+      "size_bytes": 6497
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z331.png",
+      "size_bytes": 6403
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z332.png",
+      "size_bytes": 7091
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z333.png",
+      "size_bytes": 7076
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z334.png",
+      "size_bytes": 6638
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z335.png",
+      "size_bytes": 5880
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z336.png",
+      "size_bytes": 6320
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z337.png",
+      "size_bytes": 6211
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z338.png",
+      "size_bytes": 6863
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z339.png",
+      "size_bytes": 7302
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z340.png",
+      "size_bytes": 7065
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z341.png",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z342.png",
+      "size_bytes": 7480
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z343.png",
+      "size_bytes": 7192
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z344.png",
+      "size_bytes": 6602
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z345.png",
+      "size_bytes": 6822
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z346.png",
+      "size_bytes": 7966
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z347.png",
+      "size_bytes": 8278
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z348.png",
+      "size_bytes": 9004
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z349.png",
+      "size_bytes": 8393
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z350.png",
+      "size_bytes": 8898
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z351.png",
+      "size_bytes": 8884
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z352.png",
+      "size_bytes": 8278
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z353.png",
+      "size_bytes": 7944
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z354.png",
+      "size_bytes": 7906
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z355.png",
+      "size_bytes": 8090
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z356.png",
+      "size_bytes": 9159
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z357.png",
+      "size_bytes": 8057
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z358.png",
+      "size_bytes": 7878
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z359.png",
+      "size_bytes": 5973
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z360.png",
+      "size_bytes": 5700
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z361.png",
+      "size_bytes": 7766
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z362.png",
+      "size_bytes": 7461
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z363.png",
+      "size_bytes": 8323
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z364.png",
+      "size_bytes": 8208
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z365.png",
+      "size_bytes": 9219
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z366.png",
+      "size_bytes": 9803
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z367.png",
+      "size_bytes": 9194
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z368.png",
+      "size_bytes": 7877
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z369.png",
+      "size_bytes": 8219
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/legacy_named_normalized_pngs/X_surface_norm_z370.png",
+      "size_bytes": 9322
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/plots/icv_boxplot_dictionarysize_faithful_initial.png",
+      "size_bytes": 78212
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/plots/icv_mean_vs_dictionarysize_faithful_initial.png",
+      "size_bytes": 84993
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/plots/min_class_size_vs_dictionarysize_faithful_initial.png",
+      "size_bytes": 99836
+    },
+    {
+      "path": "results/fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620/plots/runtime_vs_dictionarysize_faithful_initial.png",
+      "size_bytes": 85636
+    }
+  ]
+}

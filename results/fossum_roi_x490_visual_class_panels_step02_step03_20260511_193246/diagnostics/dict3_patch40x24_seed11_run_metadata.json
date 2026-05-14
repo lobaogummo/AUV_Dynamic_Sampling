@@ -1,0 +1,31 @@
+{
+  "stage": "dictionary",
+  "config_name": "dict3_patch40x24",
+  "patch_w": 40,
+  "patch_h": 24,
+  "dictionary_size": 3,
+  "seed": 11,
+  "n_classes": 4,
+  "patches_per_image": 3822,
+  "patch_vector_length": 1920,
+  "feature_vector_length": 11466,
+  "features_shape": [
+    370,
+    11466
+  ],
+  "class_sizes": [
+    163,
+    111,
+    48,
+    48
+  ],
+  "icv_per_class": [
+    2634.175048828125,
+    2214.93017578125,
+    1281.0382080078125,
+    1199.487548828125
+  ],
+  "mean_icv": 1832.4077453613281,
+  "runtime_seconds": 728.3955218000001,
+  "methodology": "legacy faithful initial: full sparse feature vector, valid-mask channel, Ward n_classes=4"
+}

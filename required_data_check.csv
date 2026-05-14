@@ -1,0 +1,24 @@
+label,required,kind,relative_path,exists,type_ok,size_mb,status
+raw_filipa_root,yes,dir,data/dadosParaPedro_Fresnel,true,true,47095.47,OK
+raw_cmems_370_file,yes,file,data/dadosParaPedro_Fresnel/01.Data/ALL/thetao_20260427.nc,true,true,224.61,OK
+predmodel_highres_root,yes,dir,data/dadosParaPedro_Fresnel/02.Simulations/HighRes,true,true,43597.42,OK
+step00_root,yes,dir,results/fossum_roi_x490_step00_dataset_20260509_232915,true,true,71.46,OK
+step00_raw_array,yes,file,results/fossum_roi_x490_step00_dataset_20260509_232915/X_surface_370_roi_x490.npy,true,true,11.89,OK
+step00_norm_array,yes,file,results/fossum_roi_x490_step00_dataset_20260509_232915/X_surface_370_roi_x490_norm.npy,true,true,11.89,OK
+step00_mask,yes,file,results/fossum_roi_x490_step00_dataset_20260509_232915/mask_common_roi_x490.npy,true,true,0.01,OK
+step00_dates,yes,file,results/fossum_roi_x490_step00_dataset_20260509_232915/dates_370.csv,true,true,0.01,OK
+step05_root,yes,dir,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755,true,true,55.46,OK
+step05_assignments,yes,file,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_assignments.csv,true,true,0.01,OK
+step05_prototypes,yes,file,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_prototypes.npy,true,true,0.19,OK
+step05_feature_matrix,yes,file,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_feature_matrix.npy,true,true,21.58,OK
+step05_dictionary,yes,file,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_dictionary.npz,true,true,0.02,OK
+step05_sparse_codes,yes,file,results/fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755/canonical_sparse_codes.npz,true,true,10.22,OK
+step06_root,yes,dir,results/october_surface_temppred_std_roi_x490_20260511_155923,true,true,15.16,OK
+step06_temppred,yes,file,results/october_surface_temppred_std_roi_x490_20260511_155923/TEMPpred_october_surface_roi_x490.npy,true,true,1.00,OK
+step06_std,yes,file,results/october_surface_temppred_std_roi_x490_20260511_155923/STD_october_surface_roi_x490.npy,true,true,1.00,OK
+step06_dates,yes,file,results/october_surface_temppred_std_roi_x490_20260511_155923/dates_october.csv,true,true,0.00,OK
+pipeline_status_audit,yes,dir,results/pipeline_status_audit_20260512_222930,false,false,0.00,MISSING
+step07_cv_notebook_faithful,yes,dir,results/fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154,true,true,1.08,OK
+any_step07_cv_output,no,glob,results/fossum_roi_x490_step07_cv*,true,true,,1 match(es)
+any_descriptor_output,no,glob,results/*descriptor*,true,true,,1 match(es)
+any_step08_output,no,glob,results/*step08*,false,false,,0 match(es)

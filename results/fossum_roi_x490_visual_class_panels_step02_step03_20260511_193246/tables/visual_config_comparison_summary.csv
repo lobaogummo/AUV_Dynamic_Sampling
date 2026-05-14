@@ -1,0 +1,7 @@
+stage,config_name,seed,n_classes,class_sizes,min_class_size,max_class_size,visual_coherence_comment,possible_mixed_classes,possible_too_broad_classes,possible_too_small_classes,recommended_for_next_step_visual,notes
+patch,patch_40x24,11,4,"[101, 113, 108, 48]",48,113,Best visual/ranking compromise.,check visually; all-member panel provided,no,no,yes,mean_icv=1706.822; class_size_ratio=2.35
+patch,patch_48x32,11,4,"[117, 107, 97, 49]",49,117,Plausible smoother alternative.,check visually; all-member panel provided,no,no,alternative,mean_icv=1723.554; class_size_ratio=2.39
+patch,patch_32x20,11,4,"[151, 93, 56, 70]",56,151,Finer; less preferred by ranking.,check visually; all-member panel provided,no,no,no,mean_icv=1590.730; class_size_ratio=2.70
+dictionary,dict2_patch40x24,11,4,"[150, 107, 62, 51]",51,150,Stable/simple; may be too broad.,check visually; all-member panel provided,yes,no,yes_with_caution,mean_icv=1478.119; class_size_ratio=2.94
+dictionary,dict4_patch40x24,11,4,"[101, 113, 108, 48]",48,113,More detailed canonical alternative.,check visually; all-member panel provided,no,no,alternative,mean_icv=1706.822; class_size_ratio=2.35
+dictionary,dict3_patch40x24,11,4,"[163, 111, 48, 48]",48,163,Intermediate; not clearly better.,check visually; all-member panel provided,no,no,no,mean_icv=1832.408; class_size_ratio=3.40

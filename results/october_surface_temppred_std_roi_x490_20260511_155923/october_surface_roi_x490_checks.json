@@ -1,0 +1,38 @@
+{
+  "all_31_files_found": true,
+  "selected_day_slice_is_1": true,
+  "slice0_not_used": true,
+  "temp_stack_shape": [
+    31,
+    72,
+    117
+  ],
+  "std_stack_shape": [
+    31,
+    72,
+    117
+  ],
+  "expected_shape": [
+    31,
+    72,
+    117
+  ],
+  "shape_matches_expected": true,
+  "lat_lon_match_reference_roi": true,
+  "bathy_match_reference_roi": true,
+  "mask_match_reference_roi": true,
+  "same_orientation_as_reference_roi": true,
+  "no_blank_std_maps": true,
+  "no_zero_std_maps": true,
+  "no_suspicious_days": true,
+  "n_std_pngs": 31,
+  "n_std_clean_pngs": 31,
+  "n_temppred_pngs": 31,
+  "n_temppred_clean_pngs": 31,
+  "failed_days": [],
+  "failed_day_reasons": {},
+  "blank_std_days": [],
+  "zero_std_days": [],
+  "no_input_files_modified": true,
+  "final_verdict": "READY_FOR_DESCRIPTORS_AND_PLANNER: October surface TEMPpred and STD ROI x490 outputs passed all checks."
+}

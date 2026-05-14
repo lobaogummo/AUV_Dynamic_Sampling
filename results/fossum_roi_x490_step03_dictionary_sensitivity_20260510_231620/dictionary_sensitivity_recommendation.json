@@ -1,0 +1,39 @@
+{
+  "best_dictionary_size_by_legacy_ranking": 2,
+  "balanced_score": 1.0,
+  "legacy_dictionary_size_4_rank": 2,
+  "legacy_dictionary_size_4_row": [
+    {
+      "dictionary_size": 4,
+      "executed_runs": 5,
+      "patch_w": 40,
+      "patch_h": 24,
+      "include_valid_mask": true,
+      "mask_encoding": "concat",
+      "feature_mode": "raw",
+      "patches_per_image": 3822,
+      "total_patches": 1414140,
+      "patch_vector_length": 1920,
+      "feature_vector_length": 15288,
+      "mean_icv_mean": 1582.255633544922,
+      "mean_icv_std": 79.30414631134742,
+      "std_icv_mean": 716.4019692937304,
+      "std_icv_std": 258.38280858642304,
+      "min_class_size_mean": 51.6,
+      "min_class_size_min": 48,
+      "mean_class_size_mean": 92.5,
+      "max_class_size_mean": 143.8,
+      "runtime_mean_seconds": 746.1044537400005,
+      "runtime_std_seconds": 115.44231336672637,
+      "requested_runs": 5,
+      "reduced_seed_count": false,
+      "rank_mean_icv": 2.0,
+      "rank_icv_spread": 2.0,
+      "rank_std_icv": 5.0,
+      "rank_min_class": 2.0,
+      "rank_runtime": 3.0,
+      "balanced_score": 2.7
+    }
+  ],
+  "recommendation": "Use dictionary_size=2 for the next step according to the legacy ranking."
+}

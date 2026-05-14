@@ -1,0 +1,142 @@
+[
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\dictionary_visual_comparison_top_configs.png",
+    "bytes": 194222
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\patch_visual_comparison_top_configs.png",
+    "bytes": 185661
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\visual_ranking_summary_panel.png",
+    "bytes": 114643
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict2_patch40x24_seed11_assignments.csv",
+    "bytes": 22450
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict2_patch40x24_seed11_features.npy",
+    "bytes": 11313248
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict2_patch40x24_seed11_run_metadata.json",
+    "bytes": 676
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict3_patch40x24_seed11_assignments.csv",
+    "bytes": 22450
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict3_patch40x24_seed11_features.npy",
+    "bytes": 16969808
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict3_patch40x24_seed11_run_metadata.json",
+    "bytes": 682
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\dict4_patch40x24_seed11_assignments.csv",
+    "bytes": 22450
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_32x20_seed11_assignments.csv",
+    "bytes": 18750
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_32x20_seed11_features.npy",
+    "bytes": 26983488
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_32x20_seed11_run_metadata.json",
+    "bytes": 669
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_40x24_seed11_assignments.csv",
+    "bytes": 18750
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_40x24_seed11_features.npy",
+    "bytes": 22626368
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_40x24_seed11_run_metadata.json",
+    "bytes": 674
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_48x32_seed11_assignments.csv",
+    "bytes": 18750
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_48x32_seed11_features.npy",
+    "bytes": 16990528
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\diagnostics\\patch_48x32_seed11_run_metadata.json",
+    "bytes": 668
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\dictionary_visual_panels\\dict2_patch40x24_seed11_all_members_by_class.png",
+    "bytes": 1099334
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\dictionary_visual_panels\\dict3_patch40x24_seed11_all_members_by_class.png",
+    "bytes": 1103657
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\dictionary_visual_panels\\dict4_patch40x24_seed11_all_members_by_class.png",
+    "bytes": 1097639
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\generate_visual_class_panels_step02_step03.py",
+    "bytes": 25049
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\patch_visual_panels\\patch_32x20_seed11_all_members_by_class.png",
+    "bytes": 1100005
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\patch_visual_panels\\patch_40x24_seed11_all_members_by_class.png",
+    "bytes": 1097485
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\patch_visual_panels\\patch_48x32_seed11_all_members_by_class.png",
+    "bytes": 1099322
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\tables\\dictionary_visual_panel_inventory.csv",
+    "bytes": 1181
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\tables\\patch_visual_panel_inventory.csv",
+    "bytes": 1106
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\tables\\visual_class_size_summary.csv",
+    "bytes": 1812
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\tables\\visual_config_comparison_summary.csv",
+    "bytes": 1348
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\visual_class_panels_checks.json",
+    "bytes": 2338
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\visual_class_panels_manifest.csv",
+    "bytes": 4371
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\visual_class_panels_manifest.json",
+    "bytes": 5777
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\visual_class_panels_report.md",
+    "bytes": 2873
+  },
+  {
+    "path": "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\visual_class_panels_summary.md",
+    "bytes": 1476
+  }
+]

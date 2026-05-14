@@ -1,0 +1,942 @@
+[
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\dendrogram\\dendrogram_reference.png",
+    "bytes": 59130
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\dendrogram\\merge_distances.csv",
+    "bytes": 7172
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\dendrogram\\tree_info.json",
+    "bytes": 692
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\ranking.csv",
+    "bytes": 2289
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\REPORT.md",
+    "bytes": 2674
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\run_fossum_step04_sd_probe_from_legacy.py",
+    "bytes": 41193
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\runs.csv",
+    "bytes": 2052
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_closest_to_prototype_panel.png",
+    "bytes": 115050
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_distance_to_prototype.csv",
+    "bytes": 1890
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_farthest_from_prototype_panel.png",
+    "bytes": 115427
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_members_list.csv",
+    "bytes": 1823
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_members_panel.png",
+    "bytes": 114578
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_01_pixel_std_map.png",
+    "bytes": 55291
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_closest_to_prototype_panel.png",
+    "bytes": 230031
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_distance_to_prototype.csv",
+    "bytes": 4439
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_farthest_from_prototype_panel.png",
+    "bytes": 229047
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_members_list.csv",
+    "bytes": 4329
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_members_panel.png",
+    "bytes": 217314
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_02_pixel_std_map.png",
+    "bytes": 55486
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_closest_to_prototype_panel.png",
+    "bytes": 187732
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_distance_to_prototype.csv",
+    "bytes": 10590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_farthest_from_prototype_panel.png",
+    "bytes": 200313
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_members_list.csv",
+    "bytes": 7444
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_members_panel.png",
+    "bytes": 303237
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_03_pixel_std_map.png",
+    "bytes": 52173
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_closest_to_prototype_panel.png",
+    "bytes": 181976
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_distance_to_prototype.csv",
+    "bytes": 7550
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_farthest_from_prototype_panel.png",
+    "bytes": 198088
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_members_list.csv",
+    "bytes": 7415
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_members_panel.png",
+    "bytes": 292601
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_04_pixel_std_map.png",
+    "bytes": 50886
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_closest_to_prototype_panel.png",
+    "bytes": 144622
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_distance_to_prototype.csv",
+    "bytes": 7768
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_farthest_from_prototype_panel.png",
+    "bytes": 145074
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_members_list.csv",
+    "bytes": 7507
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_members_panel.png",
+    "bytes": 219744
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_05_pixel_std_map.png",
+    "bytes": 45819
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_closest_to_prototype_panel.png",
+    "bytes": 151525
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_distance_to_prototype.csv",
+    "bytes": 8468
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_farthest_from_prototype_panel.png",
+    "bytes": 174492
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_members_list.csv",
+    "bytes": 7423
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_members_panel.png",
+    "bytes": 259649
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_06_pixel_std_map.png",
+    "bytes": 52144
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_closest_to_prototype_panel.png",
+    "bytes": 184400
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_distance_to_prototype.csv",
+    "bytes": 4590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_farthest_from_prototype_panel.png",
+    "bytes": 185131
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_members_list.csv",
+    "bytes": 4485
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_members_panel.png",
+    "bytes": 175637
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_07_pixel_std_map.png",
+    "bytes": 52289
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_closest_to_prototype_panel.png",
+    "bytes": 85982
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_distance_to_prototype.csv",
+    "bytes": 1743
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_farthest_from_prototype_panel.png",
+    "bytes": 86998
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_members_list.csv",
+    "bytes": 1684
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_members_panel.png",
+    "bytes": 84353
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_08_pixel_std_map.png",
+    "bytes": 53825
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_closest_to_prototype_panel.png",
+    "bytes": 182486
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_distance_to_prototype.csv",
+    "bytes": 4719
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_farthest_from_prototype_panel.png",
+    "bytes": 184510
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_members_list.csv",
+    "bytes": 4614
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_members_panel.png",
+    "bytes": 188938
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_09_pixel_std_map.png",
+    "bytes": 55078
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_closest_to_prototype_panel.png",
+    "bytes": 160261
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_distance_to_prototype.csv",
+    "bytes": 4596
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_farthest_from_prototype_panel.png",
+    "bytes": 160573
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_members_list.csv",
+    "bytes": 4500
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_members_panel.png",
+    "bytes": 149978
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\class_10_pixel_std_map.png",
+    "bytes": 51957
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\dendrogram_cut.png",
+    "bytes": 63512
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\pca2d_classes.png",
+    "bytes": 134987
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_01.png",
+    "bytes": 46396
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_02.png",
+    "bytes": 42878
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_03.png",
+    "bytes": 38835
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_04.png",
+    "bytes": 39182
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_05.png",
+    "bytes": 37776
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_06.png",
+    "bytes": 38768
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_07.png",
+    "bytes": 40900
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_08.png",
+    "bytes": 44062
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_09.png",
+    "bytes": 39558
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototype_class_10.png",
+    "bytes": 38376
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct\\prototypes_panel.png",
+    "bytes": 128060
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_closest_to_prototype_panel.png",
+    "bytes": 241051
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_distance_to_prototype.csv",
+    "bytes": 6243
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_farthest_from_prototype_panel.png",
+    "bytes": 251407
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_members_list.csv",
+    "bytes": 6092
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_members_panel.png",
+    "bytes": 329058
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_01_pixel_std_map.png",
+    "bytes": 47368
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_closest_to_prototype_panel.png",
+    "bytes": 187651
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_distance_to_prototype.csv",
+    "bytes": 10590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_farthest_from_prototype_panel.png",
+    "bytes": 200195
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_members_list.csv",
+    "bytes": 7444
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_members_panel.png",
+    "bytes": 303227
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_02_pixel_std_map.png",
+    "bytes": 46454
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_closest_to_prototype_panel.png",
+    "bytes": 181828
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_distance_to_prototype.csv",
+    "bytes": 7550
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_farthest_from_prototype_panel.png",
+    "bytes": 198029
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_members_list.csv",
+    "bytes": 7415
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_members_panel.png",
+    "bytes": 292713
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_03_pixel_std_map.png",
+    "bytes": 46874
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_closest_to_prototype_panel.png",
+    "bytes": 149330
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_distance_to_prototype.csv",
+    "bytes": 16123
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_farthest_from_prototype_panel.png",
+    "bytes": 152186
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_members_list.csv",
+    "bytes": 7454
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_members_panel.png",
+    "bytes": 250883
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_04_pixel_std_map.png",
+    "bytes": 42709
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_closest_to_prototype_panel.png",
+    "bytes": 184301
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_distance_to_prototype.csv",
+    "bytes": 4590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_farthest_from_prototype_panel.png",
+    "bytes": 185103
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_members_list.csv",
+    "bytes": 4485
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_members_panel.png",
+    "bytes": 175707
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_05_pixel_std_map.png",
+    "bytes": 47043
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_closest_to_prototype_panel.png",
+    "bytes": 177499
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_distance_to_prototype.csv",
+    "bytes": 10880
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_farthest_from_prototype_panel.png",
+    "bytes": 188290
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_members_list.csv",
+    "bytes": 7456
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_members_panel.png",
+    "bytes": 284455
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\class_06_pixel_std_map.png",
+    "bytes": 47015
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\dendrogram_cut.png",
+    "bytes": 61546
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\pca2d_classes.png",
+    "bytes": 120251
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_01.png",
+    "bytes": 43267
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_02.png",
+    "bytes": 38346
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_03.png",
+    "bytes": 38982
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_04.png",
+    "bytes": 38167
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_05.png",
+    "bytes": 41065
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototype_class_06.png",
+    "bytes": 40104
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct\\prototypes_panel.png",
+    "bytes": 89582
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_closest_to_prototype_panel.png",
+    "bytes": 240947
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_distance_to_prototype.csv",
+    "bytes": 6243
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_farthest_from_prototype_panel.png",
+    "bytes": 251318
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_members_list.csv",
+    "bytes": 6092
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_members_panel.png",
+    "bytes": 329089
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_01_pixel_std_map.png",
+    "bytes": 48530
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_closest_to_prototype_panel.png",
+    "bytes": 181613
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_distance_to_prototype.csv",
+    "bytes": 18044
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_farthest_from_prototype_panel.png",
+    "bytes": 172627
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_members_list.csv",
+    "bytes": 7410
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_members_panel.png",
+    "bytes": 299254
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_02_pixel_std_map.png",
+    "bytes": 42517
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_closest_to_prototype_panel.png",
+    "bytes": 149198
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_distance_to_prototype.csv",
+    "bytes": 16123
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_farthest_from_prototype_panel.png",
+    "bytes": 152056
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_members_list.csv",
+    "bytes": 7454
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_members_panel.png",
+    "bytes": 250676
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_03_pixel_std_map.png",
+    "bytes": 43696
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_closest_to_prototype_panel.png",
+    "bytes": 184220
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_distance_to_prototype.csv",
+    "bytes": 4590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_farthest_from_prototype_panel.png",
+    "bytes": 184907
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_members_list.csv",
+    "bytes": 4485
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_members_panel.png",
+    "bytes": 175445
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_04_pixel_std_map.png",
+    "bytes": 47073
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_closest_to_prototype_panel.png",
+    "bytes": 177425
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_distance_to_prototype.csv",
+    "bytes": 10880
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_farthest_from_prototype_panel.png",
+    "bytes": 188129
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_members_list.csv",
+    "bytes": 7456
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_members_panel.png",
+    "bytes": 284214
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\class_05_pixel_std_map.png",
+    "bytes": 46424
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\dendrogram_cut.png",
+    "bytes": 61046
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\pca2d_classes.png",
+    "bytes": 115317
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototype_class_01.png",
+    "bytes": 43173
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototype_class_02.png",
+    "bytes": 38819
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototype_class_03.png",
+    "bytes": 38098
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototype_class_04.png",
+    "bytes": 40690
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototype_class_05.png",
+    "bytes": 39871
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct\\prototypes_panel.png",
+    "bytes": 79773
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_closest_to_prototype_panel.png",
+    "bytes": 241264
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_distance_to_prototype.csv",
+    "bytes": 6243
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_farthest_from_prototype_panel.png",
+    "bytes": 251639
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_members_list.csv",
+    "bytes": 6092
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_members_panel.png",
+    "bytes": 329224
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_01_pixel_std_map.png",
+    "bytes": 48523
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_closest_to_prototype_panel.png",
+    "bytes": 182015
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_distance_to_prototype.csv",
+    "bytes": 18044
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_farthest_from_prototype_panel.png",
+    "bytes": 173034
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_members_list.csv",
+    "bytes": 7410
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_members_panel.png",
+    "bytes": 299741
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_02_pixel_std_map.png",
+    "bytes": 42736
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_closest_to_prototype_panel.png",
+    "bytes": 149418
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_distance_to_prototype.csv",
+    "bytes": 16123
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_farthest_from_prototype_panel.png",
+    "bytes": 152371
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_members_list.csv",
+    "bytes": 7454
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_members_panel.png",
+    "bytes": 251114
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_03_pixel_std_map.png",
+    "bytes": 43588
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_closest_to_prototype_panel.png",
+    "bytes": 179957
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_distance_to_prototype.csv",
+    "bytes": 15382
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_farthest_from_prototype_panel.png",
+    "bytes": 200277
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_members_list.csv",
+    "bytes": 7460
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_members_panel.png",
+    "bytes": 288710
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\class_04_pixel_std_map.png",
+    "bytes": 45337
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\dendrogram_cut.png",
+    "bytes": 60233
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\pca2d_classes.png",
+    "bytes": 108256
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\prototype_class_01.png",
+    "bytes": 43590
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\prototype_class_02.png",
+    "bytes": 38997
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\prototype_class_03.png",
+    "bytes": 38114
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\prototype_class_04.png",
+    "bytes": 40553
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct\\prototypes_panel.png",
+    "bytes": 71913
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_closest_to_prototype_panel.png",
+    "bytes": 240886
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_distance_to_prototype.csv",
+    "bytes": 6243
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_farthest_from_prototype_panel.png",
+    "bytes": 251318
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_members_list.csv",
+    "bytes": 6092
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_members_panel.png",
+    "bytes": 328945
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_01_pixel_std_map.png",
+    "bytes": 47906
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_closest_to_prototype_panel.png",
+    "bytes": 181711
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_distance_to_prototype.csv",
+    "bytes": 18044
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_farthest_from_prototype_panel.png",
+    "bytes": 172789
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_members_list.csv",
+    "bytes": 7410
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_members_panel.png",
+    "bytes": 299429
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_02_pixel_std_map.png",
+    "bytes": 42612
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_closest_to_prototype_panel.png",
+    "bytes": 149208
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_distance_to_prototype.csv",
+    "bytes": 16123
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_farthest_from_prototype_panel.png",
+    "bytes": 152107
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_members_list.csv",
+    "bytes": 7454
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_members_panel.png",
+    "bytes": 250827
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_03_pixel_std_map.png",
+    "bytes": 43255
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_closest_to_prototype_panel.png",
+    "bytes": 179601
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_distance_to_prototype.csv",
+    "bytes": 15382
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_farthest_from_prototype_panel.png",
+    "bytes": 200003
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_members_list.csv",
+    "bytes": 7460
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_members_panel.png",
+    "bytes": 288452
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\class_04_pixel_std_map.png",
+    "bytes": 45075
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\dendrogram_cut.png",
+    "bytes": 60042
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\pca2d_classes.png",
+    "bytes": 108118
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\prototype_class_01.png",
+    "bytes": 42922
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\prototype_class_02.png",
+    "bytes": 38808
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\prototype_class_03.png",
+    "bytes": 37556
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\prototype_class_04.png",
+    "bytes": 40243
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct\\prototypes_panel.png",
+    "bytes": 71719
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_fraction_vs_n_classes.png",
+    "bytes": 109524
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_probe_leaderboard.csv",
+    "bytes": 2266
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_probe_top_candidates.png",
+    "bytes": 73728
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_probe_values_tested.csv",
+    "bytes": 2043
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_old_sd_probe_logic_audit.md",
+    "bytes": 1857
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_sd_probe_checks.json",
+    "bytes": 1018
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_sd_probe_ranking.csv",
+    "bytes": 2266
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_sd_probe_recommendation.json",
+    "bytes": 566
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_sd_probe_report.md",
+    "bytes": 4183
+  },
+  {
+    "path": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\step04_sd_probe_summary.md",
+    "bytes": 1663
+  }
+]

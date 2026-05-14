@@ -1,0 +1,2973 @@
+{
+  "output_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step02_patch_sensitivity_20260510_112924",
+  "files": [
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/patch_sensitivity_metrics.csv",
+      "size_bytes": 2050
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/patch_sensitivity_recommendation.json",
+      "size_bytes": 1306
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/PATCH_SIZE_SENSITIVITY_FOSSUM_FAITHFUL_INITIAL_ROI_X490.md",
+      "size_bytes": 3835
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/ranking.csv",
+      "size_bytes": 2416
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/runs.csv",
+      "size_bytes": 9876
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/run_fossum_step02_patch_sensitivity_from_legacy.py",
+      "size_bytes": 16549
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/step02_old_patch_sensitivity_logic_audit.md",
+      "size_bytes": 2753
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/summary.csv",
+      "size_bytes": 2056
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_01_members_list.csv",
+      "size_bytes": 7349
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_01_members_panel.png",
+      "size_bytes": 328499
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_02_members_list.csv",
+      "size_bytes": 7370
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_02_members_panel.png",
+      "size_bytes": 260643
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_03_members_list.csv",
+      "size_bytes": 7429
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_03_members_panel.png",
+      "size_bytes": 191126
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_04_members_list.csv",
+      "size_bytes": 7408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed11/class_04_members_panel.png",
+      "size_bytes": 286151
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_01_members_list.csv",
+      "size_bytes": 7345
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_01_members_panel.png",
+      "size_bytes": 329019
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_02_members_list.csv",
+      "size_bytes": 7409
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_02_members_panel.png",
+      "size_bytes": 282813
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_03_members_list.csv",
+      "size_bytes": 7456
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_03_members_panel.png",
+      "size_bytes": 191400
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_04_members_list.csv",
+      "size_bytes": 4577
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed23/class_04_members_panel.png",
+      "size_bytes": 175758
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_01_members_list.csv",
+      "size_bytes": 7400
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_01_members_panel.png",
+      "size_bytes": 290278
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_02_members_list.csv",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_02_members_panel.png",
+      "size_bytes": 349670
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_03_members_list.csv",
+      "size_bytes": 7415
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_03_members_panel.png",
+      "size_bytes": 215061
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_04_members_list.csv",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed37/class_04_members_panel.png",
+      "size_bytes": 279752
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_01_members_list.csv",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_01_members_panel.png",
+      "size_bytes": 357822
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_02_members_list.csv",
+      "size_bytes": 7406
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_02_members_panel.png",
+      "size_bytes": 223488
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_03_members_list.csv",
+      "size_bytes": 7407
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_03_members_panel.png",
+      "size_bytes": 268294
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_04_members_list.csv",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed53/class_04_members_panel.png",
+      "size_bytes": 279904
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_01_members_list.csv",
+      "size_bytes": 7427
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_01_members_panel.png",
+      "size_bytes": 250639
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_02_members_list.csv",
+      "size_bytes": 7368
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_02_members_panel.png",
+      "size_bytes": 294311
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_03_members_list.csv",
+      "size_bytes": 7371
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_03_members_panel.png",
+      "size_bytes": 347542
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_04_members_list.csv",
+      "size_bytes": 3577
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w16_h16_seed71/class_04_members_panel.png",
+      "size_bytes": 184219
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_01_members_list.csv",
+      "size_bytes": 7410
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_01_members_panel.png",
+      "size_bytes": 224132
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_02_members_list.csv",
+      "size_bytes": 7361
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_02_members_panel.png",
+      "size_bytes": 303907
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_03_members_list.csv",
+      "size_bytes": 7409
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_03_members_panel.png",
+      "size_bytes": 252776
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_04_members_list.csv",
+      "size_bytes": 7361
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed11/class_04_members_panel.png",
+      "size_bytes": 371295
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_01_members_list.csv",
+      "size_bytes": 4204
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_01_members_panel.png",
+      "size_bytes": 106569
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_02_members_list.csv",
+      "size_bytes": 7363
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_02_members_panel.png",
+      "size_bytes": 307256
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_03_members_list.csv",
+      "size_bytes": 7416
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_03_members_panel.png",
+      "size_bytes": 249263
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_04_members_list.csv",
+      "size_bytes": 7356
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed23/class_04_members_panel.png",
+      "size_bytes": 347228
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_01_members_list.csv",
+      "size_bytes": 7376
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_01_members_panel.png",
+      "size_bytes": 323877
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_02_members_list.csv",
+      "size_bytes": 7427
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_02_members_panel.png",
+      "size_bytes": 250773
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_03_members_list.csv",
+      "size_bytes": 7365
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_03_members_panel.png",
+      "size_bytes": 301525
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_04_members_list.csv",
+      "size_bytes": 4159
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed37/class_04_members_panel.png",
+      "size_bytes": 231128
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_01_members_list.csv",
+      "size_bytes": 7404
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_01_members_panel.png",
+      "size_bytes": 273472
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_02_members_list.csv",
+      "size_bytes": 7372
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_02_members_panel.png",
+      "size_bytes": 356870
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_03_members_list.csv",
+      "size_bytes": 7371
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_03_members_panel.png",
+      "size_bytes": 286961
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed53/class_04_members_panel.png",
+      "size_bytes": 187328
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_01_members_list.csv",
+      "size_bytes": 7408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_01_members_panel.png",
+      "size_bytes": 275693
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_02_members_list.csv",
+      "size_bytes": 7372
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_02_members_panel.png",
+      "size_bytes": 353948
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_03_members_list.csv",
+      "size_bytes": 7364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_03_members_panel.png",
+      "size_bytes": 302673
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_04_members_list.csv",
+      "size_bytes": 7414
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w24_h16_seed71/class_04_members_panel.png",
+      "size_bytes": 216821
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_01_members_list.csv",
+      "size_bytes": 7403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_01_members_panel.png",
+      "size_bytes": 283634
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_02_members_list.csv",
+      "size_bytes": 7363
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_02_members_panel.png",
+      "size_bytes": 307108
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_03_members_list.csv",
+      "size_bytes": 7456
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_03_members_panel.png",
+      "size_bytes": 191636
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_04_members_list.csv",
+      "size_bytes": 7365
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed11/class_04_members_panel.png",
+      "size_bytes": 347185
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_01_members_list.csv",
+      "size_bytes": 7402
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_01_members_panel.png",
+      "size_bytes": 289363
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_02_members_list.csv",
+      "size_bytes": 7381
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_02_members_panel.png",
+      "size_bytes": 350574
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_03_members_list.csv",
+      "size_bytes": 7418
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_03_members_panel.png",
+      "size_bytes": 212553
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_04_members_list.csv",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed23/class_04_members_panel.png",
+      "size_bytes": 280968
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_01_members_list.csv",
+      "size_bytes": 7379
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_01_members_panel.png",
+      "size_bytes": 345345
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_02_members_panel.png",
+      "size_bytes": 251539
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_03_members_list.csv",
+      "size_bytes": 7360
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_03_members_panel.png",
+      "size_bytes": 313978
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_04_members_list.csv",
+      "size_bytes": 7011
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed37/class_04_members_panel.png",
+      "size_bytes": 180516
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_01_members_list.csv",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_01_members_panel.png",
+      "size_bytes": 349691
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_02_members_list.csv",
+      "size_bytes": 7399
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_02_members_panel.png",
+      "size_bytes": 291159
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_03_members_list.csv",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_03_members_panel.png",
+      "size_bytes": 279873
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_04_members_list.csv",
+      "size_bytes": 7414
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed53/class_04_members_panel.png",
+      "size_bytes": 219865
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_01_members_list.csv",
+      "size_bytes": 7379
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_01_members_panel.png",
+      "size_bytes": 355942
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_02_members_list.csv",
+      "size_bytes": 7407
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_02_members_panel.png",
+      "size_bytes": 272593
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_03_members_list.csv",
+      "size_bytes": 7218
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_03_members_panel.png",
+      "size_bytes": 287583
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w32_h20_seed71/class_04_members_panel.png",
+      "size_bytes": 187433
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_01_members_list.csv",
+      "size_bytes": 7409
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_01_members_panel.png",
+      "size_bytes": 261391
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_02_members_list.csv",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_02_members_panel.png",
+      "size_bytes": 357914
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_03_members_list.csv",
+      "size_bytes": 7406
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_03_members_panel.png",
+      "size_bytes": 227776
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_04_members_list.csv",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed11/class_04_members_panel.png",
+      "size_bytes": 279667
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_01_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_01_members_panel.png",
+      "size_bytes": 352057
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_02_members_panel.png",
+      "size_bytes": 252172
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_03_members_list.csv",
+      "size_bytes": 7218
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_03_members_panel.png",
+      "size_bytes": 287564
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed23/class_04_members_panel.png",
+      "size_bytes": 187753
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_01_members_list.csv",
+      "size_bytes": 7369
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_01_members_panel.png",
+      "size_bytes": 351110
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_02_members_list.csv",
+      "size_bytes": 7403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_02_members_panel.png",
+      "size_bytes": 284094
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_03_members_list.csv",
+      "size_bytes": 7371
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_03_members_panel.png",
+      "size_bytes": 287107
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed37/class_04_members_panel.png",
+      "size_bytes": 187238
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_01_members_list.csv",
+      "size_bytes": 7400
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_01_members_panel.png",
+      "size_bytes": 287748
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_02_members_list.csv",
+      "size_bytes": 7364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_02_members_panel.png",
+      "size_bytes": 301838
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_03_members_list.csv",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_03_members_panel.png",
+      "size_bytes": 352667
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_04_members_list.csv",
+      "size_bytes": 7456
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed53/class_04_members_panel.png",
+      "size_bytes": 190490
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_01_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_01_members_panel.png",
+      "size_bytes": 348832
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_02_members_panel.png",
+      "size_bytes": 252375
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_03_members_list.csv",
+      "size_bytes": 7356
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_03_members_panel.png",
+      "size_bytes": 312172
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w40_h24_seed71/class_04_members_panel.png",
+      "size_bytes": 187964
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_01_members_list.csv",
+      "size_bytes": 7409
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_01_members_panel.png",
+      "size_bytes": 233932
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_02_members_list.csv",
+      "size_bytes": 7382
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_02_members_panel.png",
+      "size_bytes": 355685
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_03_members_list.csv",
+      "size_bytes": 7405
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_03_members_panel.png",
+      "size_bytes": 281185
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_04_members_list.csv",
+      "size_bytes": 7218
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed11/class_04_members_panel.png",
+      "size_bytes": 287621
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_01_members_list.csv",
+      "size_bytes": 7370
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_01_members_panel.png",
+      "size_bytes": 353969
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_02_members_panel.png",
+      "size_bytes": 252258
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_03_members_list.csv",
+      "size_bytes": 7364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_03_members_panel.png",
+      "size_bytes": 306708
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed23/class_04_members_panel.png",
+      "size_bytes": 187791
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_01_members_list.csv",
+      "size_bytes": 7379
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_01_members_panel.png",
+      "size_bytes": 350658
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_02_members_panel.png",
+      "size_bytes": 252704
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_03_members_list.csv",
+      "size_bytes": 7357
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_03_members_panel.png",
+      "size_bytes": 310487
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed37/class_04_members_panel.png",
+      "size_bytes": 187384
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_01_members_list.csv",
+      "size_bytes": 7404
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_01_members_panel.png",
+      "size_bytes": 273559
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_02_members_list.csv",
+      "size_bytes": 7373
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_02_members_panel.png",
+      "size_bytes": 357151
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_03_members_list.csv",
+      "size_bytes": 7373
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_03_members_panel.png",
+      "size_bytes": 285765
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed53/class_04_members_panel.png",
+      "size_bytes": 187408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_01_members_list.csv",
+      "size_bytes": 7360
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_01_members_panel.png",
+      "size_bytes": 310740
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_02_members_panel.png",
+      "size_bytes": 252540
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_03_members_list.csv",
+      "size_bytes": 7358
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_03_members_panel.png",
+      "size_bytes": 347715
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w48_h32_seed71/class_04_members_panel.png",
+      "size_bytes": 187420
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_01_members_list.csv",
+      "size_bytes": 7403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_01_members_panel.png",
+      "size_bytes": 292210
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_02_members_list.csv",
+      "size_bytes": 7361
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_02_members_panel.png",
+      "size_bytes": 312292
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_03_members_list.csv",
+      "size_bytes": 7404
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_03_members_panel.png",
+      "size_bytes": 224091
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_04_members_list.csv",
+      "size_bytes": 7368
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed11/class_04_members_panel.png",
+      "size_bytes": 336384
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_01_members_list.csv",
+      "size_bytes": 7411
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_01_members_panel.png",
+      "size_bytes": 267113
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_02_members_list.csv",
+      "size_bytes": 7363
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_02_members_panel.png",
+      "size_bytes": 307369
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_03_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_03_members_panel.png",
+      "size_bytes": 187770
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_04_members_list.csv",
+      "size_bytes": 7355
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed23/class_04_members_panel.png",
+      "size_bytes": 349867
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_01_members_list.csv",
+      "size_bytes": 7406
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_01_members_panel.png",
+      "size_bytes": 228003
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_02_members_list.csv",
+      "size_bytes": 7385
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_02_members_panel.png",
+      "size_bytes": 332094
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_03_members_list.csv",
+      "size_bytes": 7359
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_03_members_panel.png",
+      "size_bytes": 318077
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_04_members_list.csv",
+      "size_bytes": 7408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed37/class_04_members_panel.png",
+      "size_bytes": 283274
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_01_members_list.csv",
+      "size_bytes": 7420
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_01_members_panel.png",
+      "size_bytes": 263362
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_02_members_list.csv",
+      "size_bytes": 7357
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_02_members_panel.png",
+      "size_bytes": 304286
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_03_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_03_members_panel.png",
+      "size_bytes": 356960
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_04_members_list.csv",
+      "size_bytes": 7403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed53/class_04_members_panel.png",
+      "size_bytes": 230265
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_01_members_list.csv",
+      "size_bytes": 7364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_01_members_panel.png",
+      "size_bytes": 310453
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_02_members_list.csv",
+      "size_bytes": 7428
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_02_members_panel.png",
+      "size_bytes": 213481
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_03_members_list.csv",
+      "size_bytes": 7358
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_03_members_panel.png",
+      "size_bytes": 347901
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_04_members_list.csv",
+      "size_bytes": 7410
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w56_h32_seed71/class_04_members_panel.png",
+      "size_bytes": 242743
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_01_members_list.csv",
+      "size_bytes": 7350
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_01_members_panel.png",
+      "size_bytes": 332941
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_02_members_list.csv",
+      "size_bytes": 7408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_02_members_panel.png",
+      "size_bytes": 281211
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_03_members_list.csv",
+      "size_bytes": 7386
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_03_members_panel.png",
+      "size_bytes": 289702
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_04_members_list.csv",
+      "size_bytes": 7458
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed11/class_04_members_panel.png",
+      "size_bytes": 185758
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_01_members_list.csv",
+      "size_bytes": 7426
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_01_members_panel.png",
+      "size_bytes": 246891
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_02_members_list.csv",
+      "size_bytes": 7382
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_02_members_panel.png",
+      "size_bytes": 347350
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_03_members_list.csv",
+      "size_bytes": 7365
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_03_members_panel.png",
+      "size_bytes": 293609
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_04_members_list.csv",
+      "size_bytes": 7355
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed23/class_04_members_panel.png",
+      "size_bytes": 327240
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_01_members_list.csv",
+      "size_bytes": 7351
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_01_members_panel.png",
+      "size_bytes": 327769
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_02_members_list.csv",
+      "size_bytes": 7410
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_02_members_panel.png",
+      "size_bytes": 247291
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_03_members_list.csv",
+      "size_bytes": 7382
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_03_members_panel.png",
+      "size_bytes": 338498
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_04_members_list.csv",
+      "size_bytes": 7457
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed37/class_04_members_panel.png",
+      "size_bytes": 187743
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_01_members_list.csv",
+      "size_bytes": 6927
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_01_members_panel.png",
+      "size_bytes": 287396
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_02_members_list.csv",
+      "size_bytes": 7406
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_02_members_panel.png",
+      "size_bytes": 231811
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_03_members_list.csv",
+      "size_bytes": 7385
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_03_members_panel.png",
+      "size_bytes": 342590
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_04_members_list.csv",
+      "size_bytes": 7400
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed53/class_04_members_panel.png",
+      "size_bytes": 298765
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_01_members_list.csv",
+      "size_bytes": 7427
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_01_members_panel.png",
+      "size_bytes": 250582
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_02_members_list.csv",
+      "size_bytes": 7376
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_02_members_panel.png",
+      "size_bytes": 319662
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_03_members_list.csv",
+      "size_bytes": 7360
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_03_members_panel.png",
+      "size_bytes": 352257
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_04_members_list.csv",
+      "size_bytes": 2689
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w64_h36_seed71/class_04_members_panel.png",
+      "size_bytes": 107775
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_01_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_01_members_panel.png",
+      "size_bytes": 350769
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_02_members_list.csv",
+      "size_bytes": 7416
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_02_members_panel.png",
+      "size_bytes": 247750
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_03_members_list.csv",
+      "size_bytes": 7357
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_03_members_panel.png",
+      "size_bytes": 308104
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_04_members_list.csv",
+      "size_bytes": 1987
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed11/class_04_members_panel.png",
+      "size_bytes": 50833
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_01_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_01_members_panel.png",
+      "size_bytes": 352038
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_02_members_list.csv",
+      "size_bytes": 7417
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_02_members_panel.png",
+      "size_bytes": 244347
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_03_members_list.csv",
+      "size_bytes": 6924
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_03_members_panel.png",
+      "size_bytes": 273865
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_04_members_list.csv",
+      "size_bytes": 2726
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed23/class_04_members_panel.png",
+      "size_bytes": 65689
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_01_members_list.csv",
+      "size_bytes": 7354
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_01_members_panel.png",
+      "size_bytes": 353034
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_02_members_list.csv",
+      "size_bytes": 7412
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_02_members_panel.png",
+      "size_bytes": 252214
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_03_members_list.csv",
+      "size_bytes": 7371
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_03_members_panel.png",
+      "size_bytes": 286824
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_04_members_list.csv",
+      "size_bytes": 7458
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed37/class_04_members_panel.png",
+      "size_bytes": 187172
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_01_members_list.csv",
+      "size_bytes": 6927
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_01_members_panel.png",
+      "size_bytes": 277662
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_02_members_list.csv",
+      "size_bytes": 7408
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_02_members_panel.png",
+      "size_bytes": 266969
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_03_members_list.csv",
+      "size_bytes": 7378
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_03_members_panel.png",
+      "size_bytes": 356550
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_04_members_list.csv",
+      "size_bytes": 7458
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed53/class_04_members_panel.png",
+      "size_bytes": 186031
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_01_members_list.csv",
+      "size_bytes": 7426
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_01_members_panel.png",
+      "size_bytes": 250110
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_02_members_list.csv",
+      "size_bytes": 7369
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_02_members_panel.png",
+      "size_bytes": 337400
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_03_members_list.csv",
+      "size_bytes": 3857
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_03_members_panel.png",
+      "size_bytes": 150084
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_04_members_list.csv",
+      "size_bytes": 7221
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w72_h40_seed71/class_04_members_panel.png",
+      "size_bytes": 315444
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_01_members_list.csv",
+      "size_bytes": 7346
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_01_members_panel.png",
+      "size_bytes": 330717
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_02_members_list.csv",
+      "size_bytes": 7403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_02_members_panel.png",
+      "size_bytes": 294747
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_03_members_list.csv",
+      "size_bytes": 7395
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_03_members_panel.png",
+      "size_bytes": 293185
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_04_members_list.csv",
+      "size_bytes": 7162
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed11/class_04_members_panel.png",
+      "size_bytes": 180103
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_01_members_list.csv",
+      "size_bytes": 7358
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_01_members_panel.png",
+      "size_bytes": 305781
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_02_members_list.csv",
+      "size_bytes": 7413
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_02_members_panel.png",
+      "size_bytes": 257619
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_03_members_list.csv",
+      "size_bytes": 7411
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_03_members_panel.png",
+      "size_bytes": 237809
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_04_members_list.csv",
+      "size_bytes": 7377
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed23/class_04_members_panel.png",
+      "size_bytes": 357929
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_01_members_list.csv",
+      "size_bytes": 7427
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_01_members_panel.png",
+      "size_bytes": 249997
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_02_members_list.csv",
+      "size_bytes": 6947
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_02_members_panel.png",
+      "size_bytes": 346317
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_03_members_list.csv",
+      "size_bytes": 7364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_03_members_panel.png",
+      "size_bytes": 291717
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_04_members_list.csv",
+      "size_bytes": 7368
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed37/class_04_members_panel.png",
+      "size_bytes": 324792
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_01_members_list.csv",
+      "size_bytes": 7363
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_01_members_panel.png",
+      "size_bytes": 289883
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_02_members_list.csv",
+      "size_bytes": 7233
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_02_members_panel.png",
+      "size_bytes": 399088
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_03_members_list.csv",
+      "size_bytes": 7405
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_03_members_panel.png",
+      "size_bytes": 280551
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_04_members_list.csv",
+      "size_bytes": 7458
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed53/class_04_members_panel.png",
+      "size_bytes": 185792
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_01_members_list.csv",
+      "size_bytes": 7426
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_01_members_panel.png",
+      "size_bytes": 251709
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_02_members_list.csv",
+      "size_bytes": 7348
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_02_members_panel.png",
+      "size_bytes": 364115
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_03_members_list.csv",
+      "size_bytes": 5899
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_03_members_panel.png",
+      "size_bytes": 211757
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_04_members_list.csv",
+      "size_bytes": 7396
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/class_members_w80_h44_seed71/class_04_members_panel.png",
+      "size_bytes": 299837
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z001.png",
+      "size_bytes": 2730
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z002.png",
+      "size_bytes": 2864
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z003.png",
+      "size_bytes": 3563
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z004.png",
+      "size_bytes": 5201
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z005.png",
+      "size_bytes": 5076
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z006.png",
+      "size_bytes": 4998
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z007.png",
+      "size_bytes": 4844
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z008.png",
+      "size_bytes": 4971
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z009.png",
+      "size_bytes": 4747
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z010.png",
+      "size_bytes": 4995
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z011.png",
+      "size_bytes": 5946
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z012.png",
+      "size_bytes": 6056
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z013.png",
+      "size_bytes": 5734
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z014.png",
+      "size_bytes": 6093
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z015.png",
+      "size_bytes": 5927
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z016.png",
+      "size_bytes": 5485
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z017.png",
+      "size_bytes": 5134
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z018.png",
+      "size_bytes": 5142
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z019.png",
+      "size_bytes": 5682
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z020.png",
+      "size_bytes": 5437
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z021.png",
+      "size_bytes": 5555
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z022.png",
+      "size_bytes": 6221
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z023.png",
+      "size_bytes": 6977
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z024.png",
+      "size_bytes": 6930
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z025.png",
+      "size_bytes": 5565
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z026.png",
+      "size_bytes": 5335
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z027.png",
+      "size_bytes": 5797
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z028.png",
+      "size_bytes": 6922
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z029.png",
+      "size_bytes": 6940
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z030.png",
+      "size_bytes": 7212
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z031.png",
+      "size_bytes": 6889
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z032.png",
+      "size_bytes": 6766
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z033.png",
+      "size_bytes": 6065
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z034.png",
+      "size_bytes": 6116
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z035.png",
+      "size_bytes": 6689
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z036.png",
+      "size_bytes": 6574
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z037.png",
+      "size_bytes": 6538
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z038.png",
+      "size_bytes": 6126
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z039.png",
+      "size_bytes": 6927
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z040.png",
+      "size_bytes": 8978
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z041.png",
+      "size_bytes": 9487
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z042.png",
+      "size_bytes": 9133
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z043.png",
+      "size_bytes": 9531
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z044.png",
+      "size_bytes": 9546
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z045.png",
+      "size_bytes": 8335
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z046.png",
+      "size_bytes": 7349
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z047.png",
+      "size_bytes": 7380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z048.png",
+      "size_bytes": 7947
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z049.png",
+      "size_bytes": 7759
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z050.png",
+      "size_bytes": 7845
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z051.png",
+      "size_bytes": 6651
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z052.png",
+      "size_bytes": 6518
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z053.png",
+      "size_bytes": 5892
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z054.png",
+      "size_bytes": 5725
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z055.png",
+      "size_bytes": 5602
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z056.png",
+      "size_bytes": 6879
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z057.png",
+      "size_bytes": 7583
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z058.png",
+      "size_bytes": 8587
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z059.png",
+      "size_bytes": 8419
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z060.png",
+      "size_bytes": 7031
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z061.png",
+      "size_bytes": 6551
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z062.png",
+      "size_bytes": 6863
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z063.png",
+      "size_bytes": 7297
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z064.png",
+      "size_bytes": 7558
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z065.png",
+      "size_bytes": 7151
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z066.png",
+      "size_bytes": 6768
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z067.png",
+      "size_bytes": 6280
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z068.png",
+      "size_bytes": 6306
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z069.png",
+      "size_bytes": 6655
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z070.png",
+      "size_bytes": 5519
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z071.png",
+      "size_bytes": 6551
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z072.png",
+      "size_bytes": 7020
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z073.png",
+      "size_bytes": 6557
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z074.png",
+      "size_bytes": 6151
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z075.png",
+      "size_bytes": 6516
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z076.png",
+      "size_bytes": 7061
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z077.png",
+      "size_bytes": 7689
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z078.png",
+      "size_bytes": 7112
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z079.png",
+      "size_bytes": 7519
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z080.png",
+      "size_bytes": 8028
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z081.png",
+      "size_bytes": 7386
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z082.png",
+      "size_bytes": 7079
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z083.png",
+      "size_bytes": 7159
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z084.png",
+      "size_bytes": 7171
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z085.png",
+      "size_bytes": 8003
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z086.png",
+      "size_bytes": 7679
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z087.png",
+      "size_bytes": 6421
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z088.png",
+      "size_bytes": 6250
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z089.png",
+      "size_bytes": 6274
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z090.png",
+      "size_bytes": 6671
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z091.png",
+      "size_bytes": 6884
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z092.png",
+      "size_bytes": 6392
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z093.png",
+      "size_bytes": 6318
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z094.png",
+      "size_bytes": 5731
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z095.png",
+      "size_bytes": 5538
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z096.png",
+      "size_bytes": 5810
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z097.png",
+      "size_bytes": 5152
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z098.png",
+      "size_bytes": 6632
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z099.png",
+      "size_bytes": 7795
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z100.png",
+      "size_bytes": 8844
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z101.png",
+      "size_bytes": 9604
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z102.png",
+      "size_bytes": 7415
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z103.png",
+      "size_bytes": 5805
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z104.png",
+      "size_bytes": 5626
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z105.png",
+      "size_bytes": 6051
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z106.png",
+      "size_bytes": 6128
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z107.png",
+      "size_bytes": 5992
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z108.png",
+      "size_bytes": 6832
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z109.png",
+      "size_bytes": 6418
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z110.png",
+      "size_bytes": 6148
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z111.png",
+      "size_bytes": 5735
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z112.png",
+      "size_bytes": 6554
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z113.png",
+      "size_bytes": 7040
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z114.png",
+      "size_bytes": 6646
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z115.png",
+      "size_bytes": 5609
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z116.png",
+      "size_bytes": 5404
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z117.png",
+      "size_bytes": 5684
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z118.png",
+      "size_bytes": 5642
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z119.png",
+      "size_bytes": 5982
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z120.png",
+      "size_bytes": 6273
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z121.png",
+      "size_bytes": 6242
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z122.png",
+      "size_bytes": 5550
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z123.png",
+      "size_bytes": 4982
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z124.png",
+      "size_bytes": 5015
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z125.png",
+      "size_bytes": 5344
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z126.png",
+      "size_bytes": 5378
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z127.png",
+      "size_bytes": 5004
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z128.png",
+      "size_bytes": 5777
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z129.png",
+      "size_bytes": 6406
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z130.png",
+      "size_bytes": 5985
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z131.png",
+      "size_bytes": 5732
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z132.png",
+      "size_bytes": 5781
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z133.png",
+      "size_bytes": 5615
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z134.png",
+      "size_bytes": 5544
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z135.png",
+      "size_bytes": 5252
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z136.png",
+      "size_bytes": 5475
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z137.png",
+      "size_bytes": 6249
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z138.png",
+      "size_bytes": 5093
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z139.png",
+      "size_bytes": 4437
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z140.png",
+      "size_bytes": 4973
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z141.png",
+      "size_bytes": 4789
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z142.png",
+      "size_bytes": 4740
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z143.png",
+      "size_bytes": 5379
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z144.png",
+      "size_bytes": 5531
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z145.png",
+      "size_bytes": 6050
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z146.png",
+      "size_bytes": 5922
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z147.png",
+      "size_bytes": 5818
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z148.png",
+      "size_bytes": 6027
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z149.png",
+      "size_bytes": 6235
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z150.png",
+      "size_bytes": 6632
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z151.png",
+      "size_bytes": 5634
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z152.png",
+      "size_bytes": 5286
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z153.png",
+      "size_bytes": 5831
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z154.png",
+      "size_bytes": 5543
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z155.png",
+      "size_bytes": 5720
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z156.png",
+      "size_bytes": 6160
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z157.png",
+      "size_bytes": 6688
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z158.png",
+      "size_bytes": 7417
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z159.png",
+      "size_bytes": 6537
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z160.png",
+      "size_bytes": 5986
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z161.png",
+      "size_bytes": 6466
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z162.png",
+      "size_bytes": 6536
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z163.png",
+      "size_bytes": 6644
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z164.png",
+      "size_bytes": 5608
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z165.png",
+      "size_bytes": 5755
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z166.png",
+      "size_bytes": 5802
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z167.png",
+      "size_bytes": 5195
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z168.png",
+      "size_bytes": 5579
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z169.png",
+      "size_bytes": 6440
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z170.png",
+      "size_bytes": 7104
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z171.png",
+      "size_bytes": 5918
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z172.png",
+      "size_bytes": 7280
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z173.png",
+      "size_bytes": 7639
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z174.png",
+      "size_bytes": 7879
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z175.png",
+      "size_bytes": 7422
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z176.png",
+      "size_bytes": 6771
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z177.png",
+      "size_bytes": 6371
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z178.png",
+      "size_bytes": 6315
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z179.png",
+      "size_bytes": 6957
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z180.png",
+      "size_bytes": 7286
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z181.png",
+      "size_bytes": 7835
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z182.png",
+      "size_bytes": 7940
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z183.png",
+      "size_bytes": 7610
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z184.png",
+      "size_bytes": 6649
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z185.png",
+      "size_bytes": 5800
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z186.png",
+      "size_bytes": 5830
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z187.png",
+      "size_bytes": 6060
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z188.png",
+      "size_bytes": 7314
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z189.png",
+      "size_bytes": 7322
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z190.png",
+      "size_bytes": 6172
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z191.png",
+      "size_bytes": 5195
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z192.png",
+      "size_bytes": 4616
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z193.png",
+      "size_bytes": 5930
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z194.png",
+      "size_bytes": 6484
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z195.png",
+      "size_bytes": 7379
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z196.png",
+      "size_bytes": 6957
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z197.png",
+      "size_bytes": 7078
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z198.png",
+      "size_bytes": 8581
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z199.png",
+      "size_bytes": 9779
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z200.png",
+      "size_bytes": 9279
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z201.png",
+      "size_bytes": 8599
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z202.png",
+      "size_bytes": 8751
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z203.png",
+      "size_bytes": 8208
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z204.png",
+      "size_bytes": 7683
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z205.png",
+      "size_bytes": 8282
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z206.png",
+      "size_bytes": 8780
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z207.png",
+      "size_bytes": 8341
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z208.png",
+      "size_bytes": 8348
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z209.png",
+      "size_bytes": 9326
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z210.png",
+      "size_bytes": 9370
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z211.png",
+      "size_bytes": 7709
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z212.png",
+      "size_bytes": 7519
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z213.png",
+      "size_bytes": 9332
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z214.png",
+      "size_bytes": 10222
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z215.png",
+      "size_bytes": 9106
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z216.png",
+      "size_bytes": 9534
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z217.png",
+      "size_bytes": 8081
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z218.png",
+      "size_bytes": 6793
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z219.png",
+      "size_bytes": 7732
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z220.png",
+      "size_bytes": 6294
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z221.png",
+      "size_bytes": 5729
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z222.png",
+      "size_bytes": 6058
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z223.png",
+      "size_bytes": 7172
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z224.png",
+      "size_bytes": 7977
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z225.png",
+      "size_bytes": 8555
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z226.png",
+      "size_bytes": 7319
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z227.png",
+      "size_bytes": 7080
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z228.png",
+      "size_bytes": 6558
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z229.png",
+      "size_bytes": 8619
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z230.png",
+      "size_bytes": 9427
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z231.png",
+      "size_bytes": 9207
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z232.png",
+      "size_bytes": 8608
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z233.png",
+      "size_bytes": 7869
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z234.png",
+      "size_bytes": 7340
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z235.png",
+      "size_bytes": 6740
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z236.png",
+      "size_bytes": 7102
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z237.png",
+      "size_bytes": 7265
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z238.png",
+      "size_bytes": 9795
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z239.png",
+      "size_bytes": 10783
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z240.png",
+      "size_bytes": 10339
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z241.png",
+      "size_bytes": 9429
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z242.png",
+      "size_bytes": 9763
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z243.png",
+      "size_bytes": 9619
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z244.png",
+      "size_bytes": 8475
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z245.png",
+      "size_bytes": 7890
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z246.png",
+      "size_bytes": 7103
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z247.png",
+      "size_bytes": 7737
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z248.png",
+      "size_bytes": 7046
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z249.png",
+      "size_bytes": 7979
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z250.png",
+      "size_bytes": 10342
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z251.png",
+      "size_bytes": 10620
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z252.png",
+      "size_bytes": 10426
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z253.png",
+      "size_bytes": 12407
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z254.png",
+      "size_bytes": 13053
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z255.png",
+      "size_bytes": 12206
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z256.png",
+      "size_bytes": 10341
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z257.png",
+      "size_bytes": 8537
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z258.png",
+      "size_bytes": 9115
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z259.png",
+      "size_bytes": 9384
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z260.png",
+      "size_bytes": 10900
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z261.png",
+      "size_bytes": 10115
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z262.png",
+      "size_bytes": 8034
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z263.png",
+      "size_bytes": 7475
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z264.png",
+      "size_bytes": 8783
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z265.png",
+      "size_bytes": 10449
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z266.png",
+      "size_bytes": 11127
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z267.png",
+      "size_bytes": 9432
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z268.png",
+      "size_bytes": 9487
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z269.png",
+      "size_bytes": 11007
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z270.png",
+      "size_bytes": 11911
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z271.png",
+      "size_bytes": 10126
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z272.png",
+      "size_bytes": 9203
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z273.png",
+      "size_bytes": 10380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z274.png",
+      "size_bytes": 10550
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z275.png",
+      "size_bytes": 9896
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z276.png",
+      "size_bytes": 8957
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z277.png",
+      "size_bytes": 7911
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z278.png",
+      "size_bytes": 4396
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z279.png",
+      "size_bytes": 6943
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z280.png",
+      "size_bytes": 9395
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z281.png",
+      "size_bytes": 10782
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z282.png",
+      "size_bytes": 12309
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z283.png",
+      "size_bytes": 12542
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z284.png",
+      "size_bytes": 12847
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z285.png",
+      "size_bytes": 11259
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z286.png",
+      "size_bytes": 10954
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z287.png",
+      "size_bytes": 10727
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z288.png",
+      "size_bytes": 11173
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z289.png",
+      "size_bytes": 10311
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z290.png",
+      "size_bytes": 9130
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z291.png",
+      "size_bytes": 8945
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z292.png",
+      "size_bytes": 10836
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z293.png",
+      "size_bytes": 10937
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z294.png",
+      "size_bytes": 11972
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z295.png",
+      "size_bytes": 13566
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z296.png",
+      "size_bytes": 13992
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z297.png",
+      "size_bytes": 13107
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z298.png",
+      "size_bytes": 12548
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z299.png",
+      "size_bytes": 11801
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z300.png",
+      "size_bytes": 11883
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z301.png",
+      "size_bytes": 11604
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z302.png",
+      "size_bytes": 11536
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z303.png",
+      "size_bytes": 10712
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z304.png",
+      "size_bytes": 11095
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z305.png",
+      "size_bytes": 10619
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z306.png",
+      "size_bytes": 10334
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z307.png",
+      "size_bytes": 10455
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z308.png",
+      "size_bytes": 9982
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z309.png",
+      "size_bytes": 8970
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z310.png",
+      "size_bytes": 8808
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z311.png",
+      "size_bytes": 8142
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z312.png",
+      "size_bytes": 7541
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z313.png",
+      "size_bytes": 8160
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z314.png",
+      "size_bytes": 9237
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z315.png",
+      "size_bytes": 10380
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z316.png",
+      "size_bytes": 10448
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z317.png",
+      "size_bytes": 10170
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z318.png",
+      "size_bytes": 9628
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z319.png",
+      "size_bytes": 10754
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z320.png",
+      "size_bytes": 10188
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z321.png",
+      "size_bytes": 10010
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z322.png",
+      "size_bytes": 10515
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z323.png",
+      "size_bytes": 10743
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z324.png",
+      "size_bytes": 11148
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z325.png",
+      "size_bytes": 10554
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z326.png",
+      "size_bytes": 9458
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z327.png",
+      "size_bytes": 8926
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z328.png",
+      "size_bytes": 7732
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z329.png",
+      "size_bytes": 7119
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z330.png",
+      "size_bytes": 6497
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z331.png",
+      "size_bytes": 6403
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z332.png",
+      "size_bytes": 7091
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z333.png",
+      "size_bytes": 7076
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z334.png",
+      "size_bytes": 6638
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z335.png",
+      "size_bytes": 5880
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z336.png",
+      "size_bytes": 6320
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z337.png",
+      "size_bytes": 6211
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z338.png",
+      "size_bytes": 6863
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z339.png",
+      "size_bytes": 7302
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z340.png",
+      "size_bytes": 7065
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z341.png",
+      "size_bytes": 7071
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z342.png",
+      "size_bytes": 7480
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z343.png",
+      "size_bytes": 7192
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z344.png",
+      "size_bytes": 6602
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z345.png",
+      "size_bytes": 6822
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z346.png",
+      "size_bytes": 7966
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z347.png",
+      "size_bytes": 8278
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z348.png",
+      "size_bytes": 9004
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z349.png",
+      "size_bytes": 8393
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z350.png",
+      "size_bytes": 8898
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z351.png",
+      "size_bytes": 8884
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z352.png",
+      "size_bytes": 8278
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z353.png",
+      "size_bytes": 7944
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z354.png",
+      "size_bytes": 7906
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z355.png",
+      "size_bytes": 8090
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z356.png",
+      "size_bytes": 9159
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z357.png",
+      "size_bytes": 8057
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z358.png",
+      "size_bytes": 7878
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z359.png",
+      "size_bytes": 5973
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z360.png",
+      "size_bytes": 5700
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z361.png",
+      "size_bytes": 7766
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z362.png",
+      "size_bytes": 7461
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z363.png",
+      "size_bytes": 8323
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z364.png",
+      "size_bytes": 8208
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z365.png",
+      "size_bytes": 9219
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z366.png",
+      "size_bytes": 9803
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z367.png",
+      "size_bytes": 9194
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z368.png",
+      "size_bytes": 7877
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z369.png",
+      "size_bytes": 8219
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/legacy_named_normalized_pngs/X_surface_norm_z370.png",
+      "size_bytes": 9322
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/plots/icv_boxplot_patchsize_faithful_initial.png",
+      "size_bytes": 71571
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/plots/icv_mean_vs_patchsize_faithful_initial.png",
+      "size_bytes": 87364
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/plots/min_class_size_vs_patchsize_faithful_initial.png",
+      "size_bytes": 98623
+    },
+    {
+      "path": "results/fossum_roi_x490_step02_patch_sensitivity_20260510_112924/plots/runtime_vs_patchsize_faithful_initial.png",
+      "size_bytes": 84473
+    }
+  ]
+}

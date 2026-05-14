@@ -1,0 +1,13 @@
+{
+  "strict_legacy_balanced_score_best_sd": 0.25,
+  "strict_legacy_balanced_score_best_n_classes": 6,
+  "official_legacy_sd_fraction": 0.3,
+  "official_legacy_sd_n_classes": 5,
+  "recommended_sd_for_next_step": 0.3,
+  "recommended_n_classes_for_next_step": 5,
+  "reason": "The automatic balanced score ranks SD=0.25 slightly first, but the old pipeline official cut was SD=0.30 and this new run gives exactly the target of 5 classes with no singletons and plausible behavior.",
+  "alternative_to_keep": {
+    "sd_fraction": 0.25,
+    "n_classes": 6
+  }
+}

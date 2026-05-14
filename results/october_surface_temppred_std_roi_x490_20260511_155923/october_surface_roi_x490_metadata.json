@@ -1,0 +1,48 @@
+{
+  "input_predmodel_root": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes",
+  "input_std_audit_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\std_october_surface_audit_20260511_153958",
+  "roi_reference_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348",
+  "selected_day_slice": 1,
+  "selected_depth_index": 1,
+  "selected_depth_value_m": 0.4940253794193268,
+  "requested_roi_bounds_xy_km": {
+    "x_min_km": 463.0,
+    "x_max_km": 490.0,
+    "y_min_km": 4376.0,
+    "y_max_km": 4397.0
+  },
+  "actual_roi_bounds_xy_km": {
+    "x_min_km": 463.1213684082031,
+    "x_max_km": 489.7983093261719,
+    "y_min_km": 4375.94287109375,
+    "y_max_km": 4396.81298828125
+  },
+  "actual_roi_bounds_xy_km_from_arrays": {
+    "x_min_km": 463.1213684082031,
+    "x_max_km": 489.7983093261719,
+    "y_min_km": 4375.94287109375,
+    "y_max_km": 4396.81298828125
+  },
+  "roi_indices": {
+    "row_min": 55,
+    "row_max": 126,
+    "col_min": 47,
+    "col_max": 163
+  },
+  "roi_shape": [
+    72,
+    117
+  ],
+  "n_days": 31,
+  "date_start": "2024-10-01",
+  "date_end": "2024-10-31",
+  "std_color_scale_vmin": 0.0062950002029538155,
+  "std_color_scale_vmax": 0.09617653757333754,
+  "temppred_color_scale_vmin": 17.236584033966064,
+  "temppred_color_scale_vmax": 19.71158794403076,
+  "mask_applied": true,
+  "mask_valid_cells": 8182,
+  "mask_valid_fraction": 0.9712725546058879,
+  "reference_hres_valid_fraction": 0.9501424501424501,
+  "orientation_preserved": true
+}

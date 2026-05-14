@@ -1,0 +1,31 @@
+{
+  "stage": "patch",
+  "config_name": "patch_32x20",
+  "patch_w": 32,
+  "patch_h": 20,
+  "dictionary_size": 4,
+  "seed": 11,
+  "n_classes": 4,
+  "patches_per_image": 4558,
+  "patch_vector_length": 1280,
+  "feature_vector_length": 18232,
+  "features_shape": [
+    370,
+    18232
+  ],
+  "class_sizes": [
+    151,
+    93,
+    56,
+    70
+  ],
+  "icv_per_class": [
+    1681.3916015625,
+    2497.58447265625,
+    752.2675170898438,
+    1431.6766357421875
+  ],
+  "mean_icv": 1590.7300567626953,
+  "runtime_seconds": 710.7641654999998,
+  "methodology": "legacy faithful initial: full sparse feature vector, valid-mask channel, Ward n_classes=4"
+}

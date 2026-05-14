@@ -1,0 +1,76 @@
+[
+  {
+    "sd_dir": "sd_20pct",
+    "panel_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_20pct_all_members_by_class.png",
+    "n_classes": 10,
+    "class_sizes": {
+      "C01": 12,
+      "C02": 29,
+      "C03": 70,
+      "C04": 50,
+      "C05": 51,
+      "C06": 56,
+      "C07": 30,
+      "C08": 11,
+      "C09": 31,
+      "C10": 30
+    },
+    "missing_png_count": 0,
+    "missing_pngs": []
+  },
+  {
+    "sd_dir": "sd_25pct",
+    "panel_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_25pct_all_members_by_class.png",
+    "n_classes": 6,
+    "class_sizes": {
+      "C01": 41,
+      "C02": 70,
+      "C03": 50,
+      "C04": 107,
+      "C05": 30,
+      "C06": 72
+    },
+    "missing_png_count": 0,
+    "missing_pngs": []
+  },
+  {
+    "sd_dir": "sd_30pct",
+    "panel_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_30pct_all_members_by_class.png",
+    "n_classes": 5,
+    "class_sizes": {
+      "C01": 41,
+      "C02": 120,
+      "C03": 107,
+      "C04": 30,
+      "C05": 72
+    },
+    "missing_png_count": 0,
+    "missing_pngs": []
+  },
+  {
+    "sd_dir": "sd_35pct",
+    "panel_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_35pct_all_members_by_class.png",
+    "n_classes": 4,
+    "class_sizes": {
+      "C01": 41,
+      "C02": 120,
+      "C03": 107,
+      "C04": 102
+    },
+    "missing_png_count": 0,
+    "missing_pngs": []
+  },
+  {
+    "sd_dir": "sd_40pct",
+    "panel_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354\\sd_40pct_all_members_by_class.png",
+    "n_classes": 4,
+    "class_sizes": {
+      "C01": 41,
+      "C02": 120,
+      "C03": 107,
+      "C04": 102
+    },
+    "missing_png_count": 0,
+    "missing_pngs": []
+  }
+]

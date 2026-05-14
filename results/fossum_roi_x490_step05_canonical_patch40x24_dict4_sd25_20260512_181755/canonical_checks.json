@@ -1,0 +1,77 @@
+{
+  "script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\05_canonical_fossum_roi_x490_patch40x24_dict4_sd25.py",
+  "input_step00": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "uses_tempres_old_as_input": false,
+  "input_shape": [
+    370,
+    72,
+    117
+  ],
+  "shape_matches_expected": true,
+  "date_start": "2023-10-28",
+  "date_end": "2024-10-31",
+  "n_days": 370,
+  "mask_shape": [
+    72,
+    117
+  ],
+  "mask_valid_cells": 8004,
+  "mask_valid_fraction": 0.9501424501424501,
+  "normalized_valid_mean": -9.430989678094193e-08,
+  "normalized_valid_std": 1.0,
+  "patch_width": 40,
+  "patch_height": 24,
+  "dictionary_size": 4,
+  "seed": 11,
+  "standard_scaler_on": true,
+  "sd_fraction": 0.25,
+  "sd_value": 479.21026912032045,
+  "expected_n_classes": 6,
+  "n_classes_observed": 6,
+  "expected_n_classes_observed": true,
+  "patches_per_image": 3822,
+  "feature_matrix_shape": [
+    370,
+    15288
+  ],
+  "sparse_codes_shape": [
+    370,
+    3822,
+    4
+  ],
+  "class_sizes": [
+    41,
+    70,
+    50,
+    107,
+    30,
+    72
+  ],
+  "outputs_created": {
+    "canonical_assignments.csv": true,
+    "canonical_class_sizes.csv": true,
+    "canonical_class_members_list.csv": true,
+    "canonical_class_members_summary.csv": true,
+    "canonical_prototypes.npy": true,
+    "canonical_feature_matrix.npy": true,
+    "canonical_scaled_feature_matrix.npy": true,
+    "canonical_linkage.npy": true,
+    "canonical_dictionary.npz": true,
+    "canonical_sparse_codes.npz": true,
+    "canonical_config.json": true,
+    "canonical_metadata.json": true,
+    "canonical_checks.json": true,
+    "canonical_summary.md": true,
+    "canonical_report.md": true,
+    "canonical_dendrogram_sd25.png": true,
+    "canonical_grouped_by_class_panel.png": true,
+    "canonical_all_members_by_class_panel.png": true,
+    "canonical_class_prototypes_panel.png": true,
+    "canonical_class_timeline.png": true,
+    "canonical_class_calendar_view.png": true,
+    "canonical_class_size_barplot.png": true,
+    "canonical_prototype_similarity_matrix.png": true
+  },
+  "warnings": [],
+  "final_verdict": "canonical run completed; no parameters were auto-adjusted"
+}

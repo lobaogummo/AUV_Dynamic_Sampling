@@ -1,0 +1,191 @@
+{
+  "output_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+  "input_step00": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "input_shape": [
+    370,
+    72,
+    117
+  ],
+  "date_start": "2023-10-28",
+  "date_end": "2024-10-31",
+  "n_days": 370,
+  "mask_valid_cells": 8004,
+  "mask_valid_fraction": 0.9501424501424501,
+  "normalization_stats": {
+    "mu_global": 16.899330139160156,
+    "sigma_global": 1.3486158847808838,
+    "n_images": 370,
+    "ny": 72,
+    "nx": 117,
+    "valid_pixels_per_image_mean": 8004.0,
+    "valid_pixels_total": 2961480,
+    "mask_fraction_valid": 0.9501424501424501,
+    "mask_fraction_invalid": 0.049857549857549865,
+    "normalized_png_scale_method": "legacy symmetric +/- percentile98(abs(X_norm[:, mask_common]))",
+    "normalized_png_vmin": -1.950387954711914,
+    "normalized_png_vmax": 1.950387954711914,
+    "source_input": "results/fresnel_paper_roi_x490_surface_370_20260509_180348/thetao_surface_370_hres_paper_roi_x490.npy"
+  },
+  "step00_metadata": {
+    "input_new_dataset": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348",
+    "input_array": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\thetao_surface_370_hres_paper_roi_x490.npy",
+    "source_metadata": {
+      "input_dataset_path": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.npy",
+      "original_shape": [
+        370,
+        180,
+        240
+      ],
+      "roi_shape": [
+        370,
+        72,
+        117
+      ],
+      "date_start": "2023-10-28",
+      "date_end": "2024-10-31",
+      "n_days": 370,
+      "projection_used": "WGS84 / UTM zone 29N (EPSG:32629), x/y in km",
+      "requested_roi_bounds_xy_km": {
+        "x_min_km": 463.0,
+        "x_max_km": 490.0,
+        "y_min_km": 4376.0,
+        "y_max_km": 4397.0
+      },
+      "actual_roi_bounds_xy_km": {
+        "x_min_km": 463.1213684082031,
+        "x_max_km": 489.7983093261719,
+        "y_min_km": 4375.94287109375,
+        "y_max_km": 4396.81298828125
+      },
+      "actual_roi_bounds_latlon": {
+        "lat_min": 39.533084869384766,
+        "lat_max": 39.72039794921875,
+        "lon_min": -9.429128646850586,
+        "lon_max": -9.119029998779297
+      },
+      "roi_indices": {
+        "row_min": 55,
+        "row_max": 126,
+        "col_min": 47,
+        "col_max": 163
+      },
+      "roi_area_km2_approx": 556.7508831620216,
+      "valid_fraction": 0.9501424501424501,
+      "nan_fraction": 0.04985754985754986,
+      "color_scale_method": "global robust percentiles p1-p99 over all finite x490 paper ROI cells; absolute min/max recorded",
+      "color_scale_vmin": 14.574130058288574,
+      "color_scale_vmax": 19.65491485595703,
+      "absolute_min": 14.110956192016602,
+      "absolute_max": 20.068952560424805,
+      "mask_applied": true,
+      "x_max_near_490_km": true,
+      "previous_roi_outputs_deleted_before_generation": true,
+      "deleted_prior_results": [
+        "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_roi_surface_370_20260509_164727",
+        "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_surface_370_20260509_174142"
+      ],
+      "output_npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\thetao_surface_370_hres_paper_roi_x490.npy",
+      "output_nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\thetao_surface_370_hres_paper_roi_x490.nc",
+      "output_png_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\png_paper_roi_x490_daily",
+      "output_clean_png_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\png_paper_roi_x490_daily_clean",
+      "output_png_count": 370,
+      "output_clean_png_count": 370,
+      "failed_days": [],
+      "final_verdict": "The corrected FRESNEL paper ROI with x_max near 490 km was applied to the 370 HRes surface temperature maps, the previous ROI outputs were deleted, and all ROI PNGs were exported with a consistent global color scale."
+    },
+    "source_checks": {
+      "input_files_found": {
+        "thetao": true,
+        "thetao_nc": true,
+        "lat": true,
+        "lon": true,
+        "bathy": true,
+        "mask": true,
+        "dates": true,
+        "metadata": true
+      },
+      "input_shape_correct": true,
+      "dates_count_correct": true,
+      "roi_indices_found": true,
+      "roi_not_empty": true,
+      "roi_shape": [
+        370,
+        72,
+        117
+      ],
+      "output_array_shape": [
+        370,
+        72,
+        117
+      ],
+      "n_png_generated": 370,
+      "n_clean_png_generated": 370,
+      "expected_png_count": 370,
+      "png_count_correct": true,
+      "clean_png_count_correct": true,
+      "mask_applied": true,
+      "orientation_preserved": true,
+      "x_axis_ends_near_490_km": true,
+      "previous_results_deleted_before_generation": true,
+      "no_input_files_modified": true,
+      "failed_days": [],
+      "final_verdict": "The corrected FRESNEL paper ROI with x_max near 490 km was applied to the 370 HRes surface temperature maps, the previous ROI outputs were deleted, and all ROI PNGs were exported with a consistent global color scale."
+    },
+    "shape": [
+      370,
+      72,
+      117
+    ],
+    "date_start": "2023-10-28",
+    "date_end": "2024-10-31",
+    "n_days": 370,
+    "depth": "surface",
+    "roi": "FRESNEL paper ROI x490",
+    "legacy_logic_reference": [
+      "scripts/Old_Code/01_build_fossum_surface_dataset.py",
+      "scripts/Old_Code/01b_export_normalized_surface_pngs.py",
+      "scripts/Old_Code/export_surface_2024_300_images.py",
+      "scripts/fossum_faithful_initial_utils.py"
+    ],
+    "mask_logic": "np.isfinite(X).all(axis=0)",
+    "normalization_logic": "global mean/std over X[:, mask_common]",
+    "png_scale_logic": "symmetric +/- percentile98(abs(X_norm[:, mask_common]))",
+    "input_roi_mask_valid_fraction": 0.9712725546058879,
+    "common_mask_valid_fraction": 0.9501424501424501,
+    "source_LAT_shape": [
+      72
+    ],
+    "source_LON_shape": [
+      117
+    ],
+    "output_LAT_LON_shape": [
+      72,
+      117
+    ]
+  },
+  "patches_per_image": 3822,
+  "patch_vector_length": 1920,
+  "feature_vector_length": 15288,
+  "feature_matrix_shape": [
+    370,
+    15288
+  ],
+  "sparse_codes_shape": [
+    370,
+    3822,
+    4
+  ],
+  "max_merge_distance": 1916.8410764812818,
+  "sd_value": 479.21026912032045,
+  "n_classes": 6,
+  "class_sizes": [
+    41,
+    70,
+    50,
+    107,
+    30,
+    72
+  ],
+  "runtime_seconds": 1525.7181655000022,
+  "warnings": []
+}

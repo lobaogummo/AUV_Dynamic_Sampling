@@ -1,0 +1,98 @@
+{
+  "old_dictionary_script_found": true,
+  "old_dictionary_script_path": "scripts/03a_dictionary_size_sensitivity_fossum_faithful_initial.py",
+  "old_dictionary_sizes_detected": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "old_fixed_parameters_detected": {
+    "legacy_default_patch": "72x40",
+    "used_patch_from_step02": "40x24",
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "n_classes": 4,
+    "dict_batch_size": 4096,
+    "transform_nnz": 2,
+    "include_valid_mask": true,
+    "mask_encoding": "concat",
+    "feature_mode": "raw",
+    "standard_scaler": "not used by legacy 03a",
+    "sd_fraction": "not used by legacy 03a"
+  },
+  "old_outputs_detected": [
+    "runs.csv",
+    "summary.csv",
+    "ranking.csv",
+    "plots/",
+    "class_members_xdsXX_seedSS/"
+  ],
+  "input_new_dataset": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "input_shape": [
+    370,
+    72,
+    117
+  ],
+  "n_days": 370,
+  "patch_width": 40,
+  "patch_height": 24,
+  "dictionary_sizes_tested": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "dictionary_sizes_skipped": [],
+  "reason_for_skipped_dictionary_sizes": [],
+  "seeds_used": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "logic_changes_made": [
+    "Redirected legacy module input paths to Step00 ROI x490 arrays.",
+    "Redirected legacy output base/doc path to the new Step03 result folder.",
+    "Set patch width/height to Step02 recommendation 40x24 via legacy CLI arguments.",
+    "Created a compatibility PNG folder with legacy `X_surface_norm_zNNN.png` names.",
+    "Added ROI x490 summary/check/manifest/recommendation files around the legacy outputs."
+  ],
+  "unavoidable_adaptations": [
+    "Day count changed from 300 to 370.",
+    "Spatial shape changed to ROI x490 shape.",
+    "Patch changed from legacy default 72x40 to Step02-selected 40x24 as required.",
+    "Metadata and output names reference ROI x490."
+  ],
+  "methodology_preserved": true,
+  "output_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620",
+  "recommendation_generated": true,
+  "recommended_dictionary_size": 2,
+  "additional_equivalent_figures_created": [
+    "dictionary_sensitivity_class_sizes_comparison.png",
+    "dictionary_sensitivity_metric_ranking.png",
+    "dictionary_sensitivity_nclasses_comparison.png"
+  ],
+  "runtime_seconds": 9691.375906800007,
+  "final_verdict": "PASS - legacy dictionary-size sensitivity logic rerun on ROI x490 using Step02 patch with path/shape/day-count/metadata adaptations only."
+}

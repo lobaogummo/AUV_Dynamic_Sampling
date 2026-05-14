@@ -1,0 +1,41 @@
+{
+  "best_patch_by_legacy_ranking": "40x24",
+  "best_patch_w": 40,
+  "best_patch_h": 24,
+  "balanced_score": 2.6,
+  "legacy_patch_72x40_rank": 8,
+  "legacy_patch_72x40_row": [
+    {
+      "patch_w": 72,
+      "patch_h": 40,
+      "executed_runs": 5,
+      "dictionary_size": 4,
+      "include_valid_mask": true,
+      "mask_encoding": "concat",
+      "feature_mode": "raw",
+      "patches_per_image": 1518,
+      "total_patches": 561660,
+      "patch_vector_length": 5760,
+      "feature_vector_length": 6072,
+      "mean_icv_mean": 1776.092804336548,
+      "mean_icv_std": 193.0494793083801,
+      "std_icv_mean": 1018.4218490280808,
+      "std_icv_std": 247.31160037382563,
+      "min_class_size_mean": 31.6,
+      "min_class_size_min": 13,
+      "mean_class_size_mean": 92.5,
+      "max_class_size_mean": 152.0,
+      "runtime_mean_seconds": 448.2178184200049,
+      "runtime_std_seconds": 29.90821932749068,
+      "requested_runs": 5,
+      "reduced_seed_count": false,
+      "rank_mean_icv": 5.0,
+      "rank_icv_spread": 5.0,
+      "rank_std_icv": 9.0,
+      "rank_min_class": 9.0,
+      "rank_runtime": 2.0,
+      "balanced_score": 6.3
+    }
+  ],
+  "recommendation": "Use 40x24 for the next dictionary-size sensitivity step according to the legacy ranking."
+}

@@ -1,6 +1,6 @@
 # Step02 old patch-size sensitivity logic audit
 
-Generated: 2026-05-10T13:31:58
+Generated: 2026-05-10T19:33:19
 
 ## 1. Old script
 - Reference script: `scripts/02b_patch_size_sensitivity_fossum_faithful_initial.py`

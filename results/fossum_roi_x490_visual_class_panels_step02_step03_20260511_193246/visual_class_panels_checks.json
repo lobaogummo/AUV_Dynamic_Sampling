@@ -1,0 +1,70 @@
+{
+  "input_step02_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step02_patch_sensitivity_20260510_112924",
+  "input_step03_folder": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step03_dictionary_sensitivity_20260510_231620",
+  "seed_used": 11,
+  "patch_configs_requested": [
+    {
+      "patch_width": 40,
+      "patch_height": 24,
+      "dictionary_size": 4
+    },
+    {
+      "patch_width": 48,
+      "patch_height": 32,
+      "dictionary_size": 4
+    },
+    {
+      "patch_width": 32,
+      "patch_height": 20,
+      "dictionary_size": 4
+    }
+  ],
+  "patch_configs_completed": [
+    "patch_40x24",
+    "patch_48x32",
+    "patch_32x20"
+  ],
+  "dictionary_configs_requested": [
+    {
+      "dictionary_size": 2,
+      "patch_width": 40,
+      "patch_height": 24
+    },
+    {
+      "dictionary_size": 4,
+      "patch_width": 40,
+      "patch_height": 24
+    },
+    {
+      "dictionary_size": 3,
+      "patch_width": 40,
+      "patch_height": 24
+    }
+  ],
+  "dictionary_configs_completed": [
+    "dict2_patch40x24",
+    "dict4_patch40x24",
+    "dict3_patch40x24"
+  ],
+  "missing_outputs": [],
+  "regenerated_specific_runs": [
+    "patch_40x24_seed11",
+    "patch_48x32_seed11",
+    "patch_32x20_seed11",
+    "dict2_patch40x24_seed11",
+    "dict4_patch40x24_seed11",
+    "dict3_patch40x24_seed11"
+  ],
+  "n_patch_panels_created": 3,
+  "n_dictionary_panels_created": 3,
+  "compact_versions_created": true,
+  "comparison_panels_created": [
+    "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\patch_visual_comparison_top_configs.png",
+    "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\dictionary_visual_comparison_top_configs.png",
+    "results\\fossum_roi_x490_visual_class_panels_step02_step03_20260511_193246\\comparison_panels\\visual_ranking_summary_panel.png"
+  ],
+  "methodology_changed": false,
+  "final_patch_visual_recommendation": "patch_width=40, patch_height=24",
+  "final_dictionary_visual_recommendation": "dictionary_size=2 primary; dictionary_size=4 retained as visual/canonical alternative",
+  "final_verdict": "Visual panels generated without changing the legacy methodology or existing rankings."
+}

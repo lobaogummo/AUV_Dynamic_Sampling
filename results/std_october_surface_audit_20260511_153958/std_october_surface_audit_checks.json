@@ -1,0 +1,38 @@
+{
+  "all_files_found": true,
+  "all_shapes_match": true,
+  "blank_std_days": [],
+  "day_slices_detected": [
+    0,
+    1
+  ],
+  "days_found": 31,
+  "days_missing": [],
+  "depth_index_used": 1,
+  "depth_value_m": 0.4940253794193268,
+  "expected_days": 31,
+  "expected_shape": [
+    180,
+    240
+  ],
+  "final_verdict": "READY_FOR_ROI_X490: all October surface STD maps passed the audit.",
+  "global_std_vmax": 0.097637,
+  "global_std_vmin": 0.006806,
+  "input_predmodel_root": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes",
+  "lat_lon_bathy_found_all_days": true,
+  "n_files_found": 31,
+  "n_suspicious_days": 0,
+  "nan_problem_days": [],
+  "same_valid_slice_all_days": true,
+  "selected_valid_day_slice": 1,
+  "shape_mismatch_days": [],
+  "slice0_degenerate_count": 31,
+  "slice1_valid_count": 31,
+  "std_shape_all_days": [
+    "(2, 180, 240)"
+  ],
+  "std_variable_found_all_days": true,
+  "suspicious_days": [],
+  "temppred_variable_found_all_days": true,
+  "zero_std_days": []
+}
