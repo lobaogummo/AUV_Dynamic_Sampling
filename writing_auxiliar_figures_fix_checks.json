@@ -1,0 +1,108 @@
+{
+  "tex_file": "overleaf/Dissertation_Lobão_extracted/writing_auxiliar.tex",
+  "commented_includegraphics_found": 9,
+  "includegraphics_uncommented": 4,
+  "image_paths_checked": [
+    {
+      "tex_path": "figures/results/grid_validation_roi_overlay.png",
+      "exists_after_fix": true,
+      "status": "restored"
+    },
+    {
+      "tex_path": "figures/results/regime_prototypes.png",
+      "exists_after_fix": true,
+      "status": "restored"
+    },
+    {
+      "tex_path": "figures/results/regime_variability_maps.png",
+      "exists_after_fix": true,
+      "status": "restored"
+    },
+    {
+      "tex_path": "figures/results/descriptor_maps_selected_day.png",
+      "exists_after_fix": false,
+      "status": "missing"
+    },
+    {
+      "tex_path": "figures/results/baseline_route_selected_day.png",
+      "exists_after_fix": true,
+      "status": "restored"
+    },
+    {
+      "tex_path": "figures/results/baseline_vs_enriched_routes.png",
+      "exists_after_fix": false,
+      "status": "missing"
+    },
+    {
+      "tex_path": "figures/results/sensitivity_heatmaps.png",
+      "exists_after_fix": false,
+      "status": "missing"
+    },
+    {
+      "tex_path": "figures/results/single_auv_comparison.png",
+      "exists_after_fix": false,
+      "status": "missing"
+    },
+    {
+      "tex_path": "figures/results/multi_auv_comparison.png",
+      "exists_after_fix": false,
+      "status": "missing"
+    }
+  ],
+  "images_found_existing_project": [
+    {
+      "source": "results/Investigation_transition_to_planner/300/planner_operational_roi_fullgrid.png",
+      "destination": "overleaf/Dissertation_Lobão_extracted/figures/results/grid_validation_roi_overlay.png"
+    },
+    {
+      "source": "results/fossum_roi_x490_step01_old_config_baseline_20260509_235101/step01_old_config_class_prototypes_panel.png",
+      "destination": "overleaf/Dissertation_Lobão_extracted/figures/results/regime_prototypes.png"
+    },
+    {
+      "source": "results/fossum_roi_x490_step01_old_config_baseline_20260509_235101/step01_old_config_class_std_maps_panel.png",
+      "destination": "overleaf/Dissertation_Lobão_extracted/figures/results/regime_variability_maps.png"
+    },
+    {
+      "source": "results/planner_baseline_scenario_c4_methodical_20260418_162500/outputs/final_rerun_surface_day1_20260419_144145/planner_run/planner_plot_surface_day1_final.png",
+      "destination": "overleaf/Dissertation_Lobão_extracted/figures/results/baseline_route_selected_day.png"
+    }
+  ],
+  "images_extracted_from_docx": [
+    "overleaf/Dissertation_Lobão_extracted/figures/writing_auxiliar/docx_image_01.png"
+  ],
+  "images_copied_to_figures_writing_auxiliar": [
+    "overleaf/Dissertation_Lobão_extracted/figures/writing_auxiliar/docx_image_01.png"
+  ],
+  "missing_images": [
+    "figures/results/descriptor_maps_selected_day.png",
+    "figures/results/baseline_vs_enriched_routes.png",
+    "figures/results/sensitivity_heatmaps.png",
+    "figures/results/single_auv_comparison.png",
+    "figures/results/multi_auv_comparison.png"
+  ],
+  "paths_updated": [
+    {
+      "tex_path": "figures/results/grid_validation_roi_overlay.png",
+      "path_change": "none; source image copied to the expected path"
+    },
+    {
+      "tex_path": "figures/results/regime_prototypes.png",
+      "path_change": "none; source image copied to the expected path"
+    },
+    {
+      "tex_path": "figures/results/regime_variability_maps.png",
+      "path_change": "none; source image copied to the expected path"
+    },
+    {
+      "tex_path": "figures/results/baseline_route_selected_day.png",
+      "path_change": "none; source image copied to the expected path"
+    }
+  ],
+  "text_changed": false,
+  "captions_changed": false,
+  "labels_changed": false,
+  "citations_changed": false,
+  "equations_changed": false,
+  "pdf_compiled_after_fix": true,
+  "final_verdict": "Partial restoration: 4 of 9 commented includegraphics commands were safely restored and appear in the compiled PDF; 5 remain reported as missing because no safe matching image was identified."
+}

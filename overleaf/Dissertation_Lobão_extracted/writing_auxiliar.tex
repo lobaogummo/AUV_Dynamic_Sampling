@@ -1,0 +1,2083 @@
+\chapter{Introduction} \label{chap:intro}
+
+Coastal ocean environments are highly dynamic systems, shaped by the interaction of atmospheric forcing, bathymetry, coastal geometry, circulation patterns and local mixing processes. These interactions generate spatially heterogeneous temperature fields, fronts, gradients and transient structures that are difficult to observe with sufficient spatial and temporal resolution. Accurate knowledge of these structures is essential for improving ocean forecasts and supporting scientific, environmental and operational decision-making in coastal regions \cite{wunsch2007stateestimation,dowd2014dataassimilation}.
+
+Numerical ocean models provide continuous estimates of the ocean state, but their predictive skill depends strongly on the availability, quality and spatial distribution of observations. In situ measurements are often sparse, costly and logistically demanding, while remote sensing products are limited by atmospheric conditions, surface-only coverage and resolution constraints. Autonomous Underwater Vehicles (AUVs) offer a flexible alternative for targeted ocean sampling, as they can collect high-resolution measurements along adaptive trajectories and complement existing observing systems \cite{curtin2009aosn,hwang2019auvreview}. Nevertheless, AUV missions are constrained by endurance, navigation requirements, safety limitations, communication restrictions and operational costs. These constraints make trajectory planning a central component of efficient ocean observation.
+
+Adaptive sampling strategies address this challenge by using model information to guide the selection of informative sampling locations. In model-driven approaches, ocean forecasts and their associated uncertainty can be used to define value maps that indicate where new observations are expected to be most useful \cite{lermusiaux2007adaptive,mendes2025oceanmodeldriven}. In uncertainty-driven planning, pointwise standard deviation maps can be used to prioritise regions where the model prediction is less certain, supporting the design of AUV trajectories that maximise information collection under operational constraints \cite{bernacchi2025closingloop,duarte2025geostatistical}.
+
+However, uncertainty maps do not necessarily encode all relevant spatial structures present in the underlying ocean field. Temperature maps may reveal thermal regimes, gradients, fronts and boundary-like structures that provide complementary information about the organisation of the ocean state.This distinction is particularly relevant in coastal regions where different dynamical regimes may coexist within the same operational domain.In such cases, observations collected in one region may not be equally informative for another, and model updates or sampling decisions based only on uncertainty may fail to account for regime-dependent behaviour \cite{mendes2025oceanmodeldriven}. Previous work on compact ocean models and regime-based representations has shown that spatial patterns in oceanographic fields can be exploited to characterise recurrent environmental states and support robotic sampling decisions \cite{fossum2020compact,ge2023watermasses}. This motivates the use of temperature-derived descriptors as additional information for adaptive planning.
+
+This dissertation investigates whether spatial descriptors extracted from ocean temperature fields can complement an uncertainty-driven adaptive planner for AUV missions. The work focuses on the Nazaré Canyon region, where complex bathymetry and coastal dynamics can generate distinct thermal structures and regime transitions. High-resolution temperature and uncertainty products derived from ocean model data and geostatistical prediction are used as the basis for the proposed pipeline. The approach compares a baseline planner driven by uncertainty maps with enriched planning formulations that incorporate descriptors related to thermal regimes, boundaries and gradients.
+
+
+\section{Context and motivation} \label{sec:context_motivation}
+
+A central goal in adaptive ocean sampling is to use limited sensing resources to collect observations that are informative for the state of the ocean. In operational settings, this often means selecting sampling locations that are expected to reduce model uncertainty or improve the usefulness of subsequent forecasts. Since AUV missions are constrained by endurance, safety, navigation requirements and operational costs, the sampling problem must be formulated as a planning problem: the vehicle trajectory should allocate the available mission time to regions with high expected scientific or operational value \cite{bernacchi2025closingloop}.
+
+A practical way to support this decision-making process is to use model-derived uncertainty maps as planner inputs. In this framework, a forecast system provides a predicted ocean field, such as temperature, together with an associated uncertainty product. Pointwise standard deviation maps can then be interpreted as value or reward maps, guiding the planner towards regions where the model prediction is less certain and where new observations may be more informative \cite{duarte2025geostatistical,bernacchi2025closingloop}. This approach is particularly attractive because it provides a direct link between model uncertainty and trajectory generation under realistic AUV constraints.
+
+However, recent experimental results also show that uncertainty-driven sampling and assimilation must be interpreted carefully in heterogeneous coastal environments. In the Nazaré Canyon region, for example, observations collected in one part of the domain may not be equally representative of another region if distinct dynamical regimes coexist. In such conditions, assimilating or prioritising data without considering the underlying spatial structure may lead to regime-dependent effects and, in some cases, may even degrade predictions outside the sampled regime \cite{mendes2025oceanmodeldriven}. This motivates the need to complement uncertainty maps with information about the organisation of the ocean field.
+
+Temperature fields provide a natural source of such complementary information. Beyond their predicted values, they contain spatial patterns such as thermal gradients, fronts, boundary-like structures and recurrent regimes. These features can indicate where the ocean state changes, where different structures meet, or where a trajectory may cross regions with distinct behaviour. Previous work on compact ocean representations and regime discovery has shown that spatial patterns in oceanographic fields can be used to characterise environmental states and support robotic sampling decisions \cite{fossum2020compact,ge2023watermasses}.
+
+The motivation of this dissertation is therefore to investigate whether descriptors extracted from temperature maps can enrich an uncertainty-driven AUV planner. The objective is not to replace the standard deviation map as the main source of sampling value, but to complement it with descriptors related to thermal regimes, boundaries and gradients. This allows the comparison between a baseline uncertainty-driven planner and enriched formulations that also account for spatial structure in the temperature field.
+\section{Problem statement} \label{sec:problem_statement}
+
+Adaptive AUV planning based on model-derived uncertainty maps provides a practical way to guide robotic sampling towards regions where new observations are expected to be most informative. In this framework, pointwise standard deviation fields can be interpreted as reward maps, allowing the planner to prioritise areas where the forecast is less certain. However, in heterogeneous coastal environments, uncertainty alone may not fully represent the spatial organisation of the underlying ocean state.
+
+The Nazaré Canyon region provides a challenging example of this limitation. Its complex bathymetry and coastal dynamics can generate distinct thermal structures, fronts and regime transitions within the same operational domain. In such conditions, observations collected in one region may not be equally representative of another, and sampling decisions based only on uncertainty may overlook important boundaries between dynamical regimes \cite{mendes2025oceanmodeldriven}. 
+% TODO: update citation format for this reference depending on the final publication status of the manuscript.
+
+The problem addressed in this dissertation is therefore how to complement an uncertainty-driven AUV planner with spatial information extracted from temperature fields. Given high-resolution temperature and uncertainty maps over a region of interest, the goal is to identify spatial regimes and derive descriptors, such as boundary-related scores and gradient information, that can be integrated into the planner without replacing the original uncertainty-based objective.
+
+More specifically, this work investigates whether a baseline planner driven only by standard deviation maps can be enriched with temperature-derived descriptors in order to produce trajectories that are not only uncertainty-seeking, but also more aware of thermal structure, regime transitions and spatial heterogeneity. The technical formulation of the study area, datasets, variables, operational constraints and evaluation metrics is developed in Chapter~\ref{chap:problem_specification}.
+\section{Objectives} \label{sec:objectives}
+
+The main objective of this dissertation is to investigate whether spatial descriptors extracted from ocean temperature fields can complement an uncertainty-driven adaptive planner for AUV missions in the Nazaré Canyon region.
+
+This objective is structured into the following specific goals:
+
+\begin{itemize}
+  \item \textbf{O1 --- Build a temperature-regime discovery pipeline:} develop and validate a pipeline capable of identifying spatial regimes or recurrent patterns in high-resolution ocean temperature maps over a defined region of interest.
+
+  \item \textbf{O2 --- Extract planning-relevant descriptors:} derive spatial descriptors from the temperature-regime representation, including descriptors related to thermal gradients, boundary regions, regime transitions and representative spatial structures.
+
+  \item \textbf{O3 --- Integrate descriptors with an uncertainty-driven planner:} incorporate the extracted descriptors into an existing AUV planner that uses standard deviation maps as its baseline reward input, while preserving the original uncertainty-driven planning logic.
+
+  \item \textbf{O4 --- Compare baseline and enriched planning formulations:} evaluate trajectories generated by a baseline planner driven only by uncertainty maps against enriched formulations that combine uncertainty with temperature-derived descriptors.
+
+  \item \textbf{O5 --- Assess sensitivity and operational feasibility:} analyse the effect of descriptor weights, grid choices, single- and multi-AUV configurations, and computational cost on the resulting trajectories and planner behaviour.
+\end{itemize}
+\section{Objectives} \label{sec:objectives}
+
+The main objective of this dissertation is to investigate whether spatial descriptors extracted from ocean temperature fields can complement an uncertainty-driven adaptive planner for AUV missions in the Nazaré Canyon region.
+
+This objective is structured into the following specific goals:
+
+\begin{itemize}
+  \item \textbf{O1 --- Build a temperature-regime discovery pipeline:} develop and validate a pipeline capable of identifying spatial regimes or recurrent patterns in high-resolution ocean temperature maps over a defined region of interest.
+
+  \item \textbf{O2 --- Extract planning-relevant descriptors:} derive spatial descriptors from the temperature-regime representation, including descriptors related to thermal gradients, boundary regions, regime transitions and representative spatial structures.
+
+  \item \textbf{O3 --- Integrate descriptors with an uncertainty-driven planner:} incorporate the extracted descriptors into an existing AUV planner that uses standard deviation maps as its baseline reward input, while preserving the original uncertainty-driven planning logic.
+
+  \item \textbf{O4 --- Compare baseline and enriched planning formulations:} evaluate trajectories generated by a baseline planner driven only by uncertainty maps against enriched formulations that combine uncertainty with temperature-derived descriptors.
+
+  \item \textbf{O5 --- Assess sensitivity and operational feasibility:} analyse the effect of descriptor weights, grid choices, single- and multi-AUV configurations, and computational cost on the resulting trajectories and planner behaviour.
+\end{itemize}
+
+
+
+\section{Scope and assumptions} \label{sec:scope_assumptions}
+
+This dissertation focuses on the planning layer of model-driven AUV sampling. The work assumes that forecast products, uncertainty maps and bathymetric or operational masks are provided by an external modelling workflow. In particular, temperature predictions and pointwise standard deviation maps are treated as available inputs to the planner. The development of new ocean forecasting or data assimilation methods is outside the scope of this dissertation.
+
+The thesis is centred on two coupled components. The first is the extraction of spatial regimes and descriptors from gridded ocean temperature fields. The second is the use of these descriptors to enrich an uncertainty-driven trajectory planner. The planner is not redesigned from first principles; instead, the work investigates how additional descriptor-based reward terms or incentives can be incorporated into an existing planning framework.
+
+The study is restricted to gridded products over a selected region of interest in the Nazaré Canyon area. The final dataset is expected to use a common high-resolution grid containing, at minimum, temperature, standard deviation, latitude, longitude and bathymetry information. This common grid is assumed to be the canonical spatial domain for both regime discovery and planner evaluation. Details on the final grid, region of interest and available files are provided in Chapter~\ref{chap:problem_specification}.
+
+The work does not address the mechanical design of AUV platforms, low-level guidance and control, acoustic communication modelling, simultaneous localisation and mapping, or the development of new sensors. It also does not attempt to prove that the proposed enriched planner is universally optimal. Instead, the objective is to provide a controlled evaluation of whether temperature-derived descriptors can alter planner behaviour in meaningful ways when compared with an uncertainty-only baseline.
+
+Although the planner may support single- and multi-AUV configurations, the main focus is the integration and evaluation of the descriptor-enriched planning concept. Multi-AUV behaviour is therefore considered as an evaluation scenario rather than as the central contribution of the dissertation.
+\section{Expected contributions} \label{sec:expected_contributions}
+
+The expected contributions of this dissertation are:
+
+\begin{itemize}
+  \item A \textbf{structured pipeline for temperature-regime discovery} in high-resolution ocean temperature maps, designed to identify spatial patterns and regime-like structures relevant to adaptive sampling.
+
+  \item A set of \textbf{temperature-derived spatial descriptors}, including descriptors associated with gradients, boundaries and regime transitions, suitable for representation on the planner grid.
+
+  \item An \textbf{integration strategy for descriptor-enriched AUV planning}, where the baseline uncertainty-driven planner is complemented with additional descriptor-based terms without replacing the standard deviation map as the main uncertainty input.
+
+  \item A \textbf{baseline versus enriched evaluation framework}, comparing uncertainty-only planning with descriptor-enriched formulations under controlled scenarios, including sensitivity analysis for descriptor weights.
+
+  \item A \textbf{case-study evaluation in the Nazaré Canyon region}, using high-resolution temperature and uncertainty products to assess whether regime-aware descriptors can support more structured and oceanographically meaningful sampling trajectories.
+
+  \item A \textbf{reproducible implementation and validation workflow}, including data/grid validation, planner interface generation, diagnostic plots and audit artefacts supporting the interpretation of the results.
+\end{itemize}
+
+\section{Dissertation structure} \label{sec:struct}
+
+In addition to this introductory chapter, the dissertation is organised as follows.
+
+Chapter~\ref{chap:background} presents the background and fundamental concepts required for the thesis, including ocean modelling and forecast uncertainty, autonomous underwater vehicles, adaptive sampling, geostatistical prediction, spatial regimes in ocean fields and the path-planning formulation used by the baseline planner.
+
+Chapter~\ref{chap:related_work} reviews the related work and state of the art in adaptive ocean sampling, model-driven robotic exploration, uncertainty-driven trajectory planning, compact representations and regime discovery in marine robotics. It concludes by identifying the research gap addressed by this dissertation.
+
+Chapter~\ref{chap:problem_specification} defines the problem specification and study case in concrete terms. It introduces the Nazaré Canyon operational region, the available datasets and formats, the variables used in the thesis, the operational constraints, functional and non-functional requirements, and the evaluation metrics.
+
+Chapter~\ref{chap:proposed_approach} presents the proposed approach, including the overall pipeline, temperature-regime discovery, descriptor extraction, the selected grid and region of interest, the baseline uncertainty-driven planner and the enriched planner formulations.
+
+Chapter~\ref{chap:implementation} describes the implementation details, including data preprocessing, the Fossum-style regime discovery pipeline, planner interface generation, integration with Lucrezia's planner and reproducibility artefacts.
+
+Chapter~\ref{chap:validation} describes the verification, validation and experimental design. It includes data and grid validation, baseline versus enriched planner comparison, sensitivity analysis for descriptor weights, single- and multi-AUV scenarios, and computational cost assessment.
+
+Chapter~\ref{chap:results} presents and discusses the experimental results.
+
+Finally, Chapter~\ref{chap:conclusions} summarises the main findings, discusses limitations and outlines directions for future work.
+
+% =========================
+% CHAPTER 2 — BACKGROUND AND FUNDAMENTALS
+% File: chapter2.tex
+% =========================
+
+\chapter{Background and Fundamentals} \label{chap:background}
+
+This chapter introduces the fundamental concepts required to understand the problem addressed in this dissertation. The focus is not on comparing specific methods from the literature, which is addressed in Chapter~\ref{chap:related_work}, but on defining the main technical and scientific building blocks used throughout the thesis. These include ocean modelling and forecast uncertainty, autonomous underwater vehicles and adaptive sampling, geostatistical prediction and uncertainty maps, spatial regime discovery in ocean fields, and path-planning formulations based on graph routing and prize-collecting vehicle routing problems.
+
+\section{Ocean modelling and uncertainty} \label{sec:ocean_modelling_uncertainty}
+
+Numerical ocean models provide spatially and temporally continuous estimates of the ocean state. They are used to represent variables such as temperature, salinity, currents and sea surface height, and they support a wide range of scientific and operational applications \cite{wunsch2007stateestimation,lermusiaux2007adaptive}. In coastal regions, however, ocean modelling is particularly challenging because the dynamics are influenced by bathymetry, coastline geometry, atmospheric forcing, tides, mesoscale circulation and local mixing processes. These mechanisms generate heterogeneous fields with fronts, gradients and transient structures that may evolve over short time scales \cite{mendes2025oceanmodeldriven}.
+% TODO: update citation format for mendes2025oceanmodeldriven depending on the final publication status.
+
+A model prediction can be understood as an estimate of the true ocean state. Let $x(\mathbf{s},t)$ denote an ocean variable at spatial location $\mathbf{s}$ and time $t$, such as temperature. A forecast model provides an estimate
+\begin{equation}
+    \hat{x}(\mathbf{s},t),
+\end{equation}
+which approximates the unknown true field. The difference between the forecast and the true state is affected by several sources of error, including imperfect initial conditions, unresolved physical processes, limited spatial resolution, uncertain forcing and sparse observations \cite{dowd2014dataassimilation}. As a result, model predictions should not be interpreted only as deterministic fields, but also in terms of their associated uncertainty.
+
+Forecast uncertainty can be represented in different ways. In ensemble-based or simulation-based approaches, multiple possible realisations of the ocean field are generated. The variability among those realisations provides a quantitative indication of uncertainty \cite{duarte2025geostatistical}. A common pointwise measure is the standard deviation:
+\begin{equation}
+    \sigma(\mathbf{s},t) =
+    \sqrt{
+    \frac{1}{M-1}
+    \sum_{m=1}^{M}
+    \left(x_m(\mathbf{s},t)-\bar{x}(\mathbf{s},t)\right)^2
+    },
+\end{equation}
+where $M$ is the number of realisations, $x_m(\mathbf{s},t)$ is the value of the $m$-th realisation at location $\mathbf{s}$ and time $t$, and $\bar{x}(\mathbf{s},t)$ is the ensemble mean. In this dissertation, standard deviation maps are treated as uncertainty maps that can guide adaptive sampling decisions.
+
+Uncertainty is important for robotic sampling because it provides a model-derived indication of where new observations may be valuable. Regions with higher uncertainty are often interpreted as areas where additional data may reduce forecast error or improve the reliability of subsequent predictions \cite{bernacchi2025closingloop,duarte2025geostatistical}. However, uncertainty is not the only relevant property of an ocean field. Temperature maps may also contain spatial patterns, such as fronts, gradients and regime transitions, that are relevant for planning and interpretation. This motivates the combination of uncertainty information with descriptors extracted from the predicted temperature field.
+
+\section{Autonomous underwater vehicles and adaptive sampling} \label{sec:auv_adaptive_sampling}
+
+Autonomous Underwater Vehicles (AUVs) are robotic platforms capable of collecting oceanographic measurements along planned trajectories. Compared with fixed stations or ship-based surveys, AUVs provide mobility and flexibility, allowing observations to be collected over spatially extended regions and at higher resolution along the vehicle path \cite{curtin2009aosn,hwang2019auvreview}. Typical payloads may include sensors for temperature, salinity, pressure, dissolved oxygen, chlorophyll fluorescence, turbidity and other physical or biogeochemical variables, depending on the mission objectives \cite{sousa2012lauv}.
+
+Despite these advantages, AUV missions are constrained by several operational factors. Vehicle endurance limits mission duration and distance travelled. Safety constraints restrict navigation in regions with shallow bathymetry, obstacles, intense traffic or other operational hazards. Communication underwater is intermittent and low-bandwidth, which limits the possibility of continuous replanning or supervision. Currents may also affect travel time and energy consumption \cite{aguiar2018trajectoryopt}. These constraints mean that an AUV cannot sample everywhere, and the selection of sampling locations becomes a planning problem.
+
+Adaptive sampling refers to strategies in which the sampling plan is informed by prior knowledge, model predictions, uncertainty estimates or data collected during previous missions \cite{lermusiaux2007adaptive,hwang2019auvreview}. Instead of following a fixed pre-defined survey pattern, the vehicle trajectory is designed to prioritise locations that are expected to be informative. In model-driven adaptive sampling, the planning process uses model products, such as predicted fields and uncertainty maps, to identify valuable regions for observation \cite{mendes2025oceanmodeldriven}.
+
+In uncertainty-driven adaptive sampling, the planner favours regions where the model is less certain. This is particularly useful when the objective is to improve model predictions or collect data in areas where the forecast is expected to be least reliable. In practice, the uncertainty map can be converted into a reward or value map, and the AUV trajectory is selected to maximise the accumulated reward under mission constraints \cite{bernacchi2025closingloop,duarte2025geostatistical}. This principle underlies the baseline planner considered in this dissertation.
+
+Adaptive sampling can also be extended beyond uncertainty-only criteria. If additional descriptors are available, such as thermal gradients, regime boundaries or representative regions, these can be incorporated into the planning objective. The aim is not necessarily to replace uncertainty as the main driver, but to complement it with information about the spatial structure of the ocean field \cite{fossum2020compact,fossum2019phytoplankton}.
+
+\section{Geostatistical prediction and uncertainty maps} \label{sec:geostatistical_prediction}
+
+Geostatistical methods provide a statistical framework for modelling spatially distributed variables. In ocean applications, they can be used to generate short-term predictions and associated uncertainty estimates from a combination of prior model fields and observational data \cite{cressie2011spatiotemporal,duarte2025geostatistical}. Unlike full numerical ocean models, geostatistical approaches can be computationally efficient and suitable for operational workflows where predictions and uncertainty maps need to be generated rapidly \cite{mendes2025oceanmodeldriven}.
+
+A geostatistical prediction workflow typically relies on a covariance or variogram model that describes how values of the variable of interest are correlated in space and time. Given conditioning information, such as previous model fields or observations, stochastic simulation can be used to generate multiple possible realisations of the target field. The median or mean of these realisations can be used as a predicted field, while the pointwise standard deviation across the realisations provides an uncertainty map \cite{duarte2025geostatistical,mendes2025oceanmodeldriven}.
+
+Let $\{x_1(\mathbf{s}), x_2(\mathbf{s}), \dots, x_M(\mathbf{s})\}$ be an ensemble of simulated temperature fields at location $\mathbf{s}$. A predicted temperature field may be obtained from the ensemble median:
+\begin{equation}
+    \hat{x}_{\mathrm{med}}(\mathbf{s}) =
+    \mathrm{median}\left(x_1(\mathbf{s}), x_2(\mathbf{s}), \dots, x_M(\mathbf{s})\right),
+\end{equation}
+while the corresponding uncertainty field may be represented by the standard deviation $\sigma(\mathbf{s})$. These two products, predicted temperature and uncertainty, are central to this dissertation.
+
+In the planning context, the predicted temperature field provides information about the expected spatial structure of the ocean state. The uncertainty map provides information about where the model is less confident. These two maps have different meanings: the temperature map describes the predicted value of the physical field, while the standard deviation map describes the variability or uncertainty of the prediction. This distinction is important because the proposed approach derives regime descriptors from temperature fields and combines them with uncertainty maps for planning.
+
+Operationally, geostatistical uncertainty maps can be used to define regions of high expected sampling value. If a planner receives a map $\sigma(\mathbf{s})$, locations with larger values may be assigned higher reward. In this way, the uncertainty field becomes an actionable input to a trajectory planner \cite{bernacchi2025closingloop,duarte2025geostatistical}. The enriched approach explored in this thesis builds on this idea by adding descriptor-based information derived from the corresponding temperature field.
+
+\section{Spatial regimes and pattern discovery in ocean fields} \label{sec:spatial_regimes}
+
+Ocean fields are rarely spatially uniform. Temperature, salinity and related variables often contain coherent regions, gradients and transitions that reflect underlying physical processes. In this dissertation, the term \emph{spatial regime} is used to refer to a region or pattern in the ocean field that is distinguishable from others according to its spatial structure, temperature distribution or relationship with neighbouring regions.
+
+Regimes can arise from several mechanisms. In coastal areas, bathymetry and coastline geometry may influence circulation and mixing. Upwelling and relaxation events can create thermal contrasts between nearshore and offshore waters. Fronts may separate water masses with different properties. In canyon regions, topographic forcing can contribute to distinct dynamical behaviour across different parts of the domain \cite{mendes2025oceanmodeldriven}. These structures may be visible in temperature maps as gradients, fronts, patches or boundary-like features.
+
+Pattern discovery aims to identify such structures from data. In gridded temperature fields, this may involve clustering days or maps according to their spatial similarity, detecting recurring patterns, or extracting descriptors that summarise relevant spatial information. Compact representations and clustering-based approaches have previously been used to summarise oceanographic fields and support adaptive sampling decisions \cite{fossum2020compact,ge2023watermasses}. For example, a temperature field can be converted into a gradient magnitude map:
+\begin{equation}
+    G(\mathbf{s}) = \left\| \nabla T(\mathbf{s}) \right\|,
+\end{equation}
+where $T(\mathbf{s})$ denotes the temperature field. High values of $G(\mathbf{s})$ indicate regions where temperature changes rapidly in space, which may correspond to fronts or transition zones.
+
+Similarly, regime boundaries can be represented by identifying where class labels or spatial patterns change. A boundary-related descriptor may assign higher values to cells near transitions between regimes. Such descriptors can then be used to reward trajectories that cross or sample near relevant boundaries, depending on the scientific and operational objectives.
+
+The regime discovery component of this thesis is inspired by compact representations of ocean fields, where high-dimensional spatial maps are transformed into lower-dimensional descriptors or classes that summarise recurrent structures \cite{fossum2020compact}. In this work, these descriptors are not used as a final classification product only; they are designed to provide additional information to the planner. The central idea is that uncertainty maps indicate where the model is uncertain, while regime descriptors indicate where the temperature field is structurally informative.
+
+\section{Path planning and PC-VRP formulation} \label{sec:pcvrp}
+
+Once a value map is defined, the planner must convert it into one or more feasible AUV trajectories. This requires balancing the reward obtained by visiting informative locations against the cost of travelling between them. The problem can be represented as a graph, where nodes correspond to candidate sampling locations and edges correspond to travel costs. Each node has an associated reward, derived for example from uncertainty, descriptor values or a combination of both \cite{bernacchi2025closingloop}.
+
+Let $V$ be a set of candidate nodes and let $r_j$ denote the reward associated with node $j \in V$. Let $c_{ij}$ denote the cost of travelling between nodes $i$ and $j$. A planner seeks a route or set of routes that maximises collected reward while respecting operational constraints such as endurance, start and end locations, obstacle masks and admissible regions. In a simplified form, the objective can be written as:
+\begin{equation}
+    \max_{\mathcal{R}} \sum_{j \in \mathcal{R}} r_j - \lambda \sum_{(i,j) \in \mathcal{R}} c_{ij},
+\end{equation}
+where $\mathcal{R}$ represents the selected route and $\lambda$ controls the trade-off between collected reward and travel cost.
+
+This type of formulation is related to prize-collecting vehicle routing problems (PC-VRP). In a PC-VRP, not all candidate nodes need to be visited. Instead, the planner selects a subset of valuable nodes and constructs feasible routes that maximise reward under cost or time constraints \cite{bernacchi2025closingloop}. This is appropriate for AUV adaptive sampling because the vehicle cannot sample every cell of the domain and must prioritise locations according to the objective map.
+
+In an uncertainty-driven planner, the node reward can be derived directly from the standard deviation map:
+\begin{equation}
+    r_j = \sigma(\mathbf{s}_j),
+\end{equation}
+where $\mathbf{s}_j$ is the spatial location of node $j$. In a descriptor-enriched planner, the reward can be extended to include additional terms:
+\begin{equation}
+    r_j =
+    \sigma(\mathbf{s}_j)
+    + \alpha B(\mathbf{s}_j)
+    + \beta G(\mathbf{s}_j),
+\end{equation}
+where $B(\mathbf{s}_j)$ represents a boundary-related descriptor, $G(\mathbf{s}_j)$ represents gradient magnitude, and $\alpha$ and $\beta$ are weights controlling the influence of each descriptor.
+
+The exact formulation used in the implementation depends on the baseline planner and on how descriptor values are normalised and integrated. However, the fundamental planning problem remains the same: select feasible AUV trajectories that collect high-value information under operational constraints. Chapter~\ref{chap:proposed_approach} describes how this dissertation builds on the baseline uncertainty-driven planner and extends it with temperature-derived descriptors.
+
+\section{Summary} \label{sec:background_summary}
+
+This chapter introduced the main concepts required for the remainder of the dissertation. Ocean models provide predicted fields and uncertainty estimates, while AUVs offer a flexible platform for targeted data collection under operational constraints. Geostatistical prediction provides a practical way to generate temperature and uncertainty maps for adaptive sampling. Temperature fields contain spatial structures such as gradients, regimes and boundaries, which can be extracted as descriptors. Finally, path planning can be formulated as a graph-based reward maximisation problem, related to PC-VRP, where the planner balances information value against travel cost and feasibility constraints.
+
+The following chapter reviews related work on adaptive ocean sampling, model-driven robotic exploration, uncertainty-driven planning, compact representations and regime-aware sampling, positioning the contribution of this dissertation within the existing literature.
+
+% =========================
+% CHAPTER 3 — RELATED WORK / STATE OF THE ART
+% File: chapter3.tex
+% =========================
+
+\chapter{Related Work and the State of the Art} \label{chap:related_work}
+
+This chapter reviews the literature most relevant to the integration of temperature-derived spatial descriptors into uncertainty-driven AUV planning. The aim is not to provide a broad review of all marine robotics or machine-learning approaches, but to position the dissertation within the specific intersection of adaptive ocean sampling, model-driven robotic exploration, uncertainty-based trajectory planning, compact representations of ocean fields, and regime-aware sampling.
+
+The chapter is organised as follows. Section~\ref{sec:rw_adaptive_sampling_auvs} reviews adaptive sampling with AUVs. Section~\ref{sec:rw_model_driven_sampling} discusses model-driven ocean sampling, where ocean model products guide robotic decisions. Section~\ref{sec:rw_uncertainty_planning} focuses on uncertainty-driven trajectory planning. Section~\ref{sec:rw_clustering_compact_models} reviews clustering and compact models for marine robotics. Section~\ref{sec:rw_regime_spatial_mismatch} discusses regime-aware planning and spatial mismatch. Finally, Section~\ref{sec:rw_gap} identifies the research gap addressed by this dissertation.
+
+% ==========================================================
+\section{Adaptive sampling with AUVs} \label{sec:rw_adaptive_sampling_auvs}
+
+Adaptive sampling refers to robotic sampling strategies in which the sampling plan is adjusted according to prior knowledge, model predictions, uncertainty estimates, or observations collected during the mission. Instead of following a fixed survey pattern, the vehicle selects sampling locations that are expected to provide higher scientific or operational value. This paradigm is particularly relevant in coastal ocean environments, where physical processes evolve rapidly and where fixed observing systems often cannot provide sufficient spatial coverage \parencite{hwang2019auvreview,lermusiaux2007adaptive}.
+
+AUVs are well suited to adaptive sampling because they can collect high-resolution measurements along spatially extended trajectories while operating with a relatively low logistical footprint. Early and review work in marine robotics has shown that AUVs can support several adaptive sampling objectives, including mapping, feature tracking, front detection, plume monitoring, and uncertainty reduction \parencite{curtin2009aosn,hwang2019auvreview}. In these applications, the main challenge is not only to collect data, but to decide where data should be collected under constraints on time, energy, safety and navigation.
+
+The literature distinguishes between several types of adaptive sampling objectives. Some approaches aim to reduce global uncertainty in a field, while others focus on tracking specific oceanographic features, such as fronts or biological patches. For example, coordinated robotic sampling has been used to track dynamic oceanographic features by combining model predictions, vehicle trajectories and feature-specific objectives \parencite{das2012coordinated}. Similarly, information-driven robotic sampling has been applied to coastal ocean environments where sampling decisions are guided by expected information gain or by the need to characterise spatially variable fields \parencite{fossum2018informationdriven,fossum2019phytoplankton}.
+
+A common limitation of adaptive sampling strategies is the trade-off between scientific value and operational feasibility. A sampling location may be informative but unreachable within the mission duration, unsafe due to bathymetry or operational constraints, or redundant with other measurements. This motivates planning formulations that explicitly include both sampling reward and travel cost. These ideas are central to the uncertainty-driven and PC-VRP-based planning framework used as a baseline in this dissertation \parencite{bernacchi2025closingloop}.
+
+For this dissertation, adaptive sampling provides the general robotic context: AUV trajectories are not treated as arbitrary paths, but as decisions driven by spatial value maps. The contribution of this thesis builds on this idea by investigating whether value maps based only on uncertainty can be enriched with descriptors extracted from temperature fields.
+
+% ==========================================================
+\section{Model-driven ocean sampling} \label{sec:rw_model_driven_sampling}
+
+Model-driven ocean sampling uses numerical or statistical ocean model products to guide the planning of robotic observations. In this setting, the model provides a prediction of the ocean state and, when available, an estimate of the uncertainty associated with that prediction. The planner then uses this information to select sampling locations that are expected to improve knowledge of the field or support subsequent forecast updates \parencite{lermusiaux2007adaptive,curtin2009aosn}.
+
+This approach is motivated by the fact that ocean models and observations are complementary. Models provide spatially and temporally continuous estimates of the ocean state, but their predictions are limited by uncertainty in initial conditions, forcing, parameterisations and unresolved processes. Observations provide direct information about the ocean, but are sparse and expensive to collect. Adaptive sampling aims to use robotic mobility to collect observations where they are most useful for constraining or evaluating the model \parencite{dowd2014dataassimilation,wunsch2007stateestimation}.
+
+Recent work has demonstrated the feasibility of coupling ocean model predictions, uncertainty generation, robotic trajectory planning and data assimilation in real-world deployments. In such closed-loop frameworks, a model forecast is generated, an uncertainty map is derived, AUVs are directed to informative regions, and the collected measurements are assimilated to improve subsequent predictions \parencite{bernacchi2025closingloop,mendes2025oceanmodeldriven}. This model-driven view is directly relevant to the present dissertation, because the baseline planner relies on uncertainty fields derived from forecast products.
+
+A practical challenge in operational model-driven sampling is computational cost. Full numerical ocean models can be expensive to run at high resolution and may not be suitable for rapid mission replanning. As an alternative, geostatistical or surrogate approaches can generate short-term predictions and uncertainty maps at lower computational cost, while still being conditioned on prior model information and available observations \parencite{duarte2025geostatistical,mendes2025oceanmodeldriven}. Such products can be transformed into planner-ready inputs, including predicted temperature maps and pointwise standard deviation maps.
+
+However, model-driven sampling also inherits the assumptions and limitations of the underlying model. If the model or surrogate representation does not capture local heterogeneity, then the derived uncertainty and planning objectives may be incomplete. This is particularly important in complex coastal environments, where different regions of the domain may evolve according to distinct dynamical regimes. This limitation motivates the need to complement model-derived uncertainty with descriptors that encode spatial structure in the predicted field.
+
+% ==========================================================
+\section{Uncertainty-driven trajectory planning} \label{sec:rw_uncertainty_planning}
+
+Uncertainty-driven trajectory planning is based on the idea that regions of high model uncertainty are valuable targets for observation. In this framework, a pointwise uncertainty field, such as a standard deviation map, is converted into a reward or value map. The planner then seeks a feasible trajectory that accumulates high reward while respecting operational constraints such as endurance, admissible regions, start and end points, and obstacle masks \parencite{bernacchi2025closingloop,duarte2025geostatistical}.
+
+This approach has several advantages. First, it provides a direct connection between model uncertainty and sampling decisions. Second, it is interpretable: high-reward areas correspond to regions where the model is less certain. Third, it can be integrated with routing formulations that explicitly account for travel cost and mission constraints. In real-world AUV deployments, this makes uncertainty maps attractive as practical planning inputs \parencite{bernacchi2025closingloop}.
+
+In the planner used as baseline in this dissertation, the uncertainty map is transformed into a set of candidate sampling locations. These locations are represented as nodes in a graph, with rewards derived from the uncertainty map and edge costs derived from travel distance or feasibility. The resulting planning problem is related to a prize-collecting vehicle routing problem, where the vehicle is not required to visit every candidate node, but instead selects a subset that maximises collected reward under a travel budget \parencite{bernacchi2025closingloop}. Similar principles appear in broader vehicle routing formulations, where route feasibility, cost and reward must be balanced \parencite{toth2014vehicle,vidal2013hybrid}.
+
+Uncertainty-driven planning has also been studied in relation to informative path planning and value-of-information approaches. These methods evaluate sampling actions according to their expected ability to reduce uncertainty or improve decision quality \parencite{eidsvik2015value,frolov2014grid}. In ocean sampling, this is particularly relevant because measurements are costly and the vehicle cannot cover the entire domain. The planner must therefore select a limited subset of locations expected to provide high information value.
+
+Despite these advantages, uncertainty-driven planning has an important limitation: uncertainty is not equivalent to oceanographic structure. A region with high standard deviation may be uncertain but not necessarily located near an important front, boundary or regime transition. Conversely, a region with moderate uncertainty may still be scientifically relevant if it lies at the interface between distinct thermal regimes. Therefore, planning based only on uncertainty may overlook spatial structures that are relevant for understanding the ocean state.
+
+This limitation motivates the enriched planning formulation explored in this dissertation. The baseline planner remains uncertainty-driven, but additional descriptors derived from the temperature field are considered as complementary information. In this way, the planner can be evaluated not only in terms of uncertainty reward, but also in relation to gradients, boundaries and regime-aware sampling behaviour.
+
+% ==========================================================
+\section{Clustering and compact models in marine robotics} \label{sec:rw_clustering_compact_models}
+
+Marine robotic sampling often deals with high-dimensional spatial fields. Temperature maps, salinity fields, CTD profiles or satellite images can contain thousands of spatial values, making direct comparison and planning difficult. Compact representations address this problem by transforming high-dimensional observations into lower-dimensional features that preserve relevant structure. These representations can then be used for clustering, classification, anomaly detection or planning support.
+
+Clustering methods are useful when the objective is to discover recurrent patterns without predefined labels. In oceanographic fields, clusters may correspond to recurring spatial structures, temperature regimes, water-mass configurations or feature states. Classification methods, in contrast, assign observations to predefined classes. Segmentation methods assign labels over a spatial domain, revealing boundaries between regions. These concepts are relevant to this dissertation because the proposed pipeline seeks to extract spatial regime information from temperature maps and convert it into planning descriptors.
+
+Compact models have been used in marine robotics to support adaptive sampling. \textcite{fossum2020compact} proposed compact representations based on dictionary learning and sparse coding, where high-dimensional ocean observations are encoded as sparse combinations of learned atoms. The sparse representation can then be used to identify recurring patterns and support adaptive sampling decisions. This is relevant to the present work because it demonstrates how spatial ocean fields can be converted into compact descriptors that preserve meaningful structure for planning.
+
+Dictionary learning is particularly attractive because it can capture recurring spatial patterns while reducing dimensionality. Given a set of training samples, the method learns a dictionary of basis elements and represents each sample as a sparse combination of those elements. The resulting sparse codes can be clustered to identify classes or regimes. In the context of this dissertation, similar ideas motivate the use of temperature-map representations to identify spatial regimes and derive descriptors such as boundaries and gradients.
+
+Other work has approached regime identification through probabilistic water-mass classification. For example, \textcite{ge2023watermasses} considered adaptive sampling for classification of water masses in three-dimensional environments. Such approaches are useful because they provide not only hard labels, but also uncertainty in the classification. This is especially important near boundaries between regimes, where the most informative sampling locations may lie.
+
+However, many clustering or compact-model approaches are not directly integrated with operational AUV planners. They may identify patterns or regimes, but they do not necessarily show how these outputs should modify a trajectory planner that already uses uncertainty maps. This is the specific gap addressed by this dissertation: the objective is not only to identify regimes, but to transform regime information into descriptors that can be combined with an existing uncertainty-driven planner.
+
+% ==========================================================
+\section{Regime-aware planning and spatial mismatch} \label{sec:rw_regime_spatial_mismatch}
+
+Regime-aware planning is motivated by the observation that coastal ocean fields are often heterogeneous. Distinct regions may differ in temperature structure, stratification, circulation, bathymetric influence or temporal evolution. In such conditions, observations collected in one part of the domain may not be equally informative for another. A planner that ignores these differences may select trajectories that maximise uncertainty reward, but fail to discriminate between regimes or to sample relevant transition zones.
+
+The importance of this issue is illustrated by recent model-driven robotic exploration in the Nazaré Canyon region. In that experiment, targeted AUV observations generally improved geostatistical temperature predictions after assimilation. However, the improvement was not spatially uniform. For some trajectories, assimilation improved the forecast, whereas for others it produced weaker or even degraded performance. In particular, a spatial mismatch occurred when observations collected south of the Nazaré Canyon were used to evaluate or update predictions for a vehicle operating north of the canyon \parencite{mendes2025oceanmodeldriven}.
+% TODO: update citation format for this reference depending on the final publication status of the manuscript.
+
+This result is important because it indicates that the domain cannot always be treated as a single homogeneous region. The Nazaré Canyon can act as a transition zone between distinct oceanographic regimes, with circulation and thermal structure influenced by canyon topography and shelf-slope interactions. Under such conditions, sampling decisions and model updates may need to consider where observations are collected in regime terms, not only where the uncertainty is high \parencite{mendes2025oceanmodeldriven}.
+
+This observation connects directly to the role of descriptors such as thermal gradients, boundaries and regime labels. Gradients can indicate where the field changes rapidly. Boundary descriptors can highlight transition zones between different regimes. Regime labels can indicate which parts of the domain share similar spatial structure. When incorporated into a planner, these descriptors may encourage trajectories that sample relevant transitions, cover contrasting regions or avoid over-concentrating measurements within a single regime.
+
+Previous work on feature-driven sampling, water-mass classification and compact models provides partial building blocks for this idea \parencite{das2012coordinated,fossum2020compact,ge2023watermasses}. However, there remains a gap between identifying regimes and using them as operational planning incentives in an uncertainty-driven AUV planner. This dissertation addresses that gap by evaluating descriptor-enriched planning formulations in which uncertainty remains the baseline objective, but temperature-derived regime information is added as complementary value.
+
+% ==========================================================
+\section{Research gap addressed by this thesis} \label{sec:rw_gap}
+
+The reviewed literature provides several important foundations for this dissertation. Adaptive sampling with AUVs demonstrates the value of robotic mobility for collecting informative ocean observations \parencite{hwang2019auvreview,curtin2009aosn}. Model-driven ocean sampling shows how numerical or statistical forecasts can guide robotic missions \parencite{lermusiaux2007adaptive,mendes2025oceanmodeldriven}. Uncertainty-driven trajectory planning provides a practical way to convert standard deviation maps into reward fields for constrained route generation \parencite{bernacchi2025closingloop,duarte2025geostatistical}. Compact models and clustering demonstrate that spatial ocean fields can be summarised into regimes or lower-dimensional representations \parencite{fossum2020compact,ge2023watermasses}.
+
+However, these components are not usually integrated into a single pipeline in which temperature-derived regime descriptors are explicitly used to enrich an uncertainty-driven AUV planner. In particular, the literature does not fully address how descriptors such as gradient magnitude, regime boundaries or representative regions should be combined with standard deviation maps in a planner that must still satisfy operational constraints. This is especially relevant in heterogeneous coastal environments, where spatial mismatch between regimes may limit the effectiveness of uncertainty-only sampling or assimilation.
+
+The research gap addressed by this thesis can therefore be stated as follows: existing uncertainty-driven AUV planners can exploit standard deviation maps to target uncertain regions, but they do not explicitly account for the spatial organisation of the predicted temperature field. As a result, they may overlook thermal boundaries, regime transitions or structurally informative regions that are relevant for oceanographic interpretation and for avoiding regime-dependent sampling effects.
+
+This dissertation addresses this gap by proposing and evaluating a descriptor-enriched planning pipeline. The pipeline first identifies spatial regimes and descriptors from high-resolution temperature maps. It then integrates these descriptors with a baseline uncertainty-driven planner. The resulting enriched formulations are compared against the baseline planner to assess whether temperature-derived descriptors can alter trajectory behaviour in meaningful and operationally feasible ways.
+
+The contribution is therefore positioned at the interface between ocean modelling, marine robotics and spatial pattern discovery. It does not aim to replace numerical forecasting, geostatistical prediction or data assimilation. Instead, it investigates how additional structure extracted from predicted temperature fields can be used to improve the information available to an adaptive AUV planner.
+
+% ==========================================================
+\section{Summary} \label{sec:related_work_summary}
+
+This chapter reviewed the related work required to position the dissertation. Adaptive sampling with AUVs provides the robotic context for targeted data collection. Model-driven ocean sampling links forecasts and uncertainty products to robotic decision-making. Uncertainty-driven trajectory planning shows how standard deviation maps can be converted into planner rewards. Clustering and compact models demonstrate how ocean fields can be represented as regimes or spatial patterns. Finally, recent evidence of spatial mismatch in heterogeneous coastal environments motivates regime-aware planning.
+
+The gap addressed by this dissertation lies in the limited integration of temperature-derived spatial descriptors with existing uncertainty-driven AUV planners. The following chapter defines the problem specification and study case in concrete terms, including the Nazaré Canyon region, the available datasets, the variables used, operational constraints and evaluation metrics.
+
+
+% =========================
+% CHAPTER 4 — PROBLEM SPECIFICATION AND STUDY CASE
+% File: chapter4.tex
+% =========================
+
+\chapter{Problem Specification and Study Case} \label{chap:problem_specification}
+
+This chapter defines the concrete problem addressed in this dissertation and introduces the study case used for evaluation. While Chapters~\ref{chap:background} and~\ref{chap:related_work} presented the theoretical and literature context, this chapter specifies the operational setting, the available data products, the variables used, the constraints considered and the metrics adopted to evaluate the proposed approach.
+
+The central problem is to integrate spatial descriptors extracted from ocean temperature fields into an adaptive AUV planner that is originally driven by uncertainty maps. The baseline planner uses pointwise standard deviation maps as the main source of sampling value. The enriched formulations investigated in this dissertation complement this uncertainty-driven objective with descriptors related to thermal regimes, gradients and boundary-like structures.
+
+\section{Study area: Nazaré Canyon and operational region} \label{sec:study_area}
+
+The study area considered in this dissertation is located off the western coast of Portugal, in the region influenced by the Nazaré Canyon. This region is oceanographically relevant because of its complex bathymetry, strong shelf--slope interactions and the presence of spatially heterogeneous thermal structures. The canyon acts as a major topographic feature that can influence circulation, mixing and cross-shelf exchanges, contributing to the emergence of distinct dynamical behaviours within the operational domain.
+% TODO: verify/add citation keys for Nazaré Canyon bathymetry and oceanographic relevance.
+% Suggested references from the FRESNEL manuscript bibliography:
+% Tyler et al. (2009), Martins et al. (2010), Quaresma et al. (2007), Relvas et al. (2007).
+
+For the purposes of this thesis, the operational region is defined as a spatial subset of the available high-resolution model grid. The exact region of interest is selected to cover the area where AUV planning is performed and where relevant thermal structures may occur. This region is expected to include the domain used in the FRESNEL-related planning experiments and the refined grid used by the uncertainty-driven planner.
+% TODO: insert final ROI coordinates after the new high-resolution dataset is audited.
+% TODO: insert final grid shape, spatial resolution and bounding box.
+
+A fixed region of interest is necessary for three reasons. First, regime discovery requires a consistent spatial domain across time, so that temperature maps can be compared and clustered. Second, descriptor extraction requires the same grid support for temperature, uncertainty and bathymetry. Third, planner evaluation requires that baseline and enriched trajectories are generated over the same admissible operational area.
+
+The final implementation will therefore use a canonical high-resolution grid and a fixed geographic crop. All relevant fields, including temperature, standard deviation, latitude, longitude and bathymetry, will be represented on this same grid. This avoids the need to transfer descriptors between incompatible grids and ensures that the planner and the regime-discovery pipeline operate over a common spatial domain.
+
+\section{Lessons from the FRESNEL experiment} \label{sec:fresnel_lessons}
+
+The motivation for this dissertation is strongly connected to recent model-driven robotic exploration experiments carried out in the Nazaré Canyon region. The FRESNEL experiment demonstrated the feasibility of coupling ocean model products, geostatistical prediction, uncertainty maps, adaptive AUV trajectory planning and assimilation of in situ measurements in a short operational cycle \parencite{mendes2025oceanmodeldriven,bernacchi2025closingloop}.
+% TODO: update citation format for mendes2025oceanmodeldriven depending on final manuscript status.
+
+In that framework, model-derived uncertainty fields were used to guide AUV sampling. The general principle was to assign higher sampling value to regions where the model prediction was less certain. AUV observations collected during the missions could then be assimilated into the statistical model to improve subsequent predictions. This provides the baseline operational logic on which this dissertation builds.
+
+However, the experiment also highlighted an important limitation. The improvement obtained from assimilating AUV data was not spatially uniform. In particular, observations collected in one part of the domain did not necessarily improve predictions in another part of the region when the two areas corresponded to different dynamical behaviours. The paper reports a case in which predictions associated with one AUV trajectory degraded under assimilative scenarios because the vehicle operated north of the Nazaré Canyon while the assimilated data had been collected mainly south of it \parencite{mendes2025oceanmodeldriven}.
+
+This result suggests that the operational domain cannot always be treated as a single homogeneous region. The Nazaré Canyon can act as a transition zone between distinct oceanographic regimes, and a model or planner that relies only on a domain-wide uncertainty field may not explicitly account for these regime differences. In such conditions, sampling strategies may need to consider not only where uncertainty is high, but also where thermal structures, gradients and regime boundaries occur.
+
+This dissertation addresses that issue from a planning perspective. Instead of modifying the assimilation method itself, the proposed work investigates whether descriptors extracted from temperature fields can provide additional information to the planner. These descriptors are intended to highlight spatial structures such as boundaries, gradients and representative regimes, allowing trajectories to be evaluated not only by uncertainty reward but also by their relationship with the thermal organisation of the domain.
+
+\section{Available datasets and formats} \label{sec:available_datasets}
+
+The data used in this dissertation are expected to come from ocean model products, geostatistical prediction outputs and planner-ready NetCDF files. The final dataset will be updated after receiving the new high-resolution data generated from CMEMS IBI Forecast products.
+% TODO: update this section after receiving and auditing the final dataset from Filipa.
+
+The expected data sources are:
+
+\begin{itemize}
+    \item \textbf{CMEMS IBI Forecast data:} ocean model data used as prior information for the geostatistical prediction workflow. These data provide gridded temperature fields and potentially other ocean variables over a broader spatial domain.
+
+    \item \textbf{High-resolution interpolated fields:} CMEMS-derived fields interpolated to the high-resolution grid used for the Nazaré Canyon study area. These fields are expected to provide a consistent spatial support for the regime-discovery pipeline.
+
+    \item \textbf{Geostatistical prediction outputs:} daily predicted temperature maps and associated uncertainty maps generated from ensembles of stochastic simulations. These outputs are expected to be stored in NetCDF format and to include at least predicted temperature and pointwise standard deviation.
+
+    \item \textbf{Planner interface files:} NetCDF files formatted for the AUV planner, containing the variables required to generate candidate waypoints, rewards, masks and feasible trajectories.
+
+    \item \textbf{Auxiliary products:} bathymetry, land/obstacle masks, latitude/longitude grids, operational region definitions and diagnostic artefacts generated during preprocessing.
+\end{itemize}
+
+The main file format considered in this work is NetCDF, because it allows gridded multidimensional variables and associated coordinates to be stored in a structured way. The expected planner-ready files include spatial coordinates, bathymetry, predicted temperature and uncertainty fields. Intermediate arrays may also be stored in NumPy format for reproducibility and computational efficiency.
+
+A key requirement for the final dataset is grid consistency. All temporal fields used for regime discovery and planning must be defined on the same spatial grid or must be transformed to a common grid before descriptor extraction. The preferred solution is to use the high-resolution interpolated grid as the canonical domain for both regime discovery and planner evaluation.
+
+\section{Variables used: TEMP, STD, BATHY, LAT, LON} \label{sec:variables_used}
+
+The main variables used in this dissertation are temperature, standard deviation, bathymetry and geographic coordinates. Each variable plays a different role in the proposed pipeline.
+
+\subsection*{Temperature}
+
+Temperature is the primary physical variable used for regime discovery and descriptor extraction. A predicted temperature field is denoted as
+\begin{equation}
+    T(\mathbf{s},t),
+\end{equation}
+where $\mathbf{s}$ represents a spatial location on the grid and $t$ represents time. In this dissertation, temperature maps are analysed as spatial patterns. They are used to identify thermal regimes, compute gradients and derive boundary-related descriptors.
+
+The temperature field is not treated only as a predicted value to be sampled. It is also treated as a structured spatial field from which additional planning information can be extracted. This distinction is central to the proposed approach.
+
+\subsection*{Standard deviation}
+
+The standard deviation field, denoted as
+\begin{equation}
+    \sigma(\mathbf{s},t),
+\end{equation}
+represents prediction uncertainty. It is computed pointwise from an ensemble of geostatistical simulations and indicates how variable the predicted temperature is at each grid cell. In the baseline planner, this field is used as the main reward map: locations with larger standard deviation are interpreted as more valuable sampling candidates.
+
+In the enriched planner, standard deviation remains the baseline uncertainty input. The proposed descriptors are added as complementary information, rather than replacing the uncertainty map.
+
+\subsection*{Bathymetry}
+
+Bathymetry, denoted as
+\begin{equation}
+    H(\mathbf{s}),
+\end{equation}
+describes the seafloor depth over the operational region. It is used to define admissible and non-admissible areas for the planner. Shallow regions, land cells or unsafe areas can be masked out so that candidate waypoints and trajectory segments remain within the feasible operational domain.
+
+\subsection*{Latitude and longitude}
+
+Latitude and longitude define the geographic position of each grid cell. They are required for visualisation, distance computation, geographic cropping, trajectory plotting and consistency checks between data products. In the implementation, the planner may internally operate on grid indices or projected distances, but latitude and longitude remain essential for interpreting the results geographically.
+
+\subsection*{Derived variables and descriptors}
+
+In addition to the original variables, this dissertation derives spatial descriptors from the temperature field. These may include:
+
+\begin{itemize}
+    \item \textbf{Gradient magnitude}, representing the intensity of local temperature changes;
+    \item \textbf{Regime labels}, representing classes or spatial patterns identified from temperature maps;
+    \item \textbf{Boundary descriptors}, representing regions near transitions between regimes;
+    \item \textbf{Representative-region indicators}, identifying areas associated with characteristic structures of a regime.
+\end{itemize}
+
+These descriptors are later combined with the standard deviation map in the enriched planner formulations described in Chapter~\ref{chap:proposed_approach}.
+
+\section{Operational constraints} \label{sec:operational_constraints}
+
+The planner must generate trajectories that are informative but also feasible under operational AUV constraints. The main constraints considered in this dissertation are:
+
+\begin{itemize}
+    \item \textbf{Endurance and travel budget:} each AUV has a limited mission duration or maximum travel distance. The trajectory must remain within this budget.
+
+    \item \textbf{Start and end locations:} missions are planned with predefined launch and recovery locations or operationally convenient start and end points.
+
+    \item \textbf{Admissible operational area:} the planner is restricted to a geographic region of interest and must avoid land, obstacles and unsafe cells.
+
+    \item \textbf{Bathymetric safety:} shallow regions or areas incompatible with safe AUV navigation must be excluded from candidate waypoint generation.
+
+    \item \textbf{Trajectory cost:} travelling between candidate points has an associated cost, usually related to distance, travel time or feasibility.
+
+    \item \textbf{Number of vehicles:} the planner may be evaluated in single-AUV and multi-AUV configurations. In the multi-AUV case, trajectories should avoid unnecessary redundancy and respect fleet-level constraints.
+
+    \item \textbf{Computational feasibility:} the planning pipeline should remain computationally tractable for repeated experiments, sensitivity analyses and possible operational use.
+\end{itemize}
+
+In the current scope, the planner is evaluated primarily at the trajectory-planning level. Low-level control, detailed energy consumption, acoustic communication modelling and onboard execution errors are not explicitly modelled. These aspects are considered outside the main contribution of the dissertation, although they remain relevant for real-world deployment.
+
+\section{Functional and non-functional requirements} \label{sec:requirements}
+
+This section defines the main requirements of the proposed system from the perspective of the dissertation objectives.
+
+\subsection*{Functional requirements}
+
+The system should satisfy the following functional requirements:
+
+\begin{itemize}
+    \item \textbf{FR1 --- Load gridded ocean products:} the pipeline shall load temperature, standard deviation, bathymetry and coordinate variables from the available NetCDF files.
+
+    \item \textbf{FR2 --- Define a common grid and region of interest:} the pipeline shall define a canonical spatial domain used consistently for regime discovery, descriptor extraction and planner evaluation.
+
+    \item \textbf{FR3 --- Identify temperature regimes:} the pipeline shall identify spatial regimes or recurrent temperature patterns from a temporal stack of temperature maps.
+
+    \item \textbf{FR4 --- Extract spatial descriptors:} the pipeline shall compute descriptors related to gradients, boundaries, regime labels and representative regions.
+
+    \item \textbf{FR5 --- Generate planner-compatible inputs:} the pipeline shall produce the maps required by the planner, including baseline uncertainty maps and descriptor-enriched reward maps.
+
+    \item \textbf{FR6 --- Run baseline planning:} the system shall generate trajectories using only the standard deviation map as the baseline reward input.
+
+    \item \textbf{FR7 --- Run enriched planning:} the system shall generate trajectories using reward formulations that combine standard deviation with temperature-derived descriptors.
+
+    \item \textbf{FR8 --- Compare trajectory outputs:} the system shall compare baseline and enriched trajectories using predefined evaluation metrics.
+\end{itemize}
+
+\subsection*{Non-functional requirements}
+
+The system should also satisfy the following non-functional requirements:
+
+\begin{itemize}
+    \item \textbf{NFR1 --- Reproducibility:} all preprocessing steps, parameter values, grid definitions and planner runs should be documented and reproducible.
+
+    \item \textbf{NFR2 --- Traceability:} each result should be traceable to the input files, date, variables, grid and configuration used.
+
+    \item \textbf{NFR3 --- Modularity:} the regime-discovery, descriptor-extraction and planner-integration components should be separable, so that each can be tested independently.
+
+    \item \textbf{NFR4 --- Interpretability:} descriptors and planner outputs should be interpretable through maps, overlays and quantitative summaries.
+
+    \item \textbf{NFR5 --- Computational efficiency:} the pipeline should be efficient enough to allow multiple planner runs, including sensitivity analysis over descriptor weights.
+
+    \item \textbf{NFR6 --- Grid consistency:} all maps used in a single experiment should share the same spatial grid, mask and region of interest, or include an explicitly documented transformation.
+\end{itemize}
+
+\section{Evaluation metrics} \label{sec:evaluation_metrics}
+
+The evaluation aims to compare the behaviour of the baseline uncertainty-driven planner with enriched formulations that include temperature-derived descriptors. The goal is not to prove universal optimality, but to assess whether the enriched planner changes trajectory behaviour in meaningful, interpretable and operationally feasible ways.
+
+The main evaluation metrics are grouped as follows.
+
+\subsection*{Uncertainty-related metrics}
+
+These metrics quantify how much uncertainty is targeted by a trajectory:
+
+\begin{itemize}
+    \item \textbf{Accumulated STD reward:} sum or average of standard deviation values along the planned trajectory or at visited waypoints.
+
+    \item \textbf{Mean visited uncertainty:} average uncertainty sampled by the route.
+
+    \item \textbf{Coverage of high-STD regions:} proportion of high-uncertainty cells or candidate points visited by the planner.
+\end{itemize}
+
+\subsection*{Descriptor-related metrics}
+
+These metrics quantify how the trajectory interacts with the temperature-derived descriptors:
+
+\begin{itemize}
+    \item \textbf{Boundary coverage:} amount of trajectory or number of waypoints located near regime boundaries.
+
+    \item \textbf{Gradient coverage:} accumulated or average gradient magnitude along the route.
+
+    \item \textbf{Regime diversity:} number or proportion of distinct regimes visited by the trajectory.
+
+    \item \textbf{Representative-region coverage:} degree to which the trajectory samples regions considered representative of identified regimes.
+\end{itemize}
+
+\subsection*{Trajectory and operational metrics}
+
+These metrics assess feasibility and planner behaviour:
+
+\begin{itemize}
+    \item \textbf{Path length or travel cost:} total distance or cost associated with the route.
+
+    \item \textbf{Number of visited waypoints:} number of candidate nodes selected by the planner.
+
+    \item \textbf{Route dispersion:} spatial spread of the trajectory across the operational domain.
+
+    \item \textbf{Redundancy between vehicles:} overlap between routes in multi-AUV scenarios.
+
+    \item \textbf{Computational time:} time required to generate the trajectory.
+\end{itemize}
+
+\subsection*{Comparison metrics}
+
+The comparison between baseline and enriched planners will be based on differences in the metrics above. For example, an enriched planner may be considered to have changed behaviour if it increases boundary coverage or regime diversity while maintaining acceptable uncertainty reward and travel cost. Sensitivity analysis over the descriptor weights $\alpha$ and $\beta$ will be used to evaluate how strongly the descriptors influence trajectory selection.
+
+The final set of metrics may be refined after the complete dataset is audited and the planner experiments are executed. However, the evaluation will always compare baseline and enriched planners over the same grid, region of interest, mission constraints and input date, ensuring that differences in trajectory behaviour are attributable to the planning formulation rather than to changes in the data domain.
+
+\section{Summary} \label{sec:problem_specification_summary}
+
+This chapter specified the study case and operational problem addressed in this dissertation. The Nazaré Canyon region provides a heterogeneous coastal environment where thermal structures, bathymetry and regime transitions are relevant for adaptive sampling. The FRESNEL experiment motivates the need to consider spatial structure and regime mismatch when planning AUV trajectories. The available data products are expected to include high-resolution temperature predictions, standard deviation maps, bathymetry and geographic coordinates. These variables support the construction of baseline and enriched planner inputs.
+
+The chapter also defined the main operational constraints, functional and non-functional requirements, and evaluation metrics. The following chapter presents the proposed approach used to extract temperature-derived descriptors and integrate them with the baseline uncertainty-driven planner.
+
+
+% =========================
+% CHAPTER 5 — PROPOSED APPROACH
+% File: chapter5.tex
+% =========================
+
+\chapter{Proposed Approach} \label{chap:proposed_approach}
+
+This chapter presents the proposed methodology for integrating temperature-derived spatial descriptors into an uncertainty-driven AUV planner. The approach builds on the baseline planning logic described in the previous chapters: a standard deviation map is used as the primary source of sampling value, and the planner generates feasible AUV trajectories under operational constraints. The contribution of this dissertation is to enrich this process with additional information extracted from temperature fields, namely descriptors related to spatial regimes, gradients and boundary-like structures.
+
+The proposed approach is organised into six main stages. First, a common high-resolution grid and region of interest are defined. Second, temperature maps are preprocessed and used to identify spatial regimes or recurrent patterns. Third, descriptors are extracted from the temperature fields and regime representation. Fourth, these descriptors are represented on the same grid used by the planner. Fifth, the baseline uncertainty-driven planner is executed using only the standard deviation map. Finally, enriched planner formulations are evaluated by combining uncertainty with temperature-derived descriptors.
+
+\section{Overview of the proposed pipeline} \label{sec:approach_overview}
+
+The proposed pipeline links ocean model products, spatial pattern discovery and adaptive trajectory planning. The main inputs are gridded temperature maps, standard deviation maps, bathymetry and geographic coordinates. The main outputs are baseline and enriched AUV trajectories, together with diagnostic maps and quantitative metrics used to evaluate their behaviour.
+
+At a high level, the pipeline can be summarised as follows:
+
+\begin{enumerate}
+    \item \textbf{Data preparation:} load temperature, standard deviation, bathymetry and coordinate variables from the available gridded products.
+
+    \item \textbf{Grid and ROI definition:} define a canonical spatial domain used consistently for regime discovery, descriptor extraction and planner evaluation.
+
+    \item \textbf{Temperature regime discovery:} analyse a temporal stack of temperature maps to identify recurrent spatial patterns or regimes.
+
+    \item \textbf{Descriptor extraction:} compute spatial descriptors from the temperature maps and regime representation, including gradient magnitude and boundary-related scores.
+
+    \item \textbf{Baseline planning:} run the planner using only the standard deviation map as the reward source.
+
+    \item \textbf{Enriched planning:} run modified planner formulations in which the standard deviation reward is complemented by temperature-derived descriptors.
+
+    \item \textbf{Evaluation:} compare baseline and enriched trajectories using uncertainty-related, descriptor-related and operational metrics.
+\end{enumerate}
+
+The central assumption is that uncertainty and temperature structure provide complementary information. The standard deviation map indicates where the model is less confident, while the temperature-derived descriptors indicate where the predicted field contains spatial structures such as gradients, regime transitions or representative regions. The proposed planner enrichment therefore does not replace uncertainty-driven planning; instead, it augments the reward landscape used by the planner.
+
+Let $T_t(\mathbf{s})$ denote the temperature field at time or day $t$ and grid location $\mathbf{s}$, and let $\sigma_t(\mathbf{s})$ denote the corresponding standard deviation field. The baseline planner uses $\sigma_t(\mathbf{s})$ as its main value map. The enriched planner uses a modified value map that combines $\sigma_t(\mathbf{s})$ with descriptors derived from $T_t(\mathbf{s})$.
+
+\section{Temperature regime discovery} \label{sec:temperature_regime_discovery}
+
+The first methodological component is the discovery of spatial regimes or recurrent temperature patterns. The objective is to extract structure from a sequence of temperature maps, rather than treating each map only as an independent field of scalar values.
+
+Given a temporal stack of temperature maps,
+
+\begin{equation}
+    \mathcal{T} = \left\{T_1, T_2, \dots, T_N\right\},
+\end{equation}
+
+where $N$ is the number of available days or time instances, the goal is to identify groups of maps or spatial structures with similar temperature organisation. Each temperature map is defined over the same spatial grid and masked to retain only valid ocean cells.
+
+Before regime discovery, the maps are preprocessed to ensure consistency. This may include masking invalid or land cells, normalising temperature values, cropping the region of interest and ensuring that all maps share the same shape and coordinate system. The precise preprocessing steps depend on the final high-resolution dataset and are described in Chapter~\ref{chap:implementation}.
+
+The regime discovery component is inspired by compact-model approaches in marine robotics, particularly methods that represent high-dimensional ocean fields through lower-dimensional features before clustering. In this dissertation, the temperature maps are transformed into feature representations that preserve relevant spatial structure. These representations may be based on image patches, sparse coding, dictionary learning or other compact descriptors, depending on the final implementation.
+
+A generic representation step can be written as
+
+\begin{equation}
+    \mathbf{z}_t = \Phi(T_t),
+\end{equation}
+
+where $\Phi(\cdot)$ denotes the feature extraction or compact representation operator, and $\mathbf{z}_t$ is the feature vector associated with the temperature map at time $t$. Clustering is then applied to the set of feature vectors:
+
+\begin{equation}
+    c_t = \mathcal{C}(\mathbf{z}_t),
+\end{equation}
+
+where $c_t$ is the regime or class assigned to the temperature map, and $\mathcal{C}(\cdot)$ denotes the clustering procedure.
+
+The output of this stage may include:
+
+\begin{itemize}
+    \item a class or regime label for each temperature map;
+    \item prototype maps representing typical structures associated with each class;
+    \item within-class variability maps;
+    \item distance-to-prototype or similarity scores;
+    \item diagnostic visualisations of the discovered regimes.
+\end{itemize}
+
+These outputs provide a structured description of the temperature dataset. However, the planner does not use the class labels directly as the only source of information. Instead, the discovered regimes are used to support the extraction of spatial descriptors that can be represented on the planner grid.
+
+\section{Descriptor extraction} \label{sec:descriptor_extraction}
+
+The second methodological component is the extraction of spatial descriptors from the temperature maps and regime representation. The purpose of these descriptors is to convert temperature structure into quantitative maps that can be used by the planner.
+
+The main descriptors considered in this dissertation are:
+
+\begin{itemize}
+    \item \textbf{Gradient magnitude:} a measure of local temperature change;
+    \item \textbf{Boundary score:} a measure of proximity or relevance to transitions between regimes or spatial structures;
+    \item \textbf{Regime membership or class information:} a representation of which regime or pattern a map belongs to;
+    \item \textbf{Representative-region indicators:} maps that identify areas characteristic of a given regime or class.
+\end{itemize}
+
+\subsection*{Gradient magnitude}
+
+The gradient magnitude descriptor measures how rapidly temperature changes in space. Given a temperature field $T_t(\mathbf{s})$, the gradient magnitude is defined as
+
+\begin{equation}
+    G_t(\mathbf{s}) = \left\| \nabla T_t(\mathbf{s}) \right\|.
+\end{equation}
+
+In a gridded implementation, this can be approximated using finite differences along the two spatial dimensions:
+
+\begin{equation}
+    G_t(i,j) =
+    \sqrt{
+    \left(\frac{\partial T_t}{\partial x}\right)^2_{i,j}
+    +
+    \left(\frac{\partial T_t}{\partial y}\right)^2_{i,j}
+    }.
+\end{equation}
+
+High values of $G_t$ indicate strong local temperature changes, which may correspond to fronts, thermal boundaries or transition zones. In the enriched planner, this descriptor can be used to encourage trajectories that sample regions with strong spatial variability.
+
+\subsection*{Boundary score}
+
+The boundary score is intended to highlight areas associated with transitions between spatial regimes or temperature structures. Depending on the final regime representation, this score can be computed in different ways. If regime labels are available over space, boundaries may be identified by detecting neighbouring cells with different labels. If the regime discovery is performed at the map level, boundaries may instead be derived from gradients, prototype differences, class variability or local contrast measures.
+
+A generic boundary descriptor is denoted as
+
+\begin{equation}
+    B_t(\mathbf{s}),
+\end{equation}
+
+where larger values indicate locations that are more likely to be associated with relevant transitions or boundaries. The exact definition of $B_t$ is implementation-dependent and is described in Chapter~\ref{chap:implementation}. The important methodological point is that $B_t$ is designed to represent spatial structure that is not necessarily captured by the standard deviation map.
+
+\subsection*{Regime and representative-region descriptors}
+
+Regime information can also be used to identify representative regions of a class or to encourage the planner to sample contrasting structures. For example, if a map belongs to a specific regime class, prototype and variability maps can be used to identify areas that are characteristic of that regime. Alternatively, regime diversity can be used as an evaluation metric, measuring whether the trajectory samples only one spatial pattern or covers multiple contrasting regions.
+
+These descriptors are useful because they provide a bridge between pattern discovery and trajectory planning. Rather than using clustering only as a descriptive tool, the proposed approach converts regime information into spatial quantities that can affect planning decisions.
+
+\subsection*{Descriptor normalisation}
+
+Before being combined with uncertainty, descriptors must be normalised. This is necessary because standard deviation, gradient magnitude and boundary scores may have different units and numerical ranges. A generic normalised descriptor $\tilde{D}_t$ can be computed as
+
+\begin{equation}
+    \tilde{D}_t(\mathbf{s}) =
+    \frac{D_t(\mathbf{s}) - \min(D_t)}
+    {\max(D_t) - \min(D_t) + \epsilon},
+\end{equation}
+
+where $\epsilon$ is a small constant used to avoid division by zero. Normalisation ensures that descriptor weights can be interpreted more consistently during sensitivity analysis.
+
+\section{Canonical grid and region of interest} \label{sec:canonical_grid_roi}
+
+A central requirement of the proposed approach is that temperature maps, uncertainty maps, descriptors and planner inputs are represented on a common spatial domain. Previous exploratory work showed that using incompatible grids can introduce ambiguity when transferring descriptors between temperature-regime products and planner products. Therefore, the final methodology adopts a canonical grid and a fixed region of interest.
+
+The preferred solution is to use the high-resolution interpolated grid provided by the final dataset as the canonical domain. This grid is expected to contain the variables required by both the regime-discovery pipeline and the planner, including temperature, standard deviation, latitude, longitude and bathymetry. A fixed geographic crop is then applied to define the operational region of interest.
+
+Let $\Omega$ denote the full available grid and let $\Omega_{\mathrm{ROI}} \subset \Omega$ denote the selected region of interest. All maps used in one experiment are restricted to this same domain:
+
+\begin{equation}
+    T_t^{\mathrm{ROI}} = T_t|_{\Omega_{\mathrm{ROI}}},
+    \qquad
+    \sigma_t^{\mathrm{ROI}} = \sigma_t|_{\Omega_{\mathrm{ROI}}},
+    \qquad
+    H^{\mathrm{ROI}} = H|_{\Omega_{\mathrm{ROI}}}.
+\end{equation}
+
+The same mask is applied to temperature, uncertainty and descriptor maps. This ensures that all quantities used by the planner refer to the same geographic cells. It also avoids the need to compare or combine descriptors computed on one grid with uncertainty maps defined on another grid.
+
+The final region of interest will be selected according to three criteria:
+
+\begin{itemize}
+    \item it must lie inside the high-resolution interpolated domain;
+    \item it must include the operational area relevant for AUV planning;
+    \item it should contain sufficient spatial heterogeneity to evaluate the effect of regime-aware descriptors.
+\end{itemize}
+
+The exact bounding box, grid shape, spatial resolution and mask definition will be reported after the final dataset is audited.
+% TODO: insert final ROI coordinates, grid size and resolution after data audit.
+
+\section{Baseline uncertainty-driven planner} \label{sec:baseline_planner}
+
+The baseline planner considered in this dissertation is driven by the standard deviation map. Given a planning date $t$, the planner receives an uncertainty field $\sigma_t(\mathbf{s})$ over the region of interest and converts it into a reward map. Candidate sampling locations are then generated from this map, and the planner selects a feasible route or set of routes that maximises accumulated reward under operational constraints.
+
+The baseline reward associated with a candidate node $j$ located at $\mathbf{s}_j$ is defined as
+
+\begin{equation}
+    r_j^{\mathrm{base}} = \tilde{\sigma}_t(\mathbf{s}_j),
+\end{equation}
+
+where $\tilde{\sigma}_t$ denotes the normalised standard deviation field. Normalisation is used to make the reward scale comparable across days and across enriched formulations.
+
+The baseline planner therefore prioritises regions where the model prediction is less certain. This is consistent with the uncertainty-driven adaptive sampling logic described in Chapters~\ref{chap:background} and~\ref{chap:related_work}. Operational constraints such as endurance, admissible region, start and end locations and obstacle masks are handled by the planner.
+
+The output of the baseline planner includes:
+
+\begin{itemize}
+    \item one or more planned AUV trajectories;
+    \item the selected candidate waypoints;
+    \item the accumulated uncertainty reward;
+    \item route cost or path length;
+    \item diagnostic plots showing the route over the input uncertainty map.
+\end{itemize}
+
+This baseline provides the reference against which all enriched formulations are evaluated.
+
+\section{Enriched planner formulation} \label{sec:enriched_planner}
+
+The enriched planner extends the baseline uncertainty-driven formulation by adding descriptor-based information to the reward map. The goal is to evaluate whether temperature-derived descriptors can influence trajectory selection in meaningful ways while preserving the uncertainty-driven nature of the planner.
+
+The general enriched reward for a candidate node $j$ can be written as
+
+\begin{equation}
+    r_j^{\mathrm{enriched}} =
+    w_{\sigma}\tilde{\sigma}_t(\mathbf{s}_j)
+    +
+    w_B \tilde{B}_t(\mathbf{s}_j)
+    +
+    w_G \tilde{G}_t(\mathbf{s}_j),
+\end{equation}
+
+where $\tilde{\sigma}_t$ is the normalised uncertainty map, $\tilde{B}_t$ is the normalised boundary score, $\tilde{G}_t$ is the normalised gradient magnitude, and $w_{\sigma}$, $w_B$ and $w_G$ are weights controlling the contribution of each term.
+
+In the simplest case, the uncertainty term remains dominant and the descriptors act as additional incentives:
+
+\begin{equation}
+    r_j^{\mathrm{enriched}} =
+    \tilde{\sigma}_t(\mathbf{s}_j)
+    +
+    \alpha \tilde{B}_t(\mathbf{s}_j)
+    +
+    \beta \tilde{G}_t(\mathbf{s}_j),
+\end{equation}
+
+where $\alpha$ and $\beta$ are descriptor weights. This formulation directly compares the baseline planner with enriched variants:
+
+\begin{align}
+    \text{Baseline:} \qquad
+    r_j &= \tilde{\sigma}_t(\mathbf{s}_j), \\[1mm]
+    \text{Enriched-1:} \qquad
+    r_j &= \tilde{\sigma}_t(\mathbf{s}_j)
+    + \alpha \tilde{B}_t(\mathbf{s}_j), \\[1mm]
+    \text{Enriched-2:} \qquad
+    r_j &= \tilde{\sigma}_t(\mathbf{s}_j)
+    + \alpha \tilde{B}_t(\mathbf{s}_j)
+    + \beta \tilde{G}_t(\mathbf{s}_j).
+\end{align}
+
+An alternative convex-combination formulation may also be considered:
+
+\begin{equation}
+    r_j^{\mathrm{enriched}} =
+    (1-\alpha)\tilde{\sigma}_t(\mathbf{s}_j)
+    +
+    \alpha \tilde{D}_t(\mathbf{s}_j),
+\end{equation}
+
+where $\tilde{D}_t$ is a combined descriptor map, for example
+
+\begin{equation}
+    \tilde{D}_t(\mathbf{s})
+    =
+    \gamma \tilde{B}_t(\mathbf{s})
+    +
+    (1-\gamma)\tilde{G}_t(\mathbf{s}).
+\end{equation}
+
+This formulation is useful when the objective is to explicitly control the trade-off between uncertainty and descriptor-based sampling.
+
+The enriched planner is evaluated by comparing its trajectories with those of the baseline planner under the same date, grid, region of interest, operational constraints and candidate generation procedure. Any observed difference in trajectory behaviour can therefore be attributed to the modified reward formulation rather than to changes in the data domain.
+
+The expected effects of the enriched formulation include:
+
+\begin{itemize}
+    \item increased sampling near thermal boundaries;
+    \item increased coverage of high-gradient regions;
+    \item greater interaction with regime transitions;
+    \item potentially different spatial distribution of waypoints;
+    \item possible trade-offs between uncertainty reward and descriptor reward.
+\end{itemize}
+
+The enriched planner is not assumed to be universally better than the baseline. Instead, the thesis evaluates under which conditions the descriptors alter the planner behaviour in a way that is interpretable, operationally feasible and relevant to the oceanographic structure of the study area.
+
+\section{Summary} \label{sec:proposed_approach_summary}
+
+This chapter presented the proposed approach for integrating temperature-derived descriptors into an uncertainty-driven AUV planner. The pipeline begins with gridded temperature and standard deviation maps over a common high-resolution region of interest. Temperature maps are used to discover spatial regimes and extract descriptors such as gradient magnitude and boundary-related scores. These descriptors are normalised and represented on the same grid as the uncertainty map. The baseline planner uses only the standard deviation field, while enriched formulations combine standard deviation with descriptor-based rewards.
+
+The following chapter describes the implementation of this approach, including data preprocessing, the regime discovery pipeline, planner interface generation, integration with the existing planner and reproducibility artefacts.
+
+
+
+% =========================
+% CHAPTER 6 — IMPLEMENTATION
+% File: chapter6.tex
+% =========================
+
+\chapter{Implementation} \label{chap:implementation}
+
+This chapter describes the implementation of the proposed pipeline. While Chapter~\ref{chap:proposed_approach} presented the methodological formulation, this chapter focuses on the practical steps required to transform the available ocean data products into planner-compatible inputs and to execute baseline and descriptor-enriched planning experiments.
+
+The implementation is organised into five main components: data preprocessing, the Fossum-style temperature-regime pipeline, planner interface generation, integration with Lucrezia's planner, and reproducibility/audit artefacts. The final details of the implementation depend on the high-resolution dataset provided for the Nazaré Canyon region and will be updated after the final data audit.
+
+\section{Data preprocessing} \label{sec:data_preprocessing}
+
+The first implementation stage consists of preparing the input data for both the regime-discovery pipeline and the AUV planner. The expected input data include high-resolution temperature fields, predicted temperature maps, standard deviation maps, bathymetry and geographic coordinate variables.
+
+The preprocessing workflow is designed to ensure that all variables used in a given experiment are defined on a common spatial grid and over the same region of interest. This is essential because descriptor maps, uncertainty maps and planner masks must refer to the same geographic cells.
+
+The main preprocessing steps are:
+
+\begin{enumerate}
+    \item \textbf{Load input files:} read the available NetCDF files containing temperature, standard deviation, bathymetry, latitude and longitude variables.
+
+    \item \textbf{Inspect metadata and dimensions:} verify variable names, dimensions, coordinate conventions, time indices, depth levels and units.
+
+    \item \textbf{Select the relevant temporal range:} identify the days available for regime discovery and the planning dates used for baseline and enriched experiments.
+
+    \item \textbf{Select the spatial domain:} define a fixed geographic region of interest within the high-resolution grid.
+
+    \item \textbf{Apply masks:} remove land cells, invalid values, unsafe bathymetric regions and cells outside the operational domain.
+
+    \item \textbf{Standardise array formats:} convert the relevant fields into consistent array formats for downstream processing.
+
+    \item \textbf{Validate grid consistency:} confirm that temperature, standard deviation, bathymetry and coordinates share the same shape, orientation, mask and geographic extent.
+\end{enumerate}
+
+The canonical input fields after preprocessing are:
+
+\begin{itemize}
+    \item $T_t(i,j)$: temperature field for day or time index $t$;
+    \item $\sigma_t(i,j)$: standard deviation field for the same grid;
+    \item $H(i,j)$: bathymetry field;
+    \item $\mathrm{LAT}(i,j)$ and $\mathrm{LON}(i,j)$: geographic coordinate grids;
+    \item $M(i,j)$: binary validity mask for ocean and operationally admissible cells.
+\end{itemize}
+
+All downstream modules use these preprocessed arrays. This reduces the risk of comparing fields with different masks, resolutions, orientations or coordinate conventions.
+
+\subsection*{Temporal indexing}
+
+A specific preprocessing concern is the mapping between file indices and calendar dates. Each temperature or prediction map must be associated with a unique date or time index. This is particularly important when comparing regime-discovery products with daily prediction and uncertainty maps.
+
+The implementation therefore includes a temporal audit step that records:
+
+\begin{itemize}
+    \item the available dates;
+    \item the corresponding file names;
+    \item the internal time or day indices;
+    \item the selected planning date;
+    \item whether the selected field is prior, predicted or assimilated.
+\end{itemize}
+
+% TODO: update this subsection after the final dataset from Filipa is received and audited.
+% TODO: insert exact date range, file naming convention and time-index mapping.
+
+\subsection*{Spatial grid and ROI consistency}
+
+The final implementation uses a common high-resolution grid as the canonical spatial domain. A fixed region of interest is selected by geographic crop or by planner operational limits. The same crop is applied to all relevant variables.
+
+Let $\Omega$ denote the full grid and $\Omega_{\mathrm{ROI}}$ the selected region of interest. The implementation stores all fields in the cropped domain:
+
+\begin{equation}
+    T_t^{\mathrm{ROI}}, \quad
+    \sigma_t^{\mathrm{ROI}}, \quad
+    H^{\mathrm{ROI}}, \quad
+    \mathrm{LAT}^{\mathrm{ROI}}, \quad
+    \mathrm{LON}^{\mathrm{ROI}}, \quad
+    M^{\mathrm{ROI}}.
+\end{equation}
+
+This design avoids the need to transfer descriptors between incompatible grids. If any transformation or interpolation is required, it must be explicitly documented and validated before the fields are used by the planner.
+
+% TODO: insert final ROI coordinates, grid shape, resolution and mask definition.
+
+\section{Fossum-style pipeline implementation} \label{sec:fossum_pipeline_implementation}
+
+The regime-discovery component is inspired by compact-model approaches for adaptive sampling in marine robotics. The objective is to transform a temporal stack of temperature maps into a representation that captures recurrent spatial patterns and supports descriptor extraction.
+
+The implemented pipeline follows a Fossum-style structure, adapted to the available gridded temperature maps:
+
+\begin{enumerate}
+    \item prepare a stack of valid temperature maps;
+    \item extract local spatial patches from each map;
+    \item learn or apply a compact representation;
+    \item encode each map using the learned representation;
+    \item cluster the encoded maps or spatial features;
+    \item generate regime labels, prototype maps and diagnostic outputs;
+    \item extract descriptors from the resulting regime representation.
+\end{enumerate}
+
+The input to this module is a stack of temperature fields:
+
+\begin{equation}
+    \mathcal{T} =
+    \left\{
+    T_1^{\mathrm{ROI}},
+    T_2^{\mathrm{ROI}},
+    \dots,
+    T_N^{\mathrm{ROI}}
+    \right\},
+\end{equation}
+
+where all maps have the same shape and mask.
+
+\subsection*{Patch extraction}
+
+Each temperature map can be decomposed into local patches. A patch is a smaller rectangular window extracted from the full map. Patch-based processing allows the representation to capture local spatial structures, such as gradients, fronts and transitions.
+
+Let $P_{t,k}$ denote the $k$-th patch extracted from map $T_t$. The complete set of patches is then used to learn a compact representation or to encode each image.
+
+Important implementation parameters include:
+
+\begin{itemize}
+    \item patch height and width;
+    \item stride between neighbouring patches;
+    \item treatment of masked or invalid cells;
+    \item normalisation strategy;
+    \item number of patches used for training;
+    \item random seed for reproducibility.
+\end{itemize}
+
+% TODO: insert final patch size, stride and selected configuration after the high-resolution grid is fixed.
+
+\subsection*{Compact representation and clustering}
+
+After patch extraction, each map is transformed into a feature representation. In a dictionary-learning setting, each patch is represented as a sparse combination of learned atoms. The resulting codes can be aggregated or preserved as a structured representation of the map.
+
+A generic encoding step can be written as
+
+\begin{equation}
+    \mathbf{z}_t = \Phi(T_t^{\mathrm{ROI}}),
+\end{equation}
+
+where $\Phi(\cdot)$ is the representation function and $\mathbf{z}_t$ is the feature vector associated with day $t$.
+
+Clustering is then applied to the encoded maps:
+
+\begin{equation}
+    c_t = \mathcal{C}(\mathbf{z}_t),
+\end{equation}
+
+where $c_t$ is the assigned regime class.
+
+The implementation stores, for each run:
+
+\begin{itemize}
+    \item the selected input maps;
+    \item preprocessing parameters;
+    \item representation parameters;
+    \item clustering parameters;
+    \item regime labels;
+    \item class membership lists;
+    \item prototype maps;
+    \item diagnostic figures and metrics.
+\end{itemize}
+
+\subsection*{Prototype and class diagnostics}
+
+For each discovered class, prototype maps are generated to summarise the typical spatial structure of that regime. These may include:
+
+\begin{itemize}
+    \item mean temperature map per class;
+    \item median temperature map per class;
+    \item pixelwise standard deviation within each class;
+    \item distance-to-prototype statistics;
+    \item representative members of each class.
+\end{itemize}
+
+These diagnostic products are useful for verifying whether the discovered classes correspond to meaningful spatial patterns. They also support descriptor extraction, because class boundaries and within-class variability can indicate relevant spatial structures.
+
+\subsection*{Descriptor generation}
+
+After regime discovery, descriptor maps are computed for each planning date. The main descriptors are:
+
+\begin{itemize}
+    \item gradient magnitude map $\tilde{G}_t$;
+    \item boundary score map $\tilde{B}_t$;
+    \item regime label or class-associated information;
+    \item representative-region indicators, if applicable.
+\end{itemize}
+
+Each descriptor is normalised and masked using the same validity mask as the planner input fields. This ensures that descriptor values are only defined over admissible ocean cells.
+
+The final output of this module is a set of planner-aligned descriptor maps:
+
+\begin{equation}
+    \tilde{G}_t^{\mathrm{ROI}}, \quad
+    \tilde{B}_t^{\mathrm{ROI}}, \quad
+    \tilde{D}_t^{\mathrm{ROI}}.
+\end{equation}
+
+These maps are then passed to the planner interface generation module.
+
+\section{Planner interface generation} \label{sec:planner_interface_generation}
+
+The planner interface generation module converts preprocessed ocean fields and descriptor maps into the format required by the AUV planner. The objective is to produce planner-ready files containing the variables needed for candidate generation, reward computation and trajectory planning.
+
+The baseline planner requires at least:
+
+\begin{itemize}
+    \item standard deviation map;
+    \item bathymetry;
+    \item latitude and longitude grids;
+    \item land or invalid-cell mask;
+    \item operational region definition.
+\end{itemize}
+
+The enriched planner additionally requires:
+
+\begin{itemize}
+    \item boundary score map;
+    \item gradient magnitude map;
+    \item combined descriptor map, if used;
+    \item enriched reward map.
+\end{itemize}
+
+For a given planning date $t$, the baseline reward map is defined as
+
+\begin{equation}
+    R_t^{\mathrm{base}}(\mathbf{s}) =
+    \tilde{\sigma}_t(\mathbf{s}),
+\end{equation}
+
+where $\tilde{\sigma}_t$ is the normalised standard deviation field.
+
+The enriched reward map can be defined as
+
+\begin{equation}
+    R_t^{\mathrm{enriched}}(\mathbf{s}) =
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s})
+    +
+    \beta \tilde{G}_t(\mathbf{s}),
+\end{equation}
+
+where $\tilde{B}_t$ and $\tilde{G}_t$ are the normalised boundary score and gradient magnitude maps.
+
+The planner interface files should store both the original inputs and the derived reward maps whenever possible. This makes the experiments more transparent and allows each planner run to be traced back to the exact maps used.
+
+\subsection*{NetCDF interface}
+
+The preferred format for planner-ready inputs is NetCDF. A planner interface file may contain variables such as:
+
+\begin{itemize}
+    \item \texttt{LAT};
+    \item \texttt{LON};
+    \item \texttt{BATHY};
+    \item \texttt{STD};
+    \item \texttt{TEMP};
+    \item \texttt{BOUNDARY\_SCORE};
+    \item \texttt{GRADIENT\_MAGNITUDE};
+    \item \texttt{REWARD\_BASELINE};
+    \item \texttt{REWARD\_ENRICHED};
+    \item \texttt{MASK}.
+\end{itemize}
+
+% TODO: update variable names after final planner interface convention is fixed.
+% TODO: confirm whether Lucrezia's planner expects specific variable names such as temperr, tbath or landt.
+
+\subsection*{Mask and bathymetry convention}
+
+The planner must only generate candidate points in valid and safe regions. Therefore, the mask convention must be consistent across all variables. Bathymetry is used to remove land, shallow cells or other unsafe regions.
+
+If the planner uses a specific bathymetry sign convention, such as positive depth or negative seafloor elevation, this convention must be documented and applied consistently.
+
+% TODO: insert final bathymetry convention used by the planner.
+
+\section{Integration with Lucrezia's planner} \label{sec:lucrezia_planner_integration}
+
+The baseline planner used in this dissertation is based on Lucrezia's uncertainty-driven AUV planning framework. In its original formulation, the planner receives an uncertainty map and generates trajectories that maximise accumulated uncertainty reward under operational constraints.
+
+The integration strategy adopted in this dissertation is conservative: the core planner structure is preserved, and only the reward input is modified. This allows baseline and enriched runs to be compared under the same candidate-generation process, operational mask, endurance constraints and routing logic.
+
+The integration is organised into three experiment types:
+
+\begin{itemize}
+    \item \textbf{Baseline:} the planner uses only the normalised standard deviation map as reward;
+
+    \item \textbf{Enriched-1:} the planner uses standard deviation plus boundary score;
+
+    \item \textbf{Enriched-2:} the planner uses standard deviation plus boundary score and gradient magnitude.
+\end{itemize}
+
+The corresponding reward definitions are:
+
+\begin{align}
+    R_t^{\mathrm{baseline}}(\mathbf{s}) &=
+    \tilde{\sigma}_t(\mathbf{s}), \\[1mm]
+    R_t^{\mathrm{enriched1}}(\mathbf{s}) &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s}), \\[1mm]
+    R_t^{\mathrm{enriched2}}(\mathbf{s}) &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s})
+    +
+    \beta \tilde{G}_t(\mathbf{s}).
+\end{align}
+
+The same planner settings are used across all configurations whenever possible. This includes:
+
+\begin{itemize}
+    \item same planning date;
+    \item same region of interest;
+    \item same mask;
+    \item same start and end locations;
+    \item same endurance or travel budget;
+    \item same number of AUVs;
+    \item same candidate-generation parameters;
+    \item same routing solver settings.
+\end{itemize}
+
+This controlled comparison ensures that differences in the resulting trajectories are caused by the reward formulation rather than by unrelated changes in the planner configuration.
+
+\subsection*{Candidate generation}
+
+The planner generates candidate waypoints from the reward or uncertainty map. Depending on the planner configuration, this may involve smoothing, contour extraction, Voronoi-based point generation, distance filtering or other preprocessing steps.
+
+Because candidate generation can strongly influence the final route, the implementation records all relevant settings, including:
+
+\begin{itemize}
+    \item whether smoothing is applied;
+    \item number of contour levels;
+    \item minimum distance between candidate points;
+    \item thresholding rules;
+    \item number of generated candidates;
+    \item number of candidates retained after masking.
+\end{itemize}
+
+% TODO: insert final candidate-generation settings after planner configuration is frozen.
+
+\subsection*{Solver outputs}
+
+For each planner run, the implementation stores:
+
+\begin{itemize}
+    \item planned trajectory or trajectories;
+    \item selected waypoints;
+    \item number of visited points;
+    \item objective value;
+    \item route cost or distance;
+    \item solver logs;
+    \item diagnostic plots;
+    \item planner configuration file;
+    \item input reward maps.
+\end{itemize}
+
+These outputs are used later for verification, validation and comparison between baseline and enriched planners.
+
+\section{Reproducibility and audit artefacts} \label{sec:reproducibility_audit}
+
+Reproducibility is a central requirement of the implementation. The pipeline contains several stages, including data preprocessing, regime discovery, descriptor extraction, planner interface generation and route planning. To ensure that results can be interpreted and repeated, each stage produces audit artefacts.
+
+For each experiment, the implementation records:
+
+\begin{itemize}
+    \item input file paths;
+    \item planning date;
+    \item selected region of interest;
+    \item grid shape and geographic bounds;
+    \item variables used;
+    \item mask definition;
+    \item preprocessing parameters;
+    \item regime-discovery configuration;
+    \item descriptor definitions;
+    \item normalisation method;
+    \item planner parameters;
+    \item random seeds, where applicable;
+    \item output file paths.
+\end{itemize}
+
+The main audit artefacts include:
+
+\begin{itemize}
+    \item \textbf{Markdown reports}, describing the purpose and outcome of each run;
+    \item \textbf{JSON files}, storing structured configuration and validation checks;
+    \item \textbf{CSV files}, storing metrics, class memberships or run comparisons;
+    \item \textbf{NumPy arrays}, storing intermediate maps and descriptors;
+    \item \textbf{NetCDF files}, storing planner-compatible gridded inputs;
+    \item \textbf{PNG figures}, showing maps, masks, descriptors, routes and overlays;
+    \item \textbf{log files}, storing runtime information and solver output.
+\end{itemize}
+
+The following checks are considered mandatory for each final experiment:
+
+\begin{itemize}
+    \item all input maps have the same shape;
+    \item all input maps use the same mask;
+    \item the selected ROI is contained within the available high-resolution grid;
+    \item the planning date is correctly mapped to the input files;
+    \item descriptor maps are finite and correctly normalised over valid cells;
+    \item baseline and enriched runs use the same planner configuration except for the reward map;
+    \item output trajectories remain inside the admissible operational domain.
+\end{itemize}
+
+These checks are particularly important because previous exploratory work showed that grid mismatch, date ambiguity and mask inconsistencies can lead to misleading comparisons. The final implementation therefore prioritises traceability and validation before interpreting planner results.
+
+\section{Summary} \label{sec:implementation_summary}
+
+This chapter described the implementation of the proposed pipeline. The data preprocessing stage ensures that all fields are represented on a common high-resolution grid and region of interest. The Fossum-style pipeline extracts compact representations, regimes and descriptors from temperature maps. The planner interface generation module converts uncertainty and descriptor maps into planner-compatible inputs. The integration with Lucrezia's planner preserves the baseline uncertainty-driven structure while introducing descriptor-enriched reward formulations. Finally, reproducibility and audit artefacts are generated to ensure that each experiment can be traced, validated and repeated.
+
+The following chapter presents the verification, validation and experimental design used to compare baseline and enriched planner behaviour. 
+% =========================
+% CHAPTER 7 — VERIFICATION, VALIDATION AND EXPERIMENTAL DESIGN
+% File: chapter7.tex
+% =========================
+
+\chapter{Verification, Validation and Experimental Design} \label{chap:validation}
+
+This chapter defines the verification, validation and experimental design used to evaluate the proposed descriptor-enriched planning pipeline. The objective is not only to test whether the code executes successfully, but also to ensure that the comparisons between baseline and enriched planners are scientifically meaningful, reproducible and fair.
+
+Verification is used to confirm that each implementation component behaves as expected: data loading, grid handling, masking, descriptor generation, planner interface generation and planner execution. Validation is used to assess whether the outputs are meaningful in the context of the research problem: whether the generated trajectories are feasible, whether the descriptors interact with the planner as intended, and whether enriched formulations produce interpretable differences relative to the uncertainty-only baseline.
+
+The experimental design is based on controlled comparisons. For each planning date and operational scenario, the baseline and enriched planners must use the same grid, region of interest, mask, planner configuration, candidate generation parameters and mission constraints. The only intended difference between runs is the reward formulation.
+
+\section{Data and grid validation} \label{sec:data_grid_validation}
+
+Data and grid validation is the first step before any planner comparison. Since the proposed method combines temperature maps, standard deviation maps, bathymetry, geographic coordinates and derived descriptors, all fields must be defined over a consistent spatial domain.
+
+The validation procedure checks the following aspects:
+
+\begin{itemize}
+    \item \textbf{Variable availability:} confirm that all required variables are present in the input files, including temperature, standard deviation, bathymetry, latitude and longitude.
+
+    \item \textbf{Shape consistency:} confirm that all maps used in a given experiment have the same number of rows and columns.
+
+    \item \textbf{Coordinate consistency:} verify that latitude and longitude grids correspond to the same spatial domain for all variables.
+
+    \item \textbf{Mask consistency:} ensure that land, invalid cells and operationally inadmissible cells are treated consistently across temperature, uncertainty and descriptor maps.
+
+    \item \textbf{Temporal consistency:} confirm that each temperature and standard deviation map is associated with the correct date or time index.
+
+    \item \textbf{Bathymetry convention:} verify the sign convention and interpretation of bathymetry used by the planner.
+
+    \item \textbf{ROI consistency:} confirm that the selected region of interest lies within the available high-resolution grid and is applied identically to all fields.
+\end{itemize}
+
+The canonical validation condition for a planning date $t$ is:
+
+\begin{equation}
+    \mathrm{shape}(T_t)
+    =
+    \mathrm{shape}(\sigma_t)
+    =
+    \mathrm{shape}(H)
+    =
+    \mathrm{shape}(\mathrm{LAT})
+    =
+    \mathrm{shape}(\mathrm{LON})
+    =
+    \mathrm{shape}(M),
+\end{equation}
+
+where $T_t$ is the temperature field, $\sigma_t$ is the standard deviation field, $H$ is bathymetry, $\mathrm{LAT}$ and $\mathrm{LON}$ are coordinate grids, and $M$ is the validity or operational mask.
+
+The same condition must also hold for descriptor maps:
+
+\begin{equation}
+    \mathrm{shape}(\tilde{B}_t)
+    =
+    \mathrm{shape}(\tilde{G}_t)
+    =
+    \mathrm{shape}(\sigma_t),
+\end{equation}
+
+where $\tilde{B}_t$ is the normalised boundary score and $\tilde{G}_t$ is the normalised gradient magnitude.
+
+In addition to shape checks, the implementation verifies that descriptor maps are finite and correctly normalised over valid ocean cells:
+
+\begin{equation}
+    0 \leq \tilde{B}_t(\mathbf{s}) \leq 1,
+    \qquad
+    0 \leq \tilde{G}_t(\mathbf{s}) \leq 1,
+    \qquad
+    \forall \mathbf{s} \in \Omega_{\mathrm{valid}}.
+\end{equation}
+
+Any experiment that fails these checks is excluded from planner comparison until the inconsistency is resolved. This is necessary because mismatched grids, masks or dates could create apparent trajectory differences that are unrelated to the proposed method.
+
+The outputs of this validation stage include:
+
+\begin{itemize}
+    \item grid validation reports;
+    \item variable and metadata summaries;
+    \item mask comparison figures;
+    \item ROI overlays;
+    \item temporal index tables;
+    \item JSON files with automated checks;
+    \item diagnostic maps for temperature, standard deviation and descriptors.
+\end{itemize}
+
+% TODO: insert final validation outputs after the high-resolution dataset is audited.
+
+\section{Baseline versus enriched planner comparison} \label{sec:baseline_vs_enriched}
+
+The central experimental comparison in this dissertation is between the baseline uncertainty-driven planner and the descriptor-enriched planners.
+
+The baseline planner uses only the normalised standard deviation map:
+
+\begin{equation}
+    R_t^{\mathrm{baseline}}(\mathbf{s})
+    =
+    \tilde{\sigma}_t(\mathbf{s}).
+\end{equation}
+
+The enriched planners use the same uncertainty map, but include one or more descriptor terms:
+
+\begin{align}
+    R_t^{\mathrm{enriched1}}(\mathbf{s})
+    &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s}), \\[1mm]
+    R_t^{\mathrm{enriched2}}(\mathbf{s})
+    &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s})
+    +
+    \beta \tilde{G}_t(\mathbf{s}),
+\end{align}
+
+where $\tilde{\sigma}_t$ is the normalised uncertainty map, $\tilde{B}_t$ is the normalised boundary score, $\tilde{G}_t$ is the normalised gradient magnitude, and $\alpha$ and $\beta$ are descriptor weights.
+
+For a fair comparison, all planner runs must share:
+
+\begin{itemize}
+    \item the same planning date;
+    \item the same region of interest;
+    \item the same grid and mask;
+    \item the same start and end locations;
+    \item the same number of AUVs;
+    \item the same endurance or travel budget;
+    \item the same candidate generation parameters;
+    \item the same solver settings.
+\end{itemize}
+
+The comparison is based on multiple metric groups.
+
+\subsection*{Uncertainty-related metrics}
+
+These metrics measure how well the trajectory targets uncertainty:
+
+\begin{itemize}
+    \item accumulated STD reward along the route;
+    \item mean STD value at visited waypoints;
+    \item proportion of high-STD candidate points visited;
+    \item maximum and minimum STD values sampled.
+\end{itemize}
+
+For a route $\mathcal{R}$ visiting a set of waypoints, the accumulated uncertainty reward can be defined as:
+
+\begin{equation}
+    U_{\sigma}(\mathcal{R})
+    =
+    \sum_{\mathbf{s}_j \in \mathcal{R}}
+    \tilde{\sigma}_t(\mathbf{s}_j).
+\end{equation}
+
+\subsection*{Descriptor-related metrics}
+
+These metrics measure how the trajectory interacts with thermal structure:
+
+\begin{itemize}
+    \item accumulated boundary score;
+    \item accumulated gradient magnitude;
+    \item number of boundary-region waypoints visited;
+    \item proportion of trajectory near regime transitions;
+    \item regime diversity along the route;
+    \item representative-region coverage.
+\end{itemize}
+
+For example, accumulated boundary reward can be defined as:
+
+\begin{equation}
+    U_{B}(\mathcal{R})
+    =
+    \sum_{\mathbf{s}_j \in \mathcal{R}}
+    \tilde{B}_t(\mathbf{s}_j),
+\end{equation}
+
+and accumulated gradient reward as:
+
+\begin{equation}
+    U_{G}(\mathcal{R})
+    =
+    \sum_{\mathbf{s}_j \in \mathcal{R}}
+    \tilde{G}_t(\mathbf{s}_j).
+\end{equation}
+
+\subsection*{Operational metrics}
+
+These metrics assess feasibility and route behaviour:
+
+\begin{itemize}
+    \item total path length;
+    \item total travel cost;
+    \item number of visited waypoints;
+    \item objective value returned by the planner;
+    \item route dispersion over the operational area;
+    \item overlap between vehicles in multi-AUV scenarios;
+    \item runtime of candidate generation and solver execution.
+\end{itemize}
+
+The planner comparison will therefore not rely on a single score. Instead, it will examine trade-offs. For example, an enriched planner may increase boundary coverage while slightly reducing accumulated STD reward. Such a result would not automatically be considered better or worse; it would indicate that the descriptor terms changed the sampling behaviour, and the relevance of this change must be interpreted in relation to the study objective.
+
+To quantify relative differences, percentage changes with respect to the baseline may be computed:
+
+\begin{equation}
+    \Delta m =
+    \frac{
+    m_{\mathrm{enriched}} - m_{\mathrm{baseline}}
+    }
+    {
+    |m_{\mathrm{baseline}}| + \epsilon
+    }
+    \times 100,
+\end{equation}
+
+where $m$ is any evaluation metric and $\epsilon$ is a small constant used to avoid division by zero.
+
+\section{Sensitivity analysis for alpha and beta} \label{sec:sensitivity_alpha_beta}
+
+The descriptor weights $\alpha$ and $\beta$ control the influence of boundary score and gradient magnitude in the enriched planner. Sensitivity analysis is required because different values may produce substantially different trajectories.
+
+The goal of this analysis is to answer the following questions:
+
+\begin{itemize}
+    \item How strongly does the boundary score influence the selected trajectory?
+    \item How strongly does gradient magnitude influence the selected trajectory?
+    \item At what values do descriptors begin to dominate the uncertainty term?
+    \item Are there stable regions of parameter space where enriched trajectories remain interpretable and operationally feasible?
+    \item Is there a trade-off between uncertainty reward and descriptor reward?
+\end{itemize}
+
+A simple sensitivity experiment consists of running the planner over a grid of parameter values:
+
+\begin{equation}
+    \alpha \in A,
+    \qquad
+    \beta \in B,
+\end{equation}
+
+where $A$ and $B$ are predefined sets of candidate weights.
+
+Example values may include:
+
+\begin{equation}
+    A = \{0, 0.1, 0.25, 0.5, 1.0\},
+    \qquad
+    B = \{0, 0.1, 0.25, 0.5, 1.0\}.
+\end{equation}
+
+% TODO: define final alpha/beta ranges after initial planner tests.
+
+For each pair $(\alpha,\beta)$, the following outputs are recorded:
+
+\begin{itemize}
+    \item planned trajectories;
+    \item accumulated STD reward;
+    \item accumulated boundary score;
+    \item accumulated gradient reward;
+    \item path length or travel cost;
+    \item number of visited waypoints;
+    \item computational time;
+    \item diagnostic route overlays.
+\end{itemize}
+
+The sensitivity analysis will be interpreted using both quantitative metrics and visual inspection. Visual inspection is important because two trajectories may have similar objective values but sample qualitatively different regions of the domain. Conversely, a small change in $\alpha$ or $\beta$ may cause a large change in route geometry if candidate rewards are close.
+
+A useful diagnostic is the trade-off curve between uncertainty reward and descriptor reward. For each run, the pair
+
+\begin{equation}
+    \left(
+    U_{\sigma}(\mathcal{R}),
+    U_D(\mathcal{R})
+    \right)
+\end{equation}
+
+can be plotted, where $U_D$ denotes a combined descriptor reward. This allows the analysis of whether descriptor-enriched planning leads to meaningful gains in boundary or gradient sampling at an acceptable cost in uncertainty reward.
+
+The sensitivity analysis also helps select representative enriched configurations for the final results chapter. Rather than presenting every parameter combination in detail, the final discussion may focus on:
+
+\begin{itemize}
+    \item a weak descriptor influence case;
+    \item an intermediate balanced case;
+    \item a strong descriptor influence case;
+    \item any configuration that produces undesirable or unstable behaviour.
+\end{itemize}
+
+\section{Single-AUV and multi-AUV scenarios} \label{sec:single_multi_auv}
+
+The planner may be evaluated under both single-AUV and multi-AUV configurations. These two settings are conceptually different and may interact with the descriptor terms in different ways.
+
+\subsection*{Single-AUV scenario}
+
+In the single-AUV case, the vehicle has one trajectory and must decide how to allocate its limited mission time. Descriptor-enriched planning may encourage the vehicle to cross boundaries, sample high-gradient regions or visit transitions between regimes.
+
+This scenario is useful for understanding the basic effect of descriptors on route geometry. It answers questions such as:
+
+\begin{itemize}
+    \item Does the enriched planner move the route closer to regime boundaries?
+    \item Does it increase interaction with high-gradient areas?
+    \item Does it preserve reasonable uncertainty reward?
+    \item Does it produce a route that remains feasible within the same travel budget?
+\end{itemize}
+
+\subsection*{Multi-AUV scenario}
+
+In the multi-AUV case, the planner generates more than one route. This enables larger spatial coverage but introduces additional questions related to route overlap and spatial allocation.
+
+Descriptor-enriched planning may have different effects in this setting. For example, if boundary score is too dominant, multiple AUVs may concentrate around the same boundary region, increasing redundancy. Conversely, a well-balanced formulation may distribute vehicles across different parts of the operational domain or across contrasting regimes.
+
+The multi-AUV evaluation therefore includes metrics such as:
+
+\begin{itemize}
+    \item route overlap between vehicles;
+    \item spatial coverage of the fleet;
+    \item regime diversity across all vehicles;
+    \item redundancy in high-boundary or high-gradient regions;
+    \item distribution of accumulated reward per vehicle.
+\end{itemize}
+
+A route-overlap metric can be defined by measuring the intersection between buffered trajectories or by counting repeated visits to the same candidate regions. A simple waypoint-based redundancy score may be written as:
+
+\begin{equation}
+    \rho =
+    \frac{
+    |\mathcal{V}_1 \cap \mathcal{V}_2 \cap \dots \cap \mathcal{V}_N|
+    }
+    {
+    |\mathcal{V}_1 \cup \mathcal{V}_2 \cup \dots \cup \mathcal{V}_N|
+    },
+\end{equation}
+
+where $\mathcal{V}_i$ is the set of visited cells or candidate regions for vehicle $i$, and $N$ is the number of AUVs. In practice, alternative definitions may be used if route buffers or spatial grids provide a more meaningful overlap measure.
+
+The objective is not necessarily to minimise overlap in all cases. Some overlap may be desirable if repeated sampling of a boundary or high-uncertainty region is scientifically useful. The evaluation therefore interprets redundancy together with uncertainty, descriptor reward and operational cost.
+
+\section{Computational cost and operational feasibility} \label{sec:computational_cost}
+
+Computational cost is an important part of the evaluation because adaptive planning may need to be executed repeatedly across days, parameter settings and mission scenarios. Even if the final experiments are conducted offline, the approach should remain compatible with operational workflows.
+
+The computational assessment considers the following components:
+
+\begin{itemize}
+    \item data loading and preprocessing time;
+    \item descriptor generation time;
+    \item planner interface generation time;
+    \item candidate waypoint generation time;
+    \item routing solver time;
+    \item total runtime per experiment;
+    \item memory usage, when available.
+\end{itemize}
+
+For each planner run, the implementation records runtime information and stores solver logs. If sensitivity analysis is performed over several combinations of $\alpha$ and $\beta$, the total computational burden is also reported.
+
+Operational feasibility is assessed through both hard checks and qualitative interpretation. Hard checks include:
+
+\begin{itemize}
+    \item all trajectory points remain inside the admissible region;
+    \item routes satisfy the endurance or travel budget;
+    \item start and end locations are respected;
+    \item no route crosses invalid or masked cells;
+    \item the planner terminates successfully.
+\end{itemize}
+
+Qualitative feasibility includes visual inspection of route overlays, especially in relation to bathymetry, masks, boundaries and high-reward regions. A route may be technically feasible but still undesirable if it is excessively fragmented, concentrated in a narrow region, or overly sensitive to small changes in descriptor weights.
+
+Computational cost will be interpreted in relation to the intended use of the pipeline. If the method is used only for offline analysis, longer runtimes may be acceptable. If the method is intended for operational replanning, shorter runtimes and robust automation become more important.
+
+\section{Experimental protocol} \label{sec:experimental_protocol}
+
+The final experiments follow a controlled protocol:
+
+\begin{enumerate}
+    \item Select a planning date with available temperature and standard deviation maps.
+
+    \item Validate the grid, mask, variables and temporal indexing for that date.
+
+    \item Generate or load descriptor maps for the same date and region of interest.
+
+    \item Run the baseline planner using only the standard deviation reward.
+
+    \item Run enriched planner configurations using the same planner settings and descriptor weights.
+
+    \item Store all route outputs, diagnostic plots, metrics and logs.
+
+    \item Compare baseline and enriched trajectories using uncertainty, descriptor and operational metrics.
+
+    \item Repeat the process for selected dates, scenarios and parameter values.
+\end{enumerate}
+
+The protocol is designed to isolate the effect of descriptor enrichment. Therefore, no planner comparison is considered valid unless the input date, grid, mask, operational constraints and candidate-generation settings are identical between baseline and enriched runs.
+
+The final experimental matrix will be defined after the complete dataset is available. It is expected to include:
+
+\begin{itemize}
+    \item at least one homogeneous or low-structure day;
+    \item at least one heterogeneous day with visible gradients or regime transitions;
+    \item baseline and enriched formulations for each selected date;
+    \item sensitivity runs over $\alpha$ and $\beta$;
+    \item single-AUV and, if feasible, multi-AUV scenarios.
+\end{itemize}
+
+% TODO: insert final experimental matrix after the October dataset is received and audited.
+
+\section{Summary} \label{sec:validation_summary}
+
+This chapter defined the verification, validation and experimental design used to evaluate the proposed pipeline. Data and grid validation ensure that temperature, uncertainty, bathymetry, coordinates, masks and descriptors are spatially and temporally consistent. Baseline and enriched planner comparisons are performed under controlled conditions so that differences in trajectory behaviour can be attributed to the reward formulation. Sensitivity analysis over $\alpha$ and $\beta$ is used to understand the influence of descriptor weights. Single-AUV and multi-AUV scenarios are evaluated separately because descriptor enrichment may affect route geometry and redundancy differently in each case. Finally, computational cost and operational feasibility are assessed to determine whether the approach is practical for repeated experiments and potential operational use.
+
+The following chapter presents the results and discussion of the experiments.
+
+
+% =========================
+% CHAPTER 8 — RESULTS AND DISCUSSION
+% File: chapter8.tex
+% =========================
+
+\chapter{Results and Discussion} \label{chap:results}
+
+This chapter presents and discusses the results obtained from the proposed descriptor-enriched planning pipeline. The analysis compares the baseline uncertainty-driven planner with enriched formulations that incorporate descriptors extracted from temperature fields. The objective is to evaluate whether the inclusion of spatial descriptors changes the resulting AUV trajectories in meaningful, interpretable and operationally feasible ways.
+
+The chapter is organised as follows. Section~\ref{sec:results_data_validation} presents the data and grid validation results. Section~\ref{sec:results_regime_discovery} discusses the temperature regime discovery outputs. Section~\ref{sec:results_descriptors} presents the extracted descriptor maps. Section~\ref{sec:results_baseline_planner} analyses the baseline uncertainty-driven planner. Section~\ref{sec:results_enriched_planner} compares baseline and enriched planner outputs. Section~\ref{sec:results_sensitivity} presents the sensitivity analysis for descriptor weights. Section~\ref{sec:results_single_multi} discusses single-AUV and multi-AUV scenarios. Finally, Section~\ref{sec:results_discussion_summary} summarises the main findings and limitations.
+
+\section{Data and grid validation results} \label{sec:results_data_validation}
+
+Before comparing planner outputs, the input data were validated to ensure that all variables used in each experiment were spatially and temporally consistent. This included checking the temperature maps, standard deviation maps, bathymetry, latitude and longitude grids, masks and region of interest.
+
+The validation confirmed whether the following conditions were satisfied:
+
+\begin{itemize}
+    \item all variables were available in the expected files;
+    \item all maps shared the same spatial shape;
+    \item the selected region of interest was contained within the high-resolution grid;
+    \item the same mask was applied to temperature, uncertainty and descriptor maps;
+    \item each planning date was correctly associated with the corresponding input files;
+    \item the bathymetry convention used by the planner was consistent;
+    \item descriptor maps were finite and correctly normalised over valid cells.
+\end{itemize}
+
+% TODO: Insert final dataset summary table.
+% Suggested table columns:
+% Dataset, date range, variables, grid shape, spatial resolution, ROI shape, file format, notes.
+
+\begin{table}[H]
+    \centering
+    \caption{Summary of the validated datasets used in the experiments.}
+    \label{tab:validated_datasets}
+    \begin{tabular}{p{0.22\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.16\linewidth}}
+        \hline
+        \textbf{Dataset} & \textbf{Date range} & \textbf{Variables} & \textbf{Grid / ROI} & \textbf{Notes} \\
+        \hline
+        % TODO: Fill with final dataset information.
+CMEMS IBI / high-resolution fields & TODO & TODO & TODO & TODO \\
+        Geostatistical predictions & TODO & TODO & TODO & TODO \\
+        Planner interface files & TODO & TODO & TODO & TODO \\
+\hline
+    \end{tabular}
+\end{table}
+
+The final experiments were only performed on data products that passed the validation checks. This was necessary to avoid misleading comparisons caused by differences in grid resolution, spatial mask, geographic extent or temporal indexing.
+
+% TODO: Insert grid validation figure.
+% Suggested figure: ROI overlay on full high-resolution grid, with planner operational region and valid mask.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\linewidth]{figures/results/grid_validation_roi_overlay.png}
+    \caption{Validated region of interest over the high-resolution grid.}
+    \label{fig:grid_validation_roi}
+\end{figure}
+
+\section{Temperature regime discovery results} \label{sec:results_regime_discovery}
+
+The temperature regime discovery pipeline was applied to the validated temporal stack of temperature maps. The objective was to identify recurrent spatial patterns or regimes that could later support descriptor extraction.
+
+The analysis considered the following aspects:
+
+\begin{itemize}
+    \item number of temperature maps used for regime discovery;
+    \item preprocessing and normalisation strategy;
+    \item patch size and representation parameters;
+    \item number of discovered classes or regimes;
+    \item class membership distribution;
+    \item prototype maps associated with each class;
+    \item within-class variability.
+\end{itemize}
+
+% TODO: Insert final class distribution table.
+
+\begin{table}[H]
+    \centering
+    \caption{Summary of the discovered temperature regimes.}
+    \label{tab:regime_summary}
+    \begin{tabular}{p{0.18\linewidth} p{0.20\linewidth} p{0.24\linewidth} p{0.28\linewidth}}
+        \hline
+        \textbf{Regime} & \textbf{Number of maps} & \textbf{Relative frequency} & \textbf{Qualitative interpretation} \\
+        \hline
+        % TODO: Fill after final clustering/regime discovery.
+        Regime 1 & TODO & TODO & TODO \\
+        Regime 2 & TODO & TODO & TODO \\
+        Regime 3 & TODO & TODO & TODO \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Prototype maps were used to interpret the spatial structure associated with each class. These maps helped identify whether the discovered regimes corresponded to meaningful differences in thermal organisation, such as warmer or colder conditions, frontal structures, nearshore/offshore contrasts or boundary-like patterns.
+
+% TODO: Insert prototype maps figure.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.95\linewidth]{figures/results/regime_prototypes.png}
+    \caption{Prototype temperature maps for the discovered regimes.}
+    \label{fig:regime_prototypes}
+\end{figure}
+
+The within-class variability maps were also analysed to determine whether each regime was internally coherent or whether some classes contained substantial spatial variability. High variability within a class may indicate transitional states, unresolved sub-structure or a need to refine the regime discovery parameters.
+
+% TODO: Insert pixelwise standard deviation maps per class.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.95\linewidth]{figures/results/regime_variability_maps.png}
+    \caption{Within-class variability maps for the discovered regimes.}
+    \label{fig:regime_variability}
+\end{figure}
+
+\section{Descriptor extraction results} \label{sec:results_descriptors}
+
+After regime discovery, spatial descriptors were extracted from the temperature fields and regime representation. The main descriptors considered were gradient magnitude and boundary-related scores.
+
+The gradient magnitude maps highlighted regions where temperature changed rapidly in space. These regions may correspond to thermal fronts, transition zones or other spatial structures relevant to sampling. The boundary score maps highlighted areas associated with transitions between regimes or spatially distinct structures.
+
+% TODO: Insert descriptor maps for selected planning dates.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.95\linewidth]{figures/results/descriptor_maps_selected_day.png}
+    \caption{Temperature-derived descriptors for a selected planning date: temperature field, standard deviation map, gradient magnitude and boundary score.}
+    \label{fig:descriptor_maps_selected_day}
+\end{figure}
+
+The descriptor maps were validated before planner integration. In particular, all descriptors were checked for shape consistency, mask consistency, finite values and normalisation range.
+
+\begin{table}[H]
+    \centering
+    \caption{Descriptor validation summary for selected planning dates.}
+    \label{tab:descriptor_validation}
+    \begin{tabular}{p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth}}
+        \hline
+        \textbf{Date} & \textbf{Descriptor} & \textbf{Shape match} & \textbf{Mask match} & \textbf{Valid range} \\
+        \hline
+        % TODO: Fill after descriptor validation.
+TODO & Boundary score & TODO & TODO & TODO \\
+        TODO & Gradient magnitude & TODO & TODO & TODO \\
+\hline
+    \end{tabular}
+\end{table}
+
+The relationship between uncertainty and descriptors was also analysed. This comparison is important because descriptors are intended to provide complementary information, not simply duplicate the standard deviation map. If descriptor maps are highly correlated with STD maps, the enriched planner may behave similarly to the baseline. If they highlight different regions, enriched trajectories may diverge more clearly from the baseline.
+
+% TODO: Insert correlation/overlap analysis between STD, boundary_score and gradient_magnitude.
+
+\begin{table}[H]
+    \centering
+    \caption{Correlation between uncertainty and descriptor maps.}
+    \label{tab:std_descriptor_correlation}
+    \begin{tabular}{p{0.22\linewidth} p{0.22\linewidth} p{0.22\linewidth} p{0.22\linewidth}}
+        \hline
+        \textbf{Date} & \textbf{STD vs boundary score} & \textbf{STD vs gradient} & \textbf{Boundary vs gradient} \\
+        \hline
+        % TODO: Fill after final analysis.
+TODO & TODO & TODO & TODO \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Baseline uncertainty-driven planner results} \label{sec:results_baseline_planner}
+
+The baseline planner was executed using only the standard deviation map as the reward input. This established the reference behaviour against which all enriched formulations were compared.
+
+For each selected planning date, the baseline run produced:
+
+\begin{itemize}
+    \item planned trajectory or trajectories;
+    \item selected candidate waypoints;
+    \item accumulated STD reward;
+    \item total path length or travel cost;
+    \item number of visited waypoints;
+    \item objective value returned by the planner;
+    \item runtime and solver diagnostics.
+\end{itemize}
+
+% TODO: Insert baseline route figure.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\linewidth]{figures/results/baseline_route_selected_day.png}
+    \caption{Baseline uncertainty-driven trajectory for a selected planning date.}
+    \label{fig:baseline_route_selected_day}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Baseline planner metrics for selected planning dates.}
+    \label{tab:baseline_metrics}
+    \begin{tabular}{p{0.16\linewidth} p{0.16\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth}}
+        \hline
+        \textbf{Date} & \textbf{AUVs} & \textbf{Visited waypoints} & \textbf{STD reward} & \textbf{Path cost} \\
+        \hline
+        % TODO: Fill with baseline results.
+TODO & TODO & TODO & TODO & TODO \\
+\hline
+    \end{tabular}
+\end{table}
+
+The baseline results were interpreted in relation to the spatial distribution of uncertainty. In particular, the analysis considered whether the route concentrated on high-STD regions, whether it covered multiple parts of the domain, and whether it interacted with any relevant thermal structures visible in the temperature map.
+
+\section{Baseline versus enriched planner comparison} \label{sec:results_enriched_planner}
+
+The enriched planner formulations were evaluated using the same planner configuration as the baseline, changing only the reward map. This allowed differences in trajectory behaviour to be attributed to the addition of descriptor terms.
+
+The main enriched configurations were:
+
+\begin{align}
+    R_t^{\mathrm{enriched1}}(\mathbf{s})
+    &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s}), \\[1mm]
+    R_t^{\mathrm{enriched2}}(\mathbf{s})
+    &=
+    \tilde{\sigma}_t(\mathbf{s})
+    +
+    \alpha \tilde{B}_t(\mathbf{s})
+    +
+    \beta \tilde{G}_t(\mathbf{s}).
+\end{align}
+
+% TODO: Insert route comparison figure.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.95\linewidth]{figures/results/baseline_vs_enriched_routes.png}
+    \caption{Comparison between baseline and enriched trajectories for a selected planning date.}
+    \label{fig:baseline_vs_enriched_routes}
+\end{figure}
+
+The comparison focused on whether enriched trajectories:
+
+\begin{itemize}
+    \item sampled closer to thermal boundaries;
+    \item accumulated more boundary score;
+    \item accumulated more gradient magnitude;
+    \item visited more diverse regimes;
+    \item preserved a reasonable level of uncertainty reward;
+    \item remained feasible under the same operational constraints.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \caption{Comparison between baseline and enriched planner metrics.}
+    \label{tab:baseline_enriched_comparison}
+    \begin{tabular}{p{0.15\linewidth} p{0.16\linewidth} p{0.16\linewidth} p{0.16\linewidth} p{0.16\linewidth}}
+        \hline
+        \textbf{Run} & \textbf{STD reward} & \textbf{Boundary reward} & \textbf{Gradient reward} & \textbf{Path cost} \\
+        \hline
+        % TODO: Fill with final comparison results.
+Baseline & TODO & TODO & TODO & TODO \\
+        Enriched-1 & TODO & TODO & TODO & TODO \\
+        Enriched-2 & TODO & TODO & TODO & TODO \\
+\hline
+    \end{tabular}
+\end{table}
+
+A useful way to interpret enriched planner behaviour is through trade-offs. If enriched trajectories increase boundary or gradient coverage while maintaining a similar STD reward and path cost, this suggests that descriptors add useful structure to the planning objective. If descriptor reward increases only at the cost of a large decrease in uncertainty reward or an infeasible trajectory, the formulation may require rebalancing.
+
+\section{Sensitivity analysis} \label{sec:results_sensitivity}
+
+Sensitivity analysis was performed to assess how the descriptor weights $\alpha$ and $\beta$ influence planner behaviour. The purpose was to identify whether the enriched planner changes smoothly with descriptor weight or whether small parameter changes produce unstable route selection.
+
+% TODO: Insert alpha/beta grid table.
+
+\begin{table}[H]
+    \centering
+    \caption{Parameter values used in the sensitivity analysis.}
+    \label{tab:alpha_beta_values}
+    \begin{tabular}{p{0.3\linewidth} p{0.5\linewidth}}
+        \hline
+        \textbf{Parameter} & \textbf{Values tested} \\
+        \hline
+        $\alpha$ & TODO \\
+        $\beta$ & TODO \\
+        \hline
+    \end{tabular}
+\end{table}
+
+For each parameter combination, the planner outputs were evaluated using uncertainty-related, descriptor-related and operational metrics.
+
+% TODO: Insert sensitivity heatmaps.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.95\linewidth]{figures/results/sensitivity_heatmaps.png}
+    \caption{Sensitivity of planner metrics to descriptor weights $\alpha$ and $\beta$.}
+    \label{fig:sensitivity_heatmaps}
+\end{figure}
+
+The sensitivity results were interpreted by identifying:
+
+\begin{itemize}
+    \item weak descriptor influence configurations;
+    \item balanced configurations;
+    \item descriptor-dominated configurations;
+    \item unstable or undesirable configurations;
+    \item configurations selected for detailed visual comparison.
+\end{itemize}
+
+% TODO: Insert discussion of final chosen alpha/beta values.
+
+\section{Single-AUV and multi-AUV scenarios} \label{sec:results_single_multi}
+
+The planner was evaluated in single-AUV and, where feasible, multi-AUV configurations. These scenarios were analysed separately because descriptor enrichment may affect route geometry differently depending on the number of vehicles.
+
+In the single-AUV case, the analysis focused on how descriptors changed the geometry of one route. The main questions were whether the enriched planner moved the route closer to boundaries, increased gradient coverage or changed the spatial distribution of sampled waypoints.
+
+% TODO: Insert single-AUV comparison figure.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\linewidth]{figures/results/single_auv_comparison.png}
+    \caption{Single-AUV comparison between baseline and enriched trajectories.}
+    \label{fig:single_auv_comparison}
+\end{figure}
+
+In the multi-AUV case, the analysis also considered fleet-level behaviour, including overlap, route dispersion and distribution of reward across vehicles. This is important because descriptor terms may cause multiple vehicles to concentrate on the same boundary or high-gradient region if no redundancy control is applied.
+
+% TODO: Insert multi-AUV comparison figure.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.85\linewidth]{figures/results/multi_auv_comparison.png}
+    \caption{Multi-AUV comparison between baseline and enriched trajectories.}
+    \label{fig:multi_auv_comparison}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Single-AUV and multi-AUV comparison metrics.}
+\label{tab:single_multi_metrics}
+    \begin{tabular}{p{0.18\linewidth} p{0.16\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.18\linewidth}}
+        \hline
+        \textbf{Scenario} & \textbf{Run} & \textbf{STD reward} & \textbf{Descriptor reward} & \textbf{Overlap / dispersion} \\
+\hline
+        % TODO: Fill after final experiments.
+        Single-AUV & Baseline & TODO & TODO & TODO \\
+        Single-AUV & Enriched & TODO & TODO & TODO \\
+        Multi-AUV & Baseline & TODO & TODO & TODO \\
+        Multi-AUV & Enriched & TODO & TODO & TODO \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Computational cost and operational feasibility} \label{sec:results_computational}
+
+Computational cost was measured for the main stages of the pipeline: data preprocessing, descriptor generation, planner interface generation, candidate generation and route optimisation. This analysis is important because descriptor-enriched planning may require additional computation compared with the baseline planner.
+
+\begin{table}[H]
+    \centering
+    \caption{Computational cost of the main pipeline stages.}
+    \label{tab:computational_cost}
+    \begin{tabular}{p{0.32\linewidth} p{0.22\linewidth} p{0.22\linewidth}}
+        \hline
+        \textbf{Pipeline stage} & \textbf{Runtime} & \textbf{Notes} \\
+        \hline
+        % TODO: Fill after runtime logs are available.
+        Data preprocessing & TODO & TODO \\
+        Descriptor generation & TODO & TODO \\
+        Planner interface generation & TODO & TODO \\
+        Candidate generation & TODO & TODO \\
+        Solver execution & TODO & TODO \\
+        Total runtime & TODO & TODO \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Operational feasibility was assessed by verifying that trajectories remained inside the admissible region, respected the travel budget, avoided masked cells and used the same start/end conditions as the baseline. Any failure in these checks was treated as invalid for comparison.
+
+% TODO: Insert feasibility check table.
+
+\section{Discussion} \label{sec:results_discussion_summary}
+
+The results should be interpreted in relation to the central question of this dissertation: whether temperature-derived descriptors can complement uncertainty-driven AUV planning. The enriched planner is not expected to dominate the baseline in every metric. Instead, the relevant question is whether descriptors change planner behaviour in ways that are interpretable and aligned with the intended oceanographic motivation.
+
+Several outcomes are possible:
+
+\begin{itemize}
+    \item If enriched trajectories increase boundary or gradient coverage while preserving similar uncertainty reward, this supports the usefulness of descriptor enrichment.
+
+    \item If enriched trajectories strongly reduce uncertainty reward, this suggests that descriptor weights may be too high or that the descriptor map conflicts with the uncertainty map.
+
+    \item If enriched and baseline trajectories are nearly identical, this may indicate that descriptors overlap strongly with STD, that descriptor weights are too low, or that the selected day lacks sufficient spatial structure.
+
+    \item If multi-AUV enriched trajectories concentrate excessively on the same boundary, additional redundancy penalties or fleet-level diversity terms may be required.
+\end{itemize}
+
+The interpretation must also consider the limitations of the dataset and experimental setup. The final results depend on the selected planning dates, the quality of the geostatistical prediction products, the chosen region of interest, the descriptor definitions and the planner configuration. Therefore, conclusions should be framed as evidence from the evaluated scenarios rather than as universal claims.
+
+\section{Summary} \label{sec:results_summary}
+
+This chapter presented the structure for reporting the experimental results of the dissertation. The analysis begins with data and grid validation, followed by regime discovery, descriptor extraction and baseline planner results. The main comparison evaluates whether enriched planner formulations alter trajectory behaviour relative to the uncertainty-driven baseline. Sensitivity analysis, single- and multi-AUV scenarios, and computational cost assessment provide additional insight into the behaviour and feasibility of the proposed approach.
+
+The following chapter summarises the main conclusions, limitations and directions for future work.
+
+
+

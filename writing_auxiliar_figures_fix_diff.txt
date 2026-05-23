@@ -1,0 +1,17 @@
+--- writing_auxiliar.tex (before figure relinking)
++++ writing_auxiliar.tex (after figure relinking)
+@@ line 1734
+-    % \includegraphics[width=0.85\linewidth]{figures/results/grid_validation_roi_overlay.png}
++    \includegraphics[width=0.85\linewidth]{figures/results/grid_validation_roi_overlay.png}
+@@ line 1779
+-    % \includegraphics[width=0.95\linewidth]{figures/results/regime_prototypes.png}
++    \includegraphics[width=0.95\linewidth]{figures/results/regime_prototypes.png}
+@@ line 1790
+-    % \includegraphics[width=0.95\linewidth]{figures/results/regime_variability_maps.png}
++    \includegraphics[width=0.95\linewidth]{figures/results/regime_variability_maps.png}
+@@ line 1865
+-    % \includegraphics[width=0.85\linewidth]{figures/results/baseline_route_selected_day.png}
++    \includegraphics[width=0.85\linewidth]{figures/results/baseline_route_selected_day.png}
+
+No prose text, captions, labels, citations, equations, tables, or figure environments were changed.
+The remaining commented includegraphics commands were left commented because no matching existing image could be identified safely.

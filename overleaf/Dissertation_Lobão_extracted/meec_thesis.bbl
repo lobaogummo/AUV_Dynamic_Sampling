@@ -1,0 +1,883 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{wunsch2007stateestimation}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a8e3fc1f572faca0d81d04737f2052e1}{%
+           family={Wunsch},
+           familyi={W\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+        {{hash=234028f59426878bb3624eabd5b65962}{%
+           family={Heimbach},
+           familyi={H\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{fullhash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{fullhashraw}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{bibnamehash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{authorbibnamehash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{authornamehash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{authorfullhash}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \strng{authorfullhashraw}{947b0a9ae8b3309b4d7f8971c35f4442}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physica D: Nonlinear Phenomena}
+      \field{title}{Practical global oceanic state estimation}
+      \field{volume}{230}
+      \field{year}{2007}
+      \field{pages}{197\bibrangedash 208}
+      \range{pages}{12}
+    \endentry
+    \entry{dowd2014dataassimilation}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e8bd775c5d9dcd89eb5d2b5fae6e5ebd}{%
+           family={Dowd},
+           familyi={D\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a4e39b3c2995b5f8a3d76c79d29e9b2b}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Evan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fce641111655550b3b1389b5a2567f80}{%
+           family={Parslow},
+           familyi={P\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{fullhash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{fullhashraw}{5635dd11edb3796fb912eb98ce583737}
+      \strng{bibnamehash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{authorbibnamehash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{authornamehash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{authorfullhash}{5635dd11edb3796fb912eb98ce583737}
+      \strng{authorfullhashraw}{5635dd11edb3796fb912eb98ce583737}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environmetrics}
+      \field{title}{A statistical overview and perspectives on data assimilation for marine biogeochemical models}
+      \field{volume}{25}
+      \field{year}{2014}
+      \field{pages}{203\bibrangedash 213}
+      \range{pages}{11}
+    \endentry
+    \entry{curtin2009aosn}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=0c7ecaaba6f93141c46ba6488ec1b895}{%
+           family={Curtin},
+           familyi={C\bibinitperiod},
+           given={Thomas\bibnamedelima B.},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=c3d6db863a6b6ae602bf183de8ee85a9}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{fullhash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{fullhashraw}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{bibnamehash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{authorbibnamehash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{authornamehash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{authorfullhash}{e45c96b616593fc67ffd74879b70c3a1}
+      \strng{authorfullhashraw}{e45c96b616593fc67ffd74879b70c3a1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Deep Sea Research Part II: Topical Studies in Oceanography}
+      \field{number}{3}
+      \field{title}{Progress toward autonomous ocean sampling networks}
+      \field{volume}{56}
+      \field{year}{2009}
+      \field{pages}{62\bibrangedash 67}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.dsr2.2008.09.005
+      \endverb
+    \endentry
+    \entry{hwang2019auvreview}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=259e05e013e2d2280f6a188cc0307409}{%
+           family={Hwang},
+           familyi={H\bibinitperiod},
+           given={Jimin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c92df92eed489e0d0442227205b7e18a}{%
+           family={Bose},
+           familyi={B\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=8b36b6d44b67369048ac875f6a86b7de}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Shuangshuang},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{fullhash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{fullhashraw}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{bibnamehash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{authorbibnamehash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{authornamehash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{authorfullhash}{a29eadd821927f482301ee42a8ee0eaa}
+      \strng{authorfullhashraw}{a29eadd821927f482301ee42a8ee0eaa}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Sciences}
+      \field{number}{15}
+      \field{title}{{AUV} Adaptive Sampling Methods: A Review}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{pages}{3145}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app9153145
+      \endverb
+    \endentry
+    \entry{lermusiaux2007adaptive}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=98fa22045be839015999a38d8083910b}{%
+           family={Lermusiaux},
+           familyi={L\bibinitperiod},
+           given={Pierre\bibnamedelimb F.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{98fa22045be839015999a38d8083910b}
+      \strng{fullhash}{98fa22045be839015999a38d8083910b}
+      \strng{fullhashraw}{98fa22045be839015999a38d8083910b}
+      \strng{bibnamehash}{98fa22045be839015999a38d8083910b}
+      \strng{authorbibnamehash}{98fa22045be839015999a38d8083910b}
+      \strng{authornamehash}{98fa22045be839015999a38d8083910b}
+      \strng{authorfullhash}{98fa22045be839015999a38d8083910b}
+      \strng{authorfullhashraw}{98fa22045be839015999a38d8083910b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physica D: Nonlinear Phenomena}
+      \field{number}{1--2}
+      \field{title}{Adaptive modeling, adaptive data assimilation and adaptive sampling}
+      \field{volume}{230}
+      \field{year}{2007}
+      \field{pages}{172\bibrangedash 196}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.physd.2007.02.014
+      \endverb
+    \endentry
+    \entry{mendes2025oceanmodeldriven}{misc}{}{}
+      \name{author}{13}{}{%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7c39747c679111783527de699d98cb51}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Ana\bibnamedelima F.},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=70b555f99bb2143af3f5ada0c04d5adb}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9a518febfa018f3c5c988c77dee1d02c}{%
+           family={Bernacchi},
+           familyi={B\bibinitperiod},
+           given={Lucrezia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9d2f85cfa6159e7ffb0372a4c1dde900}{%
+           family={{de Sousa}},
+           familyi={d\bibinitperiod},
+           given={João\bibnamedelima Borges},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=1c96b17041ce92dc9563b18829b5ef20}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9e99de7613bfd1790d715d7a366df8a8}{%
+           family={Gabriel},
+           familyi={G\bibinitperiod},
+           given={Bernardo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=97312279b469d1c7136dc14925ff1138}{%
+           family={Bogas},
+           familyi={B\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod}}}%
+        {{hash=28a7e5445a68284a2e2ab929ae020531}{%
+           family={Cunha},
+           familyi={C\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=04ba13d4ddae1e2a6fa2fd28b8bda5c3}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={Clara\bibnamedelima F.},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=2f92179fc5c39f6174b186ab3348d3d2}{%
+           family={Subramaniam},
+           familyi={S\bibinitperiod},
+           given={Ajit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=19fed4f24b9ab360fe6e2d034006dea1}{%
+           family={Esteves},
+           familyi={E\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{61e2394cfd3fe8569cd4e7db714dfdc4}
+      \strng{fullhash}{4d48ac998f8264fabba9b0e6da7a665c}
+      \strng{fullhashraw}{4d48ac998f8264fabba9b0e6da7a665c}
+      \strng{bibnamehash}{61e2394cfd3fe8569cd4e7db714dfdc4}
+      \strng{authorbibnamehash}{61e2394cfd3fe8569cd4e7db714dfdc4}
+      \strng{authornamehash}{61e2394cfd3fe8569cd4e7db714dfdc4}
+      \strng{authorfullhash}{4d48ac998f8264fabba9b0e6da7a665c}
+      \strng{authorfullhashraw}{4d48ac998f8264fabba9b0e6da7a665c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Unpublished manuscript / project PDF}
+      \field{title}{Towards Ocean Model-Driven Robotic Exploration}
+      \field{year}{2025}
+    \endentry
+    \entry{bernacchi2025closingloop}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=9a518febfa018f3c5c988c77dee1d02c}{%
+           family={Bernacchi},
+           familyi={B\bibinitperiod},
+           given={Lucrezia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a717c53a7a8869ad0d3c15c703ed7051}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Ana\bibnamedelima Filipa},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=70b555f99bb2143af3f5ada0c04d5adb}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9d2f85cfa6159e7ffb0372a4c1dde900}{%
+           family={{de Sousa}},
+           familyi={d\bibinitperiod},
+           given={João\bibnamedelima Borges},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6ac1996ac824be16c7453699340e663d}
+      \strng{fullhash}{c500d3bc5365e2a15284f74f538fe869}
+      \strng{fullhashraw}{c500d3bc5365e2a15284f74f538fe869}
+      \strng{bibnamehash}{6ac1996ac824be16c7453699340e663d}
+      \strng{authorbibnamehash}{6ac1996ac824be16c7453699340e663d}
+      \strng{authornamehash}{6ac1996ac824be16c7453699340e663d}
+      \strng{authorfullhash}{c500d3bc5365e2a15284f74f538fe869}
+      \strng{authorfullhashraw}{c500d3bc5365e2a15284f74f538fe869}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 Symposium on Maritime Informatics and Robotics (MARIS)}
+      \field{title}{Closing the Data Loop: Real-World AUVs Adaptive Sampling for Improved Ocean Model Predictions}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1109/MARIS64137.2025.11139688
+      \endverb
+    \endentry
+    \entry{duarte2025geostatistical}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=7c39747c679111783527de699d98cb51}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Ana\bibnamedelima F.},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=9a518febfa018f3c5c988c77dee1d02c}{%
+           family={Bernacchi},
+           familyi={B\bibinitperiod},
+           given={Lucrezia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9d2f85cfa6159e7ffb0372a4c1dde900}{%
+           family={{de Sousa}},
+           familyi={d\bibinitperiod},
+           given={João\bibnamedelima Borges},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=70b555f99bb2143af3f5ada0c04d5adb}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff5b1cb843f39ee498528cca00ba526a}
+      \strng{fullhash}{18a24f334befb28cf3e29fad37dabf0a}
+      \strng{fullhashraw}{18a24f334befb28cf3e29fad37dabf0a}
+      \strng{bibnamehash}{ff5b1cb843f39ee498528cca00ba526a}
+      \strng{authorbibnamehash}{ff5b1cb843f39ee498528cca00ba526a}
+      \strng{authornamehash}{ff5b1cb843f39ee498528cca00ba526a}
+      \strng{authorfullhash}{18a24f334befb28cf3e29fad37dabf0a}
+      \strng{authorfullhashraw}{18a24f334befb28cf3e29fad37dabf0a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Marine Science}
+      \field{title}{Geostatistical uncertainty maps for real-world efficient AUV data collection}
+      \field{volume}{12}
+      \field{year}{2025}
+      \field{pages}{1674989}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fmars.2025.1674989
+      \endverb
+    \endentry
+    \entry{fossum2020compact}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
+           family={Fossum},
+           familyi={F\bibinitperiod},
+           given={Trygve\bibnamedelima Olav},
+           giveni={T\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=83f5ea18f4ea7a2767b9a47da000a147}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=eee79a0d649aac6566f097f2cad513c3}{%
+           family={Mukerji},
+           familyi={M\bibinitperiod},
+           given={Tapan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cfbbeedcb7832182971634f0e8e79bf1}{%
+           family={Maughan},
+           familyi={M\bibinitperiod},
+           given={Thom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=58cb6688b7cad6032c7e83c7d102bdb1}{%
+           family={Ludvigsen},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{fullhash}{3797bd09ef91dbc4c8a182fd0b29403a}
+      \strng{fullhashraw}{3797bd09ef91dbc4c8a182fd0b29403a}
+      \strng{bibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorbibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorfullhash}{3797bd09ef91dbc4c8a182fd0b29403a}
+      \strng{authorfullhashraw}{3797bd09ef91dbc4c8a182fd0b29403a}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{number}{1}
+      \field{title}{Compact models for adaptive sampling in marine robotics}
+      \field{volume}{39}
+      \field{year}{2020}
+      \field{pages}{127\bibrangedash 142}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1177/0278364919884141
+      \endverb
+    \endentry
+    \entry{ge2023watermasses}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=0ab74094092579c4556b58b7619428a1}{%
+           family={Ge},
+           familyi={G\bibinitperiod},
+           given={Yaolin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4daf8f8c73a1fbbe6301a8581e388ebf}{%
+           family={Mo-Bj{ø}rkelund},
+           familyi={M\bibinithyphendelim B\bibinitperiod},
+           given={Tore},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{fullhash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{fullhashraw}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{bibnamehash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{authorbibnamehash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{authornamehash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{authorfullhash}{c4deb046dba188de2d1f1957924dda1e}
+      \strng{authorfullhashraw}{c4deb046dba188de2d1f1957924dda1e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Oceanic Engineering}
+      \field{number}{3}
+      \field{title}{3-D Adaptive AUV Sampling for Classification of Water Masses}
+      \field{volume}{48}
+      \field{year}{2023}
+      \field{pages}{626\bibrangedash 639}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/JOE.2023.3252641
+      \endverb
+    \endentry
+    \entry{sousa2012lauv}{inproceedings}{}{}
+      \name{author}{7}{}{%
+        {{hash=1085e7b94588308ef37c7727145214d8}{%
+           family={Sousa},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0f6171b396d267506e0d91b0d50c7e28}{%
+           family={Madureira},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=84f285af1a584e460e601c8c68f9565f}{%
+           family={Coelho},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=adc9dfc6a76dca04d0c3e2cfb97ce92b}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9c806143fe6511b0742bd5597336afc9}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ed45eac1e7138fe5d11abf5518d627e2}{%
+           family={Sousa},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fb5a49712b8cf3fd1626fb5d5abe2bcc}{%
+           family={Dias},
+           familyi={D\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{85e770ae9e88e2f1d5321a35dd1b130a}
+      \strng{fullhash}{962ccefc14fa65590e6f9b406c7720a0}
+      \strng{fullhashraw}{962ccefc14fa65590e6f9b406c7720a0}
+      \strng{bibnamehash}{85e770ae9e88e2f1d5321a35dd1b130a}
+      \strng{authorbibnamehash}{85e770ae9e88e2f1d5321a35dd1b130a}
+      \strng{authornamehash}{85e770ae9e88e2f1d5321a35dd1b130a}
+      \strng{authorfullhash}{962ccefc14fa65590e6f9b406c7720a0}
+      \strng{authorfullhashraw}{962ccefc14fa65590e6f9b406c7720a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IFAC Proceedings Volumes}
+      \field{title}{{LAUV}: The man-portable autonomous underwater vehicle}
+      \field{year}{2012}
+      \field{pages}{268\bibrangedash 274}
+      \range{pages}{7}
+    \endentry
+    \entry{aguiar2018trajectoryopt}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=dcf19fca85dbb0e6594135de16d6cc5c}{%
+           family={Aguiar},
+           familyi={A\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9d2f85cfa6159e7ffb0372a4c1dde900}{%
+           family={{de Sousa}},
+           familyi={d\bibinitperiod},
+           given={João\bibnamedelima Borges},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=23f9b91f996abfbe0cf93a6d95ff7c50}{%
+           family={Dias},
+           familyi={D\bibinitperiod},
+           given={João\bibnamedelima Miguel},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=89e39a4952261a216f2903b13e5ab7f3}{%
+           family={{da Silva}},
+           familyi={d\bibinitperiod},
+           given={Jorge\bibnamedelima Estrela},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1470f49d113662a87af4114d5dc6591f}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Américo\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{566f655cff3c4f71943cddeb14b83105}
+      \strng{fullhash}{a306e33044d6fa2fac893631fd7e2ccd}
+      \strng{fullhashraw}{a306e33044d6fa2fac893631fd7e2ccd}
+      \strng{bibnamehash}{566f655cff3c4f71943cddeb14b83105}
+      \strng{authorbibnamehash}{566f655cff3c4f71943cddeb14b83105}
+      \strng{authornamehash}{566f655cff3c4f71943cddeb14b83105}
+      \strng{authorfullhash}{a306e33044d6fa2fac893631fd7e2ccd}
+      \strng{authorfullhashraw}{a306e33044d6fa2fac893631fd7e2ccd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE/OES Autonomous Underwater Vehicle Workshop (AUV)}
+      \field{title}{Trajectory Optimization for Underwater Vehicles in Time-Varying Ocean Flows}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/AUV.2018.8729777
+      \endverb
+    \endentry
+    \entry{fossum2019phytoplankton}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
+           family={Fossum},
+           familyi={F\bibinitperiod},
+           given={Trygve\bibnamedelima Olav},
+           giveni={T\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=d24278dd1a55f4e6cc0e9a1987e9366c}{%
+           family={Fragoso},
+           familyi={F\bibinitperiod},
+           given={Glaucia\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=891812f31c1b6901aaf08a73bde44f9e}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Emlyn\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3a0a7acd439f934d6caa23d6684b9e3f}{%
+           family={Ullgren},
+           familyi={U\bibinitperiod},
+           given={Johan\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9b77a5451cc80a67c3d9b44896ccb7fb}{%
+           family={Johnsen},
+           familyi={J\bibinitperiod},
+           given={Geir},
+           giveni={G\bibinitperiod}}}%
+        {{hash=49e81e2faa0a18600f0eeb6f72659bb4}{%
+           family={Ellingsen},
+           familyi={E\bibinitperiod},
+           given={Ingrid},
+           giveni={I\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=58cb6688b7cad6032c7e83c7d102bdb1}{%
+           family={Ludvigsen},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{fullhash}{154eaec21a46dff280561fe76633f9b0}
+      \strng{fullhashraw}{154eaec21a46dff280561fe76633f9b0}
+      \strng{bibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorbibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorfullhash}{154eaec21a46dff280561fe76633f9b0}
+      \strng{authorfullhashraw}{154eaec21a46dff280561fe76633f9b0}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science Robotics}
+      \field{number}{27}
+      \field{title}{Toward adaptive robotic sampling of phytoplankton in the coastal ocean}
+      \field{volume}{4}
+      \field{year}{2019}
+      \field{pages}{eaav3041}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1126/scirobotics.aav3041
+      \endverb
+    \endentry
+    \entry{cressie2011spatiotemporal}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=1d684a7b784094856b0f4832104839c4}{%
+           family={Cressie},
+           familyi={C\bibinitperiod},
+           given={Noel},
+           giveni={N\bibinitperiod}}}%
+        {{hash=cd009bb3738e62926e16ced5a538991c}{%
+           family={Wikle},
+           familyi={W\bibinitperiod},
+           given={Christopher\bibnamedelima K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{fullhash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{fullhashraw}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{bibnamehash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{authorbibnamehash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{authornamehash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{authorfullhash}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \strng{authorfullhashraw}{ebe30063a17d9acf30bcde53c7ff62e3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Statistics for Spatio-Temporal Data}
+      \field{year}{2011}
+    \endentry
+    \entry{das2012coordinated}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=1594ef4efb012cf09982df4ea9237652}{%
+           family={Das},
+           familyi={D\bibinitperiod},
+           given={Jnan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7028cbfa65b7bf25631a3a9f6af6279a}{%
+           family={Py},
+           familyi={P\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod}}}%
+        {{hash=cfbbeedcb7832182971634f0e8e79bf1}{%
+           family={Maughan},
+           familyi={M\bibinitperiod},
+           given={Thom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=19cb92078fae986f6622df0b1a251541}{%
+           family={O'Reilly},
+           familyi={O\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b21e76db14c1e1bd7c81b9422b028680}{%
+           family={Messié},
+           familyi={M\bibinitperiod},
+           given={Monique},
+           giveni={M\bibinitperiod}}}%
+        {{hash=83f5ea18f4ea7a2767b9a47da000a147}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6d430fe2b65c3d9fedd6f2d351604092}{%
+           family={Sukhatme},
+           familyi={S\bibinitperiod},
+           given={Gaurav\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{a966483a7ebd0906f09d8562fb8a4e2c}
+      \strng{fullhash}{1e327003f3ddf16b279acc368dcffa8a}
+      \strng{fullhashraw}{1e327003f3ddf16b279acc368dcffa8a}
+      \strng{bibnamehash}{a966483a7ebd0906f09d8562fb8a4e2c}
+      \strng{authorbibnamehash}{a966483a7ebd0906f09d8562fb8a4e2c}
+      \strng{authornamehash}{a966483a7ebd0906f09d8562fb8a4e2c}
+      \strng{authorfullhash}{1e327003f3ddf16b279acc368dcffa8a}
+      \strng{authorfullhashraw}{1e327003f3ddf16b279acc368dcffa8a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{title}{Coordinated sampling of dynamic oceanographic features with underwater vehicles and drifters}
+      \field{volume}{31}
+      \field{year}{2012}
+      \field{pages}{626\bibrangedash 646}
+      \range{pages}{21}
+    \endentry
+    \entry{fossum2018informationdriven}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
+           family={Fossum},
+           familyi={F\bibinitperiod},
+           given={Trygve\bibnamedelima Olav},
+           giveni={T\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=49e81e2faa0a18600f0eeb6f72659bb4}{%
+           family={Ellingsen},
+           familyi={E\bibinitperiod},
+           given={Ingrid},
+           giveni={I\bibinitperiod}}}%
+        {{hash=918cff55ce4b33772d58c223de39a682}{%
+           family={Alver},
+           familyi={A\bibinitperiod},
+           given={Morten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d24278dd1a55f4e6cc0e9a1987e9366c}{%
+           family={Fragoso},
+           familyi={F\bibinitperiod},
+           given={Glaucia\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9b77a5451cc80a67c3d9b44896ccb7fb}{%
+           family={Johnsen},
+           familyi={J\bibinitperiod},
+           given={Geir},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58cb6688b7cad6032c7e83c7d102bdb1}{%
+           family={Ludvigsen},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{fullhash}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{fullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{bibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorbibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorfullhash}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{authorfullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Field Robotics}
+      \field{title}{Information-driven robotic sampling in the coastal ocean}
+      \field{volume}{35}
+      \field{year}{2018}
+      \field{pages}{1101\bibrangedash 1121}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1002/rob.21805
+      \endverb
+    \endentry
+    \entry{frolov2014grid}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a9d8102ff2ee94663ac5534628210577}{%
+           family={Frolov},
+           familyi={F\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=09c331b867e8dc80acf7a0059c67dfeb}{%
+           family={Garau},
+           familyi={G\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f64673900f717de88cb74b2a0d9ba281}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{fullhash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{fullhashraw}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{bibnamehash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{authorbibnamehash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{authornamehash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{authorfullhash}{9ce9817922473e8c89bd3ddcf742c22e}
+      \strng{authorfullhashraw}{9ce9817922473e8c89bd3ddcf742c22e}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysical Research: Oceans}
+      \field{title}{Can we do better than the grid survey: Optimal synoptic surveys in presence of variable uncertainty and decorrelation scales}
+      \field{volume}{119}
+      \field{year}{2014}
+      \field{pages}{5071\bibrangedash 5090}
+      \range{pages}{20}
+    \endentry
+  \enddatalist
+  \missing{eidsvik2015value}
+  \missing{toth2014vehicle}
+  \missing{vidal2013hybrid}
+\endrefsection
+\endinput
+

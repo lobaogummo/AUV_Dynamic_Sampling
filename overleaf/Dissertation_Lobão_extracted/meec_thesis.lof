@@ -1,0 +1,18 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Validated region of interest over the high-resolution grid.}}{59}{figure.caption.40}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Prototype temperature maps for the discovered regimes.}}{60}{figure.caption.42}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Within-class variability maps for the discovered regimes.}}{60}{figure.caption.43}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Temperature-derived descriptors for a selected planning date: temperature field, standard deviation map, gradient magnitude and boundary score.}}{60}{figure.caption.44}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Baseline uncertainty-driven trajectory for a selected planning date.}}{61}{figure.caption.47}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Comparison between baseline and enriched trajectories for a selected planning date.}}{62}{figure.caption.49}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Sensitivity of planner metrics to descriptor weights $\alpha $ and $\beta $.}}{63}{figure.caption.52}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Single-AUV comparison between baseline and enriched trajectories.}}{64}{figure.caption.53}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Multi-AUV comparison between baseline and enriched trajectories.}}{64}{figure.caption.54}%

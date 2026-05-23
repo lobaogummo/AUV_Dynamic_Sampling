@@ -1,0 +1,36 @@
+﻿{
+    "main_tex_file":  "overleaf/Dissertation_Lobão_extracted/meec_thesis.tex",
+    "writing_auxiliar_files_found":  [
+                                         "writing_auxiliar.docx"
+                                     ],
+    "files_modified":  [
+                           "overleaf/Dissertation_Lobão_extracted/meec_thesis.tex",
+                           "overleaf/Dissertation_Lobão_extracted/meec_thesis.pdf"
+                       ],
+    "files_created":  [
+                          "overleaf/Dissertation_Lobão_extracted/writing_auxiliar.tex",
+                          "writing_auxiliar_integration_diff.txt",
+                          "writing_auxiliar_integration_checks.json",
+                          "writing_auxiliar_integration_report.md"
+                      ],
+    "text_content_preserved":  true,
+    "text_changes_detected":  false,
+    "labels_changed":  false,
+    "citations_changed":  false,
+    "equations_changed":  false,
+    "compilation_attempted":  true,
+    "compilation_successful":  true,
+    "final_verdict":  "Integrated successfully; original extracted text is byte-identical to the integrated LaTeX file. The complete dissertation PDF was generated successfully with MiKTeX/pdflatex and biber.",
+    "source_text_sha256":  "A5709C9BAE2933327E92635E55D53E5177D7577028F721AA63A15D9E45A23245",
+    "integrated_tex_sha256":  "A5709C9BAE2933327E92635E55D53E5177D7577028F721AA63A15D9E45A23245",
+    "duplicate_labels_detected":  [
+                                      "\\label{sec:objectives}"
+                                  ],
+    "missing_bibliography_keys_detected":  [
+                                               "toth2014vehicle",
+                                               "vidal2013hybrid",
+                                               "eidsvik2015value"
+                                           ],
+    "latex_toolchain_available":  true,
+    "compilation_error":  null
+}
