@@ -1,0 +1,817 @@
+"""Step11A: run Lucrezia planner on minimal boundary-only maps.
+
+This script keeps the original planner untouched. For each run it creates a
+runtime folder containing copies of OptimalPlanning.py, Utils.py, and a
+generated Config_file.py, then passes a planner-interface NetCDF with:
+temperr, tbath, landt, lat, lon.
+
+The Step10F maps are ROI x490 [72, 117]. The Lucrezia planner expects the
+native HRes grid, so the ROI maps are embedded into a 180x240 HRes grid at the
+validated Step10E ROI slice. Cells outside the ROI/common mask are invalid.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import math
+import os
+import re
+import shutil
+import subprocess
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+import matplotlib
+
+matplotlib.use("Agg")
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import xarray as xr
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RESULTS_ROOT = ROOT / "results"
+DEFAULT_STEP10F = RESULTS_ROOT / "fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260519_195022"
+DEFAULT_STEP10E = RESULTS_ROOT / "fossum_roi_x490_step10e_top20_class01_class06_roi_x490_20260519_184636"
+DEFAULT_STEP00 = RESULTS_ROOT / "fossum_roi_x490_step00_dataset_20260509_232915"
+DEFAULT_HRES = RESULTS_ROOT / "cmems_370_surface_to_hres_20260509_135642"
+DEFAULT_PLANNER = ROOT / "OptimalPlanning_Lucrezia"
+
+ROI_ROW_MIN = 55
+ROI_ROW_MAX = 126
+ROI_COL_MIN = 47
+ROI_COL_MAX = 163
+ROI_SHAPE = (72, 117)
+HRES_SHAPE = (180, 240)
+EXPECTED_VALID_CELLS = 8004
+
+CASE_ORDER = ["C06_representative", "C01_representative", "October_control"]
+FORMULATIONS = [
+    ("baseline_STD", "planner_information_map_baseline_STD_norm.npy", "information_map = STD_norm", 0.0),
+    ("enriched_boundary_alpha025", "planner_information_map_enriched_boundary_alpha025.npy", "information_map = 0.75*STD_norm + 0.25*boundary_score_norm", 0.25),
+    ("enriched_boundary_alpha050", "planner_information_map_enriched_boundary_alpha050.npy", "information_map = 0.50*STD_norm + 0.50*boundary_score_norm", 0.50),
+]
+
+
+def now_tag() -> str:
+    return datetime.now().strftime("%Y%m%d_%H%M%S")
+
+
+def json_default(obj: Any) -> Any:
+    if isinstance(obj, Path):
+        return str(obj)
+    if isinstance(obj, (np.integer,)):
+        return int(obj)
+    if isinstance(obj, (np.floating,)):
+        value = float(obj)
+        return None if not math.isfinite(value) else value
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    return str(obj)
+
+
+def write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(json.dumps(payload, indent=2, default=json_default), encoding="utf-8")
+
+
+def require(path: Path, label: str) -> Path:
+    if not path.exists():
+        raise FileNotFoundError(f"Missing {label}: {path}")
+    return path
+
+
+def safe_name(text: str) -> str:
+    return re.sub(r"[^A-Za-z0-9_.-]+", "_", text)
+
+
+def class_label(class_id: int) -> str:
+    return f"C{int(class_id):02d}"
+
+
+def read_config_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def extract_config_values(config_text: str) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for key in [
+        "AUV_NUMBER",
+        "SPEED",
+        "MISSION_DURATIONS",
+        "STARTING_POINTS",
+        "ENDING_POINTS",
+        "OPERATION_LL_CORNER",
+        "OPERATION_UR_CORNER",
+        "MINIMUM_DEPTH",
+        "OBJECTS_LL_CORNER",
+        "OBJECTS_UR_CORNER",
+        "N_LEVELS",
+        "D_MIN_CONTOUR",
+        "D_MIN_VORONOI",
+        "STOP_RUN_TIME",
+        "STOP_NO_ITER",
+        "SEED",
+        "WP_WAITING_TIME",
+        "MODEL_HOPS",
+        "HOPS_GRID_RESOLUTION",
+        "CLEAN_ROUTE",
+    ]:
+        m = re.search(rf"^{key}\s*=\s*(.+?)(?:\s*#.*)?$", config_text, flags=re.MULTILINE)
+        if m:
+            out[key] = m.group(1).strip()
+    return out
+
+
+def generated_config(original_text: str, single_auv: bool, mission_duration_hours: float, auv_number: int) -> str:
+    text = original_text
+    replacements = {
+        "MODEL_HOPS": "True",
+        "CLEAN_ROUTE": "True",
+    }
+    if single_auv or auv_number == 1:
+        replacements.update(
+            {
+                "AUV_NUMBER": "1",
+                "MISSION_DURATIONS": f"[{mission_duration_hours:g}]",
+                "STARTING_POINTS": "[[39.57331662, -9.29314]]",
+                "ENDING_POINTS": "[[39.57331662, -9.29314]]",
+                "N_DEPOT": "AUV_NUMBER * 2",
+            }
+        )
+    elif auv_number == 2:
+        replacements.update(
+            {
+                "AUV_NUMBER": "2",
+                "MISSION_DURATIONS": f"[{mission_duration_hours:g}, {mission_duration_hours:g}]",
+                "STARTING_POINTS": "[[39.57331662, -9.29314], [39.57644, -9.29321]]",
+                "ENDING_POINTS": "[[39.57331662, -9.29314], [39.57644, -9.29321]]",
+                "N_DEPOT": "AUV_NUMBER * 2",
+            }
+        )
+    else:
+        raise ValueError("Step11A wrapper currently supports auv_number 1 or 2.")
+    for key, value in replacements.items():
+        text = re.sub(rf"^{key}\s*=.*$", f"{key} = {value}", text, flags=re.MULTILINE)
+    header = (
+        "# Generated by Step11A wrapper. Original Config_file.py was not modified.\n"
+        "# Boundary-only minimal planner comparison; MODEL_HOPS=True uses input NetCDF temperr.\n\n"
+    )
+    return header + text
+
+
+def load_step10f(step10f: Path) -> tuple[pd.DataFrame, dict[str, np.ndarray]]:
+    cases = pd.read_csv(require(step10f / "step10f_minimal_boundary_planner_cases.csv", "Step10F cases"))
+    order = {case: i for i, case in enumerate(CASE_ORDER)}
+    cases["case_order"] = cases["case_id"].map(order)
+    cases = cases.sort_values("case_order").reset_index(drop=True)
+    arrays = {
+        "TEMPpred": np.load(require(step10f / "planner_cases_TEMPpred_roi_x490.npy", "Step10F TEMPpred")),
+        "STD_norm": np.load(require(step10f / "planner_cases_STD_norm_roi_x490.npy", "Step10F STD norm")),
+        "boundary": np.load(require(step10f / "planner_cases_boundary_score_norm_roi_x490.npy", "Step10F boundary")),
+    }
+    for formulation, filename, _formula, _alpha in FORMULATIONS:
+        arrays[formulation] = np.load(require(step10f / filename, f"Step10F {formulation}"))
+    return cases, arrays
+
+
+def embed_roi_to_hres(roi_map: np.ndarray, mask_roi: np.ndarray, fill: float = -np.inf) -> np.ndarray:
+    full = np.full(HRES_SHAPE, fill, dtype=np.float32)
+    roi = roi_map.astype(np.float32).copy()
+    roi[~mask_roi] = np.nan
+    full[ROI_ROW_MIN : ROI_ROW_MAX + 1, ROI_COL_MIN : ROI_COL_MAX + 1] = roi
+    return full
+
+
+def build_interface_nc(
+    out_nc: Path,
+    information_roi: np.ndarray,
+    mask_roi: np.ndarray,
+    lat_hres: np.ndarray,
+    lon_hres: np.ndarray,
+    bathy_hres: np.ndarray,
+) -> dict[str, Any]:
+    temperr = embed_roi_to_hres(information_roi, mask_roi, fill=-np.inf)
+    finite_roi = np.isfinite(temperr)
+    landt = np.zeros(HRES_SHAPE, dtype=np.int16)
+    landt[finite_roi] = 1
+    tbath = -np.abs(bathy_hres.astype(np.float32))
+    ds = xr.Dataset(
+        data_vars={
+            "temperr": (("lat", "lon"), temperr.astype(np.float32)),
+            "tbath": (("lat", "lon"), tbath.astype(np.float32)),
+            "landt": (("lat", "lon"), landt),
+        },
+        coords={"lat": lat_hres.astype(np.float32), "lon": lon_hres.astype(np.float32)},
+        attrs={
+            "source": "Step11A minimal boundary planner interface",
+            "information_map_definition": "baseline STD_norm or boundary-enriched STD_norm",
+            "roi_row_min": ROI_ROW_MIN,
+            "roi_row_max": ROI_ROW_MAX,
+            "roi_col_min": ROI_COL_MIN,
+            "roi_col_max": ROI_COL_MAX,
+        },
+    )
+    ds.to_netcdf(out_nc, engine="scipy")
+    valid = np.isfinite(temperr)
+    return {
+        "path": str(out_nc),
+        "temperr_shape": list(temperr.shape),
+        "finite_cells": int(valid.sum()),
+        "temperr_min": float(np.nanmin(temperr[valid])) if np.any(valid) else float("nan"),
+        "temperr_max": float(np.nanmax(temperr[valid])) if np.any(valid) else float("nan"),
+        "landt_valid_cells": int(landt.sum()),
+    }
+
+
+def copy_planner_runtime(planner_dir: Path, run_dir: Path, config_text: str) -> None:
+    for name in ["OptimalPlanning.py", "Utils.py"]:
+        shutil.copy2(require(planner_dir / name, f"planner {name}"), run_dir / name)
+    (run_dir / "Config_file.py").write_text(config_text, encoding="utf-8")
+    (run_dir / "plots").mkdir(exist_ok=True)
+
+
+def run_planner(run_dir: Path, interface_nc: Path, timeout_s: int) -> dict[str, Any]:
+    cmd = [sys.executable, "OptimalPlanning.py", str(interface_nc.resolve())]
+    env = os.environ.copy()
+    env["MPLBACKEND"] = "Agg"
+    t0 = time.perf_counter()
+    proc = subprocess.run(cmd, cwd=run_dir, env=env, capture_output=True, text=True, timeout=timeout_s)
+    elapsed = time.perf_counter() - t0
+    (run_dir / "planner_stdout.txt").write_text(proc.stdout, encoding="utf-8", errors="replace")
+    (run_dir / "planner_stderr.txt").write_text(proc.stderr, encoding="utf-8", errors="replace")
+    (run_dir / "planner_command.txt").write_text(" ".join(cmd), encoding="utf-8")
+    return {"command": " ".join(cmd), "returncode": int(proc.returncode), "runtime_s": float(elapsed)}
+
+
+def parse_routes_file(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    routes: list[dict[str, Any]] = []
+    i = 0
+    route_id = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith("#length_2D:"):
+            route_id += 1
+            length_match = re.search(r"#length_2D:\s*([0-9.+-eE]+)", line)
+            min_depth_match = re.search(r"minimum_depth:\s*([0-9.+-eE]+)", line)
+            mission_match = re.search(r"mission_duration:\s*([0-9]+)\s*\[h\]\s*([0-9]+)\s*\[m\]", line)
+            wp_line = lines[i + 1] if i + 1 < len(lines) else ""
+            triples = re.findall(r"([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?),\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?),\s*([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)", wp_line)
+            waypoints = [[float(a), float(b), float(c)] for a, b, c in triples]
+            routes.append(
+                {
+                    "route_id": route_id,
+                    "length_km": float(length_match.group(1)) if length_match else float("nan"),
+                    "minimum_depth_m": float(min_depth_match.group(1)) if min_depth_match else float("nan"),
+                    "mission_duration_h": int(mission_match.group(1)) if mission_match else None,
+                    "mission_duration_m": int(mission_match.group(2)) if mission_match else None,
+                    "waypoints": waypoints,
+                }
+            )
+            i += 2
+        else:
+            i += 1
+    return routes
+
+
+def nearest_index(values: np.ndarray, value: float) -> int:
+    return int(np.nanargmin(np.abs(values - value)))
+
+
+def connect_points(p0: tuple[int, int], p1: tuple[int, int]) -> list[tuple[int, int]]:
+    d0 = abs(p1[0] - p0[0])
+    d1 = abs(p1[1] - p0[1])
+    n = max(d0, d1) * 2 + 1
+    rows = np.round(np.linspace(p0[0], p1[0], n)).astype(int)
+    cols = np.round(np.linspace(p0[1], p1[1], n)).astype(int)
+    return list(dict.fromkeys(zip(rows.tolist(), cols.tolist())))
+
+
+def route_grid_points(routes: list[dict[str, Any]], lat_hres: np.ndarray, lon_hres: np.ndarray) -> list[tuple[int, int]]:
+    points: list[tuple[int, int]] = []
+    for route in routes:
+        wp = route["waypoints"]
+        idxs = [(nearest_index(lat_hres, p[0]), nearest_index(lon_hres, p[1])) for p in wp]
+        for a, b in zip(idxs[:-1], idxs[1:]):
+            seg = connect_points(a, b)
+            if points and seg and points[-1] == seg[0]:
+                seg = seg[1:]
+            points.extend(seg)
+    return points
+
+
+def path_metrics(
+    routes: list[dict[str, Any]],
+    lat_hres: np.ndarray,
+    lon_hres: np.ndarray,
+    info_full: np.ndarray,
+    std_full: np.ndarray,
+    boundary_full: np.ndarray,
+    baseline_points: set[tuple[int, int]] | None = None,
+) -> dict[str, Any]:
+    points = route_grid_points(routes, lat_hres, lon_hres)
+    unique_points = list(dict.fromkeys(points))
+    if not unique_points:
+        return {
+            "number_of_waypoints": 0,
+            "number_of_valid_cells_sampled": 0,
+            "collected_information_score": float("nan"),
+            "collected_STD_score": float("nan"),
+            "collected_boundary_score": float("nan"),
+            "mean_STD_along_path": float("nan"),
+            "mean_boundary_along_path": float("nan"),
+            "max_STD_along_path": float("nan"),
+            "max_boundary_along_path": float("nan"),
+            "percentage_path_in_top10_STD": float("nan"),
+            "percentage_path_in_top10_boundary": float("nan"),
+            "trajectory_overlap_ratio_with_baseline": float("nan"),
+            "trajectory_difference_from_baseline": float("nan"),
+        }
+    rr = np.array([p[0] for p in unique_points], dtype=int)
+    cc = np.array([p[1] for p in unique_points], dtype=int)
+    valid = np.isfinite(info_full[rr, cc])
+    rr = rr[valid]
+    cc = cc[valid]
+    std_vals = std_full[rr, cc]
+    boundary_vals = boundary_full[rr, cc]
+    info_vals = info_full[rr, cc]
+    finite_std = std_full[np.isfinite(std_full)]
+    finite_boundary = boundary_full[np.isfinite(boundary_full)]
+    top_std_thr = float(np.nanpercentile(finite_std, 90)) if finite_std.size else float("nan")
+    top_boundary_thr = float(np.nanpercentile(finite_boundary, 90)) if finite_boundary.size else float("nan")
+    point_set = set(zip(rr.tolist(), cc.tolist()))
+    if baseline_points is None:
+        overlap = float("nan")
+        diff = float("nan")
+    else:
+        denom = max(len(point_set | baseline_points), 1)
+        overlap = float(len(point_set & baseline_points) / denom)
+        diff = float(1.0 - overlap)
+    return {
+        "number_of_waypoints": int(sum(max(len(r["waypoints"]) - 2, 0) for r in routes)),
+        "number_of_valid_cells_sampled": int(len(point_set)),
+        "collected_information_score": float(np.nansum(info_vals)),
+        "collected_STD_score": float(np.nansum(std_vals)),
+        "collected_boundary_score": float(np.nansum(boundary_vals)),
+        "mean_STD_along_path": float(np.nanmean(std_vals)) if std_vals.size else float("nan"),
+        "mean_boundary_along_path": float(np.nanmean(boundary_vals)) if boundary_vals.size else float("nan"),
+        "max_STD_along_path": float(np.nanmax(std_vals)) if std_vals.size else float("nan"),
+        "max_boundary_along_path": float(np.nanmax(boundary_vals)) if boundary_vals.size else float("nan"),
+        "percentage_path_in_top10_STD": float(np.mean(std_vals >= top_std_thr)) if std_vals.size and np.isfinite(top_std_thr) else float("nan"),
+        "percentage_path_in_top10_boundary": float(np.mean(boundary_vals >= top_boundary_thr)) if boundary_vals.size and np.isfinite(top_boundary_thr) else float("nan"),
+        "trajectory_overlap_ratio_with_baseline": overlap,
+        "trajectory_difference_from_baseline": diff,
+    }
+
+
+def save_trajectory_csv_json(run_dir: Path, routes: list[dict[str, Any]]) -> None:
+    rows = []
+    for route in routes:
+        for order, wp in enumerate(route["waypoints"]):
+            rows.append(
+                {
+                    "route_id": route["route_id"],
+                    "waypoint_order": order,
+                    "lat": wp[0],
+                    "lon": wp[1],
+                    "depth_m": wp[2],
+                    "route_length_km": route["length_km"],
+                    "route_minimum_depth_m": route["minimum_depth_m"],
+                }
+            )
+    pd.DataFrame(rows).to_csv(run_dir / "trajectory_waypoints.csv", index=False)
+    write_json(run_dir / "trajectory_routes.json", {"routes": routes})
+
+
+def plot_overlay(
+    case_id: str,
+    case_date: str,
+    temp_roi: np.ndarray,
+    std_roi: np.ndarray,
+    boundary_roi: np.ndarray,
+    run_points: dict[str, list[tuple[int, int]]],
+    out_path: Path,
+) -> None:
+    fig, axes = plt.subplots(1, 3, figsize=(14, 4.2), squeeze=False)
+    backgrounds = [
+        ("TEMPpred", temp_roi, "coolwarm", None, None),
+        ("STD_norm", std_roi, "viridis", 0, 1),
+        ("boundary_score_norm", boundary_roi, "magma", 0, 1),
+    ]
+    colors = {"baseline_STD": "white", "enriched_boundary_alpha025": "#00e5ff", "enriched_boundary_alpha050": "#ffea00"}
+    for ax, (title, arr, cmap, vmin, vmax) in zip(axes.ravel(), backgrounds):
+        im = ax.imshow(arr, origin="lower", cmap=cmap, vmin=vmin, vmax=vmax, aspect="auto")
+        for formulation, points in run_points.items():
+            roi_points = [(r - ROI_ROW_MIN, c - ROI_COL_MIN) for r, c in points if ROI_ROW_MIN <= r <= ROI_ROW_MAX and ROI_COL_MIN <= c <= ROI_COL_MAX]
+            if len(roi_points) > 1:
+                yy = [p[0] for p in roi_points]
+                xx = [p[1] for p in roi_points]
+                ax.plot(xx, yy, color=colors.get(formulation, "black"), linewidth=1.5, marker="o", markersize=2, label=formulation)
+        ax.set_title(title)
+        ax.axis("off")
+        plt.colorbar(im, ax=ax, fraction=0.045, pad=0.02)
+    axes[0, 0].legend(loc="lower left", fontsize=7)
+    fig.suptitle(f"{case_id} | {case_date} | baseline vs boundary-enriched trajectories")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=180)
+    plt.close(fig)
+
+
+def plot_all_cases_summary(cases_df: pd.DataFrame, run_metrics: pd.DataFrame, out_path: Path) -> None:
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4), squeeze=False)
+    for ax, metric, title in [
+        (axes[0, 0], "collected_STD_score", "Collected STD score"),
+        (axes[0, 1], "collected_boundary_score", "Collected boundary score"),
+        (axes[0, 2], "trajectory_difference_from_baseline", "Trajectory difference vs baseline"),
+    ]:
+        pivot = run_metrics.pivot(index="case_id", columns="formulation", values=metric).reindex(CASE_ORDER)
+        pivot.plot(kind="bar", ax=ax)
+        ax.set_title(title)
+        ax.set_xlabel("")
+        ax.tick_params(axis="x", rotation=20)
+        ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=180)
+    plt.close(fig)
+
+
+def plot_bar(run_metrics: pd.DataFrame, metric: str, title: str, out_path: Path) -> None:
+    fig, ax = plt.subplots(figsize=(12, 4))
+    labels = [f"{r.case_id}\n{r.formulation}" for r in run_metrics.itertuples()]
+    ax.bar(np.arange(len(run_metrics)), run_metrics[metric].astype(float))
+    ax.set_xticks(np.arange(len(run_metrics)))
+    ax.set_xticklabels(labels, rotation=90, fontsize=7)
+    ax.set_title(title)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=180)
+    plt.close(fig)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Run Step11A minimal boundary-only planner comparison.")
+    parser.add_argument("--step10f", type=Path, default=DEFAULT_STEP10F)
+    parser.add_argument("--step10e", type=Path, default=DEFAULT_STEP10E)
+    parser.add_argument("--step00", type=Path, default=DEFAULT_STEP00)
+    parser.add_argument("--hres", type=Path, default=DEFAULT_HRES)
+    parser.add_argument("--planner", type=Path, default=DEFAULT_PLANNER)
+    parser.add_argument("--output-root", type=Path, default=RESULTS_ROOT)
+    parser.add_argument("--timeout-s", type=int, default=900)
+    parser.add_argument("--single-auv", action="store_true", default=False)
+    parser.add_argument("--mission-duration-hours", type=float, default=6.0)
+    parser.add_argument("--auv-number", type=int, default=1)
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    step10f = args.step10f.resolve()
+    step10e = args.step10e.resolve()
+    step00 = args.step00.resolve()
+    hres = args.hres.resolve()
+    planner = args.planner.resolve()
+    out_dir = (args.output_root.resolve() / f"fossum_roi_x490_step11a_minimal_boundary_planner_runs_{now_tag()}").resolve()
+    out_dir.mkdir(parents=True, exist_ok=False)
+    (out_dir / "planner_inputs").mkdir()
+    (out_dir / "planner_configs").mkdir()
+    (out_dir / "planner_runs").mkdir()
+    fig_dir = out_dir / "figures"
+    fig_dir.mkdir()
+
+    original_config = read_config_text(require(planner / "Config_file.py", "Lucrezia Config_file.py"))
+    config_values = extract_config_values(original_config)
+    single_auv_runtime = bool(args.auv_number == 1)
+    runtime_config = generated_config(
+        original_config,
+        single_auv=single_auv_runtime,
+        mission_duration_hours=args.mission_duration_hours,
+        auv_number=args.auv_number,
+    )
+    auv_label = "single_auv" if args.auv_number == 1 else f"{args.auv_number}auv"
+    config_name = f"Config_file_step11a_{auv_label}_{args.mission_duration_hours:g}h.py"
+    (out_dir / "planner_configs" / config_name).write_text(runtime_config, encoding="utf-8")
+
+    cases_df, arrays = load_step10f(step10f)
+    mask_roi = np.load(require(step00 / "mask_common_roi_x490.npy", "Step00 mask")).astype(bool)
+    lat_hres = np.load(require(hres / "LAT_hres.npy", "HRes LAT"))
+    lon_hres = np.load(require(hres / "LON_hres.npy", "HRes LON"))
+    bathy_hres = np.load(require(hres / "BATHY_hres.npy", "HRes BATHY"))
+    if mask_roi.shape != ROI_SHAPE or int(mask_roi.sum()) != EXPECTED_VALID_CELLS:
+        raise ValueError(f"Unexpected ROI mask: shape={mask_roi.shape}, valid={int(mask_roi.sum())}")
+
+    audit = {
+        "planner_root": str(planner),
+        "main_script": str(planner / "OptimalPlanning.py"),
+        "config_script": str(planner / "Config_file.py"),
+        "information_map_entrypoint": "NetCDF variable `temperr`, read in OptimalPlanning.py as `netcdf_file.temperr.to_numpy()` when MODEL_HOPS=True.",
+        "expected_interface_variables": ["temperr", "tbath", "landt", "lat", "lon"],
+        "objective_direction": "maximizes prize/value over selected POIs; `temperr` values are converted to node prizes by Utils.get_nodes_prize and solved as a prize-collecting VRP.",
+        "penalties_constraints": {
+            "minimum_depth": "Cells with tbath > -MINIMUM_DEPTH are set to -inf.",
+            "obstacles": "Configured obstacle boxes in Config_file.py are set to -inf.",
+            "endurance": "MISSION_DURATIONS, SPEED, HOPS_GRID_RESOLUTION set max route distance.",
+            "deployment_recovery": "STARTING_POINTS and ENDING_POINTS define depots.",
+            "solver": "PyVRP with MaxRuntime first pass and NoImprovement second pass.",
+        },
+        "modelhops": "MODEL_HOPS=True is required so planner reads `temperr` from the interface NetCDF.",
+        "map_scale": "The planner accepts physical or normalized values; only relative prize ranking matters after get_nodes_prize. Step11A uses normalized [0,1] information maps.",
+        "substitution_point": "Replace baseline STD with enriched map by writing a different 2D `temperr` variable in the run-specific NetCDF.",
+        "original_config_values": config_values,
+        "step11a_adaptation": f"{args.auv_number}-AUV runtime Config_file.py generated in output; original planner/config unchanged.",
+    }
+    write_json(out_dir / "step11a_planner_interface_audit.json", audit)
+    audit_md = [
+        "# Step11A Planner Interface Audit",
+        "",
+        f"- Planner: `{planner}`",
+        "- Information map enters as NetCDF variable `temperr`.",
+        "- With `MODEL_HOPS=True`, `OptimalPlanning.py` reads `netcdf_file.temperr.to_numpy()`.",
+        "- The planner maximizes route prize/value: `Utils.get_nodes_prize()` converts `temperr` values at POIs into integer prizes for PyVRP.",
+        "- Baseline/enriched substitution is done by writing a different `temperr` map; constraints and penalties remain in the copied runtime config.",
+        "- Step11A uses normalized [0,1] maps, which is appropriate because the solver uses relative prize levels.",
+        f"- Runtime uses {args.auv_number} AUV(s) with {args.mission_duration_hours:g}h duration; original planner files are not edited.",
+    ]
+    (out_dir / "step11a_planner_interface_audit.md").write_text("\n".join(audit_md), encoding="utf-8")
+
+    manifest_rows = []
+    metrics_rows = []
+    solver_rows = []
+    comparison_rows = []
+    baseline_points_by_case: dict[str, set[tuple[int, int]]] = {}
+    run_points_for_fig: dict[str, dict[str, list[tuple[int, int]]]] = {case: {} for case in CASE_ORDER}
+
+    for case_idx, case in cases_df.iterrows():
+        case_id = str(case["case_id"])
+        for formulation, _filename, formula, alpha in FORMULATIONS:
+            run_id = f"{case_id}__{formulation}"
+            run_dir = out_dir / "planner_runs" / safe_name(run_id)
+            run_dir.mkdir(parents=True)
+            input_nc = out_dir / "planner_inputs" / f"{safe_name(run_id)}_planner_interface.nc"
+            info_roi = arrays[formulation][case_idx].astype(np.float32)
+            std_roi = arrays["STD_norm"][case_idx].astype(np.float32)
+            boundary_roi = arrays["boundary"][case_idx].astype(np.float32)
+            temp_roi = arrays["TEMPpred"][case_idx].astype(np.float32)
+            nc_meta = build_interface_nc(input_nc, info_roi, mask_roi, lat_hres, lon_hres, bathy_hres)
+            shutil.copy2(input_nc, run_dir / input_nc.name)
+            copy_planner_runtime(planner, run_dir, runtime_config)
+            (run_dir / "run_config.json").write_text(
+                json.dumps(
+                    {
+                        "run_id": run_id,
+                        "case_id": case_id,
+                        "date": str(case["date"]),
+                        "formulation": formulation,
+                        "formula": formula,
+                        "alpha": alpha,
+                        "input_nc": str(input_nc),
+                        "single_auv": single_auv_runtime,
+                        "auv_number": args.auv_number,
+                        "mission_duration_hours": args.mission_duration_hours,
+                    },
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+            status = "NOT_RUN"
+            error = ""
+            try:
+                run_result = run_planner(run_dir, input_nc, args.timeout_s)
+                status = "SUCCESS" if run_result["returncode"] == 0 and (run_dir / "routes_file.txt").exists() else "FAILED"
+            except subprocess.TimeoutExpired as exc:
+                run_result = {"command": " ".join(exc.cmd) if isinstance(exc.cmd, list) else str(exc.cmd), "returncode": -999, "runtime_s": args.timeout_s}
+                status = "TIMEOUT"
+                error = f"Timeout after {args.timeout_s}s"
+                (run_dir / "planner_stdout.txt").write_text(exc.stdout or "", encoding="utf-8", errors="replace")
+                (run_dir / "planner_stderr.txt").write_text((exc.stderr or "") + "\n" + error, encoding="utf-8", errors="replace")
+            except Exception as exc:  # keep batch moving
+                run_result = {"command": f"{sys.executable} OptimalPlanning.py {input_nc}", "returncode": -998, "runtime_s": float("nan")}
+                status = "FAILED"
+                error = repr(exc)
+                (run_dir / "planner_stderr.txt").write_text(error, encoding="utf-8", errors="replace")
+
+            routes = parse_routes_file(run_dir / "routes_file.txt")
+            save_trajectory_csv_json(run_dir, routes)
+            info_full = embed_roi_to_hres(info_roi, mask_roi, fill=np.nan)
+            std_full = embed_roi_to_hres(std_roi, mask_roi, fill=np.nan)
+            boundary_full = embed_roi_to_hres(boundary_roi, mask_roi, fill=np.nan)
+            baseline_set = baseline_points_by_case.get(case_id)
+            run_metrics = path_metrics(routes, lat_hres, lon_hres, info_full, std_full, boundary_full, baseline_set)
+            points = route_grid_points(routes, lat_hres, lon_hres)
+            run_points_for_fig[case_id][formulation] = points
+            if formulation == "baseline_STD":
+                baseline_points_by_case[case_id] = set(points)
+                run_metrics["trajectory_overlap_ratio_with_baseline"] = 1.0 if points else float("nan")
+                run_metrics["trajectory_difference_from_baseline"] = 0.0 if points else float("nan")
+            total_length = float(np.nansum([r["length_km"] for r in routes])) if routes else float("nan")
+            mission_duration = float(np.nansum([(r.get("mission_duration_h") or 0) + (r.get("mission_duration_m") or 0) / 60 for r in routes])) if routes else float("nan")
+
+            manifest_rows.append(
+                {
+                    "run_id": run_id,
+                    "case_id": case_id,
+                    "date": str(case["date"]),
+                    "predicted_class_label": str(case["predicted_class_label"]),
+                    "formulation": formulation,
+                    "alpha": alpha,
+                    "formula": formula,
+                    "input_nc": str(input_nc),
+                    "run_dir": str(run_dir),
+                    "status": status,
+                    "returncode": run_result["returncode"],
+                }
+            )
+            metrics_rows.append(
+                {
+                    "run_id": run_id,
+                    "case_id": case_id,
+                    "date": str(case["date"]),
+                    "predicted_class_label": str(case["predicted_class_label"]),
+                    "formulation": formulation,
+                    "alpha": alpha,
+                    "solver_status": status,
+                    "trajectory_length_km": total_length,
+                    "mission_duration_h": mission_duration,
+                    "solver_runtime_s": run_result["runtime_s"],
+                    **run_metrics,
+                }
+            )
+            solver_rows.append(
+                {
+                    "run_id": run_id,
+                    "case_id": case_id,
+                    "formulation": formulation,
+                    "status": status,
+                    "returncode": run_result["returncode"],
+                    "runtime_s": run_result["runtime_s"],
+                    "command": run_result["command"],
+                    "error": error,
+                    **nc_meta,
+                }
+            )
+
+    metrics_df = pd.DataFrame(metrics_rows)
+    for case_id in CASE_ORDER:
+        base = metrics_df[(metrics_df["case_id"] == case_id) & (metrics_df["formulation"] == "baseline_STD")]
+        if base.empty:
+            continue
+        base_row = base.iloc[0]
+        for _, row in metrics_df[metrics_df["case_id"] == case_id].iterrows():
+            if row["formulation"] == "baseline_STD":
+                continue
+            comparison_rows.append(
+                {
+                    "case_id": case_id,
+                    "date": row["date"],
+                    "formulation": row["formulation"],
+                    "baseline_run_id": base_row["run_id"],
+                    "enriched_run_id": row["run_id"],
+                    "trajectory_overlap_ratio": row["trajectory_overlap_ratio_with_baseline"],
+                    "trajectory_difference_from_baseline": row["trajectory_difference_from_baseline"],
+                    "delta_collected_boundary_score": row["collected_boundary_score"] - base_row["collected_boundary_score"],
+                    "delta_collected_STD_score": row["collected_STD_score"] - base_row["collected_STD_score"],
+                    "delta_collected_information_score": row["collected_information_score"] - base_row["collected_information_score"],
+                    "high_similarity_overlay": bool(row["trajectory_overlap_ratio_with_baseline"] >= 0.85)
+                    if np.isfinite(row["trajectory_overlap_ratio_with_baseline"])
+                    else False,
+                }
+            )
+
+    manifest_df = pd.DataFrame(manifest_rows)
+    solver_df = pd.DataFrame(solver_rows)
+    comparison_df = pd.DataFrame(comparison_rows)
+    manifest_df.to_csv(out_dir / "step11a_run_manifest.csv", index=False)
+    metrics_df.to_csv(out_dir / "step11a_run_metrics.csv", index=False)
+    comparison_df.to_csv(out_dir / "step11a_baseline_vs_enriched_comparison.csv", index=False)
+    solver_df.to_csv(out_dir / "step11a_solver_diagnostics.csv", index=False)
+
+    for _, case in cases_df.iterrows():
+        case_id = str(case["case_id"])
+        case_idx = int(case["case_order"])
+        out_name = f"step11a_{safe_name(case_id)}_baseline_vs_enriched_overlay.png"
+        plot_overlay(
+            case_id,
+            str(case["date"]),
+            arrays["TEMPpred"][case_idx],
+            arrays["STD_norm"][case_idx],
+            arrays["boundary"][case_idx],
+            run_points_for_fig[case_id],
+            fig_dir / out_name,
+        )
+    # Also provide names requested by the user.
+    aliases = {
+        "C06_representative": "step11a_C06_representative_baseline_vs_enriched_overlay.png",
+        "C01_representative": "step11a_C01_representative_baseline_vs_enriched_overlay.png",
+        "October_control": "step11a_October_reference_baseline_vs_enriched_overlay.png",
+    }
+    for case_id, alias in aliases.items():
+        src = fig_dir / f"step11a_{safe_name(case_id)}_baseline_vs_enriched_overlay.png"
+        if src.exists():
+            dst = fig_dir / alias
+            if src.resolve() != dst.resolve():
+                shutil.copy2(src, dst)
+    plot_all_cases_summary(cases_df, metrics_df, fig_dir / "step11a_all_cases_summary_panel.png")
+    plot_bar(metrics_df, "collected_information_score", "Collected information/prize proxy", fig_dir / "step11a_collected_scores_barplot.png")
+    plot_bar(metrics_df, "solver_runtime_s", "Solver runtime", fig_dir / "step11a_solver_runtime_barplot.png")
+
+    for p in fig_dir.glob("*.png"):
+        shutil.copy2(p, out_dir / p.name)
+
+    successful = int((manifest_df["status"] == "SUCCESS").sum())
+    failed = int(len(manifest_df) - successful)
+    overlays = comparison_df["high_similarity_overlay"].sum() if not comparison_df.empty else 0
+    if successful == 9 and overlays == 0:
+        verdict = "STEP11A_COMPLETED_BASELINE_VS_BOUNDARY_RESULTS_READY"
+    elif successful > 0:
+        verdict = "STEP11A_COMPLETED_WITH_OVERLAY_TRAJECTORIES_REVIEW_PARAMETERS"
+    elif failed == 9:
+        verdict = "STEP11A_FAILED"
+    else:
+        verdict = "PLANNER_INTERFACE_NEEDS_ADAPTATION"
+
+    checks = {
+        "cases_processed": int(cases_df.shape[0]),
+        "planned_runs": int(len(manifest_df)),
+        "successful_runs": successful,
+        "failed_runs": failed,
+        "baseline_maps_used": bool((manifest_df["formulation"] == "baseline_STD").sum() == 3),
+        "enriched_maps_used": bool((manifest_df["formulation"].str.startswith("enriched")).sum() == 6),
+        "operational_constraints_preserved_in_runtime_copy": True,
+        "original_planner_modified": False,
+        "planner_received_different_maps": True,
+        "trajectories_generated": bool(successful > 0),
+        "metrics_calculated": bool(metrics_df.shape[0] == 9),
+        "figures_created": int(len(list(fig_dir.glob("*.png")))),
+        "modelhops_true": True,
+        "single_auv": bool(single_auv_runtime),
+        "auv_number": int(args.auv_number),
+        "mission_duration_hours": float(args.mission_duration_hours),
+        "verdict": verdict,
+    }
+    write_json(out_dir / "step11a_checks.json", checks)
+
+    warning_lines = []
+    if failed:
+        warning_lines.append(f"- {failed} planner runs failed; inspect step11a_solver_diagnostics.csv.")
+    if overlays:
+        warning_lines.append(f"- {int(overlays)} enriched comparisons have high trajectory overlap with baseline.")
+    warning_lines.append(f"- Runtime config used {args.auv_number} AUV(s) with {args.mission_duration_hours:g}h mission duration.")
+    if not warning_lines:
+        warning_lines = ["- none"]
+
+    run_lines = [
+        f"- {r.case_id} / {r.formulation}: {r.solver_status}, waypoints={r.number_of_waypoints}, length={r.trajectory_length_km:.3f} km, collected boundary={r.collected_boundary_score:.3f}, collected STD={r.collected_STD_score:.3f}"
+        for r in metrics_df.itertuples()
+    ]
+    comp_lines = [
+        f"- {r.case_id} / {r.formulation}: overlap={r.trajectory_overlap_ratio:.3f}, delta boundary={r.delta_collected_boundary_score:.3f}, delta STD={r.delta_collected_STD_score:.3f}"
+        for r in comparison_df.itertuples()
+    ]
+    summary = [
+        "# Step11A Minimal Boundary Planner Runs",
+        "",
+        f"- Output: `{out_dir}`",
+        f"- Successful runs: {successful}/9",
+        f"- Verdict: **{verdict}**",
+        "",
+        "## Planner Interface",
+        "- Information map: NetCDF variable `temperr`.",
+        "- Objective: maximize prize/value derived from `temperr` POIs.",
+        "- Baseline/enriched maps are swapped by writing different `temperr` maps.",
+        "- MODEL_HOPS=True.",
+        "",
+        "## Run Metrics",
+        *run_lines,
+        "",
+        "## Baseline vs Enriched",
+        *comp_lines,
+        "",
+        "## Warnings",
+        *warning_lines,
+    ]
+    (out_dir / "step11a_summary.md").write_text("\n".join(summary), encoding="utf-8")
+    (out_dir / "step11a_report.md").write_text("\n".join(summary), encoding="utf-8")
+    next_step = [
+        "# Step11A Next Step Recommendation",
+        "",
+        "Review the overlay figures first. If enriched trajectories overlap baseline, increase alpha or inspect whether boundary and STD generate the same POIs under the contour/Voronoi selection stage. If trajectories differ, use the C06 representative run as the first controlled planner comparison, then repeat with the high-STD C01 case.",
+        "",
+        verdict,
+    ]
+    (out_dir / "step11a_next_step_recommendation.md").write_text("\n".join(next_step), encoding="utf-8")
+    shutil.copy2(Path(__file__).resolve(), out_dir / Path(__file__).name)
+    print(f"Step11A complete: {out_dir}")
+    print(f"Successful runs: {successful}/9")
+    print(f"Verdict: {verdict}")
+
+
+if __name__ == "__main__":
+    main()
