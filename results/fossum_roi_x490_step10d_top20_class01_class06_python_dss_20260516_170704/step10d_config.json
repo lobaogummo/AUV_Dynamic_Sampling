@@ -1,0 +1,13 @@
+{
+  "depths": [
+    1
+  ],
+  "n_realizations": 100,
+  "seed": 110011,
+  "timeout_s": 7200,
+  "std_definition": "variance",
+  "top_per_class": 10,
+  "matlab_used": false,
+  "hres_regenerated": false,
+  "validation_marker": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\step10b_python_dss_validation_pass_marker.json"
+}

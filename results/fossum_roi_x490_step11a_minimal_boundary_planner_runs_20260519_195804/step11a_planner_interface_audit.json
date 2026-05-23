@@ -1,0 +1,47 @@
+{
+  "planner_root": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\OptimalPlanning_Lucrezia",
+  "main_script": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\OptimalPlanning_Lucrezia\\OptimalPlanning.py",
+  "config_script": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\OptimalPlanning_Lucrezia\\Config_file.py",
+  "information_map_entrypoint": "NetCDF variable `temperr`, read in OptimalPlanning.py as `netcdf_file.temperr.to_numpy()` when MODEL_HOPS=True.",
+  "expected_interface_variables": [
+    "temperr",
+    "tbath",
+    "landt",
+    "lat",
+    "lon"
+  ],
+  "objective_direction": "maximizes prize/value over selected POIs; `temperr` values are converted to node prizes by Utils.get_nodes_prize and solved as a prize-collecting VRP.",
+  "penalties_constraints": {
+    "minimum_depth": "Cells with tbath > -MINIMUM_DEPTH are set to -inf.",
+    "obstacles": "Configured obstacle boxes in Config_file.py are set to -inf.",
+    "endurance": "MISSION_DURATIONS, SPEED, HOPS_GRID_RESOLUTION set max route distance.",
+    "deployment_recovery": "STARTING_POINTS and ENDING_POINTS define depots.",
+    "solver": "PyVRP with MaxRuntime first pass and NoImprovement second pass."
+  },
+  "modelhops": "MODEL_HOPS=True is required so planner reads `temperr` from the interface NetCDF.",
+  "map_scale": "The planner accepts physical or normalized values; only relative prize ranking matters after get_nodes_prize. Step11A uses normalized [0,1] information maps.",
+  "substitution_point": "Replace baseline STD with enriched map by writing a different 2D `temperr` variable in the run-specific NetCDF.",
+  "original_config_values": {
+    "AUV_NUMBER": "2",
+    "SPEED": "1",
+    "MISSION_DURATIONS": "[6, 13]",
+    "STARTING_POINTS": "[[39.57331662, -9.29314], [39.57644, -9.29321]]",
+    "ENDING_POINTS": "[[39.57331662, -9.29314],[39.57644, -9.29321]]",
+    "OPERATION_LL_CORNER": "[39.50934, -9.43520]",
+    "OPERATION_UR_CORNER": "[39.75313, -9.03402]",
+    "MINIMUM_DEPTH": "40",
+    "OBJECTS_LL_CORNER": "[obj_line[0], obj_traffic1[0], obj_traffic2[0]]",
+    "OBJECTS_UR_CORNER": "[obj_line[1], obj_traffic1[1], obj_traffic2[1]]",
+    "N_LEVELS": "9",
+    "D_MIN_CONTOUR": "1",
+    "D_MIN_VORONOI": "1",
+    "STOP_RUN_TIME": "60",
+    "STOP_NO_ITER": "30",
+    "SEED": "0",
+    "WP_WAITING_TIME": "1",
+    "MODEL_HOPS": "True",
+    "HOPS_GRID_RESOLUTION": "300",
+    "CLEAN_ROUTE": "True"
+  },
+  "step11a_adaptation": "single-AUV runtime Config_file.py generated in output; original planner/config unchanged."
+}

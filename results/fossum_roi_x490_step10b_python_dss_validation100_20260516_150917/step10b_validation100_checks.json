@@ -1,0 +1,18 @@
+{
+  "dss_called": true,
+  "dss_success_count": 1,
+  "validation_rows": 1,
+  "validation_statuses": [
+    "PASS_STRONG"
+  ],
+  "n_realizations": 100,
+  "depths": [
+    1
+  ],
+  "official_parfile_or_seed_found": false,
+  "seed_reproducibility_warning": true,
+  "hres_regenerated": false,
+  "matlab_used": false,
+  "c01_c06_generated": false,
+  "verdict": "PYTHON_DSS_VALIDATION100_PASS_STRONG_READY_FOR_C01_C06"
+}

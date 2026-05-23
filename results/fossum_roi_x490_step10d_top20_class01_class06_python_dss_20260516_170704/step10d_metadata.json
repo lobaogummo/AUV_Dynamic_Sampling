@@ -1,0 +1,15 @@
+{
+  "output_dir": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704",
+  "dss_exe": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\input_all\\DSS.C.64.exe",
+  "figures": [
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_C01_TEMPpred_pages_01.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_C01_STD_variance_pages_01.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_top_C01_by_STD_mean.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_top_C01_by_STD_max.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_C06_TEMPpred_pages_01.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_C06_STD_variance_pages_01.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_top_C06_by_STD_mean.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_top_C06_by_STD_max.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\\figures\\step10d_top_candidates_TEMPpred_STD_side_by_side.png"
+  ]
+}

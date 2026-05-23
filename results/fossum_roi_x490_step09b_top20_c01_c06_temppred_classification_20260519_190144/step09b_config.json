@@ -1,0 +1,29 @@
+{
+  "roi": "FRESNEL_PAPER_ROI_X490",
+  "n_days": 20,
+  "classes": 6,
+  "patch_height": 24,
+  "patch_width": 40,
+  "dictionary_size": 4,
+  "classification_method": "nearest Step05 class centroid in StandardScaler-transformed sparse-code feature space",
+  "std_definition": "variance",
+  "std_used_for_classification": false,
+  "low_confidence_rule": "confidence <= top20 Q25 OR nearest centroid distance > Step05 class p90 member-to-centroid distance",
+  "figure_scales": {
+    "TEMPpred_physical": {
+      "vmin": 16.1942,
+      "vmax": 19.6822,
+      "cmap": "coolwarm"
+    },
+    "STD_variance": {
+      "vmin": 0.006523,
+      "vmax": 0.203208,
+      "cmap": "viridis"
+    },
+    "TEMPpred_normalized": {
+      "vmin": -1.95039,
+      "vmax": 1.95039,
+      "cmap": "coolwarm"
+    }
+  }
+}

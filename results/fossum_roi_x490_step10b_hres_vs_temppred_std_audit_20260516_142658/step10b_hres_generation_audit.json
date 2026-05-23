@@ -1,0 +1,338 @@
+{
+  "created_at": "2026-05-16T14:26:59",
+  "hres_generation": {
+    "script_path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\cmems_370_surface_to_hres_20260509_135642\\interpolate_cmems_370_surface_to_hres.py",
+    "uses_matlab": false,
+    "python_imports": [
+      "__future__",
+      "datetime",
+      "json",
+      "math",
+      "matplotlib",
+      "matplotlib.pyplot",
+      "netCDF4",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "scipy.interpolate"
+    ],
+    "uses_scipy_regular_grid_interpolator": true,
+    "replicates_write14days_hres_interp": true,
+    "output_shape": [
+      370,
+      180,
+      240
+    ],
+    "roi_shape": [
+      370,
+      72,
+      117
+    ],
+    "step00_shape": [
+      370,
+      72,
+      117
+    ],
+    "mask_common_valid_cells": 8004,
+    "metadata": {
+      "input_raw_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\ALL\\thetao_20260427.nc",
+      "target_grid_source_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20240930\\01-10-2024_predModel_1.nc",
+      "n_days": 370,
+      "date_start": "2023-10-28",
+      "date_end": "2024-10-31",
+      "selected_depth_index": 1,
+      "selected_depth_value_m": 0.4940253794193268,
+      "source_shape": [
+        370,
+        17,
+        78,
+        120
+      ],
+      "source_crop_indices_python_0based_inclusive": {
+        "lat_min": 13,
+        "lat_max": 30,
+        "lon_min": 79,
+        "lon_max": 102
+      },
+      "source_crop_shape_lat_lon": [
+        18,
+        24
+      ],
+      "target_shape": [
+        180,
+        240
+      ],
+      "output_shape": [
+        370,
+        180,
+        240
+      ],
+      "interpolation_method": "Linear RegularGridInterpolator on the same index grid as Filipa MATLAB interp2, crop from write14days.m, inc=10",
+      "validation_dates": [
+        "2024-10-10",
+        "2024-10-13",
+        "2024-10-31"
+      ],
+      "validation_records": [
+        {
+          "n_compare": 26570,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "pearson": 1.0,
+          "date": "2024-10-10",
+          "raw_time_index": 348,
+          "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241010_HResNew.nc",
+          "shape_match": true,
+          "orientation_match": true
+        },
+        {
+          "n_compare": 26570,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "pearson": 1.0,
+          "date": "2024-10-13",
+          "raw_time_index": 351,
+          "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241013_HResNew.nc",
+          "shape_match": true,
+          "orientation_match": true
+        },
+        {
+          "n_compare": 26570,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "pearson": 1.0,
+          "date": "2024-10-31",
+          "raw_time_index": 369,
+          "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241031_HResNew.nc",
+          "shape_match": true,
+          "orientation_match": true
+        }
+      ],
+      "validation_rmse": {
+        "2024-10-10": 0.0,
+        "2024-10-13": 0.0,
+        "2024-10-31": 0.0
+      },
+      "validation_mae": {
+        "2024-10-10": 0.0,
+        "2024-10-13": 0.0,
+        "2024-10-31": 0.0
+      },
+      "validation_pearson": {
+        "2024-10-10": 1.0,
+        "2024-10-13": 1.0,
+        "2024-10-31": 1.0
+      },
+      "orientation_confirmed": true,
+      "all_days_processed": true,
+      "nan_problem_detected": false,
+      "nan_pct": 38.49537037037037,
+      "output_files": {
+        "thetao_surface_370_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.npy",
+        "LAT_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\LAT_hres.npy",
+        "LON_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\LON_hres.npy",
+        "BATHY_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\BATHY_hres.npy",
+        "MASK_hres.npy": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\MASK_hres.npy",
+        "dates_370.csv": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\dates_370.csv",
+        "thetao_surface_370_hres.nc": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\cmems_370_surface_to_hres_20260509_135642\\thetao_surface_370_hres.nc"
+      },
+      "final_verdict": "The 370-day CMEMS surface temperature dataset was interpolated to the canonical high-resolution grid and validated against the existing October HRes files."
+    },
+    "inputs": [
+      "thetao_20260427.nc",
+      "target grid/bathy from October predModel/HRes",
+      "surface depth index 1"
+    ],
+    "outputs": [
+      "thetao_surface_370_hres.npy",
+      "thetao_surface_370_hres.nc",
+      "LAT_hres.npy",
+      "LON_hres.npy",
+      "BATHY_hres.npy",
+      "MASK_hres.npy",
+      "dates_370.csv"
+    ],
+    "validation": [
+      {
+        "n_compare": 26570,
+        "rmse": 0.0,
+        "mae": 0.0,
+        "max_abs_error": 0.0,
+        "pearson": 1.0,
+        "date": "2024-10-10",
+        "raw_time_index": 348,
+        "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241010_HResNew.nc",
+        "shape_match": true,
+        "orientation_match": true
+      },
+      {
+        "n_compare": 26570,
+        "rmse": 0.0,
+        "mae": 0.0,
+        "max_abs_error": 0.0,
+        "pearson": 1.0,
+        "date": "2024-10-13",
+        "raw_time_index": 351,
+        "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241013_HResNew.nc",
+        "shape_match": true,
+        "orientation_match": true
+      },
+      {
+        "n_compare": 26570,
+        "rmse": 0.0,
+        "mae": 0.0,
+        "max_abs_error": 0.0,
+        "pearson": 1.0,
+        "date": "2024-10-31",
+        "raw_time_index": 369,
+        "hres_reference_file": "C:\\Users\\pedro\\Documents\\Filipa_dados\\data\\dadosParaPedro_Fresnel\\01.Data\\October\\HRes\\CMEMSnaza_20241031_HResNew.nc",
+        "shape_match": true,
+        "orientation_match": true
+      }
+    ],
+    "can_generate_hres_for_any_370_date": true
+  },
+  "pilot_availability": [
+    {
+      "date": "2024-07-03",
+      "image_idx_0_based": 249,
+      "day_index_1_based": 250,
+      "hres_180x240_available_in_python_output": true,
+      "roi_x490_72x117_available": true,
+      "step00_raw_roi_available": true,
+      "step00_norm_roi_available": true,
+      "existing_filipa_hres_nc_for_date": "",
+      "predmodel_1_exists_for_target_date": false,
+      "all_17_predmodels_exist_for_target_date": false,
+      "predmodel_1_path": "",
+      "class_id": 1,
+      "class_label": "C01_frontal",
+      "hres_shape": "[180, 240]",
+      "roi_shape": "[72, 117]",
+      "step00_shape": "[72, 117]",
+      "hres_valid_fraction": 0.6150462962962963,
+      "roi_valid_fraction": 0.9501424501424501,
+      "step00_valid_fraction": 0.9501424501424501,
+      "roi_matches_step00_raw_equal_nan": true,
+      "predmodel_folder_expected": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20240702",
+      "predmodel_expected_depth_count": 17,
+      "predmodel_existing_depth_count": 0,
+      "TEMPpred_STD_exists_for_date": false
+    },
+    {
+      "date": "2024-07-04",
+      "image_idx_0_based": 250,
+      "day_index_1_based": 251,
+      "hres_180x240_available_in_python_output": true,
+      "roi_x490_72x117_available": true,
+      "step00_raw_roi_available": true,
+      "step00_norm_roi_available": true,
+      "existing_filipa_hres_nc_for_date": "",
+      "predmodel_1_exists_for_target_date": false,
+      "all_17_predmodels_exist_for_target_date": false,
+      "predmodel_1_path": "",
+      "class_id": 1,
+      "class_label": "C01_frontal",
+      "hres_shape": "[180, 240]",
+      "roi_shape": "[72, 117]",
+      "step00_shape": "[72, 117]",
+      "hres_valid_fraction": 0.6150462962962963,
+      "roi_valid_fraction": 0.9501424501424501,
+      "step00_valid_fraction": 0.9501424501424501,
+      "roi_matches_step00_raw_equal_nan": true,
+      "predmodel_folder_expected": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20240703",
+      "predmodel_expected_depth_count": 17,
+      "predmodel_existing_depth_count": 0,
+      "TEMPpred_STD_exists_for_date": false
+    },
+    {
+      "date": "2023-12-22",
+      "image_idx_0_based": 55,
+      "day_index_1_based": 56,
+      "hres_180x240_available_in_python_output": true,
+      "roi_x490_72x117_available": true,
+      "step00_raw_roi_available": true,
+      "step00_norm_roi_available": true,
+      "existing_filipa_hres_nc_for_date": "",
+      "predmodel_1_exists_for_target_date": false,
+      "all_17_predmodels_exist_for_target_date": false,
+      "predmodel_1_path": "",
+      "class_id": 6,
+      "class_label": "C06_mixed",
+      "hres_shape": "[180, 240]",
+      "roi_shape": "[72, 117]",
+      "step00_shape": "[72, 117]",
+      "hres_valid_fraction": 0.6150462962962963,
+      "roi_valid_fraction": 0.9501424501424501,
+      "step00_valid_fraction": 0.9501424501424501,
+      "roi_matches_step00_raw_equal_nan": true,
+      "predmodel_folder_expected": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20231221",
+      "predmodel_expected_depth_count": 17,
+      "predmodel_existing_depth_count": 0,
+      "TEMPpred_STD_exists_for_date": false
+    },
+    {
+      "date": "2023-12-17",
+      "image_idx_0_based": 50,
+      "day_index_1_based": 51,
+      "hres_180x240_available_in_python_output": true,
+      "roi_x490_72x117_available": true,
+      "step00_raw_roi_available": true,
+      "step00_norm_roi_available": true,
+      "existing_filipa_hres_nc_for_date": "",
+      "predmodel_1_exists_for_target_date": false,
+      "all_17_predmodels_exist_for_target_date": false,
+      "predmodel_1_path": "",
+      "class_id": 6,
+      "class_label": "C06_mixed",
+      "hres_shape": "[180, 240]",
+      "roi_shape": "[72, 117]",
+      "step00_shape": "[72, 117]",
+      "hres_valid_fraction": 0.6150462962962963,
+      "roi_valid_fraction": 0.9501424501424501,
+      "step00_valid_fraction": 0.9501424501424501,
+      "roi_matches_step00_raw_equal_nan": true,
+      "predmodel_folder_expected": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\02.Simulations\\HighRes\\Daily_dpt_20231216",
+      "predmodel_expected_depth_count": 17,
+      "predmodel_existing_depth_count": 0,
+      "TEMPpred_STD_exists_for_date": false
+    }
+  ],
+  "matlab_dss_boundary": {
+    "write14days_only_hres_layer": true,
+    "write14days_hardcoded_paths": [
+      "I:\\dadosParaPedro_Fresnel",
+      "F:\\ProjectoInesOcean\\Lucrezia\\deptho_N.nc"
+    ],
+    "write14days_hardcoded_october_loop": true,
+    "runSimulations_generates_TEMPpred_STD": true,
+    "runSimulations_uses_DSS": true,
+    "runSimulations_hardcoded_paths": [
+      "I:\\dadosParaPedro_Fresnel",
+      "01.Data\\October\\HRes"
+    ],
+    "runSimulations_hardcoded_dates": [
+      "predDate = datetime('2024-10-30')+dayDate-1",
+      "for dayDate = 1:2"
+    ],
+    "dss_exe_exists": true,
+    "python_plus_dss_possible": true,
+    "python_plus_dss_missing_work": [
+      "port writealldata_naza/grid2gslib/import_gslib/readoutput_AUV/giveCoordinateInformation_naza logic or call equivalent helpers",
+      "generate DSS ssdir.par exactly like parFileDSS.m",
+      "run DSS.C.64.exe for 100 realizations per depth/date",
+      "read sim_*.out, compute median TEMPpred and variance/STD, write predModel_N.nc",
+      "validate against October predModels before using C01/C06 outputs"
+    ],
+    "matlab_required_for_hres": false,
+    "matlab_required_for_current_official_temppred_std_script": true
+  },
+  "recommendation": {
+    "selected_option": "Option 1",
+    "text": "Nao precisamos de MATLAB para HRes; ja temos HRes/ROI para C01/C06. Mas ainda precisamos de MATLAB/DSS ou de uma reimplementacao Python validada para TEMPpred/STD.",
+    "next_step": "Usar HRes/ROI existentes para qualquer analise de temperatura CMEMS; para TEMPpred/STD, escolher entre executar MATLAB/DSS com os scripts parametrizados ou portar runSimulations.m para Python+DSS e validar contra outubro."
+  }
+}

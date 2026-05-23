@@ -1,0 +1,9 @@
+﻿{
+    "queued_at":  "20260520_092939",
+    "finished_at":  "2026-05-20T11:02:26.1242054+01:00",
+    "waited_for_pid":  19312,
+    "command":  "python .\\FILIPA_DADOS\\scripts\\11a_run_minimal_boundary_planner_comparison.py --mission-duration-hours 12 --auv-number 2 --timeout-s 1800",
+    "exit_code":  1,
+    "log_file":  "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\step11a_queued_12h_2auv_then_shutdown_logs\\step11a_12h_2auv_queue_20260520_092939.log",
+    "shutdown_requested":  true
+}

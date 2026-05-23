@@ -1,0 +1,62 @@
+{
+  "all_31_temppred_classified": true,
+  "feature_matrix_shape": [
+    31,
+    15288
+  ],
+  "feature_matrix_expected": [
+    31,
+    15288
+  ],
+  "dictionary_fit_on_october": false,
+  "scaler_fit_on_october": false,
+  "normalization_used_step00_stats": true,
+  "classification_used_step00_mask_common": true,
+  "std_used_for_classification": false,
+  "std_used_only_for_diagnostics": true,
+  "descriptors_from_step08": true,
+  "assigned_descriptor_map_shapes": {
+    "gradient": [
+      31,
+      72,
+      117
+    ],
+    "boundary": [
+      31,
+      72,
+      117
+    ],
+    "heterogeneity": [
+      31,
+      72,
+      117
+    ],
+    "cold_region": [
+      31,
+      72,
+      117
+    ],
+    "warm_region": [
+      31,
+      72,
+      117
+    ],
+    "representative_zone": [
+      31,
+      72,
+      117
+    ],
+    "interest": [
+      31,
+      72,
+      117
+    ]
+  },
+  "mask_valid_cells": 8004,
+  "low_confidence_count": 3,
+  "mismatch_count": 13,
+  "class_counts": {
+    "2": 14,
+    "3": 17
+  }
+}

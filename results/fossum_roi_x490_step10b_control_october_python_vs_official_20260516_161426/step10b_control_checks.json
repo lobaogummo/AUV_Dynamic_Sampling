@@ -1,0 +1,24 @@
+{
+  "date": "2024-10-30",
+  "official_predmodel_found": true,
+  "python_predmodel_found": true,
+  "python_predmodel_generated_now": false,
+  "n_realizations": 100,
+  "selected_day_slice": 1,
+  "best_step06_slice": 1,
+  "std_official_closer_to": "variance",
+  "roi_shape_python": [
+    72,
+    117
+  ],
+  "roi_shape_official": [
+    72,
+    117
+  ],
+  "step06_matches_official_temppred": true,
+  "step06_matches_official_std": true,
+  "matlab_used": false,
+  "hres_regenerated": false,
+  "c01_c06_generated": false,
+  "verdict": "CONTROL_PASS_BUT_C01_C06_LOW_UNCERTAINTY_REAL"
+}

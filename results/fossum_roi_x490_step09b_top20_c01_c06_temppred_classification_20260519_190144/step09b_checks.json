@@ -1,0 +1,163 @@
+{
+  "top20_temppred_classified": true,
+  "feature_matrix_shape": [
+    20,
+    15288
+  ],
+  "feature_matrix_expected": [
+    20,
+    15288
+  ],
+  "dictionary_fit_on_top20": false,
+  "scaler_fit_on_top20": false,
+  "scaler_reconstructed_from_step05_canonical_feature_matrix": true,
+  "normalization_used_step00_stats": true,
+  "classification_used_step00_mask_common": true,
+  "std_used_for_classification": false,
+  "std_used_only_for_diagnostics": true,
+  "descriptors_from_step08": true,
+  "assigned_descriptor_map_shapes": {
+    "gradient": [
+      20,
+      72,
+      117
+    ],
+    "boundary": [
+      20,
+      72,
+      117
+    ],
+    "heterogeneity": [
+      20,
+      72,
+      117
+    ],
+    "cold_region": [
+      20,
+      72,
+      117
+    ],
+    "warm_region": [
+      20,
+      72,
+      117
+    ],
+    "representative_zone": [
+      20,
+      72,
+      117
+    ],
+    "interest": [
+      20,
+      72,
+      117
+    ]
+  },
+  "assigned_descriptor_maps_shape_ok": true,
+  "expected_classes_only_c01_c06": true,
+  "predicted_classes_in_c01_to_c06": true,
+  "mask_valid_cells": 8004,
+  "step10e_mask_matches_step00": true,
+  "low_confidence_count": 5,
+  "expected_vs_predicted_mismatch_count": 6,
+  "prototype_mismatch_diagnostic_rows": 10,
+  "c01_preserved_count": 5,
+  "c06_preserved_count": 9,
+  "expected_counts": {
+    "1": 10,
+    "6": 10
+  },
+  "predicted_counts": {
+    "1": 5,
+    "2": 5,
+    "6": 10
+  },
+  "transition_matrix": [
+    [
+      5,
+      4,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      9
+    ]
+  ],
+  "class_sizes_step05": [
+    {
+      "class_id": 1,
+      "n_days": 41,
+      "percent_days": 11.08108108108108,
+      "icv_sst_space": 1680.74951171875
+    },
+    {
+      "class_id": 2,
+      "n_days": 70,
+      "percent_days": 18.91891891891892,
+      "icv_sst_space": 1474.5084228515625
+    },
+    {
+      "class_id": 3,
+      "n_days": 50,
+      "percent_days": 13.513513513513514,
+      "icv_sst_space": 1351.87158203125
+    },
+    {
+      "class_id": 4,
+      "n_days": 107,
+      "percent_days": 28.91891891891892,
+      "icv_sst_space": 2005.1923828125
+    },
+    {
+      "class_id": 5,
+      "n_days": 30,
+      "percent_days": 8.108108108108109,
+      "icv_sst_space": 326.4110107421875
+    },
+    {
+      "class_id": 6,
+      "n_days": 72,
+      "percent_days": 19.45945945945946,
+      "icv_sst_space": 1129.506591796875
+    }
+  ]
+}

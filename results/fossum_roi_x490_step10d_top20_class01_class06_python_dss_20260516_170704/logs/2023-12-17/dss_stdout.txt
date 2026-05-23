@@ -1,0 +1,125 @@
+ulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 93 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 94 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 95 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 96 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 97 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 98 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 99 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 100 
+Preparing simulation
+ Samples outside area: 371980
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+ Elapsed time: 280 seconds               Press any key to continue...   
+-------------------------------------------------------------------------------

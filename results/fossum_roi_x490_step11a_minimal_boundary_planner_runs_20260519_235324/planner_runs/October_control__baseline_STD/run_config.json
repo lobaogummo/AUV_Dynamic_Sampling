@@ -1,0 +1,11 @@
+{
+  "run_id": "October_control__baseline_STD",
+  "case_id": "October_control",
+  "date": "2024-10-30",
+  "formulation": "baseline_STD",
+  "formula": "information_map = STD_norm",
+  "alpha": 0.0,
+  "input_nc": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11a_minimal_boundary_planner_runs_20260519_235324\\planner_inputs\\October_control__baseline_STD_planner_interface.nc",
+  "single_auv": true,
+  "mission_duration_hours": 12.0
+}

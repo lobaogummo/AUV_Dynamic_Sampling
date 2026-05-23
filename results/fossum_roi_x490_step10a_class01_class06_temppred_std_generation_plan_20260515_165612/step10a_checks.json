@@ -1,0 +1,17 @@
+{
+  "class01_count": 41,
+  "class06_count": 72,
+  "total_class01_class06": 113,
+  "expected_class01_count": 41,
+  "expected_class06_count": 72,
+  "expected_total": 113,
+  "counts_match_expected": true,
+  "dates_mapped_with_dates_370": true,
+  "already_available_in_step06_count": 0,
+  "missing_temppred_std_count": 113,
+  "filipa_requested_root_exists": false,
+  "inventory_rows": 66,
+  "strong_auto_generation_candidates": 0,
+  "dependencies_or_inputs_missing": 2,
+  "verdict": "NEEDS_FILIPA_SCRIPT_OR_INPUTS"
+}

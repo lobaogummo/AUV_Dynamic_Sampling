@@ -1,0 +1,44 @@
+{
+  "step10d_output": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704",
+  "fixed_scale_output": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_fixed_scale_figures_20260516_192930",
+  "predmodel_nc_count": 20,
+  "npy_files_in_step10d_or_fixed_scale": 0,
+  "persisted_temppred_roi_stack_20_72_117_exists": false,
+  "persisted_std_roi_stack_20_72_117_exists": false,
+  "persisted_lat_grid_72_117_exists_in_step10d_or_fixed": false,
+  "persisted_lon_grid_72_117_exists_in_step10d_or_fixed": false,
+  "persisted_bathy_grid_72_117_exists_in_step10d_or_fixed": false,
+  "persisted_mask_grid_72_117_exists_in_step10d_or_fixed": false,
+  "complete_persisted_roi_array_set_exists": false,
+  "step00_lat_shape": [
+    72,
+    117
+  ],
+  "step00_lon_shape": [
+    72,
+    117
+  ],
+  "step00_bathy_shape": [
+    72,
+    117
+  ],
+  "step00_mask_shape": [
+    72,
+    117
+  ],
+  "step00_mask_valid_cells": 8004,
+  "step00_mask_valid_expected_8004": true,
+  "roi_reference_matches_step00_lat": true,
+  "roi_reference_matches_step00_lon": true,
+  "roi_reference_matches_step00_bathy": true,
+  "roi_reference_matches_step00_mask": false,
+  "fixed_scale_figures_used_roi_in_memory": true,
+  "fixed_scale_source_files": "Step10D predmodels/*.nc full-grid variables TEMPpred/STD sliced with ROI_REF paper_roi_x490 indices and mask; Step06 ROI arrays for October comparison",
+  "fixed_scale_used_persisted_roi_arrays": false,
+  "verdict": "NEEDS_STEP10E_ROI_EXTRACTION",
+  "roi_reference_mask_valid_cells": 8182,
+  "mask_cells_different": 178,
+  "roi_reference_extra_valid_cells_vs_step00": 178,
+  "step00_extra_valid_cells_vs_roi_reference": 0,
+  "recommended_step10e_mask": "Step00 mask_common_roi_x490.npy"
+}

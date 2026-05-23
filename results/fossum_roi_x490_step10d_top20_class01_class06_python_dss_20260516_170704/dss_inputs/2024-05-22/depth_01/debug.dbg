@@ -1,0 +1,1571 @@
+ Debugging file (1/2/3): debug.dbg 1
+Log prepared!
+Pseudo Harddata parameters loaded...
+Blocks parameters loaded...
+ Output file: C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\dss_outputs\2024-05-22\depth_01\sim
+ Realizations (#): 100
+ Bias Correction: number of simulations = 20
+ Correction for mean = 0
+ Correction for variance = 0
+ Not simulated nodes: -999.25
+Miscelaneous parameters loaded...
+ Max. previous simulated nodes: 12
+ (0)two-part search/(1)data nodes flag: 1
+ Number of samples per octant: 0
+ Seed: 110011
+Parameters loaded...
+ XX: nodes, min., spacing: 240 1 1
+ YY: nodes, min., spacing: 180 1 1
+ ZZ: nodes, min., spacing: 16 1 1
+Grid Parameters loaded...
+ Zones file: C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704\dss_inputs\2024-05-22\depth_01\mask.out
+ Using Bihistogram? (0)No /(1)Yes: 0
+Bihistogram Parameters loaded...
+ Nst, C0: 1 0.1
+Loading VARIOGRAMZ1S1
+Variogram model: 1
+Covariance proportion: 0.9
+Angle one: 0
+Angle two: 0
+Angle three: 0
+Amplitude one: 1000
+Amplitude two: 400
+Amplitude three: 100
+ Using Bihistogram? (0)No /(1)Yes: 0
+Bihistogram Parameters loaded...
+ Nst, C0: 1 0.1
+Loading VARIOGRAMZ2S1
+Variogram model: 1
+Covariance proportion: 0.9
+Angle one: 0
+Angle two: 0
+Angle three: 0
+Amplitude one: 1000
+Amplitude two: 400
+Amplitude three: 100
+ Reading zones datafile 
+zone data loaded
+zone data loaded
+ Kriging type (0)SK (1)OK (2)SK local means (3)KED (4)ColK-Gcc (5)ColK-Lcc (6)LVM-ColK-Gcc (7)LVM-ColK-Lcc: 0
+ BUILDING COVARIANCE TABLE 
+ Covariance Look up table and search for previously
+ simulated grid nodes.  The maximum range in each
+ coordinate direction for covariance look up is:
+     X direction: 99
+     Y direction: 99
+     Z direction: 15
+ Node values are not searched beyond this distance! 
+
+ BUILDING COVARIANCE TABLE 
+ Covariance Look up table and search for previously
+ simulated grid nodes.  The maximum range in each
+ coordinate direction for covariance look up is:
+     X direction: 99
+     Y direction: 99
+     Z direction: 15
+ Node values are not searched beyond this distance! 
+
+ BEGIN SIMULATION
+ Working on realization number 1 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 2 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 3 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 4 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 5 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 6 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 7 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 8 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 9 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 10 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 11 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 12 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 13 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 14 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 15 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 16 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 17 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 18 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 19 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 20 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 21 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 22 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 23 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 24 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 25 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 26 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 27 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 28 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 29 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 30 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 31 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 32 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 33 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 34 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 35 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 36 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 37 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 38 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 39 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 40 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 41 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 42 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 43 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 44 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 45 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 46 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 47 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 48 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 49 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 50 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 51 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 52 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 53 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 54 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 55 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 56 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 57 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 58 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 59 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 60 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 61 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 62 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 63 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 64 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 65 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 66 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 67 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 68 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 69 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 1 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 70 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 71 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 2 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 72 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 73 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 74 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 75 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 76 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 77 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 78 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 79 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 80 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 81 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 82 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 83 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 84 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 85 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 86 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 87 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 88 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 89 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 90 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 91 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 92 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 93 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 94 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 5 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 95 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 96 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 97 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 98 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 99 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 3 seconds              
+-------------------------------------------------------------------------------
+ Working on realization number 100 
+Preparing simulation
+ Samples outside area: 371978
+
+Simulating
+ .progress. 0% 
+ .progress. 14.4676% 
+ .progress. 28.9352% 
+ .progress. 43.4028% 
+ .progress. 57.8704% 
+ .progress. 72.338% 
+ .progress. 86.8056% 
+-------------------------------------------------------------------------------
+ Simulation Elapsed time: 4 seconds              
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+ Elapsed time: 504 seconds               Press any key to continue...   
+-------------------------------------------------------------------------------

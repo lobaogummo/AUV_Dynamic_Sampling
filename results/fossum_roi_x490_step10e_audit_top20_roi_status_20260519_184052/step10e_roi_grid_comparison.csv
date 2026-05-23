@@ -1,0 +1,5 @@
+item,step00_shape,reference_shape,allclose,max_abs_diff,mean_abs_diff
+LAT,"[72, 117]","[72, 117]",True,0.0,0.0
+LON,"[72, 117]","[72, 117]",True,0.0,0.0
+BATHY,"[72, 117]","[72, 117]",True,0.0,0.0
+MASK,"[72, 117]","[72, 117]",False,178.0,0.021130104463437795

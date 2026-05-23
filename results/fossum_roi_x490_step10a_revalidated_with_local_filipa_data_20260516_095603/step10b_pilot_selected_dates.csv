@@ -1,0 +1,5 @@
+date,day_index_370,image_idx_0_based,class_id,class_label,selection_reason,input_availability_status,generation_feasibility,priority_rank,priority_score
+2024-07-03,250,249,1,C01_frontal,Top-priority C01 pilot candidate from Step10A priority list (rank 1); raw CMEMS available locally.,raw_cmems_available_requires_hres_and_simulation,REQUIRES_WRITE14DAYS_PLUS_MATLAB_DSS_ADAPTATION,1,0.5734867691310943
+2024-07-04,251,250,1,C01_frontal,Top-priority C01 pilot candidate from Step10A priority list (rank 2); raw CMEMS available locally.,raw_cmems_available_requires_hres_and_simulation,REQUIRES_WRITE14DAYS_PLUS_MATLAB_DSS_ADAPTATION,2,0.5647550887494599
+2023-12-22,56,55,6,C06_mixed,Top-priority C06 pilot candidate from Step10A priority list (rank 8); raw CMEMS available locally.,raw_cmems_available_requires_hres_and_simulation,REQUIRES_WRITE14DAYS_PLUS_MATLAB_DSS_ADAPTATION,8,0.4959135223180055
+2023-12-17,51,50,6,C06_mixed,Top-priority C06 pilot candidate from Step10A priority list (rank 16); raw CMEMS available locally.,raw_cmems_available_requires_hres_and_simulation,REQUIRES_WRITE14DAYS_PLUS_MATLAB_DSS_ADAPTATION,16,0.4676932441377578

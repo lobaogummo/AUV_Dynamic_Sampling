@@ -1,0 +1,9 @@
+{
+  "run_id": "C06_representative__baseline_STD",
+  "case_id": "C06_representative",
+  "date": "2023-12-22",
+  "descriptor": "none",
+  "alpha": 0.0,
+  "mission_duration_hours": 12.0,
+  "auv_number": 1
+}

@@ -1,0 +1,11 @@
+{
+  "n_pending_days": 113,
+  "n_realizations_per_day": 100,
+  "sim_size_bytes_assumed": 6752988,
+  "estimated_total_bytes": 81540664400,
+  "estimated_total_gb": 75.94,
+  "free_bytes": 35056689152,
+  "free_gb": 32.65,
+  "sufficient_space_with_15_percent_margin": false,
+  "note": "Estimate includes sim_*.out, predModel and GSLIB inputs. It intentionally keeps sim outputs as requested."
+}

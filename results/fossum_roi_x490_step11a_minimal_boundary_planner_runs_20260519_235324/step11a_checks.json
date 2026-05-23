@@ -1,0 +1,18 @@
+{
+  "cases_processed": 3,
+  "planned_runs": 9,
+  "successful_runs": 9,
+  "failed_runs": 0,
+  "baseline_maps_used": true,
+  "enriched_maps_used": true,
+  "operational_constraints_preserved_in_runtime_copy": true,
+  "original_planner_modified": false,
+  "planner_received_different_maps": true,
+  "trajectories_generated": true,
+  "metrics_calculated": true,
+  "figures_created": 7,
+  "modelhops_true": true,
+  "single_auv": true,
+  "mission_duration_hours": 12.0,
+  "verdict": "STEP11A_COMPLETED_BASELINE_VS_BOUNDARY_RESULTS_READY"
+}

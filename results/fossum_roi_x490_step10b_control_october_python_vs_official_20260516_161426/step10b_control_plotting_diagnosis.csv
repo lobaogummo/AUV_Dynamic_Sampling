@@ -1,0 +1,4 @@
+item,diagnosis,status
+STD_variable,Use predModel STD as variance; STD_sqrt_variance is diagnostic only.,OK
+day_slice,Use slice 1; best Step06 match slice is 1.,OK
+C01_C06_STD_panel,Pilot C01/C06 STD panel uses the same slice and variance variable as October control.,LOW_UNCERTAINTY_REAL

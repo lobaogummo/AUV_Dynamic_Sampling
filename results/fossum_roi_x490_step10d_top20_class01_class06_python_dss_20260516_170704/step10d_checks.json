@@ -1,0 +1,14 @@
+{
+  "c01_days": 10,
+  "c06_days": 10,
+  "total_days": 20,
+  "top_per_class": 10,
+  "predmodels_success_or_already_done": 20,
+  "failed_days": 0,
+  "n_realizations_per_day": 100,
+  "std_definition": "variance",
+  "matlab_used": false,
+  "hres_regenerated": false,
+  "figures_created": 9,
+  "verdict": "ALL_C01_C06_PREDMODELS_GENERATED_READY_FOR_ROI_EXTRACTION"
+}

@@ -1,0 +1,12 @@
+{
+  "run_id": "C01_representative__baseline_STD",
+  "case_id": "C01_representative",
+  "date": "2024-08-24",
+  "formulation": "baseline_STD",
+  "formula": "information_map = STD_norm",
+  "alpha": 0.0,
+  "input_nc": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11a_minimal_boundary_planner_runs_20260520_102117\\planner_inputs\\C01_representative__baseline_STD_planner_interface.nc",
+  "single_auv": false,
+  "auv_number": 2,
+  "mission_duration_hours": 12.0
+}

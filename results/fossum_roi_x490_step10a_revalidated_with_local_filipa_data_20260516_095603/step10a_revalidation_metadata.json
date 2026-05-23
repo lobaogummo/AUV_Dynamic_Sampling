@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-05-16T09:57:25",
+  "root": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS",
+  "previous_step10a": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10a_class01_class06_temppred_std_generation_plan_20260515_165612",
+  "filipa_root": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel",
+  "step09_reused_not_rerun": true,
+  "no_retraining": true,
+  "no_clustering": true,
+  "no_planner": true
+}

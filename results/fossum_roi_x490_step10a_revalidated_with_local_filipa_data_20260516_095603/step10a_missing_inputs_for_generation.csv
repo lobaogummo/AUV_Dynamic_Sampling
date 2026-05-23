@@ -1,0 +1,4 @@
+missing_or_blocking_item,reason
+Adapted MATLAB batch wrapper for arbitrary C01/C06 dates,Existing scripts contain hardcoded I:/ paths and October-specific date/output folders.
+HRes windows for selected C01/C06 pilot dates,Only October HRes NetCDF files are present; selected C01/C06 dates are 2023-12 to 2024-09.
+MATLAB on PATH,Needed to run the original Filipa scripts directly.

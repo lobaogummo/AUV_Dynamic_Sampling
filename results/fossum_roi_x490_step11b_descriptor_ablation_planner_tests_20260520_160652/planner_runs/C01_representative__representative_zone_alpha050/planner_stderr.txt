@@ -1,0 +1,8 @@
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652\planner_runs\C01_representative__representative_zone_alpha050\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652\planner_runs\C01_representative__representative_zone_alpha050\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652\planner_runs\C01_representative__representative_zone_alpha050\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652\planner_runs\C01_representative__representative_zone_alpha050\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

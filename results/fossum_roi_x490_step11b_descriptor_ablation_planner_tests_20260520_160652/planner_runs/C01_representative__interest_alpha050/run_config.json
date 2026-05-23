@@ -1,0 +1,9 @@
+{
+  "run_id": "C01_representative__interest_alpha050",
+  "case_id": "C01_representative",
+  "date": "2024-08-24",
+  "descriptor": "interest",
+  "alpha": 0.5,
+  "mission_duration_hours": 12.0,
+  "auv_number": 1
+}

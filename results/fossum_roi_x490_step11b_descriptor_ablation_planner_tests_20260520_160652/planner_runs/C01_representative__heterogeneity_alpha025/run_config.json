@@ -1,0 +1,9 @@
+{
+  "run_id": "C01_representative__heterogeneity_alpha025",
+  "case_id": "C01_representative",
+  "date": "2024-08-24",
+  "descriptor": "heterogeneity",
+  "alpha": 0.25,
+  "mission_duration_hours": 12.0,
+  "auv_number": 1
+}

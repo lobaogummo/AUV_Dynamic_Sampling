@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-05-15T16:56:12.914006",
+  "script": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\scripts\\10a_prepare_class01_class06_temppred_std_generation.py",
+  "inputs": {
+    "step00": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+    "step05": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+    "step06": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\october_surface_temppred_std_roi_x490_20260511_155923",
+    "step08": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step08_final_descriptors_20260514_164854",
+    "filipa_data": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel",
+    "latest_step09": "C:\\Users\\E713181\\OneDrive - EDP\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018"
+  },
+  "checks": {
+    "class01_count": 41,
+    "class06_count": 72,
+    "total_class01_class06": 113,
+    "expected_class01_count": 41,
+    "expected_class06_count": 72,
+    "expected_total": 113,
+    "counts_match_expected": true,
+    "dates_mapped_with_dates_370": true,
+    "already_available_in_step06_count": 0,
+    "missing_temppred_std_count": 113,
+    "filipa_requested_root_exists": false,
+    "inventory_rows": 66,
+    "strong_auto_generation_candidates": 0,
+    "dependencies_or_inputs_missing": 2,
+    "verdict": "NEEDS_FILIPA_SCRIPT_OR_INPUTS"
+  }
+}

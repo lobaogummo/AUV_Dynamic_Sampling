@@ -1,0 +1,22 @@
+{
+  "cases": [
+    "C06_representative"
+  ],
+  "planned_runs": 11,
+  "successful_runs": 10,
+  "failed_runs": 1,
+  "descriptors_tested": [
+    "boundary",
+    "gradient",
+    "heterogeneity",
+    "representative_zone",
+    "interest"
+  ],
+  "alphas": [
+    0.25,
+    0.5
+  ],
+  "mission_duration_hours": 12.0,
+  "auv_number": 1,
+  "verdict": "STEP11B_COMPLETED_WITH_WARNINGS"
+}

@@ -1,0 +1,21 @@
+{
+  "class01_count": 41,
+  "class06_count": 72,
+  "total": 113,
+  "counts_match_expected": true,
+  "dates_match_step00": true,
+  "classes_match_step05": true,
+  "date_min": "2023-12-01",
+  "date_max": "2024-09-18",
+  "october_2024_c01_c06_count": 0,
+  "filipa_root": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel",
+  "data_inventory_rows": 616,
+  "script_inventory_rows": 13,
+  "matlab_available_on_path": false,
+  "dss_executable_found": true,
+  "selected_dates_with_ready_predmodel": 0,
+  "selected_dates_with_hres": 0,
+  "pilot_size": 4,
+  "can_execute_step10b_automatically_now": false,
+  "verdict": "NEEDS_FILIPA_SCRIPT_OR_INPUTS"
+}

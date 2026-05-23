@@ -1,0 +1,12 @@
+{
+  "original_write_hash_before_after_same": true,
+  "original_run_hash_before_after_same": true,
+  "new_scripts_contain_I_drive": false,
+  "pilot_dates_in_config": true,
+  "dry_run_default": true,
+  "dss_exists": true,
+  "thetao_exists": true,
+  "matlab_on_path": false,
+  "expected_predmodels_exist_before_generation": false,
+  "verdict": "READY_FOR_MANUAL_MATLAB_DRY_RUN"
+}

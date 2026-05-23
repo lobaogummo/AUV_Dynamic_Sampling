@@ -1,0 +1,9 @@
+{
+  "run_id": "C06_representative__representative_zone_alpha050",
+  "case_id": "C06_representative",
+  "date": "2023-12-22",
+  "descriptor": "representative_zone",
+  "alpha": 0.5,
+  "mission_duration_hours": 12.0,
+  "auv_number": 1
+}

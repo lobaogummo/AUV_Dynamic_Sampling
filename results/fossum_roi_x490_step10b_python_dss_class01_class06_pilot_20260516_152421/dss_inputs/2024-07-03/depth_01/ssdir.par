@@ -1,0 +1,146 @@
+#*************************************************************************************#
+#             PARALLEL DIRECT SEQUENCIAL SIMULATION PARAMETER FILE                    #
+#*************************************************************************************#
+
+[ZONES]
+ZONESFILE = C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10b_python_dss_class01_class06_pilot_20260516_152421\dss_inputs\2024-07-03\depth_01\mask.out         # File with zones
+NZONES = 2    # Number of zones
+
+[HARDDATA1]
+DATAFILE  =C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10b_python_dss_class01_class06_pilot_20260516_152421\dss_inputs\2024-07-03\depth_01\temp.gslib   # Hard Data file
+COLUMNS   = 4
+XCOLUMN   = 1
+YCOLUMN   = 2
+ZCOLUMN   = 3
+VARCOLUMN = 4
+WTCOLUMN  = 0
+MINVAL   = 14.675154685974121
+MAXVAL   = 19.079999923706055
+USETRANS  = 1
+TRANSFILE = Cluster.trn
+
+[HARDDATA2]
+DATAFILE  =C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10b_python_dss_class01_class06_pilot_20260516_152421\dss_inputs\2024-07-03\depth_01\auxi.gslib   # Hard Data file
+COLUMNS   = 4
+XCOLUMN   = 1
+YCOLUMN   = 2
+ZCOLUMN   = 3
+VARCOLUMN = 4
+WTCOLUMN  = 0
+MINVAL   = 14.675154685974121
+MAXVAL   = 19.079999923706055
+USETRANS  = 1
+TRANSFILE = Cluster.trn
+
+[HARDDATA]
+ZMIN     = 14.675154685974121
+ZMAX     = 19.079999923706055
+LTAIL     = 1
+LTPAR    = 14.675154685974121
+UTAIL     = 1
+UTPAR    = 19.079999923706055
+
+[SIMULATION]
+OUTFILE   = C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10b_python_dss_class01_class06_pilot_20260516_152421\dss_outputs\2024-07-03\depth_01\sim
+NSIMS     = 100
+NTRY       = 20
+AVGCORR   = 0
+VARCORR   = 0
+
+[GRID]
+NX        = 240
+NY        = 180
+NZ        = 16
+ORIGX     = 1
+ORIGY     = 1
+ORIGZ     = 1
+SIZEX     = 1
+SIZEY     = 1
+SIZEZ     = 1
+
+[GENERAL]
+NULLVAL       = -999.25
+SEED         = 110011
+USEHEADERS    = 1
+FILETYPE     = GEOEAS
+
+[SEARCH]
+NDMIN   = 8
+NDMAX   = 32
+NODMAX  = 12
+SSTRAT  = 1
+MULTS   = 0
+NMULTS  = 1
+NOCT    = 0
+RADIUS1 = 2000
+RADIUS2 = 800
+RADIUS3 = 200
+SANG1   = 0
+SANG2   = 0
+SANG3   = 0
+
+[KRIGING]
+KTYPE        = 0
+COLOCORR     = 0
+SOFTFILE     = no file
+LVMFILE      = no file
+NVARIL        = 1
+ICOLLVM       = 1
+CCFILE       = no file
+RESCALE      = 0
+
+[VARIOGRAMZ1]
+NSTRUCT  = 1
+NUGGET    =0.1
+[VARIOGRAMZ1S1]
+TYPE =1
+COV  =0.9
+ANG1 =0
+ANG2 =0
+ANG3 =0
+AA   =1000
+AA1  =400
+AA2  =100
+
+[VARIOGRAMZ2]
+NSTRUCT  = 1
+NUGGET    =0.1
+[VARIOGRAMZ2S1]
+TYPE =1
+COV  =0.9
+ANG1 =0
+ANG2 =0
+ANG3 =0
+AA   =1000
+AA1  =400
+AA2  =100
+
+[BIHIST1]
+USEBIHIST        = 0 #Use Bihist? 1-yes 0-no
+BIHISTFILE       = no file
+NCLASSES         = 10
+AUXILIARYFILE    = no file
+
+[BIHIST2]
+USEBIHIST        = 0 #Use Bihist? 1-yes 0-no
+BIHISTFILE       = no file
+NCLASSES         = 10
+AUXILIARYFILE    = no file
+
+[DEBUG]
+DBGLEVEL  = 1
+DBGFILE   = debug.dbg
+
+[COVTAB]
+MAXCTX = 200
+MAXCTY = 200
+MAXCTZ = 200
+
+[BLOCKS]
+USEBLOCKS  = 0
+BLOCKSFILE = no file
+MAXBLOCKS  = 100
+[PSEUDOHARD]
+USEPSEUDO  = 0
+PSEUDOFILE = no file
+PSEUDOCORR = 0

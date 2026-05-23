@@ -1,0 +1,5 @@
+item,shape,matches_step00,max_diff_or_count
+LAT,"[72, 117]",True,0.0
+LON,"[72, 117]",True,0.0
+BATHY,"[72, 117]",True,0.0
+MASK,"[72, 117]",True,0.0

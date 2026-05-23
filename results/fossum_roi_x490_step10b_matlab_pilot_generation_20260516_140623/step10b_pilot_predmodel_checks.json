@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-05-16T14:06:47",
+  "output_dir": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10b_matlab_pilot_generation_20260516_140623",
+  "expected_predmodels": 68,
+  "existing_predmodels": 0,
+  "pilot_dates_complete": false,
+  "all_existing_have_TEMPpred": false,
+  "all_existing_have_STD": false,
+  "std_not_all_zero_for_existing": false
+}

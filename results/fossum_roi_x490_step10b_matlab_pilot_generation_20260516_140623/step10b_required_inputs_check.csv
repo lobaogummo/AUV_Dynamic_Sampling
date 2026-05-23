@@ -1,0 +1,6 @@
+input,path,exists,required_for
+thetao_20260427.nc,C:\Users\E713181\Documents\Dados\FILIPA_DADOS\data\dadosParaPedro_Fresnel\dadosParaPedro_Fresnel\01.Data\ALL\thetao_20260427.nc,True,HRes generation
+DSS.C.64.exe,C:\Users\E713181\Documents\Dados\FILIPA_DADOS\data\dadosParaPedro_Fresnel\dadosParaPedro_Fresnel\input_all\DSS.C.64.exe,True,DSS simulation
+bathy_reference_hres,C:\Users\E713181\Documents\Dados\FILIPA_DADOS\data\dadosParaPedro_Fresnel\dadosParaPedro_Fresnel\01.Data\October\HRes\CMEMSnaza_20241030_HResNew.nc,True,HRes BATHY grid
+pilot_dates_csv,C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step10a_revalidated_with_local_filipa_data_20260516_095603\step10b_pilot_selected_dates.csv,True,pilot selection
+Filipa Functions,C:\Users\E713181\Documents\Dados\FILIPA_DADOS\data\dadosParaPedro_Fresnel\dadosParaPedro_Fresnel\00.Code\Functions,True,MATLAB simulation helpers

@@ -1,0 +1,40 @@
+{
+  "predmodels_found": 20,
+  "dates_processed": 20,
+  "c01_count": 10,
+  "c06_count": 10,
+  "selected_slice": 1,
+  "std_definition": "variance",
+  "TEMPpred_shape": [
+    20,
+    72,
+    117
+  ],
+  "STD_variance_shape": [
+    20,
+    72,
+    117
+  ],
+  "LAT_shape": [
+    72,
+    117
+  ],
+  "LON_shape": [
+    72,
+    117
+  ],
+  "BATHY_shape": [
+    72,
+    117
+  ],
+  "mask_valid_cells": 8004,
+  "mask_equals_step00": true,
+  "lat_lon_bathy_match_step00": true,
+  "temppred_not_all_nan": true,
+  "std_not_all_zero": true,
+  "netcdf_created": true,
+  "figures_created": 8,
+  "dss_executed": false,
+  "predmodels_regenerated": false,
+  "verdict": "READY_FOR_STEP09B_CLASSIFY_TOP20_C01_C06_TEMPRED"
+}

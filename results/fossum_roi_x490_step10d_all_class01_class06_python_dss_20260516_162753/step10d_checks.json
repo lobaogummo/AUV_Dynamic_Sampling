@@ -1,0 +1,14 @@
+{
+  "c01_days": 41,
+  "c06_days": 72,
+  "total_days": 113,
+  "hres_available_all": true,
+  "dss_found": true,
+  "n_realizations_per_day": 100,
+  "expected_sim_outputs": 11300,
+  "expected_predmodels": 113,
+  "disk_space_sufficient": false,
+  "matlab_used": false,
+  "hres_regenerated": false,
+  "verdict": "BATCH_DRY_RUN_READY_BUT_DISK_SPACE_WARNING"
+}

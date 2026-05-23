@@ -1,0 +1,8 @@
+{
+  "baseline": "information_map = STD_norm",
+  "enriched": "information_map = (1 - alpha) * STD_norm + alpha * boundary_score_norm",
+  "alphas": [
+    0.25,
+    0.5
+  ]
+}

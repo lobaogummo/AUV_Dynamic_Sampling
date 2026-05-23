@@ -1,0 +1,9 @@
+{
+  "selected_slice": 1,
+  "std_definition": "variance",
+  "mask": "Step00 mask_common_roi_x490",
+  "roi_shape": [
+    72,
+    117
+  ]
+}

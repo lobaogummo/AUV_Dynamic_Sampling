@@ -1,0 +1,97 @@
+{
+  "original_scripts": {
+    "write14days.m": {
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\00.Code\\write14days.m",
+      "sha256": "0661fe51d17a48b799623f2bad825579ca0424109bd445689b2aacc6073023ab",
+      "inputs": [
+        "thetao_20260427.nc",
+        "external bathymetry deptho_N.nc in original script"
+      ],
+      "outputs": [
+        "CMEMSGrid NetCDF windows",
+        "HRes NetCDF windows"
+      ],
+      "hardcoded_paths": [
+        "I:/dadosParaPedro_Fresnel",
+        "F:/ProjectoInesOcean/Lucrezia/deptho_N.nc"
+      ],
+      "hardcoded_dates": [
+        "October loop: for i = 1:31",
+        "uses end of thetao time series to select October days"
+      ],
+      "main_variables": [
+        "TEMPALL",
+        "TIMEALL",
+        "LAT",
+        "LON",
+        "DEPT",
+        "BATHY",
+        "TempHRes"
+      ],
+      "toolboxes": [
+        "MATLAB NetCDF functions",
+        "Mapping Toolbox for projcrs/projfwd"
+      ]
+    },
+    "runSimulations.m": {
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\00.Code\\runSimulations.m",
+      "sha256": "b0dc5bb9bf70ef73b15b4ecebfc63d95ca331c6726e019ed22e08ceb943598b7",
+      "inputs": [
+        "HRes NetCDF windows",
+        "DSS.C.64.exe",
+        "Functions/*.m"
+      ],
+      "outputs": [
+        "Daily_dpt_* folders",
+        "Priori_Nazare_* folders",
+        "predModel_N.nc with TEMPpred/STD"
+      ],
+      "hardcoded_paths": [
+        "I:/dadosParaPedro_Fresnel",
+        "01.Data/October/HRes"
+      ],
+      "hardcoded_dates": [
+        "for dayDate = 1:2",
+        "predDate = datetime('2024-10-30') + dayDate - 1"
+      ],
+      "main_variables": [
+        "predDate",
+        "ProjectPath",
+        "DataPath",
+        "variogram",
+        "nbrSim",
+        "inputDays",
+        "outputDays"
+      ],
+      "toolboxes": [
+        "MATLAB NetCDF functions",
+        "Mapping Toolbox",
+        "external DSS executable"
+      ]
+    }
+  },
+  "adaptation": {
+    "created_folder": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\scripts\\matlab_step10b_pilot",
+    "dry_run_default": true,
+    "pilot_dates_from_config": [
+      "2024-07-03",
+      "2024-07-04",
+      "2023-12-22",
+      "2023-12-17"
+    ],
+    "target_dates_not_hardcoded_in_main_body": true,
+    "new_scripts_use_local_paths": true,
+    "new_scripts_do_not_modify_originals": true,
+    "bathy_adaptation": "Uses existing October HRes BATHY as a grid-consistent reference for new HRes files.",
+    "required_hres_end_dates": [
+      "2023-12-16",
+      "2023-12-18",
+      "2023-12-21",
+      "2023-12-23",
+      "2024-07-02",
+      "2024-07-03",
+      "2024-07-04",
+      "2024-07-05"
+    ]
+  }
+}

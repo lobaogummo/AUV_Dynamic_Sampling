@@ -1,0 +1,19 @@
+{
+  "cases_processed": 3,
+  "planned_runs": 9,
+  "successful_runs": 8,
+  "failed_or_timeout_runs": 1,
+  "timeout_runs": 1,
+  "baseline_maps_used": true,
+  "enriched_maps_used": true,
+  "operational_constraints_preserved_in_runtime_copy": true,
+  "original_planner_modified": false,
+  "planner_received_different_maps": true,
+  "trajectories_generated": true,
+  "metrics_calculated": true,
+  "figures_created": 7,
+  "modelhops_true": true,
+  "single_auv": true,
+  "note": "October baseline timed out but produced a routes_file; treat it as warning/partial until rerun with longer timeout.",
+  "verdict": "STEP11A_COMPLETED_WITH_OVERLAY_TRAJECTORIES_REVIEW_PARAMETERS"
+}

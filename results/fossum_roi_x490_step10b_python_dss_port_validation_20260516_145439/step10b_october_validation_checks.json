@@ -1,0 +1,10 @@
+{
+  "dss_called": true,
+  "dss_success_count": 1,
+  "validation_rows": 1,
+  "validation_statuses": [
+    "FAIL"
+  ],
+  "seed_reproducibility_warning": true,
+  "verdict": "PYTHON_DSS_PORT_NEEDS_FIXES"
+}

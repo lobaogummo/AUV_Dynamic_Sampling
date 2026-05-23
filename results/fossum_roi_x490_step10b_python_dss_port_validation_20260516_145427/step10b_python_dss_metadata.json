@@ -1,0 +1,14 @@
+{
+  "mode": "validate_october",
+  "dates": [
+    "2024-10-30",
+    "2024-10-31"
+  ],
+  "dry_run": true,
+  "execute_dss": false,
+  "max_depths": 1,
+  "max_realizations": 5,
+  "hres_regenerated": false,
+  "matlab_used": false,
+  "dss_exe": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\data\\dadosParaPedro_Fresnel\\dadosParaPedro_Fresnel\\input_all\\DSS.C.64.exe"
+}

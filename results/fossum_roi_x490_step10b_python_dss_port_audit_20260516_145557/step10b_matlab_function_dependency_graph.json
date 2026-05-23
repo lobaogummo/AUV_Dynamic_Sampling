@@ -1,0 +1,30 @@
+{
+  "runSimulations.m": [
+    "grid2gslib.m",
+    "writealldata_naza.m",
+    "parFileDSS.m",
+    "readoutput_AUV.m",
+    "giveCoordinateInformation_naza.m"
+  ],
+  "grid2gslib.m": [
+    "save_var.m"
+  ],
+  "writealldata_naza.m": [
+    "grid2gslib.m",
+    "projfwd/projcrs"
+  ],
+  "parFileDSS.m": [
+    "DSS.C.64.exe",
+    "ssdir.par"
+  ],
+  "readoutput_AUV.m": [
+    "import_gslib.m",
+    "compute_percentile.m",
+    "save_var.m"
+  ],
+  "giveCoordinateInformation_naza.m": [
+    "import_gslib.m",
+    "gslib2grid.m",
+    "nccreate/ncwrite"
+  ]
+}

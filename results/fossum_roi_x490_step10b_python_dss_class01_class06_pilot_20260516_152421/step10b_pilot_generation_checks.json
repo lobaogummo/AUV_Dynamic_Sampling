@@ -1,0 +1,33 @@
+{
+  "dss_called": true,
+  "pilot_dates": [
+    "2024-07-03",
+    "2024-07-04",
+    "2023-12-22",
+    "2023-12-17"
+  ],
+  "processed_date_count": 4,
+  "expected_date_count": 4,
+  "predmodels_created": 4,
+  "n_realizations_per_date": 100,
+  "depths": [
+    1
+  ],
+  "all_dss_returncode_zero": true,
+  "all_required_variables_present": true,
+  "temppred_not_all_nan": true,
+  "std_variance_not_all_zero": true,
+  "hres_regenerated": false,
+  "matlab_used": false,
+  "classes": {
+    "C01": [
+      "2024-07-03",
+      "2024-07-04"
+    ],
+    "C06": [
+      "2023-12-22",
+      "2023-12-17"
+    ]
+  },
+  "verdict": "C01_C06_PILOT_PREDMODELS_GENERATED_READY_FOR_STEP10C"
+}

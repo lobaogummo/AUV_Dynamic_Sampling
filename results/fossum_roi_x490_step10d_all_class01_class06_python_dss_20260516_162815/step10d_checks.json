@@ -1,0 +1,10 @@
+{
+  "c01_days": 41,
+  "c06_days": 72,
+  "total_days": 113,
+  "disk_space_sufficient": false,
+  "estimated_total_gb": 75.94,
+  "free_gb": 32.67,
+  "verdict": "BATCH_GENERATION_FAILED",
+  "reason": "Insufficient disk space to keep all requested sim_*.out files."
+}

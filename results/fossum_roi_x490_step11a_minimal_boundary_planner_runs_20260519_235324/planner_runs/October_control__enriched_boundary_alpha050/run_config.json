@@ -1,0 +1,11 @@
+{
+  "run_id": "October_control__enriched_boundary_alpha050",
+  "case_id": "October_control",
+  "date": "2024-10-30",
+  "formulation": "enriched_boundary_alpha050",
+  "formula": "information_map = 0.50*STD_norm + 0.50*boundary_score_norm",
+  "alpha": 0.5,
+  "input_nc": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11a_minimal_boundary_planner_runs_20260519_235324\\planner_inputs\\October_control__enriched_boundary_alpha050_planner_interface.nc",
+  "single_auv": true,
+  "mission_duration_hours": 12.0
+}

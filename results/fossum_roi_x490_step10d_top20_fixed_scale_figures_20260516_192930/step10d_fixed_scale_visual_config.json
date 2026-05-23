@@ -1,0 +1,25 @@
+{
+  "input_step10d": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step10d_top20_class01_class06_python_dss_20260516_170704",
+  "input_step06": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\october_surface_temppred_std_roi_x490_20260511_155923",
+  "input_step00": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "figures_only": true,
+  "dss_executed": false,
+  "predmodels_regenerated": false,
+  "std_definition": "variance",
+  "selected_day_slice": 1,
+  "recommended_temp_scale": {
+    "vmin": 16.19420051574707,
+    "vmax": 19.682199478149414,
+    "source": "Step10D top20 + Step06 October p1-p99"
+  },
+  "recommended_std_scale": {
+    "vmin": 0.006523000076413155,
+    "vmax": 0.20320792227983475,
+    "source": "Step10D top20 + Step06 October p1-p99"
+  },
+  "normalized_scale": {
+    "vmin": -1.950387954711914,
+    "vmax": 1.950387954711914,
+    "source": "Step00/Step05 legacy normalized_png_vlim"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "hres_not_regenerated": true,
+  "dss_found": true,
+  "matlab_used": false,
+  "dss_called": false,
+  "dates_planned": 2,
+  "verdict": "DRY_RUN_READY"
+}
