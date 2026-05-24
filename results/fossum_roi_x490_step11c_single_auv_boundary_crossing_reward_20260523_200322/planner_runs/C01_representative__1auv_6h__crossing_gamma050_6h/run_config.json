@@ -1,0 +1,21 @@
+{
+  "run_id": "C01_representative__1auv_6h__crossing_gamma050_6h",
+  "case_id": "C01_representative",
+  "display_case": "C01_representative",
+  "date": "2024-08-24",
+  "run_name": "crossing_gamma050_6h",
+  "base_run_name": "crossing_gamma050",
+  "mission_duration_requested_h": 6.0,
+  "auv_number": 1,
+  "formulation": "information_map = 0.5*STD_norm + 0.3*boundary_score_norm + 0.2*((1-0.50)*boundary_score_norm + 0.50*crossing_proxy)",
+  "gamma": 0.5,
+  "route_level_reward_available": false,
+  "proxy_meta": {
+    "method": "near-boundary two-side band proxy",
+    "distance_scale_cells": 15.297058540778355,
+    "region_A_side_band_cells": 1411,
+    "region_B_side_band_cells": 596,
+    "vmin": 0.0016346669290214777,
+    "vmax": 1.0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "planned_manifest_rows": 22,
+  "solver_failures": 0,
+  "cases": [
+    "C06_representative",
+    "October_control"
+  ],
+  "vehicle_specific_maps_supported": false,
+  "overlap_penalty_supported": false,
+  "post_solver_selection_needed": true,
+  "verdict": "STEP11D_COMPLETED_WITH_POST_SOLVER_SELECTION"
+}

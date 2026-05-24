@@ -1,0 +1,21 @@
+{
+  "run_id": "C01_representative__1auv_12h__baseline_STD",
+  "case_id": "C01_representative",
+  "display_case": "C01_representative",
+  "date": "2024-08-24",
+  "run_name": "baseline_STD",
+  "base_run_name": "baseline_STD",
+  "mission_duration_requested_h": 12.0,
+  "auv_number": 1,
+  "formulation": "information_map = STD_norm",
+  "gamma": 0.0,
+  "route_level_reward_available": false,
+  "proxy_meta": {
+    "method": "near-boundary two-side band proxy",
+    "distance_scale_cells": 15.297058540778355,
+    "region_A_side_band_cells": 1411,
+    "region_B_side_band_cells": 596,
+    "vmin": 0.0016346669290214777,
+    "vmax": 1.0
+  }
+}

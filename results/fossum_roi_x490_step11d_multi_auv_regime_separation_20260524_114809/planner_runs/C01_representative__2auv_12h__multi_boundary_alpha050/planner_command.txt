@@ -1,0 +1,1 @@
+C:\Users\pedro\AppData\Local\Programs\Python\Python312\python.exe OptimalPlanning.py C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_114809\planner_inputs\C01_representative__2auv_12h__multi_boundary_alpha050_planner_interface.nc

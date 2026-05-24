@@ -1,0 +1,8 @@
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935\planner_runs\October_reference__2auv_12h___f542264a60\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935\planner_runs\October_reference__2auv_12h___f542264a60\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935\planner_runs\October_reference__2auv_12h___f542264a60\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935\planner_runs\October_reference__2auv_12h___f542264a60\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

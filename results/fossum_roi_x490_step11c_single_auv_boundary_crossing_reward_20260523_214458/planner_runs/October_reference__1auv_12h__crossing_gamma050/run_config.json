@@ -1,0 +1,21 @@
+{
+  "run_id": "October_reference__1auv_12h__crossing_gamma050",
+  "case_id": "October_control",
+  "display_case": "October_reference",
+  "date": "2024-10-30",
+  "run_name": "crossing_gamma050",
+  "base_run_name": "crossing_gamma050",
+  "mission_duration_requested_h": 12.0,
+  "auv_number": 1,
+  "formulation": "information_map = 0.5*STD_norm + 0.3*boundary_score_norm + 0.2*((1-0.50)*boundary_score_norm + 0.50*crossing_proxy)",
+  "gamma": 0.5,
+  "route_level_reward_available": false,
+  "proxy_meta": {
+    "method": "near-boundary two-side band proxy",
+    "distance_scale_cells": 13.341664064126334,
+    "region_A_side_band_cells": 2008,
+    "region_B_side_band_cells": 0,
+    "vmin": 0.0004767034843098372,
+    "vmax": 1.0
+  }
+}

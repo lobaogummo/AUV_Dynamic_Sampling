@@ -1,0 +1,21 @@
+{
+  "run_id": "October_reference__1auv_12h__baseline_STD",
+  "case_id": "October_control",
+  "display_case": "October_reference",
+  "date": "2024-10-30",
+  "run_name": "baseline_STD",
+  "base_run_name": "baseline_STD",
+  "mission_duration_requested_h": 12.0,
+  "auv_number": 1,
+  "formulation": "information_map = STD_norm",
+  "gamma": 0.0,
+  "route_level_reward_available": false,
+  "proxy_meta": {
+    "method": "near-boundary two-side band proxy",
+    "distance_scale_cells": 13.341664064126334,
+    "region_A_side_band_cells": 2008,
+    "region_B_side_band_cells": 0,
+    "vmin": 0.0004767034843098372,
+    "vmax": 1.0
+  }
+}

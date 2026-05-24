@@ -1,0 +1,14 @@
+{
+  "auv_number_definition": "Config_file.py::AUV_NUMBER",
+  "mission_duration_definition": "Config_file.py::MISSION_DURATIONS; converted to max route distance per VehicleType",
+  "trajectory_output": "routes_file.txt contains one route block per AUV",
+  "multi_auv_supported": true,
+  "vehicle_specific_maps_supported": false,
+  "vehicle_specific_prizes_supported": false,
+  "overlap_penalty_supported": false,
+  "same_node_revisit_prevented_by_solver": true,
+  "same_node_revisit_note": "Single shared client set means exact duplicate POI visits are not expected inside one VRP solution; path overlap between segments is not explicitly penalized.",
+  "sequential_planning_viable": false,
+  "post_solver_selection_needed": true,
+  "recommended_mode": "native_shared_map_plus_1auv_candidates_post_solver_selection"
+}

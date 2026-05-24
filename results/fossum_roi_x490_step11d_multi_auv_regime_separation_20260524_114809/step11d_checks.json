@@ -1,0 +1,11 @@
+{
+  "planned_manifest_rows": 11,
+  "solver_failures": 0,
+  "cases": [
+    "C01_representative"
+  ],
+  "vehicle_specific_maps_supported": false,
+  "overlap_penalty_supported": false,
+  "post_solver_selection_needed": true,
+  "verdict": "STEP11D_COMPLETED_WITH_POST_SOLVER_SELECTION"
+}

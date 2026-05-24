@@ -1,0 +1,12 @@
+{
+  "route_level_crossing_reward_available": false,
+  "implementation_mode": "map_proxy_static_node_prize",
+  "evidence": {
+    "uses_static_node_prizes": true,
+    "uses_pyvrp_model_from_data": true,
+    "route_prize_is_posthoc": true,
+    "route_callback_found": false
+  },
+  "conclusion": "Planner appears to support only static node prizes through temperr/get_nodes_prize.",
+  "limitation": "Crossing reward is implemented as a map proxy; the real A/B crossing is measured after solving."
+}

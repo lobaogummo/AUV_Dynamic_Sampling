@@ -1,0 +1,3 @@
+case_id,strategy,selected_AUV1_candidate,selected_AUV2_candidate,pair_score
+C06_representative,post_solver_selected_pair,baseline_STD,region_B,1.2188006717693438
+October_control,post_solver_selected_pair,region_B_with_crossing,region_A,1.286830526864887

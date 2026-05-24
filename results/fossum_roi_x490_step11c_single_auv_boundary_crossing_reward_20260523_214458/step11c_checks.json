@@ -1,0 +1,13 @@
+{
+  "planned_runs": 8,
+  "successful_runs": 8,
+  "failed_runs": 0,
+  "cases": [
+    "C06_representative",
+    "October_control"
+  ],
+  "include_6h": false,
+  "route_level_crossing_reward_available": false,
+  "implementation_mode": "map_proxy_static_node_prize",
+  "verdict": "STEP11C_COMPLETED_WITH_PROXY_LIMITATION"
+}
