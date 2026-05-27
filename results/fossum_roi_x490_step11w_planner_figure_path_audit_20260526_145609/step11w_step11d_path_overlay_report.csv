@@ -1,0 +1,7 @@
+strategy,trajectory_overlap_ratio,duplicate_sampled_cells,inter_vehicle_mean_distance,inter_vehicle_min_distance,hausdorff_like_distance,percentage_AUV1_path_near_AUV2_path,visual_vs_real
+multi_baseline_STD,0.0,0.0,17.05395907787059,1.0,38.2099463490856,0.06896551724137931,mostly visual/same-zone issue
+multi_boundary_alpha050,0.0,0.0,15.34338889246864,1.0,34.539832078341085,0.08,mostly visual/same-zone issue
+vehicle_specific_regime_maps,0.0161812297734627,5.0,19.49782583990364,0.0,,,from saved fleet metrics; mostly visual/same-zone issue
+vehicle_specific_with_crossing_proxy,0.01,3.0,12.066040201831688,0.0,,,from saved fleet metrics; mostly visual/same-zone issue
+sequential_overlap_reduction,0.022875816993464,7.0,20.02664363532462,0.0,,,from saved fleet metrics; mostly visual/same-zone issue
+post_solver_selected_pair,0.0225806451612903,7.0,12.7451116992823,0.0,,,from saved fleet metrics; mostly visual/same-zone issue

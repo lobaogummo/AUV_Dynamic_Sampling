@@ -1,0 +1,40 @@
+{
+  "script": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\scripts\\11w_audit_planner_figures_paths_and_lineage.py",
+  "created_at": "2026-05-26T14:54:58",
+  "output_dir": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145441",
+  "inputs": [
+    {
+      "step": "Step11A",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11a_minimal_boundary_planner_runs_20260520_102117",
+      "exists": true
+    },
+    {
+      "step": "Step11B",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652",
+      "exists": true
+    },
+    {
+      "step": "Step11B",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_165239",
+      "exists": true
+    },
+    {
+      "step": "Step11B",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_194733",
+      "exists": true
+    },
+    {
+      "step": "Step11C",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_200322",
+      "exists": true
+    },
+    {
+      "step": "Step11D",
+      "path": "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_114809",
+      "exists": true
+    }
+  ],
+  "read_only_previous_outputs": true,
+  "planner_rerun": false,
+  "new_trajectories_generated": false
+}

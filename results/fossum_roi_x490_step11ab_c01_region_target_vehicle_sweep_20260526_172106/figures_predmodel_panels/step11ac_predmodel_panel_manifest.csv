@@ -1,0 +1,7 @@
+figure,background,layout,source_routes
+single_auv_c01_predmodel_panel_by_method.png,Step10F TEMPpred for C01_representative / 2024-08-24,one panel per single-AUV method,results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs
+multi_auv_c01_predmodel_panel_by_method.png,Step10F TEMPpred for C01_representative / 2024-08-24,one panel per multi-AUV method,results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs
+multi_auv_c01_predmodel_panel_selected_methods.png,Step10F TEMPpred for C01_representative / 2024-08-24,"baseline, balanced, strong-regime selected comparison",results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs
+single_auv_c01_paths_over_regions.png,Step10F TEMPpred for C01_representative / 2024-08-24,replacement alias for old region-background figure; one panel per single-AUV method,results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs
+single_auv_c01_path_colored_by_region.png,Step10F TEMPpred for C01_representative / 2024-08-24,replacement alias for old region-background figure; one panel per single-AUV method,results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs
+multi_auv_c01_weight_sweep_paths.png,Step10F TEMPpred for C01_representative / 2024-08-24,replacement alias for old all-method overlay; one panel per multi-AUV method,results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106\planner_runs

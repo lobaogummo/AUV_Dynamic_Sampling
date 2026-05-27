@@ -1,0 +1,9 @@
+rank,recommendation,area,priority,rationale
+1,Implement vehicle-specific prize maps,multi-AUV,high,Most directly addresses lack of regime specialization; current Step11D proxy was interpretable.
+2,Run descriptor ablation on selected cases,descriptor,high,"Boundary alone is not enough; compare representative_zone, interest_map, gradient, heterogeneity."
+3,Use cleaner case set,experimental design,high,"C01, C06, and October behave differently; keep confidence and regime labels explicit."
+4,Tune alpha/gamma non-monotonically,parameters,medium,Do not assume gamma=0.50 beats gamma=0.25; saved Step11C evidence is mixed.
+5,Improve crossing proxy with target points on both sides,single-AUV,medium,More likely to create real regime switches than boundary-core attraction alone.
+6,Implement route-level crossing reward,planner,medium,Important only if single-AUV crossing is the main thesis claim.
+7,Implement overlap/proximity penalty,planner,low,Secondary because overlap was already low/zero in several native baselines.
+8,Use post-solver selection as final method,operational method,low,Keep as diagnostic unless integrated into a formal workflow.

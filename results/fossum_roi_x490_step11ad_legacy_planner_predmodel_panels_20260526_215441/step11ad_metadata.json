@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-05-26T21:55:08",
+  "script": "scripts\\11ad_make_legacy_step11_predmodel_panels.py",
+  "inputs": {
+    "step11a": "results\\fossum_roi_x490_step11a_minimal_boundary_planner_runs_20260520_102117",
+    "step11b": [
+      "results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_160652",
+      "results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_165239",
+      "results\\fossum_roi_x490_step11b_descriptor_ablation_planner_tests_20260520_194733"
+    ],
+    "step11c": "results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_200322",
+    "step11d": "results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_114809",
+    "step10f_predmodel": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260519_195022"
+  }
+}

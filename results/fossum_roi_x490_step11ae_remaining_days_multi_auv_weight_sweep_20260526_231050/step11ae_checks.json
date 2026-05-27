@@ -1,0 +1,16 @@
+{
+  "verdict": "STEP11AE_REMAINING_DAYS_MULTI_AUV_COMPLETED",
+  "output_dir": "results\\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260526_231050",
+  "cases": [
+    "C06_representative",
+    "October_control"
+  ],
+  "prototype_maps_only": true,
+  "TEMPpred_used_for_regions": false,
+  "step11z_reuse": true,
+  "multi_rows": 10,
+  "vehicle_rows": 20,
+  "planner_runs_executed": 10,
+  "figures_created": 2,
+  "warnings": []
+}

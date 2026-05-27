@@ -1,0 +1,8 @@
+{
+  "verdict": "STEP11AA_FINAL_FIGURES_READY",
+  "output_dir": "results\\fossum_roi_x490_step11aa_final_planner_figures_for_interpretation_20260526_171640",
+  "final_figures_dir": "results\\fossum_roi_x490_step11aa_final_planner_figures_for_interpretation_20260526_171640\\final_planner_figures_for_interpretation",
+  "figures_expected": 5,
+  "figures_present": 5,
+  "warnings": []
+}

@@ -1,0 +1,20 @@
+{
+  "verdict": "STEP11AB_COMPLETED_RESULTS_READY",
+  "output_dir": "results\\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260526_172106",
+  "case_id": "C01_representative",
+  "date": "2024-08-24",
+  "prototype_maps_only": true,
+  "TEMPpred_used_for_regions_or_targets": false,
+  "region_mask_meta": {
+    "region_A_cells": 1668,
+    "region_B_cells": 2334,
+    "fallbacks": [],
+    "TEMPpred_used": false
+  },
+  "target_success": false,
+  "recommended_single_auv": "planner-level mandatory waypoint/route-level reward needed",
+  "recommended_multi_auv": "vehicle_specific_balanced",
+  "planner_failures": 0,
+  "figures_created": 8,
+  "warnings": []
+}

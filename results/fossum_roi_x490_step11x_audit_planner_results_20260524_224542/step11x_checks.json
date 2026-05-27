@@ -1,0 +1,21 @@
+{
+  "audit_created": true,
+  "output_dir": "results\\fossum_roi_x490_step11x_audit_planner_results_20260524_224542",
+  "planner_rerun": false,
+  "existing_outputs_modified": false,
+  "new_trajectories_generated": false,
+  "step11a_outputs_found": 5,
+  "step11c_expected_outputs_found": 2,
+  "step11d_expected_outputs_found": 2,
+  "inventory_rows": 1131,
+  "step11a_summary_rows": 27,
+  "step11c_rows": 15,
+  "step11d_fleet_rows": 18,
+  "descriptor_correlation_rows": 21,
+  "figures_created": 6,
+  "matplotlib_available": true,
+  "matplotlib_error": "",
+  "warnings_count": 0,
+  "missing_files_count": 0,
+  "verdict": "READY_FOR_STEP11E_VEHICLE_SPECIFIC_PRIZES"
+}

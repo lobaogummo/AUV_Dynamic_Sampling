@@ -1,0 +1,9 @@
+improvement,classification,priority,audit_rationale
+Try alpha/gamma grid on saved cases,no-code / parameter tuning,low,"Useful, but only explores current proxy behavior."
+Use alternative static descriptors,wrapper/proxy,low,Generate information maps from existing descriptors without changing solver.
+Cleaner selected-case experiment set,no-code / parameter tuning,low,Improves interpretability before new planner work.
+Target points on both sides of boundary,wrapper/proxy,medium,A practical crossing proxy without route-level objective changes.
+Vehicle-specific prize maps,small planner modification,high,Needed for defensible multi-AUV regime specialization.
+Overlap/proximity penalty in objective,deep PyVRP/objective modification,medium,Secondary priority because baseline overlap can already be zero.
+Route-level crossing reward,deep PyVRP/objective modification,medium,Needed if single-AUV boundary crossing becomes the central contribution.
+Post-solver selected pair as final method,not recommended,medium,"Good diagnostic, weaker operational contribution unless formalized."

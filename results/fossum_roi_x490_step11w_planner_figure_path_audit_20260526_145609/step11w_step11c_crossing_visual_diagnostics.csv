@@ -1,0 +1,5 @@
+run_name,points,points_region_A,points_region_B,points_boundary_core,fraction_region_A,fraction_region_B,fraction_boundary_core,visual_crossing_events_from_masks,interpretation
+baseline_STD,27,27,0,0,1.0,0.0,0.0,0,mostly one region or boundary-adjacent
+boundary_alpha050,28,25,3,1,0.8928571428571429,0.10714285714285714,0.03571428571428571,4,visits both regions
+crossing_gamma025,27,23,4,1,0.8518518518518519,0.14814814814814814,0.037037037037037035,4,visits both regions
+crossing_gamma050,29,27,2,1,0.9310344827586207,0.06896551724137931,0.034482758620689655,2,visits both regions

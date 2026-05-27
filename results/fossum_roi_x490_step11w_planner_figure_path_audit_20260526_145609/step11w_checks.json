@@ -1,0 +1,30 @@
+{
+  "outputs_expected": 6,
+  "outputs_missing": [],
+  "figures_inventoried": 124,
+  "figure_lineage_rows": 124,
+  "coordinate_check_rows": 56,
+  "coordinate_warning_rows": 0,
+  "path_overlay_rows": 51,
+  "regenerated_figures": [
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11b_each_descriptor_over_descriptor_map.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11b_each_descriptor_over_information_map.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11b_overlay_all_descriptors.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated_standardized\\step11b_standardized_STD_overlay.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11b_region_crossing_diagnostics.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11c_path_over_region_A_B.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated_standardized\\step11c_standardized_region_overlay.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11c_path_over_boundary_core.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11c_path_colored_by_region.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11c_crossing_events_marked.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11d_paths_over_region_A_B.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated_standardized\\step11d_standardized_region_overlay.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11d_paths_over_information_maps.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11d_AUV1_AUV2_distance_along_path.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11d_overlay_vs_true_distance_panel.png",
+    "C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step11w_planner_figure_path_audit_20260526_145609\\figures_regenerated\\step11d_strategy_comparison_clean_panel.png"
+  ],
+  "step11b_objective_used_descriptors": true,
+  "step11d_overlay_real_overlap_summary": 0.022875816993464,
+  "verdict": "FIGURE_AUDIT_FOUND_MISLEADING_BACKGROUND_REGENERATE"
+}
