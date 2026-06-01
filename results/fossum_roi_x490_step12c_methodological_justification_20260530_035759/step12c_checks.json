@@ -1,0 +1,12 @@
+{
+  "step": "Step12C",
+  "output_dir": "results\\fossum_roi_x490_step12c_methodological_justification_20260530_035759",
+  "step12a": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726",
+  "step12b": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108",
+  "class_number_justified": true,
+  "descriptor_choice_justified": true,
+  "day_selection_justified": true,
+  "weight_choice_justified": true,
+  "runtime_feasibility_reported": true,
+  "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED"
+}

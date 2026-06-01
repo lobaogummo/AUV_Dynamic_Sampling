@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 697, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 593, in main
+    collect_result(future.result())
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\E713181\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 550, in execute_fleet_task
+    return run_fleet_strategy(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 337, in run_fleet_strategy
+    diag, routes, _run_dir = c.run_planner(zutils, s11a, run_id, info_maps[vehicle_id], mask, lat_hres, lon_hres, bathy_hres, planner, config_1auv, outdir, timeout_s, skip_existing)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\step12_common.py", line 294, in run_planner
+    diag, routes, run_dir = zutils.run_planner_case(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\11z_rerun_minimal_prototype_based_planner_tests.py", line 246, in run_planner_case
+    shutil.copy2(input_nc, run_dir / input_nc.name)
+  File "C:\Users\E713181\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 460, in copy2
+    _winapi.CopyFile2(src_, dst_, flags)
+FileNotFoundError: [WinError 3] The system cannot find the path specified

@@ -1,0 +1,5 @@
+Step12B launching 72 initial fleet tasks with workers=2
+Step12B launching 9 role-swap fleet tasks with workers=2
+Step12B complete: results\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108
+Verdict: STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED
+Fleet rows: 81; physical runs: 153; figures: 592

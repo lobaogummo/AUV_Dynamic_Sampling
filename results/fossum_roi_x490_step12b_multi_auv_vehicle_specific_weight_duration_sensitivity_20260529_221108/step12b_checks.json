@@ -1,0 +1,38 @@
+{
+  "step": "Step12B",
+  "output_dir": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260525_001754",
+  "initial_physical_runs": 135,
+  "workers": 2,
+  "resume_output": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108",
+  "role_swap_fleet_rows": 9,
+  "total_physical_runs_executed_or_reused": 153,
+  "fleet_rows": 81,
+  "vehicle_rows": 162,
+  "durations_tested": [
+    12.0,
+    24.0,
+    48.0
+  ],
+  "weights_tested": [
+    "baseline_shared_STD",
+    "role_swap_of_vehicle_specific_5050",
+    "role_swap_of_vehicle_specific_6040",
+    "role_swap_of_vehicle_specific_7030",
+    "vehicle_specific_00100",
+    "vehicle_specific_2575",
+    "vehicle_specific_5050",
+    "vehicle_specific_6040",
+    "vehicle_specific_7030",
+    "vehicle_specific_8020",
+    "vehicle_specific_9010"
+  ],
+  "prototype_based_maps_only": true,
+  "TEMPpred_used_as_objective": false,
+  "vehicle_specific_is_proxy_wrapper": true,
+  "all_runs_have_status": true,
+  "all_runtimes_recorded": true,
+  "figures_created": 592,
+  "total_script_runtime_s": 77.49510029998783,
+  "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED"
+}

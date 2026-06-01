@@ -1,0 +1,33 @@
+{
+  "step": "Step12A",
+  "output_dir": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260525_001754",
+  "logical_rows": 135,
+  "physical_runs_executed_or_reused": 117,
+  "workers": 2,
+  "resume_output": "",
+  "durations_tested": [
+    12.0,
+    24.0,
+    48.0
+  ],
+  "alphas_tested": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "descriptors_tested": [
+    "boundary_score",
+    "interest_map",
+    "representative_zone"
+  ],
+  "prototype_based_maps_only": true,
+  "TEMPpred_used_as_objective": false,
+  "all_runs_have_status": true,
+  "all_runtimes_recorded": true,
+  "figures_created": 220,
+  "total_script_runtime_s": 14222.578870600002,
+  "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED"
+}

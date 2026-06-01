@@ -1,0 +1,136 @@
+case_id,date,predicted_class,mission_duration_requested_h,descriptor,alpha,run_name,physical_run_id,deduplicated_baseline,prototype_based_maps,TEMPpred_used_as_objective,information_map_formula
+C01_representative,2024-08-24,1,12.0,boundary_score,0.0,baseline_STD,C01_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,12.0,boundary_score,0.25,boundary_score_alpha025,C01_representative__single_auv_12h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C01_representative,2024-08-24,1,12.0,boundary_score,0.5,boundary_score_alpha050,C01_representative__single_auv_12h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C01_representative,2024-08-24,1,12.0,boundary_score,0.75,boundary_score_alpha075,C01_representative__single_auv_12h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C01_representative,2024-08-24,1,12.0,boundary_score,1.0,boundary_score_alpha100,C01_representative__single_auv_12h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C01_representative,2024-08-24,1,12.0,representative_zone,0.0,baseline_STD,C01_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,12.0,representative_zone,0.25,representative_zone_alpha025,C01_representative__single_auv_12h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C01_representative,2024-08-24,1,12.0,representative_zone,0.5,representative_zone_alpha050,C01_representative__single_auv_12h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C01_representative,2024-08-24,1,12.0,representative_zone,0.75,representative_zone_alpha075,C01_representative__single_auv_12h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C01_representative,2024-08-24,1,12.0,representative_zone,1.0,representative_zone_alpha100,C01_representative__single_auv_12h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C01_representative,2024-08-24,1,12.0,interest_map,0.0,baseline_STD,C01_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,12.0,interest_map,0.25,interest_map_alpha025,C01_representative__single_auv_12h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C01_representative,2024-08-24,1,12.0,interest_map,0.5,interest_map_alpha050,C01_representative__single_auv_12h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C01_representative,2024-08-24,1,12.0,interest_map,0.75,interest_map_alpha075,C01_representative__single_auv_12h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C01_representative,2024-08-24,1,12.0,interest_map,1.0,interest_map_alpha100,C01_representative__single_auv_12h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+C01_representative,2024-08-24,1,24.0,boundary_score,0.0,baseline_STD,C01_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,24.0,boundary_score,0.25,boundary_score_alpha025,C01_representative__single_auv_24h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C01_representative,2024-08-24,1,24.0,boundary_score,0.5,boundary_score_alpha050,C01_representative__single_auv_24h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C01_representative,2024-08-24,1,24.0,boundary_score,0.75,boundary_score_alpha075,C01_representative__single_auv_24h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C01_representative,2024-08-24,1,24.0,boundary_score,1.0,boundary_score_alpha100,C01_representative__single_auv_24h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C01_representative,2024-08-24,1,24.0,representative_zone,0.0,baseline_STD,C01_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,24.0,representative_zone,0.25,representative_zone_alpha025,C01_representative__single_auv_24h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C01_representative,2024-08-24,1,24.0,representative_zone,0.5,representative_zone_alpha050,C01_representative__single_auv_24h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C01_representative,2024-08-24,1,24.0,representative_zone,0.75,representative_zone_alpha075,C01_representative__single_auv_24h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C01_representative,2024-08-24,1,24.0,representative_zone,1.0,representative_zone_alpha100,C01_representative__single_auv_24h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C01_representative,2024-08-24,1,24.0,interest_map,0.0,baseline_STD,C01_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,24.0,interest_map,0.25,interest_map_alpha025,C01_representative__single_auv_24h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C01_representative,2024-08-24,1,24.0,interest_map,0.5,interest_map_alpha050,C01_representative__single_auv_24h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C01_representative,2024-08-24,1,24.0,interest_map,0.75,interest_map_alpha075,C01_representative__single_auv_24h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C01_representative,2024-08-24,1,24.0,interest_map,1.0,interest_map_alpha100,C01_representative__single_auv_24h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+C01_representative,2024-08-24,1,48.0,boundary_score,0.0,baseline_STD,C01_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,48.0,boundary_score,0.25,boundary_score_alpha025,C01_representative__single_auv_48h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C01_representative,2024-08-24,1,48.0,boundary_score,0.5,boundary_score_alpha050,C01_representative__single_auv_48h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C01_representative,2024-08-24,1,48.0,boundary_score,0.75,boundary_score_alpha075,C01_representative__single_auv_48h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C01_representative,2024-08-24,1,48.0,boundary_score,1.0,boundary_score_alpha100,C01_representative__single_auv_48h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C01_representative,2024-08-24,1,48.0,representative_zone,0.0,baseline_STD,C01_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,48.0,representative_zone,0.25,representative_zone_alpha025,C01_representative__single_auv_48h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C01_representative,2024-08-24,1,48.0,representative_zone,0.5,representative_zone_alpha050,C01_representative__single_auv_48h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C01_representative,2024-08-24,1,48.0,representative_zone,0.75,representative_zone_alpha075,C01_representative__single_auv_48h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C01_representative,2024-08-24,1,48.0,representative_zone,1.0,representative_zone_alpha100,C01_representative__single_auv_48h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C01_representative,2024-08-24,1,48.0,interest_map,0.0,baseline_STD,C01_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C01_representative,2024-08-24,1,48.0,interest_map,0.25,interest_map_alpha025,C01_representative__single_auv_48h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C01_representative,2024-08-24,1,48.0,interest_map,0.5,interest_map_alpha050,C01_representative__single_auv_48h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C01_representative,2024-08-24,1,48.0,interest_map,0.75,interest_map_alpha075,C01_representative__single_auv_48h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C01_representative,2024-08-24,1,48.0,interest_map,1.0,interest_map_alpha100,C01_representative__single_auv_48h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+C06_representative,2023-12-22,6,12.0,boundary_score,0.0,baseline_STD,C06_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,12.0,boundary_score,0.25,boundary_score_alpha025,C06_representative__single_auv_12h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C06_representative,2023-12-22,6,12.0,boundary_score,0.5,boundary_score_alpha050,C06_representative__single_auv_12h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C06_representative,2023-12-22,6,12.0,boundary_score,0.75,boundary_score_alpha075,C06_representative__single_auv_12h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C06_representative,2023-12-22,6,12.0,boundary_score,1.0,boundary_score_alpha100,C06_representative__single_auv_12h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C06_representative,2023-12-22,6,12.0,representative_zone,0.0,baseline_STD,C06_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,12.0,representative_zone,0.25,representative_zone_alpha025,C06_representative__single_auv_12h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C06_representative,2023-12-22,6,12.0,representative_zone,0.5,representative_zone_alpha050,C06_representative__single_auv_12h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C06_representative,2023-12-22,6,12.0,representative_zone,0.75,representative_zone_alpha075,C06_representative__single_auv_12h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C06_representative,2023-12-22,6,12.0,representative_zone,1.0,representative_zone_alpha100,C06_representative__single_auv_12h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C06_representative,2023-12-22,6,12.0,interest_map,0.0,baseline_STD,C06_representative__single_auv_12h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,12.0,interest_map,0.25,interest_map_alpha025,C06_representative__single_auv_12h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C06_representative,2023-12-22,6,12.0,interest_map,0.5,interest_map_alpha050,C06_representative__single_auv_12h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C06_representative,2023-12-22,6,12.0,interest_map,0.75,interest_map_alpha075,C06_representative__single_auv_12h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C06_representative,2023-12-22,6,12.0,interest_map,1.0,interest_map_alpha100,C06_representative__single_auv_12h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+C06_representative,2023-12-22,6,24.0,boundary_score,0.0,baseline_STD,C06_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,24.0,boundary_score,0.25,boundary_score_alpha025,C06_representative__single_auv_24h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C06_representative,2023-12-22,6,24.0,boundary_score,0.5,boundary_score_alpha050,C06_representative__single_auv_24h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C06_representative,2023-12-22,6,24.0,boundary_score,0.75,boundary_score_alpha075,C06_representative__single_auv_24h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C06_representative,2023-12-22,6,24.0,boundary_score,1.0,boundary_score_alpha100,C06_representative__single_auv_24h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C06_representative,2023-12-22,6,24.0,representative_zone,0.0,baseline_STD,C06_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,24.0,representative_zone,0.25,representative_zone_alpha025,C06_representative__single_auv_24h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C06_representative,2023-12-22,6,24.0,representative_zone,0.5,representative_zone_alpha050,C06_representative__single_auv_24h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C06_representative,2023-12-22,6,24.0,representative_zone,0.75,representative_zone_alpha075,C06_representative__single_auv_24h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C06_representative,2023-12-22,6,24.0,representative_zone,1.0,representative_zone_alpha100,C06_representative__single_auv_24h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C06_representative,2023-12-22,6,24.0,interest_map,0.0,baseline_STD,C06_representative__single_auv_24h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,24.0,interest_map,0.25,interest_map_alpha025,C06_representative__single_auv_24h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C06_representative,2023-12-22,6,24.0,interest_map,0.5,interest_map_alpha050,C06_representative__single_auv_24h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C06_representative,2023-12-22,6,24.0,interest_map,0.75,interest_map_alpha075,C06_representative__single_auv_24h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C06_representative,2023-12-22,6,24.0,interest_map,1.0,interest_map_alpha100,C06_representative__single_auv_24h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+C06_representative,2023-12-22,6,48.0,boundary_score,0.0,baseline_STD,C06_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,48.0,boundary_score,0.25,boundary_score_alpha025,C06_representative__single_auv_48h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+C06_representative,2023-12-22,6,48.0,boundary_score,0.5,boundary_score_alpha050,C06_representative__single_auv_48h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+C06_representative,2023-12-22,6,48.0,boundary_score,0.75,boundary_score_alpha075,C06_representative__single_auv_48h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+C06_representative,2023-12-22,6,48.0,boundary_score,1.0,boundary_score_alpha100,C06_representative__single_auv_48h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+C06_representative,2023-12-22,6,48.0,representative_zone,0.0,baseline_STD,C06_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,48.0,representative_zone,0.25,representative_zone_alpha025,C06_representative__single_auv_48h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+C06_representative,2023-12-22,6,48.0,representative_zone,0.5,representative_zone_alpha050,C06_representative__single_auv_48h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+C06_representative,2023-12-22,6,48.0,representative_zone,0.75,representative_zone_alpha075,C06_representative__single_auv_48h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+C06_representative,2023-12-22,6,48.0,representative_zone,1.0,representative_zone_alpha100,C06_representative__single_auv_48h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+C06_representative,2023-12-22,6,48.0,interest_map,0.0,baseline_STD,C06_representative__single_auv_48h__baseline_STD,True,True,False,STD_norm
+C06_representative,2023-12-22,6,48.0,interest_map,0.25,interest_map_alpha025,C06_representative__single_auv_48h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+C06_representative,2023-12-22,6,48.0,interest_map,0.5,interest_map_alpha050,C06_representative__single_auv_48h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+C06_representative,2023-12-22,6,48.0,interest_map,0.75,interest_map_alpha075,C06_representative__single_auv_48h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+C06_representative,2023-12-22,6,48.0,interest_map,1.0,interest_map_alpha100,C06_representative__single_auv_48h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+October_control,2024-10-30,2,12.0,boundary_score,0.0,baseline_STD,October_control__single_auv_12h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,12.0,boundary_score,0.25,boundary_score_alpha025,October_control__single_auv_12h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+October_control,2024-10-30,2,12.0,boundary_score,0.5,boundary_score_alpha050,October_control__single_auv_12h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+October_control,2024-10-30,2,12.0,boundary_score,0.75,boundary_score_alpha075,October_control__single_auv_12h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+October_control,2024-10-30,2,12.0,boundary_score,1.0,boundary_score_alpha100,October_control__single_auv_12h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+October_control,2024-10-30,2,12.0,representative_zone,0.0,baseline_STD,October_control__single_auv_12h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,12.0,representative_zone,0.25,representative_zone_alpha025,October_control__single_auv_12h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+October_control,2024-10-30,2,12.0,representative_zone,0.5,representative_zone_alpha050,October_control__single_auv_12h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+October_control,2024-10-30,2,12.0,representative_zone,0.75,representative_zone_alpha075,October_control__single_auv_12h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+October_control,2024-10-30,2,12.0,representative_zone,1.0,representative_zone_alpha100,October_control__single_auv_12h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+October_control,2024-10-30,2,12.0,interest_map,0.0,baseline_STD,October_control__single_auv_12h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,12.0,interest_map,0.25,interest_map_alpha025,October_control__single_auv_12h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+October_control,2024-10-30,2,12.0,interest_map,0.5,interest_map_alpha050,October_control__single_auv_12h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+October_control,2024-10-30,2,12.0,interest_map,0.75,interest_map_alpha075,October_control__single_auv_12h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+October_control,2024-10-30,2,12.0,interest_map,1.0,interest_map_alpha100,October_control__single_auv_12h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+October_control,2024-10-30,2,24.0,boundary_score,0.0,baseline_STD,October_control__single_auv_24h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,24.0,boundary_score,0.25,boundary_score_alpha025,October_control__single_auv_24h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+October_control,2024-10-30,2,24.0,boundary_score,0.5,boundary_score_alpha050,October_control__single_auv_24h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+October_control,2024-10-30,2,24.0,boundary_score,0.75,boundary_score_alpha075,October_control__single_auv_24h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+October_control,2024-10-30,2,24.0,boundary_score,1.0,boundary_score_alpha100,October_control__single_auv_24h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+October_control,2024-10-30,2,24.0,representative_zone,0.0,baseline_STD,October_control__single_auv_24h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,24.0,representative_zone,0.25,representative_zone_alpha025,October_control__single_auv_24h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+October_control,2024-10-30,2,24.0,representative_zone,0.5,representative_zone_alpha050,October_control__single_auv_24h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+October_control,2024-10-30,2,24.0,representative_zone,0.75,representative_zone_alpha075,October_control__single_auv_24h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+October_control,2024-10-30,2,24.0,representative_zone,1.0,representative_zone_alpha100,October_control__single_auv_24h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+October_control,2024-10-30,2,24.0,interest_map,0.0,baseline_STD,October_control__single_auv_24h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,24.0,interest_map,0.25,interest_map_alpha025,October_control__single_auv_24h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+October_control,2024-10-30,2,24.0,interest_map,0.5,interest_map_alpha050,October_control__single_auv_24h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+October_control,2024-10-30,2,24.0,interest_map,0.75,interest_map_alpha075,October_control__single_auv_24h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+October_control,2024-10-30,2,24.0,interest_map,1.0,interest_map_alpha100,October_control__single_auv_24h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map
+October_control,2024-10-30,2,48.0,boundary_score,0.0,baseline_STD,October_control__single_auv_48h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,48.0,boundary_score,0.25,boundary_score_alpha025,October_control__single_auv_48h__boundary_score_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*boundary_score
+October_control,2024-10-30,2,48.0,boundary_score,0.5,boundary_score_alpha050,October_control__single_auv_48h__boundary_score_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*boundary_score
+October_control,2024-10-30,2,48.0,boundary_score,0.75,boundary_score_alpha075,October_control__single_auv_48h__boundary_score_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*boundary_score
+October_control,2024-10-30,2,48.0,boundary_score,1.0,boundary_score_alpha100,October_control__single_auv_48h__boundary_score_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*boundary_score
+October_control,2024-10-30,2,48.0,representative_zone,0.0,baseline_STD,October_control__single_auv_48h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,48.0,representative_zone,0.25,representative_zone_alpha025,October_control__single_auv_48h__representative_zone_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*representative_zone
+October_control,2024-10-30,2,48.0,representative_zone,0.5,representative_zone_alpha050,October_control__single_auv_48h__representative_zone_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*representative_zone
+October_control,2024-10-30,2,48.0,representative_zone,0.75,representative_zone_alpha075,October_control__single_auv_48h__representative_zone_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*representative_zone
+October_control,2024-10-30,2,48.0,representative_zone,1.0,representative_zone_alpha100,October_control__single_auv_48h__representative_zone_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*representative_zone
+October_control,2024-10-30,2,48.0,interest_map,0.0,baseline_STD,October_control__single_auv_48h__baseline_STD,True,True,False,STD_norm
+October_control,2024-10-30,2,48.0,interest_map,0.25,interest_map_alpha025,October_control__single_auv_48h__interest_map_alpha025,False,True,False,(1-0.25)*STD_norm + 0.25*interest_map
+October_control,2024-10-30,2,48.0,interest_map,0.5,interest_map_alpha050,October_control__single_auv_48h__interest_map_alpha050,False,True,False,(1-0.50)*STD_norm + 0.50*interest_map
+October_control,2024-10-30,2,48.0,interest_map,0.75,interest_map_alpha075,October_control__single_auv_48h__interest_map_alpha075,False,True,False,(1-0.75)*STD_norm + 0.75*interest_map
+October_control,2024-10-30,2,48.0,interest_map,1.0,interest_map_alpha100,October_control__single_auv_48h__interest_map_alpha100,False,True,False,(1-1.00)*STD_norm + 1.00*interest_map

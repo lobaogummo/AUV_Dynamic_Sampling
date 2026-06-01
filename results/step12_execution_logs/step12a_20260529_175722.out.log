@@ -1,0 +1,4 @@
+Step12A launching 117 physical planner runs with workers=2
+Step12A complete: results\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726
+Verdict: STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED
+Logical rows: 135; physical runs: 117; figures: 220

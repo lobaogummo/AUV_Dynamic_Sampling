@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 697, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 664, in main
+    create_figures(outdir, fleet_df, vehicle_df, route_points_by_fleet, cases, maps, temp, mask)
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py", line 371, in create_figures
+    c.plot_paths_on_map(map1, {"AUV1": paths.get("AUV1", [])}, figdir / f"step12b_{case_id}_{duration:g}h_{r.strategy}_AUV1_path_over_real_information_map.png", f"{case_id} {duration:g}h {r.strategy} AUV1 over real information_map", "viridis", 0, 1, color_cycle=["white"], region_a=region_a, region_b=region_b)
+  File "C:\Users\E713181\Documents\Dados\FILIPA_DADOS\scripts\step12_common.py", line 390, in plot_paths_on_map
+    fig.savefig(out, dpi=180)
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2186, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\backend_bases.py", line 2042, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\matplotlib\image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\E713181\AppData\Roaming\Python\Python312\site-packages\PIL\Image.py", line 2585, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\E713181\\Documents\\Dados\\FILIPA_DADOS\\results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108\\figures\\step12b_C01_representative_12h_role_swap_of_vehicle_specific_7030_AUV1_path_over_real_information_map.png'
