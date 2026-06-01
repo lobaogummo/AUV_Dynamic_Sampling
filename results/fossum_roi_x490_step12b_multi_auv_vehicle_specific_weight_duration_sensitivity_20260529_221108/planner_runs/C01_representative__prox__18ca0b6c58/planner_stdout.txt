@@ -1,0 +1,70 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    35 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H   16266      5s |          273  Y          273  Y          273  Y
+    35692     10s |          273  Y          273  Y          273  Y
+    54301     15s |          273  Y          273  Y          273  Y
+    74516     20s |          273  Y          273  Y          273  Y
+    94197     25s |          273  Y          273  Y          273  Y
+   111453     30s |          273  Y          273  Y          273  Y
+   126807     35s |          273  Y          273  Y          273  Y
+   143590     40s |          273  Y          273  Y          273  Y
+R                 |                      restart
+   163106     45s |          273  Y          273  Y          273  Y
+   182816     50s |          273  Y          273  Y          273  Y
+   202748     55s |          273  Y          273  Y          273  Y
+   223049     60s |          273  Y          273  Y          273  Y
+
+Search terminated in 60.00s after 223049 iterations.
+Best-found solution has cost 273.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 35
+   objective: 273
+    distance: 273
+    duration: 273
+# iterations: 223049
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[170.7]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    35 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+
+Search terminated in 4.55s after 15000 iterations.
+Best-found solution has cost 273.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 35
+   objective: 273
+    distance: 273
+    duration: 273
+# iterations: 15000
+    run-time: 4.55 seconds
+Total WP Routes Temperr [°C]:
+35.0
+Total All Routes Temperr [°C]:
+398.0

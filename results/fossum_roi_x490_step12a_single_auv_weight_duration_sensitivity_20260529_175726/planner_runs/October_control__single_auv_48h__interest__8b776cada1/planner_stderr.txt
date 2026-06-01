@@ -1,0 +1,8 @@
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726\planner_runs\October_control__single_auv_48h__interest__8b776cada1\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726\planner_runs\October_control__single_auv_48h__interest__8b776cada1\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726\planner_runs\October_control__single_auv_48h__interest__8b776cada1\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726\planner_runs\October_control__single_auv_48h__interest__8b776cada1\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

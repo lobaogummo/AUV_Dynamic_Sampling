@@ -1,0 +1,82 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    309 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    2224      5s |        13018  N        13018  N       116218  Y
+     5208     10s |        63755  N        63755  N       116218  Y
+H   11701     15s |        73284  Y        75464  Y        72720  Y
+H   17997     20s |        71686  Y        74790  Y        71271  Y
+H   24340     25s |        70257  Y        72587  N        70141  Y
+H   30871     30s |        69826  Y        70274  Y        69826  Y
+    37472     35s |        69826  Y        69826  Y        69826  Y
+H   44170     40s |        69734  Y        71378  N        69652  Y
+    50115     45s |        69713  Y        71243  N        69652  Y
+    55551     50s |        69713  Y        69713  Y        69652  Y
+    61147     55s |        69713  Y        69713  Y        69652  Y
+
+Search terminated in 60.00s after 67409 iterations.
+Best-found solution has cost 69652.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 120
+   objective: 69652
+    distance: 576
+    duration: 576
+# iterations: 67409
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[165.6]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    309 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    2123      5s |        13948  N        13948  N       111080  Y
+     5422     10s |        68197  N        68197  N       111080  Y
+H   10880     15s |        78563  Y        83551  Y        77323  Y
+H   16820     20s |        75662  Y        77943  N        75308  Y
+H   23938     25s |        73816  Y        76425  Y        73558  Y
+H   30742     30s |        73046  Y        73046  Y        72263  Y
+H   38059     35s |        72465  Y        72465  Y        72224  Y
+H   44924     40s |        72047  Y        72047  Y        71941  Y
+    51946     45s |        72094  Y        72094  Y        71941  Y
+H   56663     50s |        72030  Y        72030  Y        71798  Y
+H   61841     55s |        71808  Y        73172  Y        71399  Y
+    68629     60s |        71628  Y        72481  Y        71399  Y
+H   75966     65s |        71257  Y        71257  Y        71257  Y
+    82942     70s |        71257  Y        71257  Y        71257  Y
+
+Search terminated in 73.23s after 87789 iterations.
+Best-found solution has cost 71257.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 118
+   objective: 71257
+    distance: 552
+    duration: 552
+# iterations: 87789
+    run-time: 73.23 seconds
+Total WP Routes Temperr [°C]:
+78.88644
+Total All Routes Temperr [°C]:
+635.7612

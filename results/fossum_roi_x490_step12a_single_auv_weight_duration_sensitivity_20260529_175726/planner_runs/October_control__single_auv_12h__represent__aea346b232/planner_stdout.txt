@@ -1,0 +1,72 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[43.2]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    243 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    2793      5s |        16669  N        16669  N      1039552  Y
+     5658     10s |       154746  N       154746  N      1039552  Y
+H   12351     15s |      1016467  Y      1016467  Y      1006589  Y
+    26553     20s |      1008722  Y      1008722  Y      1006589  Y
+    40693     25s |      1008722  Y      1021533  N      1006589  Y
+    54613     30s |      1008722  Y      1016633  Y      1006589  Y
+    69172     35s |      1008722  Y      1022464  N      1006589  Y
+    83055     40s |      1008722  Y      1008722  Y      1006589  Y
+    97378     45s |      1008722  Y      1025382  N      1006589  Y
+   112201     50s |      1008722  Y      1029568  N      1006589  Y
+   126680     55s |      1008722  Y      1008722  Y      1006589  Y
+
+Search terminated in 60.00s after 140751 iterations.
+Best-found solution has cost 1006589.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 34
+   objective: 1006589
+    distance: 144
+    duration: 144
+# iterations: 140751
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[41.16]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    243 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    2610      5s |        17023  N        17023  N      1101510  Y
+     5216     10s |       105358  N       105358  N      1101510  Y
+H   10090     15s |      1043529  N      1043529  N      1028485  Y
+H   25055     20s |      1024585  Y      1041541  N      1018329  Y
+
+Search terminated in 20.37s after 25922 iterations.
+Best-found solution has cost 1018329.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 32
+   objective: 1018329
+    distance: 137
+    duration: 137
+# iterations: 25922
+    run-time: 20.37 seconds
+Total WP Routes Temperr [°C]:
+29.500496
+Total All Routes Temperr [°C]:
+258.20224

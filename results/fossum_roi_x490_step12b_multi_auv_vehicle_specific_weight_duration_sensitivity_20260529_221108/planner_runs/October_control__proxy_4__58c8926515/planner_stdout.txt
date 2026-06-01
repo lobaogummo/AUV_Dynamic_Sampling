@@ -1,0 +1,69 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    29 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H   18492      5s |         1237  Y         1237  Y         1237  Y
+    37278     10s |         1237  Y         1248  Y         1237  Y
+    59889     15s |         1237  Y         1249  Y         1237  Y
+    80550     20s |         1237  Y         1237  Y         1237  Y
+   102255     25s |         1237  Y         1247  Y         1237  Y
+   124477     30s |         1237  Y         1250  Y         1237  Y
+   146848     35s |         1237  Y         1247  Y         1237  Y
+R                 |                      restart
+   168312     40s |         1237  Y         1237  Y         1237  Y
+   190328     45s |         1237  Y         1248  Y         1237  Y
+   208177     50s |         1237  Y         1237  Y         1237  Y
+   230539     55s |         1237  Y         1248  Y         1237  Y
+
+Search terminated in 60.00s after 251208 iterations.
+Best-found solution has cost 1237.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 28
+   objective: 1237
+    distance: 237
+    duration: 237
+# iterations: 251208
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[171.12]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    29 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+
+Search terminated in 3.63s after 15009 iterations.
+Best-found solution has cost 1237.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 28
+   objective: 1237
+    distance: 237
+    duration: 237
+# iterations: 15009
+    run-time: 3.63 seconds
+Total WP Routes Temperr [°C]:
+28.0
+Total All Routes Temperr [°C]:
+396.0

@@ -1,0 +1,85 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    318 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    1688      5s |         8252  N         8252  N       120932  Y
+     3323     10s |        20420  N        20445  N       120932  Y
+H    7037     15s |        87167  Y        87167  Y        83451  Y
+H   12826     20s |        82928  Y        87309  N        82326  Y
+H   18485     25s |        81005  Y        81005  Y        80740  Y
+H   24019     30s |        80659  Y        81087  Y        80659  Y
+H   29214     35s |        80464  Y        84267  N        80336  Y
+H   34456     40s |        80196  Y        80562  Y        80196  Y
+H   39984     45s |        80009  Y        82243  N        79686  Y
+H   45432     50s |        79651  Y        80816  N        79651  Y
+    50631     55s |        79651  Y        79651  Y        79651  Y
+
+Search terminated in 60.00s after 56161 iterations.
+Best-found solution has cost 79651.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 124
+   objective: 79651
+    distance: 576
+    duration: 576
+# iterations: 56161
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[165.36]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    318 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    1626      5s |         8524  N         8524  N       117879  Y
+     3240     10s |        20949  N        20949  N       117879  Y
+H    6598     15s |        90589  N        90589  N        87195  Y
+H   12849     20s |        86028  N        87170  N        85198  Y
+H   18285     25s |        84861  Y        84861  Y        84623  Y
+H   24059     30s |        84042  Y        88286  Y        83894  Y
+H   29523     35s |        83996  Y        84884  Y        83865  Y
+    33007     40s |        83950  Y        87826  Y        83865  Y
+H   37446     45s |        83562  Y        86374  Y        83562  Y
+    41014     50s |        83562  Y        83562  Y        83562  Y
+H   45370     55s |        83518  Y        85396  N        83513  Y
+H   50794     60s |        83478  Y        87849  Y        83478  Y
+H   56423     65s |        83473  Y        84721  N        83473  Y
+    62073     70s |        83473  Y        88090  N        83473  Y
+H   67796     75s |        83462  Y        85208  Y        83462  Y
+    73360     80s |        83462  Y        83624  N        83462  Y
+    78780     85s |        83462  Y        84375  N        83462  Y
+
+Search terminated in 85.33s after 79096 iterations.
+Best-found solution has cost 83462.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 118
+   objective: 83462
+    distance: 551
+    duration: 551
+# iterations: 79096
+    run-time: 85.33 seconds
+Total WP Routes Temperr [°C]:
+84.537
+Total All Routes Temperr [°C]:
+689.0465

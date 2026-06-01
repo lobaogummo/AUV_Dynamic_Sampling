@@ -1,0 +1,8 @@
+#FRESNEL OPTIMAL PLANNING - GENERATION DATA 
+#TIMESTAMP: 2026-05-29 18:03:29.258462 [UTC]
+#AUV_NUMBER: 1
+#SPEED: 1  [m/s]
+#WP_WAITING_TIME: 1  [m]
+#ROUTES SPECS:  waypoints(lat, lon, depth) - length_2d(same depth length) - travel_duration(no wp waiting time) - mission_duration(travel_duration + wp waiting time) -  minimum_depth(min depth along the route)
+#length_2D: 35.09 [km] travel_duration: 9 [h] 44 [m] mission_duration: 9 [h] 58 [m] minimum_depth: 41.385548 [m]
+ 39.57266, -9.292792, 110.0299; 39.577934, -9.23398, 88.10768; 39.57266, -9.199228, 65.69832; 39.59904, -9.140416, 83.2259; 39.577934, -9.140416, 42.614483; 39.58321, -9.151109, 53.251316; 39.567383, -9.183188, 53.03211; 39.55683, -9.183188, 44.82832; 39.55155, -9.193882, 47.862865; 39.541, -9.193882, 41.385548; 39.55155, -9.212595, 61.197163; 39.562107, -9.209921, 65.71536; 39.567383, -9.231307, 81.52102; 39.562107, -9.263387, 94.92799; 39.567383, -9.274079, 101.45746; 39.572044, -9.290606, 110.0299; 

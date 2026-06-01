@@ -1,0 +1,76 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    262 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    4000      5s |        17918  Y        17918  Y        17660  Y
+H   11066     10s |        17154  Y        17497  N        17089  Y
+H   16542     15s |        17015  Y        17015  Y        17014  Y
+H   22802     20s |        16926  Y        17028  Y        16842  Y
+    29801     25s |        16872  Y        16969  Y        16842  Y
+    36831     30s |        16930  Y        17240  Y        16842  Y
+    43683     35s |        16929  Y        16931  Y        16842  Y
+H   51248     40s |        16845  Y        17259  Y        16829  Y
+H   58391     45s |        16828  N        17314  N        16765  Y
+H   66099     50s |        16746  Y        16845  Y        16745  Y
+    73391     55s |        16745  Y        16745  Y        16745  Y
+
+Search terminated in 60.00s after 80427 iterations.
+Best-found solution has cost 16745.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 101
+   objective: 16745
+    distance: 575
+    duration: 575
+# iterations: 80427
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[166.74]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    262 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    5301      5s |        17538  N        17603  N        17310  Y
+H   10643     10s |        17158  Y        17158  Y        17067  Y
+H   17544     15s |        17069  Y        17168  Y        17010  Y
+H   21891     20s |        16915  Y        16915  Y        16843  Y
+H   28599     25s |        16730  Y        16730  Y        16714  Y
+    33915     30s |        16735  Y        16832  Y        16714  Y
+H   39965     35s |        16682  Y        17007  N        16682  Y
+    45979     40s |        16693  Y        16851  N        16682  Y
+
+Search terminated in 43.43s after 50969 iterations.
+Best-found solution has cost 16682.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 102
+   objective: 16682
+    distance: 555
+    duration: 555
+# iterations: 50969
+    run-time: 43.43 seconds
+Total WP Routes Temperr [°C]:
+66.79309
+Total All Routes Temperr [°C]:
+686.7389

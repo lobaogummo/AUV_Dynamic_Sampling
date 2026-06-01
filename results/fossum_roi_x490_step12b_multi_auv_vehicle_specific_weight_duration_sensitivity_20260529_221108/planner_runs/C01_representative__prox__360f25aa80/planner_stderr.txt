@@ -1,0 +1,8 @@
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108\planner_runs\C01_representative__prox__360f25aa80\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108\planner_runs\C01_representative__prox__360f25aa80\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108\planner_runs\C01_representative__prox__360f25aa80\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\E713181\Documents\Dados\FILIPA_DADOS\results\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108\planner_runs\C01_representative__prox__360f25aa80\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
