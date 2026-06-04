@@ -12,11 +12,16 @@ import argparse
 import math
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pandas as pd
+try:
+    from scipy import ndimage as ndi
+except Exception:  # pragma: no cover - scipy is expected, but keep a safe fallback.
+    ndi = None
 
 import step12_common as c
 
@@ -34,7 +39,27 @@ WEIGHTS = [
 ]
 
 
-def logical_manifest(cases: pd.DataFrame, durations: list[float], include_boundary_support: bool) -> pd.DataFrame:
+@dataclass(frozen=True)
+class PenaltyConfig:
+    enable_overlap_penalty: bool = False
+    lambda_overlap: float = 0.0
+    lambda_proximity: float = 0.0
+    proximity_sigma_cells: float = 2.0
+    proximity_radius_cells: int = 8
+    penalty_mode: str = "both"
+
+
+def penalty_strategy_name(strategy: str, config: PenaltyConfig) -> str:
+    if not config.enable_overlap_penalty:
+        return strategy
+    return f"{strategy}_penalty_{config.penalty_mode}"
+
+
+def base_strategy_name(strategy: str) -> str:
+    return str(strategy).split("_penalty_")[0]
+
+
+def logical_manifest(cases: pd.DataFrame, durations: list[float], include_boundary_support: bool, enable_overlap_penalty: bool = False, penalty_mode: str = "both", strategies: set[str] | None = None) -> pd.DataFrame:
     rows = []
     for _, case in cases.iterrows():
         for duration in durations:
@@ -54,9 +79,14 @@ def logical_manifest(cases: pd.DataFrame, durations: list[float], include_bounda
                     "physical_run_id": f"{case.case_id}__multi_auv_{duration:g}h__baseline_shared_STD",
                     "prototype_based_maps": True,
                     "TEMPpred_used_as_objective": False,
+                    "base_strategy": "baseline_shared_STD",
+                    "overlap_penalty_enabled": False,
+                    "penalty_mode": "",
                 }
             )
             for name, w_std, w_reg in WEIGHTS:
+                if strategies is not None and name not in strategies:
+                    continue
                 for vehicle_id, region in [(1, "region_A"), (2, "region_B")]:
                     rows.append(
                         {
@@ -74,9 +104,38 @@ def logical_manifest(cases: pd.DataFrame, durations: list[float], include_bounda
                             "physical_run_id": f"{case.case_id}__proxy_{duration:g}h__{name}__AUV{vehicle_id}_{region}",
                             "prototype_based_maps": True,
                             "TEMPpred_used_as_objective": False,
+                            "base_strategy": name,
+                            "overlap_penalty_enabled": False,
+                            "penalty_mode": "",
                         }
                     )
+                    if enable_overlap_penalty:
+                        pname = penalty_strategy_name(name, PenaltyConfig(True, penalty_mode=penalty_mode))
+                        rows.append(
+                            {
+                                "case_id": case.case_id,
+                                "date": case.date,
+                                "predicted_class": int(case.predicted_class),
+                                "mission_duration_requested_h": duration,
+                                "strategy": pname,
+                                "scope": "vehicle_specific_proxy_1auv_penalized",
+                                "vehicle_id": vehicle_id,
+                                "w_STD": w_std,
+                                "w_region": w_reg,
+                                "w_boundary": 0.0,
+                                "role_assignment": f"AUV1=region_A;AUV2=region_B",
+                                "physical_run_id": f"{case.case_id}__proxy_{duration:g}h__{pname}__AUV{vehicle_id}_{region}",
+                                "prototype_based_maps": True,
+                                "TEMPpred_used_as_objective": False,
+                                "base_strategy": name,
+                                "overlap_penalty_enabled": True,
+                                "penalty_mode": penalty_mode,
+                            }
+                        )
             if include_boundary_support:
+                bname = "vehicle_specific_603010_boundary_support"
+                if strategies is not None and bname not in strategies:
+                    continue
                 for vehicle_id, region in [(1, "region_A"), (2, "region_B")]:
                     rows.append(
                         {
@@ -94,8 +153,34 @@ def logical_manifest(cases: pd.DataFrame, durations: list[float], include_bounda
                             "physical_run_id": f"{case.case_id}__proxy_{duration:g}h__vehicle_specific_603010_boundary_support__AUV{vehicle_id}_{region}",
                             "prototype_based_maps": True,
                             "TEMPpred_used_as_objective": False,
+                            "base_strategy": bname,
+                            "overlap_penalty_enabled": False,
+                            "penalty_mode": "",
                         }
                     )
+                    if enable_overlap_penalty:
+                        pname = penalty_strategy_name(bname, PenaltyConfig(True, penalty_mode=penalty_mode))
+                        rows.append(
+                            {
+                                "case_id": case.case_id,
+                                "date": case.date,
+                                "predicted_class": int(case.predicted_class),
+                                "mission_duration_requested_h": duration,
+                                "strategy": pname,
+                                "scope": "vehicle_specific_proxy_1auv_optional_penalized",
+                                "vehicle_id": vehicle_id,
+                                "w_STD": 0.60,
+                                "w_region": 0.30,
+                                "w_boundary": 0.10,
+                                "role_assignment": "AUV1=region_A;AUV2=region_B;boundary_support",
+                                "physical_run_id": f"{case.case_id}__proxy_{duration:g}h__{pname}__AUV{vehicle_id}_{region}",
+                                "prototype_based_maps": True,
+                                "TEMPpred_used_as_objective": False,
+                                "base_strategy": bname,
+                                "overlap_penalty_enabled": True,
+                                "penalty_mode": penalty_mode,
+                            }
+                        )
     return pd.DataFrame(rows)
 
 
@@ -136,6 +221,7 @@ def route_vehicle_metric(
     return {
         "run_id": run_id,
         "strategy": strategy,
+        "base_strategy": base_strategy_name(strategy),
         "case_id": case_id,
         "vehicle_id": vehicle_id,
         "mission_duration_requested_h": mission_duration_requested_h,
@@ -184,6 +270,7 @@ def fleet_metric(
     w_std: float,
     w_region: float,
     w_boundary: float,
+    reward_metrics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     set1 = set(c.unique_valid(vehicle_points.get(1, []), valid_full))
     set2 = set(c.unique_valid(vehicle_points.get(2, []), valid_full))
@@ -203,9 +290,16 @@ def fleet_metric(
         specialization += max(0.0, float(v2.get("fraction_path_region_B", 0) - v2.get("fraction_path_region_A", 0))) / 2.0
     else:
         specialization = np.nan
+    reward_metrics = reward_metrics or {}
+    fleet_reward = reward_metrics.get("fleet_total_reward", np.nan)
+    if pd.isna(fleet_reward):
+        auv1_reward = reward_metrics.get("auv1_total_reward", np.nan)
+        auv2_reward = reward_metrics.get("auv2_total_reward_penalized_map", reward_metrics.get("auv2_total_reward_original_map", np.nan))
+        fleet_reward = float(np.nansum([auv1_reward, auv2_reward])) if pd.notna(auv1_reward) or pd.notna(auv2_reward) else np.nan
     return {
         "run_id": run_id,
         "strategy": strategy,
+        "base_strategy": base_strategy_name(strategy),
         "case_id": case_id,
         "mission_duration_requested_h": mission_duration_requested_h,
         "role_assignment": role_assignment,
@@ -218,19 +312,133 @@ def fleet_metric(
         "fleet_collected_boundary": float(vdf["collected_boundary"].sum()) if not vdf.empty else np.nan,
         "fleet_region_A_coverage": float(cov_a),
         "fleet_region_B_coverage": float(cov_b),
+        "region_A_coverage": float(cov_a),
+        "region_B_coverage": float(cov_b),
         "region_balance": float(1.0 - abs(cov_a - cov_b) / max(cov_a + cov_b, 1e-9)),
         "regime_specialization_score": float(specialization),
         "inter_vehicle_mean_distance": mean_d,
         "inter_vehicle_min_distance": min_d,
+        "inter_vehicle_mean_distance_cells": mean_d,
+        "inter_vehicle_min_distance_cells": min_d,
         "trajectory_overlap_ratio": float(overlap),
         "duplicate_sampled_cells": int(len(inter)),
         "fleet_total_area_covered": int(len(union)),
+        "auv1_total_reward": reward_metrics.get("auv1_total_reward", np.nan),
+        "auv2_total_reward_original_map": reward_metrics.get("auv2_total_reward_original_map", np.nan),
+        "auv2_total_reward_penalized_map": reward_metrics.get("auv2_total_reward_penalized_map", np.nan),
+        "fleet_total_reward": fleet_reward,
+        "reward_loss_due_to_penalty": reward_metrics.get("reward_loss_due_to_penalty", np.nan),
+        "overlap_penalty_enabled": bool(reward_metrics.get("overlap_penalty_enabled", False)),
+        "lambda_overlap": reward_metrics.get("lambda_overlap", 0.0),
+        "lambda_proximity": reward_metrics.get("lambda_proximity", 0.0),
+        "proximity_sigma_cells": reward_metrics.get("proximity_sigma_cells", np.nan),
+        "proximity_radius_cells": reward_metrics.get("proximity_radius_cells", np.nan),
+        "penalty_mode": reward_metrics.get("penalty_mode", ""),
+        "auv2_original_map_file": reward_metrics.get("auv2_original_map_file", ""),
+        "auv2_penalized_map_file": reward_metrics.get("auv2_penalized_map_file", ""),
+        "auv1_visited_mask_file": reward_metrics.get("auv1_visited_mask_file", ""),
+        "auv1_proximity_penalty_file": reward_metrics.get("auv1_proximity_penalty_file", ""),
         "complementarity_score": float(0.35 * (cov_a + cov_b) + 0.25 * (1.0 - overlap) + 0.25 * np.nan_to_num(specialization, nan=0.0) + 0.15 * (1.0 - abs(cov_a - cov_b) / max(cov_a + cov_b, 1e-9))),
     }
 
 
 def build_map(std: np.ndarray, role_map: np.ndarray, boundary: np.ndarray, mask: np.ndarray, w_std: float, w_region: float, w_boundary: float) -> np.ndarray:
     return c.normalize_map(w_std * std + w_region * role_map + w_boundary * boundary, mask)
+
+
+def rasterize_points_to_roi(points_full: list[tuple[int, int]], mask: np.ndarray) -> np.ndarray:
+    """Rasterize a high-res trajectory into the ROI grid used by information maps."""
+    visited = np.zeros(mask.shape, dtype=np.float32)
+    for row, col in points_full:
+        rr = int(row) - c.ROI_ROW_MIN
+        cc = int(col) - c.ROI_COL_MIN
+        if 0 <= rr < mask.shape[0] and 0 <= cc < mask.shape[1] and bool(mask[rr, cc]):
+            visited[rr, cc] = 1.0
+    return visited
+
+
+def proximity_penalty_from_visited(visited_mask: np.ndarray, mask: np.ndarray, sigma_cells: float, radius_cells: int) -> np.ndarray:
+    """Build a smooth [0, 1] proximity penalty around AUV1's visited cells."""
+    penalty = np.zeros(mask.shape, dtype=np.float32)
+    visited = visited_mask > 0.5
+    if not np.any(visited):
+        penalty[mask] = 0.0
+        penalty[~mask] = np.nan
+        return penalty
+    sigma = max(float(sigma_cells), 1e-6)
+    radius = max(int(radius_cells), 0)
+    if ndi is not None:
+        dist = ndi.distance_transform_edt(~visited).astype(np.float32)
+    else:
+        ys, xs = np.where(visited)
+        yy, xx = np.indices(mask.shape)
+        # Fallback is slower but fine for the small ROI grid.
+        dist = np.sqrt(np.min((yy[..., None] - ys) ** 2 + (xx[..., None] - xs) ** 2, axis=2)).astype(np.float32)
+    penalty = np.exp(-0.5 * (dist / sigma) ** 2).astype(np.float32)
+    if radius > 0:
+        penalty[dist > radius] = 0.0
+    penalty[visited] = 1.0
+    penalty[~mask] = np.nan
+    return penalty
+
+
+def apply_overlap_penalty(info_map: np.ndarray, visited_mask: np.ndarray, proximity_penalty: np.ndarray, mask: np.ndarray, config: PenaltyConfig) -> np.ndarray:
+    """Apply optional reward-map shaping before Lucrezia's VRP node prizes are built.
+
+    This does not replace or edit the VRP/orienteering objective. It only changes
+    the AUV2 input information_map that will later be converted into node prizes.
+    """
+    shaped = np.array(info_map, dtype=np.float32, copy=True)
+    valid = mask & np.isfinite(shaped)
+    if config.penalty_mode in ["overlap", "both"]:
+        shaped[valid] -= float(config.lambda_overlap) * visited_mask[valid]
+    if config.penalty_mode in ["proximity", "both"]:
+        shaped[valid] -= float(config.lambda_proximity) * proximity_penalty[valid]
+    shaped[valid] = np.clip(shaped[valid], 0.0, None)
+    shaped[~valid] = np.nan
+    return c.normalize_map(shaped, mask)
+
+
+def route_reward(points_full: list[tuple[int, int]], info_roi: np.ndarray, mask: np.ndarray, valid_full: np.ndarray) -> float:
+    """Sum ROI information-map rewards along unique valid high-res route points."""
+    total = 0.0
+    used = 0
+    for row, col in c.unique_valid(points_full, valid_full):
+        rr = int(row) - c.ROI_ROW_MIN
+        cc = int(col) - c.ROI_COL_MIN
+        if 0 <= rr < info_roi.shape[0] and 0 <= cc < info_roi.shape[1] and bool(mask[rr, cc]):
+            val = info_roi[rr, cc]
+            if np.isfinite(val):
+                total += float(val)
+                used += 1
+    return total if used else float("nan")
+
+
+def save_penalty_artifacts(
+    outdir: Path,
+    run_id: str,
+    auv2_original: np.ndarray,
+    auv2_penalized: np.ndarray,
+    visited_mask: np.ndarray,
+    proximity_penalty: np.ndarray,
+    mask: np.ndarray,
+) -> dict[str, str]:
+    penalty_dir = outdir / "penalty_maps"
+    penalty_dir.mkdir(parents=True, exist_ok=True)
+    name = c.short_name(run_id, max_prefix=50)
+    paths = {
+        "auv2_original_map_file": penalty_dir / f"{name}_AUV2_original_information_map.npy",
+        "auv2_penalized_map_file": penalty_dir / f"{name}_AUV2_penalized_information_map.npy",
+        "auv1_visited_mask_file": penalty_dir / f"{name}_AUV1_visited_mask.npy",
+        "auv1_proximity_penalty_file": penalty_dir / f"{name}_AUV1_proximity_penalty.npy",
+    }
+    np.save(paths["auv2_original_map_file"], auv2_original)
+    np.save(paths["auv2_penalized_map_file"], auv2_penalized)
+    np.save(paths["auv1_visited_mask_file"], visited_mask.astype(np.float32))
+    np.save(paths["auv1_proximity_penalty_file"], proximity_penalty.astype(np.float32))
+    for key, path in list(paths.items()):
+        paths[key] = c.rel(path)
+    return paths
 
 
 def summarize_fleet(fleet: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -288,6 +496,45 @@ def summarize_fleet(fleet: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd
     return f, weight_summary, duration_summary, runtime_summary, best
 
 
+def penalty_comparison_table(fleet: pd.DataFrame) -> pd.DataFrame:
+    if fleet.empty or "overlap_penalty_enabled" not in fleet.columns:
+        return pd.DataFrame()
+    f = fleet.copy()
+    f["overlap_penalty_enabled"] = f["overlap_penalty_enabled"].astype(bool)
+    if not f["overlap_penalty_enabled"].any():
+        return pd.DataFrame()
+    keys = ["case_id", "mission_duration_requested_h", "base_strategy", "w_STD", "w_region", "w_boundary"]
+    metric_cols = [
+        "trajectory_overlap_ratio",
+        "duplicate_sampled_cells",
+        "inter_vehicle_mean_distance_cells",
+        "inter_vehicle_min_distance_cells",
+        "fleet_total_reward",
+        "fleet_collected_STD",
+        "fleet_region_A_coverage",
+        "fleet_region_B_coverage",
+        "region_A_coverage",
+        "region_B_coverage",
+        "complementarity_score",
+        "reward_loss_due_to_penalty",
+        "solver_runtime",
+    ]
+    base = f[~f["overlap_penalty_enabled"]][keys + [c for c in metric_cols if c in f.columns]].copy()
+    penalized = f[f["overlap_penalty_enabled"]][keys + ["strategy", "penalty_mode", "lambda_overlap", "lambda_proximity", "proximity_sigma_cells", "proximity_radius_cells"] + [c for c in metric_cols if c in f.columns]].copy()
+    if base.empty or penalized.empty:
+        return pd.DataFrame()
+    merged = penalized.merge(base, on=keys, how="left", suffixes=("_penalized", "_no_penalty"))
+    if "trajectory_overlap_ratio_no_penalty" in merged.columns and "trajectory_overlap_ratio_penalized" in merged.columns:
+        merged["overlap_reduction"] = merged["trajectory_overlap_ratio_no_penalty"] - merged["trajectory_overlap_ratio_penalized"]
+    if "duplicate_sampled_cells_no_penalty" in merged.columns and "duplicate_sampled_cells_penalized" in merged.columns:
+        merged["duplicate_cell_reduction"] = merged["duplicate_sampled_cells_no_penalty"] - merged["duplicate_sampled_cells_penalized"]
+    if "fleet_total_reward_no_penalty" in merged.columns and "fleet_total_reward_penalized" in merged.columns:
+        merged["fleet_reward_delta"] = merged["fleet_total_reward_penalized"] - merged["fleet_total_reward_no_penalty"]
+    if "fleet_collected_STD_no_penalty" in merged.columns and "fleet_collected_STD_penalized" in merged.columns:
+        merged["fleet_STD_delta"] = merged["fleet_collected_STD_penalized"] - merged["fleet_collected_STD_no_penalty"]
+    return merged
+
+
 def run_fleet_strategy(
     zutils,
     s11a,
@@ -314,7 +561,9 @@ def run_fleet_strategy(
     w_std: float,
     w_region: float,
     w_boundary: float,
+    penalty_config: PenaltyConfig | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any], list[dict[str, Any]], dict[int, list[tuple[int, int]]]]:
+    penalty_config = penalty_config or PenaltyConfig()
     diagnostics = []
     vehicle_rows = []
     vehicle_points: dict[int, list[tuple[int, int]]] = {}
@@ -331,19 +580,56 @@ def run_fleet_strategy(
 
     statuses = []
     runtime_sum = 0.0
+    reward_metrics: dict[str, Any] = {
+        "overlap_penalty_enabled": bool(penalty_config.enable_overlap_penalty),
+        "lambda_overlap": float(penalty_config.lambda_overlap) if penalty_config.enable_overlap_penalty else 0.0,
+        "lambda_proximity": float(penalty_config.lambda_proximity) if penalty_config.enable_overlap_penalty else 0.0,
+        "proximity_sigma_cells": float(penalty_config.proximity_sigma_cells) if penalty_config.enable_overlap_penalty else np.nan,
+        "proximity_radius_cells": int(penalty_config.proximity_radius_cells) if penalty_config.enable_overlap_penalty else np.nan,
+        "penalty_mode": penalty_config.penalty_mode if penalty_config.enable_overlap_penalty else "",
+    }
+    auv2_map_used = info_maps.get(2)
     for vehicle_id in [1, 2]:
         role = "region_A" if ("AUV1=region_A" in role_assignment and vehicle_id == 1) or ("AUV2=region_A" in role_assignment and vehicle_id == 2) else "region_B"
         run_id = f"{case_id}__proxy_{duration:g}h__{strategy}__AUV{vehicle_id}_{role}"
-        diag, routes, _run_dir = c.run_planner(zutils, s11a, run_id, info_maps[vehicle_id], mask, lat_hres, lon_hres, bathy_hres, planner, config_1auv, outdir, timeout_s, skip_existing)
+        info_map_for_vehicle = info_maps[vehicle_id]
+        if vehicle_id == 2 and penalty_config.enable_overlap_penalty:
+            visited_mask = rasterize_points_to_roi(vehicle_points.get(1, []), mask)
+            proximity_penalty = proximity_penalty_from_visited(visited_mask, mask, penalty_config.proximity_sigma_cells, penalty_config.proximity_radius_cells)
+            info_map_for_vehicle = apply_overlap_penalty(info_maps[2], visited_mask, proximity_penalty, mask, penalty_config)
+            # This is reward-map shaping before VRP optimization: Lucrezia's
+            # prize-collecting VRP objective is unchanged, but AUV2 receives a
+            # different information_map that discourages revisiting AUV1's path.
+            reward_metrics.update(save_penalty_artifacts(outdir, run_id, info_maps[2], info_map_for_vehicle, visited_mask, proximity_penalty, mask))
+            auv2_map_used = info_map_for_vehicle
+        diag, routes, _run_dir = c.run_planner(zutils, s11a, run_id, info_map_for_vehicle, mask, lat_hres, lon_hres, bathy_hres, planner, config_1auv, outdir, timeout_s, skip_existing)
+        if penalty_config.enable_overlap_penalty:
+            diag.update(
+                {
+                    "overlap_penalty_enabled": bool(vehicle_id == 2),
+                    "lambda_overlap": float(penalty_config.lambda_overlap) if vehicle_id == 2 else 0.0,
+                    "lambda_proximity": float(penalty_config.lambda_proximity) if vehicle_id == 2 else 0.0,
+                    "proximity_sigma_cells": float(penalty_config.proximity_sigma_cells) if vehicle_id == 2 else np.nan,
+                    "proximity_radius_cells": int(penalty_config.proximity_radius_cells) if vehicle_id == 2 else np.nan,
+                    "penalty_mode": penalty_config.penalty_mode if vehicle_id == 2 else "",
+                }
+            )
         diagnostics.append(diag)
         statuses.append(str(diag.get("solver_status", "")))
         runtime_sum += float(diag.get("solver_runtime_s", np.nan)) if pd.notna(diag.get("solver_runtime_s", np.nan)) else 0.0
         route = routes[0] if routes else None
         pts = c.route_points_for_route(s11a, route, lat_hres, lon_hres) if route else []
         vehicle_points[vehicle_id] = pts
+        if vehicle_id == 1:
+            reward_metrics["auv1_total_reward"] = route_reward(pts, info_maps[1], mask, valid_full)
+        else:
+            reward_metrics["auv2_total_reward_original_map"] = route_reward(pts, info_maps[2], mask, valid_full)
+            reward_metrics["auv2_total_reward_penalized_map"] = route_reward(pts, auv2_map_used if auv2_map_used is not None else info_maps[2], mask, valid_full)
+            if pd.notna(reward_metrics["auv2_total_reward_original_map"]) and pd.notna(reward_metrics["auv2_total_reward_penalized_map"]):
+                reward_metrics["reward_loss_due_to_penalty"] = float(reward_metrics["auv2_total_reward_original_map"] - reward_metrics["auv2_total_reward_penalized_map"])
         vehicle_rows.append(route_vehicle_metric(run_id, strategy, case_id, vehicle_id, route, pts, maps_full, masks_full, valid_full, str(diag.get("solver_status", "")), float(diag.get("solver_runtime_s", np.nan)), duration))
     fleet_status = "SUCCESS" if statuses and all(s in ["SUCCESS", "REUSED"] for s in statuses) else "FAILED"
-    fleet = fleet_metric(f"{case_id}__proxy_{duration:g}h__{strategy}", strategy, case_id, duration, vehicle_points, vehicle_rows, masks_full, valid_full, fleet_status, runtime_sum, role_assignment, w_std, w_region, w_boundary)
+    fleet = fleet_metric(f"{case_id}__proxy_{duration:g}h__{strategy}", strategy, case_id, duration, vehicle_points, vehicle_rows, masks_full, valid_full, fleet_status, runtime_sum, role_assignment, w_std, w_region, w_boundary, reward_metrics=reward_metrics)
     return diagnostics, fleet, vehicle_rows, vehicle_points
 
 
@@ -372,8 +658,21 @@ def create_figures(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, rou
                 if str(r.strategy) != "baseline_shared_STD":
                     map1 = build_map(std, cold if "AUV1=region_A" in str(r.role_assignment) else warm, maps["boundary_score_norm"][idx], mask, float(r.w_STD), float(r.w_region), float(r.w_boundary))
                     map2 = build_map(std, warm if "AUV2=region_B" in str(r.role_assignment) else cold, maps["boundary_score_norm"][idx], mask, float(r.w_STD), float(r.w_region), float(r.w_boundary))
+                    map2_label = "real information_map"
+                    penalized_file = str(getattr(r, "auv2_penalized_map_file", "") or "")
+                    if penalized_file:
+                        p = c.ROOT / penalized_file
+                        if p.exists():
+                            map2 = np.load(p)
+                            map2_label = "penalized information_map"
                     c.plot_paths_on_map(map1, {"AUV1": paths.get("AUV1", [])}, figdir / f"step12b_{case_id}_{duration:g}h_{sname}_AUV1_info.png", f"{case_id} {duration:g}h {r.strategy} AUV1 over real information_map", "viridis", 0, 1, color_cycle=["white"], region_a=region_a, region_b=region_b)
-                    c.plot_paths_on_map(map2, {"AUV2": paths.get("AUV2", [])}, figdir / f"step12b_{case_id}_{duration:g}h_{sname}_AUV2_info.png", f"{case_id} {duration:g}h {r.strategy} AUV2 over real information_map", "viridis", 0, 1, color_cycle=["yellow"], region_a=region_a, region_b=region_b)
+                    c.plot_paths_on_map(map2, {"AUV2": paths.get("AUV2", [])}, figdir / f"step12b_{case_id}_{duration:g}h_{sname}_AUV2_info.png", f"{case_id} {duration:g}h {r.strategy} AUV2 over {map2_label}", "viridis", 0, 1, color_cycle=["yellow"], region_a=region_a, region_b=region_b)
+                    proximity_file = str(getattr(r, "auv1_proximity_penalty_file", "") or "")
+                    if proximity_file:
+                        p = c.ROOT / proximity_file
+                        if p.exists():
+                            proximity = np.load(p)
+                            c.plot_paths_on_map(proximity, paths, figdir / f"step12b_{case_id}_{duration:g}h_{sname}_AUV1_AUV2_proximity_penalty.png", f"{case_id} {duration:g}h {r.strategy} trajectories over AUV1 proximity penalty", "magma", 0, 1, color_cycle=["white", "cyan"], region_a=region_a, region_b=region_b)
             best = sub.sort_values("recommendation_score", ascending=False).head(1)
             if not best.empty:
                 r = best.iloc[0]
@@ -384,9 +683,13 @@ def create_figures(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, rou
     c.plot_grouped_bar(fleet, "strategy", "solver_runtime", "mission_duration_requested_h", figdir / "step12b_runtime_comparison.png", "Step12B runtime comparison")
     c.plot_scatter(fleet, "fleet_collected_STD", "fleet_region_B_coverage", "strategy", figdir / "step12b_STD_collected_vs_region_coverage.png", "Step12B STD collected vs region B coverage")
     c.plot_scatter(fleet, "trajectory_overlap_ratio", "regime_specialization_score", "strategy", figdir / "step12b_overlap_vs_specialization.png", "Step12B overlap vs specialization")
+    if "overlap_penalty_enabled" in fleet.columns and fleet["overlap_penalty_enabled"].astype(bool).any():
+        c.plot_scatter(fleet, "trajectory_overlap_ratio", "fleet_total_reward", "overlap_penalty_enabled", figdir / "step12b_penalty_reward_tradeoff_vs_overlap.png", "Step12B reward tradeoff versus overlap reduction")
+        c.plot_scatter(fleet, "trajectory_overlap_ratio", "reward_loss_due_to_penalty", "strategy", figdir / "step12b_penalty_reward_loss_vs_overlap.png", "Step12B penalty reward loss versus overlap")
 
 
-def write_reports(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, weight_summary: pd.DataFrame, duration_summary: pd.DataFrame, runtime_summary: pd.DataFrame, best: pd.DataFrame, checks: dict[str, Any]) -> None:
+def write_reports(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, weight_summary: pd.DataFrame, duration_summary: pd.DataFrame, runtime_summary: pd.DataFrame, best: pd.DataFrame, checks: dict[str, Any], penalty_comparison: pd.DataFrame | None = None) -> None:
+    penalty_comparison = penalty_comparison if penalty_comparison is not None else pd.DataFrame()
     lines = [
         "# Step12B multi-AUV vehicle-specific weight sensitivity",
         "",
@@ -395,6 +698,8 @@ def write_reports(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, weig
         f"- Vehicle rows: {len(vehicle)}",
         f"- Prototype-based maps only: {checks['prototype_based_maps_only']}",
         f"- TEMPpred used as objective: {checks['TEMPpred_used_as_objective']}",
+        f"- Overlap/proximity penalty enabled: {checks.get('overlap_penalty_enabled', False)}",
+        f"- Penalty comparison rows: {checks.get('penalty_comparison_rows', 0)}",
         "",
         "## Best weight recommendation",
         c.md_table(best, ["case_id", "mission_duration_requested_h", "strategy", "w_STD", "w_region", "role_assignment", "STD_retention", "fleet_region_B_coverage", "regime_specialization_score", "trajectory_overlap_ratio", "solver_runtime", "recommendation_score"], 50),
@@ -405,9 +710,13 @@ def write_reports(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, weig
         "## Duration sensitivity",
         c.md_table(duration_summary, list(duration_summary.columns), 80),
         "",
+        "## Optional overlap/proximity penalty comparison",
+        c.md_table(penalty_comparison, ["case_id", "mission_duration_requested_h", "base_strategy", "strategy", "penalty_mode", "lambda_overlap", "lambda_proximity", "trajectory_overlap_ratio_no_penalty", "trajectory_overlap_ratio_penalized", "overlap_reduction", "duplicate_cell_reduction", "fleet_reward_delta", "fleet_STD_delta"], 80),
+        "",
         "## Methodological note",
         "- baseline_shared_STD is native 2-AUV with one shared STD map.",
         "- vehicle_specific_* strategies are proxy/wrapper runs: AUV1 and AUV2 are solved separately and combined into fleet metrics.",
+        "- Optional overlap/proximity penalties are reward-map shaping applied to AUV2 before Lucrezia converts the map into node prizes.",
         "- This is intentionally non-destructive and does not modify the planner objective.",
     ]
     report = "\n".join(lines)
@@ -428,6 +737,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--include-boundary-support", action="store_true")
     parser.add_argument("--workers", type=int, default=1, help="Number of independent fleet/planner tasks to launch in parallel.")
     parser.add_argument("--resume-output", type=Path, default=None, help="Existing Step12B output folder to reuse with --skip-existing.")
+    parser.add_argument("--strategies", nargs="*", choices=[name for name, _, _ in WEIGHTS] + ["vehicle_specific_603010_boundary_support"], default=None, help="Optional subset of vehicle-specific strategies for smoke tests.")
+    parser.add_argument("--enable-overlap-penalty", action="store_true", help="Enable optional AUV2 reward-map shaping after AUV1 has been planned.")
+    parser.add_argument("--lambda-overlap", type=float, default=0.0, help="Penalty weight for exact AUV1 visited cells.")
+    parser.add_argument("--lambda-proximity", type=float, default=0.0, help="Penalty weight for smooth proximity around AUV1 trajectory.")
+    parser.add_argument("--proximity-sigma-cells", type=float, default=2.0, help="Gaussian decay sigma in ROI cells for proximity penalty.")
+    parser.add_argument("--proximity-radius-cells", type=int, default=8, help="Maximum ROI-cell radius for nonzero proximity penalty.")
+    parser.add_argument("--penalty-mode", choices=["overlap", "proximity", "both"], default="both", help="Which AUV1 penalty components to apply to AUV2.")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -438,10 +754,25 @@ def main() -> int:
         raise ValueError("--workers must be >= 1")
     if args.workers > 3:
         print("WARNING: --workers > 3 can overload CPU/RAM because each worker launches planner processes.")
+    if args.lambda_overlap < 0 or args.lambda_proximity < 0:
+        raise ValueError("--lambda-overlap and --lambda-proximity must be non-negative")
+    if args.proximity_sigma_cells <= 0:
+        raise ValueError("--proximity-sigma-cells must be > 0")
+    if args.proximity_radius_cells < 0:
+        raise ValueError("--proximity-radius-cells must be >= 0")
+    penalty_config = PenaltyConfig(
+        enable_overlap_penalty=bool(args.enable_overlap_penalty),
+        lambda_overlap=float(args.lambda_overlap),
+        lambda_proximity=float(args.lambda_proximity),
+        proximity_sigma_cells=float(args.proximity_sigma_cells),
+        proximity_radius_cells=int(args.proximity_radius_cells),
+        penalty_mode=str(args.penalty_mode),
+    )
+    strategy_subset = set(args.strategies) if args.strategies else None
     start = time.perf_counter()
     cases, maps, step11y = c.load_step11y_maps(args.step11y)
     cases = cases[cases["case_id"].isin(args.cases)].copy().reset_index(drop=True)
-    manifest = logical_manifest(cases, args.durations, args.include_boundary_support)
+    manifest = logical_manifest(cases, args.durations, args.include_boundary_support, args.enable_overlap_penalty, args.penalty_mode, strategy_subset)
     initial_physical = int(manifest["physical_run_id"].nunique())
     if args.dry_run:
         role_swap_runs = len(cases) * len(args.durations) * 2
@@ -520,9 +851,10 @@ def main() -> int:
                     "w_boundary": 0.0,
                 }
             )
-            configs = list(WEIGHTS)
+            configs = [cfg for cfg in WEIGHTS if strategy_subset is None or cfg[0] in strategy_subset]
             if args.include_boundary_support:
-                configs.append(("vehicle_specific_603010_boundary_support", 0.60, 0.30))
+                if strategy_subset is None or "vehicle_specific_603010_boundary_support" in strategy_subset:
+                    configs.append(("vehicle_specific_603010_boundary_support", 0.60, 0.30))
             for name, w_std, w_reg in configs:
                 w_boundary = 0.10 if name.endswith("boundary_support") else 0.0
                 actual_w_std = 0.60 if name.endswith("boundary_support") else w_std
@@ -547,8 +879,30 @@ def main() -> int:
                         "w_std": actual_w_std,
                         "w_region": actual_w_reg,
                         "w_boundary": w_boundary,
+                        "penalty_config": PenaltyConfig(),
                     }
                 )
+                if penalty_config.enable_overlap_penalty:
+                    penalized_name = penalty_strategy_name(name, penalty_config)
+                    initial_tasks.append(
+                        {
+                            "case_id": case_id,
+                            "duration": duration,
+                            "strategy": penalized_name,
+                            "role_assignment": "AUV1=region_A;AUV2=region_B",
+                            "info_maps": info_maps,
+                            "native_2auv": False,
+                            "std": std,
+                            "config_1auv": config_1auv,
+                            "config_2auv": config_2auv,
+                            "maps_full": maps_full,
+                            "masks_full": masks_full,
+                            "w_std": actual_w_std,
+                            "w_region": actual_w_reg,
+                            "w_boundary": w_boundary,
+                            "penalty_config": penalty_config,
+                        }
+                    )
 
     def execute_fleet_task(task: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any], list[dict[str, Any]], dict[int, list[tuple[int, int]]]]:
         return run_fleet_strategy(
@@ -577,6 +931,7 @@ def main() -> int:
             task["w_std"],
             task["w_region"],
             task["w_boundary"],
+            task.get("penalty_config", PenaltyConfig()),
         )
 
     def collect_result(result: tuple[list[dict[str, Any]], dict[str, Any], list[dict[str, Any]], dict[int, list[tuple[int, int]]]]) -> None:
@@ -625,6 +980,7 @@ def main() -> int:
             2: build_map(std, cold, boundary, mask, float(r.w_STD), float(r.w_region), float(r.w_boundary)),
         }
         strategy = f"role_swap_of_{r.strategy}"
+        role_swap_penalty_config = penalty_config if bool(getattr(r, "overlap_penalty_enabled", False)) else PenaltyConfig()
         role_swap_tasks.append(
             {
                 "case_id": case_id,
@@ -641,6 +997,7 @@ def main() -> int:
                 "w_std": float(r.w_STD),
                 "w_region": float(r.w_region),
                 "w_boundary": float(r.w_boundary),
+                "penalty_config": role_swap_penalty_config,
             }
         )
 
@@ -657,8 +1014,10 @@ def main() -> int:
     vehicle_df = pd.DataFrame(vehicle_rows)
     fleet_df, weight_summary, duration_summary, runtime_summary, best = summarize_fleet(pd.DataFrame(fleet_rows))
     diagnostics = pd.DataFrame(diagnostics_rows)
+    penalty_comparison = penalty_comparison_table(fleet_df)
     vehicle_df.to_csv(outdir / "step12b_vehicle_level_metrics.csv", index=False)
     fleet_df.to_csv(outdir / "step12b_fleet_level_metrics.csv", index=False)
+    penalty_comparison.to_csv(outdir / "step12b_overlap_penalty_comparison.csv", index=False)
     weight_summary.to_csv(outdir / "step12b_weight_sensitivity_summary.csv", index=False)
     duration_summary.to_csv(outdir / "step12b_duration_sensitivity_summary.csv", index=False)
     runtime_summary.to_csv(outdir / "step12b_runtime_summary.csv", index=False)
@@ -672,6 +1031,12 @@ def main() -> int:
         "step11y": c.rel(step11y),
         "initial_physical_runs": initial_physical,
         "workers": int(args.workers),
+        "overlap_penalty_enabled": bool(penalty_config.enable_overlap_penalty),
+        "lambda_overlap": float(penalty_config.lambda_overlap) if penalty_config.enable_overlap_penalty else 0.0,
+        "lambda_proximity": float(penalty_config.lambda_proximity) if penalty_config.enable_overlap_penalty else 0.0,
+        "proximity_sigma_cells": float(penalty_config.proximity_sigma_cells) if penalty_config.enable_overlap_penalty else np.nan,
+        "proximity_radius_cells": int(penalty_config.proximity_radius_cells) if penalty_config.enable_overlap_penalty else np.nan,
+        "penalty_mode": penalty_config.penalty_mode if penalty_config.enable_overlap_penalty else "",
         "resume_output": c.rel(outdir) if args.resume_output else "",
         "role_swap_fleet_rows": int(fleet_df["strategy"].astype(str).str.startswith("role_swap").sum()),
         "total_physical_runs_executed_or_reused": int(len(diagnostics)),
@@ -685,12 +1050,28 @@ def main() -> int:
         "all_runs_have_status": bool(fleet_df["solver_status"].astype(str).ne("").all()),
         "all_runtimes_recorded": bool(pd.to_numeric(fleet_df["solver_runtime"], errors="coerce").notna().all()),
         "figures_created": len(list((outdir / "figures").glob("*.png"))),
+        "penalty_comparison_rows": int(len(penalty_comparison)),
+        "penalty_maps_saved": len(list((outdir / "penalty_maps").glob("*.npy"))) if (outdir / "penalty_maps").exists() else 0,
         "total_script_runtime_s": float(time.perf_counter() - start),
         "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED" if not best.empty else "STEP12_COMPLETED_WITH_TRADEOFFS_REVIEW_REQUIRED",
     }
     c.write_json(outdir / "step12b_checks.json", checks)
-    c.write_json(outdir / "step12b_metadata.json", {"created_at": c.now_tag(), "inputs": {"step11y": c.rel(step11y), "step10f": c.rel(c.STEP10F)}})
-    write_reports(outdir, fleet_df, vehicle_df, weight_summary, duration_summary, runtime_summary, best, checks)
+    c.write_json(
+        outdir / "step12b_metadata.json",
+        {
+            "created_at": c.now_tag(),
+            "inputs": {"step11y": c.rel(step11y), "step10f": c.rel(c.STEP10F)},
+            "overlap_penalty": {
+                "enable_overlap_penalty": bool(penalty_config.enable_overlap_penalty),
+                "lambda_overlap": float(penalty_config.lambda_overlap),
+                "lambda_proximity": float(penalty_config.lambda_proximity),
+                "proximity_sigma_cells": float(penalty_config.proximity_sigma_cells),
+                "proximity_radius_cells": int(penalty_config.proximity_radius_cells),
+                "penalty_mode": penalty_config.penalty_mode,
+            },
+        },
+    )
+    write_reports(outdir, fleet_df, vehicle_df, weight_summary, duration_summary, runtime_summary, best, checks, penalty_comparison)
     print(f"Step12B complete: {c.rel(outdir)}")
     print(f"Verdict: {checks['verdict']}")
     print(f"Fleet rows: {checks['fleet_rows']}; physical runs: {checks['total_physical_runs_executed_or_reused']}; figures: {checks['figures_created']}")
