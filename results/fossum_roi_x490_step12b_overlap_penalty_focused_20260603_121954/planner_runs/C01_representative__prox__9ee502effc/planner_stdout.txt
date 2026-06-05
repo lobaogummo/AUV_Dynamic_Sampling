@@ -1,0 +1,69 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[86.4]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    35 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    8630      5s |          273  Y          273  Y          273  Y
+    26457     10s |          273  Y          273  Y          273  Y
+    42428     15s |          273  Y          273  Y          273  Y
+    61164     20s |          273  Y          273  Y          273  Y
+    80066     25s |          273  Y          273  Y          273  Y
+    97443     30s |          273  Y          273  Y          273  Y
+   116405     35s |          273  Y          273  Y          273  Y
+   134924     40s |          273  Y          273  Y          273  Y
+R                 |                      restart
+   153283     45s |          273  Y          273  Y          273  Y
+   172328     50s |          273  Y          273  Y          273  Y
+   191973     55s |          273  Y          273  Y          273  Y
+
+Search terminated in 60.00s after 210597 iterations.
+Best-found solution has cost 273.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 35
+   objective: 273
+    distance: 273
+    duration: 273
+# iterations: 210597
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[84.3]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    35 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+
+Search terminated in 4.46s after 15002 iterations.
+Best-found solution has cost 273.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 35
+   objective: 273
+    distance: 273
+    duration: 273
+# iterations: 15002
+    run-time: 4.46 seconds
+Total WP Routes Temperr [°C]:
+35.0
+Total All Routes Temperr [°C]:
+398.0

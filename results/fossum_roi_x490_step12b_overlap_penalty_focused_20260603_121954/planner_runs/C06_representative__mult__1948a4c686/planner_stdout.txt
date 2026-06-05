@@ -1,0 +1,89 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[172.8, 172.8]
+PyVRP v0.13.3
+
+Solving an instance with:
+    4 depots
+    317 clients
+    2 vehicles (2 vehicle types)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    1472      5s |         7259  N         7259  N        72303  Y
+     3694     10s |        30866  N        30866  N        72303  Y
+H    6791     15s |        43941  Y        43941  Y        42583  Y
+     8463     20s |        43419  Y        43419  Y        42583  Y
+H   11292     25s |        42395  N        42515  N        41169  Y
+    14915     30s |        41841  Y        42254  Y        41169  Y
+    18004     35s |        41340  Y        41340  Y        41169  Y
+H   20870     40s |        41151  Y        42178  Y        40924  Y
+H   23856     45s |        40480  Y        41449  Y        40477  Y
+H   27905     50s |        40343  Y        40905  Y        40046  Y
+H   32313     55s |        40266  Y        40779  N        39944  Y
+
+Search terminated in 60.00s after 35908 iterations.
+Best-found solution has cost 39533.
+
+Solution results
+================
+    # routes: 2
+     # trips: 2
+   # clients: 211
+   objective: 39533
+    distance: 1147
+    duration: 1147
+# iterations: 35908
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[166.08, 166.08]
+PyVRP v0.13.3
+
+Solving an instance with:
+    4 depots
+    317 clients
+    2 vehicles (2 vehicle types)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H    1519      5s |         9673  N         9699  N        81795  Y
+     3409     10s |        23323  N        23410  N        81795  Y
+H    6052     15s |        46220  Y        46226  Y        43851  Y
+     8237     20s |        45741  Y        45745  Y        43851  Y
+    10638     25s |        44956  Y        44956  Y        43851  Y
+H   14630     30s |        43799  Y        43799  Y        43556  Y
+H   18447     35s |        43217  Y        43627  Y        43108  Y
+H   22135     40s |        42745  Y        43268  N        42440  Y
+H   26292     45s |        42334  Y        42334  Y        42162  Y
+H   30268     50s |        42439  Y        46872  N        41924  Y
+H   34023     55s |        42130  Y        42350  N        41906  Y
+H   37142     60s |        41908  Y        41909  Y        41897  Y
+H   41374     65s |        41471  Y        41889  Y        41323  Y
+H   45680     70s |        41175  Y        41924  N        41175  Y
+H   50031     75s |        41146  Y        41146  Y        41073  Y
+H   54330     80s |        41143  Y        41703  N        40914  Y
+    58784     85s |        40914  Y        40917  Y        40914  Y
+H   62020     90s |        40913  Y        41817  N        40913  Y
+    66279     95s |        40913  Y        40918  Y        40913  Y
+    69803    100s |        40913  Y        41286  Y        40913  Y
+    73872    105s |        40913  Y        40913  Y        40913  Y
+
+Search terminated in 105.51s after 74209 iterations.
+Best-found solution has cost 40913.
+
+Solution results
+================
+    # routes: 2
+     # trips: 2
+   # clients: 207
+   objective: 40913
+    distance: 1100
+    duration: 1100
+# iterations: 74209
+    run-time: 105.51 seconds
+Total WP Routes Temperr [°C]:
+121.04256
+Total All Routes Temperr [°C]:
+nan

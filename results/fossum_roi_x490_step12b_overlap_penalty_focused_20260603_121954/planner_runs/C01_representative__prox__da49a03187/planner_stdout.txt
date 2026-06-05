@@ -1,0 +1,73 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[43.2]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    310 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+     2800      5s |        28727  N        28922  N       137803  N
+H   12125     10s |       119235  Y       119235  Y       119201  Y
+    24832     15s |       119559  Y       121271  Y       119201  Y
+    38550     20s |       119559  Y       121266  Y       119201  Y
+    55524     25s |       119559  Y       121276  Y       119201  Y
+    71095     30s |       119559  Y       122224  Y       119201  Y
+    87440     35s |       119559  Y       120379  Y       119201  Y
+   103237     40s |       119559  Y       121074  Y       119201  Y
+   119980     45s |       119559  Y       131891  Y       119201  Y
+   135744     50s |       119559  Y       121788  Y       119201  Y
+   152006     55s |       119559  Y       121702  Y       119201  Y
+R                 |                      restart
+   168153     60s |       119731  Y       121456  Y       119201  Y
+
+Search terminated in 60.00s after 168153 iterations.
+Best-found solution has cost 119201.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 26
+   objective: 119201
+    distance: 144
+    duration: 144
+# iterations: 168153
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[41.64]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    310 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+     2863      5s |        28459  N        28459  N       137848  N
+H    9159     10s |       122990  Y       123893  N       121194  Y
+H   23851     15s |       119951  Y       120676  Y       119951  Y
+
+Search terminated in 18.49s after 33731 iterations.
+Best-found solution has cost 119951.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 26
+   objective: 119951
+    distance: 138
+    duration: 138
+# iterations: 33731
+    run-time: 18.49 seconds
+Total WP Routes Temperr [°C]:
+20.085203
+Total All Routes Temperr [°C]:
+187.26263

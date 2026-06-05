@@ -1,0 +1,43 @@
+{
+  "audit_created": true,
+  "output_dir": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425",
+  "planner_rerun": false,
+  "existing_outputs_modified": false,
+  "new_trajectories_generated": false,
+  "corrected_arrays_created": true,
+  "case_count": 3,
+  "map_shape": [
+    3,
+    72,
+    117
+  ],
+  "step08_dir_used": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
+  "boundary_distance_descriptors_available": true,
+  "boundary_distance_step08_keys_found": [
+    "boundary_distance_cells",
+    "boundary_distance_km",
+    "boundary_distance_score_r1_cells",
+    "boundary_distance_score_r2_cells",
+    "boundary_distance_score_r3_cells",
+    "boundary_distance_score_r5_cells",
+    "boundary_distance_score_r8_cells"
+  ],
+  "boundary_distance_output_keys": [
+    "boundary_distance_cells_norm",
+    "boundary_distance_km_norm",
+    "boundary_distance_score_r1_cells_norm",
+    "boundary_distance_score_r2_cells_norm",
+    "boundary_distance_score_r3_cells_norm",
+    "boundary_distance_score_r5_cells_norm",
+    "boundary_distance_score_r8_cells_norm"
+  ],
+  "step10f_boundary_near_exact_cases": 3,
+  "region_fallback_rows": 4,
+  "rerun_cases": [
+    "October_control"
+  ],
+  "figures_created": 4,
+  "missing_inputs_count": 0,
+  "warnings_count": 0,
+  "verdict": "MIXED_INPUTS_PARTIAL_RERUN_RECOMMENDED"
+}

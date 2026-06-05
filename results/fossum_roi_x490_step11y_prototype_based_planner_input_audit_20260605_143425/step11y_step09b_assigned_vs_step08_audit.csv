@@ -1,0 +1,12 @@
+case_id,date,descriptor,step09b_assignment_found,inference,rmse,mae,pearson,max_abs_diff,exact_match,near_exact_match,valid_cells_compared
+C01_representative,2024-08-24,boundary,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C01_representative,2024-08-24,cold_region,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C01_representative,2024-08-24,warm_region,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C01_representative,2024-08-24,representative_zone,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C01_representative,2024-08-24,interest,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C06_representative,2023-12-22,boundary,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C06_representative,2023-12-22,cold_region,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C06_representative,2023-12-22,warm_region,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,0.9999999999999999,0.0,True,True,8004.0
+C06_representative,2023-12-22,representative_zone,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,1.0,0.0,True,True,8004.0
+C06_representative,2023-12-22,interest,True,Step09B_assigned_descriptor_matches_Step08,0.0,0.0,0.9999999999999999,0.0,True,True,8004.0
+October_control,2024-10-30,,False,Step09B_missing_for_case,,,,,,,

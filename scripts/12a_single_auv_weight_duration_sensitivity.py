@@ -12,7 +12,7 @@ from __future__ import annotations
 import argparse
 import math
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -35,6 +35,53 @@ DESCRIPTORS = {
 }
 ALPHAS = [0.0, 0.25, 0.50, 0.75, 1.0]
 DURATIONS = [12.0, 24.0, 48.0]
+
+
+def execute_planner_task_process(task: dict[str, Any]) -> tuple[str, dict[str, Any], list[dict[str, Any]], list[tuple[int, int]]]:
+    """Run one planner task in an isolated process.
+
+    Each task writes to a run-specific NetCDF and planner runtime directory.
+    This is intentionally only reward-map shaping before Lucrezia's unchanged
+    prize-collecting VRP/orienteering solver is invoked.
+    """
+    run_id = str(task["run_id"])
+    try:
+        print(f"[worker-start] {run_id}", flush=True)
+        s11a = c.load_step11a()
+        zutils = c.load_step11z()
+        lat_hres, lon_hres, bathy_hres = c.load_hres()
+        diag, routes, _run_dir = c.run_planner(
+            zutils,
+            s11a,
+            run_id,
+            np.asarray(task["info"], dtype=np.float32),
+            np.asarray(task["mask"], dtype=bool),
+            lat_hres,
+            lon_hres,
+            bathy_hres,
+            Path(task["planner"]),
+            str(task["config"]),
+            Path(task["outdir"]),
+            int(task["timeout_s"]),
+            bool(task["skip_existing"]),
+        )
+        points = c.route_points_all(s11a, routes, lat_hres, lon_hres)
+        print(f"[worker-done] {run_id} status={diag.get('solver_status', diag.get('status', ''))}", flush=True)
+        return run_id, diag, routes, points
+    except Exception as exc:
+        diag = {
+            "run_id": run_id,
+            "solver_status": "FAILED_EXCEPTION",
+            "status": "FAILED_EXCEPTION",
+            "returncode": -997,
+            "solver_runtime_s": np.nan,
+            "runtime_s": np.nan,
+            "solver_gap": np.nan,
+            "error": repr(exc),
+            "run_dir": "",
+        }
+        print(f"[worker-failed] {run_id} error={exc!r}", flush=True)
+        return run_id, diag, [], []
 
 
 def alpha_tag(alpha: float) -> str:
@@ -70,6 +117,32 @@ def logical_manifest(cases: pd.DataFrame, durations: list[float], descriptors: l
                         }
                     )
     return pd.DataFrame(rows)
+
+
+def resolve_worker_count(args: argparse.Namespace) -> int:
+    requested = args.n_workers
+    if args.workers is not None:
+        requested = args.workers
+    if requested < 1:
+        raise ValueError("--n-workers/--workers must be >= 1")
+    if args.max_workers < 1:
+        raise ValueError("--max-workers must be >= 1")
+    if requested > args.max_workers:
+        print(f"WARNING: requested {requested} workers but --max-workers={args.max_workers}; capping to {args.max_workers}.")
+    return max(1, min(int(requested), int(args.max_workers)))
+
+
+def print_dry_run(manifest: pd.DataFrame, args: argparse.Namespace, worker_count: int, step11y: Path) -> None:
+    physical = manifest.drop_duplicates("physical_run_id").sort_values(["case_id", "mission_duration_requested_h", "physical_run_id"])
+    effective_workers = worker_count if args.parallel else 1
+    print(
+        f"Step12A dry-run: logical_rows={len(manifest)}, physical_planner_runs={len(physical)}, "
+        f"parallel={args.parallel}, workers={effective_workers}, backend={args.parallel_backend}, step11y={c.rel(step11y)}"
+    )
+    print(physical.groupby(["case_id", "mission_duration_requested_h"])["physical_run_id"].nunique().to_string())
+    print("\nTask list:")
+    cols = ["case_id", "mission_duration_requested_h", "descriptor", "alpha", "physical_run_id"]
+    print(physical[cols].to_string(index=False))
 
 
 def regime_metrics(points: list[tuple[int, int]], masks_full: dict[str, np.ndarray], valid_full: np.ndarray) -> dict[str, Any]:
@@ -336,8 +409,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--durations", nargs="*", type=float, default=DURATIONS)
     parser.add_argument("--cases", nargs="*", choices=c.CASE_ORDER, default=c.CASE_ORDER)
     parser.add_argument("--descriptors", nargs="*", choices=sorted(DESCRIPTORS), default=None)
+    parser.add_argument("--parallel", action="store_true", help="Run independent planner tasks in parallel. Sequential remains the default.")
+    parser.add_argument("--n-workers", type=int, default=2, help="Number of process workers to use with --parallel.")
+    parser.add_argument("--max-workers", type=int, default=3, help="Safety cap for process workers.")
+    parser.add_argument("--parallel-backend", choices=["process"], default="process")
     parser.add_argument("--skip-existing", action="store_true")
-    parser.add_argument("--workers", type=int, default=1, help="Number of independent planner runs to launch in parallel.")
+    parser.add_argument("--workers", type=int, default=None, help="Legacy alias for --n-workers. Parallelism still requires --parallel.")
     parser.add_argument("--resume-output", type=Path, default=None, help="Existing Step12A output folder to reuse with --skip-existing.")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -345,10 +422,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    if args.workers < 1:
-        raise ValueError("--workers must be >= 1")
-    if args.workers > 3:
-        print("WARNING: --workers > 3 can overload CPU/RAM because each worker launches a planner process.")
+    worker_count = resolve_worker_count(args)
+    if args.workers is not None and args.workers > 1 and not args.parallel:
+        print("WARNING: --workers is a legacy alias for worker count, but parallel execution now requires --parallel; running sequentially.")
+    if args.parallel and worker_count > 3:
+        print("WARNING: >3 planner workers can overload CPU/RAM because each worker launches a planner subprocess.")
     start = time.perf_counter()
     cases, maps, step11y = c.load_step11y_maps(args.step11y)
     cases = cases[cases["case_id"].isin(args.cases)].copy().reset_index(drop=True)
@@ -373,9 +451,7 @@ def main() -> int:
         raise RuntimeError("No Step12A descriptors are available in the selected Step11Y output.")
     manifest = logical_manifest(cases, args.durations, descriptor_names)
     if args.dry_run:
-        physical = manifest["physical_run_id"].nunique()
-        print(f"Step12A dry-run: logical_rows={len(manifest)}, physical_planner_runs={physical}, workers={args.workers}, step11y={c.rel(step11y)}")
-        print(manifest.groupby(["case_id", "mission_duration_requested_h"])["physical_run_id"].nunique().to_string())
+        print_dry_run(manifest, args, worker_count, step11y)
         return 0
 
     s11a = c.load_step11a()
@@ -419,7 +495,18 @@ def main() -> int:
                 else:
                     desc = maps[DESCRIPTORS[str(r.descriptor)]][idx]
                     info = c.normalize_map((1.0 - alpha) * std + alpha * desc, mask)
-                planner_tasks.append({"run_id": str(r.physical_run_id), "info": info, "config": config})
+                planner_tasks.append(
+                    {
+                        "run_id": str(r.physical_run_id),
+                        "info": info,
+                        "mask": mask,
+                        "config": config,
+                        "planner": str(args.planner.resolve()),
+                        "outdir": str(outdir.resolve()),
+                        "timeout_s": int(args.timeout_s),
+                        "skip_existing": bool(args.skip_existing),
+                    }
+                )
 
     def execute_task(task: dict[str, Any]) -> tuple[str, dict[str, Any], list[dict[str, Any]], list[tuple[int, int]]]:
         diag, routes, _run_dir = c.run_planner(
@@ -439,21 +526,54 @@ def main() -> int:
         )
         return task["run_id"], diag, routes, c.route_points_all(s11a, routes, lat_hres, lon_hres)
 
-    print(f"Step12A launching {len(planner_tasks)} physical planner runs with workers={args.workers}")
-    if args.workers == 1:
+    effective_workers = worker_count if args.parallel else 1
+    print(
+        f"Step12A launching {len(planner_tasks)} physical planner runs; "
+        f"parallel={args.parallel}; workers={effective_workers}; backend={args.parallel_backend}; output={c.rel(outdir)}"
+    )
+    if not args.parallel or effective_workers == 1:
         for task in planner_tasks:
+            print(f"[start] {task['run_id']}", flush=True)
             run_id, diag, routes, points = execute_task(task)
             diag_by_run[run_id] = diag
             routes_by_run[run_id] = routes
             route_points_by_run[run_id] = points
+            print(f"[done] {run_id} status={diag.get('solver_status', diag.get('status', ''))}", flush=True)
     else:
-        with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            futures = [pool.submit(execute_task, task) for task in planner_tasks]
-            for future in as_completed(futures):
-                run_id, diag, routes, points = future.result()
+        with ProcessPoolExecutor(max_workers=effective_workers) as pool:
+            future_to_run = {}
+            for task in planner_tasks:
+                print(f"[queued] {task['run_id']}", flush=True)
+                future_to_run[pool.submit(execute_planner_task_process, task)] = str(task["run_id"])
+            # Explicit future tracking keeps one failed process from cancelling
+            # collection of the remaining independent runs.
+            for future in as_completed(future_to_run):
+                expected_run_id = future_to_run[future]
+                try:
+                    run_id, diag, routes, points = future.result()
+                except Exception as exc:
+                    run_id = expected_run_id
+                    diag = {
+                        "run_id": run_id,
+                        "solver_status": "FAILED_FUTURE_EXCEPTION",
+                        "status": "FAILED_FUTURE_EXCEPTION",
+                        "returncode": -996,
+                        "solver_runtime_s": np.nan,
+                        "runtime_s": np.nan,
+                        "solver_gap": np.nan,
+                        "error": repr(exc),
+                        "run_dir": "",
+                    }
+                    routes = []
+                    points = []
                 diag_by_run[run_id] = diag
                 routes_by_run[run_id] = routes
                 route_points_by_run[run_id] = points
+                status = diag.get("solver_status", diag.get("status", ""))
+                if status not in ["SUCCESS", "REUSED"]:
+                    print(f"[failed] {run_id} status={status} error={diag.get('error', '')}", flush=True)
+                else:
+                    print(f"[finished] {run_id} status={status}", flush=True)
 
     metric_rows = []
     for r in manifest.itertuples():
@@ -494,11 +614,15 @@ def main() -> int:
     metrics_raw = pd.DataFrame(metric_rows)
     metrics, alpha_summary, duration_summary, runtime_summary, best = summarize(metrics_raw)
     diagnostics = pd.DataFrame(diag_by_run.values())
+    failure_summary = diagnostics[
+        ~diagnostics.get("solver_status", pd.Series(dtype=str)).astype(str).isin(["SUCCESS", "REUSED"])
+    ].copy() if not diagnostics.empty else pd.DataFrame()
     metrics.to_csv(outdir / "step12a_single_auv_metrics.csv", index=False)
     alpha_summary.to_csv(outdir / "step12a_alpha_sensitivity_summary.csv", index=False)
     duration_summary.to_csv(outdir / "step12a_duration_sensitivity_summary.csv", index=False)
     runtime_summary.to_csv(outdir / "step12a_runtime_summary.csv", index=False)
     diagnostics.to_csv(outdir / "step12a_solver_diagnostics.csv", index=False)
+    failure_summary.to_csv(outdir / "step12a_failure_summary.csv", index=False)
     best.to_csv(outdir / "step12a_best_weight_recommendation.csv", index=False)
 
     create_figures(outdir, metrics, route_points_by_run, cases, maps, temp, mask)
@@ -508,7 +632,11 @@ def main() -> int:
         "step11y": c.rel(step11y),
         "logical_rows": int(len(manifest)),
         "physical_runs_executed_or_reused": int(manifest["physical_run_id"].nunique()),
-        "workers": int(args.workers),
+        "parallel": bool(args.parallel),
+        "parallel_backend": args.parallel_backend,
+        "workers": int(effective_workers),
+        "requested_workers": int(args.workers if args.workers is not None else args.n_workers),
+        "max_workers": int(args.max_workers),
         "resume_output": c.rel(outdir) if args.resume_output else "",
         "durations_tested": sorted([float(x) for x in metrics["mission_duration_requested_h"].dropna().unique()]),
         "alphas_tested": sorted([float(x) for x in metrics["alpha"].dropna().unique()]),
@@ -519,6 +647,7 @@ def main() -> int:
         "TEMPpred_used_as_objective": False,
         "all_runs_have_status": bool(metrics["solver_status"].astype(str).ne("").all()),
         "all_runtimes_recorded": bool(pd.to_numeric(metrics["solver_runtime"], errors="coerce").notna().all()),
+        "failed_runs": int(len(failure_summary)),
         "figures_created": len(list((outdir / "figures").glob("*.png"))),
         "total_script_runtime_s": float(time.perf_counter() - start),
         "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED" if not best.empty else "STEP12_COMPLETED_WITH_TRADEOFFS_REVIEW_REQUIRED",
@@ -530,6 +659,12 @@ def main() -> int:
             "created_at": c.now_tag(),
             "inputs": {"step11y": c.rel(step11y), "step10f": c.rel(c.STEP10F)},
             "descriptor_map_keys": {name: DESCRIPTORS[name] for name in descriptor_names},
+            "parallelization": {
+                "enabled": bool(args.parallel),
+                "backend": args.parallel_backend,
+                "workers": int(effective_workers),
+                "isolation": "Each physical_run_id maps to a hashed planner_runs subdirectory and unique planner_inputs NetCDF file.",
+            },
             "boundary_distance_note": "boundary_distance_score_r*_cells_norm maps are pure prototype-based boundary proximity scores when present in Step11Y.",
         },
     )

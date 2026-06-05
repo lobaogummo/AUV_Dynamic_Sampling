@@ -1,0 +1,1 @@
+command,returncode,runtime_s,path,temperr_shape,finite_cells,temperr_min,temperr_max,landt_valid_cells,run_id,status,error,input_nc,solver_status,solver_runtime_s,solver_gap,run_dir

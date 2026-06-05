@@ -1,0 +1,9 @@
+{
+  "output_dir": "docs\\lucid_trajectory_results\\step12_predmodel_result_panels_20260602_174420",
+  "step12a_source": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726",
+  "step12b_source": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108",
+  "panels_created": 36,
+  "svg_created": true,
+  "TEMPpred_used_as_objective": false,
+  "planner_rerun": false
+}

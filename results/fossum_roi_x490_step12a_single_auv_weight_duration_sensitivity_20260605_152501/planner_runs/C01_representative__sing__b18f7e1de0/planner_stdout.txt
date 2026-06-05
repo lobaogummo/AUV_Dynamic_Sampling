@@ -1,0 +1,69 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[43.2]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    19 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+H   24419      5s |         2144  Y         2932  N         2144  Y
+    53322     10s |         2144  Y         2144  Y         2144  Y
+    77210     15s |         2144  Y         3098  N         2144  Y
+    95536     20s |         2144  Y         2144  Y         2144  Y
+   112023     25s |         2144  Y         2144  Y         2144  Y
+   133679     30s |         2144  Y         3089  N         2144  Y
+R                 |                      restart
+   156388     35s |         2800  N         3129  N         2144  Y
+   181580     40s |         2144  Y         2144  Y         2144  Y
+   215293     45s |         2144  Y         2144  Y         2144  Y
+   247204     50s |         2144  Y         2432  N         2144  Y
+   275024     55s |         2144  Y         2144  Y         2144  Y
+
+Search terminated in 60.00s after 298353 iterations.
+Best-found solution has cost 2144.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 17
+   objective: 2144
+    distance: 144
+    duration: 144
+# iterations: 298353
+    run-time: 60.00 seconds
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[42.18]
+PyVRP v0.13.3
+
+Solving an instance with:
+    2 depots
+    19 clients
+    1 vehicle (1 vehicle type)
+
+    Iters    Time |      Current OK    Candidate OK         Best OK
+
+Search terminated in 4.01s after 15000 iterations.
+Best-found solution has cost 3136.
+
+Solution results
+================
+    # routes: 1
+     # trips: 1
+   # clients: 16
+   objective: 3136
+    distance: 136
+    duration: 136
+# iterations: 15000
+    run-time: 4.01 seconds
+Total WP Routes Temperr [°C]:
+17.213062
+Total All Routes Temperr [°C]:
+250.09802

@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-06-05T14:34:32",
+  "script": "scripts\\11y_audit_and_rebuild_prototype_based_planner_inputs.py",
+  "inputs": {
+    "step05": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+    "step08": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
+    "step09b": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144",
+    "step10e": "results\\fossum_roi_x490_step10e_top20_class01_class06_roi_x490_20260519_184636",
+    "step10f": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260519_195022",
+    "step11c_outputs": [
+      "results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_200322",
+      "results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_214458"
+    ],
+    "step11d_outputs": [
+      "results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_114809",
+      "results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935"
+    ]
+  },
+  "missing": [],
+  "warnings": [],
+  "correct_logic": {
+    "TEMPpred": "classification only",
+    "STD": "day-specific uncertainty for baseline and blends",
+    "descriptors": "Step08 prototype descriptor maps indexed by predicted class",
+    "boundary_distance_descriptors": "optional Step08 pure distance/proximity maps, min-max normalized by predicted class when available"
+  }
+}
