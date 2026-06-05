@@ -51,6 +51,7 @@ EXPECTED_VALID_CELLS = 8004
 EXPECTED_CLASS_SIZES = [41, 70, 50, 107, 30, 72]
 
 INTEREST_WEIGHTS = {"boundary": 0.4, "gradient": 0.4, "heterogeneity": 0.2}
+BOUNDARY_DISTANCE_RADII_CELLS = [1, 2, 3, 5, 8]
 
 
 @dataclass(frozen=True)
@@ -523,6 +524,78 @@ def distance_to_boundary(boundary: np.ndarray, valid: np.ndarray) -> np.ndarray:
     return dist
 
 
+def robust_grid_spacing_km(x_km: np.ndarray, y_km: np.ndarray) -> tuple[float, float, bool, dict[str, Any]]:
+    """Estimate regular ROI grid spacing in km for distance-transform sampling."""
+
+    def axis_spacing(grid: np.ndarray, axis: int) -> tuple[float, float, bool]:
+        axis_values = axis_from_grid(grid, axis=axis)
+        diffs = np.abs(np.diff(axis_values.astype(float)))
+        diffs = diffs[np.isfinite(diffs) & (diffs > 1e-9)]
+        if diffs.size == 0:
+            return float("nan"), float("nan"), False
+        med = float(np.nanmedian(diffs))
+        rel_mad = float(np.nanmedian(np.abs(diffs - med)) / max(med, 1e-9))
+        return med, rel_mad, bool(rel_mad <= 0.05)
+
+    dx, dx_rel_mad, ok_x = axis_spacing(x_km, axis=1)
+    dy, dy_rel_mad, ok_y = axis_spacing(y_km, axis=0)
+    ok = bool(ok_x and ok_y and np.isfinite(dx) and np.isfinite(dy) and dx > 0 and dy > 0)
+    meta = {
+        "dx_km": dx,
+        "dy_km": dy,
+        "dx_relative_mad": dx_rel_mad,
+        "dy_relative_mad": dy_rel_mad,
+        "reliable": ok,
+        "method": "median adjacent X_km/Y_km spacing; reliable if relative MAD <= 0.05 on both axes",
+    }
+    return dy, dx, ok, meta
+
+
+def boundary_distance_descriptors(
+    boundary: np.ndarray,
+    valid: np.ndarray,
+    x_km: np.ndarray,
+    y_km: np.ndarray,
+    radii_cells: list[int],
+) -> tuple[np.ndarray, np.ndarray, dict[int, np.ndarray], dict[str, Any]]:
+    """Pure boundary-distance descriptors using the existing boundary mask.
+
+    Scores are reward-like proximity bands. They are intentionally separate
+    from the older blended `boundary_score`, which mixes gradient intensity
+    with boundary proximity.
+    """
+    dist_cells = np.full(boundary.shape, np.nan, dtype=np.float32)
+    dist_km = np.full(boundary.shape, np.nan, dtype=np.float32)
+    scores: dict[int, np.ndarray] = {}
+    dy_km, dx_km, spacing_ok, spacing_meta = robust_grid_spacing_km(x_km, y_km)
+    has_boundary = bool(np.any(boundary & valid))
+    if has_boundary:
+        dist_cells = ndi.distance_transform_edt(~boundary).astype(np.float32)
+        dist_cells[~valid] = np.nan
+        if spacing_ok:
+            dist_km = ndi.distance_transform_edt(~boundary, sampling=(dy_km, dx_km)).astype(np.float32)
+            dist_km[~valid] = np.nan
+    for radius in radii_cells:
+        score = np.full(boundary.shape, np.nan, dtype=np.float32)
+        if has_boundary:
+            score[valid] = np.exp(-((dist_cells[valid] ** 2) / (2.0 * float(radius) ** 2))).astype(np.float32)
+        else:
+            score[valid] = 0.0
+        score[~valid] = np.nan
+        scores[int(radius)] = score
+    radius_km = {str(r): float(r * np.mean([dx_km, dy_km])) for r in radii_cells} if spacing_ok else {}
+    meta = {
+        "has_boundary": has_boundary,
+        "radii_cells": [int(r) for r in radii_cells],
+        "radii_km_equivalent": radius_km,
+        "distance_cells_unit": "grid cells / pixels",
+        "distance_km_available": bool(spacing_ok),
+        "grid_spacing": spacing_meta,
+        "score_formula": "exp(-(distance_cells**2)/(2*radius_cells**2))",
+    }
+    return dist_cells, dist_km, scores, meta
+
+
 def old_style_boundary_score(grad_mag: np.ndarray, boundary: np.ndarray, valid: np.ndarray, regime_label: str) -> tuple[np.ndarray, dict[str, float]]:
     out = np.full(grad_mag.shape, np.nan, dtype=np.float32)
     gvals = grad_mag[valid & np.isfinite(grad_mag)]
@@ -702,6 +775,7 @@ def save_multimap_panel(
     prototypes: np.ndarray,
     gradient: np.ndarray,
     boundary: np.ndarray,
+    boundary_distance_score: np.ndarray,
     heterogeneity: np.ndarray,
     segmentation: np.ndarray,
     repzone: np.ndarray,
@@ -709,10 +783,10 @@ def save_multimap_panel(
     out_path: Path,
 ) -> None:
     n = prototypes.shape[0]
-    labels = ["prototype", "gradient", "boundary", "heterogeneity", "segmentation", "representative", "interest"]
+    labels = ["prototype", "gradient", "boundary", "boundary_dist_r3", "heterogeneity", "segmentation", "representative", "interest"]
     fig, axes = plt.subplots(n, len(labels), figsize=(3.1 * len(labels), 2.45 * n), squeeze=False)
-    cmaps = ["coolwarm", "viridis", "magma", "plasma", "coolwarm", "Greens", "inferno"]
-    arrays = [prototypes, gradient, boundary, heterogeneity, segmentation, repzone, interest]
+    cmaps = ["coolwarm", "viridis", "magma", "magma", "plasma", "coolwarm", "Greens", "inferno"]
+    arrays = [prototypes, gradient, boundary, boundary_distance_score, heterogeneity, segmentation, repzone, interest]
     for i in range(n):
         for j, label in enumerate(labels):
             ax = axes[i, j]
@@ -771,6 +845,9 @@ def make_descriptor_definitions() -> pd.DataFrame:
     rows = [
         ("gradient_mean/p90/p95/max", "Gradient intensity over canonical prototype", "old gradient_magnitude"),
         ("boundary_score", "Mean normalized boundary/front score", "old boundary_score adapted"),
+        ("boundary_distance_cells", "Nearest-boundary Euclidean distance in grid cells", "new pure distance-to-boundary descriptor"),
+        ("boundary_distance_km", "Nearest-boundary Euclidean distance in km when grid spacing is reliable", "new pure distance-to-boundary descriptor"),
+        ("boundary_distance_score_r{radius}_cells", "Gaussian boundary proximity band exp(-(distance_cells^2)/(2*radius_cells^2))", "new radius-sensitive boundary band descriptor"),
         ("heterogeneity_score", "Mean of local variance and entropy-derived roughness", "new aggregation from old temp_std/entropy diagnostics"),
         ("cold/warm/neutral_fraction", "Fractions from prototype segmentation", "adapted Otsu/tertile segmentation"),
         ("representative_zone_map", "Calm central prototype zones", "adapted from old proxy top-k/representativity idea"),
@@ -848,6 +925,11 @@ def main() -> None:
     n_classes, h, w = prototypes.shape
     gradient_maps = np.full((n_classes, h, w), np.nan, dtype=np.float32)
     boundary_maps = np.full_like(gradient_maps, np.nan)
+    boundary_distance_cells_maps = np.full_like(gradient_maps, np.nan)
+    boundary_distance_km_maps = np.full_like(gradient_maps, np.nan)
+    boundary_distance_score_maps = {
+        int(radius): np.full_like(gradient_maps, np.nan) for radius in BOUNDARY_DISTANCE_RADII_CELLS
+    }
     heterogeneity_maps = np.full_like(gradient_maps, np.nan)
     cold_maps = np.full_like(gradient_maps, np.nan)
     warm_maps = np.full_like(gradient_maps, np.nan)
@@ -903,6 +985,17 @@ def main() -> None:
         boundary_score_raw, boundary_meta = old_style_boundary_score(grad_mag, boundary_mask, valid, regime)
         boundary_norm, boundary_norm_meta = minmax01(boundary_score_raw, valid)
         boundary_maps[i] = boundary_norm
+        distance_cells, distance_km, distance_scores, distance_meta = boundary_distance_descriptors(
+            boundary_mask,
+            valid,
+            x_km,
+            y_km,
+            BOUNDARY_DISTANCE_RADII_CELLS,
+        )
+        boundary_distance_cells_maps[i] = distance_cells
+        boundary_distance_km_maps[i] = distance_km
+        for radius, score in distance_scores.items():
+            boundary_distance_score_maps[int(radius)][i] = score
 
         local_var = local_variance_map(proto, valid, size=5)
         local_var_norm, local_var_meta = minmax01(local_var, valid)
@@ -943,6 +1036,7 @@ def main() -> None:
         boundary_vals = boundary_norm[valid & np.isfinite(boundary_norm)]
         hetero_vals = hetero[valid & np.isfinite(hetero)]
         interest_vals = interest_norm[valid & np.isfinite(interest_norm)]
+        distance_vals = distance_cells[valid & np.isfinite(distance_cells)]
         cold_fraction = float(cold_mask.sum() / valid.sum())
         warm_fraction = float(warm_mask.sum() / valid.sum())
         neutral_fraction = float(neutral_mask.sum() / valid.sum())
@@ -986,6 +1080,12 @@ def main() -> None:
                 "boundary_length_proxy": int(boundary_mask.sum()),
                 "boundary_orientation_proxy": orientation_proxy(boundary_mask, x_km, y_km),
                 "boundary_region_label": region_label_from_centroid(bx, by, valid, x_km, y_km),
+                "boundary_distance_mean_cells": float(np.nanmean(distance_vals)) if distance_vals.size else float("nan"),
+                "boundary_distance_p90_cells": float(np.nanpercentile(distance_vals, 90)) if distance_vals.size else float("nan"),
+                **{
+                    f"boundary_distance_score_r{radius}_mean": float(np.nanmean(boundary_distance_score_maps[int(radius)][i][valid]))
+                    for radius in BOUNDARY_DISTANCE_RADII_CELLS
+                },
                 "heterogeneity_score": hetero_score,
                 "local_variance_mean": float(np.nanmean(local_var_vals)) if local_var_vals.size else 0.0,
                 "local_variance_p90": float(np.nanpercentile(local_var_vals, 90)) if local_var_vals.size else 0.0,
@@ -1048,6 +1148,7 @@ def main() -> None:
             "heterogeneity_std_norm": std_meta,
             "interest_norm": interest_meta,
             "boundary": {"threshold": boundary_threshold, "method": boundary_method, **boundary_meta},
+            "boundary_distance": distance_meta,
             "segmentation": {"thresholds": seg["thresholds"], "method": seg["method"]},
         }
 
@@ -1059,14 +1160,22 @@ def main() -> None:
     outputs = {
         "gradient": out_dir / "step08_descriptor_gradient_map.npy",
         "boundary": out_dir / "step08_descriptor_boundary_map.npy",
+        "boundary_distance_cells": out_dir / "step08_descriptor_boundary_distance_cells.npy",
+        "boundary_distance_km": out_dir / "step08_descriptor_boundary_distance_km.npy",
         "heterogeneity": out_dir / "step08_descriptor_heterogeneity_map.npy",
         "cold": out_dir / "step08_descriptor_cold_region_map.npy",
         "warm": out_dir / "step08_descriptor_warm_region_map.npy",
         "representative": out_dir / "step08_descriptor_representative_zone_map.npy",
         "interest": out_dir / "step08_descriptor_interest_map.npy",
     }
+    for radius in BOUNDARY_DISTANCE_RADII_CELLS:
+        outputs[f"boundary_distance_score_r{radius}_cells"] = out_dir / f"step08_descriptor_boundary_distance_score_r{radius}_cells.npy"
     np.save(outputs["gradient"], gradient_maps)
     np.save(outputs["boundary"], boundary_maps)
+    np.save(outputs["boundary_distance_cells"], boundary_distance_cells_maps)
+    np.save(outputs["boundary_distance_km"], boundary_distance_km_maps)
+    for radius in BOUNDARY_DISTANCE_RADII_CELLS:
+        np.save(outputs[f"boundary_distance_score_r{radius}_cells"], boundary_distance_score_maps[int(radius)])
     np.save(outputs["heterogeneity"], heterogeneity_maps)
     np.save(outputs["cold"], cold_maps)
     np.save(outputs["warm"], warm_maps)
@@ -1076,6 +1185,8 @@ def main() -> None:
         out_dir / "step08_all_descriptor_maps.npz",
         gradient=gradient_maps,
         boundary=boundary_maps,
+        boundary_distance_cells=boundary_distance_cells_maps,
+        boundary_distance_km=boundary_distance_km_maps,
         heterogeneity=heterogeneity_maps,
         cold_region=cold_maps,
         warm_region=warm_maps,
@@ -1088,6 +1199,7 @@ def main() -> None:
         lat=lat,
         lon=lon,
         bathy=bathy,
+        **{f"boundary_distance_score_r{radius}_cells": boundary_distance_score_maps[int(radius)] for radius in BOUNDARY_DISTANCE_RADII_CELLS},
     )
 
     descriptor_df.to_csv(out_dir / "step08_final_class_descriptors.csv", index=False)
@@ -1112,7 +1224,17 @@ def main() -> None:
         residual_df.to_csv(out_dir / "step08_member_to_prototype_residuals.csv", index=False)
 
     titles = [f"class {i+1:02d}" for i in range(n_classes)]
-    save_multimap_panel(prototypes, gradient_maps, boundary_maps, heterogeneity_maps, segmentation_maps, representative_maps, interest_maps, figures_dir / "step08_descriptor_maps_by_class_panel.png")
+    save_multimap_panel(
+        prototypes,
+        gradient_maps,
+        boundary_maps,
+        boundary_distance_score_maps[3],
+        heterogeneity_maps,
+        segmentation_maps,
+        representative_maps,
+        interest_maps,
+        figures_dir / "step08_descriptor_maps_by_class_panel.png",
+    )
     save_panel(gradient_maps, titles, figures_dir / "step08_gradient_maps_by_class_panel.png", "viridis")
     save_panel(boundary_maps, titles, figures_dir / "step08_boundary_maps_by_class_panel.png", "magma")
     save_panel(heterogeneity_maps, titles, figures_dir / "step08_heterogeneity_maps_by_class_panel.png", "plasma")
@@ -1152,7 +1274,10 @@ def main() -> None:
         arr = np.load(path)
         vals = arr[:, mask]
         finite = vals[np.isfinite(vals)]
-        checks["maps_normalized_0_1_valid"][key] = bool(finite.size and np.nanmin(finite) >= -1e-6 and np.nanmax(finite) <= 1.0 + 1e-6)
+        raw_distance_map = key in {"boundary_distance_cells", "boundary_distance_km"}
+        checks["maps_normalized_0_1_valid"][key] = bool(
+            raw_distance_map or (finite.size and np.nanmin(finite) >= -1e-6 and np.nanmax(finite) <= 1.0 + 1e-6)
+        )
         checks["nonzero_maps"][key] = bool(finite.size and np.nanmax(finite) > 1e-9)
 
     config = {
@@ -1166,6 +1291,7 @@ def main() -> None:
         "sd": 0.25,
         "seed": 11,
         "interest_weights": INTEREST_WEIGHTS,
+        "boundary_distance_radii_cells": BOUNDARY_DISTANCE_RADII_CELLS,
         "old_logic_backbone": "prototype_characterization_utils.py label-driven segmentation and boundary_score",
     }
     metadata = {
@@ -1245,6 +1371,7 @@ def main() -> None:
         "- Gradient descriptors measure spatial temperature transitions on the canonical prototype.",
         "- Boundary/front descriptors reuse the old boundary-score idea: multi-regime interface plus proximity/gradient; single-gradient capped gradient proxy; homogeneous zero boundary.",
         "- Heterogeneity descriptors combine local variance, roughness and canonical class std maps.",
+        "- Explicit boundary-distance descriptors preserve the old boundary mask but separate pure distance/proximity from gradient intensity.",
         "- Cold/warm/neutral segmentation uses Otsu-guided tertiles for multi-regime and tertiles otherwise.",
         "- Residual descriptors use Step05 class members versus the class prototype.",
         "- Planner maps are normalized to [0,1] over the Step00 mask.",
@@ -1264,6 +1391,47 @@ def main() -> None:
         ]
     )
     (out_dir / "step08_descriptor_report.md").write_text("\n".join(report_lines), encoding="utf-8")
+
+    boundary_distance_report = [
+        "# Step08 Boundary Distance Descriptor Report",
+        "",
+        "## Purpose",
+        "The previous `boundary_score` is retained unchanged, but it is a blended front score rather than a pure distance descriptor. This report documents the new explicit boundary-distance maps.",
+        "",
+        "## Old blended boundary score",
+        "`boundary_score` combines gradient intensity with boundary proximity for multi-regime classes:",
+        "",
+        "```text",
+        "boundary_score = clip(0.65 * grad_norm + 0.35 * exp(-distance_cells / p75(distance_cells)), 0, 1)",
+        "```",
+        "",
+        "For `single_gradient` classes it is a capped gradient proxy, and for `homogeneous` classes it is zero.",
+        "",
+        "## Pure distance-to-boundary maps",
+        "`boundary_distance_cells` is the raw nearest-boundary Euclidean distance computed by `scipy.ndimage.distance_transform_edt` on the existing boundary mask.",
+        "`boundary_distance_km` is saved only when `X_km`/`Y_km` spacing is regular enough; otherwise it remains NaN and metadata marks the conversion as unavailable.",
+        "",
+        "## Radius/band boundary scores",
+        "For each radius in cells, the new score maps are:",
+        "",
+        "```text",
+        "boundary_distance_score_r{radius}_cells = exp(-(boundary_distance_cells ** 2) / (2 * radius ** 2))",
+        "```",
+        "",
+        f"Radii tested in cells: {BOUNDARY_DISTANCE_RADII_CELLS}.",
+        "",
+        "These are reward-like proximity bands: cells on the boundary have score near 1, nearby cells decay smoothly, and far cells approach 0.",
+        "",
+        "## Regime-specific boundary mask source",
+        "- `multi_regime`: cold/warm Otsu boundary mask.",
+        "- `single_gradient`: high-gradient p90 mask used as boundary proxy.",
+        "- `homogeneous`: no boundary; score maps are zero over valid cells.",
+        "",
+        "## Planner use",
+        "Step11Y extracts these maps by predicted prototype class and Step12A can use the `boundary_distance_score_r*_cells_norm` maps in the same alpha sweep as the existing descriptors.",
+        "Lucrezia's planner objective is not changed; these maps only change the `information_map` written as NetCDF `temperr`.",
+    ]
+    (out_dir / "step08_boundary_distance_descriptor_report.md").write_text("\n".join(boundary_distance_report), encoding="utf-8")
     next_step = [
         "# Step08 Next Step Recommendation",
         "",

@@ -25,6 +25,11 @@ import step12_common as c
 PREFIX = "fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity"
 DESCRIPTORS = {
     "boundary_score": "boundary_score_norm",
+    "boundary_distance_score_r1_cells": "boundary_distance_score_r1_cells_norm",
+    "boundary_distance_score_r2_cells": "boundary_distance_score_r2_cells_norm",
+    "boundary_distance_score_r3_cells": "boundary_distance_score_r3_cells_norm",
+    "boundary_distance_score_r5_cells": "boundary_distance_score_r5_cells_norm",
+    "boundary_distance_score_r8_cells": "boundary_distance_score_r8_cells_norm",
     "representative_zone": "representative_zone_norm",
     "interest_map": "interest_map_norm",
 }
@@ -36,11 +41,11 @@ def alpha_tag(alpha: float) -> str:
     return f"alpha{int(round(alpha * 100)):03d}"
 
 
-def logical_manifest(cases: pd.DataFrame, durations: list[float]) -> pd.DataFrame:
+def logical_manifest(cases: pd.DataFrame, durations: list[float], descriptors: list[str]) -> pd.DataFrame:
     rows = []
     for _, case in cases.iterrows():
         for duration in durations:
-            for descriptor in DESCRIPTORS:
+            for descriptor in descriptors:
                 for alpha in ALPHAS:
                     run_name = "baseline_STD" if alpha == 0 else f"{descriptor}_{alpha_tag(alpha)}"
                     physical_run_id = (
@@ -199,13 +204,15 @@ def summarize(metrics: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Dat
 
 def create_figures(outdir: Path, metrics: pd.DataFrame, route_points: dict[str, list[tuple[int, int]]], cases: pd.DataFrame, maps: dict[str, np.ndarray], temp: np.ndarray, mask: np.ndarray) -> None:
     figdir = outdir / "figures"
+    plotted_descriptors = [d for d in DESCRIPTORS if d in set(metrics["descriptor"].astype(str)) and DESCRIPTORS[d] in maps]
     for _, case in cases.iterrows():
         idx = int(case.case_order)
         case_id = str(case.case_id)
         std = maps["baseline_STD_norm"][idx]
         region_a, region_b = np.load(outdir / "masks" / f"{case_id}_region_A_mask.npy"), np.load(outdir / "masks" / f"{case_id}_region_B_mask.npy")
         for duration in sorted(metrics["mission_duration_requested_h"].dropna().unique()):
-            for descriptor, map_key in DESCRIPTORS.items():
+            for descriptor in plotted_descriptors:
+                map_key = DESCRIPTORS[descriptor]
                 sub = metrics[(metrics["case_id"].eq(case_id)) & (metrics["mission_duration_requested_h"].eq(duration)) & (metrics["descriptor"].eq(descriptor))].copy()
                 if sub.empty:
                     continue
@@ -218,12 +225,67 @@ def create_figures(outdir: Path, metrics: pd.DataFrame, route_points: dict[str, 
                     alpha = float(r.alpha)
                     info = std if alpha == 0 else c.normalize_map((1.0 - alpha) * std + alpha * desc, mask)
                     c.plot_paths_on_map(info, {str(r.run_name): route_points.get(str(r.physical_run_id), [])}, figdir / f"step12a_{case_id}_{duration:g}h_{descriptor}_{alpha_tag(alpha)}_path_over_real_information_map.png", f"{case_id} {duration:g}h {r.run_name} over real information_map", "viridis", 0, 1, region_a=region_a, region_b=region_b)
+            plot_boundary_descriptor_comparison(figdir, metrics, route_points, case_id, idx, duration, maps, mask, region_a, region_b)
     plot_df = metrics.copy()
     plot_df["label"] = plot_df["case_id"].astype(str) + "_" + plot_df["mission_duration_requested_h"].astype(str) + "h"
     c.plot_grouped_bar(plot_df, "alpha", "collected_STD", "descriptor", figdir / "step12a_alpha_sensitivity_collected_STD.png", "Step12A alpha sensitivity: collected STD")
     c.plot_grouped_bar(plot_df, "mission_duration_requested_h", "collected_STD", "descriptor", figdir / "step12a_duration_sensitivity_collected_STD.png", "Step12A duration sensitivity: collected STD")
     c.plot_scatter(plot_df, "collected_STD", "collected_descriptor", "descriptor", figdir / "step12a_STD_vs_descriptor_tradeoff.png", "Step12A STD vs descriptor tradeoff")
     c.plot_scatter(plot_df, "solver_runtime", "collected_STD", "mission_duration_requested_h", figdir / "step12a_runtime_vs_STD.png", "Step12A runtime vs collected STD")
+
+
+def plot_boundary_descriptor_comparison(
+    figdir: Path,
+    metrics: pd.DataFrame,
+    route_points: dict[str, list[tuple[int, int]]],
+    case_id: str,
+    idx: int,
+    duration: float,
+    maps: dict[str, np.ndarray],
+    mask: np.ndarray,
+    region_a: np.ndarray,
+    region_b: np.ndarray,
+) -> None:
+    comparison = [
+        ("boundary_score", "boundary_score_norm", "old blended boundary_score"),
+        ("boundary_distance_score_r3_cells", "boundary_distance_score_r3_cells_norm", "pure distance score r=3 cells"),
+        ("interest_map", "interest_map_norm", "interest_map"),
+    ]
+    rows = []
+    for descriptor, map_key, title in comparison:
+        if map_key not in maps:
+            continue
+        sub = metrics[
+            metrics["case_id"].eq(case_id)
+            & metrics["mission_duration_requested_h"].eq(duration)
+            & metrics["descriptor"].eq(descriptor)
+            & metrics["alpha"].eq(0.50)
+        ]
+        if sub.empty:
+            continue
+        rows.append((descriptor, map_key, title, sub.iloc[0]))
+    if len(rows) < 2:
+        return
+    fig, axes = c.plt.subplots(1, len(rows), figsize=(6.2 * len(rows), 4.8), squeeze=False)
+    for ax, (descriptor, map_key, title, row) in zip(axes.ravel(), rows):
+        desc = maps[map_key][idx]
+        info = c.normalize_map(0.5 * maps["baseline_STD_norm"][idx] + 0.5 * desc, mask)
+        im = ax.imshow(info, origin="lower", cmap="viridis", vmin=0, vmax=1, aspect="auto")
+        ax.contour(region_a.astype(float), levels=[0.5], colors=["#2b6cb0"], linewidths=0.8, alpha=0.9)
+        ax.contour(region_b.astype(float), levels=[0.5], colors=["#c53030"], linewidths=0.8, alpha=0.9)
+        pts = c.route_to_roi(route_points.get(str(row["physical_run_id"]), []))
+        if pts:
+            ax.plot([p[1] for p in pts], [p[0] for p in pts], color="#00a9c8", lw=1.8, marker="o", markersize=1.8)
+        ax.set_title(title)
+        ax.set_xlabel("ROI column")
+        ax.set_ylabel("ROI row")
+        ax.set_xlim(-1, c.ROI_SHAPE[1])
+        ax.set_ylim(-1, c.ROI_SHAPE[0])
+        fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
+    fig.suptitle(f"{case_id} {duration:g}h alpha050: old boundary vs pure distance vs interest over real information_map")
+    fig.tight_layout()
+    fig.savefig(figdir / f"step12a_{case_id}_{duration:g}h_boundary_distance_descriptor_comparison_alpha050.png", dpi=180)
+    c.plt.close(fig)
 
 
 def write_reports(outdir: Path, metrics: pd.DataFrame, alpha_summary: pd.DataFrame, duration_summary: pd.DataFrame, runtime_summary: pd.DataFrame, best: pd.DataFrame, checks: dict[str, Any]) -> None:
@@ -273,6 +335,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout-s", type=int, default=1800)
     parser.add_argument("--durations", nargs="*", type=float, default=DURATIONS)
     parser.add_argument("--cases", nargs="*", choices=c.CASE_ORDER, default=c.CASE_ORDER)
+    parser.add_argument("--descriptors", nargs="*", choices=sorted(DESCRIPTORS), default=None)
     parser.add_argument("--skip-existing", action="store_true")
     parser.add_argument("--workers", type=int, default=1, help="Number of independent planner runs to launch in parallel.")
     parser.add_argument("--resume-output", type=Path, default=None, help="Existing Step12A output folder to reuse with --skip-existing.")
@@ -289,7 +352,26 @@ def main() -> int:
     start = time.perf_counter()
     cases, maps, step11y = c.load_step11y_maps(args.step11y)
     cases = cases[cases["case_id"].isin(args.cases)].copy().reset_index(drop=True)
-    manifest = logical_manifest(cases, args.durations)
+    available_descriptors = [name for name, key in DESCRIPTORS.items() if key in maps]
+    missing_descriptors = [name for name, key in DESCRIPTORS.items() if key not in maps]
+    if args.descriptors:
+        unavailable_requested = [name for name in args.descriptors if DESCRIPTORS[name] not in maps]
+        if unavailable_requested:
+            raise KeyError(
+                "Requested descriptors are not present in the selected Step11Y output. "
+                f"Rerun Step08/Step11Y first or remove: {', '.join(unavailable_requested)}"
+            )
+        descriptor_names = list(args.descriptors)
+    else:
+        descriptor_names = available_descriptors
+        if missing_descriptors:
+            print(
+                "WARNING: selected Step11Y output does not contain all Step12A descriptors; skipping unavailable descriptors: "
+                + ", ".join(missing_descriptors)
+            )
+    if not descriptor_names:
+        raise RuntimeError("No Step12A descriptors are available in the selected Step11Y output.")
+    manifest = logical_manifest(cases, args.durations, descriptor_names)
     if args.dry_run:
         physical = manifest["physical_run_id"].nunique()
         print(f"Step12A dry-run: logical_rows={len(manifest)}, physical_planner_runs={physical}, workers={args.workers}, step11y={c.rel(step11y)}")
@@ -431,6 +513,8 @@ def main() -> int:
         "durations_tested": sorted([float(x) for x in metrics["mission_duration_requested_h"].dropna().unique()]),
         "alphas_tested": sorted([float(x) for x in metrics["alpha"].dropna().unique()]),
         "descriptors_tested": sorted(metrics["descriptor"].dropna().astype(str).unique().tolist()),
+        "available_descriptors": sorted(available_descriptors),
+        "missing_descriptors": sorted(missing_descriptors),
         "prototype_based_maps_only": True,
         "TEMPpred_used_as_objective": False,
         "all_runs_have_status": bool(metrics["solver_status"].astype(str).ne("").all()),
@@ -440,7 +524,15 @@ def main() -> int:
         "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED" if not best.empty else "STEP12_COMPLETED_WITH_TRADEOFFS_REVIEW_REQUIRED",
     }
     c.write_json(outdir / "step12a_checks.json", checks)
-    c.write_json(outdir / "step12a_metadata.json", {"created_at": c.now_tag(), "inputs": {"step11y": c.rel(step11y), "step10f": c.rel(c.STEP10F)}})
+    c.write_json(
+        outdir / "step12a_metadata.json",
+        {
+            "created_at": c.now_tag(),
+            "inputs": {"step11y": c.rel(step11y), "step10f": c.rel(c.STEP10F)},
+            "descriptor_map_keys": {name: DESCRIPTORS[name] for name in descriptor_names},
+            "boundary_distance_note": "boundary_distance_score_r*_cells_norm maps are pure prototype-based boundary proximity scores when present in Step11Y.",
+        },
+    )
     write_reports(outdir, metrics, alpha_summary, duration_summary, runtime_summary, best, checks)
     print(f"Step12A complete: {c.rel(outdir)}")
     print(f"Verdict: {checks['verdict']}")

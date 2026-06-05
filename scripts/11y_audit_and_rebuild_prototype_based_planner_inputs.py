@@ -61,6 +61,17 @@ CASE_DISPLAY = {
     "October_control": "October reference",
 }
 EXPECTED_SHAPE = (72, 117)
+BOUNDARY_DISTANCE_RADII_CELLS = [1, 2, 3, 5, 8]
+BOUNDARY_DISTANCE_STEP08_KEYS = [
+    "boundary_distance_cells",
+    "boundary_distance_km",
+    *[f"boundary_distance_score_r{radius}_cells" for radius in BOUNDARY_DISTANCE_RADII_CELLS],
+]
+BOUNDARY_DISTANCE_OUTPUT_KEYS = [
+    "boundary_distance_cells_norm",
+    "boundary_distance_km_norm",
+    *[f"boundary_distance_score_r{radius}_cells_norm" for radius in BOUNDARY_DISTANCE_RADII_CELLS],
+]
 
 
 def now_stamp() -> str:
@@ -327,6 +338,13 @@ def step08_descriptor(step08_npz: Any, descriptor: str, predicted_class: int, ma
     return minmax01(arr, mask)
 
 
+def optional_step08_descriptor(step08_npz: Any, descriptor: str, predicted_class: int, mask: np.ndarray) -> np.ndarray | None:
+    key = "interest" if descriptor == "interest_map" else descriptor
+    if key not in step08_npz.files:
+        return None
+    return step08_descriptor(step08_npz, descriptor, predicted_class, mask)
+
+
 def rebuild_prototype_maps(data: dict[str, Any], missing: list[str]) -> tuple[dict[str, np.ndarray], pd.DataFrame, pd.DataFrame]:
     cases = data["cases"]
     z10 = data["step10f_npz"]
@@ -350,7 +368,10 @@ def rebuild_prototype_maps(data: dict[str, Any], missing: list[str]) -> tuple[di
         "AUV1_region_map": [],
         "AUV2_region_map": [],
     }
+    for key in BOUNDARY_DISTANCE_OUTPUT_KEYS:
+        arrays[key] = []
     lineage_rows: list[dict[str, Any]] = []
+    optional_available = {key: key in z08.files for key in BOUNDARY_DISTANCE_STEP08_KEYS}
 
     for idx, row in cases.iterrows():
         case_id = str(row["case_id"])
@@ -366,6 +387,11 @@ def rebuild_prototype_maps(data: dict[str, Any], missing: list[str]) -> tuple[di
             "representative_zone": step08_descriptor(z08, "representative_zone", predicted_class, mask),
             "interest_map": step08_descriptor(z08, "interest_map", predicted_class, mask),
         }
+        boundary_distance_descriptors: dict[str, np.ndarray] = {}
+        for step08_key, output_key in zip(BOUNDARY_DISTANCE_STEP08_KEYS, BOUNDARY_DISTANCE_OUTPUT_KEYS):
+            desc = optional_step08_descriptor(z08, step08_key, predicted_class, mask)
+            if desc is not None:
+                boundary_distance_descriptors[output_key] = desc
         a_region, b_region = region_masks_from_cold_warm(descriptors["cold_region"], descriptors["warm_region"], mask)
         region_a_reward = minmax01(a_region.astype(np.float32), mask)
         region_b_reward = minmax01(b_region.astype(np.float32), mask)
@@ -382,6 +408,9 @@ def rebuild_prototype_maps(data: dict[str, Any], missing: list[str]) -> tuple[di
         arrays["enriched_boundary_alpha050"].append((0.50 * std + 0.50 * descriptors["boundary_score"]).astype(np.float32))
         arrays["AUV1_region_map"].append((0.60 * std + 0.40 * region_a_reward).astype(np.float32))
         arrays["AUV2_region_map"].append((0.60 * std + 0.40 * region_b_reward).astype(np.float32))
+        for output_key in BOUNDARY_DISTANCE_OUTPUT_KEYS:
+            if output_key in boundary_distance_descriptors:
+                arrays[output_key].append(boundary_distance_descriptors[output_key])
 
         temp_a, temp_b = temp_median_masks(temp, mask)
         lineage_rows.append(
@@ -398,10 +427,12 @@ def rebuild_prototype_maps(data: dict[str, Any], missing: list[str]) -> tuple[di
                 "prototype_region_B_cells": int(np.sum(b_region)),
                 "TEMPpred_median_region_A_cells": int(np.sum(temp_a)),
                 "TEMPpred_median_region_B_cells": int(np.sum(temp_b)),
+                "boundary_distance_descriptors_available": bool(all(optional_available.values())),
+                "boundary_distance_descriptor_keys": "|".join(k for k, available in optional_available.items() if available),
             }
         )
 
-    stacked = {k: np.stack(v).astype(np.float32) for k, v in arrays.items()}
+    stacked = {k: np.stack(v).astype(np.float32) for k, v in arrays.items() if v}
     lineage = pd.DataFrame(lineage_rows)
     return stacked, lineage, cases
 
@@ -603,6 +634,10 @@ def save_arrays(outdir: Path, corrected: dict[str, np.ndarray], cases: pd.DataFr
     np.save(outdir / "prototype_based_enriched_boundary_alpha050.npy", corrected["enriched_boundary_alpha050"])
     np.save(outdir / "prototype_based_AUV1_region_map.npy", corrected["AUV1_region_map"])
     np.save(outdir / "prototype_based_AUV2_region_map.npy", corrected["AUV2_region_map"])
+    for key in BOUNDARY_DISTANCE_OUTPUT_KEYS:
+        if key in corrected:
+            np.save(outdir / f"prototype_based_{key}.npy", corrected[key])
+    optional_npz_arrays = {key: corrected[key] for key in BOUNDARY_DISTANCE_OUTPUT_KEYS if key in corrected}
     np.savez_compressed(
         outdir / "prototype_based_all_planner_maps.npz",
         case_ids=cases["case_id"].astype(str).to_numpy(),
@@ -620,6 +655,7 @@ def save_arrays(outdir: Path, corrected: dict[str, np.ndarray], cases: pd.DataFr
         enriched_boundary_alpha050=corrected["enriched_boundary_alpha050"],
         AUV1_region_map=corrected["AUV1_region_map"],
         AUV2_region_map=corrected["AUV2_region_map"],
+        **optional_npz_arrays,
     )
 
 
@@ -629,11 +665,14 @@ def plot_maps_panel(out: Path, corrected: dict[str, np.ndarray], cases: pd.DataF
     cols = [
         ("baseline_STD_norm", "STD"),
         ("boundary_score_norm", "Boundary"),
+        ("boundary_distance_score_r3_cells_norm", "Dist r3"),
+        ("interest_map_norm", "Interest"),
         ("cold_region_norm", "Cold/A"),
         ("warm_region_norm", "Warm/B"),
         ("AUV1_region_map", "AUV1"),
         ("AUV2_region_map", "AUV2"),
     ]
+    cols = [(key, title) for key, title in cols if key in corrected]
     fig, axes = plt.subplots(len(cases), len(cols), figsize=(15, 8))
     for r, case in cases.iterrows():
         for c, (key, title) in enumerate(cols):
@@ -785,6 +824,7 @@ def make_reports(
         f"- Verdict: `{verdict}`",
         f"- Planner rerun performed: `{checks['planner_rerun']}`",
         f"- Corrected arrays created: `{checks['corrected_arrays_created']}`",
+        f"- Boundary-distance descriptors available: `{checks['boundary_distance_descriptors_available']}`",
         f"- Step10F boundary maps matching Step08 prototypes: {len(prototype_cases)}/{len(cases)} cases",
         f"- Cases with TEMPpred-derived region fallback in Step11C/11D evidence: {', '.join(fallback_cases) if fallback_cases else 'none'}",
         "",
@@ -797,6 +837,7 @@ def make_reports(
         f"5. October fallback issue: {'yes' if 'October_control' in fallback_cases else 'no'}." ,
         "6. Use the new `prototype_based_*` arrays from this Step11Y output going forward.",
         "7. Next step: rerun the minimal affected planner tests with prototype-based regions/maps if the verdict recommends it.",
+        "8. If Step08 was rebuilt with explicit boundary-distance maps, Step11Y also exports normalized `boundary_distance_score_r*_cells_norm` maps for Step12A.",
         "",
         "## Step10F boundary comparison",
         md_table(step10f_cmp[step10f_cmp["map_name"].eq("boundary_score_norm")], ["case_id", "map_name", "rmse", "mae", "pearson", "max_abs_diff", "near_exact_match"], 10),
@@ -899,6 +940,8 @@ def main() -> int:
         "corrected_arrays_created": True,
         "case_count": int(len(cases)),
         "map_shape": list(corrected["baseline_STD_norm"].shape),
+        "boundary_distance_descriptors_available": bool(all(key in corrected for key in BOUNDARY_DISTANCE_OUTPUT_KEYS)),
+        "boundary_distance_output_keys": [key for key in BOUNDARY_DISTANCE_OUTPUT_KEYS if key in corrected],
         "step10f_boundary_near_exact_cases": int(
             step10f_cmp[(step10f_cmp["map_name"] == "boundary_score_norm") & (step10f_cmp["near_exact_match"] == True)].shape[0]
         ),
@@ -927,6 +970,7 @@ def main() -> int:
             "TEMPpred": "classification only",
             "STD": "day-specific uncertainty for baseline and blends",
             "descriptors": "Step08 prototype descriptor maps indexed by predicted class",
+            "boundary_distance_descriptors": "optional Step08 pure distance/proximity maps, min-max normalized by predicted class when available",
         },
     }
     make_reports(outdir, cases, step10f_cmp, step09b_cmp, region_cmp, old_vs_new, lineage, verdict, rerun_cases, checks)
