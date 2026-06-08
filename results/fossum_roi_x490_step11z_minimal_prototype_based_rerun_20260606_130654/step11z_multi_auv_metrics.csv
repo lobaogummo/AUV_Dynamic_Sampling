@@ -1,0 +1,4 @@
+run_id,strategy,case_id,fleet_collected_STD,fleet_collected_boundary,fleet_region_A_coverage,fleet_region_B_coverage,fleet_region_coverage,trajectory_overlap_ratio,duplicate_sampled_cells,inter_vehicle_min_distance,inter_vehicle_mean_distance,complementarity_score,fleet_total_area_covered,solver_status,solver_runtime
+October_control__multi_auv_12h__baseline_STD,baseline_STD,October_control,181.98470306396484,0.0,0.03935532233883059,0.0,0.03935532233883059,0.022222222222222223,7,0.0,12.582840696932426,0.5085665500583042,315,REUSED,0.0
+October_control__multi_auv_12h__prototype_vehicle_specific_maps,prototype_vehicle_specific_maps,October_control,0.0,0.0,0.0,0.0,0.0,0.0,0,,,0.5,0,FAILED_OR_PARTIAL,0.0
+October_control__multi_auv_12h__prototype_vehicle_specific_with_boundary,prototype_vehicle_specific_with_boundary,October_control,84.82313537597656,0.0,0.018740629685157422,0.0,0.018740629685157422,0.0,0,,,0.5093703148425787,150,FAILED_OR_PARTIAL,0.0

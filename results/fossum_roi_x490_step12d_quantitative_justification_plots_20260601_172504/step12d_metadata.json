@@ -1,0 +1,62 @@
+{
+  "created_at": "20260601_172511",
+  "script": "scripts/12d_quantitative_justification_plots.py",
+  "no_heavy_rerun": true,
+  "outputs": {
+    "step": "Step12D",
+    "output_dir": "results\\fossum_roi_x490_step12d_quantitative_justification_plots_20260601_172504",
+    "inputs": {
+      "step12a": {
+        "source": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260529_175726",
+        "rows_loaded": 135,
+        "status": "loaded"
+      },
+      "step12b": {
+        "source": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260529_221108",
+        "fleet_rows_loaded": 81,
+        "vehicle_rows_loaded": 162,
+        "status": "loaded"
+      },
+      "step04": {
+        "step04_source": "results\\fossum_roi_x490_step04_sd_probe_patch40x24_dict4_20260511_211354",
+        "step05_source": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+        "rows_loaded": 5,
+        "status": "loaded"
+      },
+      "step05": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755"
+    },
+    "step12a_found": true,
+    "step12b_found": true,
+    "figures_generated": [
+      "single_auv_alpha_vs_STD_retention.png",
+      "single_auv_alpha_vs_regime_balance.png",
+      "single_auv_STD_loss_vs_regime_balance_pareto.png",
+      "single_auv_STD_loss_vs_descriptor_gain.png",
+      "single_auv_weight_vs_runtime.png",
+      "single_auv_tradeoff_score_by_alpha.png",
+      "multi_auv_weight_vs_STD_retention.png",
+      "multi_auv_weight_vs_region_B_coverage.png",
+      "multi_auv_weight_vs_specialization_score.png",
+      "multi_auv_STD_loss_vs_region_B_gain_pareto.png",
+      "multi_auv_STD_loss_vs_specialization_score.png",
+      "multi_auv_weight_vs_runtime.png",
+      "multi_auv_tradeoff_score_by_weight.png",
+      "classes_n_vs_ICV.png",
+      "classes_n_vs_min_class_size.png",
+      "classes_n_vs_class_balance.png",
+      "classes_n_vs_runtime.png",
+      "classes_tradeoff_summary.png"
+    ],
+    "figures_generated_count": 18,
+    "ICV_calculated_or_loaded": true,
+    "runtime_included": true,
+    "pareto_front_calculated": true,
+    "decision_tables_created": true,
+    "heavy_simulation_rerun": false,
+    "missing_metrics": [],
+    "partially_missing_metrics": [
+      "classes.runtime_seconds"
+    ],
+    "verdict": "QUANTITATIVE_JUSTIFICATION_READY"
+  }
+}

@@ -1,0 +1,8 @@
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933\planner_runs\C01_representative__single_auv_12h__protot__ddf5f8367c\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933\planner_runs\C01_representative__single_auv_12h__protot__ddf5f8367c\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933\planner_runs\C01_representative__single_auv_12h__protot__ddf5f8367c\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933\planner_runs\C01_representative__single_auv_12h__protot__ddf5f8367c\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

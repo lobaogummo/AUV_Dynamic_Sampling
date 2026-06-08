@@ -1,0 +1,6 @@
+n_classes,SD_fraction,ICV_mean,ICV_std,min_class_size,max_class_size,class_balance_score,number_of_small_classes,inter_class_separation,runtime_seconds,ranking_score,behavior_label,behavior_reason,selected_flag,justification_note
+4,0.35,2131.731201171875,913.968574073174,41,120,0.3416666666666667,0,,,2.25,plausivel,sem sinais fortes de fragmentacao/mistura,False,"Plausible comparator; check ICV, class size, interpretability, and stability together."
+4,0.4,2131.731201171875,913.968574073174,41,120,0.3416666666666667,0,,,2.25,plausivel,sem sinais fortes de fragmentacao/mistura,False,"Plausible comparator; check ICV, class size, interpretability, and stability together."
+5,0.3,1755.5830322265624,1098.9619264588148,30,120,0.25,0,,,2.1,plausivel,sem sinais fortes de fragmentacao/mistura,False,"Plausible comparator; check ICV, class size, interpretability, and stability together."
+6,0.25,1328.0399169921875,524.0286949354644,30,107,0.2803738317757009,0,,1525.7181655000022,1.95,plausivel,sem sinais fortes de fragmentacao/mistura,True,Selected canonical branch: lower ICV than 5 classes while avoiding the fragmentation seen at 10 classes.
+10,0.2,754.7798034667969,435.8986361134949,11,70,0.15714285714285714,2,,,2.6,fragmenta demais,n_classes alto,False,Lower ICV is penalized by fragmentation/small-class risk.

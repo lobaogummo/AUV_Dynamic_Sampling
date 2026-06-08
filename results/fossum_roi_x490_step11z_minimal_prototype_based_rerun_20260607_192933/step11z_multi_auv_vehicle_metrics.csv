@@ -1,0 +1,13 @@
+run_id,strategy,case_id,vehicle_id,solver_status,collected_STD,collected_boundary,collected_region_A,collected_region_B,fraction_path_region_A,fraction_path_region_B,fraction_path_boundary_core,crossing_count,regions_visited,trajectory_length,mission_duration,sampled_cells
+C01_representative__multi_auv_12h__baseline_STD,baseline_STD,C01_representative,1,SUCCESS,87.8917465209961,87.17906188964844,91.0,55.0,0.6232876777648926,0.3767123222351074,0.0,2,2,37.723,10.95,146
+C01_representative__multi_auv_12h__baseline_STD,baseline_STD,C01_representative,2,SUCCESS,99.24979400634766,131.89898681640625,162.0,0.0,1.0,0.0,0.02469135820865631,0,1,37.139,10.733333333333333,162
+C01_representative__multi_auv_12h__prototype_vehicle_specific_maps__AUV1,prototype_vehicle_specific_maps,C01_representative,1,SUCCESS,70.46849822998047,76.64503479003906,118.0,0.0,1.0,0.0,0.0,0,1,30.223,8.733333333333333,118
+C01_representative__multi_auv_12h__prototype_vehicle_specific_maps__AUV2,prototype_vehicle_specific_maps,C01_representative,2,SUCCESS,74.8022689819336,68.22246551513672,67.0,57.0,0.5403226017951965,0.45967742800712585,0.0,2,2,29.454,8.466666666666667,124
+C06_representative__multi_auv_12h__baseline_STD,baseline_STD,C06_representative,1,SUCCESS,84.04706573486328,121.75869750976562,162.0,0.0,1.0,0.0,0.0,0,1,36.48,10.5,162
+C06_representative__multi_auv_12h__baseline_STD,baseline_STD,C06_representative,2,SUCCESS,85.14640808105469,122.8566665649414,161.0,0.0,1.0,0.0,0.21739129722118378,0,1,37.051,10.7,161
+C06_representative__multi_auv_12h__prototype_vehicle_specific_maps__AUV1,prototype_vehicle_specific_maps,C06_representative,1,SUCCESS,81.91842651367188,114.21739196777344,153.0,0.0,1.0,0.0,0.09150326997041702,0,1,36.821,10.65,153
+C06_representative__multi_auv_12h__prototype_vehicle_specific_maps__AUV2,prototype_vehicle_specific_maps,C06_representative,2,SUCCESS,45.76169967651367,48.21131896972656,64.0,83.0,0.4353741407394409,0.5646258592605591,0.0,4,2,37.034,10.666666666666666,147
+October_control__multi_auv_12h__baseline_STD,baseline_STD,October_control,1,SUCCESS,91.37213134765625,0.0,163.0,0.0,1.0,0.0,1.0,0,1,37.974,10.883333333333333,163
+October_control__multi_auv_12h__baseline_STD,baseline_STD,October_control,2,SUCCESS,90.6125717163086,0.0,159.0,0.0,1.0,0.0,1.0,0,1,39.091,11.283333333333333,159
+October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV1,prototype_vehicle_specific_maps,October_control,1,FAILED,0.0,0.0,0.0,0.0,,,,0,0,,,0
+October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV2,prototype_vehicle_specific_maps,October_control,2,FAILED,0.0,0.0,0.0,0.0,,,,0,0,,,0

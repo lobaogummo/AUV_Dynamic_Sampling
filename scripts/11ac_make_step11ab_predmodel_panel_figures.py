@@ -62,8 +62,8 @@ def load_module(name: str, path: Path):
     return module
 
 
-def load_temppred() -> np.ndarray:
-    z = np.load(STEP10F / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
+def load_temppred(step10f_dir: Path = STEP10F) -> np.ndarray:
+    z = np.load(step10f_dir / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
     case_ids = [str(x) for x in z["case_ids"]]
     idx = case_ids.index(CASE_ID)
     return np.asarray(z["TEMPpred"][idx], dtype=float)
@@ -141,6 +141,7 @@ def plot_panel(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Make Step11AB predModel panel figures.")
     parser.add_argument("--step11ab", type=Path, default=DEFAULT_STEP11AB)
+    parser.add_argument("--step10f-dir", type=Path, default=STEP10F)
     parser.add_argument("--output-dir", type=Path, default=None)
     return parser.parse_args()
 
@@ -155,7 +156,7 @@ def main() -> int:
     zutils = load_module("step11z_utils", SCRIPTS / "11z_rerun_minimal_prototype_based_planner_tests.py")
     lat_hres = np.load(HRES / "LAT_hres.npy")
     lon_hres = np.load(HRES / "LON_hres.npy")
-    temp = load_temppred()
+    temp = load_temppred(args.step10f_dir)
     single = pd.read_csv(step11ab / "step11ab_single_auv_metrics.csv")
     multi = pd.read_csv(step11ab / "step11ab_multi_auv_metrics.csv")
     vehicle = pd.read_csv(step11ab / "step11ab_vehicle_metrics.csv")
@@ -336,6 +337,7 @@ def main() -> int:
             "step11ab_source": rel(step11ab),
             "output_dir": rel(out_dir),
             "background": "TEMPpred",
+            "step10f_source": rel(args.step10f_dir),
             "case_id": CASE_ID,
             "date": CASE_DATE,
             "figures_created": len(list(out_dir.glob("*.png"))),

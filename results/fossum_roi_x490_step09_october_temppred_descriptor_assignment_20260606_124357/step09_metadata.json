@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-06T12:44:45.561495",
+  "script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\09_classify_october_temppred_and_assign_descriptors.py",
+  "inputs": {
+    "step00": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+    "step05": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+    "step06": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\october_surface_temppred_std_roi_x490_20260511_155923",
+    "step08": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step08_final_descriptors_20260606_114602"
+  },
+  "normalization_stats": {
+    "mu_global": 16.899330139160156,
+    "sigma_global": 1.3486158847808838,
+    "n_images": 370,
+    "ny": 72,
+    "nx": 117,
+    "valid_pixels_per_image_mean": 8004.0,
+    "valid_pixels_total": 2961480,
+    "mask_fraction_valid": 0.9501424501424501,
+    "mask_fraction_invalid": 0.049857549857549865,
+    "normalized_png_scale_method": "legacy symmetric +/- percentile98(abs(X_norm[:, mask_common]))",
+    "normalized_png_vmin": -1.950387954711914,
+    "normalized_png_vmax": 1.950387954711914,
+    "source_input": "results/fresnel_paper_roi_x490_surface_370_20260509_180348/thetao_surface_370_hres_paper_roi_x490.npy"
+  },
+  "classification": {
+    "method": "nearest Step05 class centroid in StandardScaler-transformed sparse-code feature space",
+    "dictionary_fit_on_october": false,
+    "scaler_fit_on_october": false,
+    "std_used_for_classification": false
+  },
+  "outputs": {
+    "output_dir": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260606_124357"
+  },
+  "verdict": "READY_FOR_STD_DESCRIPTOR_FUSION_FOR_OCTOBER"
+}

@@ -1,0 +1,4 @@
+formulation,alpha,STD_norm_weight,boundary_score_norm_weight
+baseline,0.0,1.0,0.0
+enriched_alpha025,0.25,0.75,0.25
+enriched_alpha050,0.5,0.5,0.5

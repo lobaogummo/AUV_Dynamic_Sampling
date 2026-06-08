@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-06-08T01:03:42",
+  "script": "scripts\\11z_rerun_minimal_prototype_based_planner_tests.py",
+  "command_hint": "python scripts\\11z_rerun_minimal_prototype_based_planner_tests.py",
+  "inputs": {
+    "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+    "planner": "OptimalPlanning_Lucrezia",
+    "step10f": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822",
+    "old_step11c": [
+      "results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_200322",
+      "results\\fossum_roi_x490_step11c_single_auv_boundary_crossing_reward_20260523_214458"
+    ],
+    "old_step11d": [
+      "results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_114809",
+      "results\\fossum_roi_x490_step11d_multi_auv_regime_separation_20260524_132935"
+    ]
+  },
+  "warnings": [
+    "4 planner runs failed/timed out."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "verdict": "PROTOTYPE_BASED_RERUN_COMPLETED_WITH_WARNINGS",
+  "output_dir": "results\\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933",
+  "step11y_source": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+  "step10f_source": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822",
+  "cases_rerun": [
+    "C01_representative",
+    "C06_representative",
+    "October_control"
+  ],
+  "single_runs": 9,
+  "multi_fleet_rows": 6,
+  "vehicle_specific_mode": "two independent 1-AUV proxy runs combined into fleet metrics",
+  "prototype_descriptors_only": true,
+  "TEMPpred_used_for_planner_descriptors": false,
+  "planner_failures": 4,
+  "figures_created": 5,
+  "warnings_count": 1
+}

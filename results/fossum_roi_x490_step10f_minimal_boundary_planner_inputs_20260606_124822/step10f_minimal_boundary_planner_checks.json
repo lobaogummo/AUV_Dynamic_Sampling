@@ -1,0 +1,67 @@
+{
+  "n_cases": 3,
+  "cases": [
+    {
+      "case_id": "C01_representative",
+      "date": "2024-08-24",
+      "predicted_class_label": "C01"
+    },
+    {
+      "case_id": "C06_representative",
+      "date": "2023-12-22",
+      "predicted_class_label": "C06"
+    },
+    {
+      "case_id": "October_control",
+      "date": "2024-10-30",
+      "predicted_class_label": "C02"
+    }
+  ],
+  "mask_shape": [
+    72,
+    117
+  ],
+  "mask_valid_cells": 8004,
+  "TEMPpred_shape": [
+    3,
+    72,
+    117
+  ],
+  "STD_variance_shape": [
+    3,
+    72,
+    117
+  ],
+  "STD_norm_shape": [
+    3,
+    72,
+    117
+  ],
+  "boundary_score_norm_shape": [
+    3,
+    72,
+    117
+  ],
+  "baseline_shape": [
+    3,
+    72,
+    117
+  ],
+  "enriched_alpha025_shape": [
+    3,
+    72,
+    117
+  ],
+  "enriched_alpha050_shape": [
+    3,
+    72,
+    117
+  ],
+  "uses_only_boundary_descriptor": true,
+  "uses_gradient": false,
+  "uses_heterogeneity": false,
+  "uses_composite_interest_map": false,
+  "std_used_for_classification": false,
+  "classification_changed": false,
+  "ready_for_planner_interface_test": true
+}

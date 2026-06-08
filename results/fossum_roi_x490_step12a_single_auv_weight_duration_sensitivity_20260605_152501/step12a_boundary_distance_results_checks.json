@@ -1,0 +1,14 @@
+{
+  "input": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501",
+  "main_metrics_csv": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_single_auv_metrics.csv",
+  "summary_csv": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_boundary_distance_results_summary.csv",
+  "report": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_boundary_distance_results_report.md",
+  "plots": [
+    "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_alpha_vs_reward.png",
+    "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_alpha_vs_route_length.png",
+    "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_alpha_vs_reward_efficiency.png",
+    "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_descriptor_alpha_ranking.png"
+  ],
+  "all_filtered_runs_succeeded": true,
+  "filtered_rows": 25
+}

@@ -1,0 +1,66 @@
+{
+  "planner_rerun": false,
+  "step12a": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501",
+  "step08": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425",
+  "temperature_stack": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\X_surface_370_roi_x490.npy",
+  "dates_csv": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\dates_370.csv",
+  "mask": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy",
+  "searched_files": [
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\X_surface_370_roi_x490.npy",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\thetao_surface_370_roi_x490.npy",
+    "results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\thetao_surface_370_hres_paper_roi_x490.npy",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\dates_370.csv",
+    "results\\cmems_370_surface_to_hres_20260509_135642\\dates_370.csv",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy"
+  ],
+  "metrics_rows": 25,
+  "case_count": 1,
+  "cases": [
+    {
+      "case_id": "C01_representative",
+      "date": "2024-08-24"
+    }
+  ],
+  "map_checks": [
+    {
+      "case_id": "C01_representative",
+      "date": "2024-08-24",
+      "planning_time_index": 301,
+      "iqr10_previous_days_used": 10,
+      "iqr10_requested_days": 10,
+      "iqr10_full_window_available": true,
+      "iqr10_window_start_date": "2024-08-14",
+      "iqr10_window_end_date": "2024-08-23",
+      "iqr10_window_time_indices": "291|292|293|294|295|296|297|298|299|300",
+      "iqr10_raw_map_path": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\iqr10_maps\\C01_representative__2024-08-24_iqr10_raw.npy",
+      "iqr10_norm_map_path": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\iqr10_maps\\C01_representative__2024-08-24_iqr10_norm.npy",
+      "iqr10_raw_finite_cells": 8004,
+      "iqr10_raw_min": 0.1623706817626953,
+      "iqr10_raw_max": 1.5305633544921875,
+      "iqr10_raw_mean": 0.7698600237396942,
+      "iqr10_raw_p90": 1.2083181381225585,
+      "iqr10_norm_finite_cells": 8004,
+      "iqr10_norm_min": 0.0,
+      "iqr10_norm_max": 1.0,
+      "iqr10_norm_mean": 0.4440086212665558,
+      "iqr10_norm_p90": 0.7644738018512726
+    }
+  ],
+  "routes_mapped_successfully": 25,
+  "min_route_valid_cells": 93,
+  "max_route_valid_cells": 164,
+  "baseline_rows": 5,
+  "baseline_comparisons_available": 25,
+  "outputs": {
+    "metrics": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_iqr10_metrics.csv",
+    "summary": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_iqr10_summary_by_descriptor_alpha.csv",
+    "report": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\step12a_iqr10_report.md",
+    "figures": [
+      "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_alpha_vs_iqr10_collected.png",
+      "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_iqr10_gain_vs_baseline.png",
+      "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_STD_retention_vs_IQR10_gain.png",
+      "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260605_152501\\figures\\step12a_iqr10_map_and_selected_routes.png"
+    ]
+  }
+}

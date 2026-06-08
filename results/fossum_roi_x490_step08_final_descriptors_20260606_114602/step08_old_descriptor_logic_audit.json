@@ -1,0 +1,910 @@
+{
+  "generated_at": "2026-06-06T11:46:22.769150",
+  "search_roots": [
+    "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts",
+    "C:\\Users\\pedro\\Documents\\Filipa_dados\\notebooks",
+    "C:\\Users\\pedro\\Documents\\Filipa_dados\\results"
+  ],
+  "important_found": [
+    "scripts/09_export_cv_prototypes.py",
+    "scripts/10_seed11_cv_analysis.py",
+    "scripts/cv_seed11_utils.py",
+    "scripts/11_prototype_characterization.py",
+    "scripts/prototype_characterization_utils.py",
+    "notebooks/seed11_computer_vision_colab.ipynb",
+    "notebooks/seed11_computer_vision_colab.localrun.ipynb",
+    "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/run_report.md",
+    "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/pixel_descriptors_all.csv",
+    "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/region_descriptors_all.csv",
+    "results/validation_descriptor_audit_v2_20260403_215918/AUDIT_REPORT.md"
+  ],
+  "n_name_or_content_hits": 5585,
+  "sample_hits": [
+    {
+      "path": "scripts\\07_cv_analysis_canonical_fossum_roi_x490.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative",
+        "gradient_map",
+        "gmm",
+        "segmentation",
+        "member_to_prototype"
+      ]
+    },
+    {
+      "path": "scripts\\07_cv_analysis_canonical_fossum_roi_x490_notebook_faithful.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "image_only",
+        "hsl",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "scripts\\08_build_compact_model.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "scripts\\08_build_final_descriptors_from_canonical_prototypes.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "scripts\\09b_classify_top20_c01_c06_temppred_and_assign_descriptors.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "scripts\\09_classify_october_temppred_and_assign_descriptors.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "scripts\\10a_prepare_class01_class06_temppred_std_generation.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative",
+        "member_to_prototype",
+        "residuals"
+      ]
+    },
+    {
+      "path": "scripts\\10a_revalidate_class01_class06_generation_with_local_filipa_data.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\10d_generate_temppred_std_for_all_class01_class06_days.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\10d_regenerate_top20_visual_panels_fixed_scales.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\10f_prepare_minimal_boundary_planner_inputs.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative",
+        "interest_map",
+        "boundary_map"
+      ]
+    },
+    {
+      "path": "scripts\\10_seed11_cv_analysis.py",
+      "reason": "content_match",
+      "keywords": [
+        "image_only",
+        "hsl"
+      ]
+    },
+    {
+      "path": "scripts\\11aa_prepare_final_planner_figures_for_interpretation.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11ab_c01_region_target_and_vehicle_weight_sweep.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11ac_make_step11ab_predmodel_panel_figures.py",
+      "reason": "content_match",
+      "keywords": [
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11ad_make_legacy_step11_predmodel_panels.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11ae_remaining_days_multi_auv_vehicle_weight_sweep.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11a_run_minimal_boundary_planner_comparison.py",
+      "reason": "content_match",
+      "keywords": [
+        "boundary_score",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11b_descriptor_ablation_planner_tests.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "scripts\\11c_single_auv_boundary_crossing_reward.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative",
+        "boundary_map"
+      ]
+    },
+    {
+      "path": "scripts\\11d_multi_auv_regime_separation_and_overlap_reduction.py",
+      "reason": "content_match",
+      "keywords": [
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11w_audit_planner_figures_paths_and_lineage.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11x_audit_step11a_11c_11d_planner_results.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\11y_audit_and_rebuild_prototype_based_planner_inputs.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative",
+        "interest_map",
+        "boundary_map"
+      ]
+    },
+    {
+      "path": "scripts\\11z_rerun_minimal_prototype_based_planner_tests.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\11_prototype_characterization.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "image_only",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "scripts\\12a_single_auv_weight_duration_sensitivity.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\12b_multi_auv_vehicle_specific_weight_duration_sensitivity.py",
+      "reason": "content_match",
+      "keywords": [
+        "boundary_score"
+      ]
+    },
+    {
+      "path": "scripts\\12c_generate_methodological_justification_report.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\12d_make_step12_predmodel_result_panels.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\12d_quantitative_justification_plots.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\analyze_step12a_boundary_distance_results.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\audit_tempres_georeference.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\build_lucid_trajectory_diagram.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\build_lucid_trajectory_diagram_v2.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "representative",
+        "interest_map"
+      ]
+    },
+    {
+      "path": "scripts\\check_required_data.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\compare_tempres_day_vs_hres_method_crops.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\cv_seed11_utils.py",
+      "reason": "content_match",
+      "keywords": [
+        "image_only",
+        "hsl",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "scripts\\exhaustive_temperature_transform_search_day299.py",
+      "reason": "content_match",
+      "keywords": [
+        "residuals"
+      ]
+    },
+    {
+      "path": "scripts\\georeference_tempres_from_axes_day299.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "scripts\\investigate_candb_day299_alignment.py",
+      "reason": "content_match",
+      "keywords": [
+        "gradient_magnitude"
+      ]
+    },
+    {
+      "path": "scripts\\prototype_characterization_utils.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "gradient_magnitude",
+        "boundary_map",
+        "image_only",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "scripts\\step12_common.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "representative"
+      ]
+    },
+    {
+      "path": "scripts\\Old_Code\\make_regime_maps_20241029.py",
+      "reason": "content_match",
+      "keywords": [
+        "gradient_magnitude"
+      ]
+    },
+    {
+      "path": "results\\step11_path_logic_explanation.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "boundary_score",
+        "heterogeneity",
+        "representative"
+      ]
+    },
+    {
+      "path": "results\\filipa_data_audit_20260508_233246\\audit_filipa_new_dataset.py",
+      "reason": "content_match",
+      "keywords": [
+        "gradient_magnitude",
+        "heterogeneity"
+      ]
+    },
+    {
+      "path": "results\\filipa_data_audit_20260508_233246\\filipa_data_audit_checks.json",
+      "reason": "content_match",
+      "keywords": [
+        "heterogeneity"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\07_cv_analysis_canonical_fossum_roi_x490_notebook_faithful.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "image_only",
+        "hsl",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\cv_features_global_seed11_image_only.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\cv_features_local_class02_seed11_image_only.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\step07_cv_notebook_faithful_audit.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "hsl"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\step07_cv_notebook_faithful_checks.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "image_only"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\step07_cv_notebook_faithful_metadata.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260512_233154\\step07_cv_notebook_faithful_report.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "image_only"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\07_cv_analysis_canonical_fossum_roi_x490_notebook_faithful.py",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "image_only",
+        "hsl",
+        "segmentation"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\cv_features_global_seed11_image_only.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\cv_features_local_class02_seed11_image_only.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_audit.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "hsl"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_checks.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "image_only"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_metadata.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step07_cv_notebook_faithful_20260514_150645\\step07_cv_notebook_faithful_report.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "image_only"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\08_build_final_descriptors_from_canonical_prototypes.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_checks.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_config.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_definitions.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_metadata.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_quality_flags.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_report.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_summary.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_descriptor_weights.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_final_class_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_member_to_prototype_residuals.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_next_step_recommendation.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_old_descriptor_logic_audit.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_old_descriptor_logic_audit.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_prototype_descriptor_summary.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260514_164854\\step08_representative_zones.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\08_build_final_descriptors_from_canonical_prototypes.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_boundary_distance_descriptor_report.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_checks.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_config.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_definitions.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_metadata.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_quality_flags.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_report.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_summary.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_descriptor_weights.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_final_class_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_member_to_prototype_residuals.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_next_step_recommendation.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_old_descriptor_logic_audit.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_old_descriptor_logic_audit.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_prototype_descriptor_summary.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912\\step08_representative_zones.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\09b_classify_top20_c01_c06_temppred_and_assign_descriptors.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_assigned_class_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_checks.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor",
+        "heterogeneity",
+        "representative"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_direct_vs_assigned_descriptor_differences.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_metadata.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_next_step_recommendation.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_report.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_std_descriptor_overlap_metrics.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144\\step09b_temppred_direct_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\09_classify_october_temppred_and_assign_descriptors.py",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_assigned_class_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_checks.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_low_confidence_days.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_metadata.json",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_mismatch_diagnostics.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_next_step_recommendation.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_report.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_std_descriptor_overlap_metrics.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_summary.md",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_temppred_classification_assignments.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_temppred_classification_confidence.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_temppred_direct_descriptors.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260515_165018\\step09_temppred_prototype_similarity.csv",
+      "reason": "name_match"
+    },
+    {
+      "path": "results\\fossum_roi_x490_step10a_class01_class06_temppred_std_generation_plan_20260515_165612\\step09_step10a_integrated_report.md",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step10a_class01_class06_temppred_std_generation_plan_20260515_165612\\step10a_generation_plan.md",
+      "reason": "content_match",
+      "keywords": [
+        "representative"
+      ]
+    },
+    {
+      "path": "results\\fossum_roi_x490_step10a_class01_class06_temppred_std_generation_plan_20260515_165612\\step10a_metadata.json",
+      "reason": "content_match",
+      "keywords": [
+        "descriptor"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "component": "CV prototype export",
+      "where": "scripts/09_export_cv_prototypes.py",
+      "old_inputs": "compact/final-working prototype arrays, mask_common, clean PNG export settings",
+      "old_outputs": "prototype .npy, _mask.npy and clean PNGs under computer_vision_exports_seed11",
+      "logic": "exported prototype arrays and alpha-masked clean PNGs for downstream image-only CV.",
+      "decision": "REUSE_WITH_ADAPTATION",
+      "adaptation": "Step08 reads Step05 canonical_prototypes directly; clean PNG export remains methodological reference via Step07."
+    },
+    {
+      "component": "Image-only CV labels",
+      "where": "scripts/10_seed11_cv_analysis.py, scripts/cv_seed11_utils.py, notebooks/seed11_computer_vision_colab.ipynb",
+      "old_inputs": "clean PNGs and R-B color score; optional simple array metrics.",
+      "old_outputs": "cv_features_global_seed11_image_only.csv and local image-only CSVs.",
+      "logic": "Otsu on R-B score, region balance/coherence, gradient p90 and image-only regime labels.",
+      "decision": "REUSE_WITH_ADAPTATION",
+      "adaptation": "Step08 consumes the latest Step07-CV image-only CSV; it does not rerun CV."
+    },
+    {
+      "component": "Pixel-wise prototype descriptors",
+      "where": "scripts/11_prototype_characterization.py, scripts/prototype_characterization_utils.py",
+      "old_inputs": "compact_model prototype_mean_norm/prototype_std_norm, lat/lon grids, mask_common, image-only regime labels.",
+      "old_outputs": "pixel_descriptors_all.csv, region_descriptors_all.csv, per-class rasters boundary_score/gradient_magnitude/region_id.",
+      "logic": "multi_regime classes only: Otsu segmentation + interface boundary + distance-to-boundary + 0.65 gradient/0.35 proximity boundary_score; homogeneous classes: single region with zero boundary.",
+      "decision": "REUSE_WITH_ADAPTATION",
+      "adaptation": "Same segmentation/boundary backbone, adapted to 6 ROI x490 canonical classes, X/Y km grids, normalized maps, planner-ready interest map."
+    },
+    {
+      "component": "Descriptor validation audit",
+      "where": "results/validation_descriptor_audit_v2_20260403_215918",
+      "old_inputs": "old pixel/region descriptors.",
+      "old_outputs": "descriptor usefulness, discriminative scores, proxy top-k figures.",
+      "logic": "boundary score, n_regions and region entropy were most discriminative; proxy top-k favored gradient/boundary-enriched maps.",
+      "decision": "REUSE_AS_IS",
+      "adaptation": "Use as evidence for retaining boundary, gradient, segmentation and entropy in final descriptors."
+    },
+    {
+      "component": "TEMPpred/tempRes old branches",
+      "where": "legacy validation branches and tempRes-related outputs",
+      "old_inputs": "old tempRes/HRes/October branches.",
+      "old_outputs": "diagnostic comparisons, not final canonical descriptor library.",
+      "logic": "useful for historical validation only.",
+      "decision": "DO_NOT_REUSE",
+      "adaptation": "Step08 does not use tempRes, TEMPpred, or STD for descriptor construction."
+    },
+    {
+      "component": "Interest map",
+      "where": "No final reusable interest_map implementation found in scripts.",
+      "old_inputs": "Validation audit had proxy top-k maps, but no canonical interest_map raster.",
+      "old_outputs": "proxy diagnostics only.",
+      "logic": "No stable old production logic found.",
+      "decision": "REUSE_WITH_ADAPTATION",
+      "adaptation": "Initial documented map: 0.4 boundary + 0.4 gradient + 0.2 heterogeneity; weights are not optimized."
+    }
+  ],
+  "answers": {
+    "1_where_logic_was_implemented": [
+      "scripts/11_prototype_characterization.py",
+      "scripts/prototype_characterization_utils.py",
+      "scripts/10_seed11_cv_analysis.py",
+      "scripts/cv_seed11_utils.py",
+      "notebooks/seed11_computer_vision_colab.ipynb"
+    ],
+    "2_scripts_notebooks": [
+      "scripts/09_export_cv_prototypes.py",
+      "scripts/10_seed11_cv_analysis.py",
+      "scripts/cv_seed11_utils.py",
+      "scripts/11_prototype_characterization.py",
+      "scripts/prototype_characterization_utils.py",
+      "notebooks/seed11_computer_vision_colab.ipynb",
+      "notebooks/seed11_computer_vision_colab.localrun.ipynb",
+      "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/run_report.md",
+      "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/pixel_descriptors_all.csv",
+      "results/prototype_characterization_seed11/official_fixed_dictionary_seed11/official_pixelwise_v2_semantic/region_descriptors_all.csv",
+      "results/validation_descriptor_audit_v2_20260403_215918/AUDIT_REPORT.md"
+    ],
+    "3_old_inputs": [
+      "compact_model_final.npz prototype_mean_norm/prototype_std_norm",
+      "mask_common and lat/lon grids",
+      "clean PNG prototype exports",
+      "image-only CV CSVs"
+    ],
+    "4_old_outputs": [
+      "pixel_descriptors_all.csv",
+      "region_descriptors_all.csv",
+      "boundary_score.npy",
+      "gradient_magnitude.npy",
+      "region_label_id.npy",
+      "distance_to_boundary.npy",
+      "prototype_summary.csv"
+    ],
+    "5_descriptors_calculated": [
+      "temp_mean/temp_std",
+      "region labels and connected region ids",
+      "gradient_magnitude and gradient_direction",
+      "boundary_mask, distance_to_boundary, boundary_score",
+      "region aggregates such as temp contrast and area entropy in validation audit"
+    ],
+    "6_calculation_summary": {
+      "gradient_magnitude": "np.gradient on prototype field using coordinate axes when available; magnitude hypot(gx, gy).",
+      "boundary_score": "multi-regime 0.65*gradient_norm + 0.35*boundary_proximity; homogeneous zero.",
+      "heterogeneity": "not a standalone raster in old production; approximated through temp_std/region entropy/audit diagnostics.",
+      "prototype_similarity": "old pipeline stored similarity matrices and validation audits; not a core pixel descriptor.",
+      "segmentation": "label-driven: homogeneous single region; multi-regime Otsu low/high regions.",
+      "representative_zones": "old validation used proxy top-k; no stable named representative_zone raster found.",
+      "interest_priority_maps": "proxy top-k diagnostics existed; no canonical interest_map output found."
+    },
+    "7_applied_to": "Mostly prototypes and local subclass prototypes; not new images in the final descriptor characterization stage.",
+    "8_thresholds": [
+      "Otsu threshold for multi-regime prototype segmentation",
+      "gradient normalization p95",
+      "boundary proximity distance p75",
+      "no boundary proxy for homogeneous classes"
+    ],
+    "9_normalizations": "Old boundary_score normalized to [0,1] by p95 gradient and p75 distance proximity; Step08 min-max normalizes final maps per class over valid mask.",
+    "10_tempres_dependencies": "No reusable final descriptor logic requires tempRes; tempRes branches are diagnostic and excluded.",
+    "11_reusable_directly": [
+      "label-driven segmentation",
+      "gradient map",
+      "boundary score formula",
+      "pixel/region descriptor pattern"
+    ],
+    "12_needs_adaptation": [
+      "ROI x490 paths/shapes/classes",
+      "X/Y km coordinates",
+      "6 class sizes",
+      "planner-ready map stack",
+      "residual representativity from Step05 assignments"
+    ]
+  }
+}

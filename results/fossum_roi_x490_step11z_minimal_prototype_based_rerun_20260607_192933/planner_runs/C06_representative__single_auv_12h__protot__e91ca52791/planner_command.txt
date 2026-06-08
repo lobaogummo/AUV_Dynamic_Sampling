@@ -1,0 +1,1 @@
+C:\Users\pedro\AppData\Local\Programs\Python\Python312\python.exe OptimalPlanning.py C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933\planner_inputs\C06_representative__single_auv_12h__protot__e91ca52791.nc

@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-06T12:48:27.526388",
+  "script": "C:\\Users\\pedro\\Documents\\Filipa_dados\\scripts\\10f_prepare_minimal_boundary_planner_inputs.py",
+  "inputs": {
+    "step10e": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step10e_top20_class01_class06_roi_x490_20260519_184636",
+    "step09b": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step09b_top20_c01_c06_temppred_classification_20260519_190144",
+    "step06": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\october_surface_temppred_std_roi_x490_20260511_155923",
+    "step09": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step09_october_temppred_descriptor_assignment_20260606_124357",
+    "step00": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step00_dataset_20260509_232915",
+    "step08": "C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step08_final_descriptors_20260606_114602"
+  },
+  "formulae": {
+    "baseline": "information_map = STD_norm",
+    "enriched": "information_map = (1 - alpha) * STD_norm + alpha * boundary_score_norm",
+    "alphas": [
+      0.25,
+      0.5
+    ]
+  },
+  "recommendation": "Use C06_representative (2023-12-22, C06) first: it has the strongest classification confidence among the three selected cases. Then compare against the high-STD C01 case to test whether boundary enrichment changes planner behavior.",
+  "verdict": "MINIMAL_BOUNDARY_PLANNER_INPUTS_READY"
+}

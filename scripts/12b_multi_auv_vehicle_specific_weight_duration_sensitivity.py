@@ -728,6 +728,7 @@ def write_reports(outdir: Path, fleet: pd.DataFrame, vehicle: pd.DataFrame, weig
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Step12B multi-AUV vehicle-specific weight and duration sensitivity.")
     parser.add_argument("--step11y", type=Path, default=None)
+    parser.add_argument("--step10f-dir", type=Path, default=c.STEP10F)
     parser.add_argument("--planner", type=Path, default=c.PLANNER)
     parser.add_argument("--output-root", type=Path, default=c.RESULTS)
     parser.add_argument("--timeout-s", type=int, default=1800)
@@ -750,6 +751,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    c.set_step10f(args.step10f_dir)
     if args.workers < 1:
         raise ValueError("--workers must be >= 1")
     if args.workers > 3:

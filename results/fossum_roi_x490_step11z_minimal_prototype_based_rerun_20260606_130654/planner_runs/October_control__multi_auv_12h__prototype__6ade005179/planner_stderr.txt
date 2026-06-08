@@ -1,0 +1,31 @@
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260606_130654\planner_runs\October_control__multi_auv_12h__prototype__6ade005179\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260606_130654\planner_runs\October_control__multi_auv_12h__prototype__6ade005179\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+Traceback (most recent call last):
+  File "C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260606_130654\planner_runs\October_control__multi_auv_12h__prototype__6ade005179\OptimalPlanning.py", line 247, in <module>
+    contour_points_lat, contour_points_lon, contour_points_level, levels = get_contour_levels(temperr2d_op, max_level, min_level, step_level)
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260606_130654\planner_runs\October_control__multi_auv_12h__prototype__6ade005179\Utils.py", line 33, in get_contour_levels
+    contour_lines = plt.contour(map, levels = levels_, linewidths=1, alpha=1, colors='black') #compute contour lines
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\pyplot.py", line 3179, in contour
+    __ret = gca().contour(
+            ^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\__init__.py", line 1524, in inner
+    return func(
+           ^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\axes\_axes.py", line 6779, in contour
+    contours = mcontour.QuadContourSet(self, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\contour.py", line 701, in __init__
+    kwargs = self._process_args(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\contour.py", line 1319, in _process_args
+    x, y, z = self._contour_args(args, kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\contour.py", line 1370, in _contour_args
+    self._process_contour_level_args(args, z.dtype)
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\matplotlib\contour.py", line 1030, in _process_contour_level_args
+    raise ValueError("Contour levels must be increasing")
+ValueError: Contour levels must be increasing

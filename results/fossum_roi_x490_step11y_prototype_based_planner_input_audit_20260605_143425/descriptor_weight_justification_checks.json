@@ -1,0 +1,38 @@
+{
+  "rows": 48,
+  "descriptors": [
+    "boundary_distance_score_r1_cells",
+    "boundary_distance_score_r3_cells",
+    "boundary_distance_score_r5_cells",
+    "boundary_score",
+    "cold_region",
+    "interest_map",
+    "representative_zone",
+    "warm_region"
+  ],
+  "classes": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06"
+  ],
+  "step08": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425",
+  "planner_rerun": false,
+  "available_correlations": 24,
+  "hierarchical_alpha_formula": "0.50*H + 0.30*S + 0.20*(1-|corr_STD|), capped by class heterogeneity",
+  "outputs": {
+    "csv": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\descriptor_weight_justification_statistics.csv",
+    "report": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\descriptor_weight_justification_report.md",
+    "figures": [
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_class_heterogeneity.png",
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_correlation_with_STD_heatmap.png",
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_iqr_heatmap.png",
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_robust_amplitude_heatmap.png",
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_suggested_alpha_heatmap.png",
+      "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\figures\\descriptor_weight_utility_score_by_descriptor.png"
+    ]
+  }
+}

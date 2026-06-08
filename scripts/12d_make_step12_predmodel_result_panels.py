@@ -395,9 +395,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--step12a", type=Path, default=DEFAULT_STEP12A)
     parser.add_argument("--step12b", type=Path, default=DEFAULT_STEP12B)
+    parser.add_argument("--step10f-dir", type=Path, default=c.STEP10F)
     parser.add_argument("--outroot", type=Path, default=DEFAULT_OUTROOT)
     parser.add_argument("--svg", action="store_true", help="Also save SVG versions of every panel.")
     args = parser.parse_args()
+    c.set_step10f(args.step10f_dir)
 
     outdir = args.outroot / f"step12_predmodel_result_panels_{c.now_tag()}"
     outdir.mkdir(parents=True, exist_ok=False)
@@ -415,6 +417,7 @@ def main() -> int:
         "output_dir": c.rel(outdir),
         "step12a_source": c.rel(args.step12a.resolve()),
         "step12b_source": c.rel(args.step12b.resolve()),
+        "step10f_source": c.rel(args.step10f_dir.resolve()),
         "panels_created": len(panels),
         "svg_created": bool(args.svg),
         "TEMPpred_used_as_objective": False,

@@ -99,8 +99,8 @@ def load_step11y_maps(step11y: Path) -> tuple[int, dict[str, np.ndarray], pd.Dat
     return idx, maps, cases
 
 
-def load_mask() -> np.ndarray:
-    z = np.load(STEP10F / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
+def load_mask(step10f_dir: Path = STEP10F) -> np.ndarray:
+    z = np.load(step10f_dir / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
     mask = np.asarray(z["mask"], dtype=bool)
     if mask.ndim == 3:
         case_ids = [str(x) for x in z["case_ids"]]
@@ -249,6 +249,7 @@ def md_table(df: pd.DataFrame, columns: list[str], max_rows: int = 30) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Step11AB C01 region target and vehicle-specific sweep.")
     parser.add_argument("--step11y", type=Path, default=DEFAULT_STEP11Y)
+    parser.add_argument("--step10f-dir", type=Path, default=STEP10F)
     parser.add_argument("--planner", type=Path, default=PLANNER)
     parser.add_argument("--output-root", type=Path, default=RESULTS)
     parser.add_argument("--timeout-s", type=int, default=1800)
@@ -267,7 +268,7 @@ def main() -> int:
         (outdir / sub).mkdir(parents=True, exist_ok=True)
 
     idx, maps, cases = load_step11y_maps(args.step11y)
-    mask = load_mask()
+    mask = load_mask(args.step10f_dir)
     std = maps["baseline_STD_norm"][idx]
     boundary = maps["boundary_score_norm"][idx]
     cold = maps["cold_region_norm"][idx]
@@ -597,6 +598,7 @@ def main() -> int:
             "created_at": datetime.now().isoformat(timespec="seconds"),
             "script": rel(Path(__file__)),
             "step11y_source": rel(args.step11y),
+            "step10f_source": rel(args.step10f_dir),
             "planner": rel(args.planner),
             "case": {"case_id": CASE_ID, "date": CASE_DATE, "predicted_class": int(cases.loc[cases["case_id"].eq(CASE_ID), "predicted_class"].iloc[0])},
         },

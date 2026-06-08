@@ -1,0 +1,13 @@
+audit_step,inference,case_id,map_name,old_source,prototype_source,rmse,mae,pearson,max_abs_diff,exact_match,near_exact_match,valid_cells_compared,top10_jaccard,hotspot_distance_pixels
+Step10F,day_STD_baseline,C01_representative,baseline_STD_norm,Step10F baseline_STD_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,0.9999999999999998,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C01_representative,boundary_score_norm,Step10F boundary_score_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C01_representative,enriched_boundary_alpha025,Step10F enriched_boundary_alpha025,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C01_representative,enriched_boundary_alpha050,Step10F enriched_boundary_alpha050,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,day_STD_baseline,C06_representative,baseline_STD_norm,Step10F baseline_STD_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C06_representative,boundary_score_norm,Step10F boundary_score_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C06_representative,enriched_boundary_alpha025,Step10F enriched_boundary_alpha025,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,0.9999999999999998,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,C06_representative,enriched_boundary_alpha050,Step10F enriched_boundary_alpha050,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,day_STD_baseline,October_control,baseline_STD_norm,Step10F baseline_STD_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,October_control,boundary_score_norm,Step10F boundary_score_norm,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,October_control,enriched_boundary_alpha025,Step10F enriched_boundary_alpha025,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0
+Step10F,prototype_based,October_control,enriched_boundary_alpha050,Step10F enriched_boundary_alpha050,rebuilt Step08 predicted-class prototype + day STD,0.0,0.0,1.0,0.0,True,True,8004,1.0,0.0

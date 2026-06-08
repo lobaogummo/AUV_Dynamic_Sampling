@@ -46,6 +46,11 @@ CASE_JUSTIFICATION = {
 _PLANNER_SETUP_LOCK = threading.Lock()
 
 
+def set_step10f(step10f_dir: Path) -> None:
+    global STEP10F
+    STEP10F = step10f_dir.resolve()
+
+
 def now_tag() -> str:
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -135,8 +140,8 @@ def load_step11y_maps(step11y: Path | None = None) -> tuple[pd.DataFrame, dict[s
     return cases, maps, step11y
 
 
-def load_step10f_temp_mask() -> tuple[np.ndarray, np.ndarray]:
-    z = np.load(STEP10F / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
+def load_step10f_temp_mask(step10f_dir: Path | None = None) -> tuple[np.ndarray, np.ndarray]:
+    z = np.load((step10f_dir or STEP10F) / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
     return np.asarray(z["TEMPpred"], dtype=np.float32), np.asarray(z["mask"], dtype=bool)
 
 

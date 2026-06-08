@@ -78,8 +78,8 @@ def normalize_map(arr: np.ndarray, mask: np.ndarray) -> np.ndarray:
     return out
 
 
-def load_mask_and_temp() -> tuple[dict[str, int], np.ndarray, np.ndarray]:
-    z = np.load(STEP10F / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
+def load_mask_and_temp(step10f_dir: Path = STEP10F) -> tuple[dict[str, int], np.ndarray, np.ndarray]:
+    z = np.load(step10f_dir / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
     case_ids = [str(x) for x in z["case_ids"]]
     mask = np.asarray(z["mask"], dtype=bool)
     return {case: i for i, case in enumerate(case_ids)}, np.asarray(z["TEMPpred"], dtype=np.float32), mask
@@ -143,6 +143,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Step11AE remaining-days multi-AUV vehicle weight sweep.")
     parser.add_argument("--step11y", type=Path, default=DEFAULT_STEP11Y)
     parser.add_argument("--step11z", type=Path, default=DEFAULT_STEP11Z)
+    parser.add_argument("--step10f-dir", type=Path, default=STEP10F)
     parser.add_argument("--planner", type=Path, default=PLANNER)
     parser.add_argument("--output-root", type=Path, default=RESULTS)
     parser.add_argument("--timeout-s", type=int, default=1800)
@@ -154,6 +155,7 @@ def main() -> int:
     args = parse_args()
     zutils = load_module("step11z_utils", SCRIPTS / "11z_rerun_minimal_prototype_based_planner_tests.py")
     ab = load_module("step11ab_utils", SCRIPTS / "11ab_c01_region_target_and_vehicle_weight_sweep.py")
+    ab.STEP10F = args.step10f_dir
     s11a = zutils.load_module("step11a_utils", SCRIPTS / "11a_run_minimal_boundary_planner_comparison.py")
 
     outdir = args.output_root.resolve() / f"fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_{now_tag()}"
@@ -162,7 +164,7 @@ def main() -> int:
 
     cases, maps = zutils.load_cases_and_maps(args.step11y)
     cases = cases[cases["case_id"].isin(CASES)].copy().reset_index(drop=True)
-    case_idx_10f, temp_all, mask = load_mask_and_temp()
+    case_idx_10f, temp_all, mask = load_mask_and_temp(args.step10f_dir)
     lat_hres = np.load(HRES / "LAT_hres.npy")
     lon_hres = np.load(HRES / "LON_hres.npy")
     bathy_hres = np.load(HRES / "BATHY_hres.npy")
@@ -389,6 +391,7 @@ def main() -> int:
             "script": rel(Path(__file__)),
             "step11y": rel(args.step11y),
             "step11z_reused": rel(args.step11z),
+            "step10f": rel(args.step10f_dir),
             "planner": rel(args.planner),
         },
     )

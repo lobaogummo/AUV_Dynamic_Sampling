@@ -1,0 +1,7 @@
+run_id,strategy,case_id,vehicle_id,solver_status,collected_STD,collected_boundary,collected_region_A,collected_region_B,fraction_path_region_A,fraction_path_region_B,fraction_path_boundary_core,crossing_count,regions_visited,trajectory_length,mission_duration,sampled_cells
+October_control__multi_auv_12h__baseline_STD,baseline_STD,October_control,1,REUSED,91.37213134765625,0.0,163.0,0.0,1.0,0.0,1.0,0,1,37.974,10.883333333333333,163
+October_control__multi_auv_12h__baseline_STD,baseline_STD,October_control,2,REUSED,90.6125717163086,0.0,159.0,0.0,1.0,0.0,1.0,0,1,39.091,11.283333333333333,159
+October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV1,prototype_vehicle_specific_maps,October_control,1,REUSED_FAILED,0.0,0.0,0.0,0.0,,,,0,0,,,0
+October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV2,prototype_vehicle_specific_maps,October_control,2,REUSED_FAILED,0.0,0.0,0.0,0.0,,,,0,0,,,0
+October_control__multi_auv_12h__prototype_vehicle_specific_with_boundary__AUV1,prototype_vehicle_specific_with_boundary,October_control,1,REUSED,84.82313537597656,0.0,150.0,0.0,1.0,0.0,1.0,0,1,37.352,10.783333333333333,150
+October_control__multi_auv_12h__prototype_vehicle_specific_with_boundary__AUV2,prototype_vehicle_specific_with_boundary,October_control,2,REUSED_FAILED,0.0,0.0,0.0,0.0,,,,0,0,,,0
