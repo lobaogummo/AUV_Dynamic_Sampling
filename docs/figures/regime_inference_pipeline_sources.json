@@ -1,0 +1,28 @@
+{
+  "step00": "results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "step05": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
+  "step08": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
+  "temperature_colormap": "coolwarm",
+  "dictionary_atoms": {
+    "source": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755\\canonical_dictionary.npz",
+    "key": "components",
+    "shape": [
+      4,
+      1920
+    ],
+    "visualized_slice": "components[:, :960]",
+    "visualized_as": [
+      4,
+      24,
+      40
+    ]
+  },
+  "missing_inputs": [],
+  "outputs": {
+    "png": "docs\\figures\\regime_inference_pipeline_diagram.png",
+    "svg": "docs\\figures\\regime_inference_pipeline_diagram.svg",
+    "pdf": "docs\\figures\\regime_inference_pipeline_diagram.pdf",
+    "caption": "docs\\figures\\regime_inference_pipeline_caption.txt",
+    "revision_note": "docs\\figures\\regime_inference_pipeline_revision_note.txt"
+  }
+}

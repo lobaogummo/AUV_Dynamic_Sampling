@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-06-08T16:33:12",
+  "script": "scripts\\11ae_remaining_days_multi_auv_vehicle_weight_sweep.py",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+  "step11z_reused": "results\\fossum_roi_x490_step11z_minimal_prototype_based_rerun_20260607_192933",
+  "step10f": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822",
+  "planner": "OptimalPlanning_Lucrezia"
+}

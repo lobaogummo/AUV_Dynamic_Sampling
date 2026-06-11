@@ -1,0 +1,1 @@
+C:\Users\pedro\AppData\Local\Programs\Python\Python312\python.exe OptimalPlanning.py C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\planner_inputs\C01_representative__multi_auv_12h__vehicle__60bc2bfe9d.nc

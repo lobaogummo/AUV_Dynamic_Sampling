@@ -1,0 +1,31 @@
+file,role
+docs\figures\regime_inference_assets\01_temperature_day001.png,370 daily surface temperature thumbnail: day001
+docs\figures\regime_inference_assets\01_temperature_day121.png,370 daily surface temperature thumbnail: day121
+docs\figures\regime_inference_assets\01_temperature_day241.png,370 daily surface temperature thumbnail: day241
+docs\figures\regime_inference_assets\01_temperature_day302.png,370 daily surface temperature thumbnail: day302
+docs\figures\regime_inference_assets\02_standardized_map_day302.png,standardized map thumbnail
+docs\figures\regime_inference_assets\03_roi_image_day302.png,ROI image without patch overlay
+docs\figures\regime_inference_assets\03_roi_image_day302_patch_overlay.png,ROI image with numbered left-to-right patch overlay
+docs\figures\regime_inference_assets\04_patch_1_40x24.png,ordered extracted patch 1
+docs\figures\regime_inference_assets\04_patch_2_40x24.png,ordered extracted patch 2
+docs\figures\regime_inference_assets\04_patch_3_40x24.png,ordered extracted patch 3
+docs\figures\regime_inference_assets\04_patch_4_40x24.png,ordered extracted patch 4
+docs\figures\regime_inference_assets\05_dictionary_atom_1.png,"real learned dictionary atom 1, temperature-like half"
+docs\figures\regime_inference_assets\05_dictionary_atom_2.png,"real learned dictionary atom 2, temperature-like half"
+docs\figures\regime_inference_assets\05_dictionary_atom_3.png,"real learned dictionary atom 3, temperature-like half"
+docs\figures\regime_inference_assets\05_dictionary_atom_4.png,"real learned dictionary atom 4, temperature-like half"
+docs\figures\regime_inference_assets\06_sparse_code_activity.png,sparse code activity matrix
+docs\figures\regime_inference_assets\07_ward_dendrogram_schematic.png,Ward clustering dendrogram schematic
+docs\figures\regime_inference_assets\08_class_size_bars.png,six-class size bar chart
+docs\figures\regime_inference_assets\09_prototype_C01.png,prototype class C01
+docs\figures\regime_inference_assets\09_prototype_C02.png,prototype class C02
+docs\figures\regime_inference_assets\09_prototype_C03.png,prototype class C03
+docs\figures\regime_inference_assets\09_prototype_C04.png,prototype class C04
+docs\figures\regime_inference_assets\09_prototype_C05.png,prototype class C05
+docs\figures\regime_inference_assets\09_prototype_C06.png,prototype class C06
+docs\figures\regime_inference_assets\10_descriptor_boundary.png,boundary_score
+docs\figures\regime_inference_assets\10_descriptor_boundary_distance_r3.png,boundary_distance_score_r3_cells
+docs\figures\regime_inference_assets\10_descriptor_interest.png,interest_map
+docs\figures\regime_inference_assets\10_descriptor_representative_zone.png,representative_zone
+docs\figures\regime_inference_assets\10_descriptor_cold_region.png,cold_region
+docs\figures\regime_inference_assets\10_descriptor_warm_region.png,warm_region

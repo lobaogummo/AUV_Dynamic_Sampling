@@ -1,0 +1,10 @@
+{
+  "output_dir": "docs\\lucid_trajectory_results\\step12_predmodel_result_panels_20260609_022235",
+  "step12a_source": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260608_163658",
+  "step12b_source": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658",
+  "step10f_source": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822",
+  "panels_created": 8,
+  "svg_created": false,
+  "TEMPpred_used_as_objective": false,
+  "planner_rerun": false
+}

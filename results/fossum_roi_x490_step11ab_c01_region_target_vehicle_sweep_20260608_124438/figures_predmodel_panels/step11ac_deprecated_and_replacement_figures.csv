@@ -1,0 +1,4 @@
+deprecated_figure,replacement_source,reason,replacement_status
+single_auv_c01_paths_over_regions.png,single_auv_c01_predmodel_panel_by_method.png,old figure used prototype region RGB as background and overlaid all single-AUV methods,replaced_in_figures_dir_and_original_backed_up
+single_auv_c01_path_colored_by_region.png,single_auv_c01_predmodel_panel_by_method.png,old figure used region background; new panel uses TEMPpred background and region contours,replaced_in_figures_dir_and_original_backed_up
+multi_auv_c01_weight_sweep_paths.png,multi_auv_c01_predmodel_panel_by_method.png,old figure overlaid all multi-AUV methods in one axes over region RGB background,replaced_in_figures_dir_and_original_backed_up

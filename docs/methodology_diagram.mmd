@@ -1,0 +1,31 @@
+flowchart LR
+  subgraph O[Offline regime modelling]
+    A[Historical/model temperature data] --> B[ROI selection and preprocessing]
+    B --> C[Dictionary learning + hierarchical clustering]
+    C --> D[Prototype classes C01-C06]
+    D --> E[Prototype-derived descriptors]
+  end
+  subgraph P[Daily planner input]
+    F[Daily model prediction maps: TEMPpred + STD] --> G[Predicted class / prototype selection]
+    D --> G
+  end
+  subgraph R[Reward-map shaping]
+    E --> H[Descriptor map D_norm]
+    F --> I[STD_norm]
+    G --> H
+    H --> J[I_alpha(x,y) = (1-alpha) STD_norm(x,y) + alpha D_norm(x,y)]
+    I --> J
+  end
+  subgraph V[AUV route optimization]
+    J --> K[Lucrezia PCVRP/orienteering planner]
+    K --> L[Single-AUV trajectories]
+    K --> M[Multi-AUV trajectories]
+  end
+  subgraph S[Evaluation and selection]
+    L --> N[Post-processing metrics]
+    M --> N
+    N --> Q[Final balanced alpha/descriptor selection]
+  end
+  M -. future work .-> U[Data assimilation / future work]
+  L -. future work .-> U
+  U -. feedback .-> F

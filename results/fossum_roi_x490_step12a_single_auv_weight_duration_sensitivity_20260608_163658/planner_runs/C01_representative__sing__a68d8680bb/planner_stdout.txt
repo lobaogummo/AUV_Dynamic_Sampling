@@ -1,0 +1,94 @@
+*** Read File ***
+*** Insert Masks ***
+*** Point Selection ***
+*** VRP Solver (Node number estimation - 60 [s]) ***
+Maximum path length [km]:
+[43.2]
+PyVRP v0.10.1
+
+Solving an instance with:
+    2 depots
+    280 clients
+    1 vehicle (1 vehicle type)
+
+                  |       Feasible        |      Infeasible
+    Iters    Time |   #      Avg     Best |   #      Avg     Best
+H     500     29s |  31    53593    49860 |  33    41684    36089
+     1000     40s |  65    53116    49860 |  41    40498    39088
+H    1500     50s |  39    52651    49676 |  49    40282    38832
+H    2000     60s |  43    52777    49669 |  57    40134    38688
+
+Search terminated in 60.00s after 2002 iterations.
+Best-found solution has cost 49669.
+
+Solution results
+================
+    # routes: 1
+   # clients: 31
+   objective: 49669
+    distance: 143
+    duration: 143
+# iterations: 2002
+    run-time: 60.00 seconds
+
+*** VRP Solver (Final routes) ***
+Maximum path length [km]:
+[41.34]
+PyVRP v0.10.1
+
+Solving an instance with:
+    2 depots
+    280 clients
+    1 vehicle (1 vehicle type)
+
+                  |       Feasible        |      Infeasible
+    Iters    Time |   #      Avg     Best |   #      Avg     Best
+H     500     29s |  28    55260    51659 |  33    40560    36694
+H    1000     42s |  29    52618    50769 |  41    41347    39251
+     1500     53s |  51    54154    50769 |  49    41164    39251
+     2000     63s |  47    53781    50769 |  57    41524    39742
+     2500     75s |  60    54197    50769 |  65    41011    39463
+     3000     86s |  34    53214    50769 |  32    40636    39380
+     3500     96s |  33    53267    50769 |  40    40744    39379
+     4000    107s |  63    54194    50769 |  48    40561    39316
+     4500    119s |  33    53533    50769 |  56    40573    39222
+     5000    133s |  41    53666    50769 |  64    40549    39222
+     5500    146s |  58    53883    50769 |  31    40064    39207
+     6000    159s |  28    52709    50769 |  39    40301    39060
+     6500    170s |  34    52671    50769 |  47    40617    38931
+     7000    179s |  26    51998    50769 |  55    40432    38931
+     7500    188s |  32    52712    50769 |  63    40698    38931
+     8000    201s |  42    53294    50769 |  30    39739    38931
+     8500    211s |  55    53320    50769 |  38    40332    38931
+     9000    220s |  65    53348    50769 |  46    40251    38931
+     9500    230s |  46    54810    50769 |  54    44912    43149
+    10000    239s |  54    55105    50769 |  62    44608    43149
+    10500    247s |  37    53978    50769 |  29    44034    43128
+    11000    255s |  61    55231    50769 |  37    43986    43128
+    11500    264s |  40    54007    50769 |  45    49435    47288
+    12000    273s |  30    53280    50769 |  53    49201    47272
+    12500    281s |  28    53210    50769 |  61    49993    47099
+    13000    289s |  56    53666    50769 |  28    40790    39399
+    13500    299s |  33    53116    50769 |  36    45643    43569
+    14000    310s |  58    54704    50769 |  44    45249    43372
+    14500    320s |  52    53854    50769 |  52    41047    39394
+    15000    328s |  27    52613    50769 |  60    45350    43570
+    15500    338s |  53    55070    50769 |  27    45290    43404
+
+Search terminated in 345.75s after 15839 iterations.
+Best-found solution has cost 50769.
+
+Solution results
+================
+    # routes: 1
+   # clients: 30
+   objective: 50769
+    distance: 137
+    duration: 137
+# iterations: 15839
+    run-time: 345.75 seconds
+
+Total WP Routes Temperr [°C]:
+27.666794
+Total All Routes Temperr [°C]:
+239.02469

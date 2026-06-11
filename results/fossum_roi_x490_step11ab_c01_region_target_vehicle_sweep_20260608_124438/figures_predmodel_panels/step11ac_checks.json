@@ -1,0 +1,12 @@
+{
+  "verdict": "STEP11AC_PREDMODEL_PANEL_FIGURES_READY",
+  "step11ab_source": "results\\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438",
+  "output_dir": "results\\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\\figures_predmodel_panels",
+  "background": "TEMPpred",
+  "step10f_source": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822",
+  "case_id": "C01_representative",
+  "date": "2024-08-24",
+  "figures_created": 3,
+  "deprecated_region_background_figures_backed_up_to": "results\\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\\figures_deprecated_region_background",
+  "replacement_rows": 3
+}

@@ -1,0 +1,49 @@
+{
+  "step": "Step12A",
+  "output_dir": "results\\fossum_roi_x490_step12a_single_auv_weight_duration_sensitivity_20260608_163658",
+  "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+  "logical_rows": 25,
+  "physical_runs_executed_or_reused": 21,
+  "parallel": true,
+  "parallel_backend": "process",
+  "workers": 2,
+  "requested_workers": 2,
+  "max_workers": 3,
+  "resume_output": "",
+  "durations_tested": [
+    12.0
+  ],
+  "alphas_tested": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "descriptors_tested": [
+    "boundary_distance_score_r1_cells",
+    "boundary_distance_score_r3_cells",
+    "boundary_distance_score_r5_cells",
+    "boundary_score",
+    "interest_map"
+  ],
+  "available_descriptors": [
+    "boundary_distance_score_r1_cells",
+    "boundary_distance_score_r2_cells",
+    "boundary_distance_score_r3_cells",
+    "boundary_distance_score_r5_cells",
+    "boundary_distance_score_r8_cells",
+    "boundary_score",
+    "interest_map",
+    "representative_zone"
+  ],
+  "missing_descriptors": [],
+  "prototype_based_maps_only": true,
+  "TEMPpred_used_as_objective": false,
+  "all_runs_have_status": true,
+  "all_runtimes_recorded": true,
+  "failed_runs": 2,
+  "figures_created": 45,
+  "total_script_runtime_s": 10857.250892299984,
+  "verdict": "STEP12_SENSITIVITY_COMPLETED_FINAL_WEIGHTS_RECOMMENDED"
+}

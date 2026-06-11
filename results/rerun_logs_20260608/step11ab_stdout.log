@@ -1,0 +1,14 @@
+
+============================================================
+STEP11AB C01 REGION TARGET + VEHICLE SWEEP
+============================================================
+Output: results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438
+Single rows: 3
+Multi rows: 5
+Target success: False
+Recommended single-AUV: planner-level mandatory waypoint/route-level reward needed
+Recommended multi-AUV: vehicle_specific_balanced
+Warnings: 0
+Verdict: STEP11AB_COMPLETED_RESULTS_READY
+============================================================
+

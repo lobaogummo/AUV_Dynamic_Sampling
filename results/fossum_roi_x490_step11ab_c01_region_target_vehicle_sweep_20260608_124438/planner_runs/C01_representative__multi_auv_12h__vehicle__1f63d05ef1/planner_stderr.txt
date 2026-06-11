@@ -1,0 +1,8 @@
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\planner_runs\C01_representative__multi_auv_12h__vehicle__1f63d05ef1\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\planner_runs\C01_representative__multi_auv_12h__vehicle__1f63d05ef1\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\planner_runs\C01_representative__multi_auv_12h__vehicle__1f63d05ef1\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ab_c01_region_target_vehicle_sweep_20260608_124438\planner_runs\C01_representative__multi_auv_12h__vehicle__1f63d05ef1\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

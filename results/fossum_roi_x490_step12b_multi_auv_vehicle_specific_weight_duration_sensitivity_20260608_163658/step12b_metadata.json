@@ -1,0 +1,15 @@
+{
+  "created_at": "20260609_021857",
+  "inputs": {
+    "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+    "step10f": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822"
+  },
+  "overlap_penalty": {
+    "enable_overlap_penalty": false,
+    "lambda_overlap": 0.0,
+    "lambda_proximity": 0.0,
+    "proximity_sigma_cells": 2.0,
+    "proximity_radius_cells": 8,
+    "penalty_mode": "both"
+  }
+}

@@ -1,0 +1,7 @@
+Regime inference pipeline diagram revision note
+
+Dictionary atoms: the four atom thumbnails are the real learned atoms from the validated canonical Step05 output `canonical_dictionary.npz`, key `components` (shape 4 x 1920). Each learned component concatenates a 40 x 24 temperature-like patch field and a 40 x 24 valid-mask encoding; the diagram visualizes the temperature-like half as four learned atom fields. They are not schematic placeholders.
+
+Colormap: temperature-like fields now use the same `coolwarm` colormap used by the 370 daily surface-temperature map exports and canonical prototype visualizations. This applies to the ROI image, standardized map, extracted patches, prototype thumbnails, and dictionary atoms. Descriptor maps use descriptor-appropriate sequential colormaps: magma for boundary/boundary-distance, inferno for interest, Greens for representative zone, Blues for cold region, and Reds for warm region.
+
+Patch extraction panel: the patch thumbnails now follow a left-to-right spatial extraction sequence from the ROI image. Four patch rectangles are drawn on the ROI image, numbered 1-4, with subtle arrows indicating the extraction order; the thumbnails below are the corresponding real 40 x 24 patches in the same order.

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\pedro\Documents\Filipa_dados\scripts\11ac_make_step11ab_predmodel_panel_figures.py", line 378, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\pedro\Documents\Filipa_dados\scripts\11ac_make_step11ab_predmodel_panel_figures.py", line 159, in main
+    temp = load_temppred(args.step10f_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\Documents\Filipa_dados\scripts\11ac_make_step11ab_predmodel_panel_figures.py", line 66, in load_temppred
+    z = np.load(step10f_dir / "planner_minimal_boundary_input_maps.npz", allow_pickle=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\lib\_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\pedro\\Documents\\Filipa_dados\\results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260519_195022\\planner_minimal_boundary_input_maps.npz'

@@ -1,0 +1,8 @@
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260608_124438\planner_runs\October_control__multi_auv_12h__vehicle_sp__2edaa7a429\OptimalPlanning.py:224: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260608_124438\planner_runs\October_control__multi_auv_12h__vehicle_sp__2edaa7a429\OptimalPlanning.py:230: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260608_124438\planner_runs\October_control__multi_auv_12h__vehicle_sp__2edaa7a429\OptimalPlanning.py:269: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+C:\Users\pedro\Documents\Filipa_dados\results\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260608_124438\planner_runs\October_control__multi_auv_12h__vehicle_sp__2edaa7a429\OptimalPlanning.py:458: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

@@ -1,0 +1,10 @@
+{
+  "region_A_cells": 8004,
+  "region_B_cells": 8004,
+  "fallbacks": [
+    "region_A top15 prototype cold threshold 0.000",
+    "region_B top15 prototype warm threshold 0.000",
+    "region_B non-exclusive top5 prototype fallback 0.000"
+  ],
+  "TEMPpred_used": false
+}

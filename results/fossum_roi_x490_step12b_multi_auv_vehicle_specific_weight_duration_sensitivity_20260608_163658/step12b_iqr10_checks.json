@@ -1,0 +1,45 @@
+{
+  "planner_rerun": false,
+  "step12b": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658",
+  "temperature_stack": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\X_surface_370_roi_x490.npy",
+  "dates_csv": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\dates_370.csv",
+  "mask": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy",
+  "searched_files": [
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\X_surface_370_roi_x490.npy",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\thetao_surface_370_roi_x490.npy",
+    "results\\fresnel_paper_roi_x490_surface_370_20260509_180348\\thetao_surface_370_hres_paper_roi_x490.npy",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\dates_370.csv",
+    "results\\cmems_370_surface_to_hres_20260509_135642\\dates_370.csv",
+    "results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy"
+  ],
+  "cases": [
+    {
+      "case_id": "C01_representative",
+      "date": "2024-08-24"
+    },
+    {
+      "case_id": "C06_representative",
+      "date": "2023-12-22"
+    },
+    {
+      "case_id": "October_control",
+      "date": "2024-10-30"
+    }
+  ],
+  "vehicle_rows": 54,
+  "fleet_rows": 27,
+  "vehicle_routes_mapped": 52,
+  "min_route_valid_cells": 0,
+  "max_route_valid_cells": 165,
+  "fleet_baseline_comparisons_available": 27,
+  "outputs": {
+    "vehicle_metrics": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\step12b_iqr10_vehicle_metrics.csv",
+    "fleet_metrics": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\step12b_iqr10_fleet_metrics.csv",
+    "other_days_summary": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\step12b_iqr10_other_days_summary.csv",
+    "report": "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\step12b_iqr10_report.md",
+    "figures": [
+      "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\figures\\step12b_iqr10_gain_vs_baseline_other_days.png",
+      "results\\fossum_roi_x490_step12b_multi_auv_vehicle_specific_weight_duration_sensitivity_20260608_163658\\figures\\step12b_STD_retention_vs_IQR10_gain_other_days.png"
+    ]
+  }
+}

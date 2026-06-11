@@ -1,0 +1,21 @@
+{
+  "created_at": "20260608_193754",
+  "inputs": {
+    "step11y": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260606_124940",
+    "step10f": "results\\fossum_roi_x490_step10f_minimal_boundary_planner_inputs_20260606_124822"
+  },
+  "descriptor_map_keys": {
+    "boundary_score": "boundary_score_norm",
+    "boundary_distance_score_r1_cells": "boundary_distance_score_r1_cells_norm",
+    "boundary_distance_score_r3_cells": "boundary_distance_score_r3_cells_norm",
+    "boundary_distance_score_r5_cells": "boundary_distance_score_r5_cells_norm",
+    "interest_map": "interest_map_norm"
+  },
+  "parallelization": {
+    "enabled": true,
+    "backend": "process",
+    "workers": 2,
+    "isolation": "Each physical_run_id maps to a hashed planner_runs subdirectory and unique planner_inputs NetCDF file."
+  },
+  "boundary_distance_note": "boundary_distance_score_r*_cells_norm maps are pure prototype-based boundary proximity scores when present in Step11Y."
+}

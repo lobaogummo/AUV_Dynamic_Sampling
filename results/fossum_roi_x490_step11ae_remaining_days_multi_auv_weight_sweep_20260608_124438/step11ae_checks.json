@@ -1,0 +1,20 @@
+{
+  "verdict": "STEP11AE_COMPLETED_WITH_WARNINGS",
+  "output_dir": "results\\fossum_roi_x490_step11ae_remaining_days_multi_auv_weight_sweep_20260608_124438",
+  "cases": [
+    "C06_representative",
+    "October_control"
+  ],
+  "prototype_maps_only": true,
+  "TEMPpred_used_for_regions": false,
+  "step11z_reuse": true,
+  "multi_rows": 10,
+  "vehicle_rows": 18,
+  "planner_runs_executed": 12,
+  "figures_created": 2,
+  "warnings": [
+    "October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV1 missing; running strong-regime proxy.",
+    "October_control__multi_auv_12h__prototype_vehicle_specific_maps__AUV2 missing; running strong-regime proxy.",
+    "1 planner runs failed/timed out."
+  ]
+}

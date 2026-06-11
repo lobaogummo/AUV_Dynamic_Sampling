@@ -1,0 +1,3 @@
+case_id,recommended_strategy,B_gain,std_retained,selection_rule
+C06_representative,vehicle_specific_strong_regime,34142328.259975314,0.754639781964056,best available tradeoff; criteria not fully met
+October_control,vehicle_specific_conservative,0.4888888888888888,0.9736355850449453,best available tradeoff; criteria not fully met
