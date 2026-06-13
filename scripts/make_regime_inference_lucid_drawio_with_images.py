@@ -66,6 +66,7 @@ def data_uri(
     vmax: float | None,
     mask: np.ndarray | None = None,
     pixel_size: tuple[int, int] = (180, 110),
+    origin_lower: bool = True,
 ) -> str:
     a = np.asarray(arr, dtype=float)
     invalid = ~np.isfinite(a)
@@ -82,9 +83,11 @@ def data_uri(
     if vmax <= vmin:
         vmax = vmin + 1.0
     norm = np.clip((a - vmin) / (vmax - vmin), 0, 1)
-    cmap = plt.get_cmap(cmap_name)
-    rgba = (cmap(norm) * 255).astype(np.uint8)
+    rgba = (plt.get_cmap(cmap_name)(norm) * 255).astype(np.uint8)
     rgba[invalid] = np.array([255, 255, 255, 255], dtype=np.uint8)
+    if origin_lower:
+        # Match the rest of the pipeline's matplotlib maps, which use origin="lower".
+        rgba = np.flipud(rgba)
     img = Image.fromarray(rgba, mode="RGBA").resize(pixel_size, Image.Resampling.BILINEAR)
     buf = BytesIO()
     img.save(buf, format="PNG", optimize=True)
@@ -292,7 +295,7 @@ def main() -> int:
         d.text(x, 437, 55, 14, f"atom {i}", font_size=9)
         atom_ids.append(d.image(x, 455, 55, 40, data_uri(atom, TEMP_CMAP, -atom_lim, atom_lim, None, (120, 80)), "#6B46C1"))
     d.text(430, 578, 160, 18, "sparse code activity", font_size=10)
-    codes_id = d.image(385, 600, 230, 85, data_uri(code_img, "magma", None, None, None, (260, 80)), "#6B46C1")
+    codes_id = d.image(385, 600, 230, 85, data_uri(code_img, "magma", None, None, None, (260, 80), origin_lower=False), "#6B46C1")
     d.text(430, 688, 160, 18, "4 atoms x 370 days", font_size=10, color="#475569")
 
     # Regime discovery.

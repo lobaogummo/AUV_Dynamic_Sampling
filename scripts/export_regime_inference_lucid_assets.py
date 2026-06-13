@@ -53,6 +53,7 @@ def render_array(
     mask: np.ndarray | None = None,
     size: tuple[int, int] = (420, 260),
     border: str | None = None,
+    origin_lower: bool = True,
 ) -> Image.Image:
     a = np.asarray(arr, dtype=float)
     invalid = ~np.isfinite(a)
@@ -71,6 +72,9 @@ def render_array(
     norm = np.clip((a - vmin) / (vmax - vmin), 0, 1)
     rgba = (plt.get_cmap(cmap_name)(norm) * 255).astype(np.uint8)
     rgba[invalid] = np.array([255, 255, 255, 255], dtype=np.uint8)
+    if origin_lower:
+        # Match the rest of the pipeline's matplotlib maps, which use origin="lower".
+        rgba = np.flipud(rgba)
     img = Image.fromarray(rgba, mode="RGBA").resize(size, Image.Resampling.BILINEAR)
     if border:
         draw = ImageDraw.Draw(img)
@@ -103,7 +107,7 @@ def save_roi_with_patch_overlay(
 def save_code_matrix(codes: np.ndarray, path: Path) -> None:
     daily = np.nanmean(np.abs(codes), axis=1).T
     daily = daily[:, :: max(1, daily.shape[1] // 92)]
-    render_array(daily, path, "magma", None, None, None, size=(640, 220), border="#6B46C1")
+    render_array(daily, path, "magma", None, None, None, size=(640, 220), border="#6B46C1", origin_lower=False)
 
 
 def save_dendrogram_placeholder(path: Path) -> None:
@@ -139,6 +143,35 @@ def save_class_size_bars(path: Path) -> None:
         draw.rectangle([x, 240 - h, x + 34, 240], fill="#F59E0B", outline="#92400E", width=3)
         draw.text((x + 2, 250), f"C{i}", fill="#111827")
     draw.rectangle([0, 0, img.width - 1, img.height - 1], outline="#B7791F", width=4)
+    img.save(path)
+
+
+def save_contact_sheet(manifest: list[dict[str, str]], path: Path) -> None:
+    thumb_w, thumb_h = 150, 92
+    label_h = 34
+    gap = 14
+    cols = 6
+    rows = int(np.ceil(len(manifest) / cols))
+    sheet_w = cols * thumb_w + (cols + 1) * gap
+    sheet_h = rows * (thumb_h + label_h) + (rows + 1) * gap
+    img = Image.new("RGBA", (sheet_w, sheet_h), "#FFFFFF")
+    draw = ImageDraw.Draw(img)
+    for idx, row in enumerate(manifest):
+        src = ROOT / row["file"]
+        if not src.exists() or src.name == path.name:
+            continue
+        col = idx % cols
+        r = idx // cols
+        x = gap + col * (thumb_w + gap)
+        y = gap + r * (thumb_h + label_h + gap)
+        thumb = Image.open(src).convert("RGBA")
+        thumb.thumbnail((thumb_w, thumb_h), Image.Resampling.LANCZOS)
+        tx = x + (thumb_w - thumb.width) // 2
+        ty = y + (thumb_h - thumb.height) // 2
+        img.alpha_composite(thumb, (tx, ty))
+        draw.rectangle([x, y, x + thumb_w - 1, y + thumb_h - 1], outline="#D1D5DB", width=1)
+        label = src.stem[:28]
+        draw.text((x, y + thumb_h + 5), label, fill="#111827")
     img.save(path)
 
 
@@ -225,6 +258,10 @@ def main() -> int:
         record(p, role)
 
     import pandas as pd
+    p = OUTDIR / "asset_contact_sheet.png"
+    save_contact_sheet(manifest, p)
+    record(p, "contact sheet of exported image assets")
+
     pd.DataFrame(manifest).to_csv(OUTDIR / "asset_manifest.csv", index=False)
     print(OUTDIR)
     print(OUTDIR / "asset_manifest.csv")
