@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph A["Planning-day inputs"]
+    T["TEMPpred(t)"]
+    S["STD(t)"]
+    M["Bathymetry / operational mask"]
+    G["ROI X490 common grid"]
+  end
+
+  subgraph B["Class assignment"]
+    B1["crop / mask / normalise"]
+    B2["compare with prototype library"]
+    B3["predicted class C_k"]
+  end
+
+  subgraph C["Offline library retrieval"]
+    C1["prototype library C01-C06"]
+    C2["descriptor library"]
+    C3["prototype-derived descriptor maps for C_k"]
+  end
+
+  subgraph D["Reward-map generation"]
+    D1["R_base = STD_norm"]
+    D2["R_alpha = (1 - alpha) STD_norm + alpha D_norm"]
+    D3["R_AUV1 = w_sigma STD_norm + w_A R_A"]
+    D4["R_AUV2 = w_sigma STD_norm + w_B R_B"]
+  end
+
+  subgraph E["Planner-ready outputs"]
+    E1["reward maps / NetCDF / NPZ"]
+    E2["Lucrezia AUV planner"]
+    E3["planned trajectories"]
+    E4["evaluation metrics"]
+    E5["baseline vs enriched comparison"]
+  end
+
+  T --> B1 --> B2 --> B3
+  B3 --> C3
+  C1 --> C2 --> C3
+  S --> D1
+  S --> D2
+  C3 --> D2
+  S --> D3
+  S --> D4
+  C3 --> D3
+  C3 --> D4
+  D1 --> E1
+  D2 --> E1
+  D3 --> E1
+  D4 --> E1
+  E1 --> E2 --> E3 --> E4 --> E5

@@ -1,0 +1,52 @@
+{
+  "title": "Planning-day inference and reward-map generation",
+  "output_folder": "results\\planner_inference_reward_generation_diagram_20260613_102922",
+  "created_by": "scripts\\make_planner_inference_reward_generation_diagram.py",
+  "source_folders": {
+    "Step00_dataset": "results\\fossum_roi_x490_step00_dataset_20260509_232915",
+    "Step11Y_validated_planner_inputs": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425",
+    "offline_diagram_assets": "docs\\figures\\regime_inference_assets"
+  },
+  "files_used": {
+    "TEMPpred": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\X_surface_370_roi_x490.npy",
+    "dates": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\dates_370.csv",
+    "ROI_mask": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\mask_common_roi_x490.npy",
+    "bathymetry": "results\\fossum_roi_x490_step00_dataset_20260509_232915\\BATHY_roi_x490.npy",
+    "STD_norm": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_baseline_STD_norm.npy",
+    "boundary_distance_r3": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_boundary_distance_score_r3_cells_norm.npy",
+    "interest_map": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_interest_map_norm.npy",
+    "representative_zone": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_representative_zone_norm.npy",
+    "region_A": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_AUV1_region_map.npy",
+    "region_B": "results\\fossum_roi_x490_step11y_prototype_based_planner_input_audit_20260605_143425\\prototype_based_AUV2_region_map.npy",
+    "prototype_thumbnails": "docs\\figures\\regime_inference_assets\\09_prototype_C01.png ... C06"
+  },
+  "block_meanings": [
+    {
+      "block": "Planning-day inputs",
+      "meaning": "Day-specific TEMPpred and STD maps are prepared on the X490 ROI/common grid with the operational mask."
+    },
+    {
+      "block": "Class assignment",
+      "meaning": "TEMPpred(t) is cropped, masked and normalised, then compared with the offline prototype library to assign a single regime class C_k for the planning day."
+    },
+    {
+      "block": "Offline library retrieval",
+      "meaning": "The predicted class C_k indexes prototype-derived descriptor maps from the offline library. The descriptors are not computed from STD."
+    },
+    {
+      "block": "Reward-map generation",
+      "meaning": "STD_norm remains the baseline reward. Descriptor maps complement STD through alpha-weighted or vehicle-specific blends."
+    },
+    {
+      "block": "Planner-ready outputs",
+      "meaning": "Baseline, descriptor-enriched and vehicle-specific reward maps are exported to Lucrezia inputs and evaluated through trajectory and metric comparisons."
+    }
+  ],
+  "conceptual_constraints": [
+    "TEMPpred(t) is used for class/prototype assignment only.",
+    "STD(t) is the baseline uncertainty-driven reward source.",
+    "Prototype-derived descriptors complement STD rather than replacing it.",
+    "Regimes are class-level prototype assignments, not cell-wise labels for the planning day."
+  ],
+  "missing_or_placeholder_inputs": []
+}

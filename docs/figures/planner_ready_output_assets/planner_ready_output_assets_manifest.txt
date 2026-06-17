@@ -1,0 +1,8 @@
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\01_reward_maps_netcdf_npz.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\02_lucrezia_auv_planner.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\03_baseline_trajectory.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\04_enriched_trajectory.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\05_trajectory_metrics.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\06_baseline_vs_enriched_comparison.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\07_planner_ready_output_chain.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\planner_ready_output_assets\planner_ready_output_assets_contact_sheet.png

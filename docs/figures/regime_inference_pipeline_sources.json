@@ -1,5 +1,7 @@
 {
   "step00": "results\\fossum_roi_x490_step00_dataset_20260509_232915",
+  "cmems_hres": "results\\cmems_370_surface_to_hres_20260509_135642",
+  "fresnel_paper_roi_x490": "results\\fresnel_paper_roi_x490_surface_370_20260509_180348",
   "step05": "results\\fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755",
   "step08": "results\\fossum_roi_x490_step08_final_descriptors_20260605_141912",
   "temperature_colormap": "coolwarm",

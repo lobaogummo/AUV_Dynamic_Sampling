@@ -3,16 +3,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Data preparation from a larger CMEMS-derived surface temperature field to the interpolated grid and the final X490 region of interest around the Nazar\'e Canyon. The same ROI, valid mask and colour scale are used to support consistent visual comparison of the 370 historical surface temperature maps.}}{22}{figure.caption.9}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Offline regime-inference pipeline. Historical surface temperature fields are cropped to the X490 ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction.}}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Planning-day inference and reward-map generation. TEMPpred selects the prototype class, prototype-derived descriptors are retrieved, STD remains the uncertainty baseline and the resulting reward maps are passed to the Lucrezia AUV planner. The output trajectories are then compared using STD, descriptor, geometry and diagnostic metrics.}}{26}{figure.caption.13}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Prototype-derived descriptors generated in Step08. The descriptor maps are associated with full-field prototype classes and are later retrieved by planning-day class assignment.}}{31}{figure.caption.15}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Planner-input logic audited in Step11Y. The corrected workflow uses planning-day TEMPpred only for class assignment and uses prototype-based descriptor maps for reward-map construction.}}{31}{figure.caption.16}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Canonical six-class prototype panel from Step05. The classes represent recurrent full-field temperature patterns rather than cell-wise labels.}}{35}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Validated region of interest over the high-resolution grid.}}{59}{figure.caption.40}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Prototype temperature maps for the discovered regimes.}}{60}{figure.caption.42}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Within-class variability maps for the discovered regimes.}}{60}{figure.caption.43}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Temperature-derived descriptors for a selected planning date: temperature field, standard deviation map, gradient magnitude and boundary score.}}{60}{figure.caption.44}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Baseline uncertainty-driven trajectory for a selected planning date.}}{61}{figure.caption.47}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Comparison between baseline and enriched trajectories for a selected planning date.}}{62}{figure.caption.49}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Sensitivity of planner metrics to descriptor weights $\alpha $ and $\beta $.}}{63}{figure.caption.52}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Single-AUV comparison between baseline and enriched trajectories.}}{64}{figure.caption.53}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Multi-AUV comparison between baseline and enriched trajectories.}}{64}{figure.caption.54}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Single-AUV route comparison for the C01 representative case using boundary-distance descriptor variants. The figure illustrates how descriptor scale changes the selected trajectory while the same planning domain and baseline STD context are retained.}}{39}{figure.caption.19}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Step12A trade-off between collected STD and descriptor-related behaviour. The figure supports the interpretation that useful enriched routes should be judged by STD retention, descriptor response and operational feasibility together.}}{40}{figure.caption.21}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Best C01 representative multi-AUV configuration from Step12B. Vehicle-specific prototype-region maps can encourage route specialisation while retaining a shared uncertainty-driven component.}}{40}{figure.caption.22}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Normalised IQR10 maps for the three evaluated planning dates. IQR10 indicates recent temporal variability over the previous 10 available days and is used only as a post-processing diagnostic.}}{42}{figure.caption.25}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Step12A IQR10 map and selected routes for the C01 representative case. The diagnostic overlays existing trajectories on recent temporal variability but does not modify the planner reward.}}{42}{figure.caption.26}%
+\addvspace {10\p@ }

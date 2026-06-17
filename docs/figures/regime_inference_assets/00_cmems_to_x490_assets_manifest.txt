@@ -1,0 +1,6 @@
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_cmems_regional_coarse_day302.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_cmems_interpolated_hres_day302_roi_box.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_x490_nazare_roi_day302.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_x490_nazare_roi_day001.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_x490_nazare_standardized_day302.png
+C:\Users\pedro\Documents\Filipa_dados\docs\figures\regime_inference_assets\00_cmems_to_x490_assets_contact_sheet.png

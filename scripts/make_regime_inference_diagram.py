@@ -30,6 +30,8 @@ RESULTS = ROOT / "results"
 OUTDIR = ROOT / "docs" / "figures"
 
 STEP00 = RESULTS / "fossum_roi_x490_step00_dataset_20260509_232915"
+STEP_CMEMS_HRES = RESULTS / "cmems_370_surface_to_hres_20260509_135642"
+STEP_PAPER_ROI = RESULTS / "fresnel_paper_roi_x490_surface_370_20260509_180348"
 STEP05 = RESULTS / "fossum_roi_x490_step05_canonical_patch40x24_dict4_sd25_20260512_181755"
 STEP08 = RESULTS / "fossum_roi_x490_step08_final_descriptors_20260605_141912"
 
@@ -198,6 +200,42 @@ def placeholder(ax, extent: tuple[float, float, float, float], label: str) -> No
     ax.text((x0 + x1) / 2, (y0 + y1) / 2, label, ha="center", va="center", fontsize=7, color="#64748B")
 
 
+def add_roi_rectangle(
+    ax,
+    extent: tuple[float, float, float, float],
+    source_shape: tuple[int, int],
+    roi_indices: dict[str, int],
+    color: str = "#F97316",
+) -> None:
+    x0, x1, y0, y1 = extent
+    nrow, ncol = source_shape
+    c0 = roi_indices.get("col_min", 0)
+    c1 = roi_indices.get("col_max", ncol - 1)
+    r0 = roi_indices.get("row_min", 0)
+    r1 = roi_indices.get("row_max", nrow - 1)
+    rx0 = x0 + c0 / ncol * (x1 - x0)
+    rx1 = x0 + (c1 + 1) / ncol * (x1 - x0)
+    ry0 = y0 + r0 / nrow * (y1 - y0)
+    ry1 = y0 + (r1 + 1) / nrow * (y1 - y0)
+    ax.add_patch(Rectangle((rx0, ry0), rx1 - rx0, ry1 - ry0, fill=False, edgecolor=color, linewidth=1.15, zorder=7))
+
+
+def add_grid_overlay(
+    ax,
+    extent: tuple[float, float, float, float],
+    nx: int = 6,
+    ny: int = 5,
+    color: str = "#FFFFFF",
+) -> None:
+    x0, x1, y0, y1 = extent
+    for i in range(1, nx):
+        x = x0 + i / nx * (x1 - x0)
+        ax.plot([x, x], [y0, y1], color=color, linewidth=0.28, alpha=0.55, zorder=5)
+    for j in range(1, ny):
+        y = y0 + j / ny * (y1 - y0)
+        ax.plot([x0, x1], [y, y], color=color, linewidth=0.28, alpha=0.55, zorder=5)
+
+
 def draw_code_matrix(ax, codes: np.ndarray | None, extent: tuple[float, float, float, float]) -> None:
     if codes is None:
         placeholder(ax, extent, "sparse\ncodes")
@@ -248,6 +286,15 @@ def main() -> int:
     temp = load_npy(STEP00 / "X_surface_370_roi_x490.npy", missing, "370 daily temperature maps", mmap=True)
     temp_norm = load_npy(STEP00 / "X_surface_370_roi_x490_norm.npy", missing, "370 normalized temperature maps", mmap=True)
     mask = load_npy(STEP00 / "mask_common_roi_x490.npy", missing, "common valid mask")
+    hres_temp = load_npy(STEP_CMEMS_HRES / "thetao_surface_370_hres.npy", missing, "CMEMS high-resolution regional surface maps", mmap=True)
+    hres_mask = load_npy(STEP_CMEMS_HRES / "MASK_hres.npy", missing, "CMEMS high-resolution regional mask")
+    paper_roi = load_npy(STEP_PAPER_ROI / "thetao_surface_370_hres_paper_roi_x490.npy", missing, "Filipa paper X490 ROI maps", mmap=True)
+    paper_roi_meta_path = STEP_PAPER_ROI / "paper_roi_x490_metadata.json"
+    if require(paper_roi_meta_path, missing, "Filipa paper ROI metadata"):
+        with paper_roi_meta_path.open("r", encoding="utf-8") as f:
+            paper_roi_meta = json.load(f)
+    else:
+        paper_roi_meta = {}
     prototypes = load_npy(STEP05 / "canonical_prototypes.npy", missing, "canonical prototypes")
     linkage = load_npy(STEP05 / "canonical_linkage.npy", missing, "canonical Ward linkage")
     atoms = load_npz_array(STEP05 / "canonical_dictionary.npz", "components", missing, "dictionary atoms")
@@ -285,6 +332,9 @@ def main() -> int:
     if temp is not None:
         for idx in [0, 120, 240, 301]:
             temp_examples.append(np.asarray(temp[min(idx, temp.shape[0] - 1)]))
+    if hres_temp is not None:
+        for idx in [0, 120, 240, 301]:
+            temp_examples.append(np.asarray(hres_temp[min(idx, hres_temp.shape[0] - 1)]))
     temp_vmin, temp_vmax = robust_limits(temp_examples or [np.zeros(ROI_SHAPE)])
     proto_vmin, proto_vmax = robust_limits([np.asarray(prototypes[i]) for i in range(min(6, prototypes.shape[0]))] if prototypes is not None else [np.zeros(ROI_SHAPE)])
     norm_examples = []
@@ -310,22 +360,50 @@ def main() -> int:
         add_section(ax, *s)
 
     # Data and preprocessing.
-    thumb_w, thumb_h = 0.78, 0.56
-    start_x, start_y = 0.52, 5.7
-    if temp is not None:
-        for i, idx in enumerate([0, 120, 240, 301]):
-            x = start_x + (i % 2) * 0.98
-            y = start_y - (i // 2) * 0.82
-            image_box(ax, np.asarray(temp[min(idx, temp.shape[0] - 1)]), (x, x + thumb_w, y, y + thumb_h), TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label=f"day {idx+1}", label_size=6.2, edge="#2B6CB0")
+    add_label(ax, 1.65, 6.93, "CMEMS to X490/Nazaré ROI", size=8.0, weight="bold", color="#1E3A8A")
+    context_day_idx = 301
+    regional_extent = (0.46, 1.12, 6.05, 6.53)
+    interp_extent = (1.27, 1.93, 6.05, 6.53)
+    roi_extent = (2.08, 2.74, 6.05, 6.53)
+    if hres_temp is not None:
+        hres_day = np.asarray(hres_temp[min(context_day_idx, hres_temp.shape[0] - 1)])
+        hres_mask_arr = np.asarray(hres_mask, dtype=bool) if hres_mask is not None else None
+        coarse_day = hres_day[::10, ::10]
+        image_box(ax, coarse_day, regional_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, label="CMEMS\nregional", label_size=5.9, edge="#2B6CB0")
+        image_box(ax, hres_day, interp_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=hres_mask_arr, label="interpolated\nhigh-res", label_size=5.9, edge="#2B6CB0")
+        add_grid_overlay(ax, interp_extent, nx=6, ny=5)
+        roi_indices = paper_roi_meta.get("roi_indices", {})
+        if roi_indices:
+            add_roi_rectangle(ax, interp_extent, hres_day.shape, roi_indices)
     else:
-        placeholder(ax, (0.52, 2.85, 4.75, 6.25), "370 daily\nmaps")
-    add_label(ax, 1.55, 6.72, "370 daily\nsurface temperature maps", size=8.2, weight="bold", color="#1E3A8A")
-    add_note_box(ax, 0.63, 3.45, 1.95, 0.78, "X490 ROI\ncommon valid mask\nnormalization", edge="#2B6CB0", face="#EFF6FF", size=7.3)
+        placeholder(ax, regional_extent, "CMEMS")
+        placeholder(ax, interp_extent, "interp.")
+    if paper_roi is not None:
+        roi_day = np.asarray(paper_roi[min(context_day_idx, paper_roi.shape[0] - 1)])
+        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="X490/Nazaré\nROI", label_size=5.9, edge="#2B6CB0")
+    elif temp is not None:
+        roi_day = np.asarray(temp[min(context_day_idx, temp.shape[0] - 1)])
+        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="X490/Nazaré\nROI", label_size=5.9, edge="#2B6CB0")
+    else:
+        placeholder(ax, roi_extent, "ROI")
+    add_small_arrow(ax, (1.14, 6.29), (1.25, 6.29), "#2B6CB0")
+    add_small_arrow(ax, (1.95, 6.29), (2.06, 6.29), "#2B6CB0")
+    add_note_box(ax, 0.48, 5.00, 2.32, 0.62, "ROI used in Filipa's paper\nsame X490/Nazaré planning domain", edge="#2B6CB0", face="#EFF6FF", size=6.8)
+    if temp is not None:
+        day1 = np.asarray(temp[0])
+        day302 = np.asarray(temp[min(context_day_idx, temp.shape[0] - 1)])
+        image_box(ax, day1, (0.66, 1.30, 4.10, 4.55), TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="day 1", label_size=5.9, edge="#2B6CB0")
+        image_box(ax, day302, (1.95, 2.59, 4.10, 4.55), TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="day 302", label_size=5.9, edge="#2B6CB0")
+        ax.text(1.62, 4.31, "…", ha="center", va="center", fontsize=13, color="#1E3A8A", zorder=6)
+    else:
+        placeholder(ax, (0.66, 2.59, 4.10, 4.55), "370 daily maps")
+    add_label(ax, 1.62, 3.82, "370 daily ROI\nsurface temperature maps", size=7.2, weight="bold", color="#1E3A8A")
+    add_note_box(ax, 0.63, 2.78, 1.95, 0.58, "common valid mask\nnormalization / standardization", edge="#2B6CB0", face="#EFF6FF", size=6.8)
     if temp_norm is not None:
         norm_example = np.asarray(temp_norm[301 if temp_norm.shape[0] > 301 else 0])
-        image_box(ax, norm_example, (0.85, 1.88, 2.28, 3.03), TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="standardized map", label_size=6.4, edge="#2B6CB0")
+        image_box(ax, norm_example, (0.85, 1.88, 1.70, 2.45), TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="standardized map", label_size=6.4, edge="#2B6CB0")
     else:
-        placeholder(ax, (0.85, 1.88, 2.28, 3.03), "normalized")
+        placeholder(ax, (0.85, 1.88, 1.70, 2.45), "normalized")
 
     # Compact representation: patches, atoms, codes.
     if temp_norm is not None:
@@ -451,7 +529,7 @@ def main() -> int:
     plt.close(fig)
 
     caption = (
-        "Offline regime-inference pipeline used in this thesis. Historical/model surface-temperature fields over the X490 ROI are masked, standardized, decomposed into local patches, represented with a compact dictionary-learning model, and clustered with Ward hierarchical clustering to obtain six recurrent prototype classes (C01-C06). The prototypes are then interpreted as homogeneous, gradient-dominated, or multi-regime spatial patterns and converted into prototype-derived descriptors, including boundary scores, boundary-distance scores, interest maps, representative zones, and cold/warm or region_A/region_B maps. These offline products define the prototype library, predicted-class interface, and prototype-specific descriptor maps used later for downstream reward-map construction in the AUV planner."
+        "Offline regime-inference pipeline used in this thesis. The workflow starts from CMEMS regional surface-temperature fields over a larger domain, interpolates them to the high-resolution/common grid, and then extracts the X490/Nazaré ROI used in Filipa's paper. The resulting 370 daily ROI maps are masked, standardized, decomposed into local patches, represented with a compact dictionary-learning model, and clustered with Ward hierarchical clustering to obtain six recurrent prototype classes (C01-C06). The prototypes are then interpreted as homogeneous, gradient-dominated, or multi-regime spatial patterns and converted into prototype-derived descriptors, including boundary scores, boundary-distance scores, interest maps, representative zones, and cold/warm or region_A/region_B maps. These offline products define the prototype library, predicted-class interface, and prototype-specific descriptor maps used later for downstream reward-map construction in the AUV planner."
     )
     if missing:
         caption += "\n\nPlaceholder note: the following expected inputs were missing and were replaced by schematic placeholders: " + "; ".join(missing)
@@ -467,12 +545,16 @@ def main() -> int:
         "Colormap: temperature-like fields now use the same `coolwarm` colormap used by the 370 daily surface-temperature map exports and canonical prototype visualizations. This applies to the ROI image, standardized map, extracted patches, prototype thumbnails, and dictionary atoms. Descriptor maps use descriptor-appropriate sequential colormaps: magma for boundary/boundary-distance, inferno for interest, Greens for representative zone, Blues for cold region, and Reds for warm region.\n"
         "\n"
         "Patch extraction panel: the patch thumbnails now follow a left-to-right spatial extraction sequence from the ROI image. Four patch rectangles are drawn on the ROI image, numbered 1-4, with subtle arrows indicating the extraction order; the thumbnails below are the corresponding real 40 x 24 patches in the same order.\n"
+        "\n"
+        "Data-origin panel: the first block now explicitly shows the upstream data chain: CMEMS regional surface-temperature field over a larger domain, interpolation to the high-resolution/common grid, and extraction of the X490/Nazaré ROI used in Filipa's paper before building the 370 daily ROI map stack.\n"
     )
     (OUTDIR / "regime_inference_pipeline_revision_note.txt").write_text(note, encoding="utf-8")
     (OUTDIR / "regime_inference_pipeline_sources.json").write_text(
         json.dumps(
             {
                 "step00": rel(STEP00),
+                "cmems_hres": rel(STEP_CMEMS_HRES),
+                "fresnel_paper_roi_x490": rel(STEP_PAPER_ROI),
                 "step05": rel(STEP05),
                 "step08": rel(STEP08),
                 "temperature_colormap": TEMP_CMAP,

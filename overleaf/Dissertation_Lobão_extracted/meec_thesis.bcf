@@ -2387,12 +2387,11 @@
     <bcf:citekey order="5" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
     <bcf:citekey order="6" intorder="1">fossum2020compact</bcf:citekey>
     <bcf:citekey order="6" intorder="2">ge2023watermasses</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">duarte2025geostatistical</bcf:citekey>
-    <bcf:citekey order="8" intorder="2">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="10" intorder="2">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
     <bcf:citekey order="11" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
     <bcf:citekey order="12" intorder="1">wunsch2007stateestimation</bcf:citekey>
     <bcf:citekey order="12" intorder="2">lermusiaux2007adaptive</bcf:citekey>
@@ -2421,54 +2420,53 @@
     <bcf:citekey order="27" intorder="2">duarte2025geostatistical</bcf:citekey>
     <bcf:citekey order="28" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
     <bcf:citekey order="29" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="29" intorder="2">ge2023watermasses</bcf:citekey>
     <bcf:citekey order="30" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">hwang2019auvreview</bcf:citekey>
-    <bcf:citekey order="33" intorder="2">lermusiaux2007adaptive</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">curtin2009aosn</bcf:citekey>
-    <bcf:citekey order="34" intorder="2">hwang2019auvreview</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">das2012coordinated</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">fossum2018informationdriven</bcf:citekey>
-    <bcf:citekey order="36" intorder="2">fossum2019phytoplankton</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">lermusiaux2007adaptive</bcf:citekey>
-    <bcf:citekey order="38" intorder="2">curtin2009aosn</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">dowd2014dataassimilation</bcf:citekey>
-    <bcf:citekey order="39" intorder="2">wunsch2007stateestimation</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="40" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">duarte2025geostatistical</bcf:citekey>
-    <bcf:citekey order="41" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="30" intorder="2">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">hwang2019auvreview</bcf:citekey>
+    <bcf:citekey order="35" intorder="2">lermusiaux2007adaptive</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">curtin2009aosn</bcf:citekey>
+    <bcf:citekey order="36" intorder="2">hwang2019auvreview</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">das2012coordinated</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">fossum2018informationdriven</bcf:citekey>
+    <bcf:citekey order="38" intorder="2">fossum2019phytoplankton</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">lermusiaux2007adaptive</bcf:citekey>
+    <bcf:citekey order="40" intorder="2">curtin2009aosn</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">dowd2014dataassimilation</bcf:citekey>
+    <bcf:citekey order="41" intorder="2">wunsch2007stateestimation</bcf:citekey>
     <bcf:citekey order="42" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="42" intorder="2">duarte2025geostatistical</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="42" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">duarte2025geostatistical</bcf:citekey>
+    <bcf:citekey order="43" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
     <bcf:citekey order="44" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">toth2014vehicle</bcf:citekey>
-    <bcf:citekey order="45" intorder="2">vidal2013hybrid</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">eidsvik2015value</bcf:citekey>
-    <bcf:citekey order="46" intorder="2">frolov2014grid</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">ge2023watermasses</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">ge2023watermasses</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">das2012coordinated</bcf:citekey>
-    <bcf:citekey order="53" intorder="2">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="53" intorder="3">ge2023watermasses</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">hwang2019auvreview</bcf:citekey>
-    <bcf:citekey order="54" intorder="2">curtin2009aosn</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">lermusiaux2007adaptive</bcf:citekey>
-    <bcf:citekey order="55" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="56" intorder="2">duarte2025geostatistical</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">fossum2020compact</bcf:citekey>
-    <bcf:citekey order="57" intorder="2">ge2023watermasses</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
-    <bcf:citekey order="58" intorder="2">bernacchi2025closingloop</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="44" intorder="2">duarte2025geostatistical</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">toth2014vehicle</bcf:citekey>
+    <bcf:citekey order="47" intorder="2">vidal2013hybrid</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">eidsvik2015value</bcf:citekey>
+    <bcf:citekey order="48" intorder="2">frolov2014grid</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">das2012coordinated</bcf:citekey>
+    <bcf:citekey order="55" intorder="2">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="55" intorder="3">ge2023watermasses</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">hwang2019auvreview</bcf:citekey>
+    <bcf:citekey order="56" intorder="2">curtin2009aosn</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">lermusiaux2007adaptive</bcf:citekey>
+    <bcf:citekey order="57" intorder="2">mendes2025oceanmodeldriven</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">bernacchi2025closingloop</bcf:citekey>
+    <bcf:citekey order="58" intorder="2">duarte2025geostatistical</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">fossum2020compact</bcf:citekey>
+    <bcf:citekey order="59" intorder="2">ge2023watermasses</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

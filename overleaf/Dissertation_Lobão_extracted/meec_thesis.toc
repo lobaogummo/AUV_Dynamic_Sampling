@@ -3,17 +3,16 @@
 \contentsline {section}{\numberline {1.1}Context and motivation}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Problem statement}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Objectives}{4}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Objectives}{4}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Scope and assumptions}{5}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Expected contributions}{5}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Dissertation structure}{6}{section.1.7}%
-\contentsline {chapter}{\numberline {2}Background and Fundamentals}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Ocean modelling and uncertainty}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Autonomous underwater vehicles and adaptive sampling}{9}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Geostatistical prediction and uncertainty maps}{10}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Spatial regimes and pattern discovery in ocean fields}{11}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Path planning and PC-VRP formulation}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Summary}{13}{section.2.6}%
+\contentsline {section}{\numberline {1.4}Scope and assumptions}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Expected contributions}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Dissertation structure \textcolor {red}{No final de tudo revejo}}{6}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Background and Fundamentals}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Ocean modelling and uncertainty}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Autonomous underwater vehicles and adaptive sampling}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Geostatistical prediction and uncertainty maps}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Spatial regimes and pattern discovery in ocean fields}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Path planning and PC-VRP formulation}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Summary}{12}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Related Work and the State of the Art}{14}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Adaptive sampling with AUVs}{14}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Model-driven ocean sampling}{15}{section.3.2}%
@@ -23,46 +22,57 @@
 \contentsline {section}{\numberline {3.6}Research gap addressed by this thesis}{19}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Summary}{20}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Problem Specification and Study Case}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Study area: Nazaré Canyon and operational region}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Lessons from the FRESNEL experiment}{22}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Available datasets and formats}{23}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Variables used: TEMP, STD, BATHY, LAT, LON}{23}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Operational constraints}{25}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Functional and non-functional requirements}{26}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Evaluation metrics}{27}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Summary}{28}{section.4.8}%
-\contentsline {chapter}{\numberline {5}Proposed Approach}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Overview of the proposed pipeline}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Temperature regime discovery}{30}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Descriptor extraction}{31}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Canonical grid and region of interest}{33}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Baseline uncertainty-driven planner}{34}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Enriched planner formulation}{35}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Summary}{36}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Implementation}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Data preprocessing}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Fossum-style pipeline implementation}{39}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Planner interface generation}{42}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Integration with Lucrezia's planner}{43}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Reproducibility and audit artefacts}{45}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Summary}{47}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Verification, Validation and Experimental Design}{48}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Data and grid validation}{48}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Baseline versus enriched planner comparison}{50}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Sensitivity analysis for alpha and beta}{52}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Single-AUV and multi-AUV scenarios}{53}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Computational cost and operational feasibility}{55}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Experimental protocol}{56}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Summary}{57}{section.7.7}%
-\contentsline {chapter}{\numberline {8}Results and Discussion}{58}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Data and grid validation results}{58}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Temperature regime discovery results}{59}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Descriptor extraction results}{60}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Baseline uncertainty-driven planner results}{61}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Baseline versus enriched planner comparison}{62}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Sensitivity analysis}{63}{section.8.6}%
-\contentsline {section}{\numberline {8.7}Single-AUV and multi-AUV scenarios}{64}{section.8.7}%
-\contentsline {section}{\numberline {8.8}Computational cost and operational feasibility}{64}{section.8.8}%
-\contentsline {section}{\numberline {8.9}Discussion}{65}{section.8.9}%
-\contentsline {section}{\numberline {8.10}Summary}{66}{section.8.10}%
-\contentsline {chapter}{References}{67}{section*.57}%
+\contentsline {section}{\numberline {4.1}Operational motivation}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Study Area and Canonical Domain}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Planning-Day Products}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Problem Formulation}{23}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Operational Constraints for Fair Comparison}{24}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Evaluation Metrics}{24}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Chapter Summary}{24}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Proposed Approach}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Methodological Overview}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Offline Regime and Descriptor Library Construction}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Planning-Day Class Assignment}{26}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Reward-Map Shaping}{27}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Planner Interface}{27}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Interpretation of Descriptor Weights}{28}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Chapter Summary}{28}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Implementation}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Executed Pipeline}{29}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Step00: Canonical ROI and Dataset Preparation}{30}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Step01--Step05: Regime Discovery and Canonical Configuration}{30}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Step08: Prototype-Derived Descriptor Generation}{30}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Step09B and Step11Y/Z: Class Assignment and Planner-Input Audit}{30}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Step12A: Single-AUV Experiments}{32}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Step12B: Multi-AUV Vehicle-Specific Experiments}{32}{section.6.7}%
+\contentsline {section}{\numberline {6.8}IQR10 and Descriptor Diagnostics}{32}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Reproducibility and Lineage}{32}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Chapter Summary}{33}{section.6.10}%
+\contentsline {chapter}{\numberline {7}Verification, Validation and Experimental Design}{34}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Data and Grid Validation}{34}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Prototype and Descriptor Validation}{34}{section.7.2}%
+\contentsline {section}{\numberline {7.3}TEMPpred Class Assignment Validation}{34}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Single-AUV Experimental Design}{35}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Multi-AUV Experimental Design}{35}{section.7.5}%
+\contentsline {section}{\numberline {7.6}IQR10 as an external diagnostic}{36}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Solver and Runtime Validation}{36}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Interpretation Rules}{36}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Chapter Summary}{36}{section.7.9}%
+\contentsline {chapter}{\numberline {8}Results and Discussion}{37}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Canonical Dataset Validation}{37}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Regime Discovery Results}{37}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Descriptor Library Results}{38}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Prototype-Based Planner Input Audit}{38}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Single-AUV Results}{38}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Multi-AUV Results}{39}{section.8.6}%
+\contentsline {section}{\numberline {8.7}IQR10 Results}{41}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Operational Feasibility}{41}{section.8.8}%
+\contentsline {section}{\numberline {8.9}Discussion}{43}{section.8.9}%
+\contentsline {section}{\numberline {8.10}Chapter Summary}{43}{section.8.10}%
+\contentsline {chapter}{\numberline {9}Conclusions}{44}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Main Findings}{44}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Contributions}{44}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Limitations}{45}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Future Work}{45}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Final Remarks}{45}{section.9.5}%
+\contentsline {chapter}{References}{46}{section*.27}%
