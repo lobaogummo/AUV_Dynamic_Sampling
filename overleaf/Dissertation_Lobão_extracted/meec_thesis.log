@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.10)  13 JUN 2026 19:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.10)  20 JUN 2026 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1241,29 +1241,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'meec_thesis.bbl' found.
- (meec_thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                eidsvik2015value
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                toth2014vehicle
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                vidal2013hybrid
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (meec_thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 63.
 Package biblatex Info: Reference segment=0 on input line 63.
 
@@ -1345,7 +1323,7 @@ Package hyperref Info: Link coloring ON on input line 63.
 \openout5 = `meec_thesis.out'.
 
 \@crestbox=\box76
-<figures/uporto-feup.pdf, id=330, 338.26375pt x 126.4725pt>
+<figures/uporto-feup.pdf, id=346, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 <use figures/uporto-feup.pdf>
 Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 102.
@@ -1570,35 +1548,35 @@ Underfull \hbox (badness 1831) in paragraph at lines 48--49
 
 
 
-])
+] [8])
 \tf@toc=\write6
 \openout6 = `meec_thesis.toc'.
 
- [8]
+ [9]
 (meec_thesis.lof
-Overfull \hbox (3.22151pt too wide) in paragraph at lines 8--8
+Overfull \hbox (3.22151pt too wide) in paragraph at lines 9--9
  [][] []\T1/ptm/m/n/10.95 Offline regime-inference pipeline. His-tor-i-cal sur-
 face tem-per-a-ture fields are cropped 
  []
 
-)
+[10
+
+
+])
 \tf@lof=\write7
 \openout7 = `meec_thesis.lof'.
 
- [9
-
-
-] [10] (meec_thesis.lot)
+ [11] (meec_thesis.lot)
 \tf@lot=\write8
 \openout8 = `meec_thesis.lot'.
 
- [11
+ [12
 
 
 ]
 \openout2 = `abbrevs.aux'.
 
- (abbrevs.tex) [12
+ (abbrevs.tex) [13
 
 
 ]
@@ -1640,295 +1618,412 @@ r-enriched AUV plan-ning\T1/ptm/m/n/10.95 , where the base-line uncertainty-
 Chapter 2.
 [7
 
-] [8] [9] [10] [11] [12] [13]
+] [8] [9] [10] [11] [12] [13] [14]
 Chapter 3.
-[14
+[15
 
-] [15]
-
-LaTeX Warning: Citation 'toth2014vehicle' on page 16 undefined on input line 29
-7.
-
-
-LaTeX Warning: Citation 'vidal2013hybrid' on page 16 undefined on input line 29
-7.
-
-
-LaTeX Warning: Citation 'eidsvik2015value' on page 16 undefined on input line 2
-99.
-
-[16] [17] [18]
-Overfull \hbox (11.71324pt too wide) in paragraph at lines 339--340
+] [16] [17] [18] [19]
+Overfull \hbox (11.71324pt too wide) in paragraph at lines 359--360
 []\T1/ptm/m/n/10.95 However, these com-po-nents are not usu-ally in-te-grated i
 nto a sin-gle pipeline in which temperature-
  []
 
 
-Overfull \hbox (7.23419pt too wide) in paragraph at lines 341--342
+Overfull \hbox (7.23419pt too wide) in paragraph at lines 361--362
 []\T1/ptm/m/n/10.95 The re-search gap ad-dressed by this the-sis can there-fore
  be stated as fol-lows: ex-ist-ing uncertainty-
  []
 
-[19] [20]
+[20] [21]
 Chapter 4.
-<figures/results/cmems_to_x490_assets_contact_sheet.png, id=741, 1084.05pt x 23
-1.264pt>
-File: figures/results/cmems_to_x490_assets_contact_sheet.png Graphic file (type
- png)
-<use figures/results/cmems_to_x490_assets_contact_sheet.png>
-Package pdftex.def Info: figures/results/cmems_to_x490_assets_contact_sheet.png
-  used on input line 376.
-(pdftex.def)             Requested size: 405.45047pt x 86.4944pt.
-[21
+[22
 
 ]
+<figures/cmems_to_x490_assets_contact_sheet.png, id=816, 1084.05pt x 231.264pt>
+
+File: figures/cmems_to_x490_assets_contact_sheet.png Graphic file (type png)
+<use figures/cmems_to_x490_assets_contact_sheet.png>
+Package pdftex.def Info: figures/cmems_to_x490_assets_contact_sheet.png  used o
+n input line 398.
+(pdftex.def)             Requested size: 405.45047pt x 86.4944pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 388.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 412.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 388.
-LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 3
-92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 412.
+LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 4
+16.
 
 (C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/courier-scaled\t1pcrs.f
 d
 File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 )
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 392.
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+(Font)              scaled to size 9.49997pt on input line 416.
+ [23 <./figures/cmems_to_x490_assets_contact_sheet.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 []|\T1/ptm/m/n/10 Single-AUV and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 450--451
 []|\T1/ptm/m/n/10 Corrected Oc-to-ber
  []
 
-[22 <./figures/results/cmems_to_x490_assets_contact_sheet.png>]
-Overfull \hbox (11.75044pt too wide) in paragraph at lines 465--466
+<figures/planning_days_temppred_examples.png, id=823, 1303.87125pt x 317.185pt>
+
+File: figures/planning_days_temppred_examples.png Graphic file (type png)
+<use figures/planning_days_temppred_examples.png>
+Package pdftex.def Info: figures/planning_days_temppred_examples.png  used on i
+nput line 457.
+(pdftex.def)             Requested size: 405.45047pt x 98.63123pt.
+[24]
+Overfull \hbox (11.75044pt too wide) in paragraph at lines 500--501
 \T1/ptm/m/n/10.95 scrip-tor terms com-ple-ment STD and are eval-u-ated through 
 their ef-fect on plan-ner out-puts. Descriptor-
  []
 
-[23]
-Overfull \hbox (7.2071pt too wide) in paragraph at lines 475--476
+[25 <./figures/planning_days_temppred_examples.png (PNG copy)>]
+Overfull \hbox (7.2071pt too wide) in paragraph at lines 510--511
 []\T1/ptm/m/n/10.95 the mission-duration set-ting is fixed within each com-par-
 i-son, with the main cor-rected Step12A
  []
 
-[24]
-Chapter 5.
-<figures/results/regime_inference_pipeline_diagram.pdf, id=766, 1041.80931pt x 
-451.18161pt>
-File: figures/results/regime_inference_pipeline_diagram.pdf Graphic file (type 
-pdf)
-<use figures/results/regime_inference_pipeline_diagram.pdf>
-Package pdftex.def Info: figures/results/regime_inference_pipeline_diagram.pdf 
- used on input line 501.
-(pdftex.def)             Requested size: 426.79135pt x 184.83418pt.
-<figures/results/planner_inference_reward_generation_diagram.pdf, id=767, 1086.
-94081pt x 484.72934pt>
-File: figures/results/planner_inference_reward_generation_diagram.pdf Graphic f
-ile (type pdf)
-<use figures/results/planner_inference_reward_generation_diagram.pdf>
-Package pdftex.def Info: figures/results/planner_inference_reward_generation_di
-agram.pdf  used on input line 508.
-(pdftex.def)             Requested size: 426.79135pt x 190.33064pt.
-[25
 
- <./figures/results/regime_inference_pipeline_diagram.pdf>]
+Underfull \hbox (badness 3690) in paragraph at lines 530--531
+[]|\T1/ptm/m/n/10 Measures how much of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+\T1/ptm/m/n/10 base-line uncertainty-seeking
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 532--533
+[]|\T1/ptm/m/n/10 Shows how the re-ward map
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+[]|\T1/ptm/m/n/10 Evaluates whether vehicle-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+\T1/ptm/m/n/10 specific maps en-cour-age
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 534--534
+[]|\T1/ptm/m/n/10 Solver sta-tus, run-time, failed or
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 535--536
+[]|\T1/ptm/m/n/10 Post-processing in-di-ca-tion of
+ []
+
+[26] [27]
+Chapter 5.
+<figures/regime_inference_pipeline_diagram.pdf, id=845, 1041.80931pt x 451.1816
+1pt>
+File: figures/regime_inference_pipeline_diagram.pdf Graphic file (type pdf)
+<use figures/regime_inference_pipeline_diagram.pdf>
+Package pdftex.def Info: figures/regime_inference_pipeline_diagram.pdf  used on
+ input line 559.
+(pdftex.def)             Requested size: 426.79135pt x 184.83418pt.
+<figures/planner_inference_reward_generation_diagram.pdf, id=847, 1086.94081pt 
+x 484.72934pt>
+File: figures/planner_inference_reward_generation_diagram.pdf Graphic file (typ
+e pdf)
+<use figures/planner_inference_reward_generation_diagram.pdf>
+Package pdftex.def Info: figures/planner_inference_reward_generation_diagram.pd
+f  used on input line 568.
+(pdftex.def)             Requested size: 426.79135pt x 190.33064pt.
+[28
+
+] [29 <./figures/regime_inference_pipeline_diagram.pdf> <./figures/planner_infe
+rence_reward_generation_diagram.pdf>]
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 519.
- [26 <./figures/results/planner_inference_reward_generation_diagram.pdf>]
-Overfull \hbox (55.25475pt too wide) in paragraph at lines 571--572
+(Font)              scaled to size 10.40245pt on input line 598.
+ [30] [31]
+Overfull \hbox (55.25475pt too wide) in paragraph at lines 654--655
 \T1/ptm/m/n/10.95 The re-ward maps are ex-ported as planner-ready ar-rays and N
 etCDF in-puts for the Lu-crezia PCVRP/orienteering
  []
 
-[27] [28]
+[32] [33]
 Chapter 6.
 
-Underfull \hbox (badness 1648) in paragraph at lines 605--606
-[]|\T1/ptm/m/n/10 Fleet and ve-hi-cle met-rics, man-i-fests,
+Underfull \hbox (badness 10000) in paragraph at lines 686--686
+[]|\T1/ptm/m/n/10 Dataset prepa-ra-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
+Underfull \hbox (badness 2799) in paragraph at lines 686--687
+[]|\T1/ptm/m/n/10 Temperature stack, mask, co-or-di-
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 687--687
+[]|\T1/ptm/m/n/10 Sensitivity and di-ag-nos-tic
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 687--688
+\T1/ptm/m/n/10 si-tiv-ity, SD-threshold prob-ing and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--688
+[]|\T1/ptm/m/n/10 Compact model se-lec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--689
+[]|\T1/ptm/m/n/10 Prototype de-scrip-tors
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 689--690
+\T1/ptm/m/n/10 tions, qual-ity flags and pro-to-type
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 690--691
+[]|\T1/ptm/m/n/10 Planning-day class as-sign-ment for
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 691--691
+[]|\T1/ptm/m/n/10 Planner-map prepa-ra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--691
+[]|\T1/ptm/m/n/10 Planning-grid and ROI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 692--692
+[]|\T1/ptm/m/n/10 Planner-input au-dit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 693--693
+[]|\T1/ptm/m/n/10 Single-AUV eval-u-a-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--694
+[]|\T1/ptm/m/n/10 Multi-AUV eval-u-a-tion
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 695--696
 []|\T1/ptm/m/n/10 Descriptor-weight statis-tics, IQR10
  []
 
-[29
+[34
 
-]
-Overfull \hbox (1.9952pt too wide) in paragraph at lines 625--626
+] [35]
+<figures/patch_dictionary_sensitivity_icv.png, id=952, 2032.59375pt x 1885.0425
+pt>
+File: figures/patch_dictionary_sensitivity_icv.png Graphic file (type png)
+<use figures/patch_dictionary_sensitivity_icv.png>
+Package pdftex.def Info: figures/patch_dictionary_sensitivity_icv.png  used on 
+input line 724.
+(pdftex.def)             Requested size: 405.45047pt x 375.9951pt.
+ [36] [37 <./figures/patch_dictionary_sensitivity_icv.png (PNG copy)>]
+Overfull \hbox (1.9952pt too wide) in paragraph at lines 739--740
 \T1/ptm/m/n/10.95 blended bound-ary scores, ex-plicit boundary-distance maps, r
 adius-based boundary-distance scores,
  []
 
-<figures/results/step08_descriptor_maps_by_class_panel_shared_prototype_scale.p
-ng, id=850, 1792.296pt x 1062.369pt>
-File: figures/results/step08_descriptor_maps_by_class_panel_shared_prototype_sc
-ale.png Graphic file (type png)
-<use figures/results/step08_descriptor_maps_by_class_panel_shared_prototype_sca
-le.png>
-Package pdftex.def Info: figures/results/step08_descriptor_maps_by_class_panel_
-shared_prototype_scale.png  used on input line 629.
-(pdftex.def)             Requested size: 426.79135pt x 252.96367pt.
-<figures/results/step11y_planner_input_logic_diagram.png, id=851, 867.24pt x 28
-9.08pt>
-File: figures/results/step11y_planner_input_logic_diagram.png Graphic file (typ
-e png)
-<use figures/results/step11y_planner_input_logic_diagram.png>
-Package pdftex.def Info: figures/results/step11y_planner_input_logic_diagram.pn
-g  used on input line 640.
-(pdftex.def)             Requested size: 405.45047pt x 135.15303pt.
-[30] [31 <./figures/results/step08_descriptor_maps_by_class_panel_shared_protot
-ype_scale.png> <./figures/results/step11y_planner_input_logic_diagram.png>]
-[32] [33]
+<figures/step08_descriptor_maps_by_class_panel_current.png, id=961, 1193.4405pt
+ x 845.559pt>
+File: figures/step08_descriptor_maps_by_class_panel_current.png Graphic file (t
+ype png)
+<use figures/step08_descriptor_maps_by_class_panel_current.png>
+Package pdftex.def Info: figures/step08_descriptor_maps_by_class_panel_current.
+png  used on input line 743.
+(pdftex.def)             Requested size: 426.79135pt x 302.37537pt.
+[38 <./figures/step08_descriptor_maps_by_class_panel_current.png>]
+<figures/step11y_planner_input_logic_diagram.png, id=967, 871.45575pt x 286.068
+76pt>
+File: figures/step11y_planner_input_logic_diagram.png Graphic file (type png)
+<use figures/step11y_planner_input_logic_diagram.png>
+Package pdftex.def Info: figures/step11y_planner_input_logic_diagram.png  used 
+on input line 764.
+(pdftex.def)             Requested size: 405.45047pt x 133.0948pt.
+ [39]
+[40 <./figures/step11y_planner_input_logic_diagram.png>] [41]
 Chapter 7.
-<figures/results/canonical_class_prototypes_panel.png, id=871, 674.52pt x 441.6
-5pt>
-File: figures/results/canonical_class_prototypes_panel.png Graphic file (type p
-ng)
-<use figures/results/canonical_class_prototypes_panel.png>
-Package pdftex.def Info: figures/results/canonical_class_prototypes_panel.png  
-used on input line 693.
-(pdftex.def)             Requested size: 405.45047pt x 265.47725pt.
-[34
+<figures/canonical_class_prototypes_panel.png, id=984, 759.492pt x 404.3835pt>
+File: figures/canonical_class_prototypes_panel.png Graphic file (type png)
+<use figures/canonical_class_prototypes_panel.png>
+Package pdftex.def Info: figures/canonical_class_prototypes_panel.png  used on 
+input line 836.
+(pdftex.def)             Requested size: 405.45047pt x 215.88333pt.
+<figures/canonical_all_members_by_class_panel.png, id=985, 1907.125pt x 2336.73
+pt>
+File: figures/canonical_all_members_by_class_panel.png Graphic file (type png)
+<use figures/canonical_all_members_by_class_panel.png>
+Package pdftex.def Info: figures/canonical_all_members_by_class_panel.png  used
+ on input line 843.
+(pdftex.def)             Requested size: 405.45047pt x 496.78923pt.
+<figures/canonical_pca_dendrogram_validation.png, id=986, 873.86475pt x 349.305
+pt>
+File: figures/canonical_pca_dendrogram_validation.png Graphic file (type png)
+<use figures/canonical_pca_dendrogram_validation.png>
+Package pdftex.def Info: figures/canonical_pca_dendrogram_validation.png  used 
+on input line 850.
+(pdftex.def)             Requested size: 405.45047pt x 162.06802pt.
+<figures/prototype_interpretation_classes.png, id=987, 798.255pt x 586.3725pt>
+File: figures/prototype_interpretation_classes.png Graphic file (type png)
+<use figures/prototype_interpretation_classes.png>
+Package pdftex.def Info: figures/prototype_interpretation_classes.png  used on 
+input line 857.
+(pdftex.def)             Requested size: 405.45047pt x 297.82918pt.
+[42
 
-] [35 <./figures/results/canonical_class_prototypes_panel.png>] [36]
+] [43 <./figures/canonical_class_prototypes_panel.png>] [44 <./figures/canonica
+l_all_members_by_class_panel.png (PNG copy)>] [45 <./figures/canonical_pca_dend
+rogram_validation.png> <./figures/prototype_interpretation_classes.png>]
+[46] [47]
 Chapter 8.
 
-Overfull \hbox (12.56154pt too wide) in paragraph at lines 731--732
+Overfull \hbox (12.56154pt too wide) in paragraph at lines 909--910
 \T1/ptm/m/n/10.95 reward-map shap-ing. The em-pha-sis is on con-trolled plan-ne
 r be-haviour, not on di-rect data-assimilation
  []
 
-[37
+<figures/canonical_class_calendar_view.png, id=1020, 2529.45pt x 2466.21375pt>
+File: figures/canonical_class_calendar_view.png Graphic file (type png)
+<use figures/canonical_class_calendar_view.png>
+Package pdftex.def Info: figures/canonical_class_calendar_view.png  used on inp
+ut line 942.
+(pdftex.def)             Requested size: 405.45047pt x 395.27963pt.
+[48
 
-]
-Overfull \hbox (6.23877pt too wide) in paragraph at lines 768--769
+] [49 <./figures/canonical_class_calendar_view.png (PNG copy)>]
+Overfull \hbox (6.23877pt too wide) in paragraph at lines 955--956
 []\T1/ptm/m/n/10.95 The boundary-distance de-scrip-tors sep-a-rate pure prox-im
 -ity to a bound-ary from the older blended
  []
 
-<figures/results/step12a_C01_representative_12h_boundary_distance_descriptor_co
-mparison_alpha050.png, id=891, 1344.222pt x 346.896pt>
-File: figures/results/step12a_C01_representative_12h_boundary_distance_descript
-or_comparison_alpha050.png Graphic file (type png)
-<use figures/results/step12a_C01_representative_12h_boundary_distance_descripto
-r_comparison_alpha050.png>
-Package pdftex.def Info: figures/results/step12a_C01_representative_12h_boundar
-y_distance_descriptor_comparison_alpha050.png  used on input line 780.
-(pdftex.def)             Requested size: 426.79135pt x 110.1409pt.
+[50]
+<figures/step12a_three_case_baseline_best_extreme_panel.png, id=1033, 1928.2037
+5pt x 1421.31pt>
+File: figures/step12a_three_case_baseline_best_extreme_panel.png Graphic file (
+type png)
+<use figures/step12a_three_case_baseline_best_extreme_panel.png>
+Package pdftex.def Info: figures/step12a_three_case_baseline_best_extreme_panel
+.png  used on input line 971.
+(pdftex.def)             Requested size: 426.79135pt x 314.57597pt.
 
-Overfull \hbox (13.05919pt too wide) in paragraph at lines 792--804
+Overfull \hbox (13.05919pt too wide) in paragraph at lines 983--995
  [][] 
  []
 
-<figures/results/step12a_STD_vs_descriptor_tradeoff.png, id=893, 505.89pt x 361
-.35pt>
-File: figures/results/step12a_STD_vs_descriptor_tradeoff.png Graphic file (type
- png)
-<use figures/results/step12a_STD_vs_descriptor_tradeoff.png>
-Package pdftex.def Info: figures/results/step12a_STD_vs_descriptor_tradeoff.png
-  used on input line 810.
+[51 <./figures/step12a_three_case_baseline_best_extreme_panel.png (PNG copy)>]
+<figures/step12a_STD_vs_descriptor_tradeoff.png, id=1039, 505.89pt x 361.35pt>
+File: figures/step12a_STD_vs_descriptor_tradeoff.png Graphic file (type png)
+<use figures/step12a_STD_vs_descriptor_tradeoff.png>
+Package pdftex.def Info: figures/step12a_STD_vs_descriptor_tradeoff.png  used o
+n input line 1001.
 (pdftex.def)             Requested size: 362.77525pt x 259.1297pt.
-[38]
-<figures/results/step12b_C01_representative_12h_best_configuration_panel.png, i
-d=898, 592.2125pt x 361.35pt>
-File: figures/results/step12b_C01_representative_12h_best_configuration_panel.p
-ng Graphic file (type png)
-<use figures/results/step12b_C01_representative_12h_best_configuration_panel.pn
-g>
-Package pdftex.def Info: figures/results/step12b_C01_representative_12h_best_co
-nfiguration_panel.png  used on input line 823.
-(pdftex.def)             Requested size: 405.45047pt x 247.40196pt.
 
-Overfull \hbox (4.515pt too wide) in paragraph at lines 835--844
+[52 <./figures/step12a_STD_vs_descriptor_tradeoff.png>]
+<figures/step12b_baseline_best_extreme_comparison_panel.png, id=1046, 1928.2037
+5pt x 1015.795pt>
+File: figures/step12b_baseline_best_extreme_comparison_panel.png Graphic file (
+type png)
+<use figures/step12b_baseline_best_extreme_comparison_panel.png>
+Package pdftex.def Info: figures/step12b_baseline_best_extreme_comparison_panel
+.png  used on input line 1016.
+(pdftex.def)             Requested size: 426.79135pt x 224.82407pt.
+
+Overfull \hbox (4.515pt too wide) in paragraph at lines 1028--1037
  [][] 
  []
 
-[39 <./figures/results/step12a_C01_representative_12h_boundary_distance_descrip
-tor_comparison_alpha050.png>] [40 <./figures/results/step12a_STD_vs_descriptor_
-tradeoff.png> <./figures/results/step12b_C01_representative_12h_best_configurat
-ion_panel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 861--861
+[53 <./figures/step12b_baseline_best_extreme_comparison_panel.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1056
 []|\T1/ptm/m/n/10 Mean
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 863--863
+Underfull \hbox (badness 5091) in paragraph at lines 1058--1058
 []|\T1/ptm/m/n/10 2024-08-14 to 2024-
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 864--864
+Underfull \hbox (badness 5091) in paragraph at lines 1059--1059
 []|\T1/ptm/m/n/10 2023-12-12 to 2023-
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 865--865
+Underfull \hbox (badness 5091) in paragraph at lines 1060--1060
 []|\T1/ptm/m/n/10 2024-10-20 to 2024-
  []
 
-<figures/results/step12b_iqr10_maps_three_days_normalized.png, id=912, 1047.915
-pt x 346.896pt>
-File: figures/results/step12b_iqr10_maps_three_days_normalized.png Graphic file
- (type png)
-<use figures/results/step12b_iqr10_maps_three_days_normalized.png>
-Package pdftex.def Info: figures/results/step12b_iqr10_maps_three_days_normaliz
-ed.png  used on input line 876.
+<figures/step12b_iqr10_maps_three_days_normalized.png, id=1053, 1047.915pt x 34
+6.896pt>
+File: figures/step12b_iqr10_maps_three_days_normalized.png Graphic file (type p
+ng)
+<use figures/step12b_iqr10_maps_three_days_normalized.png>
+Package pdftex.def Info: figures/step12b_iqr10_maps_three_days_normalized.png  
+used on input line 1071.
 (pdftex.def)             Requested size: 405.45047pt x 134.21437pt.
-<figures/results/step12a_iqr10_map_and_selected_routes.png, id=913, 722.7pt x 4
-33.62pt>
-File: figures/results/step12a_iqr10_map_and_selected_routes.png Graphic file (t
-ype png)
-<use figures/results/step12a_iqr10_map_and_selected_routes.png>
-Package pdftex.def Info: figures/results/step12a_iqr10_map_and_selected_routes.
-png  used on input line 883.
-(pdftex.def)             Requested size: 362.77525pt x 217.663pt.
-[41] [42 <./figures/results/step12b_iqr10_maps_three_days_normalized.png> <./fi
-gures/results/step12a_iqr10_map_and_selected_routes.png>] [43]
-Chapter 9.
-[44
+<figures/step12a_iqr10_map_and_selected_routes.png, id=1054, 722.7pt x 433.62pt
+>
+File: figures/step12a_iqr10_map_and_selected_routes.png Graphic file (type png)
 
-]) [45]
+<use figures/step12a_iqr10_map_and_selected_routes.png>
+Package pdftex.def Info: figures/step12a_iqr10_map_and_selected_routes.png  use
+d on input line 1078.
+(pdftex.def)             Requested size: 362.77525pt x 217.663pt.
+[54] [55 <./figures/step12b_iqr10_maps_three_days_normalized.png> <./figures/st
+ep12a_iqr10_map_and_selected_routes.png>] [56] [57]
+Chapter 9.
+[58
+
+] [59]) [60] [61
+
+
+
+
+]
 Overfull \hbox (9.25056pt too wide) in paragraph at lines 138--138
 \T1/ptm/m/n/10.95 coastal ocean^^Q. In: \T1/ptm/m/it/10.95 Sci-ence Robotics \T
 1/ptm/m/n/10.95 4.27 (2019), eaav3041. \T1/ptm/m/sc/10.95 doi\T1/ptm/m/n/10.95 
 : [][]$\T1/pcrs/m/n/10.95 10 . 1126 / scirobotics .
  []
 
-[46
-
-
-
-
-] [47]
+[62]
 \openout2 = `appendix1.aux'.
 
- (appendix1.tex) (meec_thesis.aux (abstract.aux) (un-sdg.aux)
-(acknows.aux) (quote.aux) (abbrevs.aux) (writing_auxiliar.aux) (appendix1.aux))
+ (appendix1.tex) (meec_thesis.aux (abstract.aux) (un-sdg.aux) (acknows.aux) (qu
+ote.aux) (abbrevs.aux) (writing_auxiliar.aux) (appendix1.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 14A0546BBEBEE80BF3569933418736B3;17200.
+(rerunfilecheck)             Checksum: 6C54033110A332A637FF74C46FE69A8E;18206.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 \openout1 = `meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35251 strings out of 467871
- 696397 string characters out of 5418376
- 1542167 words of memory out of 5000000
- 63303 multiletter control sequences out of 15000+600000
+ 35380 strings out of 467871
+ 699823 string characters out of 5418376
+ 1546365 words of memory out of 5000000
+ 63388 multiletter control sequences out of 15000+600000
  698443 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,94p,1190b,2546s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,94p,1190b,2554s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -1942,9 +2037,9 @@ iKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/pedro/AppData/Local/Programs/M
 iKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/pedro/AppData/Local/Programs/M
 iKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/pedro/AppData/Local/Programs/M
 iKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (61 pages, 2311531 bytes).
+Output written on meec_thesis.pdf (77 pages, 5587977 bytes).
 PDF statistics:
- 1058 PDF objects out of 1200 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 721 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1226 PDF objects out of 1440 (max. 8388607)
+ 249 named destinations out of 1000 (max. 500000)
+ 783 words of extra memory for PDF output out of 10000 (max. 10000000)
 

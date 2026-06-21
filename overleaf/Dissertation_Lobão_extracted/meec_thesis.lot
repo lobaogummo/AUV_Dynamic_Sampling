@@ -3,15 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Audited canonical data used by the regime-inference and planning pipeline.}}{22}{table.caption.10}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Planning cases used in the corrected planner evaluation.}}{23}{table.caption.11}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Audited canonical data used by the regime-inference and planning pipeline.}}{24}{table.caption.10}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Planning cases used in the corrected planner evaluation.}}{24}{table.caption.11}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Main metric groups used to interpret the planner experiments.}}{27}{table.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Executed implementation steps and main artefacts used in the thesis.}}{29}{table.caption.14}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Methodological implementation timeline and main artefacts used in the thesis.}}{35}{table.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Class sizes obtained with the canonical compact-regime configuration.}}{37}{table.caption.18}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Selected Step12A single-AUV results for the C01 representative 12 h case.}}{39}{table.caption.20}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Best Step12B vehicle-specific recommendations by case.}}{41}{table.caption.23}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces IQR10 window validation for the corrected Step12 diagnostics.}}{41}{table.caption.24}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Class sizes obtained with the canonical compact-regime configuration.}}{48}{table.caption.24}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Selected Step12A single-AUV results for the C01 representative 12 h case.}}{52}{table.caption.27}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Best Step12B vehicle-specific recommendations by case.}}{54}{table.caption.30}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces IQR10 window validation for the corrected Step12 diagnostics.}}{54}{table.caption.31}%
 \addvspace {10\p@ }

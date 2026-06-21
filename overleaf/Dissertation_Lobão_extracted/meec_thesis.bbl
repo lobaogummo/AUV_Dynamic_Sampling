@@ -165,6 +165,42 @@
       \verb 10.3390/app9153145
       \endverb
     \endentry
+    \entry{bellingham2007robotics}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c3d6db863a6b6ae602bf183de8ee85a9}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{fullhash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{fullhashraw}{9ac5839a0cda314e03fc20b376359774}
+      \strng{bibnamehash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{authorbibnamehash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{authornamehash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{authorfullhash}{9ac5839a0cda314e03fc20b376359774}
+      \strng{authorfullhashraw}{9ac5839a0cda314e03fc20b376359774}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{5853}
+      \field{title}{Robotics in Remote and Hostile Environments}
+      \field{volume}{318}
+      \field{year}{2007}
+      \field{pages}{1098\bibrangedash 1102}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.1146230
+      \endverb
+    \endentry
     \entry{lermusiaux2007adaptive}{article}{}{}
       \name{author}{1}{}{%
         {{hash=98fa22045be839015999a38d8083910b}{%
@@ -279,6 +315,77 @@
       \field{note}{Unpublished manuscript / project PDF}
       \field{title}{Towards Ocean Model-Driven Robotic Exploration}
       \field{year}{2025}
+    \endentry
+    \entry{fossum2018informationdriven}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
+           family={Fossum},
+           familyi={F\bibinitperiod},
+           given={Trygve\bibnamedelima Olav},
+           giveni={T\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=49e81e2faa0a18600f0eeb6f72659bb4}{%
+           family={Ellingsen},
+           familyi={E\bibinitperiod},
+           given={Ingrid},
+           giveni={I\bibinitperiod}}}%
+        {{hash=918cff55ce4b33772d58c223de39a682}{%
+           family={Alver},
+           familyi={A\bibinitperiod},
+           given={Morten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d24278dd1a55f4e6cc0e9a1987e9366c}{%
+           family={Fragoso},
+           familyi={F\bibinitperiod},
+           given={Glaucia\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9b77a5451cc80a67c3d9b44896ccb7fb}{%
+           family={Johnsen},
+           familyi={J\bibinitperiod},
+           given={Geir},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58cb6688b7cad6032c7e83c7d102bdb1}{%
+           family={Ludvigsen},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={Kanna},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{fullhash}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{fullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{bibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorbibnamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
+      \strng{authorfullhash}{2b53c5827a44c0c5310267b8a2cf646c}
+      \strng{authorfullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Field Robotics}
+      \field{title}{Information-driven robotic sampling in the coastal ocean}
+      \field{volume}{35}
+      \field{year}{2018}
+      \field{pages}{1101\bibrangedash 1121}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1002/rob.21805
+      \endverb
     \endentry
     \entry{bernacchi2025closingloop}{inproceedings}{}{}
       \name{author}{5}{}{%
@@ -426,7 +533,7 @@
       \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
       \strng{authorfullhash}{3797bd09ef91dbc4c8a182fd0b29403a}
       \strng{authorfullhashraw}{3797bd09ef91dbc4c8a182fd0b29403a}
-      \field{extraname}{1}
+      \field{extraname}{2}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -657,7 +764,7 @@
       \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
       \strng{authorfullhash}{154eaec21a46dff280561fe76633f9b0}
       \strng{authorfullhashraw}{154eaec21a46dff280561fe76633f9b0}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -703,6 +810,288 @@
       \field{labeltitlesource}{title}
       \field{title}{Statistics for Spatio-Temporal Data}
       \field{year}{2011}
+    \endentry
+    \entry{eidsvik2015value}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=eee79a0d649aac6566f097f2cad513c3}{%
+           family={Mukerji},
+           familyi={M\bibinitperiod},
+           given={Tapan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=13b44fe437b610bbb3c859c0ac89a066}{%
+           family={Bhattacharjya},
+           familyi={B\bibinitperiod},
+           given={Debarun},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{fullhash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{fullhashraw}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{bibnamehash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{authorbibnamehash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{authornamehash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{authorfullhash}{518653b3b6a0253e5c048fbdd56803d1}
+      \strng{authorfullhashraw}{518653b3b6a0253e5c048fbdd56803d1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Value of Information in the Earth Sciences: Integrating Spatial Modeling and Decision Analysis}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.1017/CBO9781139028796
+      \endverb
+    \endentry
+    \entry{aharon2006ksvd}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4052d7c497e5f881123cabcef755e872}{%
+           family={Aharon},
+           familyi={A\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=20b8206f111f40a7edb0499bc22b9375}{%
+           family={Elad},
+           familyi={E\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7329edc5fd0a69fcb0829024aa743005}{%
+           family={Bruckstein},
+           familyi={B\bibinitperiod},
+           given={Alfred},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{03250d0657dcee63acf2485e39955552}
+      \strng{fullhash}{03250d0657dcee63acf2485e39955552}
+      \strng{fullhashraw}{03250d0657dcee63acf2485e39955552}
+      \strng{bibnamehash}{03250d0657dcee63acf2485e39955552}
+      \strng{authorbibnamehash}{03250d0657dcee63acf2485e39955552}
+      \strng{authornamehash}{03250d0657dcee63acf2485e39955552}
+      \strng{authorfullhash}{03250d0657dcee63acf2485e39955552}
+      \strng{authorfullhashraw}{03250d0657dcee63acf2485e39955552}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Signal Processing}
+      \field{number}{11}
+      \field{title}{{K-SVD}: An algorithm for designing overcomplete dictionaries for sparse representation}
+      \field{volume}{54}
+      \field{year}{2006}
+      \field{pages}{4311\bibrangedash 4322}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TSP.2006.881199
+      \endverb
+    \endentry
+    \entry{mairal2010online}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=d699b6cdc55cf5811dd19c9a2e13c7c1}{%
+           family={Mairal},
+           familyi={M\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=93da2819ab01d8a5e7bae39ce6f17c1f}{%
+           family={Bach},
+           familyi={B\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ee672c13ddea8aa3bc5a45024cfd7354}{%
+           family={Ponce},
+           familyi={P\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c8b95715cbbf5962b79737d877773fee}{%
+           family={Sapiro},
+           familyi={S\bibinitperiod},
+           given={Guillermo},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a454f4552f568afd8c9be19c4c3ad473}
+      \strng{fullhash}{55382799e061dffa75f84e4af064c225}
+      \strng{fullhashraw}{55382799e061dffa75f84e4af064c225}
+      \strng{bibnamehash}{a454f4552f568afd8c9be19c4c3ad473}
+      \strng{authorbibnamehash}{a454f4552f568afd8c9be19c4c3ad473}
+      \strng{authornamehash}{a454f4552f568afd8c9be19c4c3ad473}
+      \strng{authorfullhash}{55382799e061dffa75f84e4af064c225}
+      \strng{authorfullhashraw}{55382799e061dffa75f84e4af064c225}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{Online learning for matrix factorization and sparse coding}
+      \field{volume}{11}
+      \field{year}{2010}
+      \field{pages}{19\bibrangedash 60}
+      \range{pages}{42}
+    \endentry
+    \entry{jain1999data}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=cd01587a47d1084d2adebe55a57d1c5c}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Anil\bibnamedelima K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=e8516081add981d0f4210156864fcd62}{%
+           family={Murty},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi Narasimha},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=cb37e674734cc66c8144555e6da94619}{%
+           family={Flynn},
+           familyi={F\bibinitperiod},
+           given={Patrick\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{fullhash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{fullhashraw}{aa71d36eb92ea444e411c03143da0761}
+      \strng{bibnamehash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{authorbibnamehash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{authornamehash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{authorfullhash}{aa71d36eb92ea444e411c03143da0761}
+      \strng{authorfullhashraw}{aa71d36eb92ea444e411c03143da0761}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{3}
+      \field{title}{Data clustering: A review}
+      \field{volume}{31}
+      \field{year}{1999}
+      \field{pages}{264\bibrangedash 323}
+      \range{pages}{60}
+      \verb{doi}
+      \verb 10.1145/331499.331504
+      \endverb
+    \endentry
+    \entry{ward1963hierarchical}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=04ecd7bf44ec46c1ca87cfa8039a28c0}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Joe\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{fullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{fullhashraw}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{bibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorbibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authornamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorfullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorfullhashraw}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{301}
+      \field{title}{Hierarchical grouping to optimize an objective function}
+      \field{volume}{58}
+      \field{year}{1963}
+      \field{pages}{236\bibrangedash 244}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1080/01621459.1963.10500845
+      \endverb
+    \endentry
+    \entry{toth2014vehicle}{book}{}{}
+      \name{editor}{2}{}{%
+        {{hash=16fc2b730a7a7c0fc6b31098630baaef}{%
+           family={Toth},
+           familyi={T\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=714df25ae31514d150daa1631e87d182}{%
+           family={Vigo},
+           familyi={V\bibinitperiod},
+           given={Daniele},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Philadelphia, PA}%
+      }
+      \list{publisher}{2}{%
+        {Society for Industrial}%
+        {Applied Mathematics}%
+      }
+      \strng{namehash}{5bb027295595510455847230731bf280}
+      \strng{fullhash}{5bb027295595510455847230731bf280}
+      \strng{fullhashraw}{5bb027295595510455847230731bf280}
+      \strng{bibnamehash}{5bb027295595510455847230731bf280}
+      \strng{editorbibnamehash}{5bb027295595510455847230731bf280}
+      \strng{editornamehash}{5bb027295595510455847230731bf280}
+      \strng{editorfullhash}{5bb027295595510455847230731bf280}
+      \strng{editorfullhashraw}{5bb027295595510455847230731bf280}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Vehicle Routing: Problems, Methods, and Applications}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1137/1.9781611973594
+      \endverb
+    \endentry
+    \entry{vidal2013hybrid}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f8b1fe2b57f8a82a140583738588869a}{%
+           family={Vidal},
+           familyi={V\bibinitperiod},
+           given={Thibaut},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5772cf70acb961bf6a0113d4f3df8706}{%
+           family={Crainic},
+           familyi={C\bibinitperiod},
+           given={Teodor\bibnamedelima Gabriel},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d4ebdd3fdc985c36f68c8295c5664c74}{%
+           family={Gendreau},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=900ff4eaee85acd9095309878df56e18}{%
+           family={Prins},
+           familyi={P\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f14b4d033960169db8e536b480066b9f}
+      \strng{fullhash}{a9774bb22568916a7f36433097d9ee69}
+      \strng{fullhashraw}{a9774bb22568916a7f36433097d9ee69}
+      \strng{bibnamehash}{f14b4d033960169db8e536b480066b9f}
+      \strng{authorbibnamehash}{f14b4d033960169db8e536b480066b9f}
+      \strng{authornamehash}{f14b4d033960169db8e536b480066b9f}
+      \strng{authorfullhash}{a9774bb22568916a7f36433097d9ee69}
+      \strng{authorfullhashraw}{a9774bb22568916a7f36433097d9ee69}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers \& Operations Research}
+      \field{number}{1}
+      \field{title}{A hybrid genetic algorithm with adaptive diversity management for a large class of vehicle routing problems with time-windows}
+      \field{volume}{40}
+      \field{year}{2013}
+      \field{pages}{475\bibrangedash 489}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.cor.2012.07.018
+      \endverb
     \endentry
     \entry{das2012coordinated}{article}{}{}
       \name{author}{8}{}{%
@@ -755,8 +1144,8 @@
       \strng{authornamehash}{a966483a7ebd0906f09d8562fb8a4e2c}
       \strng{authorfullhash}{1e327003f3ddf16b279acc368dcffa8a}
       \strng{authorfullhashraw}{1e327003f3ddf16b279acc368dcffa8a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The International Journal of Robotics Research}
@@ -765,77 +1154,6 @@
       \field{year}{2012}
       \field{pages}{626\bibrangedash 646}
       \range{pages}{21}
-    \endentry
-    \entry{fossum2018informationdriven}{article}{}{}
-      \name{author}{9}{}{%
-        {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
-           family={Fossum},
-           familyi={F\bibinitperiod},
-           given={Trygve\bibnamedelima Olav},
-           giveni={T\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
-        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
-           family={Eidsvik},
-           familyi={E\bibinitperiod},
-           given={Jo},
-           giveni={J\bibinitperiod}}}%
-        {{hash=49e81e2faa0a18600f0eeb6f72659bb4}{%
-           family={Ellingsen},
-           familyi={E\bibinitperiod},
-           given={Ingrid},
-           giveni={I\bibinitperiod}}}%
-        {{hash=918cff55ce4b33772d58c223de39a682}{%
-           family={Alver},
-           familyi={A\bibinitperiod},
-           given={Morten},
-           giveni={M\bibinitperiod}}}%
-        {{hash=d24278dd1a55f4e6cc0e9a1987e9366c}{%
-           family={Fragoso},
-           familyi={F\bibinitperiod},
-           given={Glaucia\bibnamedelima M.},
-           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=9b77a5451cc80a67c3d9b44896ccb7fb}{%
-           family={Johnsen},
-           familyi={J\bibinitperiod},
-           given={Geir},
-           giveni={G\bibinitperiod}}}%
-        {{hash=e9abd8d41dd2a8df4a183555211fa0d0}{%
-           family={Mendes},
-           familyi={M\bibinitperiod},
-           given={Renato},
-           giveni={R\bibinitperiod}}}%
-        {{hash=58cb6688b7cad6032c7e83c7d102bdb1}{%
-           family={Ludvigsen},
-           familyi={L\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-        {{hash=4ab86aaa29a7da8440244d5bbbe8f497}{%
-           family={Rajan},
-           familyi={R\bibinitperiod},
-           given={Kanna},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{c184e0814182e6eea3aef463e1683bee}
-      \strng{fullhash}{2b53c5827a44c0c5310267b8a2cf646c}
-      \strng{fullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
-      \strng{bibnamehash}{c184e0814182e6eea3aef463e1683bee}
-      \strng{authorbibnamehash}{c184e0814182e6eea3aef463e1683bee}
-      \strng{authornamehash}{c184e0814182e6eea3aef463e1683bee}
-      \strng{authorfullhash}{2b53c5827a44c0c5310267b8a2cf646c}
-      \strng{authorfullhashraw}{2b53c5827a44c0c5310267b8a2cf646c}
-      \field{extraname}{3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Field Robotics}
-      \field{title}{Information-driven robotic sampling in the coastal ocean}
-      \field{volume}{35}
-      \field{year}{2018}
-      \field{pages}{1101\bibrangedash 1121}
-      \range{pages}{21}
-      \verb{doi}
-      \verb 10.1002/rob.21805
-      \endverb
     \endentry
     \entry{frolov2014grid}{article}{}{}
       \name{author}{3}{}{%
@@ -863,8 +1181,8 @@
       \strng{authornamehash}{9ce9817922473e8c89bd3ddcf742c22e}
       \strng{authorfullhash}{9ce9817922473e8c89bd3ddcf742c22e}
       \strng{authorfullhashraw}{9ce9817922473e8c89bd3ddcf742c22e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Geophysical Research: Oceans}
@@ -875,9 +1193,6 @@
       \range{pages}{20}
     \endentry
   \enddatalist
-  \missing{eidsvik2015value}
-  \missing{toth2014vehicle}
-  \missing{vidal2013hybrid}
 \endrefsection
 \endinput
 

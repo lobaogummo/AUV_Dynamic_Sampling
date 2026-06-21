@@ -1,19 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[1] Config.pm:331> INFO - Logfile is 'meec_thesis.blg'
-[256] biber-MSWIN64:342> INFO - === 
-[342] Biber.pm:421> INFO - Reading 'meec_thesis.bcf'
-[585] Biber.pm:1002> INFO - Found 20 citekeys in bib section 0
-[617] Biber.pm:4487> INFO - Processing section 0
-[642] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[736] bibtex.pm:1713> INFO - LaTeX decoding ...
-[940] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[1182] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1182] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1182] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1182] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[1206] bbl.pm:676> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
-[1228] bbl.pm:779> INFO - Output to meec_thesis.bbl
-[1229] Biber.pm:132> WARN - I didn't find a database entry for 'toth2014vehicle' (section 0)
-[1229] Biber.pm:132> WARN - I didn't find a database entry for 'vidal2013hybrid' (section 0)
-[1229] Biber.pm:132> WARN - I didn't find a database entry for 'eidsvik2015value' (section 0)
-[1229] Biber.pm:134> INFO - WARNINGS: 3
+[0] Config.pm:331> INFO - Logfile is 'meec_thesis.blg'
+[114] biber-MSWIN64:342> INFO - === 
+[155] Biber.pm:421> INFO - Reading 'meec_thesis.bcf'
+[276] Biber.pm:1002> INFO - Found 25 citekeys in bib section 0
+[290] Biber.pm:4487> INFO - Processing section 0
+[302] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[352] bibtex.pm:1713> INFO - LaTeX decoding ...
+[435] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[621] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[621] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[622] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[622] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[637] bbl.pm:676> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
+[656] bbl.pm:779> INFO - Output to meec_thesis.bbl

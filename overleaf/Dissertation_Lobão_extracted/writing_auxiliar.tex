@@ -2,9 +2,9 @@
 
 Coastal ocean environments are highly dynamic systems, shaped by the interaction of atmospheric forcing, bathymetry, coastal geometry, circulation patterns and local mixing processes. These interactions generate spatially heterogeneous temperature fields, fronts, gradients and transient structures that are difficult to observe with sufficient spatial and temporal resolution. Accurate knowledge of these structures is essential for improving ocean forecasts and supporting scientific, environmental and operational decision-making in coastal regions \cite{wunsch2007stateestimation,dowd2014dataassimilation}.
 
-Numerical ocean models provide continuous estimates of the ocean state, but their predictive skill depends strongly on the availability, quality and spatial distribution of observations. In situ measurements are often sparse, costly and logistically demanding, while remote sensing products are limited by atmospheric conditions, surface-only coverage and resolution constraints. Autonomous Underwater Vehicles (AUVs) offer a flexible alternative for targeted ocean sampling, as they can collect high-resolution measurements along adaptive trajectories and complement existing observing systems \cite{curtin2009aosn,hwang2019auvreview}. Nevertheless, AUV missions are constrained by endurance, navigation requirements, safety limitations, communication restrictions and operational costs. These constraints make trajectory planning a central component of efficient ocean observation.
+Numerical ocean models provide continuous estimates of the ocean state, but their predictive skill depends strongly on the availability, quality and spatial distribution of observations. In situ measurements are often sparse, costly and logistically demanding, while remote sensing products are limited by atmospheric conditions, surface-only coverage and resolution constraints. Autonomous Underwater Vehicles (AUVs) offer a flexible alternative for targeted ocean sampling, as they can collect high-resolution measurements along adaptive trajectories and complement existing observing systems \cite{curtin2009aosn,hwang2019auvreview,bellingham2007robotics}. Nevertheless, AUV missions are constrained by endurance, navigation requirements, safety limitations, communication restrictions and operational costs. These constraints make trajectory planning a central component of efficient ocean observation.
 
-Adaptive sampling strategies address this challenge by using model information to guide the selection of informative sampling locations. In model-driven approaches, ocean forecasts and their associated uncertainty can be used to define value maps that indicate where new observations are expected to be most useful \cite{lermusiaux2007adaptive,mendes2025oceanmodeldriven}. In uncertainty-driven planning, pointwise standard deviation maps can be used to prioritise regions where the model prediction is less certain, supporting the design of AUV trajectories that maximise information collection under operational constraints \cite{bernacchi2025closingloop,duarte2025geostatistical}.
+Adaptive sampling strategies address this challenge by using model information to guide the selection of informative sampling locations. In model-driven approaches, ocean forecasts and their associated uncertainty can be used to define value maps that indicate where new observations are expected to be most useful \cite{lermusiaux2007adaptive,mendes2025oceanmodeldriven,fossum2018informationdriven}. In uncertainty-driven planning, pointwise standard deviation maps can be used to prioritise regions where the model prediction is less certain, supporting the design of AUV trajectories that maximise information collection under operational constraints \cite{bernacchi2025closingloop,duarte2025geostatistical}.
 
 However, uncertainty maps do not necessarily encode all relevant spatial structures present in the underlying ocean field. Temperature maps may reveal thermal regimes, gradients, fronts and boundary-like structures that provide complementary information about the organisation of the ocean state. This distinction is particularly relevant in coastal regions where different dynamical regimes may coexist within the same operational domain. In such cases, observations collected in one region may not be equally informative for another, and model updates or sampling decisions based only on uncertainty may fail to account for regime-dependent behaviour \cite{mendes2025oceanmodeldriven}. Previous work on compact ocean models and regime-based representations has shown that spatial patterns in oceanographic fields can be exploited to characterise recurrent environmental states and support robotic sampling decisions \cite{fossum2020compact,ge2023watermasses}. This motivates the use of temperature-derived descriptors as additional information for adaptive planning.
 
@@ -64,14 +64,14 @@ This dissertation focuses on the planning layer of model-driven AUV sampling. Th
 
 The thesis is centred on two coupled components. The first is the extraction of spatial regimes and descriptors from gridded ocean temperature fields. The second is the use of these descriptors to enrich an uncertainty-driven trajectory planner. The planner is not redesigned from first principles; instead, the work investigates how additional descriptor-based reward terms or incentives can be incorporated into an existing planning framework.
 
-The study is restricted to gridded products over a selected region of interest in the Nazaré Canyon area. The final dataset is expected to use a common high-resolution grid containing, at minimum, temperature, standard deviation, latitude, longitude and bathymetry information. This common grid is assumed to be the canonical spatial domain for both regime discovery and planner evaluation. Details on the final grid, region of interest and available files are provided in Chapter~\ref{chap:problem_specification}.
+The study is restricted to gridded products over a selected region of interest in the Nazaré Canyon area. The final dataset uses a common high-resolution grid containing, at minimum, temperature, standard deviation, latitude, longitude and bathymetry information. This common grid is assumed to be the canonical spatial domain for both regime discovery and planner evaluation. Details on the final grid, region of interest and available files are provided in Chapter~\ref{chap:problem_specification}.
 
-The work does not address the mechanical design of AUV platforms, low-level guidance and control, acoustic communication modelling, simultaneous localisation and mapping, or the development of new sensors. It also does not attempt to prove that the proposed enriched planner is universally optimal. \textcolor{red}{Instead, the objective is to provide a controlled evaluation of whether temperature-derived descriptors can alter planner behaviour in meaningful ways when compared with an uncertainty-only baseline.}
+The work does not address the mechanical design of AUV platforms, low-level guidance and control, acoustic communication modelling, simultaneous localisation and mapping, or the development of new sensors. It also does not attempt to prove that the proposed enriched planner is universally optimal. Instead, the objective is to provide a controlled evaluation of whether temperature-derived descriptors can alter planner behaviour in meaningful ways when compared with an uncertainty-only baseline.
 
 Although the planner may support single- and multi-AUV configurations, the main focus is the integration and evaluation of the descriptor-enriched planning concept. Multi-AUV behaviour is therefore considered as an evaluation scenario rather than as the central contribution of the dissertation.
 \section{Expected contributions} \label{sec:expected_contributions}
 
-\textcolor{red}{The expected contributions of this dissertation are:}
+The expected contributions of this dissertation are:
 
 \begin{itemize}
   \item A \textbf{structured pipeline for temperature-regime discovery} in high-resolution ocean temperature maps, designed to identify spatial patterns and regime-like structures relevant to adaptive sampling.
@@ -87,7 +87,7 @@ Although the planner may support single- and multi-AUV configurations, the main 
   \item A \textbf{reproducible implementation and validation workflow}, including data/grid validation, planner interface generation, diagnostic plots and audit artefacts supporting the interpretation of the results.
 \end{itemize}
 
-\section{Dissertation structure \textcolor{red}{No final de tudo revejo}} \label{sec:struct}
+\section{Dissertation structure} \label{sec:struct}
 
 In addition to this introductory chapter, the dissertation is organised as follows.
 
@@ -120,7 +120,6 @@ This chapter introduces the fundamental concepts required to understand the prob
 \section{Ocean modelling and uncertainty} \label{sec:ocean_modelling_uncertainty}
 
 Numerical ocean models provide spatially and temporally continuous estimates of the ocean state. They are used to represent variables such as temperature, salinity, currents and sea surface height, and they support a wide range of scientific and operational applications \cite{wunsch2007stateestimation,lermusiaux2007adaptive}. In coastal regions, however, ocean modelling is particularly challenging because the dynamics are influenced by bathymetry, coastline geometry, atmospheric forcing, tides, mesoscale circulation and local mixing processes. These mechanisms generate heterogeneous fields with fronts, gradients and transient structures that may evolve over short time scales \cite{mendes2025oceanmodeldriven}.
-% TODO: update citation format for mendes2025oceanmodeldriven depending on the final publication status.
 
 A model prediction can be understood as an estimate of the true ocean state. Let $x(\mathbf{s},t)$ denote an ocean variable at spatial location $\mathbf{s}$ and time $t$, such as temperature. A forecast model provides an estimate
 \begin{equation}
@@ -147,11 +146,11 @@ Autonomous Underwater Vehicles (AUVs) are robotic platforms capable of collectin
 
 Despite these advantages, AUV missions are constrained by several operational factors. Vehicle endurance limits mission duration and distance travelled. Safety constraints restrict navigation in regions with shallow bathymetry, obstacles, intense traffic or other operational hazards. Communication underwater is intermittent and low-bandwidth, which limits the possibility of continuous replanning or supervision. Currents may also affect travel time and energy consumption \cite{aguiar2018trajectoryopt}. These constraints mean that an AUV cannot sample everywhere, and the selection of sampling locations becomes a planning problem.
 
-Adaptive sampling refers to strategies in which the sampling plan is informed by prior knowledge, model predictions, uncertainty estimates or data collected during previous missions \cite{lermusiaux2007adaptive,hwang2019auvreview}. Instead of following a fixed pre-defined survey pattern, the vehicle trajectory is designed to prioritise locations that are expected to be informative. In model-driven adaptive sampling, the planning process uses model products, such as predicted fields and uncertainty maps, to identify valuable regions for observation \cite{mendes2025oceanmodeldriven}.
+Adaptive sampling refers to strategies in which the sampling plan is informed by prior knowledge, model predictions, uncertainty estimates or data collected during previous missions \cite{lermusiaux2007adaptive,hwang2019auvreview,fossum2018informationdriven}. Instead of following a fixed pre-defined survey pattern, the vehicle trajectory is designed to prioritise locations that are expected to be informative. In model-driven adaptive sampling, the planning process uses model products, such as predicted fields and uncertainty maps, to identify valuable regions for observation \cite{mendes2025oceanmodeldriven}.
 
 In uncertainty-driven adaptive sampling, the planner favours regions where the model is less certain. This is particularly useful when the objective is to improve model predictions or collect data in areas where the forecast is expected to be least reliable. In practice, the uncertainty map can be converted into a reward or value map, and the AUV trajectory is selected to maximise the accumulated reward under mission constraints \cite{bernacchi2025closingloop,duarte2025geostatistical}. This principle underlies the baseline planner considered in this dissertation.
 
-Adaptive sampling can also be extended beyond uncertainty-only criteria. If additional descriptors are available, such as thermal gradients, regime boundaries or representative regions, these can be incorporated into the planning objective. \textcolor{red}{The aim is not necessarily to replace uncertainty as the main driver, but to complement it with information about the spatial structure of the ocean field \cite{fossum2020compact,fossum2019phytoplankton}.}
+Adaptive sampling can also be extended beyond uncertainty-only criteria. If additional descriptors are available, such as thermal gradients, regime boundaries or representative regions, these can be incorporated into the planning objective. The aim is not necessarily to replace uncertainty as the main driver, but to complement it with information about the spatial structure of the ocean field \cite{fossum2020compact,fossum2019phytoplankton}.
 
 \section{Geostatistical prediction and uncertainty maps} \label{sec:geostatistical_prediction}
 
@@ -168,7 +167,7 @@ while the corresponding uncertainty field may be represented by the standard dev
 
 In the planning context, the predicted temperature field provides information about the expected spatial structure of the ocean state. The uncertainty map provides information about where the model is less confident. These two maps have different meanings: the temperature map describes the predicted value of the physical field, while the standard deviation map describes the variability or uncertainty of the prediction. This distinction is important because the proposed approach derives regime descriptors from temperature fields and combines them with uncertainty maps for planning.
 
-Operationally, geostatistical uncertainty maps can be used to define regions of high expected sampling value. If a planner receives a map $\sigma(\mathbf{s})$, locations with larger values may be assigned higher reward. In this way, the uncertainty field becomes an actionable input to a trajectory planner \cite{bernacchi2025closingloop,duarte2025geostatistical}. The enriched approach explored in this thesis builds on this idea by adding descriptor-based information derived from the corresponding temperature field.
+Operationally, geostatistical uncertainty maps can be used to define regions of high expected sampling value. If a planner receives a map $\sigma(\mathbf{s})$, locations with larger values may be assigned higher reward. In this way, the uncertainty field becomes an actionable input to a trajectory planner \cite{bernacchi2025closingloop,duarte2025geostatistical,eidsvik2015value}. The enriched approach explored in this thesis builds on this idea by adding descriptor-based information derived from the corresponding temperature field.
 
 \section{Spatial regimes and pattern discovery in ocean fields} \label{sec:spatial_regimes}
 
@@ -192,6 +191,32 @@ The regime discovery component of this thesis is therefore inspired by compact r
 
 This distinction underpins the descriptor-enriched planning approach developed in this dissertation. The baseline planner remains driven by model-derived uncertainty maps, while the proposed descriptors provide complementary regime-aware information related to gradients, boundaries, representative regions and spatial heterogeneity.
 
+\section{Machine learning for compact ocean representations} \label{sec:ml_compact_representations}
+
+Machine learning provides tools for extracting structure from high-dimensional data. In the context of this dissertation, machine learning is not used to train a predictive neural network or to replace the ocean model. Instead, it is used as an unsupervised pattern-discovery tool to identify recurrent spatial structures in historical temperature maps and to convert those structures into compact representations that can support planning.
+
+Ocean temperature fields are high-dimensional spatial objects. A single gridded temperature map may contain thousands of valid cells, and comparing maps directly in this pixel space can be inefficient and sensitive to noise, missing values or small spatial variations. For this reason, it is useful to transform the original maps into a lower-dimensional feature representation that preserves relevant spatial structure. This idea is closely related to compact ocean models, where recurrent environmental states are represented by a smaller set of classes or prototypes \cite{fossum2020compact}.
+
+The approach used in this dissertation is inspired by the compact-model framework proposed by Fossum et al. \cite{fossum2020compact}. In that work, sea-surface temperature images are grouped according to both temperature magnitude and spatial pattern. The classification is unsupervised and combines dictionary learning, sparse coding and hierarchical clustering. This is particularly relevant for ocean applications because labelled datasets are often unavailable, while historical model or remote-sensing products may still contain recurring spatial structures that can be learned from the data.
+
+Dictionary learning aims to represent data using a set of learned basis elements, often called atoms. Instead of representing each temperature map only by its original grid-cell values, local image patches are extracted and represented as combinations of dictionary atoms. In a sparse representation, each sample is described using only a limited number of active atoms, so that the resulting sparse code summarises important structural information in a lower-dimensional form \cite{aharon2006ksvd,mairal2010online}. In this dissertation, this idea is used to encode temperature-map structure before clustering.
+
+Let $\mathbf{x}_i$ denote a vectorised patch or image-derived sample and let $\mathbf{D}$ denote a learned dictionary. A sparse representation seeks a coefficient vector $\boldsymbol{\alpha}_i$ such that
+\begin{equation}
+\mathbf{x}_i \approx \mathbf{D}\boldsymbol{\alpha}_i,
+\end{equation}
+where $\boldsymbol{\alpha}_i$ contains only a small number of non-zero or dominant coefficients. The dictionary atoms capture recurring local structures, while the sparse coefficients provide a compact description of how those structures appear in each temperature map.
+
+Once compact features have been obtained, clustering can be used to identify groups of maps with similar spatial characteristics. Hierarchical clustering is particularly useful in this context because it does not require the final number of classes to be fixed in advance. Instead, the dendrogram can be analysed at different separation distances to obtain a classification with an appropriate level of detail \cite{jain1999data,ward1963hierarchical}. In this dissertation, Ward hierarchical clustering is used on the compact feature representation in order to obtain recurrent full-field temperature classes.
+
+This machine-learning component should be interpreted carefully. The resulting classes are not supervised labels and they do not correspond to independent cell-wise regime labels. Rather, they are data-driven groups of full temperature maps with similar spatial organisation. Each class is then represented by a prototype, and the prototype is used to derive planning-relevant descriptors such as boundary-related maps, representative zones, cold and warm regions, and interest maps.
+
+The role of machine learning in this thesis is therefore intermediate. It does not directly plan the AUV trajectory and it does not perform data assimilation. Instead, it transforms historical temperature fields into a compact regime library. This library is then used during the planning-day stage: a predicted temperature map is assigned to one of the learned classes, the corresponding prototype-derived descriptors are retrieved, and those descriptors are combined with the standard deviation map to generate planner reward maps.
+
+This distinction is central to the proposed approach. The machine-learning stage learns recurrent spatial structure from historical temperature maps, while the planner stage uses that structure as complementary information. The baseline planner remains uncertainty-driven through the standard deviation map, and the learned descriptors provide additional regime-aware information for trajectory evaluation.
+
+
+
 
 \section{Path planning and PC-VRP formulation} \label{sec:pcvrp}
 
@@ -203,7 +228,7 @@ Let $V$ be a set of candidate nodes and let $r_j$ denote the reward associated w
 \end{equation}
 where $\mathcal{R}$ represents the selected route and $\lambda$ controls the trade-off between collected reward and travel cost.
 
-This type of formulation is related to prize-collecting vehicle routing problems (PC-VRP). In a PC-VRP, not all candidate nodes need to be visited. Instead, the planner selects a subset of valuable nodes and constructs feasible routes that maximise reward under cost or time constraints \cite{bernacchi2025closingloop}. This is appropriate for AUV adaptive sampling because the vehicle cannot sample every cell of the domain and must prioritise locations according to the objective map.
+This type of formulation is related to prize-collecting vehicle routing problems (PC-VRP). In a PC-VRP, not all candidate nodes need to be visited. Instead, the planner selects a subset of valuable nodes and constructs feasible routes that maximise reward under cost or time constraints \cite{bernacchi2025closingloop,toth2014vehicle,vidal2013hybrid}. This is appropriate for AUV adaptive sampling because the vehicle cannot sample every cell of the domain and must prioritise locations according to the objective map.
 
 In an uncertainty-driven planner, the node reward can be derived directly from the standard deviation map:
 \begin{equation}
@@ -246,10 +271,6 @@ This chapter introduced the main concepts required for the remainder of the diss
 The following chapter reviews related work on adaptive ocean sampling, model-driven robotic exploration, uncertainty-driven planning, compact representations and regime-aware sampling, positioning the contribution of this dissertation within the existing literature.
 
 
-\textcolor{red}{FIZ ATÉ AQUI}
-
-
-
 % =========================
 % CHAPTER 3 — RELATED WORK / STATE OF THE ART
 % File: chapter3.tex
@@ -266,7 +287,7 @@ The chapter is organised as follows. Section~\ref{sec:rw_adaptive_sampling_auvs}
 
 Adaptive sampling refers to robotic sampling strategies in which the sampling plan is adjusted according to prior knowledge, model predictions, uncertainty estimates, or observations collected during the mission. Instead of following a fixed survey pattern, the vehicle selects sampling locations that are expected to provide higher scientific or operational value. This paradigm is particularly relevant in coastal ocean environments, where physical processes evolve rapidly and where fixed observing systems often cannot provide sufficient spatial coverage \parencite{hwang2019auvreview,lermusiaux2007adaptive}.
 
-AUVs are well suited to adaptive sampling because they can collect high-resolution measurements along spatially extended trajectories while operating with a relatively low logistical footprint. Early and review work in marine robotics has shown that AUVs can support several adaptive sampling objectives, including mapping, feature tracking, front detection, plume monitoring, and uncertainty reduction \parencite{curtin2009aosn,hwang2019auvreview}. In these applications, the main challenge is not only to collect data, but to decide where data should be collected under constraints on time, energy, safety and navigation.
+AUVs are well suited to adaptive sampling because they can collect high-resolution measurements along spatially extended trajectories while operating with a relatively low logistical footprint. Early and review work in marine robotics has shown that AUVs can support several adaptive sampling objectives, including mapping, feature tracking, front detection, plume monitoring, and uncertainty reduction \parencite{curtin2009aosn,hwang2019auvreview,bellingham2007robotics}. In these applications, the main challenge is not only to collect data, but to decide where data should be collected under constraints on time, energy, safety and navigation.
 
 The literature distinguishes between several types of adaptive sampling objectives. Some approaches aim to reduce global uncertainty in a field, while others focus on tracking specific oceanographic features, such as fronts or biological patches. For example, coordinated robotic sampling has been used to track dynamic oceanographic features by combining model predictions, vehicle trajectories and feature-specific objectives \parencite{das2012coordinated}. Similarly, information-driven robotic sampling has been applied to coastal ocean environments where sampling decisions are guided by expected information gain or by the need to characterise spatially variable fields \parencite{fossum2018informationdriven,fossum2019phytoplankton}.
 
@@ -307,9 +328,9 @@ This limitation motivates the enriched planning formulation explored in this dis
 
 Marine robotic sampling often deals with high-dimensional spatial fields. Temperature maps, salinity fields, CTD profiles or satellite images can contain thousands of spatial values, making direct comparison and planning difficult. Compact representations address this problem by transforming high-dimensional observations into lower-dimensional features that preserve relevant structure. These representations can then be used for clustering, classification, anomaly detection or planning support.
 
-Clustering methods are useful when the objective is to discover recurrent patterns without predefined labels. In oceanographic fields, clusters may correspond to recurring spatial structures, temperature regimes, water-mass configurations or feature states. Classification methods, in contrast, assign observations to predefined classes. Segmentation methods, in contrast, assign labels over a spatial domain and may reveal local boundaries between regions. Although this dissertation does not treat regime discovery primarily as a cell-wise segmentation problem, this distinction is useful because prototype-derived descriptors can still represent local structures such as boundaries and transitions. These concepts are relevant to this dissertation because the proposed pipeline seeks to extract spatial regime information from temperature maps and convert it into planning descriptors.
+Clustering methods are useful when the objective is to discover recurrent patterns without predefined labels. In oceanographic fields, clusters may correspond to recurring spatial structures, temperature regimes, water-mass configurations or feature states \parencite{jain1999data,ward1963hierarchical}. Classification methods, in contrast, assign observations to predefined classes. Segmentation methods, in contrast, assign labels over a spatial domain and may reveal local boundaries between regions. Although this dissertation does not treat regime discovery primarily as a cell-wise segmentation problem, this distinction is useful because prototype-derived descriptors can still represent local structures such as boundaries and transitions. These concepts are relevant to this dissertation because the proposed pipeline seeks to extract spatial regime information from temperature maps and convert it into planning descriptors.
 
-Compact models have been used in marine robotics to support adaptive sampling. \textcite{fossum2020compact} proposed compact representations based on dictionary learning and sparse coding, where high-dimensional ocean observations are encoded as sparse combinations of learned atoms. The sparse representation can then be used to identify recurring patterns and support adaptive sampling decisions. This is relevant to the present work because it demonstrates how spatial ocean fields can be converted into compact descriptors that preserve meaningful structure for planning.
+Compact models have been used in marine robotics to support adaptive sampling. \textcite{fossum2020compact} proposed compact representations based on dictionary learning and sparse coding, where high-dimensional ocean observations are encoded as sparse combinations of learned atoms \parencite{aharon2006ksvd,mairal2010online}. The sparse representation can then be used to identify recurring patterns and support adaptive sampling decisions. This is relevant to the present work because it demonstrates how spatial ocean fields can be converted into compact descriptors that preserve meaningful structure for planning.
 
 Dictionary learning is particularly attractive because it can capture recurring spatial patterns while reducing dimensionality. Given a set of training samples, the method learns a dictionary of basis elements and represents each sample as a sparse combination of those elements. The resulting sparse codes can be clustered to identify classes or regimes. In the context of this dissertation, similar ideas motivate the use of temperature-map representations to identify spatial regimes and derive descriptors such as boundaries and gradients.
 
@@ -323,7 +344,6 @@ However, many clustering or compact-model approaches are not directly integrated
 Regime-aware planning is motivated by the observation that coastal ocean fields are often heterogeneous. Distinct regions may differ in temperature structure, stratification, circulation, bathymetric influence or temporal evolution. In such conditions, observations collected in one part of the domain may not be equally informative for another. A planner that ignores these differences may select trajectories that maximise uncertainty reward, but fail to discriminate between regimes or to sample relevant transition zones.
 
 The importance of this issue is illustrated by recent model-driven robotic exploration in the Nazaré Canyon region. In that experiment, targeted AUV observations generally improved geostatistical temperature predictions after assimilation. However, the improvement was not spatially uniform. For some trajectories, assimilation improved the forecast, whereas for others it produced weaker or even degraded performance. In particular, a spatial mismatch occurred when observations collected south of the Nazaré Canyon were used to evaluate or update predictions for a vehicle operating north of the canyon \parencite{mendes2025oceanmodeldriven}.
-% TODO: update citation format for this reference depending on the final publication status of the manuscript.
 
 This result is important because it indicates that the domain cannot always be treated as a single homogeneous region. The Nazaré Canyon can act as a transition zone between distinct oceanographic regimes, with circulation and thermal structure influenced by canyon topography and shelf-slope interactions. Under such conditions, sampling decisions and model updates may need to consider where observations are collected in regime terms, not only where the uncertainty is high \parencite{mendes2025oceanmodeldriven}.
 
@@ -359,24 +379,28 @@ The gap addressed by this dissertation lies in the limited integration of temper
 
 \chapter{Problem Specification and Study Case} \label{chap:problem_specification}
 
-This chapter defines the operational problem, the study area, the data products and the evaluation quantities used in this dissertation. The central question is whether temperature-derived, regime-aware descriptors can complement an uncertainty-driven AUV planner in the Nazar\'e Canyon region. The baseline planner remains driven by the standard deviation map, hereafter denoted STD. The descriptors are evaluated as additional spatial information, not as a replacement for uncertainty and not as direct evidence of improved data assimilation.
+This chapter defines the concrete study case used in the dissertation: the operational domain, the data products, the planning-day inputs, the reward formulations and the evaluation metrics. The central question is whether temperature-derived, regime-aware descriptors can complement an uncertainty-driven AUV planner in the Nazar\'e Canyon region. The baseline planner remains driven by the standard deviation map, hereafter denoted STD. The descriptors are evaluated as additional spatial information, not as a replacement for uncertainty and not as direct evidence of improved data assimilation.
+
+The chapter is intentionally practical. Chapters~\ref{chap:intro}--\ref{chap:related_work} introduced the motivation and the research gap. This chapter fixes the concrete domain and input assumptions used by the implemented pipeline. This distinction is important because the thesis evaluates planner behaviour under controlled comparisons: all baseline and enriched trajectories must use the same region of interest, the same grid support, the same valid mask and equivalent mission settings. Therefore, differences between trajectories can be interpreted as consequences of reward-map construction rather than artefacts of changing the spatial domain.
 
 \section{Operational motivation}
 
 The motivation comes from the FRESNEL model-driven sampling workflow, in which model forecasts, geostatistical uncertainty maps, AUV sampling and data assimilation were combined in an operational loop. In that context, STD maps provided a practical uncertainty-driven reward for planning. However, the FRESNEL experience also highlighted that the usefulness of observations can be spatially dependent: samples collected in one part of the domain do not necessarily constrain errors elsewhere, especially near strong bathymetric and thermal structure around the Nazar\'e Canyon.
 
-This dissertation therefore studies a complementary planning layer. Instead of changing the planner into a full data-assimilation system, it uses recurring temperature regimes and prototype-derived descriptors to reshape reward maps before they are passed to the existing Lucrezia planner. The resulting experiments assess trajectory behaviour, STD retention, descriptor sampling and operational feasibility under controlled comparisons.
+This dissertation therefore studies a complementary planning layer. Instead of changing the planner into a full data-assimilation system, it uses recurring temperature regimes and prototype-derived descriptors to reshape reward maps before they are passed to the existing Lucrezia planner. The resulting experiments assess trajectory behaviour, STD retention, descriptor sampling and operational feasibility under controlled comparisons. The intended output is not a statement that the enriched planner improves future forecasts directly. Rather, the output is an assessment of whether regime-aware descriptors provide additional, interpretable planning information that can be combined with the existing STD-driven baseline.
 
-\section{Study Area and Canonical Domain}
+\section{Study area and canonical domain}
 
 The study area is the FRESNEL/X490 region around the Nazar\'e Canyon, off the west coast of Portugal. The canonical historical dataset uses the same region of interest throughout the pipeline, which avoids comparing trajectories produced on different masks or grids. The input preparation starts from a larger CMEMS-derived surface temperature field, interpolates it to the high-resolution grid used in the local workflow and then extracts the X490 region used for the downstream regime analysis and planner inputs.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\linewidth]{figures/results/cmems_to_x490_assets_contact_sheet.png}
-    \caption{Data preparation from a larger CMEMS-derived surface temperature field to the interpolated grid and the final X490 region of interest around the Nazar\'e Canyon. The same ROI, valid mask and colour scale are used to support consistent visual comparison of the 370 historical surface temperature maps.}
+    \includegraphics[width=0.95\linewidth]{figures/cmems_to_x490_assets_contact_sheet.png}
+    \caption[CMEMS-to-X490 data preparation workflow]{CMEMS-to-X490 data preparation workflow. The panels show the regional CMEMS surface-temperature field, the interpolated high-resolution grid with the X490 selection box, the extracted Nazar\'e Canyon ROI, an example daily ROI field and the corresponding standardised ROI map used by the regime-inference pipeline.}
     \label{fig:cmems_to_x490}
 \end{figure}
+
+The interpolation audit records a CMEMS crop of $18 \times 24$ source cells extracted from the raw surface-temperature product and linearly interpolated to the high-resolution grid of $180 \times 240$ cells. The X490 region is then cropped from this grid to the final $72 \times 117$ ROI used throughout the regime-inference and planning pipeline. The audited projected coordinate arrays give an approximate median ROI grid spacing of 0.229 km in the column direction and 0.293 km in the row direction, inherited from the high-resolution grid.
 
 The Step00 dataset audit reports 370 daily surface temperature maps from 2023-10-28 to 2024-10-31. The cropped temperature stack has shape $370 \times 72 \times 117$. The canonical common mask contains 8004 valid cells, corresponding to approximately 95.01\% of the ROI grid. The documented coordinate system is WGS84 / UTM zone 29N, with the requested X490 bounds spanning approximately 463--490 km in the east-west coordinate and 4376--4397 km in the north-south coordinate. The actual audited ROI bounds are close to these requested limits and cover approximately 557 km$^2$.
 
@@ -402,9 +426,13 @@ The Step00 dataset audit reports 370 daily surface temperature maps from 2023-10
     \end{tabular}
 \end{table}
 
-\section{Planning-Day Products}
+The use of a canonical ROI is a methodological requirement. The regime discovery stage, descriptor generation stage, planner-input audit and final trajectory evaluation all depend on the same spatial support. If the ROI changed between stages, descriptor maps could no longer be compared directly with STD maps, and route differences could be caused by grid mismatches rather than by reward-map enrichment. The X490 ROI therefore acts as the common spatial contract between the ocean-data processing pipeline and the AUV planner.
 
-The planning-day stage uses two model-derived maps. The first is the predicted surface temperature field, denoted TEMPpred$(t)$, which is used to assign the planning day to one of the previously discovered full-field regime classes. The second is the STD map, denoted $\sigma(t)$, which remains the uncertainty-driven baseline reward. TEMPpred and STD are therefore used for different purposes: TEMPpred selects the appropriate prototype descriptor library, whereas STD defines the baseline information map for the planner.
+\section{Historical and planning-day data products}
+
+Two categories of data are used. The first category is the historical surface-temperature archive. These 370 daily maps are used offline to discover recurrent full-field temperature regimes and to build the prototype descriptor library. The second category is the planning-day product set. For a given planning date, the predicted temperature map, TEMPpred$(t)$, is used to assign the day to one of the previously discovered classes, while the corresponding STD map, $\sigma(t)$, remains the uncertainty-driven baseline reward map.
+
+This distinction between historical and planning-day products is central to the thesis. The historical archive is used to learn recurring spatial structure. The planning-day TEMPpred map is not used directly as the planner reward; it is used to select the appropriate prototype class. The STD map remains the operational baseline input to the planner. Prototype-derived descriptors are then combined with STD to produce enriched reward maps.
 
 The evaluated planning cases are associated with three representative dates used in the corrected Step12 experiments:
 
@@ -424,9 +452,16 @@ The evaluated planning cases are associated with three representative dates used
     \end{tabular}
 \end{table}
 
-The variables handled across the pipeline are TEMP or TEMPpred, STD, latitude, longitude, bathymetry and valid-mask information. The planner-ready NetCDF files embed the reward maps into the Lucrezia planner grid, while the ROI mask restricts valid cells to the operational region.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/planning_days_temppred_examples.png}
+    \caption{Planning-day TEMPpred examples used in the corrected evaluation cases. Each map is assigned to one of the canonical full-field regime classes before retrieving the corresponding prototype-derived descriptors.}
+    \label{fig:planning_days_temppred_examples}
+\end{figure}
 
-\section{Problem Formulation}
+The variables handled across the pipeline are TEMP or TEMPpred, STD, latitude, longitude, bathymetry and valid-mask information. The planner-ready NetCDF files embed the reward maps into the Lucrezia planner grid, while the ROI mask restricts valid cells to the operational region. Bathymetry and mask information are used as feasibility constraints rather than as reward terms.
+
+\section{Problem formulation}
 
 Let $\mathbf{s}$ denote a valid candidate sampling location in the ROI. The baseline sampling value is the normalised STD value $\sigma_{\mathrm{norm}}(\mathbf{s})$. The proposed enriched maps add a normalised descriptor $D_{\mathrm{norm}}(\mathbf{s})$ associated with the predicted regime class:
 
@@ -464,7 +499,7 @@ w_B\,R_B(\mathbf{s}).
 
 These equations define the final reward-map formulations used in this dissertation. The descriptor terms complement STD and are evaluated through their effect on planner outputs. Descriptor-only settings, such as $\alpha=1$ or $w_{\sigma}=0$, are treated as sensitivity tests rather than the main operational recommendation.
 
-\section{Operational Constraints for Fair Comparison}
+\section{Operational constraints for fair comparison}
 
 All comparisons are constrained so that changes in trajectory behaviour can be attributed to reward-map shaping rather than changes in the domain or planner configuration. The following constraints are used across the corrected experiments:
 
@@ -477,13 +512,34 @@ All comparisons are constrained so that changes in trajectory behaviour can be a
     \item planner reruns are analysed using their recorded manifests, solver diagnostics and generated trajectories.
 \end{itemize}
 
-\section{Evaluation Metrics}
+These constraints make the comparison deliberately conservative. The enriched planner is not given a different grid, additional vehicle capability or a modified optimisation solver. Its only advantage is the additional spatial information introduced through the reward map. Conversely, if enriched maps perform worse than the STD-only baseline, this is also informative because it shows that a descriptor may be too sparse, too narrow or poorly aligned with the operational objective.
+
+\section{Evaluation metrics}
 
 The evaluation combines reward-based, geometric, diagnostic and computational metrics. The central uncertainty metric is collected STD, usually expressed together with STD retention relative to the STD-only baseline. Descriptor-related metrics include collected descriptor score, descriptor gain and distance-to-boundary quantities for boundary-distance descriptors. Trajectory geometry is assessed with route length, reward per distance, path difference from the baseline and qualitative route-map figures.
 
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{Main metric groups used to interpret the planner experiments.}
+    \label{tab:evaluation_metric_groups}
+    \begin{tabular}{p{0.24\linewidth}p{0.34\linewidth}p{0.30\linewidth}}
+        \hline
+        Metric group & Examples & Interpretation \\
+        \hline
+        Uncertainty reward & Collected STD, STD retention, STD loss & Measures how much of the baseline uncertainty-seeking behaviour is preserved. \\
+        Descriptor response & Collected descriptor score, descriptor gain, boundary-distance score & Measures whether the enriched route responds to the selected prototype-derived map. \\
+        Geometry & Route length, path difference from baseline, qualitative route overlays & Shows how the reward map changes the spatial trajectory. \\
+        Multi-AUV behaviour & Fleet STD, overlap, specialisation, region coverage & Evaluates whether vehicle-specific maps encourage complementary routes. \\
+        Operational feasibility & Solver status, runtime, failed or timeout runs & Indicates whether a configuration is robust enough for operational use. \\
+        External diagnostics & IQR10 collected along route, IQR10 gain & Post-processing indication of recent temporal variability; not a reward objective. \\
+        \hline
+    \end{tabular}
+\end{table}
+
 For multi-AUV experiments, fleet-level metrics include collected STD, region coverage, overlap and specialisation. Solver status and runtime are reported because operational feasibility is part of the planning problem. Finally, IQR10 is used as an external post-processing diagnostic of recent temporal variability. It is not part of the planner objective and it is not a direct data-assimilation metric.
 
-\section{Chapter Summary}
+\section{Chapter summary}
 
 This chapter defined the study case, the canonical data products and the controlled comparison problem. The planner remains uncertainty-driven through STD, while prototype-derived descriptors are introduced as complementary reward-map shaping terms. The following chapter describes how the offline regime library and the planning-day reward maps are constructed.
 
@@ -492,39 +548,66 @@ This chapter defined the study case, the canonical data products and the control
 
 This chapter presents the proposed methodology. The approach has two stages. The offline stage converts historical surface temperature fields into recurrent full-field regime classes, prototypes and prototype-derived descriptor maps. The planning-day stage assigns a daily TEMPpred map to one of those classes, retrieves the corresponding descriptors, combines them with STD and exports planner-ready reward maps.
 
-\section{Methodological Overview}
+The methodology is designed to answer a specific question: can information about recurrent temperature structure be made compatible with an existing uncertainty-driven AUV planner? The proposed answer is not to replace the planner and not to replace STD. Instead, the thesis builds a bridge between the temperature-regime analysis and the planner by constructing descriptor maps on the same grid as the STD fields.
+
+\section{Methodological overview}
 
 The method is deliberately modular. The regime-inference stage is independent of the planner, and the planner is used without modifying its objective solver. The interface between both stages is the reward map. This design allows the thesis to evaluate whether descriptor-informed reward maps alter trajectory behaviour while keeping the operational uncertainty-driven baseline intact.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/results/regime_inference_pipeline_diagram.pdf}
+    \includegraphics[width=\linewidth]{figures/regime_inference_pipeline_diagram.pdf}
     \caption{Offline regime-inference pipeline. Historical surface temperature fields are cropped to the X490 ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction.}
     \label{fig:regime_inference_pipeline}
 \end{figure}
 
+Figure~\ref{fig:regime_inference_pipeline} represents the offline part of the thesis. The input is the historical temperature archive, not a planning-day STD field. The output is a library of classes, prototypes and descriptors. This library is computed once and then reused during planning-day inference.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/results/planner_inference_reward_generation_diagram.pdf}
+    \includegraphics[width=\linewidth]{figures/planner_inference_reward_generation_diagram.pdf}
     \caption{Planning-day inference and reward-map generation. TEMPpred selects the prototype class, prototype-derived descriptors are retrieved, STD remains the uncertainty baseline and the resulting reward maps are passed to the Lucrezia AUV planner. The output trajectories are then compared using STD, descriptor, geometry and diagnostic metrics.}
     \label{fig:planner_inference_reward_generation}
 \end{figure}
 
-\section{Offline Regime and Descriptor Library Construction}
+Figure~\ref{fig:planner_inference_reward_generation} represents the planning-day part. The predicted temperature map TEMPpred$(t)$ is used to infer which recurrent class is most relevant for that date. The selected class determines which prototype-derived descriptors are retrieved. These descriptors are then combined with the planning-day STD map to produce the reward maps used by the planner.
+
+\section{Offline regime and descriptor library construction}
 
 The offline stage starts from the 370 historical surface temperature maps in the X490 ROI. After common-mask construction and normalisation, each daily field is represented using a Fossum-style compact model. The final canonical configuration uses patches of size $40\times24$, a dictionary size of 4, seed 11, StandardScaler enabled, Ward hierarchical clustering and an SD threshold of 0.25. This produces six recurrent temperature-regime classes.
 
+The key point is that the clustering is applied to full maps represented in a compact feature space. The resulting classes therefore describe recurring spatial configurations of the whole ROI. They are not cell-wise labels and should not be interpreted as a segmentation of a single map. This definition avoids a common ambiguity: a daily map belongs to one class, and the class prototype is then analysed to extract local features such as boundaries, cold regions or representative zones.
+
+The offline construction can be summarised as follows:
+
+\begin{enumerate}
+    \item construct the canonical X490 temperature stack and common valid mask;
+    \item normalise the temperature fields so that the clustering emphasises spatial structure rather than raw magnitude only;
+    \item extract patches from the historical maps and learn a compact dictionary;
+    \item encode each daily map in a sparse feature representation;
+    \item cluster the 370 daily feature vectors using Ward hierarchical clustering;
+    \item select the canonical threshold that yields six interpretable classes;
+    \item compute one prototype for each class;
+    \item derive descriptor maps from the class prototypes and normalise them over the valid ROI.
+\end{enumerate}
+
 In this dissertation, a regime class is not a cell-wise segmentation label. It is a recurrent full-field temperature pattern. Each class is represented by a prototype map obtained from its member days. The prototypes are then interpreted as homogeneous, single-gradient or multi-regime patterns. This interpretation determines which prototype-derived descriptors are meaningful for each class.
+
+\section{Descriptor family}
 
 The descriptor family includes blended boundary scores, explicit boundary-distance maps in cells and kilometres, radius-based boundary-distance scores for radii 1, 2, 3, 5 and 8 cells, representative zones, cold and warm regions, and interest maps. For vehicle-specific multi-AUV experiments, complementary maps \texttt{region\_A} and \texttt{region\_B} are derived from the prototype regions.
 
-\section{Planning-Day Class Assignment}
+Boundary descriptors are used because many oceanographic structures of interest occur near transitions between distinct spatial regions. However, the thesis separates different meanings of ``boundary''. The older \texttt{boundary\_score} is a blended descriptor that can include gradient and transition information. The boundary-distance descriptors explicitly represent proximity to an identified prototype boundary. Their radius variants control how much spatial neighbourhood around the boundary receives reward.
+
+Representative-zone descriptors serve a different purpose. Instead of targeting transitions, they highlight areas that are structurally representative of the assigned prototype. Cold and warm descriptors emphasise low- and high-temperature structures within the prototype. Interest maps aggregate several descriptor components and therefore behave as broader spatial incentives. This diversity of descriptors is useful because different regimes may require different planning incentives.
+
+\section{Planning-day class assignment}
 
 For a planning day $t$, the TEMPpred field is projected into the same regime-inference representation and assigned to one of the six previously discovered classes. If the assigned class is $C_k$, the planner retrieves the descriptor maps associated with the prototype of $C_k$. This step is important: descriptors used for planning are prototype-derived descriptors of the assigned class, not descriptors recalculated directly from STD.
 
-The corrected Step11Y audit established the prototype-based lineage used in the final Step12 experiments. Earlier mixed-input logic was identified for some region-map fallback paths, especially for the October control case. The corrected workflow therefore uses the audited prototype-based arrays when generating planner inputs.
+The corrected Step11Y audit established the prototype-based lineage used in the final Step12 experiments. Earlier mixed-input logic was identified for some region-map fallback paths, especially for the October control case. The corrected workflow therefore uses the audited prototype-based arrays when generating planner inputs. This correction matters because the thesis claim depends on using regime-library information consistently. If descriptors were partially derived from direct planning-day fields or fallback logic, the evaluation would no longer isolate the effect of prototype-derived descriptors.
 
-\section{Reward-Map Shaping}
+\section{Reward-map shaping}
 
 Reward-map shaping combines the uncertainty baseline with one descriptor at a time in the single-AUV experiments. The baseline reward is
 
@@ -566,93 +649,140 @@ w_B\,R_B(\mathbf{s}).
 
 Here, $R_A$ and $R_B$ are complementary prototype-derived region maps. The weights are interpreted as reward-map shaping parameters, not as evidence that one vehicle directly reduces model uncertainty in the corresponding region.
 
-\section{Planner Interface}
+\section{Planner interface}
 
 The reward maps are exported as planner-ready arrays and NetCDF inputs for the Lucrezia PCVRP/orienteering planner. The planner receives a spatial reward field, feasibility information and mission settings, then returns one or more trajectories. Since the planner is not modified, all methodological changes enter through the construction of the reward maps.
 
-\section{Interpretation of Descriptor Weights}
+This separation is useful for reproducibility. The planner is treated as an operational module whose inputs are reward maps and feasibility constraints. The thesis contribution lies in constructing alternative reward maps from an audited regime descriptor library and then evaluating how the planner responds to those maps. Therefore, route differences are interpreted as the planner's response to different value fields rather than as the result of changing the optimisation problem itself.
+
+\section{Interpretation of descriptor weights}
 
 Descriptor weights are interpreted conservatively. High descriptor weights can reveal whether a descriptor is capable of changing route geometry, but such runs may also sacrifice STD reward, increase runtime or produce operationally less robust trajectories. For this reason, the dissertation gives preference to configurations that retain a substantial fraction of STD while adding interpretable descriptor coverage. Descriptor-only experiments are useful sensitivity tests, but they are not presented as the primary operational solution.
 
-\section{Chapter Summary}
+The role of the weight is therefore diagnostic as well as operational. Low or moderate weights test whether descriptor information can influence a route without overwhelming the uncertainty signal. High weights test the descriptor in isolation and help reveal its spatial behaviour. A descriptor-only route that performs well in one case is not automatically a general recommendation; it must be interpreted together with STD retention, runtime, solver status and route geometry.
+
+\section{Chapter summary}
 
 The proposed approach converts historical temperature structure into a prototype descriptor library and uses planning-day TEMPpred maps only to select the relevant class. STD remains the uncertainty baseline. The next chapter documents how this methodology was implemented and audited.
 
 
 \chapter{Implementation} \label{chap:implementation}
 
-This chapter documents the executed implementation pipeline and the audit artefacts used to support reproducibility. The emphasis is on the completed workflow rather than on intended future processing.
+This chapter documents the executed implementation pipeline and the audit artefacts used to support reproducibility. The emphasis is on the completed workflow rather than on intended future processing. The pipeline evolved through exploratory, diagnostic and corrected stages. For clarity, this chapter distinguishes between the canonical artefacts used in the final thesis and intermediate steps that were useful for sensitivity analysis or debugging.
 
-\section{Executed Pipeline}
+\section{Executed pipeline}
 
 The implementation is organised into numbered processing steps. Each step writes explicit outputs, manifests or reports. Table~\ref{tab:implementation_steps} summarises the artefacts used in this dissertation.
 
 \begin{table}[htbp]
     \centering
     \small
-    \caption{Executed implementation steps and main artefacts used in the thesis.}
+    \caption{Methodological implementation timeline and main artefacts used in the thesis.}
     \label{tab:implementation_steps}
-    \begin{tabular}{p{0.16\linewidth}p{0.32\linewidth}p{0.38\linewidth}}
+    \begin{tabular}{p{0.24\linewidth}p{0.27\linewidth}p{0.35\linewidth}}
         \hline
-        Step & Purpose & Main artefacts \\
+        Pipeline stage & Purpose & Main artefacts \\
         \hline
-        Step00 & Canonical ROI and dataset preparation & Temperature stack, mask, coordinates, bathymetry, dates and dataset metadata \\
-        Step05 & Canonical compact regime model & Sparse codes, dictionary learning outputs, dendrogram, class assignments and prototypes \\
-        Step08 & Final descriptor generation & Descriptor maps, descriptor definitions, quality flags and prototype summaries \\
-        Step09B & TEMPpred class assignment & Planning-day class assignment for representative and control dates \\
-        Step11Y/Z & Planner-input audit and correction & Prototype-based reward arrays, lineage checks and corrected planner input maps \\
-        Step12A & Single-AUV sensitivity & Planner inputs, runs, manifests, metrics, solver diagnostics and figures \\
-        Step12B & Multi-AUV sensitivity & Fleet and vehicle metrics, manifests, solver diagnostics and figures \\
-        Diagnostics & Interpretation support & Descriptor-weight statistics, IQR10 maps, IQR10 route metrics and trade-off figures \\
+        Dataset preparation (Step00) & Canonical ROI and dataset preparation & Temperature stack, mask, coordinates, bathymetry, dates and dataset metadata \\
+        Regime-model sensitivity (Steps01--04) & Sensitivity and diagnostic regime-analysis stages & Patch sensitivity, dictionary-size sensitivity, SD-threshold probing and class-count diagnostics \\
+        Canonical regime model (Step05) & Compact model selection and clustering & Sparse codes, dictionary learning outputs, dendrogram, class assignments and prototypes \\
+        Prototype descriptors (Step08) & Final descriptor generation & Descriptor maps, descriptor definitions, quality flags and prototype summaries \\
+        Planning-day assignment (Step09B) & TEMPpred class assignment & Planning-day class assignment for representative and control dates \\
+        Planner-map preparation (Steps10E/F) & Planning-grid and ROI preparation & Inventory, ROI extraction checks and planner-ready map preparation where available \\
+        Planner-input audit (Steps11Y/Z) & Planner-input audit and correction & Prototype-based reward arrays, lineage checks and corrected planner input maps \\
+        Single-AUV evaluation (Step12A) & Single-AUV sensitivity analysis & Planner inputs, runs, manifests, metrics, solver diagnostics and figures \\
+        Multi-AUV evaluation (Step12B) & Multi-AUV sensitivity analysis & Fleet and vehicle metrics, manifests, solver diagnostics and figures \\
+        Post-processing diagnostics & Interpretation support & Descriptor-weight statistics, IQR10 maps, IQR10 route metrics and trade-off figures \\
         \hline
     \end{tabular}
 \end{table}
 
-\section{Step00: Canonical ROI and Dataset Preparation}
+The logic of the pipeline is sequential. Step00 fixes the spatial and temporal data basis. Steps01--Step05 determine the compact representation and the canonical six-class model. Step08 converts prototypes into descriptor maps. Step09B assigns planning days to classes. Step11Y/Z checks that the planner receives descriptor maps with the correct lineage. Step12A and Step12B evaluate the resulting reward maps in single- and multi-AUV configurations. The IQR10 analysis is performed afterwards as a diagnostic.
+
+\section{Step00: canonical ROI and dataset preparation}
 
 Step00 prepares the canonical X490 surface temperature dataset. The audited folder contains \texttt{X\_surface\_370\_roi\_x490.npy}, normalised temperature arrays, the common valid mask, bathymetry, latitude, longitude, projected coordinates and the dates CSV. The metadata verifies the date range from 2023-10-28 to 2024-10-31, the $370 \times 72 \times 117$ shape and the 8004-cell common mask.
 
-The same Step00 outputs are used by the compact-model steps, descriptor generation and diagnostic post-processing. This avoids changes in ROI definition between the regime model and the planner evaluation.
+The Step00 inputs are cropped from the $180 \times 240$ interpolated high-resolution product generated from the audited $18 \times 24$ CMEMS source crop. The persisted X490 arrays retain the final $72 \times 117$ ROI grid, with approximate projected spacings of 0.229 km per column and 0.293 km per row.
 
-\section{Step01--Step05: Regime Discovery and Canonical Configuration}
+The same Step00 outputs are used by the compact-model steps, descriptor generation and diagnostic post-processing. This avoids changes in ROI definition between the regime model and the planner evaluation. Step00 is therefore not only a preprocessing step; it defines the canonical spatial support of the thesis. All later quantities, including prototype descriptors, STD maps, route overlays and IQR10 diagnostics, are interpreted on this same support.
+
+The Step00 checks included verifying the number of daily maps, the consistency of dates, the validity of the mask, the availability of coordinate arrays and the production of visual panels. These checks are important because a small indexing or masking inconsistency at this stage would propagate into every downstream descriptor and planner comparison.
+
+\section{Steps01--Step04: sensitivity and diagnostic regime analysis}
+
+Before fixing the final regime model, exploratory and diagnostic steps were used to understand how the compact representation responded to patch size, dictionary size and clustering threshold. These stages were not final outputs by themselves, but they justified the canonical configuration used in Step05.
+
+The early baseline used a larger patch configuration and showed that class separation and interpretability were sensitive to representation choices. A later diagnostic comparison identified similarity between some classes and motivated a systematic patch sensitivity analysis. The patch-size sensitivity considered several candidate patch dimensions across multiple seeds. The goal was not merely to maximise the number of classes, but to find a representation that produced stable, interpretable spatial regimes.
+
+The dictionary-size sensitivity then evaluated how many learned basis elements were needed to describe the ROI patterns. A very small dictionary risks oversimplifying the spatial fields, whereas a large dictionary can add complexity without improving interpretability. The selected dictionary size of 4 was retained because it provided a compact representation compatible with the downstream clustering and descriptor stages.
+
+The SD-threshold probe evaluated the number of classes obtained for different hierarchical-clustering thresholds. The threshold of 0.25 produced six classes, which offered more structure than the five-class solution while avoiding excessive fragmentation. This choice was then carried into Step05 as the canonical configuration.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/patch_dictionary_sensitivity_icv.png}
+    \caption{Sensitivity diagnostics used to support the canonical compact-model configuration. The selected patch size $40\times24$ and dictionary size 4 are interpreted together with stability, class balance and downstream descriptor usability rather than by a single score alone.}
+    \label{fig:patch_dictionary_sensitivity}
+\end{figure}
+
+\section{Step05: canonical regime discovery}
 
 The canonical compact representation uses the audited Step05 folder. The configuration is patch size $40\times24$, dictionary size 4, seed 11, StandardScaler enabled, Ward hierarchical clustering and SD threshold 0.25. The final feature matrix has 370 rows, one per day, and the clustering produces six classes with sizes 41, 70, 50, 107, 30 and 72 days.
 
-The Step05 artefacts include class prototypes, dendrograms, class-size plots, sparse codes and canonical reports. These artefacts are used both as evidence of reproducibility and as inputs to descriptor generation.
+The Step05 artefacts include class prototypes, dendrograms, class-size plots, sparse codes and canonical reports. These artefacts are used both as evidence of reproducibility and as inputs to descriptor generation. The prototypes are especially important because they are the bridge between the class labels and spatial planning descriptors. Without prototypes, the class assignment would only identify which days are similar; with prototypes, each class can be converted into spatial maps that the planner can use.
 
-\section{Step08: Prototype-Derived Descriptor Generation}
+The class-size distribution also influenced interpretation. The largest class, C04, represents a frequent recurrent pattern, while smaller classes such as C05 represent less common but still meaningful configurations. Boundary-rich classes, particularly C01 and C06, are important because they support descriptors related to transitions and spatial heterogeneity.
+
+\section{Step08: prototype-derived descriptor generation}
 
 Step08 converts the six class prototypes into descriptor maps. The final descriptor set includes blended boundary scores, explicit boundary-distance maps, radius-based boundary-distance scores, representative zones, cold and warm regions and interest maps. All planner maps are normalised over the Step00 valid mask. For homogeneous classes, boundary-oriented maps can be zero or weak because no internal boundary is supported by the prototype interpretation.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/results/step08_descriptor_maps_by_class_panel_shared_prototype_scale.png}
-    \caption{Prototype-derived descriptors generated in Step08. The descriptor maps are associated with full-field prototype classes and are later retrieved by planning-day class assignment.}
+    \includegraphics[width=\linewidth]{figures/step08_descriptor_maps_by_class_panel_current.png}
+    \caption{Prototype-derived descriptors generated in the corrected Step08 output. The descriptor maps are associated with full-field prototype classes and are later retrieved by planning-day class assignment.}
     \label{fig:step08_descriptor_maps}
 \end{figure}
 
-\section{Step09B and Step11Y/Z: Class Assignment and Planner-Input Audit}
+The descriptor step had two purposes. First, it translated qualitative prototype structure into quantitative planner maps. Second, it made descriptor variants explicit so that their behaviour could be compared. For example, a boundary-distance score with radius 1 cells produces a narrow incentive close to the detected boundary, whereas radii 3 or 5 cells expand this incentive into a wider band. This design allowed the planner sensitivity to boundary scale to be evaluated directly.
+
+The descriptor library was also audited for finite values, valid-mask consistency and normalisation. These checks prevent invalid or degenerate maps from being silently passed to the planner. They also explain why descriptor-only configurations can still fail operationally: a descriptor can be mathematically valid but too sparse or too weak to support robust route generation in a given case.
+
+\section{Step09B: planning-day class assignment}
+
+Step09B assigns planning-day TEMPpred maps to the canonical Step05 classes. This is the inference step that connects a new forecast product to the offline descriptor library. The evaluated dates were assigned as follows: C01\_representative to C01, C06\_representative to C06 and October\_control to C02.
+
+This step is conceptually different from descriptor extraction. The TEMPpred map is used to choose the class, not to generate the final descriptors directly. Once the class is chosen, the descriptors come from the corresponding prototype. This preserves the logic of the offline regime library: recurrent historical structures are used to guide planning-day reward shaping.
+
+\section{Step10E/F and Step11Y/Z: planner-input preparation and audit}
 
 The planning-day TEMPpred maps are assigned to the canonical classes before descriptor retrieval. The final audited cases assign C01\_representative to C01, C06\_representative to C06 and October\_control to C02. The Step11Y audit identified mixed-input behaviour in older region-map fallback logic and produced corrected \texttt{prototype\_based\_*} arrays, including the boundary-distance score variants used in Step12A.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\linewidth]{figures/results/step11y_planner_input_logic_diagram.png}
+    \includegraphics[width=0.95\linewidth]{figures/step11y_planner_input_logic_diagram.png}
     \caption{Planner-input logic audited in Step11Y. The corrected workflow uses planning-day TEMPpred only for class assignment and uses prototype-based descriptor maps for reward-map construction.}
     \label{fig:step11y_planner_input_logic}
 \end{figure}
 
-\section{Step12A: Single-AUV Experiments}
+This audit was essential because the planner output alone cannot reveal whether the reward map came from the correct source. A route may look plausible even when its descriptor map has an incorrect lineage. The Step11Y correction ensured that final Step12 planner runs were based on the assigned prototype descriptors. This is why the thesis treats Step11Y as a methodological result rather than as a minor implementation detail.
+
+\section{Step12A: single-AUV experiments}
 
 Step12A evaluates one AUV over the C01 representative case with a 12 h mission duration. The tested descriptors are the blended boundary score, boundary-distance scores at r1, r3 and r5, and the interest map. The alpha sweep uses five values, including the STD-only baseline $\alpha=0$ and the descriptor-only sensitivity extreme $\alpha=1$.
 
 The output folder contains planner inputs, planner run directories, the run manifest, the main metrics CSV, solver diagnostics, runtime summaries, IQR10 post-processing and figures. The final Step12A folder used here is the corrected 20260608 run, which uses prototype-based maps only and does not use TEMPpred as the objective.
 
-\section{Step12B: Multi-AUV Vehicle-Specific Experiments}
+The single-AUV experiment was designed to answer a focused question: how does one vehicle respond when the STD reward is progressively blended with one descriptor? Because the case is fixed, changes in route geometry can be linked to descriptor type and weight. This makes Step12A the main sensitivity experiment for understanding the behaviour of boundary-distance and interest-map descriptors.
+
+\section{Step12B: multi-AUV vehicle-specific experiments}
 
 Step12B evaluates two-AUV configurations for C01\_representative, C06\_representative and October\_control. The baseline uses a shared STD map. Vehicle-specific configurations combine STD with complementary prototype region maps so that AUV1 and AUV2 can be encouraged towards different parts of the assigned prototype. The implementation is a wrapper/proxy experiment: individual vehicle reward maps are prepared and solved, then combined into fleet-level metrics. The Lucrezia planner objective is not modified.
 
-\section{IQR10 and Descriptor Diagnostics}
+The multi-AUV experiment was designed to test whether prototype-derived region maps can encourage specialisation. It does not implement a fully joint multi-vehicle optimisation with explicit anti-overlap constraints. Therefore, the results should be interpreted as vehicle-specific reward-map tests, not as a complete solution to multi-AUV coordination. This distinction is important in the October\_control case, where complementary inputs did not guarantee complementary trajectories.
+
+\section{IQR10 and descriptor diagnostics}
 
 The IQR10 diagnostic is computed after planner execution. For each planning date, the interquartile range of temperature over the previous 10 available days is mapped over the ROI:
 
@@ -667,11 +797,22 @@ P_{25}\{T(\mathbf{s},\tau):\tau<t,\tau\in W_{10}(t)\}.
 
 The IQR10 maps are then sampled along the existing trajectories to compute collected IQR10, IQR10 per kilometre and gain relative to the baseline. This is post-processing only and does not rerun the planner.
 
-\section{Reproducibility and Lineage}
+Descriptor-weight diagnostics were also used to support interpretation. These diagnostics compared class heterogeneity, descriptor response and overlap with STD information. They helped justify why highly heterogeneous classes can support stronger descriptor influence, whereas homogeneous classes should be treated more conservatively. This analysis informed interpretation but did not replace the route-level planner results.
+
+\section{Reproducibility and lineage}
 
 The implementation stores reports, CSV summaries, JSON checks, NetCDF planner inputs, NPZ arrays and figures for each major step. When multiple output folders existed, the final writing prioritised the newest corrected or audited artefacts: Step11Y 20260606 for prototype-based input correction, Step12A 20260608 for single-AUV results and Step12B 20260608 for multi-AUV results. Older folders are treated as historical lineage or debugging context.
 
-\section{Chapter Summary}
+The pipeline therefore follows a clear provenance chain:
+
+\begin{center}
+\small
+Step00 data $\rightarrow$ Step05 regime library $\rightarrow$ Step08 descriptors $\rightarrow$ Step09B class assignment $\rightarrow$ Step11Y prototype-based planner maps $\rightarrow$ Step12A/Step12B trajectories $\rightarrow$ IQR10 diagnostics.
+\end{center}
+
+This chain is the core reproducibility argument of the thesis. Each result in Chapter~\ref{chap:results} is interpreted with respect to where its inputs came from and whether the planner run was successful.
+
+\section{Chapter summary}
 
 This chapter documented the executed pipeline and the artefacts used for reproducibility. The next chapter defines the verification, validation and experimental design used to interpret the outputs.
 
@@ -680,48 +821,85 @@ This chapter documented the executed pipeline and the artefacts used for reprodu
 
 This chapter describes how the pipeline and planner experiments were checked and how the results are interpreted. The goal is not to validate an assimilation system, but to evaluate whether descriptor-enriched reward maps change planner behaviour in a controlled and interpretable way.
 
-\section{Data and Grid Validation}
+\section{Data and grid validation}
 
 The first validation layer checks that temperature, mask, coordinates, bathymetry and dates are consistent. The Step00 metadata verifies the number of maps, date range, ROI shape, common-mask size, coordinate system and generated PNG count. The same mask is used to normalise descriptor maps and to define valid planner cells.
 
-\section{Prototype and Descriptor Validation}
+The purpose of this validation is to prevent spatial inconsistencies from contaminating the analysis. A descriptor map, a STD map and an IQR10 map are only comparable if their valid cells refer to the same physical locations. Therefore, all downstream metrics are interpreted over the Step00 canonical ROI.
+
+\section{Prototype and descriptor validation}
 
 The compact-model validation checks that the final canonical configuration produces six recurrent full-field temperature classes and that the class sizes are plausible. Prototype interpretation then separates homogeneous, single-gradient and multi-regime structures. Descriptor validation checks whether descriptors are finite on the valid mask, whether boundary-oriented descriptors are meaningful only where boundaries exist and whether descriptor maps can be propagated into planner-ready arrays.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\linewidth]{figures/results/canonical_class_prototypes_panel.png}
+    \includegraphics[width=0.95\linewidth]{figures/canonical_class_prototypes_panel.png}
     \caption{Canonical six-class prototype panel from Step05. The classes represent recurrent full-field temperature patterns rather than cell-wise labels.}
     \label{fig:canonical_prototypes}
 \end{figure}
 
-\section{TEMPpred Class Assignment Validation}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/canonical_all_members_by_class_panel.png}
+    \caption{Class-member panel for the canonical Step05 regime library. Each block contains the historical temperature maps assigned to one class, making the class separation and class-size imbalance explicit.}
+    \label{fig:canonical_all_members_by_class}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/canonical_pca_dendrogram_validation.png}
+    \caption{Compact-regime validation diagnostics. The PCA view summarises the sparse-code feature space, while the Ward dendrogram shows the SD threshold used to obtain the six canonical classes.}
+    \label{fig:canonical_pca_dendrogram}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/prototype_interpretation_classes.png}
+    \caption{Visual interpretation of the six prototype classes. Each class is shown as a prototype map and as its interpretation map, separating homogeneous, single-gradient and multi-regime patterns. This interpretation guides which descriptor families are meaningful for each class.}
+    \label{fig:prototype_interpretation_classes}
+\end{figure}
+
+Figures~\ref{fig:canonical_prototypes}--\ref{fig:prototype_interpretation_classes} provide complementary validation. The prototype panel shows the spatial patterns themselves, while the all-members panel shows how the historical archive is divided among the six recurrent full-field regimes. The PCA and dendrogram diagnostics summarise the feature-space separation. The interpretation figure connects the classes to descriptor suitability. Together, these figures support the use of six classes as a practical and interpretable regime library.
+
+\section{TEMPpred class assignment validation}
 
 For each planning day, TEMPpred is assigned to a previously discovered class. The assigned class determines which prototype descriptors are used. The Step11Y audit then checks whether planner maps are actually prototype-based and whether older fallback logic introduced mixed inputs. This validation is essential because a visually plausible route comparison can still be methodologically inconsistent if its descriptor maps come from the wrong source.
 
-\section{Single-AUV Experimental Design}
+The validation therefore asks two questions. First, was the planning day assigned to a class in the canonical regime library? Second, were the descriptor maps used by the planner actually derived from the assigned prototype? The final Step12 experiments are based on the corrected prototype-based lineage.
+
+\section{Single-AUV experimental design}
 
 The single-AUV experiment uses the C01 representative case, a 12 h mission duration and a descriptor-alpha sweep. The descriptors are the blended boundary score, boundary-distance scores at r1, r3 and r5, and the interest map. For each descriptor, $\alpha=0$ provides the STD-only baseline and larger $\alpha$ values increase the descriptor contribution.
 
 The main metrics are collected STD, STD retention, collected descriptor score, route length, reward efficiency, path difference from baseline, runtime and solver status. Boundary-distance variants are interpreted as a sensitivity test of descriptor spatial scale: r1 is narrow, r3 is intermediate and r5 is broader.
 
-\section{Multi-AUV Experimental Design}
+The C01 representative case was selected because it is boundary-rich and therefore suitable for testing boundary-related descriptors. The experimental design isolates descriptor effects by keeping the mission duration and domain fixed. This makes the resulting routes comparable across descriptor families and alpha values.
+
+\section{Multi-AUV experimental design}
 
 The multi-AUV experiments compare a shared-STD baseline with vehicle-specific region-map reward shaping. The corrected Step12B runs use C01\_representative, C06\_representative and October\_control, all with 12 h missions. Fleet-level metrics include collected STD, STD retention, region coverage, route overlap, specialisation and runtime. These metrics assess whether complementary region maps can reduce redundant behaviour or encourage vehicles to sample different regime-related areas.
+
+The multi-AUV design is deliberately interpreted as a reward-map specialisation test rather than a full decentralised coordination solution. The two vehicles are encouraged towards complementary regions through their inputs, but the final setup does not include an explicit joint anti-overlap objective. This is why overlap and specialisation are analysed as outcomes rather than imposed as hard constraints.
 
 \section{IQR10 as an external diagnostic}
 
 IQR10 measures recent temporal variability using the previous 10 available days of surface temperature. It is not part of the reward function, is not passed to the planner and is not a direct assimilation metric. It also does not prove forecast improvement or uncertainty reduction. Its purpose is diagnostic: after trajectories have been generated, IQR10 indicates whether a route sampled regions that had recently variable temperature values and may therefore be relevant for future assimilation-aware studies.
 
-\section{Solver and Runtime Validation}
+This diagnostic was included because one of the motivations of the thesis is the spatial dependence of observation usefulness. However, directly testing that dependence would require rerunning data assimilation and measuring prediction impact, which is outside the implemented scope. IQR10 is therefore a proxy for recent variability, not a substitute for assimilation validation.
+
+\section{Solver and runtime validation}
 
 Every planner run is interpreted together with its solver status and runtime. Successful runs are used for quantitative recommendations. Timeouts or failed runs are not silently discarded; they are used to identify operationally fragile configurations. This is particularly important for descriptor-only or very narrow descriptor settings, where a map can become too sparse or computationally difficult.
 
-\section{Interpretation Rules}
+Runtime is also relevant because adaptive sampling workflows often operate under time constraints. A reward-map strategy that produces a theoretically attractive route but frequently times out is less useful operationally than a slightly less specialised strategy that solves reliably.
+
+\section{Interpretation rules}
 
 The interpretation follows four rules. First, STD-only remains the operational baseline. Second, an enriched route is useful only if it preserves an acceptable amount of STD while adding interpretable descriptor sampling or reducing redundancy. Third, descriptor-only results are sensitivity tests and are not automatically operational recommendations. Fourth, IQR10 is used only as supporting evidence about recent variability, not as proof of assimilation benefit.
 
-\section{Chapter Summary}
+These rules are used consistently in Chapter~\ref{chap:results}. They prevent overinterpretation of isolated high-performing runs and keep the conclusions aligned with the implemented scope.
+
+\section{Chapter summary}
 
 The verification and validation design links each result to its data lineage, descriptor source, planner status and diagnostic interpretation. The next chapter reports the results using this framework.
 
@@ -730,13 +908,13 @@ The verification and validation design links each result to its data lineage, de
 
 This chapter presents the corrected results and discusses what they indicate about regime-aware reward-map shaping. The emphasis is on controlled planner behaviour, not on direct data-assimilation improvement.
 
-\section{Canonical Dataset Validation}
+\section{Canonical dataset validation}
 
 The Step00 audit confirms that the canonical X490 dataset is internally consistent. The 370 surface temperature maps span 2023-10-28 to 2024-10-31, the cropped stack has shape $370 \times 72 \times 117$ and the common valid mask contains 8004 cells. The generated daily PNG set is complete, and the metadata confirms that the corrected X490 ROI was applied.
 
-This matters because every later step depends on the same spatial support. The regime model, descriptor maps, planning-day maps and IQR10 diagnostics are all interpreted over the same ROI and mask.
+This matters because every later step depends on the same spatial support. The regime model, descriptor maps, planning-day maps and IQR10 diagnostics are all interpreted over the same ROI and mask. The validation also supports reproducibility: another run of the pipeline should begin from the same ROI, valid mask and date list before attempting to compare regime classes or planner routes.
 
-\section{Regime Discovery Results}
+\section{Regime discovery results}
 
 The canonical compact-model configuration produced six recurrent full-field temperature classes. Table~\ref{tab:class_sizes} reports the class sizes from Step05.
 
@@ -759,27 +937,40 @@ The canonical compact-model configuration produced six recurrent full-field temp
     \end{tabular}
 \end{table}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/canonical_class_calendar_view.png}
+    \caption{Calendar view of the 370 historical maps assigned to the six canonical classes. This figure shows that the classes are assigned at the full-map/day level, not as cell-wise segmentation labels.}
+    \label{fig:canonical_class_calendar_view}
+\end{figure}
+
 The prototypes are interpretable as spatial temperature patterns. C01 and C06 are the main multi-regime or boundary-rich classes in the final interpretation, while C03 and C04 are more homogeneous. This distinction is important because boundary-oriented descriptors are meaningful only when the prototype supports a boundary or strong transition.
 
-\section{Descriptor Library Results}
+The six-class solution is therefore useful for this thesis because it provides both compactness and interpretability. A smaller number of classes would merge distinct spatial structures, while excessive fragmentation would make the descriptor library harder to interpret and less robust. The selected solution should not be interpreted as a universal oceanographic classification of the Nazar\'e Canyon region; rather, it is a practical compact representation for this dataset and planning problem.
+
+\section{Descriptor library results}
 
 Step08 generated the prototype-derived descriptor library and exported normalised planner maps. The descriptor ranking reported by Step08 indicates that C01, C05 and C06 are prominent for boundary and gradient descriptors, while interest-map ranking emphasises C01, C06 and C05. The descriptor-weight diagnostic further supports a cautious interpretation: C01 has very high prototype heterogeneity, C06 has medium heterogeneity and the homogeneous classes have low heterogeneity.
 
 The boundary-distance descriptors separate pure proximity to a boundary from the older blended \texttt{boundary\_score}. This separation is useful because it allows spatial scale to be tested explicitly. The r1 descriptor is narrow and emphasises cells immediately adjacent to the boundary; r3 provides an intermediate band; r5 is broader and can spread reward over a larger surrounding region.
 
-\section{Prototype-Based Planner Input Audit}
+This result justifies the decision to evaluate several boundary-distance radii rather than a single boundary map. A narrow radius may focus the route strongly but can create sparse rewards and solver fragility. A wider radius may be more robust but can dilute the boundary focus. The descriptor family therefore encodes a controllable trade-off between boundary specificity and operational robustness.
+
+\section{Prototype-based planner input audit}
 
 The corrected Step11Y audit confirmed that the Step10F boundary inputs matched Step08 prototype descriptors for the three evaluated cases. It also identified mixed-input evidence in older region-map fallback paths for October\_control. The final Step12 experiments therefore use the corrected \texttt{prototype\_based\_*} arrays. This lineage correction is a central methodological result: the final planner comparison is based on the assigned prototype descriptors rather than on direct TEMPpred-derived region fallbacks.
 
-\section{Single-AUV Results}
+The importance of this audit should not be underestimated. Without it, route differences could be attributed to regime-aware descriptors even when some maps were produced from inconsistent inputs. The corrected lineage makes the results more defensible: TEMPpred assigns the class, the class retrieves the prototype descriptors and the descriptors are combined with STD. This is the pipeline claimed by the thesis and evaluated in the final experiments.
 
-The corrected Step12A run evaluates the C01 representative case for a 12 h mission. It contains 21 physical planner runs and 25 logical sensitivity rows. The report confirms that prototype-based maps were used and that TEMPpred was not used as the objective.
+\section{Single-AUV results}
+
+The corrected Step12A run evaluates the C01 representative case for a 12 h mission. It contains 21 physical planner runs and 25 logical sensitivity rows. The report confirms that prototype-based maps were used and that TEMPpred was not used as the objective. To visualise case dependence across the three planning days, the route panel below uses the complete three-case 12 h single-AUV sensitivity artefact and compares the STD-only baseline, the best practical enriched representative-zone setting and the descriptor-only extreme within the same descriptor family.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/results/step12a_C01_representative_12h_boundary_distance_descriptor_comparison_alpha050.png}
-    \caption{Single-AUV route comparison for the C01 representative case using boundary-distance descriptor variants. The figure illustrates how descriptor scale changes the selected trajectory while the same planning domain and baseline STD context are retained.}
-    \label{fig:step12a_boundary_distance_comparison}
+    \includegraphics[width=\linewidth]{figures/step12a_three_case_baseline_best_extreme_panel.png}
+    \caption{Three-case single-AUV route comparison for 12 h missions. For each planning day, the panel compares the STD-only baseline, the best enriched representative-zone configuration selected from the Step12A recommendation score, and the descriptor-only \(\alpha=1.00\) extreme in the same family. The comparison is intended to show route sensitivity to descriptor weighting; it does not imply direct uncertainty reduction.}
+    \label{fig:step12a_three_case_baseline_best_extreme}
 \end{figure}
 
 The STD-only baseline collected 90.650 STD units with a route length of 38.053 km in the reported metrics. Table~\ref{tab:step12a_selected_results} summarises selected successful runs and the recommended configurations reported by Step12A.
@@ -807,22 +998,24 @@ The results indicate that descriptor-enriched routes can substantially change ge
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\linewidth]{figures/results/step12a_STD_vs_descriptor_tradeoff.png}
+    \includegraphics[width=0.85\linewidth]{figures/step12a_STD_vs_descriptor_tradeoff.png}
     \caption{Step12A trade-off between collected STD and descriptor-related behaviour. The figure supports the interpretation that useful enriched routes should be judged by STD retention, descriptor response and operational feasibility together.}
     \label{fig:step12a_tradeoff}
 \end{figure}
 
 The r1 descriptor behaved as a narrow boundary-distance map. At intermediate weights it produced two timeouts, and at $\alpha=1.00$ it collected substantially less STD than the baseline. This supports the interpretation that r1 can be too spatially restrictive. The r5 descriptor is broader and less fragile, but it may dilute the precise boundary focus. The r3 descriptor provides a useful compromise in this case because it preserves strong STD performance while still expressing boundary proximity.
 
-\section{Multi-AUV Results}
+The single-AUV results therefore answer the first part of the thesis question positively but cautiously. Prototype-derived descriptors can alter planner behaviour in an interpretable way, especially in a boundary-rich class. Nevertheless, their usefulness depends on descriptor scale and weight. A descriptor should not be adopted solely because it produces a visually different path; it should also retain uncertainty reward, solve reliably and provide an interpretable sampling rationale.
 
-The corrected Step12B run evaluates three cases with 12 h missions. It contains 27 fleet rows and 54 vehicle rows. The report confirms that prototype-based maps were used, TEMPpred was not used as the objective and no overlap/proximity penalty was enabled in the final comparison.
+\section{Multi-AUV results}
+
+The corrected Step12B run evaluates three cases with 12 h missions. It contains 27 fleet rows and 54 vehicle rows. The report confirms that prototype-based maps were used, TEMPpred was not used as the objective and no overlap/proximity penalty was enabled in the final comparison. The visual comparison focuses on the C01 and C06 representative cases and uses the vehicle-specific region-weight family because it was the strongest successful enriched family in the fleet-level recommendation summary.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\linewidth]{figures/results/step12b_C01_representative_12h_best_configuration_panel.png}
-    \caption{Best C01 representative multi-AUV configuration from Step12B. Vehicle-specific prototype-region maps can encourage route specialisation while retaining a shared uncertainty-driven component.}
-    \label{fig:step12b_c01_best}
+    \includegraphics[width=\linewidth]{figures/step12b_baseline_best_extreme_comparison_panel.png}
+    \caption{C01/C06 multi-AUV route comparison for 12 h missions. For each representative planning day, the panel compares the shared STD baseline, the best successful vehicle-specific enriched setting for that case, and the descriptor-only vehicle-specific extreme. The comparison illustrates route specialisation in the boundary-rich representative cases.}
+    \label{fig:step12b_baseline_best_extreme}
 \end{figure}
 
 Table~\ref{tab:step12b_recommendations} reports the best recommendation for each case in the Step12B summary.
@@ -847,7 +1040,9 @@ The C01 and C06 results suggest that vehicle-specific maps can encourage special
 
 The all-descriptor vehicle-specific 0/100 setting is not robust. In Step12B it had a lower mean STD retention and a success rate of 0.667 in the duration summary. The solver diagnostics recorded two failed runs for October\_control under \texttt{vehicle\_specific\_00100}, where the reward input had zero maximum value. This reinforces the preference for mixed STD-descriptor weights.
 
-\section{IQR10 Results}
+These results reveal both the promise and the limitation of the vehicle-specific approach. Reward maps can encourage different vehicles towards different prototype regions, but they do not guarantee fleet-level coordination. In particular, if two independently solved routes remain attracted to the same feasible corridor or if one region map is weak, overlap may persist. This is why future work should include explicit joint optimisation or anti-overlap penalties.
+
+\section{IQR10 results}
 
 IQR10 was computed as a post-processing diagnostic for the existing trajectories. The windows used 10 previous days for all evaluated cases. The validation values are shown in Table~\ref{tab:iqr10_windows}.
 
@@ -873,23 +1068,25 @@ For Step12B, the IQR10 results were mixed across days. The C06 representative ca
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\linewidth]{figures/results/step12b_iqr10_maps_three_days_normalized.png}
+    \includegraphics[width=0.95\linewidth]{figures/step12b_iqr10_maps_three_days_normalized.png}
     \caption{Normalised IQR10 maps for the three evaluated planning dates. IQR10 indicates recent temporal variability over the previous 10 available days and is used only as a post-processing diagnostic.}
     \label{fig:step12b_iqr10_three_days}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\linewidth]{figures/results/step12a_iqr10_map_and_selected_routes.png}
+    \includegraphics[width=0.85\linewidth]{figures/step12a_iqr10_map_and_selected_routes.png}
     \caption{Step12A IQR10 map and selected routes for the C01 representative case. The diagnostic overlays existing trajectories on recent temporal variability but does not modify the planner reward.}
     \label{fig:step12a_iqr10_routes}
 \end{figure}
 
-\section{Operational Feasibility}
+The IQR10 results are particularly useful because they prevent overclaiming. A descriptor-enriched route may look more regime-aware, but this does not imply that it samples the most recently variable locations. Conversely, a positive IQR10 gain in C06 suggests that some vehicle-specific configurations can align with recent variability, but this remains a diagnostic observation rather than proof of assimilation improvement. The correct interpretation is therefore conditional: IQR10 can support route interpretation, but it cannot replace direct data-assimilation validation.
+
+\section{Operational feasibility}
 
 Runtime and solver status affect whether a reward-map strategy is operationally plausible. In Step12A, 19 runs succeeded and 2 runs timed out. Both timeouts occurred for the r1 boundary-distance descriptor at $\alpha=0.25$ and $\alpha=0.50$. In Step12B, 29 runs succeeded, 20 were reused from existing runs and 2 failed. The failed cases occurred for October\_control under descriptor-only vehicle-specific maps with zero-valued reward inputs.
 
-These diagnostics show that map validity alone is not enough. A descriptor can be mathematically well-defined but still produce a sparse, weak or operationally fragile reward map. This is another reason to favour conservative mixed weights.
+These diagnostics show that map validity alone is not enough. A descriptor can be mathematically well-defined but still produce a sparse, weak or operationally fragile reward map. This is another reason to favour conservative mixed weights. In an operational workflow, a reward formulation must not only be oceanographically meaningful; it must also produce feasible planner inputs and solve within a useful time.
 
 \section{Discussion}
 
@@ -899,7 +1096,9 @@ The comparison between boundary descriptors is particularly informative. The old
 
 The multi-AUV results indicate that vehicle-specific maps can encourage specialisation in C01 and C06, but overlap and role assignment remain limitations. In particular, October\_control shows that assigning complementary maps does not guarantee complementary trajectories. Future multi-AUV work should therefore include explicit overlap penalties, joint optimisation or communication-aware coordination.
 
-\section{Chapter Summary}
+The results also clarify the relationship between this thesis and the original FRESNEL motivation. FRESNEL motivates the need to consider spatial mismatch and regime-dependent behaviour. This thesis does not prove that descriptor-enriched routes would improve assimilation in that setting. Instead, it provides a reproducible way to introduce regime-aware spatial information into the planner and shows how the resulting trajectories change. This is a necessary intermediate step before testing observation impact directly through assimilation experiments.
+
+\section{Chapter summary}
 
 The corrected results show that regime-aware descriptors can complement an uncertainty-driven planner, but they do not universally dominate the STD-only baseline. The most defensible interpretation is that descriptors provide additional spatial context for planning, especially in boundary-rich regimes, while STD remains a strong operational baseline. No direct data-assimilation improvement or forecast-skill improvement is claimed.
 
@@ -908,7 +1107,7 @@ The corrected results show that regime-aware descriptors can complement an uncer
 
 This chapter summarises the thesis findings, contributions, limitations and future research directions.
 
-\section{Main Findings}
+\section{Main findings}
 
 The dissertation developed and evaluated a reproducible pipeline for converting temperature-regime information into planner-compatible descriptors. Historical surface temperature maps were used to identify recurrent full-field regimes, generate class prototypes and derive descriptors such as boundary scores, boundary-distance maps, representative zones, cold and warm regions and interest maps.
 
@@ -917,6 +1116,8 @@ The planner remains uncertainty-driven. STD is the baseline reward, and descript
 The multi-AUV results show that vehicle-specific descriptor maps can encourage specialisation in some cases, especially C01 and C06, but redundancy remains a limitation. October\_control demonstrated that complementary input maps do not automatically produce complementary trajectories.
 
 IQR10 provided an external diagnostic of recent temporal variability. It helped interpret whether existing trajectories sampled recently variable regions, but it was not part of the reward function and does not measure assimilation performance.
+
+Taken together, the findings support the main thesis question in a conservative way. Prototype-derived descriptors can complement an uncertainty-driven planner by changing route behaviour and adding interpretable spatial structure. However, this complementarity is conditional on descriptor type, weight, class structure and planner feasibility.
 
 \section{Contributions}
 
@@ -931,16 +1132,22 @@ The main contributions are:
     \item post-processing diagnostics for STD retention, descriptor response, multi-AUV overlap and IQR10 temporal variability.
 \end{itemize}
 
+Beyond these technical outputs, the dissertation contributes a controlled interpretation framework. It shows how to discuss descriptor-enriched planning without overclaiming forecast improvement, and it separates planner behaviour from future assimilation impact.
+
 \section{Limitations}
 
 The results are case-dependent and are based on a limited set of evaluated planning dates. The experiments evaluate planner behaviour rather than direct forecast improvement. Data assimilation is not implemented in this thesis, so the results should not be interpreted as evidence of uncertainty reduction in a model state.
 
 The multi-AUV experiments use a wrapper/proxy strategy for vehicle-specific maps and do not implement a fully joint anti-overlap objective. Some descriptor-only configurations were operationally fragile, including timeout and failed-run cases. Finally, the descriptor interpretation depends on the quality of the prototype classes and on the representativeness of the historical temperature archive.
 
-\section{Future Work}
+A further limitation is that the selected classes and descriptors are tied to the X490 ROI and to the available historical period. Applying the method to another region or season would require rebuilding or at least reassessing the regime library. Similarly, IQR10 is only a recent-variability diagnostic and cannot substitute for explicit observation-impact evaluation.
+
+\section{Future work}
 
 Future work should connect the planner outputs to direct data-assimilation experiments so that observation impact can be measured explicitly. Online replanning could update class assignment and reward maps as new observations arrive. Multi-AUV coordination should be extended with explicit overlap penalties, joint optimisation and communication-aware constraints. The evaluation should also be expanded across more dates, seasons and operational conditions, followed by validation with real AUV deployments.
 
-\section{Final Remarks}
+Another useful direction is to test adaptive descriptor selection. Instead of selecting one descriptor family manually, future systems could choose descriptor weights based on class heterogeneity, STD overlap, recent variability and mission objective. This would turn the current diagnostic interpretation into a more automated planning-support layer.
+
+\section{Final remarks}
 
 The thesis shows that temperature-derived regime descriptors can provide useful complementary spatial information for an uncertainty-driven AUV planner. The strongest conclusion is not that descriptors replace STD, but that they can support more interpretable reward-map sensitivity analyses and reveal how trajectories respond to prototype-based regime information. This is a step towards assimilation-aware mission design, while leaving direct assimilation impact as a necessary future validation stage.
