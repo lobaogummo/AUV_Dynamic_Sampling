@@ -356,12 +356,12 @@ def write_mermaid(path: Path) -> None:
     T["TEMPpred(t)"]
     S["STD(t)"]
     M["Bathymetry / operational mask"]
-    G["ROI X490 common grid"]
+    G["Nazaré Canyon ROI common grid"]
   end
 
   subgraph B["Class assignment"]
-    B1["crop / mask / normalise"]
-    B2["compare with prototype library"]
+    B1["crop, mask, normalise"]
+    B2["compare against prototype library"]
     B3["predicted class C_k"]
   end
 
@@ -379,7 +379,7 @@ def write_mermaid(path: Path) -> None:
   end
 
   subgraph E["Planner-ready outputs"]
-    E1["reward maps / NetCDF / NPZ"]
+    E1["reward maps (.nc / .npz)"]
     E2["Lucrezia AUV planner"]
     E3["planned trajectories"]
     E4["evaluation metrics"]
@@ -431,7 +431,7 @@ def write_sources(path: Path, outdir: Path, missing: list[str]) -> None:
         "block_meanings": [
             {
                 "block": "Planning-day inputs",
-                "meaning": "Day-specific TEMPpred and STD maps are prepared on the X490 ROI/common grid with the operational mask.",
+                "meaning": "Day-specific TEMPpred and STD maps are prepared on the Nazaré Canyon ROI/common grid with the operational mask.",
             },
             {
                 "block": "Class assignment",
@@ -499,7 +499,7 @@ def draw_figure(data: dict[str, Any], outdir: Path, missing: list[str]) -> None:
     image_box(ax, data["temppred_norm"], 0.55, 5.55, 1.24, 0.76, "TEMPpred(t)", TEMP_CMAP, "#3B82C4")
     image_box(ax, data["std_norm"], 2.00, 5.55, 1.24, 0.76, "STD(t)", STD_CMAP, "#3B82C4")
     image_box(ax, data["mask_visual"], 0.55, 4.30, 1.24, 0.76, "bathymetry / mask", MASK_CMAP, "#3B82C4")
-    add_box(ax, 2.00, 4.30, 1.22, 0.76, "ROI X490\ncommon grid", "inputs", fontsize=8.4, bold=True, wrap_width=12)
+    add_box(ax, 2.00, 4.30, 1.22, 0.76, "Nazaré ROI\ncommon grid", "inputs", fontsize=8.4, bold=True, wrap_width=12)
     add_box(
         ax,
         0.62,
@@ -525,9 +525,9 @@ def draw_figure(data: dict[str, Any], outdir: Path, missing: list[str]) -> None:
     )
 
     # Block 2: class assignment.
-    image_box(ax, data["temppred_norm"], 4.10, 5.62, 1.28, 0.78, "TEMPpred", TEMP_CMAP, "#7C3AED")
-    crop = add_box(ax, 4.00, 4.48, 1.48, 0.72, "crop / mask\nnormalise", "class", fontsize=8.3, wrap_width=13)
-    compare = add_box(ax, 4.00, 3.32, 1.48, 0.72, "compare with\nprototype library", "class", fontsize=8.0, wrap_width=13)
+    image_box(ax, data["temppred_norm"], 4.10, 5.62, 1.28, 0.78, "TEMPpred(t)", TEMP_CMAP, "#7C3AED")
+    crop = add_box(ax, 4.00, 4.48, 1.48, 0.72, "crop, mask,\nnormalise", "class", fontsize=8.3, wrap_width=13)
+    compare = add_box(ax, 4.00, 3.32, 1.48, 0.72, "compare against\nprototype library", "class", fontsize=8.0, wrap_width=15)
     ck = add_box(ax, 4.03, 1.83, 2.35, 0.92, "assigned class\nC_k = C01", "class", fontsize=10.0, bold=True, wrap_width=15)
     add_arrow(ax, (4.73, 5.57), (4.73, 5.23), color="#7C3AED", linewidth=1.15)
     add_arrow(ax, bottom_center(crop), top_center(compare), color="#7C3AED", linewidth=1.15)
@@ -625,7 +625,7 @@ def draw_figure(data: dict[str, Any], outdir: Path, missing: list[str]) -> None:
         5.70,
         1.45,
         0.88,
-        "reward maps\nNetCDF / NPZ",
+        "reward maps\n(.nc / .npz)",
         "planner",
         fontsize=8.4,
         bold=True,

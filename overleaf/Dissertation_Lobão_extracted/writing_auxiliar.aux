@@ -17,8 +17,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Scope and assumptions}{4}{section.1.4}\protected@file@percent }
 \newlabel{sec:scope_assumptions}{{1.4}{4}{Scope and assumptions}{section.1.4}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Expected contributions}{5}{section.1.5}\protected@file@percent }
-\newlabel{sec:expected_contributions}{{1.5}{5}{Expected contributions}{section.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Contributions}{5}{section.1.5}\protected@file@percent }
+\newlabel{sec:contributions}{{1.5}{5}{Contributions}{section.1.5}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {1.6}Dissertation structure}{6}{section.1.6}\protected@file@percent }
 \newlabel{sec:struct}{{1.6}{6}{Dissertation structure}{section.1.6}{}}
@@ -81,9 +81,9 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Operational motivation}{22}{section.4.1}\protected@file@percent }
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Study area and canonical domain}{23}{section.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces CMEMS-to-X490 data preparation workflow}}{23}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces CMEMS-to-ROI data preparation workflow}}{23}{figure.caption.9}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:cmems_to_x490}{{4.1}{23}{CMEMS-to-X490 data preparation workflow}{figure.caption.9}{}}
+\newlabel{fig:cmems_to_x490}{{4.1}{23}{CMEMS-to-ROI data preparation workflow}{figure.caption.9}{}}
 \def\@LN@column{1}
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Audited canonical data used by the regime-inference and planning pipeline.}}{24}{table.caption.10}\protected@file@percent }
 \newlabel{tab:canonical_dataset}{{4.1}{24}{Audited canonical data used by the regime-inference and planning pipeline}{table.caption.10}{}}
@@ -101,17 +101,18 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Operational constraints for fair comparison}{25}{section.4.5}\protected@file@percent }
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {4.6}Evaluation metrics}{26}{section.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Chapter summary}{26}{section.4.7}\protected@file@percent }
+\def\@LN@column{1}
 \@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Main metric groups used to interpret the planner experiments.}}{27}{table.caption.13}\protected@file@percent }
 \newlabel{tab:evaluation_metric_groups}{{4.3}{27}{Main metric groups used to interpret the planner experiments}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Chapter summary}{27}{section.4.7}\protected@file@percent }
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Proposed Approach}{28}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:proposed_approach}{{5}{28}{Proposed Approach}{chapter.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Methodological overview}{28}{section.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Offline regime-inference pipeline. Historical surface temperature fields are cropped to the X490 ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction.}}{29}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:regime_inference_pipeline}{{5.1}{29}{Offline regime-inference pipeline. Historical surface temperature fields are cropped to the X490 ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Offline regime-inference pipeline. Historical surface temperature fields are cropped to the Nazar\'e Canyon ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction.}}{29}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:regime_inference_pipeline}{{5.1}{29}{Offline regime-inference pipeline. Historical surface temperature fields are cropped to the Nazar\'e Canyon ROI, transformed into compact representations, clustered into recurrent full-field regime classes and converted into prototype-derived descriptors for downstream reward-map construction}{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Planning-day inference and reward-map generation. TEMPpred selects the prototype class, prototype-derived descriptors are retrieved, STD remains the uncertainty baseline and the resulting reward maps are passed to the Lucrezia AUV planner. The output trajectories are then compared using STD, descriptor, geometry and diagnostic metrics.}}{29}{figure.caption.15}\protected@file@percent }
 \newlabel{fig:planner_inference_reward_generation}{{5.2}{29}{Planning-day inference and reward-map generation. TEMPpred selects the prototype class, prototype-derived descriptors are retrieved, STD remains the uncertainty baseline and the resulting reward maps are passed to the Lucrezia AUV planner. The output trajectories are then compared using STD, descriptor, geometry and diagnostic metrics}{figure.caption.15}{}}
 \def\@LN@column{1}
@@ -134,30 +135,34 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:implementation}{{6}{34}{Implementation}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Executed pipeline}{34}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Step00: canonical ROI and dataset preparation}{34}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Methodological implementation timeline}{34}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Dataset preparation and canonical ROI}{34}{section.6.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Methodological implementation timeline and main artefacts used in the thesis.}}{35}{table.caption.16}\protected@file@percent }
 \newlabel{tab:implementation_steps}{{6.1}{35}{Methodological implementation timeline and main artefacts used in the thesis}{table.caption.16}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Steps01--Step04: sensitivity and diagnostic regime analysis}{36}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Step05: canonical regime discovery}{36}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Regime-model sensitivity and diagnostics}{36}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Canonical regime model}{36}{section.6.4}\protected@file@percent }
+\newlabel{fig:patch_size_sensitivity}{{6.1a}{37}{Patch-size sensitivity}{figure.caption.17}{}}
+\newlabel{sub@fig:patch_size_sensitivity}{{a}{37}{Patch-size sensitivity}{figure.caption.17}{}}
+\newlabel{fig:dictionary_size_sensitivity}{{6.1b}{37}{Dictionary-size sensitivity}{figure.caption.17}{}}
+\newlabel{sub@fig:dictionary_size_sensitivity}{{b}{37}{Dictionary-size sensitivity}{figure.caption.17}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Sensitivity diagnostics used to support the canonical compact-model configuration. The selected patch size $40\times 24$ and dictionary size 4 are interpreted together with stability, class balance and downstream descriptor usability rather than by a single score alone.}}{37}{figure.caption.17}\protected@file@percent }
 \newlabel{fig:patch_dictionary_sensitivity}{{6.1}{37}{Sensitivity diagnostics used to support the canonical compact-model configuration. The selected patch size $40\times 24$ and dictionary size 4 are interpreted together with stability, class balance and downstream descriptor usability rather than by a single score alone}{figure.caption.17}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Step08: prototype-derived descriptor generation}{38}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Prototype-derived descriptor generation}{38}{section.6.5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Prototype-derived descriptors generated in the corrected Step08 output. The descriptor maps are associated with full-field prototype classes and are later retrieved by planning-day class assignment.}}{38}{figure.caption.18}\protected@file@percent }
 \newlabel{fig:step08_descriptor_maps}{{6.2}{38}{Prototype-derived descriptors generated in the corrected Step08 output. The descriptor maps are associated with full-field prototype classes and are later retrieved by planning-day class assignment}{figure.caption.18}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Step09B: planning-day class assignment}{39}{section.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Step10E/F and Step11Y/Z: planner-input preparation and audit}{39}{section.6.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.8}Step12A: single-AUV experiments}{39}{section.6.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Planning-day class assignment}{39}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Planner-map preparation and input audit}{39}{section.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Single-AUV sensitivity analysis}{39}{section.6.8}\protected@file@percent }
 \def\@LN@column{1}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Planner-input logic audited in Step11Y. The corrected workflow uses planning-day TEMPpred only for class assignment and uses prototype-based descriptor maps for reward-map construction.}}{40}{figure.caption.19}\protected@file@percent }
 \newlabel{fig:step11y_planner_input_logic}{{6.3}{40}{Planner-input logic audited in Step11Y. The corrected workflow uses planning-day TEMPpred only for class assignment and uses prototype-based descriptor maps for reward-map construction}{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.9}Step12B: multi-AUV vehicle-specific experiments}{40}{section.6.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.9}Multi-AUV vehicle-specific analysis}{40}{section.6.9}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {6.10}IQR10 and descriptor diagnostics}{41}{section.6.10}\protected@file@percent }
-\newlabel{eq:iqr10_definition}{{6.1}{41}{IQR10 and descriptor diagnostics}{equation.6.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.10}Post-processing diagnostics}{41}{section.6.10}\protected@file@percent }
+\newlabel{eq:iqr10_definition}{{6.1}{41}{Post-processing diagnostics}{equation.6.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.11}Reproducibility and lineage}{41}{section.6.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6.12}Chapter summary}{41}{section.6.12}\protected@file@percent }
 \def\@LN@column{1}
@@ -181,8 +186,8 @@
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {7.5}Multi-AUV experimental design}{46}{section.7.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.6}IQR10 as an external diagnostic}{46}{section.7.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.7}Solver and runtime validation}{46}{section.7.7}\protected@file@percent }
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {7.7}Solver and runtime validation}{47}{section.7.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.8}Interpretation rules}{47}{section.7.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.9}Chapter summary}{47}{section.7.9}\protected@file@percent }
 \def\@LN@column{1}
@@ -201,8 +206,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {8.4}Prototype-based planner input audit}{50}{section.8.4}\protected@file@percent }
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {8.5}Single-AUV results}{51}{section.8.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Three-case single-AUV route comparison for 12 h missions. For each planning day, the panel compares the STD-only baseline, the best enriched representative-zone configuration selected from the Step12A recommendation score, and the descriptor-only \(\alpha =1.00\) extreme in the same family. The comparison is intended to show route sensitivity to descriptor weighting; it does not imply direct uncertainty reduction.}}{51}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:step12a_three_case_baseline_best_extreme}{{8.2}{51}{Three-case single-AUV route comparison for 12 h missions. For each planning day, the panel compares the STD-only baseline, the best enriched representative-zone configuration selected from the Step12A recommendation score, and the descriptor-only \(\alpha =1.00\) extreme in the same family. The comparison is intended to show route sensitivity to descriptor weighting; it does not imply direct uncertainty reduction}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Step12A three-case single-AUV route visualisation for 12 h missions. For each planning day, the panels compare the STD-only baseline, a mixed representative-zone route with \(\alpha =0.50\), and the descriptor-only representative-zone extreme with \(\alpha =1.00\). This figure is used as a qualitative route-sensitivity diagnostic, showing how increasing descriptor weight can modify trajectory geometry across different planning days. It is not presented as an operational recommendation and does not imply direct uncertainty reduction or assimilation improvement.}}{51}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:step12a_boundary_distance_comparison}{{8.2}{51}{Step12A three-case single-AUV route visualisation for 12 h missions. For each planning day, the panels compare the STD-only baseline, a mixed representative-zone route with \(\alpha =0.50\), and the descriptor-only representative-zone extreme with \(\alpha =1.00\). This figure is used as a qualitative route-sensitivity diagnostic, showing how increasing descriptor weight can modify trajectory geometry across different planning days. It is not presented as an operational recommendation and does not imply direct uncertainty reduction or assimilation improvement}{figure.caption.26}{}}
 \def\@LN@column{1}
 \@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Selected Step12A single-AUV results for the C01 representative 12 h case.}}{52}{table.caption.27}\protected@file@percent }
 \newlabel{tab:step12a_selected_results}{{8.2}{52}{Selected Step12A single-AUV results for the C01 representative 12 h case}{table.caption.27}{}}
@@ -210,37 +215,40 @@
 \newlabel{fig:step12a_tradeoff}{{8.3}{52}{Step12A trade-off between collected STD and descriptor-related behaviour. The figure supports the interpretation that useful enriched routes should be judged by STD retention, descriptor response and operational feasibility together}{figure.caption.28}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {8.6}Multi-AUV results}{53}{section.8.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces C01/C06 multi-AUV route comparison for 12 h missions. For each representative planning day, the panel compares the shared STD baseline, the best successful vehicle-specific enriched setting for that case, and the descriptor-only vehicle-specific extreme. The comparison illustrates route specialisation in the boundary-rich representative cases.}}{53}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:step12b_baseline_best_extreme}{{8.4}{53}{C01/C06 multi-AUV route comparison for 12 h missions. For each representative planning day, the panel compares the shared STD baseline, the best successful vehicle-specific enriched setting for that case, and the descriptor-only vehicle-specific extreme. The comparison illustrates route specialisation in the boundary-rich representative cases}{figure.caption.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8.3}{\ignorespaces Best Step12B vehicle-specific recommendations by case.}}{53}{table.caption.30}\protected@file@percent }
+\newlabel{tab:step12b_recommendations}{{8.3}{53}{Best Step12B vehicle-specific recommendations by case}{table.caption.30}{}}
 \def\@LN@column{1}
-\@writefile{lot}{\contentsline {table}{\numberline {8.3}{\ignorespaces Best Step12B vehicle-specific recommendations by case.}}{54}{table.caption.30}\protected@file@percent }
-\newlabel{tab:step12b_recommendations}{{8.3}{54}{Best Step12B vehicle-specific recommendations by case}{table.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces C01/C06 multi-AUV route comparison for 12 h missions. For each representative planning day, the panel compares the shared STD baseline, the best successful vehicle-specific enriched setting for that case, and the descriptor-only vehicle-specific extreme. The comparison illustrates route specialisation in the boundary-rich representative cases.}}{54}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:step12b_baseline_best_extreme}{{8.4}{54}{C01/C06 multi-AUV route comparison for 12 h missions. For each representative planning day, the panel compares the shared STD baseline, the best successful vehicle-specific enriched setting for that case, and the descriptor-only vehicle-specific extreme. The comparison illustrates route specialisation in the boundary-rich representative cases}{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.7}IQR10 results}{54}{section.8.7}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {8.4}{\ignorespaces IQR10 window validation for the corrected Step12 diagnostics.}}{54}{table.caption.31}\protected@file@percent }
 \newlabel{tab:iqr10_windows}{{8.4}{54}{IQR10 window validation for the corrected Step12 diagnostics}{table.caption.31}{}}
+\def\@LN@column{1}
 \@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Normalised IQR10 maps for the three evaluated planning dates. IQR10 indicates recent temporal variability over the previous 10 available days and is used only as a post-processing diagnostic.}}{55}{figure.caption.32}\protected@file@percent }
 \newlabel{fig:step12b_iqr10_three_days}{{8.5}{55}{Normalised IQR10 maps for the three evaluated planning dates. IQR10 indicates recent temporal variability over the previous 10 available days and is used only as a post-processing diagnostic}{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Step12A IQR10 map and selected routes for the C01 representative case. The diagnostic overlays existing trajectories on recent temporal variability but does not modify the planner reward.}}{55}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:step12a_iqr10_routes}{{8.6}{55}{Step12A IQR10 map and selected routes for the C01 representative case. The diagnostic overlays existing trajectories on recent temporal variability but does not modify the planner reward}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Step12A single-AUV IQR10 diagnostic map and selected routes for the C01 representative 12 h case. The panels show the STD-only baseline, mixed descriptor routes and boundary-distance routes overlaid on the normalised IQR10 map. IQR10 is a post-processing diagnostic only and was not used by the planner reward.}}{55}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:step12a_iqr10_routes}{{8.6}{55}{Step12A single-AUV IQR10 diagnostic map and selected routes for the C01 representative 12 h case. The panels show the STD-only baseline, mixed descriptor routes and boundary-distance routes overlaid on the normalised IQR10 map. IQR10 is a post-processing diagnostic only and was not used by the planner reward}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.8}Operational feasibility}{55}{section.8.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8.7}{\ignorespaces Single- and multi-AUV route comparison over normalised IQR10 diagnostic maps for the C01 and C06 representative planning dates. The homogeneous October control case is omitted from this route-comparison panel because it is interpreted as a control case rather than a boundary-rich regime. The top row shows, for each day, the single-AUV STD-only baseline and the best successful enriched route. The bottom row shows the corresponding multi-AUV shared-STD baseline and the best successful vehicle-specific enriched configuration. IQR10 is used only as a post-processing diagnostic background and was not used by the planner reward.}}{56}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:step12_single_multi_iqr10_routes}{{8.7}{56}{Single- and multi-AUV route comparison over normalised IQR10 diagnostic maps for the C01 and C06 representative planning dates. The homogeneous October control case is omitted from this route-comparison panel because it is interpreted as a control case rather than a boundary-rich regime. The top row shows, for each day, the single-AUV STD-only baseline and the best successful enriched route. The bottom row shows the corresponding multi-AUV shared-STD baseline and the best successful vehicle-specific enriched configuration. IQR10 is used only as a post-processing diagnostic background and was not used by the planner reward}{figure.caption.34}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {8.8}Operational feasibility}{56}{section.8.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8.9}Discussion}{56}{section.8.9}\protected@file@percent }
-\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {8.9}Discussion}{57}{section.8.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8.10}Chapter summary}{57}{section.8.10}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{58}{chapter.9}\protected@file@percent }
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{59}{chapter.9}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusions}{{9}{58}{Conclusions}{chapter.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Main findings}{58}{section.9.1}\protected@file@percent }
+\newlabel{chap:conclusions}{{9}{59}{Conclusions}{chapter.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Main findings}{59}{section.9.1}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Contributions}{59}{section.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9.3}Limitations}{59}{section.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9.4}Future work}{59}{section.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Contributions}{60}{section.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Limitations}{60}{section.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.4}Future work}{60}{section.9.4}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {9.5}Final remarks}{60}{section.9.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.5}Final remarks}{61}{section.9.5}\protected@file@percent }
 \@setckpt{writing_auxiliar}{
-\setcounter{page}{61}
+\setcounter{page}{62}
 \setcounter{equation}{0}
 \setcounter{enumi}{8}
 \setcounter{enumii}{0}
@@ -266,7 +274,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{108}
+\setcounter{instcount}{129}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -372,14 +380,14 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{cbx@tempcnta}{0}
-\setcounter{cbx@tempcntb}{12}
+\setcounter{cbx@tempcntb}{40}
 \setcounter{cbx@tempcntc}{0}
 \setcounter{cbx@tempcntd}{-1}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{float@type}{4}
 \setcounter{linenumber}{0}
-\setcounter{LN@truepage}{75}
+\setcounter{LN@truepage}{76}
 \setcounter{section@level}{1}
 \setcounter{Item}{8}
 \setcounter{Hfootnote}{0}

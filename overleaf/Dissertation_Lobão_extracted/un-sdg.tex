@@ -6,9 +6,9 @@
 The United Nations Sustainable Development Goals (SDGs) provide a global framework to achieve a better and more sustainable future for all.
 They include 17 goals addressing major challenges such as poverty, inequality, climate change, environmental degradation, peace, and justice.
 
-This dissertation contributes primarily to \textbf{SDG 14 (Life Below Water)} by improving the efficiency and scientific value of in situ ocean observations through closed-loop, multi-agent adaptive sampling.
-By enabling AUV teams to identify and sample \emph{dynamically distinct regimes} (e.g., fronts, water masses, plume-influenced areas) using machine learning, the work supports better monitoring and modelling of coastal environments.
-A secondary contribution exists to \textbf{SDG 13 (Climate Action)}, since more informative and better-targeted ocean observations can improve downstream forecasting and understanding of climate-relevant ocean variability.
+This dissertation contributes primarily to \textbf{SDG 14 (Life Below Water)} by supporting more structured and reproducible planning inputs for in situ ocean observations with AUVs.
+By evaluating prototype-derived descriptors associated with temperature regimes, boundaries and representative regions, the work supports the interpretation of coastal sampling strategies in heterogeneous environments.
+A secondary contribution exists to \textbf{SDG 13 (Climate Action)}, since better documented and more targeted ocean-observation planning methods can support future studies of climate-relevant coastal variability.
 
 The specific Sustainable Development Goals mentioned have the following names:
 
@@ -26,26 +26,26 @@ The specific Sustainable Development Goals mentioned have the following names:
 
 \multirow{2}{*}{14} &
 14.2 &
-Enable more efficient monitoring of coastal ecosystem dynamics by directing multi-AUV sampling toward regime boundaries (fronts/plumes) and under-sampled regimes, improving the spatial/temporal coverage of observations for ecosystem assessment and management. &
-(i) Coverage of high-variability/boundary regions (\% of boundary length/area sampled); (ii) reduction in out-of-regime prediction error (e.g., RMSE/MAE split by regime); (iii) increase in information gain or uncertainty reduction per kilometre/time. \\
+Support more structured monitoring of coastal ecosystem dynamics by evaluating whether prototype-derived descriptors can encourage AUV trajectories toward boundaries, representative regions and heterogeneous thermal structures. &
+(i) Descriptor coverage along route; (ii) STD retention relative to the baseline; (iii) IQR10 collected along route as a diagnostic of recent variability. \\
 \cline{2-4}
 
 &
 14.a &
-Support marine scientific research capacity by providing an onboard-feasible closed-loop pipeline (regime inference + informative planning + coordination) and a benchmarking protocol for comparing methods under realistic communication and flow constraints. &
-(i) Runtime/memory footprint of onboard components; (ii) reproducible benchmark suite released (scenarios, baselines, metrics); (iii) performance vs. baselines: redundancy overlap reduction (\%), utility per vehicle, and coordination robustness under dropouts/latency. \\
+Support marine scientific research capacity by providing a reproducible offline regime-descriptor pipeline and planner-input audit workflow for comparing baseline and descriptor-enriched reward maps. &
+(i) Availability of reproducible artefacts; (ii) solver status and runtime; (iii) route overlap, specialisation and descriptor response in single- and multi-AUV scenarios. \\
 \hline
 
 \multirow{2}{*}{13} &
 13.1 &
-Improve resilience of ocean observation strategies to heterogeneous and time-varying conditions by using regime-aware inference and update logic, reducing harmful cross-regime coupling in model updates and supporting more robust monitoring during rapid environmental changes. &
-(i) Robustness under distribution shift: degradation in regime-classification confidence/calibration; (ii) performance under stress tests (currents, comm dropouts): mission success rate and constraint violations; (iii) in-regime vs out-of-regime forecast/update error change. \\
+Support the interpretation of ocean observation strategies in heterogeneous conditions by separating uncertainty-driven sampling from complementary regime-aware spatial descriptors. &
+(i) Case-dependent STD retention; (ii) descriptor-weight sensitivity; (iii) solver success, timeout or failure status under different reward-map formulations. \\
 \cline{2-4}
 
 &
 13.3 &
-Contribute to improved understanding and methodological practice for climate-relevant coastal variability by linking observations to uncertainty-aware decision-making and explicit evaluation of forecast-improvement proxies (when available). &
-(i) Improvement in forecast-error proxy metrics after incorporating collected observations; (ii) uncertainty calibration metrics (e.g., reliability of confidence/entropy vs boundary regions); (iii) documented methodological guidelines for regime-aware sampling and evaluation. \\
+Contribute to methodological practice for climate-relevant coastal variability by documenting how temperature-regime information can be converted into planner-compatible descriptors while preserving STD as the baseline. &
+(i) Documented data lineage; (ii) baseline versus enriched route metrics; (iii) IQR10 post-processing diagnostics and explicit reporting of remaining validation limits. \\
 \hline
 
 \end{tabular}

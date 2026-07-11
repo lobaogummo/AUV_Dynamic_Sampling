@@ -762,30 +762,41 @@ def plot_region_comparison(out: Path, data: dict[str, Any], corrected: dict[str,
 def plot_logic_diagram(out: Path) -> None:
     if plt is None:
         return
-    fig, ax = plt.subplots(figsize=(12, 4))
+    fig, ax = plt.subplots(figsize=(13.5, 4.6))
     ax.axis("off")
     boxes = [
-        (0.03, 0.55, "predModel day\nTEMPpred + STD"),
-        (0.25, 0.55, "Classify TEMPpred\nStep05 canonical"),
-        (0.47, 0.55, "Predicted class\nC01/C06/C02"),
-        (0.69, 0.55, "Load Step08 prototype\ndescriptors for class"),
-        (0.47, 0.12, "Planner maps\nSTD day + prototype descriptors"),
+        (0.03, 0.58, 0.17, 0.22, "Planning day\nTEMPpred + STD", "#e7f0fa"),
+        (0.25, 0.58, 0.17, 0.22, "Classify TEMPpred\nwith Step05 model", "#fff4dc"),
+        (0.47, 0.58, 0.16, 0.22, "Assigned class\nC01 / C06 / C02", "#fff4dc"),
+        (0.68, 0.58, 0.22, 0.22, "Retrieve Step08\nprototype descriptors", "#e8f4e8"),
+        (0.43, 0.16, 0.25, 0.26, "Reward maps\nSTD + descriptors", "#f0f2fb"),
+        (0.76, 0.15, 0.18, 0.26, "Lucrezia planner\ntrajectories", "#f8eaf0"),
     ]
-    for x, y, text in boxes:
-        rect = plt.Rectangle((x, y), 0.18, 0.25, fill=False, linewidth=1.6)
+    for x, y, w, h, text, face in boxes:
+        rect = plt.Rectangle((x, y), w, h, facecolor=face, edgecolor="#39516a", linewidth=1.6)
         ax.add_patch(rect)
-        ax.text(x + 0.09, y + 0.125, text, ha="center", va="center", fontsize=10)
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=10, weight="bold")
     arrows = [
-        ((0.21, 0.675), (0.25, 0.675)),
-        ((0.43, 0.675), (0.47, 0.675)),
-        ((0.65, 0.675), (0.69, 0.675)),
-        ((0.78, 0.55), (0.56, 0.37)),
-        ((0.12, 0.55), (0.47, 0.25)),
+        ((0.20, 0.69), (0.25, 0.69)),
+        ((0.42, 0.69), (0.47, 0.69)),
+        ((0.63, 0.69), (0.68, 0.69)),
+        ((0.79, 0.58), (0.58, 0.42)),
+        ((0.12, 0.58), (0.43, 0.29)),
+        ((0.68, 0.29), (0.76, 0.29)),
     ]
     for start, end in arrows:
         ax.annotate("", xy=end, xytext=start, arrowprops={"arrowstyle": "->", "lw": 1.5})
-    ax.text(0.18, 0.26, "STD remains day-specific", ha="center", fontsize=9)
-    ax.text(0.72, 0.34, "Descriptors are prototype-based", ha="center", fontsize=9)
+    ax.text(0.18, 0.36, "STD remains\nday-specific", ha="center", fontsize=9, color="#444444")
+    ax.text(0.74, 0.43, "Descriptors remain\nprototype-based", ha="center", fontsize=9, color="#444444")
+    ax.text(
+        0.50,
+        0.04,
+        "TEMPpred selects the class; STD remains date-specific; descriptors are loaded from the assigned prototype.",
+        ha="center",
+        fontsize=9,
+        color="#444444",
+    )
+    ax.set_title("Step11Y audited planner-input logic", fontsize=16, weight="bold", pad=8)
     fig.tight_layout()
     fig.savefig(out, dpi=180)
     plt.close(fig)

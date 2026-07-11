@@ -347,14 +347,14 @@ def main() -> int:
     temp_img = d.image(65, 250, 120, 74, uri["temppred"], COLORS["inputs_stroke"], "TEMPpred(t)")
     std_img = d.image(205, 250, 120, 74, uri["std"], COLORS["inputs_stroke"], "STD(t)")
     mask_img = d.image(65, 370, 120, 74, uri["mask"], COLORS["inputs_stroke"], "bathymetry / mask")
-    grid_box = d.rect(205, 370, 120, 74, "ROI X490\ncommon grid", COLORS["inputs_fill"], COLORS["inputs_stroke"], font_size=15, bold=True)
+    grid_box = d.rect(205, 370, 120, 74, "Nazaré ROI\ncommon grid", COLORS["inputs_fill"], COLORS["inputs_stroke"], font_size=15, bold=True)
     d.rect(65, 505, 260, 96, "Planning day\n2024-08-24\nvalid cells only", "#FFFFFF", "#CBD5E1", font_size=15)
     d.rect(65, 650, 260, 78, "STD remains the\nuncertainty baseline", COLORS["inputs_fill"], COLORS["inputs_stroke"], font_size=16, bold=True)
 
     # Class assignment.
-    class_temp = d.image(405, 250, 125, 78, uri["temppred"], COLORS["class_stroke"], "TEMPpred")
-    crop = d.rect(400, 370, 145, 72, "crop / mask\nnormalise", COLORS["class_fill"], COLORS["class_stroke"], font_size=15)
-    compare = d.rect(400, 478, 145, 74, "compare with\nprototype library", COLORS["class_fill"], COLORS["class_stroke"], font_size=14)
+    class_temp = d.image(405, 250, 125, 78, uri["temppred"], COLORS["class_stroke"], "TEMPpred(t)")
+    crop = d.rect(400, 370, 145, 72, "crop, mask,\nnormalise", COLORS["class_fill"], COLORS["class_stroke"], font_size=15)
+    compare = d.rect(400, 478, 145, 74, "compare against\nprototype library", COLORS["class_fill"], COLORS["class_stroke"], font_size=14)
     one_class = d.rect(560, 330, 75, 160, "one class\nper planning\nday", "#FFFFFF", "#CBD5E1", font_size=13)
     ck = d.rect(400, 615, 230, 92, "assigned class\nC_k = C01", COLORS["class_fill"], COLORS["class_stroke"], font_size=18, bold=True)
     d.arrow(class_temp, crop, COLORS["class_stroke"])
@@ -419,7 +419,7 @@ def main() -> int:
     d.arrow(desc_thumb, multi, COLORS["reward_stroke"])
 
     # Planner-ready outputs.
-    maps_box = d.rect(1565, 230, 145, 88, "reward maps\nNetCDF / NPZ", COLORS["planner_fill"], COLORS["planner_stroke"], font_size=15, bold=True)
+    maps_box = d.rect(1565, 230, 145, 88, "reward maps\n(.nc / .npz)", COLORS["planner_fill"], COLORS["planner_stroke"], font_size=15, bold=True)
     lucrezia = d.rect(1735, 230, 135, 88, "Lucrezia\nAUV planner", COLORS["planner_fill"], COLORS["planner_stroke"], font_size=15, bold=True)
     base_traj = d.line_box(1565, 385, 120, 64, "baseline", "#111827")
     enrich_traj = d.line_box(1735, 385, 120, 64, "enriched", "#0891B2")

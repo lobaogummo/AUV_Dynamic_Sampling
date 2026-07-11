@@ -703,6 +703,52 @@
       \verb 10.1109/AUV.2018.8729777
       \endverb
     \endentry
+    \entry{berget2023dynamicstochastic}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=8f992d5c16242a4565a4fd8361e0a0d4}{%
+           family={Berget},
+           familyi={B\bibinitperiod},
+           given={Gunhild\bibnamedelima Elisabeth},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b4ff530000633fac86e0ac0e7597abfb}{%
+           family={Eidsvik},
+           familyi={E\bibinitperiod},
+           given={Jo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9fa2bf7734d6b75b8284b3109f0e4536}{%
+           family={Alver},
+           familyi={A\bibinitperiod},
+           given={Morten\bibnamedelima Omholt},
+           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=dd7a219bd351f8768b82145983ef6c86}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Tor\bibnamedelima Arne},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{79f301c5c3b9d264173a527bbff75e95}
+      \strng{fullhash}{a2e00818a347ae4ee5d9286408849c46}
+      \strng{fullhashraw}{a2e00818a347ae4ee5d9286408849c46}
+      \strng{bibnamehash}{79f301c5c3b9d264173a527bbff75e95}
+      \strng{authorbibnamehash}{79f301c5c3b9d264173a527bbff75e95}
+      \strng{authornamehash}{79f301c5c3b9d264173a527bbff75e95}
+      \strng{authorfullhash}{a2e00818a347ae4ee5d9286408849c46}
+      \strng{authorfullhashraw}{a2e00818a347ae4ee5d9286408849c46}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autonomous Robots}
+      \field{number}{4}
+      \field{title}{Dynamic stochastic modeling for adaptive sampling of environmental variables using an {AUV}}
+      \field{volume}{47}
+      \field{year}{2023}
+      \field{pages}{483\bibrangedash 502}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/s10514-023-10095-8
+      \endverb
+    \endentry
     \entry{fossum2019phytoplankton}{article}{}{}
       \name{author}{10}{}{%
         {{hash=f5d313dc6a9ae7c5b93f4e251e32b91a}{%
@@ -1008,6 +1054,174 @@
       \verb 10.1080/01621459.1963.10500845
       \endverb
     \endentry
+    \entry{yilmaz2008auvMILP}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=1619d7932ed828a1a8e38d67d0ab9dd5}{%
+           family={Yilmaz},
+           familyi={Y\bibinitperiod},
+           given={Namik\bibnamedelima Kemal},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=961013b9461254a921f03a3b9629835a}{%
+           family={Evangelinos},
+           familyi={E\bibinitperiod},
+           given={Constantinos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=98fa22045be839015999a38d8083910b}{%
+           family={Lermusiaux},
+           familyi={L\bibinitperiod},
+           given={Pierre\bibnamedelimb F.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a39f29875f19f802625b87ea37ea2356}{%
+           family={Patrikalakis},
+           familyi={P\bibinitperiod},
+           given={Nicholas\bibnamedelima M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{90a1061ed0cc020bd7cb1c0af38e256d}
+      \strng{fullhash}{cfea22cded0abbdac99799791960c2d2}
+      \strng{fullhashraw}{cfea22cded0abbdac99799791960c2d2}
+      \strng{bibnamehash}{90a1061ed0cc020bd7cb1c0af38e256d}
+      \strng{authorbibnamehash}{90a1061ed0cc020bd7cb1c0af38e256d}
+      \strng{authornamehash}{90a1061ed0cc020bd7cb1c0af38e256d}
+      \strng{authorfullhash}{cfea22cded0abbdac99799791960c2d2}
+      \strng{authorfullhashraw}{cfea22cded0abbdac99799791960c2d2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Oceanic Engineering}
+      \field{number}{4}
+      \field{title}{Path Planning of Autonomous Underwater Vehicles for Adaptive Sampling Using Mixed Integer Linear Programming}
+      \field{volume}{33}
+      \field{year}{2008}
+      \field{pages}{522\bibrangedash 537}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1109/JOE.2008.2002105
+      \endverb
+    \endentry
+    \entry{binney2010informative}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=298175d25e4c1d86f7141cf3b4966f28}{%
+           family={Binney},
+           familyi={B\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=112eb0b147c4a7f674d015a86e5dea70}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6d430fe2b65c3d9fedd6f2d351604092}{%
+           family={Sukhatme},
+           familyi={S\bibinitperiod},
+           given={Gaurav\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{fullhash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{fullhashraw}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{bibnamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorbibnamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authornamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorfullhash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorfullhashraw}{4cb621af86bf37d54f4bff1b9969551e}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation}
+      \field{title}{Informative Path Planning for an Autonomous Underwater Vehicle}
+      \field{year}{2010}
+      \field{pages}{4791\bibrangedash 4796}
+      \range{pages}{6}
+    \endentry
+    \entry{vansteenwegen2011orienteering}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=85b194412e9df03e17681d032860a348}{%
+           family={Vansteenwegen},
+           familyi={V\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a12b232103bb8e3adbe9d1a1185dbd6a}{%
+           family={Souffriau},
+           familyi={S\bibinitperiod},
+           given={Wouter},
+           giveni={W\bibinitperiod}}}%
+        {{hash=5a9ed2f22934edeaa22de8f98f74e717}{%
+           family={Van\bibnamedelima Oudheusden},
+           familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{fullhash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{fullhashraw}{cab8caca5dfaa07c0e61825849241257}
+      \strng{bibnamehash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{authorbibnamehash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{authornamehash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{authorfullhash}{cab8caca5dfaa07c0e61825849241257}
+      \strng{authorfullhashraw}{cab8caca5dfaa07c0e61825849241257}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{1}
+      \field{title}{The Orienteering Problem: A Survey}
+      \field{volume}{209}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.ejor.2010.03.045
+      \endverb
+    \endentry
+    \entry{gunawan2016orienteering}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=502a168ff3646ce1c599a16e68afc74d}{%
+           family={Gunawan},
+           familyi={G\bibinitperiod},
+           given={Aldy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cdf926d65c1891ac087aaa99f1411fe3}{%
+           family={Lau},
+           familyi={L\bibinitperiod},
+           given={Hoong\bibnamedelima Chuin},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=85b194412e9df03e17681d032860a348}{%
+           family={Vansteenwegen},
+           familyi={V\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{fullhash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{fullhashraw}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{bibnamehash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{authorbibnamehash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{authornamehash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{authorfullhash}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \strng{authorfullhashraw}{3a89eecfcbe3f88b9bb9018ca6c3c677}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{2}
+      \field{title}{Orienteering Problem: A Survey of Recent Variants, Solution Approaches and Applications}
+      \field{volume}{255}
+      \field{year}{2016}
+      \field{pages}{315\bibrangedash 332}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1016/j.ejor.2016.04.059
+      \endverb
+    \endentry
     \entry{toth2014vehicle}{book}{}{}
       \name{editor}{2}{}{%
         {{hash=16fc2b730a7a7c0fc6b31098630baaef}{%
@@ -1036,8 +1250,8 @@
       \strng{editornamehash}{5bb027295595510455847230731bf280}
       \strng{editorfullhash}{5bb027295595510455847230731bf280}
       \strng{editorfullhashraw}{5bb027295595510455847230731bf280}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -1078,8 +1292,8 @@
       \strng{authornamehash}{f14b4d033960169db8e536b480066b9f}
       \strng{authorfullhash}{a9774bb22568916a7f36433097d9ee69}
       \strng{authorfullhashraw}{a9774bb22568916a7f36433097d9ee69}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Computers \& Operations Research}
@@ -1155,6 +1369,215 @@
       \field{pages}{626\bibrangedash 646}
       \range{pages}{21}
     \endentry
+    \entry{zhang2012upwellingfront}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=ae3e006c3c587a788e69383d2203c17a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanwu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8dcdee0d3b44980b64048c336b5193f5}{%
+           family={Godin},
+           familyi={G\bibinitperiod},
+           given={Michael\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c3d6db863a6b6ae602bf183de8ee85a9}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=2b3d7e4d9c45ef8b743ca3df6f307c32}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{fullhash}{76c38694e239cabab3ade191bdf5756a}
+      \strng{fullhashraw}{76c38694e239cabab3ade191bdf5756a}
+      \strng{bibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorbibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authornamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorfullhash}{76c38694e239cabab3ade191bdf5756a}
+      \strng{authorfullhashraw}{76c38694e239cabab3ade191bdf5756a}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Oceanic Engineering}
+      \field{number}{3}
+      \field{title}{Using an Autonomous Underwater Vehicle to Track a Coastal Upwelling Front}
+      \field{volume}{37}
+      \field{year}{2012}
+      \field{pages}{338\bibrangedash 347}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/JOE.2012.2197272
+      \endverb
+    \endentry
+    \entry{zhang2012watertypesfronts}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=ae3e006c3c587a788e69383d2203c17a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanwu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2b3d7e4d9c45ef8b743ca3df6f307c32}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=c3d6db863a6b6ae602bf183de8ee85a9}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=5f410d074e4ac398197e901c40cbb489}{%
+           family={Harvey},
+           familyi={H\bibinitperiod},
+           given={Julio\bibnamedelimb B.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=431a0df76cb54d72e243ffa44d76212c}{%
+           family={McEwen},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{fullhash}{6167a2c805c2489ff57ba89957422bca}
+      \strng{fullhashraw}{6167a2c805c2489ff57ba89957422bca}
+      \strng{bibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorbibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authornamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorfullhash}{6167a2c805c2489ff57ba89957422bca}
+      \strng{authorfullhashraw}{6167a2c805c2489ff57ba89957422bca}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Limnology and Oceanography: Methods}
+      \field{title}{Autonomous Detection and Sampling of Water Types and Fronts in a Coastal Upwelling System by an Autonomous Underwater Vehicle}
+      \field{volume}{10}
+      \field{year}{2012}
+      \field{pages}{934\bibrangedash 951}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.4319/lom.2012.10.934
+      \endverb
+    \endentry
+    \entry{krause2008sensorplacement}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=112eb0b147c4a7f674d015a86e5dea70}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=110b174907a8d872233d9076021cbb05}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Ajit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           familyi={G\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{fullhash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{fullhashraw}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{bibnamehash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{authorbibnamehash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{authornamehash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{authorfullhash}{73f25c62b54bd969cbfd9349f5f960ca}
+      \strng{authorfullhashraw}{73f25c62b54bd969cbfd9349f5f960ca}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{Near-Optimal Sensor Placements in Gaussian Processes: Theory, Efficient Algorithms and Empirical Studies}
+      \field{volume}{9}
+      \field{year}{2008}
+      \field{pages}{235\bibrangedash 284}
+      \range{pages}{50}
+    \endentry
+    \entry{hollinger2014informationgathering}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7f9195f5d93250cf51aa59c1eced462d}{%
+           family={Hollinger},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6d430fe2b65c3d9fedd6f2d351604092}{%
+           family={Sukhatme},
+           familyi={S\bibinitperiod},
+           given={Gaurav\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{fullhash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{fullhashraw}{851029c6b2d11f9310e935d9211abff4}
+      \strng{bibnamehash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{authorbibnamehash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{authornamehash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{authorfullhash}{851029c6b2d11f9310e935d9211abff4}
+      \strng{authorfullhashraw}{851029c6b2d11f9310e935d9211abff4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{number}{9}
+      \field{title}{Sampling-Based Robotic Information Gathering Algorithms}
+      \field{volume}{33}
+      \field{year}{2014}
+      \field{pages}{1271\bibrangedash 1287}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1177/0278364914533443
+      \endverb
+    \endentry
+    \entry{binney2013waypoints}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=298175d25e4c1d86f7141cf3b4966f28}{%
+           family={Binney},
+           familyi={B\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=112eb0b147c4a7f674d015a86e5dea70}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6d430fe2b65c3d9fedd6f2d351604092}{%
+           family={Sukhatme},
+           familyi={S\bibinitperiod},
+           given={Gaurav\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{fullhash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{fullhashraw}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{bibnamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorbibnamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authornamehash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorfullhash}{4cb621af86bf37d54f4bff1b9969551e}
+      \strng{authorfullhashraw}{4cb621af86bf37d54f4bff1b9969551e}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{title}{Optimizing waypoints for monitoring spatiotemporal phenomena}
+      \field{volume}{32}
+      \field{year}{2013}
+      \field{pages}{873\bibrangedash 888}
+      \range{pages}{16}
+    \endentry
     \entry{frolov2014grid}{article}{}{}
       \name{author}{3}{}{%
         {{hash=a9d8102ff2ee94663ac5534628210577}{%
@@ -1191,6 +1614,245 @@
       \field{year}{2014}
       \field{pages}{5071\bibrangedash 5090}
       \range{pages}{20}
+    \endentry
+    \entry{zhang2016fourdimensional}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=ae3e006c3c587a788e69383d2203c17a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanwu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c3d6db863a6b6ae602bf183de8ee85a9}{%
+           family={Bellingham},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=2b3d7e4d9c45ef8b743ca3df6f307c32}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=09d9e0d3f72ba58502cb64fcfdad0f09}{%
+           family={Kieft},
+           familyi={K\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=434e92089bddc27a66afd89ea14f1be8}{%
+           family={Stanway},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{fullhash}{f1bcad547df661dbe36a56935574d664}
+      \strng{fullhashraw}{f1bcad547df661dbe36a56935574d664}
+      \strng{bibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorbibnamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authornamehash}{dc8a50a8661e72a421323cfcabd2af22}
+      \strng{authorfullhash}{f1bcad547df661dbe36a56935574d664}
+      \strng{authorfullhashraw}{f1bcad547df661dbe36a56935574d664}
+      \field{extraname}{3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Field Robotics}
+      \field{number}{1}
+      \field{title}{Autonomous Four-Dimensional Mapping and Tracking of a Coastal Upwelling Front by an Autonomous Underwater Vehicle}
+      \field{volume}{33}
+      \field{year}{2016}
+      \field{pages}{67\bibrangedash 81}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1002/rob.21617
+      \endverb
+    \endentry
+    \entry{cruz2014horizontalboundary}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=9060b69faf8a85b2cf52898d1cc792d0}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Nuno\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=22e5fbcffde4820912ad9a7c1b86a107}{%
+           family={Matos},
+           familyi={M\bibinitperiod},
+           given={Aníbal\bibnamedelima C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{fullhash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{fullhashraw}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{bibnamehash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{authorbibnamehash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{authornamehash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{authorfullhash}{22608daae4966b7cbf6bf53b7161d7b4}
+      \strng{authorfullhashraw}{22608daae4966b7cbf6bf53b7161d7b4}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{OCEANS 2014 MTS/IEEE St. John's}
+      \field{title}{Autonomous Tracking of a Horizontal Boundary}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1109/OCEANS.2014.7003275
+      \endverb
+    \endentry
+    \entry{fiorelli2006multiauv}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=5ddde6e8f71a37af4e4e763cb8173707}{%
+           family={Fiorelli},
+           familyi={F\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4a8f7c493dc109ca31debb5ec617bc96}{%
+           family={Leonard},
+           familyi={L\bibinitperiod},
+           given={Naomi\bibnamedelima Ehrich},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4c90d5c059b6795df95b3bc6754ba5f7}{%
+           family={Bhatta},
+           familyi={B\bibinitperiod},
+           given={Pradeep},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6f5b2c5ff51ca77851d580d4ba78249e}{%
+           family={Paley},
+           familyi={P\bibinitperiod},
+           given={Derek\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=15ca6f1a4dd23816adcf1465c1816c92}{%
+           family={Bachmayer},
+           familyi={B\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+        {{hash=092e64c18cbe92c1d86821061d51054e}{%
+           family={Fratantoni},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2af597c9108ba8b010a09e913370941}
+      \strng{fullhash}{40e09875bf9e538bb1250c1a6449420b}
+      \strng{fullhashraw}{40e09875bf9e538bb1250c1a6449420b}
+      \strng{bibnamehash}{a2af597c9108ba8b010a09e913370941}
+      \strng{authorbibnamehash}{a2af597c9108ba8b010a09e913370941}
+      \strng{authornamehash}{a2af597c9108ba8b010a09e913370941}
+      \strng{authorfullhash}{40e09875bf9e538bb1250c1a6449420b}
+      \strng{authorfullhashraw}{40e09875bf9e538bb1250c1a6449420b}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Oceanic Engineering}
+      \field{number}{4}
+      \field{title}{Multi-{AUV} Control and Adaptive Sampling in Monterey Bay}
+      \field{volume}{31}
+      \field{year}{2006}
+      \field{pages}{935\bibrangedash 948}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/JOE.2006.880429
+      \endverb
+    \endentry
+    \entry{leonard2010gliderfleet}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=4a8f7c493dc109ca31debb5ec617bc96}{%
+           family={Leonard},
+           familyi={L\bibinitperiod},
+           given={Naomi\bibnamedelima Ehrich},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=6f5b2c5ff51ca77851d580d4ba78249e}{%
+           family={Paley},
+           familyi={P\bibinitperiod},
+           given={Derek\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f5ae33036ab6341aac1a3d440e25839e}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Russ\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=092e64c18cbe92c1d86821061d51054e}{%
+           family={Fratantoni},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bd68837c7327f54a56e11c11f20a51f8}{%
+           family={Lekien},
+           familyi={L\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3c2fc293bc921070df303bb0fa359586}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Fumin},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8f73a5627e2972665e54a6e90393809}
+      \strng{fullhash}{d91027f05bcbd07c0bcc2247cdbfea63}
+      \strng{fullhashraw}{d91027f05bcbd07c0bcc2247cdbfea63}
+      \strng{bibnamehash}{b8f73a5627e2972665e54a6e90393809}
+      \strng{authorbibnamehash}{b8f73a5627e2972665e54a6e90393809}
+      \strng{authornamehash}{b8f73a5627e2972665e54a6e90393809}
+      \strng{authorfullhash}{d91027f05bcbd07c0bcc2247cdbfea63}
+      \strng{authorfullhashraw}{d91027f05bcbd07c0bcc2247cdbfea63}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Field Robotics}
+      \field{number}{6}
+      \field{title}{Coordinated Control of an Underwater Glider Fleet in an Adaptive Ocean Sampling Field Experiment in Monterey Bay}
+      \field{volume}{27}
+      \field{year}{2010}
+      \field{pages}{718\bibrangedash 740}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1002/rob.20366
+      \endverb
+    \endentry
+    \entry{cao2013multirobotipp}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=d4244ea91d739643de38721989dcfd85}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Nannan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f78e0f597dc406710717451283c8c21e}{%
+           family={Low},
+           familyi={L\bibinitperiod},
+           given={Kian\bibnamedelima Hsiang},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=93285edca3de906f12b3fa42f2356a72}{%
+           family={Dolan},
+           familyi={D\bibinitperiod},
+           given={John\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {International Foundation for Autonomous Agents}%
+        {Multiagent Systems}%
+      }
+      \strng{namehash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{fullhash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{fullhashraw}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{bibnamehash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{authorbibnamehash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{authornamehash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{authorfullhash}{cb8e52ed3532827f9727f27307d5c4a9}
+      \strng{authorfullhashraw}{cb8e52ed3532827f9727f27307d5c4a9}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2013 International Conference on Autonomous Agents and Multi-Agent Systems}
+      \field{title}{Multi-Robot Informative Path Planning for Active Sensing of Environmental Phenomena: A Tale of Two Algorithms}
+      \field{year}{2013}
+      \field{pages}{7\bibrangedash 14}
+      \range{pages}{8}
     \endentry
   \enddatalist
 \endrefsection

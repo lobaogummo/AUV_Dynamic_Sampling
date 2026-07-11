@@ -272,7 +272,7 @@ def class_interpretation_table(ax, x: float, y: float, w: float, h: float) -> No
         y,
         w,
         h,
-        "Class interpretation\nhomogeneous\nsingle-gradient\nmulti-regime",
+        "Prototype interpretation\nhomogeneous\nsingle-gradient\nmulti-regime",
         edge="#2F855A",
         face="#F0FDF4",
         size=7.4,
@@ -307,17 +307,17 @@ def main() -> int:
 
     descriptor_files = {
         "boundary": "step08_descriptor_boundary_map.npy",
-        "boundary-dist r3": "step08_descriptor_boundary_distance_score_r3_cells.npy",
+        "boundary distance r3": "step08_descriptor_boundary_distance_score_r3_cells.npy",
         "interest": "step08_descriptor_interest_map.npy",
-        "represent.": "step08_descriptor_representative_zone_map.npy",
-        "cold": "step08_descriptor_cold_region_map.npy",
+        "representative": "step08_descriptor_representative_zone_map.npy",
         "warm": "step08_descriptor_warm_region_map.npy",
+        "cold": "step08_descriptor_cold_region_map.npy",
     }
     descriptor_cmaps = {
         "boundary": "magma",
-        "boundary-dist r3": "magma",
+        "boundary distance r3": "magma",
         "interest": "inferno",
-        "represent.": "Greens",
+        "representative": "Greens",
         "cold": "Blues",
         "warm": "Reds",
     }
@@ -354,13 +354,13 @@ def main() -> int:
         (6.65, 0.5, 2.15, 6.95, "Regime discovery", "discovery"),
         (9.0, 0.5, 3.25, 6.95, "Prototype interpretation", "prototype"),
         (12.45, 0.5, 3.35, 6.95, "Descriptor generation", "descriptor"),
-        (16.0, 0.5, 1.95, 6.95, "Planner-ready outputs", "output"),
+        (16.0, 0.5, 1.95, 6.95, "Planner-ready\noutputs", "output"),
     ]
     for s in sections:
         add_section(ax, *s)
 
     # Data and preprocessing.
-    add_label(ax, 1.65, 6.93, "CMEMS to X490/Nazaré ROI", size=8.0, weight="bold", color="#1E3A8A")
+    add_label(ax, 1.65, 6.93, "CMEMS regional product\nto Nazaré Canyon ROI", size=7.7, weight="bold", color="#1E3A8A")
     context_day_idx = 301
     regional_extent = (0.46, 1.12, 6.05, 6.53)
     interp_extent = (1.27, 1.93, 6.05, 6.53)
@@ -370,7 +370,7 @@ def main() -> int:
         hres_mask_arr = np.asarray(hres_mask, dtype=bool) if hres_mask is not None else None
         coarse_day = hres_day[::10, ::10]
         image_box(ax, coarse_day, regional_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, label="CMEMS\nregional", label_size=5.9, edge="#2B6CB0")
-        image_box(ax, hres_day, interp_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=hres_mask_arr, label="interpolated\nhigh-res", label_size=5.9, edge="#2B6CB0")
+        image_box(ax, hres_day, interp_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=hres_mask_arr, label="interpolated\nhigh-resolution", label_size=5.8, edge="#2B6CB0")
         add_grid_overlay(ax, interp_extent, nx=6, ny=5)
         roi_indices = paper_roi_meta.get("roi_indices", {})
         if roi_indices:
@@ -380,15 +380,15 @@ def main() -> int:
         placeholder(ax, interp_extent, "interp.")
     if paper_roi is not None:
         roi_day = np.asarray(paper_roi[min(context_day_idx, paper_roi.shape[0] - 1)])
-        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="X490/Nazaré\nROI", label_size=5.9, edge="#2B6CB0")
+        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="Nazaré Canyon\nROI", label_size=6.1, edge="#2B6CB0")
     elif temp is not None:
         roi_day = np.asarray(temp[min(context_day_idx, temp.shape[0] - 1)])
-        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="X490/Nazaré\nROI", label_size=5.9, edge="#2B6CB0")
+        image_box(ax, roi_day, roi_extent, TEMP_CMAP, vmin=temp_vmin, vmax=temp_vmax, mask=mask_arr, label="Nazaré Canyon\nROI", label_size=6.1, edge="#2B6CB0")
     else:
         placeholder(ax, roi_extent, "ROI")
     add_small_arrow(ax, (1.14, 6.29), (1.25, 6.29), "#2B6CB0")
     add_small_arrow(ax, (1.95, 6.29), (2.06, 6.29), "#2B6CB0")
-    add_note_box(ax, 0.48, 5.00, 2.32, 0.62, "ROI used in Filipa's paper\nsame X490/Nazaré planning domain", edge="#2B6CB0", face="#EFF6FF", size=6.8)
+    add_note_box(ax, 0.48, 5.00, 2.32, 0.62, "Nazaré Canyon ROI\nsame planning domain", edge="#2B6CB0", face="#EFF6FF", size=7.0)
     if temp is not None:
         day1 = np.asarray(temp[0])
         day302 = np.asarray(temp[min(context_day_idx, temp.shape[0] - 1)])
@@ -397,11 +397,11 @@ def main() -> int:
         ax.text(1.62, 4.31, "…", ha="center", va="center", fontsize=13, color="#1E3A8A", zorder=6)
     else:
         placeholder(ax, (0.66, 2.59, 4.10, 4.55), "370 daily maps")
-    add_label(ax, 1.62, 3.82, "370 daily ROI\nsurface temperature maps", size=7.2, weight="bold", color="#1E3A8A")
-    add_note_box(ax, 0.63, 2.78, 1.95, 0.58, "common valid mask\nnormalization / standardization", edge="#2B6CB0", face="#EFF6FF", size=6.8)
+    add_label(ax, 1.62, 3.82, "370 daily\nsurface-temperature maps", size=7.3, weight="bold", color="#1E3A8A")
+    add_note_box(ax, 0.63, 2.78, 1.95, 0.58, "common valid mask\nstandardisation", edge="#2B6CB0", face="#EFF6FF", size=7.0)
     if temp_norm is not None:
         norm_example = np.asarray(temp_norm[301 if temp_norm.shape[0] > 301 else 0])
-        image_box(ax, norm_example, (0.85, 1.88, 1.70, 2.45), TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="standardized map", label_size=6.4, edge="#2B6CB0")
+        image_box(ax, norm_example, (0.85, 1.88, 1.70, 2.45), TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="standardised map", label_size=6.5, edge="#2B6CB0")
     else:
         placeholder(ax, (0.85, 1.88, 1.70, 2.45), "normalized")
 
@@ -409,7 +409,7 @@ def main() -> int:
     if temp_norm is not None:
         base = np.asarray(temp_norm[301 if temp_norm.shape[0] > 301 else 0])
         roi_extent = (3.55, 4.55, 5.45, 6.20)
-        image_box(ax, base, roi_extent, TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="ROI image", label_size=6.5, edge="#6B46C1")
+        image_box(ax, base, roi_extent, TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, mask=mask_arr, label="ROI map", label_size=6.6, edge="#6B46C1")
         patch_positions = [(24, 0), (24, 25), (24, 50), (24, 77)]
         rect_centers = []
         for i, (rr, cc) in enumerate(patch_positions):
@@ -432,7 +432,7 @@ def main() -> int:
             image_box(ax, patch, (x, x + patch_w, patch_y0, patch_y1), TEMP_CMAP, vmin=norm_vmin, vmax=norm_vmax, label=f"patch {i+1}", edge="#F97316", label_size=5.8)
             if i < len(patch_positions) - 1:
                 add_small_arrow(ax, (x + patch_w + 0.015, (patch_y0 + patch_y1) / 2), (x + patch_w + patch_gap - 0.015, (patch_y0 + patch_y1) / 2), "#F97316")
-        add_label(ax, 4.57, 4.98, "ordered patch extraction\n40 x 24", size=7.2, weight="bold", color="#6B46C1")
+        add_label(ax, 4.57, 4.98, "Ordered patch extraction\n40 x 24", size=7.3, weight="bold", color="#6B46C1")
     else:
         placeholder(ax, (3.55, 4.55, 5.45, 6.20), "patches")
     if atoms is not None:
@@ -446,7 +446,7 @@ def main() -> int:
             image_box(ax, atoms_img[i], (x, x + 0.54, 3.18, 3.55), TEMP_CMAP, vmin=-atom_lim, vmax=atom_lim, label=f"atom {i+1}", edge="#6B46C1", label_size=6.1)
     else:
         placeholder(ax, (3.55, 6.10, 3.18, 3.55), "dictionary\natoms")
-    add_label(ax, 4.72, 3.83, "dictionary learning\nK = 4", size=7.6, weight="bold", color="#4C1D95")
+    add_label(ax, 4.72, 3.83, "Dictionary learning\nK = 4", size=7.6, weight="bold", color="#4C1D95")
     draw_code_matrix(ax, codes, (3.70, 5.85, 1.35, 2.25))
 
     # Regime discovery.
@@ -460,7 +460,7 @@ def main() -> int:
         for i in range(6):
             ax.text(7.05 + i * 0.21, 2.52, f"C{i+1}", ha="center", va="top", fontsize=5.9)
         ax.add_patch(Rectangle((6.88, 2.43), 1.55, 1.32, fill=False, edgecolor="#B7791F", linewidth=0.9, zorder=4))
-        add_label(ax, 7.65, 3.98, "six recurrent\nclasses", size=7.4, weight="bold", color="#78350F")
+        add_label(ax, 7.65, 3.98, "Class sizes\nsix recurrent classes", size=7.3, weight="bold", color="#78350F")
 
     # Prototype interpretation.
     if prototypes is not None:
@@ -472,7 +472,7 @@ def main() -> int:
     else:
         placeholder(ax, (9.25, 11.85, 4.42, 6.08), "C01-C06\nprototypes")
     class_interpretation_table(ax, 9.38, 2.48, 2.35, 0.96)
-    add_note_box(ax, 9.38, 1.28, 2.35, 0.78, "prototype library\nclass-level regime maps", edge="#2F855A", face="#F0FDF4", size=7.4)
+    add_note_box(ax, 9.38, 1.28, 2.35, 0.78, "Prototype library\nclass-level regime maps", edge="#2F855A", face="#F0FDF4", size=7.4)
 
     # Descriptor generation.
     desc_items = list(descriptors.items())[:6]
@@ -492,13 +492,13 @@ def main() -> int:
             label_size=5.9,
             edge="#C53030",
         )
-    add_note_box(ax, 12.86, 2.10, 2.44, 1.05, "boundary_score\nboundary_distance r1/r3/r5\ninterest_map\nrepresentative_zone\ncold/warm and A/B regions", edge="#C53030", face="#FFF5F5", size=7.0)
+    add_note_box(ax, 12.86, 2.10, 2.44, 1.05, "Boundary score\nBoundary distance r1/r3/r5\nInterest map\nRepresentative zone\nCold/warm and A/B regions", edge="#C53030", face="#FFF5F5", size=7.0)
 
     # Planner-ready outputs.
-    add_note_box(ax, 16.23, 5.22, 1.42, 0.74, "prototype\nlibrary", edge="#475569", face="#F8FAFC", size=7.2)
-    add_note_box(ax, 16.23, 4.05, 1.42, 0.74, "predicted\nclass", edge="#475569", face="#F8FAFC", size=7.2)
-    add_note_box(ax, 16.23, 2.88, 1.42, 0.86, "prototype-specific\ndescriptor maps", edge="#475569", face="#F8FAFC", size=6.9)
-    add_note_box(ax, 16.18, 1.35, 1.52, 0.9, "downstream\nreward-map\nshaping", edge="#475569", face="#E2E8F0", size=7.1)
+    add_note_box(ax, 16.23, 5.22, 1.42, 0.74, "Prototype\nlibrary", edge="#475569", face="#F8FAFC", size=7.2)
+    add_note_box(ax, 16.23, 4.05, 1.42, 0.74, "Predicted\nclass", edge="#475569", face="#F8FAFC", size=7.2)
+    add_note_box(ax, 16.23, 2.88, 1.42, 0.86, "Prototype-specific\ndescriptor maps", edge="#475569", face="#F8FAFC", size=6.9)
+    add_note_box(ax, 16.18, 1.35, 1.52, 0.9, "Planner\nreward-map\ninputs", edge="#475569", face="#E2E8F0", size=7.1)
 
     # Arrows between stages.
     add_arrow(ax, (2.62, 3.84), (3.38, 5.55), "#334155", rad=-0.18)
@@ -529,7 +529,7 @@ def main() -> int:
     plt.close(fig)
 
     caption = (
-        "Offline regime-inference pipeline used in this thesis. The workflow starts from CMEMS regional surface-temperature fields over a larger domain, interpolates them to the high-resolution/common grid, and then extracts the X490/Nazaré ROI used in Filipa's paper. The resulting 370 daily ROI maps are masked, standardized, decomposed into local patches, represented with a compact dictionary-learning model, and clustered with Ward hierarchical clustering to obtain six recurrent prototype classes (C01-C06). The prototypes are then interpreted as homogeneous, gradient-dominated, or multi-regime spatial patterns and converted into prototype-derived descriptors, including boundary scores, boundary-distance scores, interest maps, representative zones, and cold/warm or region_A/region_B maps. These offline products define the prototype library, predicted-class interface, and prototype-specific descriptor maps used later for downstream reward-map construction in the AUV planner."
+        "Offline regime-inference pipeline used in this thesis. The workflow starts from CMEMS regional surface-temperature fields over a larger domain, interpolates them to the high-resolution/common grid, and then extracts the Nazaré Canyon ROI used as the common planning domain. The resulting 370 daily ROI maps are masked, standardised, decomposed into local patches, represented with a compact dictionary-learning model, and clustered with Ward hierarchical clustering to obtain six recurrent prototype classes (C01-C06). The prototypes are then interpreted as homogeneous, gradient-dominated, or multi-regime spatial patterns and converted into prototype-derived descriptors, including boundary scores, boundary-distance scores, interest maps, representative zones, and cold/warm or region_A/region_B maps. These offline products define the prototype library, predicted-class interface, and prototype-specific descriptor maps used later for planner reward-map construction."
     )
     if missing:
         caption += "\n\nPlaceholder note: the following expected inputs were missing and were replaced by schematic placeholders: " + "; ".join(missing)
@@ -542,11 +542,11 @@ def main() -> int:
         "Dictionary atoms: the four atom thumbnails are the real learned atoms from the validated canonical Step05 output "
         "`canonical_dictionary.npz`, key `components` (shape 4 x 1920). Each learned component concatenates a 40 x 24 temperature-like patch field and a 40 x 24 valid-mask encoding; the diagram visualizes the temperature-like half as four learned atom fields. They are not schematic placeholders.\n"
         "\n"
-        "Colormap: temperature-like fields now use the same `coolwarm` colormap used by the 370 daily surface-temperature map exports and canonical prototype visualizations. This applies to the ROI image, standardized map, extracted patches, prototype thumbnails, and dictionary atoms. Descriptor maps use descriptor-appropriate sequential colormaps: magma for boundary/boundary-distance, inferno for interest, Greens for representative zone, Blues for cold region, and Reds for warm region.\n"
+        "Colormap: temperature-like fields now use the same `coolwarm` colormap used by the 370 daily surface-temperature map exports and canonical prototype visualizations. This applies to the ROI map, standardised map, extracted patches, prototype thumbnails, and dictionary atoms. Descriptor maps use descriptor-appropriate sequential colormaps: magma for boundary/boundary-distance, inferno for interest, Greens for representative zone, Blues for cold region, and Reds for warm region.\n"
         "\n"
         "Patch extraction panel: the patch thumbnails now follow a left-to-right spatial extraction sequence from the ROI image. Four patch rectangles are drawn on the ROI image, numbered 1-4, with subtle arrows indicating the extraction order; the thumbnails below are the corresponding real 40 x 24 patches in the same order.\n"
         "\n"
-        "Data-origin panel: the first block now explicitly shows the upstream data chain: CMEMS regional surface-temperature field over a larger domain, interpolation to the high-resolution/common grid, and extraction of the X490/Nazaré ROI used in Filipa's paper before building the 370 daily ROI map stack.\n"
+        "Data-origin panel: the first block now explicitly shows the upstream data chain: CMEMS regional surface-temperature field over a larger domain, interpolation to the high-resolution/common grid, and extraction of the Nazaré Canyon ROI before building the 370 daily ROI map stack.\n"
     )
     (OUTDIR / "regime_inference_pipeline_revision_note.txt").write_text(note, encoding="utf-8")
     (OUTDIR / "regime_inference_pipeline_sources.json").write_text(
